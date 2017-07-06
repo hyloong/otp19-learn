@@ -1,0 +1,16 @@
+# ignore file
+
+erl_crash.dump
+*/erl_crash.dump
+
+#ebin
+./*/*/ebin/
+ebin/
+
+# log
+logs/*
+
+GTAGS
+GPATH
+GRTAGS
+TAGS
