@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxAuiTabArt</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxAuiTabArt.xml</file></header>
+<module>wxAuiTabArt</module>
+<modulesummary>See external documentation: wxAuiTabArt.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauitabart.html">wxAuiTabArt</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxAuiTabArt"/>wxAuiTabArt()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>setFlags(This, Flags) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiTabArt">wxAuiTabArt()</seealso></v><v>Flags = integer()</v></type>
+<desc><marker id="setFlags-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauitabart.html#wxauitabartsetflags">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMeasuringFont(This, Font) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiTabArt">wxAuiTabArt()</seealso></v><v>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v></type>
+<desc><marker id="setMeasuringFont-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauitabart.html#wxauitabartsetmeasuringfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setNormalFont(This, Font) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiTabArt">wxAuiTabArt()</seealso></v><v>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v></type>
+<desc><marker id="setNormalFont-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauitabart.html#wxauitabartsetnormalfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSelectedFont(This, Font) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiTabArt">wxAuiTabArt()</seealso></v><v>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v></type>
+<desc><marker id="setSelectedFont-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauitabart.html#wxauitabartsetselectedfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setColour(This, Colour) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiTabArt">wxAuiTabArt()</seealso></v><v>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauitabart.html#wxauitabartsetcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setActiveColour(This, Colour) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiTabArt">wxAuiTabArt()</seealso></v><v>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setActiveColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauitabart.html#wxauitabartsetactivecolour">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

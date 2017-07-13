@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxCursor</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxCursor.xml</file></header>
+<module>wxCursor</module>
+<modulesummary>See external documentation: wxCursor.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcursor.html">wxCursor</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxBitmap">wxBitmap</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxCursor"/>wxCursor()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxCursor">wxCursor()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcursor.html#wxcursorwxcursor">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(CursorId) -&gt; <seealso marker="#type-wxCursor">wxCursor()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>CursorId = integer()</v></type>
+<desc><marker id="new-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcursor.html#wxcursorwxcursor">external documentation</url>.
+  <br/> Also:<br/>
+  new(Image) -&gt; wxCursor() when<br/>
+  	Image::wxImage:wxImage().<br/>
+ </p>
+</desc></func>
+<func>
+<name>new(Bits, Width, Height) -&gt; <seealso marker="#type-wxCursor">wxCursor()</seealso></name>
+<fsummary>Equivalent to new(Bits, Width, Height, []).
+</fsummary>
+<type>
+<v>Bits = binary()</v><v>Width = integer()</v><v>Height = integer()</v></type>
+<desc><marker id="new-3"/>
+<p><em>This function is deprecated: </em>deprecated function not available in wxWidgets-2.9 and later</p>
+<p>Equivalent to <seealso marker="#new-4">new(Bits, Width, Height, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Bits, Width, Height, Options::[Option]) -&gt; <seealso marker="#type-wxCursor">wxCursor()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Bits = binary()</v><v>Width = integer()</v><v>Height = integer()</v><v>Option = {hotSpotX, integer()} | {hotSpotY, integer()}</v></type>
+<desc><marker id="new-4"/>
+<p><em>This function is deprecated: </em>deprecated function not available in wxWidgets-2.9 and later</p>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcursor.html#wxcursorwxcursor">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>ok(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCursor">wxCursor()</seealso></v></type>
+<desc><marker id="ok-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcursor.html#wxcursorok">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxCursor">wxCursor()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxDialog</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxDialog.xml</file></header>
+<module>wxDialog</module>
+<modulesummary>See external documentation: wxDialog.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdialog.html">wxDialog</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxTopLevelWindow">wxTopLevelWindow</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxDialog"/>wxDialog()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxDialog">wxDialog()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdialog.html#wxdialogwxdialog">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id, Title) -&gt; <seealso marker="#type-wxDialog">wxDialog()</seealso></name>
+<fsummary>Equivalent to new(Parent, Id, Title, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="new-3"/>
+<p>Equivalent to <seealso marker="#new-4">new(Parent, Id, Title, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id, Title, Options::[Option]) -&gt; <seealso marker="#type-wxDialog">wxDialog()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()}</v></type>
+<desc><marker id="new-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdialog.html#wxdialogwxdialog">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id, Title) -&gt; boolean()</name>
+<fsummary>Equivalent to create(This, Parent, Id, Title, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxDialog">wxDialog()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="create-4"/>
+<p>Equivalent to <seealso marker="#create-5">create(This, Parent, Id, Title, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id, Title, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxDialog">wxDialog()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()}</v></type>
+<desc><marker id="create-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdialog.html#wxdialogcreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createButtonSizer(This, Flags) -&gt; <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxDialog">wxDialog()</seealso></v><v>Flags = integer()</v></type>
+<desc><marker id="createButtonSizer-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdialog.html#wxdialogcreatebuttonsizer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createStdDialogButtonSizer(This, Flags) -&gt; <seealso marker="wxStdDialogButtonSizer#type-wxStdDialogButtonSizer">wxStdDialogButtonSizer:wxStdDialogButtonSizer()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxDialog">wxDialog()</seealso></v><v>Flags = integer()</v></type>
+<desc><marker id="createStdDialogButtonSizer-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdialog.html#wxdialogcreatestddialogbuttonsizer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>endModal(This, RetCode) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxDialog">wxDialog()</seealso></v><v>RetCode = integer()</v></type>
+<desc><marker id="endModal-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdialog.html#wxdialogendmodal">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getAffirmativeId(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxDialog">wxDialog()</seealso></v></type>
+<desc><marker id="getAffirmativeId-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdialog.html#wxdialoggetaffirmativeid">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getReturnCode(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxDialog">wxDialog()</seealso></v></type>
+<desc><marker id="getReturnCode-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdialog.html#wxdialoggetreturncode">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isModal(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxDialog">wxDialog()</seealso></v></type>
+<desc><marker id="isModal-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdialog.html#wxdialogismodal">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setAffirmativeId(This, AffirmativeId) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxDialog">wxDialog()</seealso></v><v>AffirmativeId = integer()</v></type>
+<desc><marker id="setAffirmativeId-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdialog.html#wxdialogsetaffirmativeid">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setReturnCode(This, ReturnCode) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxDialog">wxDialog()</seealso></v><v>ReturnCode = integer()</v></type>
+<desc><marker id="setReturnCode-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdialog.html#wxdialogsetreturncode">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>show(This) -&gt; boolean()</name>
+<fsummary>Equivalent to show(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxDialog">wxDialog()</seealso></v></type>
+<desc><marker id="show-1"/>
+<p>Equivalent to <seealso marker="#show-2">show(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>show(This, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxDialog">wxDialog()</seealso></v><v>Option = {show, boolean()}</v></type>
+<desc><marker id="show-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdialog.html#wxdialogshow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>showModal(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxDialog">wxDialog()</seealso></v></type>
+<desc><marker id="showModal-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdialog.html#wxdialogshowmodal">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxDialog">wxDialog()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

@@ -1,0 +1,1936 @@
+<?xml version="1.0"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="cover" margin="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin="0mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="left-page" margin-top="25mm" margin-bottom="15mm" margin-left="20mm" margin-right="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="left-header" extent="10mm"/>
+      <fo:region-after region-name="left-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="right-page" margin-top="25mm" margin-bottom="15mm" margin-left="25mm" margin-right="20mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="right-header" extent="10mm"/>
+      <fo:region-after region-name="right-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:page-sequence-master master-name="document">
+      <fo:repeatable-page-master-alternatives>
+        <fo:conditional-page-master-reference master-reference="left-page" odd-or-even="even"/>
+        <fo:conditional-page-master-reference master-reference="right-page" odd-or-even="odd"/>
+      </fo:repeatable-page-master-alternatives>
+    </fo:page-sequence-master>
+  </fo:layout-master-set>
+  <fo:bookmark-tree>
+    <fo:bookmark internal-destination="cover-page" starting-state="show">
+      <fo:bookmark-title>Reltool</fo:bookmark-title>
+      <fo:bookmark internal-destination="idp416368" starting-state="hide">
+        <fo:bookmark-title>Reltool Users Guide</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp501728" starting-state="hide">
+          <fo:bookmark-title>Introduction</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp30176" starting-state="hide">
+            <fo:bookmark-title>Scope and Purpose</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp28544" starting-state="hide">
+            <fo:bookmark-title>Prerequisites</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp24960" starting-state="hide">
+            <fo:bookmark-title>About This Manual</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp311824" starting-state="hide">
+            <fo:bookmark-title>Where to Find More Information</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp32448" starting-state="hide">
+          <fo:bookmark-title>Usage</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp248976" starting-state="hide">
+            <fo:bookmark-title>Overview</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp250880" starting-state="hide">
+            <fo:bookmark-title>System window</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp442736" starting-state="hide">
+              <fo:bookmark-title>Libraries</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp497936" starting-state="hide">
+              <fo:bookmark-title>System settings</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp544064" starting-state="hide">
+              <fo:bookmark-title>Applications</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp562784" starting-state="hide">
+              <fo:bookmark-title>Releases</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp305792" starting-state="hide">
+              <fo:bookmark-title>File menu</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp594288" starting-state="hide">
+              <fo:bookmark-title>Dependencies between applications or modules displayed as a graph</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp555104" starting-state="hide">
+            <fo:bookmark-title>Application window</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp559344" starting-state="hide">
+              <fo:bookmark-title>Application settings</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp464640" starting-state="hide">
+              <fo:bookmark-title>Modules</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp517280" starting-state="hide">
+              <fo:bookmark-title>Application dependencies</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp584464" starting-state="hide">
+              <fo:bookmark-title>Module dependencies</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp587776" starting-state="hide">
+            <fo:bookmark-title>Module window</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp253248" starting-state="hide">
+              <fo:bookmark-title>Dependencies</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp256400" starting-state="hide">
+              <fo:bookmark-title>Code</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp264256" starting-state="hide">
+          <fo:bookmark-title>Examples</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp568000" starting-state="hide">
+            <fo:bookmark-title>Start and stop windows and servers</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp573872" starting-state="hide">
+            <fo:bookmark-title>Inspecting the configuration</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp575200" starting-state="hide">
+            <fo:bookmark-title>Generate release and script files</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp579312" starting-state="hide">
+            <fo:bookmark-title>Create a target system</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+      <fo:bookmark internal-destination="idp507360" starting-state="hide">
+        <fo:bookmark-title>Reference Manual</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp872416" starting-state="hide">
+          <fo:bookmark-title>reltool</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp697008" starting-state="hide">
+            <fo:bookmark-title>create_target/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp131504" starting-state="hide">
+            <fo:bookmark-title>eval_target_spec/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp331664" starting-state="hide">
+            <fo:bookmark-title>get_config/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp745824" starting-state="hide">
+            <fo:bookmark-title>get_config/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp431600" starting-state="hide">
+            <fo:bookmark-title>get_rel/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp724048" starting-state="hide">
+            <fo:bookmark-title>get_script/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idm33472" starting-state="hide">
+            <fo:bookmark-title>get_status/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp406352" starting-state="hide">
+            <fo:bookmark-title>get_server/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp334448" starting-state="hide">
+            <fo:bookmark-title>get_target_spec/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp295568" starting-state="hide">
+            <fo:bookmark-title>install/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp417984" starting-state="hide">
+            <fo:bookmark-title>start/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp428432" starting-state="hide">
+            <fo:bookmark-title>start/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp685280" starting-state="hide">
+            <fo:bookmark-title>start_link/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp376592" starting-state="hide">
+            <fo:bookmark-title>start_server/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp473536" starting-state="hide">
+            <fo:bookmark-title>stop/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+    </fo:bookmark>
+  </fo:bookmark-tree>
+  <fo:page-sequence font-family="sans-serif" force-page-count="even" master-reference="cover" font-size="10pt">
+    <fo:flow flow-name="xsl-region-body">
+      <fo:block space-before="130mm" space-before.conditionality="retain" text-align="end">
+        <fo:external-graphic src="/root/download/otp_src_20.0/bootstrap/lib/erl_docgen/priv/images/erlang-logo.gif"/>
+      </fo:block>
+      <fo:block id="cover-page" border-before-style="solid" border-before-width="10pt" border-color="#960003" font-size="2.3em" padding-before="0.5em" text-align="end">Reltool</fo:block>
+      <fo:block font-size="0.9em" text-align="end">Copyright © 2009-2017 Ericsson AB, All Rights Reserved</fo:block>
+      <fo:block font-size="0.9em" text-align="end">Reltool 0.7.4</fo:block>
+      <fo:block font-size="0.9em" text-align="end">July 12, 2017</fo:block>
+      <fo:block padding-before="2.5em" font-size="1.33em" font-weight="bold" color="#C00" text-align="end"/>
+      <fo:block break-before="page" border-before-style="solid" border-before-width="1pt" border-color="#960003" font-weight="bold" padding-before="0.5em" space-before="200mm" space-before.conditionality="retain">Copyright © 2009-2017 Ericsson AB, All Rights Reserved</fo:block>
+      <fo:block font-size="0.9em">
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+ 
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  The Initial Developer of the Original Code is Ericsson AB.
+    Ericsson AB, All Rights Reserved.
+        </fo:block>
+      <fo:block font-size="0.9em" font-weight="bold" space-before="2em">July 12, 2017</fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+  <fo:page-sequence font-family="serif" master-reference="document" initial-page-number="1" font-size="10pt">
+    <fo:static-content flow-name="left-header">
+      <fo:block text-align="start" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-header">
+      <fo:block text-align="end" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="left-footer">
+      <fo:block text-align="start" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold"><fo:page-number/> | Ericsson AB, All Rights Reserved:
+            Reltool</fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-footer">
+      <fo:block text-align="end" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">Ericsson AB, All Rights Reserved:
+            Reltool | <fo:page-number/></fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body"><fo:block/><fo:block id="idp416368" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">1   
+      Reltool Users Guide</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Reltool is a release management tool. It analyses a given
+     Erlang/OTP installation and determines various dependencies
+     between applications. The <fo:inline font-family="monospace">graphical</fo:inline> frontend depicts the
+     dependencies and enables interactive customization of a
+     target system. The backend provides a <fo:inline font-family="monospace">batch</fo:inline> interface
+     for generation of customized target systems.</fo:block>
+  <fo:block id="idp501728" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.1  Introduction</fo:marker>1.1  Introduction</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Reltool is a release management tool. It analyses a given
+  Erlang/OTP installation and determines various dependencies between
+  applications. The <fo:inline font-family="monospace">graphical</fo:inline> frontend depicts the dependencies and
+  enables interactive customization of a target system. The backend provides a
+  <fo:inline font-family="monospace">batch</fo:inline> interface for generation of customized target systems.</fo:block><fo:block id="idp30176" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.1 
+      Scope and Purpose</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This manual describes the Reltool application, as a component of the
+    Erlang/Open Telecom Platform development environment. It is assumed that
+    the reader is familiar with the Erlang Development Environment, which is
+    described in a separate User's Guide.</fo:block>
+  <fo:block id="idp28544" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.2 
+      Prerequisites</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The following prerequisites is required for understanding the material
+    in the Reltool User's Guide:</fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">familiarity with Erlang/OTP system principles and Erlang/OTP design
+        principles</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The application requires Erlang/OTP release R13B02 or later.</fo:block>
+  <fo:block id="idp24960" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.3 
+      About This Manual</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">In addition to this introductory chapter, the Reltool User's Guide
+    contains the following chapters:</fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Chapter 2: "Usage" describes the architecture
+          and typical usage of the application.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Chapter 3: "Examples" gives some usage examples</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+  <fo:block id="idp311824" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.4 
+      Where to Find More Information</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Refer to the following documentation for more information about Reltool
+    and about the Erlang/OTP development system:</fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">the Reference Manual of Reltool</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">the Erlang/OTP <fo:inline font-family="monospace">System Principles</fo:inline></fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">the Erlang/OTP <fo:inline font-family="monospace">Design Principles</fo:inline></fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Programming Erlang: Software for a Concurrent World (2007),
+        Pragmatic Bookshelf, ISBN13: 9781934356005.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+  <fo:block id="idp32448" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.2  Usage</fo:marker>1.2  Usage</fo:block><fo:block id="idp248976" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.2.1 
+      Overview</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This document focuses on the graphical parts of the tool. The
+    concepts are explained in the reference manual for the module
+    <fo:inline font-family="monospace">reltool</fo:inline>.</fo:block>
+  <fo:block id="idp250880" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.2.2 
+      System window</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The system window is started with the function
+    <fo:inline font-family="monospace">reltool:start/1</fo:inline>. At startup the tool will process all
+    <fo:inline font-family="monospace">beam</fo:inline> files and <fo:inline font-family="monospace">app</fo:inline> files in order to find out dependencies
+    between applications and their modules. Once all this information has been
+    derived, it will be possible to explore the tool.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The system window consists of four main pages (tabs):</fo:block>
+
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Libraries
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>System settings
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Applications
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Releases
+      </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Click on a name tag to display its page.</fo:block>
+    
+    <fo:block id="idp442736" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Libraries</fo:block>
+    
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">On the library page it is possible to control which sources
+        the tool will use. The page is organized as a tree which
+        can be expanded and collapsed by clicking on the little symbol
+        in the beginning of the expandable/collapsible lines.</fo:block>
+
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-family="monospace">Root directory</fo:inline> can be edited by selecting the
+	line where the path of the root directory is displayed and
+	clicking the right mouse button. Choose edit in the menu
+	that pops up.</fo:block>
+
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Library directories can be added, edited or deleted. This
+	is done by selecting the line where the path to a library
+	directory is displayed and clicking the right mouse
+	button. Choose add, edit or delete in the menu that pops
+	up. New library directories can also be added by selecting the
+	line <fo:inline font-family="monospace">Library directories</fo:inline> and clicking the right
+	mouse button. Choose add in the menu that pops up.</fo:block>
+
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Escript files can be added, edited or deleted. This is done
+	by selecting the line where the path to an escript file is
+	displayed and clicking the right mouse button. Choose
+	add, edit or delete in the menu that pops up. New escripts can
+	also be added by selecting the line <fo:inline font-family="monospace">Escript files</fo:inline> and
+	clicking the right mouse button. Choose add in the menu
+	that pops up.</fo:block>
+
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When libraries and escripts are expanded, the names of
+	their contained applications will be displayed. Double click
+	on an application name to launch an application window.</fo:block>
+    
+
+    <fo:block id="idp497936" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">System settings</fo:block>
+    
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">On the system settings page it is possible to control some
+        global settings that are used as defaults for all
+        applications. Set the <fo:inline font-family="monospace">Application inclusion policy</fo:inline> to
+        <fo:inline font-family="monospace">include</fo:inline> to include all applications that are not
+        explicitly excluded. See <fo:inline font-family="monospace">incl_cond</fo:inline> (application
+        inclusion) and <fo:inline font-family="monospace">mod_cond</fo:inline> (module inclusion) in the
+        reference manual for the module <fo:inline font-family="monospace">reltool</fo:inline> for more
+        info.</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The system settings page is rather incomplete.</fo:block>
+    
+
+    <fo:block id="idp544064" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Applications</fo:block>
+    
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">There are four categories of applications on the
+	applications page. <fo:inline font-family="monospace">Included</fo:inline> contains applications that
+	are explicitly included. <fo:inline font-family="monospace">Excluded</fo:inline> contains applications
+	that are explicitly excluded. <fo:inline font-family="monospace">Derived</fo:inline> contains
+	applications that either are used directly by explicitly
+	included applications or by other derived
+	applications. <fo:inline font-family="monospace">Available</fo:inline> contains the remaining
+	applications.</fo:block>
+
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Select one or more applications and click on a button
+	directly below the application column to change application
+	category. For example, select an available application and
+	click on its tick button to move the application to the
+	included category.  Clicking on the tick symbol for included
+	applications will move the application back to the available
+	category. The tick is undone.</fo:block>
+
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The symbols in front of the application names are intended
+	to describe the status of the application. There are error
+	and warning symbols to signalize that there is
+	something which needs attention. The tick symbol means that the
+	application is included or derived and no problem has been
+	detected. The cross symbol means that the application is
+	excluded or available and no problem has been
+	detected. Applications with error symbols are listed first in
+  each category and are followed by the warnings and the
+  normal ones (ticks and crosses) at the end.</fo:block>
+
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Double click on an application to launch its application
+	window.</fo:block>
+    
+
+    <fo:block id="idp562784" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Releases</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The releases page is incomplete and very experimental.</fo:block>
+    
+
+    <fo:block id="idp305792" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">File menu</fo:block>
+    
+
+      <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+	  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">Display application dependency graph</fo:inline> - Launches an
+	  application force graph window. All included and derived
+	  applications and their dependencies will be shown in a
+	  graph.</fo:block>
+	</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+	  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">Display module dependency graph</fo:inline> - Launch a module
+	  force graph window. All included and derived modules and
+	  their dependencies will be shown in a graph.</fo:block>
+	</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+	  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">Reset configuration to default</fo:inline></fo:block>
+	</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+	  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">Undo configuration (toggle)</fo:inline></fo:block>
+	</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+	  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">Load configuration</fo:inline> - Loads a new configuration from file.</fo:block>
+	</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+	  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">Save configuration</fo:inline> - Saves the current
+	  configuration to file. Normally, only the explicit
+	  configuration parameters with values that differ from their
+	  defaults are saved. But the configuration with or without
+	  default values and with or without derived values may also
+	  be saved.</fo:block>
+	</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+	  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">Generate rel, script and boot files</fo:inline></fo:block>
+	</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+	  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">Generate target system</fo:inline></fo:block>
+	</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+	  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">Close</fo:inline> - Close the system window and all its subwindows.</fo:block>
+	</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+
+    
+
+    <fo:block id="idp594288" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Dependencies between applications or modules displayed as a graph</fo:block>
+      
+
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The dependency graph windows are launched from the file menu
+      in the system window. The graph depicts all included and derived
+      applications/modules and their dependencies.</fo:block>
+
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">It is possible to perform some limited manipulations of the
+      graph. Nodes can be moved, selected, locked or deleted. Move a
+      single node or the entire graph by moving the mouse while the
+      left mouse button is pressed. A node can be locked into a fix
+      position by holding down the shift button when the left mouse
+      button is released. Select several nodes by moving the mouse
+      while the control key and the left mouse button are
+      pressed. Selected nodes can be locked, unlocked or deleted by
+      clicking on a suitable button.</fo:block>
+
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The algorithm that is used to draw a graph with as few
+      crossed links as possible is called force graph. A force graph
+      consists of nodes and directed links between nodes. Each node is
+      associated with a repulsive force that pushes nodes away from
+      each other. This force can be adjusted with the left slider or
+      with the mouse wheel. Each link is associated with an attractive
+      force that pulls the nodes nearer to each other. This force can be
+      adjusted with the right slider. If this force becomes too strong,
+      the graph will be unstable. The third parameter that can be
+      adjusted is the length of the links. It is adjusted with the
+      middle slider.</fo:block>
+
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-family="monospace">Freeze</fo:inline> button starts/stops the redrawing of the
+      graph. <fo:inline font-family="monospace">Reset</fo:inline> moves the graph to the middle of the window
+      and resets all graph settings to default, with the exception of
+      deleted nodes.</fo:block>
+      
+    
+
+  <fo:block id="idp555104" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.2.3 
+      Application window</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The application window is started by double clicking on an
+    application name. The application window consists of four
+    pages (tabs):</fo:block>
+
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Application settings
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Modules
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Application dependencies
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Module dependencies
+      </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Click on a name tag to display its page.</fo:block>
+
+    <fo:block id="idp559344" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Application settings</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Select version of the application in the <fo:inline font-family="monospace">Source selection
+    policy</fo:inline> part of the page. By default the latest version of the
+    application is selected, but it is possible to override this by
+    explicitly selecting another version.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Note that in order for reltool to sort application versions and
+    thereby be able to select the latest, it is required that the
+    version id for the application consits of integers and dots only,
+    for example <fo:inline font-family="monospace">1</fo:inline>, <fo:inline font-family="monospace">2.0</fo:inline> or <fo:inline font-family="monospace">3.17.1</fo:inline>.</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">By default the <fo:inline font-family="monospace">Application inclusion policy</fo:inline> on system
+    level is used for all applications. Set the value to
+    <fo:inline font-family="monospace">include</fo:inline> if you want to explicitly include one particular
+    application. Set it to <fo:inline font-family="monospace">exclude</fo:inline> if you want to exclude the
+    application despite that it is used by another (explicitly or
+    implicitly) included application. <fo:inline font-family="monospace">derived</fo:inline> means that the
+    application automatically will be included if some other
+    (explicitly or implicitly) included application uses it.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">By default the <fo:inline font-family="monospace">Module inclusion policy</fo:inline> on system level
+    is used for all applications. Set it to <fo:inline font-family="monospace">derived</fo:inline> if you only
+    want actually used modules to be included. Set it to <fo:inline font-family="monospace">app</fo:inline> if
+    you, besides derived modules, also want the modules listed in the
+    app file to be included. Set it to <fo:inline font-family="monospace">ebin</fo:inline> if you, besides
+    derived modules, also want the modules that exist as beam files
+    in the ebin directory to be included. Set it to <fo:inline font-family="monospace">all</fo:inline> if you
+    want all modules to be included, that is the union of modules
+    found in the ebin directory and listed in the app file.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The application settings page is rather incomplete.</fo:block>
+    
+
+    <fo:block id="idp464640" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Modules</fo:block>
+    
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">There are four categories of modules on the modules
+    page. <fo:inline font-family="monospace">Included</fo:inline> contains modules that are explicitly
+    included. <fo:inline font-family="monospace">Excluded</fo:inline> contains modules that are explicitly
+    excluded. <fo:inline font-family="monospace">Derived</fo:inline> contains modules that either are used
+    directly by explicitly included modules or by other derived
+    modules. <fo:inline font-family="monospace">Available</fo:inline> contains the remaining modules.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Select one or more modules and click on a button directly
+    below the module column to change module category. For
+    example, select an available module and click on its tick
+    button to move the module to the included category.  Clicking
+    on the tick symbol for included modules will move the
+    module back to the available category. The tick is
+    undone.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The symbols in front of the module names are intended to
+    describe the status of the module. There are error and
+    and warning symbols to signalize that there is something that needs
+    attention. The tick symbol means that the module is included
+    or derived and no problem has been detected. The cross symbol
+    means that the module is excluded or available and no problem
+    has been detected. Modules with error symbols are listed
+    first in each category and are followed by warnings and the
+    normal ones (ticks and crosses) at the end.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Double click on a module to launch its module window.</fo:block>
+
+    
+
+    <fo:block id="idp517280" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Application dependencies</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">There are four categories of applications on the <fo:inline font-family="monospace">Application
+    dependencies</fo:inline> page. If the application is used by other
+    applications, these are listed under <fo:inline font-family="monospace">Used by</fo:inline>. If the
+    application requires other applications be started before it can
+    be started, these are listed under <fo:inline font-family="monospace">Required</fo:inline>. These
+    applications are listed in the <fo:inline font-family="monospace">applications</fo:inline> part of the
+    <fo:inline font-family="monospace">app</fo:inline> file. If the application includes other applications,
+    these are listed under <fo:inline font-family="monospace">Included</fo:inline>. These applications are
+    listed in the <fo:inline font-family="monospace">included_applications</fo:inline> part of the <fo:inline font-family="monospace">app</fo:inline>
+    file.  If the application uses other applications, these
+    are listed under <fo:inline font-family="monospace">Uses</fo:inline>.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Double click on an application name to launch an application window.</fo:block>
+
+    
+
+    <fo:block id="idp584464" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Module dependencies</fo:block>
+    
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">There are two categories of modules on the <fo:inline font-family="monospace">Module
+    dependencies</fo:inline> page. If the module is used by other modules,
+    these are listed under <fo:inline font-family="monospace">Modules using this</fo:inline>. If the
+    module uses other modules, these are listed under <fo:inline font-family="monospace">Used
+    modules</fo:inline>.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Double click on an module name to launch a module window.</fo:block>
+
+    
+
+  <fo:block id="idp587776" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.2.4 
+      Module window</fo:block>
+    
+
+ <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The module window is started by double clicking on an module
+ name. The module window consists initially of two pages (tabs):</fo:block>
+
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Dependencies
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Code
+      </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Click on a name tag to display its page.</fo:block>
+
+    <fo:block id="idp253248" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Dependencies</fo:block>
+    
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">There are two categories of modules on the <fo:inline font-family="monospace">Dependencies</fo:inline>
+    page. If the module is used by other modules, these are listed
+    under <fo:inline font-family="monospace">Modules using this</fo:inline>. If the module uses other
+    modules, these are listed under <fo:inline font-family="monospace">Used modules</fo:inline>.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Double click on an module name to launch a module window.</fo:block>
+
+    
+
+    <fo:block id="idp256400" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Code</fo:block>
+    
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">On the <fo:inline font-family="monospace">Code</fo:inline> page the Erlang source code is displayed. It
+    is possible to search forwards and backwards for text in the
+    module. Enter a regular expression in the <fo:inline font-family="monospace">Find</fo:inline> field and
+    press enter. It is also possible to go to a certain line in the
+    module. The <fo:inline font-family="monospace">Back</fo:inline> button can be used to go back to the
+    previous position.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Put the marker on a function name and double click to go to the
+    definition of the function. If the function is defined in another
+    module, that module will be loaded and added to the page list.
+    </fo:block>
+    
+
+  <fo:block id="idp264256" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.3  Examples</fo:marker>1.3  Examples</fo:block><fo:block id="idp568000" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.3.1 
+      Start and stop windows and servers</fo:block>
+    
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The main process in Reltool is the server. It can be used as it
+    is or be used via the GUI frontend process. When the GUI is
+    started, a server process will automatically be started. The GUI
+    process is started with
+    <fo:inline font-style="italic"><fo:inline font-family="monospace">reltool:start/0</fo:inline></fo:inline>,
+    <fo:inline font-style="italic"><fo:inline font-family="monospace">reltool:start/1</fo:inline></fo:inline> or
+    <fo:inline font-style="italic"><fo:inline font-family="monospace">reltool:start_link/1</fo:inline></fo:inline>.
+    The pid of its server can be obtained with
+    <fo:inline font-style="italic"><fo:inline font-family="monospace">reltool:get_server/1</fo:inline></fo:inline>
+    </fo:block>
+    
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+Erlang/OTP 20 [erts-9.0] [source-c13b302] [64-bit] [smp:4:4] [ds:4:4:10] [async-threads:10]
+[hipe] [kernel-poll:false]
+Eshell V9.0  (abort with ^G)
+1&gt;
+1&gt; {ok, Win} = reltool:start([]).
+{ok,&lt;0.36.01&gt;}
+2&gt; {ok, Server} = reltool:get_server(Win).
+{ok,&lt;0.37.01&gt;}
+3&gt; reltool:get_config(Server).
+{ok,{sys,[]}}
+4&gt;
+4&gt; {ok, Server2} = reltool:start_server([]).
+{ok,&lt;0.6535.01&gt;}
+5&gt; reltool:get_config(Server2).
+{ok,{sys,[]}}
+6&gt; reltool:stop(Server2).
+ok
+    </fo:block>
+
+  <fo:block id="idp573872" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.3.2 
+      Inspecting the configuration</fo:block>
+    
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+Erlang/OTP 20 [erts-9.0] [source-c13b302] [64-bit] [smp:4:4] [ds:4:4:10] [async-threads:10]
+[hipe] [kernel-poll:false]
+Eshell V9.0  (abort with ^G)
+1&gt;
+1&gt; Config = {sys, [{escript, "examples/display_args", [{incl_cond, include}]},
+		   {app, inets, [{incl_cond, include}]},
+		   {app, mnesia, [{incl_cond, exclude}]},
+		   {app, ssl, [{incl_cond, exclude}]},
+		   {app, runtime_tools, [{incl_cond, exclude}]},
+		   {app, syntax_tools, [{incl_cond, exclude}]}]}.
+{sys,[{escript,"examples/display_args",[{incl_cond,include}]},
+      {app,inets,[{incl_cond,include}]},
+      {app,mnesia,[{incl_cond,exclude}]},
+      {app,ssl,[{incl_cond,exclude}]},
+      {app,runtime_tools,[{incl_cond,exclude}]},
+      {app,syntax_tools,[{incl_cond,exclude}]}]}
+2&gt;
+2&gt; {ok, Server} = reltool:start_server([Config]).
+{ok,&lt;0.66.0&gt;}
+3&gt;
+3&gt; reltool:get_config(Server).
+{ok,{sys,[{escript,"/usr/local/lib/erlang/lib/reltool-0.7.3/examples/display_args",
+                   [{incl_cond,include}]},
+          {app,inets,[{incl_cond,include}]},
+          {app,mnesia,[{incl_cond,exclude}]},
+          {app,runtime_tools,[{incl_cond,exclude}]},
+          {app,ssl,[{incl_cond,exclude}]},
+          {app,syntax_tools,[{incl_cond,exclude}]}]}}
+4&gt;
+4&gt; reltool:get_config(Server, false, false).
+{ok,{sys,[{escript,"/usr/local/lib/erlang/lib/reltool-0.7.3/examples/display_args",
+                   [{incl_cond,include}]},
+          {app,inets,[{incl_cond,include}]},
+          {app,mnesia,[{incl_cond,exclude}]},
+          {app,runtime_tools,[{incl_cond,exclude}]},
+          {app,ssl,[{incl_cond,exclude}]},
+          {app,syntax_tools,[{incl_cond,exclude}]}]}}
+5&gt;
+5&gt; reltool:get_config(Server, true, false).
+{ok,{sys,[{root_dir,"/usr/local/lib/erlang"},
+          {lib_dirs,[]},
+          {escript,"/usr/local/lib/erlang/lib/reltool-0.7.3/examples/display_args",
+                   [{incl_cond,include}]},
+          {mod_cond,all},
+          {incl_cond,derived},
+          {app,inets,
+               [{incl_cond,include},{vsn,undefined},{lib_dir,undefined}]},
+          {app,mnesia,[{incl_cond,exclude}]},
+          {app,runtime_tools,[{incl_cond,exclude}]},
+          {app,ssl,[{incl_cond,exclude}]},
+          {app,syntax_tools,[{incl_cond,exclude}]},
+          {boot_rel,"start_clean"},
+          {rel,"start_clean","1.0",[]},
+          {rel,"start_sasl","1.0",[sasl]},
+          {emu_name,"beam"},
+          {relocatable,true},
+          {profile,development},
+          {incl_sys_filters,[".*"]},
+          {excl_sys_filters,[]},
+          {incl_app_filters,[".*"]},
+          {excl_app_filters,[]},
+          {incl_archive_filters,[".*"]},
+          {excl_archive_filters,[[...]|...]},
+          {archive_opts,[]},
+          {rel_app_type,...},
+          {...}|...]}}
+6&gt;
+6&gt; reltool:get_config(Server, true, true).
+{ok,{sys,[{root_dir,"/usr/local/lib/erlang"},
+          {lib_dirs,[]},
+          {escript,"/usr/local/lib/erlang/lib/reltool-0.7.3/examples/display_args",
+                   [{incl_cond,include}]},
+          {mod_cond,all},
+          {incl_cond,derived},
+          {erts,[{app,erts,
+                      [{vsn,"9.0"},
+                       {lib_dir,"/usr/local/lib/erlang/lib/erts-9.0"},
+                       {mod,erl_prim_loader,[]},
+                       {mod,erl_tracer,[]},
+                       {mod,erlang,[]},
+                       {mod,erts_code_purger,[]},
+                       {mod,erts_dirty_process_code_checker,[]},
+                       {mod,erts_internal,[]},
+                       {mod,erts_literal_area_collector,[]},
+                       {mod,init,[]},
+                       {mod,otp_ring0,...},
+                       {mod,...},
+                       {...}|...]}]},
+          {app,compiler,
+               [{vsn,"7.0.4"},
+                {lib_dir,"/usr/local/lib/erlang/lib/compiler-7.0.4"},
+                {mod,beam_a,[]},
+                {mod,beam_asm,[]},
+                {mod,beam_block,[]},
+                {mod,beam_bs,[]},
+                {mod,beam_bsm,[]},
+                {mod,beam_clean,[]},
+                {mod,beam_dead,[]},
+                {mod,beam_dict,[]},
+                {mod,beam_disasm,[]},
+                {mod,beam_except,[]},
+                {mod,beam_flatten,...},
+                {mod,...},
+                {...}|...]},
+          {app,crypto,
+               [{vsn,"3.7.4"},
+                {lib_dir,"/usr/local/lib/erlang/lib/crypto-3.7.4"},
+                {mod,crypto,[]},
+                {mod,crypto_ec_curves,[]}]},
+          {app,hipe,
+               [{vsn,"3.15.4"},
+                {lib_dir,"/usr/local/lib/erlang/lib/hipe-3.15.4"},
+                {mod,cerl_cconv,[]},
+                {mod,cerl_closurean,[]},
+                {mod,cerl_hipeify,[]},
+                {mod,cerl_lib,[]},
+                {mod,cerl_messagean,[]},
+                {mod,cerl_pmatch,[]},
+                {mod,cerl_prettypr,[]},
+                {mod,cerl_to_icode,[]},
+                {mod,cerl_typean,...},
+                {mod,...},
+                {...}|...]},
+          {app,inets,
+               [{incl_cond,include},
+                {vsn,"6.3.9"},
+                {lib_dir,"/usr/local/lib/erlang/lib/inets-6.3.9"},
+                {mod,ftp,[]},
+                {mod,ftp_progress,[]},
+                {mod,ftp_response,[]},
+                {mod,ftp_sup,[]},
+                {mod,http_chunk,[]},
+                {mod,http_request,[]},
+                {mod,http_response,...},
+                {mod,...},
+                {...}|...]},
+          {app,kernel,
+               [{vsn,"5.2"},
+                {lib_dir,"/usr/local/lib/erlang/lib/kernel-5.2"},
+                {mod,application,[]},
+                {mod,application_controller,[]},
+                {mod,application_master,[]},
+                {mod,application_starter,[]},
+                {mod,auth,[]},
+                {mod,code,[]},
+                {mod,code_server,...},
+                {mod,...},
+                {...}|...]},
+          {app,mnesia,[{incl_cond,exclude}]},
+          {app,runtime_tools,[{incl_cond,exclude}]},
+          {app,sasl,
+               [{vsn,"3.0.3"},
+                {lib_dir,"/usr/local/lib/erlang/lib/sasl-3.0.3"},
+                {mod,alarm_handler,[]},
+                {mod,erlsrv,[]},
+                {mod,format_lib_supp,[]},
+                {mod,misc_supp,...},
+                {mod,...},
+                {...}|...]},
+          {app,ssl,[{incl_cond,exclude}]},
+          {app,stdlib,
+               [{vsn,"3.3"},
+                {lib_dir,"/usr/local/lib/erlang/lib/stdlib-3.3"},
+                {mod,array,[]},
+                {mod,base64,...},
+                {mod,...},
+                {...}|...]},
+          {app,syntax_tools,[{incl_cond,exclude}]},
+          {app,tools,
+               [{vsn,"2.9.1"},{lib_dir,[...]},{mod,...},{...}|...]},
+          {boot_rel,"start_clean"},
+          {rel,"start_clean","1.0",[]},
+          {rel,"start_sasl","1.0",[...]},
+          {emu_name,"beam"},
+          {relocatable,true},
+          {profile,...},
+          {...}|...]}}
+7&gt;
+7&gt; reltool:get_config([{sys, [{profile, embedded}]}], true, false).
+{ok,{sys,[{root_dir,"/usr/local/lib/erlang"},
+          {lib_dirs,[]},
+          {mod_cond,all},
+          {incl_cond,derived},
+          {boot_rel,"start_clean"},
+          {rel,"start_clean","1.0",[]},
+          {rel,"start_sasl","1.0",[sasl]},
+          {emu_name,"beam"},
+          {relocatable,true},
+          {profile,embedded},
+          {incl_sys_filters,["^bin","^erts","^lib","^releases"]},
+          {excl_sys_filters,["^bin/(erlc|dialyzer|typer)(|\\.exe)$",
+                             "^erts.*/bin/(erlc|dialyzer|typer)(|\\.exe)$",
+                             "^erts.*/bin/.*(debug|pdb)"]},
+          {incl_app_filters,["^ebin","^include","^priv"]},
+          {excl_app_filters,[]},
+          {incl_archive_filters,[".*"]},
+          {excl_archive_filters,["^include$","^priv$"]},
+          {archive_opts,[]},
+          {rel_app_type,permanent},
+          {embedded_app_type,load},
+          {app_file,keep},
+          {debug_info,keep}]}}
+8&gt;
+8&gt; reltool:get_config([{sys, [{profile, standalone}]}], true, false).
+{ok,{sys,[{root_dir,"/usr/local/lib/erlang"},
+          {lib_dirs,[]},
+          {mod_cond,all},
+          {incl_cond,derived},
+          {boot_rel,"start_clean"},
+          {rel,"start_clean","1.0",[]},
+          {rel,"start_sasl","1.0",[sasl]},
+          {emu_name,"beam"},
+          {relocatable,true},
+          {profile,standalone},
+          {incl_sys_filters,["^bin/(erl|epmd)(|\\.exe|\\.ini)$",
+                             "^bin/start(|_clean).boot$","^erts.*/bin","^lib$"]},
+          {excl_sys_filters,["^erts.*/bin/(erlc|dialyzer|typer)(|\\.exe)$",
+                             "^erts.*/bin/(start|escript|to_erl|run_erl)(|\\.exe)$",
+                             "^erts.*/bin/.*(debug|pdb)"]},
+          {incl_app_filters,["^ebin","^priv"]},
+          {excl_app_filters,["^ebin/.*\\.appup$"]},
+          {incl_archive_filters,[".*"]},
+          {excl_archive_filters,["^include$","^priv$"]},
+          {archive_opts,[]},
+          {rel_app_type,permanent},
+          {app_file,keep},
+          {debug_info,keep}]}}
+    </fo:block>
+
+  <fo:block id="idp575200" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.3.3 
+      Generate release and script files</fo:block>
+    
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+Erlang/OTP 20 [erts-9.0] [source-c13b302] [64-bit] [smp:4:4] [ds:4:4:10] [async-threads:10]
+[hipe] [kernel-poll:false]
+Eshell V9.0  (abort with ^G)
+1&gt;
+1&gt; {ok, Server} = reltool:start_server([{config, {sys, [{boot_rel, "NAME"},
+                                                        {rel, "NAME", "VSN",
+                                                        [sasl]}]}}]).
+{ok,&lt;0.1288.0&gt;}
+2&gt;
+2&gt; reltool:get_config(Server).
+{ok,{sys,[{boot_rel,"NAME"},
+          {rel,"NAME","VSN",[sasl]}]}}
+3&gt;
+3&gt; reltool:get_rel(Server, "NAME").
+{ok,{release,{"NAME","VSN"},
+             {erts,"9.0"},
+             [{kernel,"5.2"},{stdlib,"3.3"},{sasl,"3.0.3"}]}}
+4&gt;
+4&gt; reltool:get_script(Server, "NAME").
+{ok,{script,{"NAME","VSN"},
+            [{preLoaded,[erl_prim_loader,erl_tracer,erlang,
+                         erts_code_purger,erts_dirty_process_code_checker,
+                         erts_internal,erts_literal_area_collector,init,otp_ring0,
+                         prim_eval,prim_file,prim_inet,prim_zip,zlib]},
+             {progress,preloaded},
+             {path,["$ROOT/lib/kernel-5.2/ebin",
+                    "$ROOT/lib/stdlib-3.3/ebin"]},
+             {primLoad,[error_handler]},
+             {kernel_load_completed},
+             {progress,kernel_load_completed},
+             {path,["$ROOT/lib/kernel-5.2/ebin"]},
+             {primLoad,[application,application_controller,
+                        application_master,application_starter,auth,code,
+                        code_server,disk_log,disk_log_1,disk_log_server,
+                        disk_log_sup,dist_ac,dist_util,erl_boot_server|...]},
+             {path,["$ROOT/lib/stdlib-3.3/ebin"]},
+             {primLoad,[array,base64,beam_lib,binary,c,calendar,dets,
+                        dets_server,dets_sup,dets_utils,dets_v9,dict|...]},
+             {path,["$ROOT/lib/sasl-3.0.3/ebin"]},
+             {primLoad,[alarm_handler,erlsrv,format_lib_supp,misc_supp,
+                        rb,rb_format_supp,release_handler,release_handler_1,sasl,
+                        sasl_report|...]},
+             {progress,modules_loaded},
+             {path,["$ROOT/lib/kernel-5.2/ebin",
+                    "$ROOT/lib/stdlib-3.3/ebin","$ROOT/lib/sasl-3.0.3/ebin"]},
+             {kernelProcess,heart,{heart,start,[]}},
+             {kernelProcess,error_logger,{error_logger,start_link,[]}},
+             {kernelProcess,application_controller,
+                            {application_controller,start,[{...}]}},
+             {progress,init_kernel_started},
+             {apply,{application,load,[...]}},
+             {apply,{application,load,...}},
+             {progress,applications_loaded},
+             {apply,{...}},
+             {apply,...},
+             {...}|...]}}
+5&gt;
+5&gt; reltool:stop(Server).
+ok
+    </fo:block>
+  <fo:block id="idp579312" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.3.4 
+      Create a target system</fo:block>
+    
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+Erlang/OTP 20 [erts-9.0] [source-c13b302] [64-bit] [smp:4:4] [ds:4:4:10] [async-threads:10]
+[hipe] [kernel-poll:false]
+Eshell V9.0  (abort with ^G)
+1&gt;
+1&gt; Config = {sys, [{escript, "examples/display_args", [{incl_cond, include}]},
+		   {app, inets, [{incl_cond, include}]},
+		   {app, mnesia, [{incl_cond, exclude}]},
+		   {app, ssl, [{incl_cond, exclude}]},
+		   {app, runtime_tools, [{incl_cond, exclude}]},
+		   {app, syntax_tools, [{incl_cond, exclude}]}]}.
+{sys,[{escript,"examples/display_args",[{incl_cond,include}]},
+      {app,inets,[{incl_cond,include}]},
+      {app,mnesia,[{incl_cond,exclude}]},
+      {app,ssl,[{incl_cond,exclude}]},
+      {app,runtime_tools,[{incl_cond,exclude}]},
+      {app,syntax_tools,[{incl_cond,exclude}]}]}
+2&gt;
+2&gt; {ok, Spec} = reltool:get_target_spec([Config]).
+{ok,[{create_dir,"releases",
+         [{write_file,"start_erl.data","9.0 1.0\n"},
+          {create_dir,"1.0",
+              [{write_file,"start_clean.rel",
+                   [37,37,32,114,101,108,32,103,101,110,101,114,97,116|...]},
+               {write_file,"start_clean.script",
+                   [37,37,32,115,99,114,105,112,116,32,103,101,110|...]},
+               {write_file,"start_clean.boot",
+                   &lt;&lt;131,104,3,119,6,115,99,114,105,112,116,104,...&gt;&gt;},
+               {write_file,"start_sasl.rel",
+                   [37,37,32,114,101,108,32,103,101,110,101|...]},
+               {write_file,"start_sasl.script",
+                   [37,37,32,115,99,114,105,112,116,32|...]},
+               {write_file,"start_sasl.boot",
+                   &lt;&lt;131,104,3,119,6,115,99,114,105,...&gt;&gt;}]}]},
+     {create_dir,"bin",
+         [{copy_file,"display_args.escript",
+              "/usr/local/lib/erlang/lib/reltool-0.7.3/examples/display_args"},
+          {copy_file,"display_args","erts-9.0/bin/escript"},
+          {copy_file,"start","erts-9.0/bin/start"},
+          {copy_file,"ct_run","erts-9.0/bin/ct_run"},
+          {copy_file,"dialyzer","erts-9.0/bin/dialyzer"},
+          {copy_file,"run_erl","erts-9.0/bin/run_erl"},
+          {copy_file,"erl","erts-9.0/bin/dyn_erl"},
+          {copy_file,"to_erl","erts-9.0/bin/to_erl"},
+          {copy_file,"epmd","erts-9.0/bin/epmd"},
+          {copy_file,"erlc","erts-9.0/bin/erlc"},
+          {copy_file,"typer","erts-9.0/bin/typer"},
+          {copy_file,"escript","erts-9.0/bin/escript"},
+          {write_file,"start_clean.boot",&lt;&lt;131,104,3,119,6,115,...&gt;&gt;},
+          {write_file,"start_sasl.boot",&lt;&lt;131,104,3,119,6,...&gt;&gt;},
+          {write_file,"start.boot",&lt;&lt;131,104,3,119,...&gt;&gt;}]},
+     {copy_file,"Install"},
+     {create_dir,"misc",
+         [{copy_file,"makewhatis"},{copy_file,"format_man_pages"}]},
+     {create_dir,"usr",
+         [{create_dir,"lib",
+              [{copy_file,"liberts.a"},
+               {copy_file,"liberl_interface_st.a"},
+               {copy_file,"liberts_r.a"},
+               {copy_file,"libic.a"},
+               {copy_file,"liberl_interface.a"},
+               {copy_file,"libei_st.a"},
+               {copy_file,"libei.a"}]},
+          {create_dir,"include",
+              [{copy_file,"erl_memory_trace_parser.h"},
+               {copy_file,"driver_int.h"},
+               {copy_file,"ei_connect.h"},
+               {copy_file,"ei.h"},
+               {copy_file,"erl_nif_api_funcs.h"},
+               {copy_file,"erl_fixed_size_int_types.h"},
+               {copy_file,"erl_int_sizes_config.h"},
+               {copy_file,"erl_interface.h"},
+               {copy_file,"eicode.h"},
+               {copy_file,"erl_driver.h"},
+               {copy_file,"erlang.idl"},
+               {copy_file,[...]},
+               {copy_file,...},
+               {...}]}]},
+     {create_dir,"erts-9.0",
+         [{create_dir,"bin",
+              [{copy_file,"start"},
+               {copy_file,"ct_run"},
+               {copy_file,"erlexec"},
+               {copy_file,"dialyzer"},
+               {copy_file,"beam.smp"},
+               {copy_file,"run_erl"},
+               {copy_file,"erl","erts-9.0/bin/dyn_erl"},
+               {copy_file,"to_erl"},
+               {copy_file,"epmd"},
+               {copy_file,"erl_child_setup"},
+               {copy_file,"heart"},
+               {copy_file,[...]},
+               {copy_file,...},
+               {...}|...]},
+          {create_dir,"lib",
+              [{create_dir,"internal",
+                   [{copy_file,"liberts_internal.a"},
+                    {copy_file,"liberts_internal_r.a"},
+                    {copy_file,"libethread.a"},
+                    {copy_file,"README"}]},
+               {copy_file,"liberts.a"},
+               {copy_file,"liberts_r.a"}]},
+          {create_dir,"src",[{copy_file,"setuid_socket_wrap.c"}]},
+          {create_dir,"doc",[]},
+          {create_dir,"man",[]},
+          {create_dir,"include",
+              [{create_dir,"internal",
+                   [{create_dir,"i386",[{...}|...]},
+                    {copy_file,"erl_errno.h"},
+                    {copy_file,[...]},
+                    {copy_file,...},
+                    {...}|...]},
+               {copy_file,"erl_memory_trace_parser.h"},
+               {copy_file,"driver_int.h"},
+               {copy_file,"erl_nif_api_funcs.h"},
+               {copy_file,"erl_fixed_size_int_types.h"},
+               {copy_file,"erl_int_sizes_config.h"},
+               {copy_file,[...]},
+               {copy_file,...},
+               {...}]}]},
+     {create_dir,"lib",
+         [{archive,"compiler-7.0.4.ez",[],
+              [{create_dir,"compiler-7.0.4",
+                   [{create_dir,"src",
+                        [{copy_file,"beam_flatten.erl"},
+                         {copy_file,[...]},
+                         {copy_file,...},
+                         {...}|...]},
+                    {create_dir,"ebin",
+                        [{copy_file,[...]},{copy_file,...},{...}|...]}]}]},
+          {archive,"crypto-3.7.4.ez",[],
+              [{create_dir,"crypto-3.7.4",
+                   [{create_dir,"src",[{copy_file,[...]},{copy_file,...}]},
+                    {create_dir,"ebin",[{copy_file,...},{...}|...]}]}]},
+          {create_dir,"crypto-3.7.4",
+              [{create_dir,"priv",
+                   [{create_dir,"lib",[{copy_file,[...]},{copy_file,...}]},
+                    {create_dir,"obj",[{copy_file,...},{...}|...]}]}]},
+          {archive,"erts-9.0.ez",[],
+              [{create_dir,"erts-9.0",
+                   [{create_dir,"src",[{...}|...]},
+                    {create_dir,"ebin",[...]}]}]},
+          {archive,"hipe-3.15.4.ez",[],
+              [{create_dir,"hipe-3.15.4",
+                   [{create_dir,"flow",[...]},
+                    {copy_file,[...]},
+                    {create_dir,...},
+                    {...}|...]}]},
+          {archive,"inets-6.3.9.ez",[],
+              [{create_dir,"inets-6.3.9",
+                   [{create_dir,[...],...},{create_dir,...},{...}]}]},
+          {create_dir,"inets-6.3.9",
+              [{create_dir,"priv",[{create_dir,[...],...}]},
+               {create_dir,"include",[{copy_file,...},{...}]}]},
+          {archive,"kernel-5.2.ez",[],
+              [{create_dir,"kernel-5.2",[{...}|...]}]},
+          {create_dir,"kernel-5.2",
+              [{create_dir,"include",[{...}|...]}]},
+          {archive,"sasl-3.0.3.ez",[],[{create_dir,[...],...}]},
+          {archive,"stdlib-3.3.ez",[],[{create_dir,...}]},
+          {create_dir,"stdlib-3.3",[{create_dir,...}]},
+          {archive,"tools-2.9.1.ez",[],[...]}]}]}
+3&gt;
+3&gt; TargetDir = "/tmp/my_target_dir".
+"/tmp/my_target_dir"
+4&gt;
+4&gt; reltool:eval_target_spec(Spec, code:root_dir(), TargetDir).
+{error,"/tmp/my_target_dir: no such file or directory"}
+5&gt;
+5&gt; file:make_dir(TargetDir).
+ok
+6&gt;
+6&gt; reltool:eval_target_spec(Spec, code:root_dir(), TargetDir).
+ok
+7&gt;
+7&gt; file:list_dir(TargetDir).
+{ok,["bin","Install","lib","misc","usr","erts-9.0",
+     "releases"]}
+8&gt;
+8&gt; file:list_dir(filename:join([TargetDir,"lib"])).
+{ok,["tools-2.9.1.ez","kernel-5.2.ez","inets-6.3.9.ez",
+     "kernel-5.2","sasl-3.0.3.ez","hipe-3.15.4.ez","inets-6.3.9",
+     "crypto-3.7.4","crypto-3.7.4.ez","stdlib-3.3.ez",
+     "erts-9.0.ez","stdlib-3.3","compiler-7.0.4.ez"]}
+9&gt;
+9&gt; file:make_dir("/tmp/yet_another_target_dir").
+ok
+10&gt;
+10&gt; reltool:create_target([Config], "/tmp/yet_another_target_dir").
+ok
+11&gt;
+11&gt; file:list_dir("/tmp/yet_another_target_dir").
+{ok,["bin","Install","lib","misc","usr","erts-9.0",
+     "releases"]}
+    </fo:block>
+
+  <fo:block id="idp507360" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">2   
+      Reference Manual</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Reltool is a release management tool. It analyses a given
+     Erlang/OTP installation and determines various dependencies
+     between applications. The <fo:inline font-family="monospace">graphical</fo:inline> frontend depicts the
+     dependencies and enables interactive customization of a
+     target system. The backend provides a <fo:inline font-family="monospace">batch</fo:inline> interface
+     for generation of customized target systems.</fo:block>
+  <fo:block page-break-before="always" id="idp872416" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">reltool</fo:marker>reltool</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  reltool
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This is an interface module for the Reltool application.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">Reltool</fo:inline> is a release management tool. It analyses a
+    given Erlang/OTP installation and determines various dependencies
+    between applications. The <fo:inline font-family="monospace">graphical</fo:inline> frontend depicts the
+    dependencies and enables interactive customization of a target
+    system. The backend provides a <fo:inline font-family="monospace">batch</fo:inline> interface for
+    generation of customized target systems.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The tool uses an installed Erlang/OTP system as input.
+    <fo:inline font-family="monospace">root_dir</fo:inline> is the root directory of the analysed system and
+    it defaults to the system executing Reltool. Applications
+    may also be located outside <fo:inline font-family="monospace">root_dir</fo:inline>. <fo:inline font-family="monospace">lib_dirs</fo:inline>
+    defines library directories where additional applications
+    may reside and it defaults to the directories
+    listed by the operating system environment variable
+    <fo:inline font-family="monospace">ERL_LIBS</fo:inline>. See the module <fo:inline font-family="monospace">code</fo:inline> for more info.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">An application directory <fo:inline font-family="monospace">AppDir</fo:inline> under a library
+    directory is recognized by the existence of an <fo:inline font-family="monospace">AppDir/ebin</fo:inline>
+    directory. If this does not exist, Reltool will not
+    consider <fo:inline font-family="monospace">AppDir</fo:inline> at all when looking for applications.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">It is recommended that application directories are named as the
+    application, possibly followed by a dash and the version
+    number. For example <fo:inline font-family="monospace">myapp</fo:inline> or <fo:inline font-family="monospace">myapp-1.1</fo:inline>.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Finally single modules and entire applications may be read from
+    Escripts.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Some configuration parameters control the behavior of Reltool
+    on system (<fo:inline font-family="monospace">sys</fo:inline>) level. Others provide control on
+    application (<fo:inline font-family="monospace">app</fo:inline>) level and yet others are on module
+    (<fo:inline font-family="monospace">mod</fo:inline>) level. Module level parameters override application
+    level parameters and application level parameters override system
+    level parameters. Escript <fo:inline font-family="monospace">escript</fo:inline> level parameters
+    override system level parameters.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The following top level <fo:inline font-family="monospace">options</fo:inline> are supported:</fo:block>
+
+    <fo:block space-after="0.25em" space-before="0.25em">
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">config</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This is the main option and it controls the configuration
+           of Reltool.  It can either be a <fo:inline font-family="monospace">sys</fo:inline> tuple or
+           a name of a <fo:inline font-family="monospace">file</fo:inline> containing a sys tuple.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">trap_exit</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This option controls the error handling behavior of
+           Reltool.  By default the window processes traps
+           exit, but this behavior can altered by setting
+           <fo:inline font-family="monospace">trap_exit</fo:inline> to <fo:inline font-family="monospace">false</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">wx_debug</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This option controls the debug level of <fo:inline font-family="monospace">wx</fo:inline>. As its
+           name indicates it is only useful for debugging. See
+           <fo:inline font-family="monospace">wx:debug/1</fo:inline> for more info.</fo:block>
+      </fo:block></fo:block-container>
+
+    </fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Besides the already mentioned source parameters <fo:inline font-family="monospace">root_dir</fo:inline>
+    and <fo:inline font-family="monospace">lib_dirs</fo:inline>, the following system (<fo:inline font-family="monospace">sys</fo:inline>) level
+    options are supported:</fo:block>
+
+    <fo:block space-after="0.25em" space-before="0.25em">
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">erts</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Erts specific configuration. See application level options
+        below.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">escript</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Escript specific configuration. An escript has a mandatory
+        file name and escript level options that are described
+        below.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">app</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Application specific configuration. An application has a
+        mandatory name and application level options that are
+        described below.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">mod_cond</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This parameter controls the module inclusion policy. It
+        defaults to <fo:inline font-family="monospace">all</fo:inline> which means that if an application is
+        included (either explicitly or implicitly) all modules in that
+        application will be included. This implies that both modules
+        that exist in the <fo:inline font-family="monospace">ebin</fo:inline> directory of the application,
+        as well as modules that are named in the <fo:inline font-family="monospace">app</fo:inline> file will
+        be included. If the parameter is set to <fo:inline font-family="monospace">ebin</fo:inline>, both
+        modules in the <fo:inline font-family="monospace">ebin</fo:inline> directory and derived modules are
+        included. If the parameter is set to <fo:inline font-family="monospace">app</fo:inline>, both modules
+        in the <fo:inline font-family="monospace">app</fo:inline> file and derived modules are included.
+        <fo:inline font-family="monospace">derived</fo:inline> means that only modules that are used by other
+        included modules are included. The <fo:inline font-family="monospace">mod_cond</fo:inline> setting on
+        system level is used as default for all applications.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">incl_cond</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This parameter controls the application and escript
+        inclusion policy. It defaults to <fo:inline font-family="monospace">derived</fo:inline> which means
+        that the applications that do not have any explicit
+        <fo:inline font-family="monospace">incl_cond</fo:inline> setting, will only be included if any other
+        (explicitly or implicitly included) application uses it. The
+        value <fo:inline font-family="monospace">include</fo:inline> implies that all applications and
+        escripts that do not have any explicit <fo:inline font-family="monospace">incl_cond</fo:inline>
+        setting will be included. <fo:inline font-family="monospace">exclude</fo:inline> implies that all
+        applications and escripts that do not have any explicit
+        <fo:inline font-family="monospace">incl_cond</fo:inline> setting will be excluded.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">boot_rel</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A target system may have several releases but the one given
+        as <fo:inline font-family="monospace">boot_rel</fo:inline> will be used as default when the system is
+        booting up.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">rel</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Release specific configuration. Each release maps to a
+        <fo:inline font-family="monospace">rel</fo:inline>, <fo:inline font-family="monospace">script</fo:inline> and <fo:inline font-family="monospace">boot</fo:inline> file. See the
+        module <fo:inline font-family="monospace">systools</fo:inline> for more info about the details. Each
+        release has a name, a version and a set of applications with a
+        few release specific parameters such as type and included
+        applications.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">relocatable</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This parameter controls whether the <fo:inline font-family="monospace">erl</fo:inline> executable
+        in the target system should automatically determine where it
+        is installed or if it should use a hardcoded path to the
+        installation. In the latter case the target system must be
+        installed with <fo:inline font-family="monospace">reltool:install/2</fo:inline> before it can be
+        used. If the system is relocatable, the file tree containing
+        the target system can be moved to another location without
+        re-installation. The default is <fo:inline font-family="monospace">true</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">profile</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The creation of the specification for a target system is
+        performed in two steps. In the first step a complete
+        specification is generated. It will likely contain much more
+        files than you are interested in in your customized target
+        system. In the second step the specification will be filtered
+        according to your filters. There you have the ability to
+        specify filters per application as well as system wide
+        filters. You can also select a <fo:inline font-family="monospace">profile</fo:inline> for your
+        system. Depending on the <fo:inline font-family="monospace">profile</fo:inline>, different default
+        filters will be used. There are three different profiles to
+        choose from: <fo:inline font-family="monospace">development</fo:inline>, <fo:inline font-family="monospace">embedded</fo:inline> and
+        <fo:inline font-family="monospace">standalone</fo:inline>. <fo:inline font-family="monospace">development</fo:inline> is default. The
+        parameters that are affected by the <fo:inline font-family="monospace">profile</fo:inline> are:
+        <fo:inline font-family="monospace">incl_sys_filters</fo:inline>, <fo:inline font-family="monospace">excl_sys_filters</fo:inline>,
+        <fo:inline font-family="monospace">incl_app_filters</fo:inline> and <fo:inline font-family="monospace">excl_app_filters</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">app_file</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This parameter controls the default handling of the
+        <fo:inline font-family="monospace">app</fo:inline> files when a target system is generated. It
+        defaults to <fo:inline font-family="monospace">keep</fo:inline> which means that <fo:inline font-family="monospace">app</fo:inline> files are
+        copied to the target system and their contents are kept as
+        they are. <fo:inline font-family="monospace">strip</fo:inline> means that a new <fo:inline font-family="monospace">app</fo:inline> file is
+        generated from the contents of the original <fo:inline font-family="monospace">app</fo:inline> file
+        where the non included modules are removed from the
+        file. <fo:inline font-family="monospace">all</fo:inline> does also imply that a new <fo:inline font-family="monospace">app</fo:inline> file is
+        generated from the contents of the original <fo:inline font-family="monospace">app</fo:inline> file,
+        with the difference that all included modules are added to the
+        file. If the application does not have any <fo:inline font-family="monospace">app</fo:inline> file a
+        file will be created for <fo:inline font-family="monospace">all</fo:inline> but not for <fo:inline font-family="monospace">keep</fo:inline>
+        and <fo:inline font-family="monospace">strip</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">debug_info</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-family="monospace">debug_info</fo:inline> parameter controls whether the debug
+        information in the beam file should be kept (<fo:inline font-family="monospace">keep</fo:inline>) or
+        stripped <fo:inline font-family="monospace">strip</fo:inline> when the file is copied to the target
+        system.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">excl_lib</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+	<fo:block background-color="#ffd6d6" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Warning:</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This option is experimental.</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the <fo:inline font-family="monospace">excl_lib</fo:inline> option is set to <fo:inline font-family="monospace">otp_root</fo:inline>
+        then reltool will not copy anything from the Erlang/OTP
+        installation ($OTP_ROOT) into the target structure. The goal
+        is to create a "slim" release which can be used together with
+        an existing Erlang/OTP installation. The target structure will
+        therefore only contain a <fo:inline font-family="monospace">lib</fo:inline> directory with the
+        applications that were found outside of $OTP_ROOT (typically
+        your own applications), and a <fo:inline font-family="monospace">releases</fo:inline> directory with
+        the generated <fo:inline font-family="monospace">.rel,</fo:inline> <fo:inline font-family="monospace">.script</fo:inline> and <fo:inline font-family="monospace">.boot</fo:inline>
+        files.</fo:block>
+
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When starting this release, three things must be specified:</fo:block>
+	<fo:block space-after="0.25em" space-before="0.25em">
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-weight="bold">Which <fo:inline font-family="monospace">releases</fo:inline> directory to use</fo:inline></fo:block>
+	  <fo:block-container><fo:block start-indent="2em">Tell the release handler to use the <fo:inline font-family="monospace">releases</fo:inline>
+	  directory in our target structure instead of
+	  <fo:inline font-family="monospace">$OTP_ROOT/releases</fo:inline>. This is done by setting the SASL
+	  environment variable <fo:inline font-family="monospace">releases_dir</fo:inline>, either from the
+	  command line (<fo:inline font-family="monospace">-sasl releases_dir
+	  &lt;target-dir&gt;/releases</fo:inline>) or in
+	  <fo:inline font-family="monospace">sys.config</fo:inline>.</fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-weight="bold">Which boot file to use</fo:inline></fo:block>
+	  <fo:block-container><fo:block start-indent="2em">The default boot file is <fo:inline font-family="monospace">$OTP_ROOT/bin/start</fo:inline>,
+	  but in this case we need to specify a boot file from our
+	  target structure, typically
+	  <fo:inline font-family="monospace">&lt;target-dir&gt;/releases/&lt;vsn&gt;/&lt;RelName&gt;</fo:inline>. This
+	  is done with the <fo:inline font-family="monospace">-boot</fo:inline> command line option to
+	  <fo:inline font-family="monospace">erl</fo:inline></fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-weight="bold">The location of our applications</fo:inline></fo:block>
+	  <fo:block-container><fo:block start-indent="2em">The generated .script (and .boot) file uses the
+	  environment variable <fo:inline font-family="monospace">$RELTOOL_EXT_LIB</fo:inline> as prefix for
+	  the paths to all applications. The <fo:inline font-family="monospace">-boot_var</fo:inline> option
+	  to <fo:inline font-family="monospace">erl</fo:inline> can be used for specifying the value of this
+	  variable, typically <fo:inline font-family="monospace">-boot_var RELTOOL_EXT_LIB
+	  &lt;target-dir&gt;/lib</fo:inline>.</fo:block></fo:block-container>
+	</fo:block>
+
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Example:</fo:block>
+	<fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">erl -sasl releases_dir \"mytarget/releases\" -boot mytarget/releases/1.0/myrel\
+ -boot_var RELTOOL_EXT_LIB mytarget/lib</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">incl_sys_filters</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This parameter normally contains a list of regular
+        expressions that controls which files in the system
+        should be included. Each file in the target system must match
+        at least one of the listed regular expressions in order to be
+        included. Further the files may not match any filter in
+        <fo:inline font-family="monospace">excl_sys_filters</fo:inline> in order to be included. Which
+        application files should be included is controlled with
+        the parameters <fo:inline font-family="monospace">incl_app_filters</fo:inline> and
+        <fo:inline font-family="monospace">excl_app_filters</fo:inline>. This parameter defaults to
+        <fo:inline font-family="monospace">[".*"]</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">excl_sys_filters</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This parameter normally contains a list of regular
+        expressions that controls which files in the system should
+        not be included in the target system. In order to be
+        included, a file must match some filter in
+        <fo:inline font-family="monospace">incl_sys_filters</fo:inline> but not any filter in
+        <fo:inline font-family="monospace">excl_sys_filters</fo:inline>. This parameter defaults to
+        <fo:inline font-family="monospace">[]</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">incl_app_filters</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This parameter normally contains a list of regular
+        expressions that controls which application specific files
+        that should be included. Each file in the application must
+        match at least one of the listed regular expressions in order
+        to be included.  Further the files may not match any filter in
+        <fo:inline font-family="monospace">excl_app_filters</fo:inline> in order to be included. This
+        parameter defaults to <fo:inline font-family="monospace">[".*"]</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">excl_app_filters</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This parameter normally contains a list of regular
+        expressions that controls which application specific files
+        should not be included in the target system. In order to
+        be included, a file must match some filter in
+        <fo:inline font-family="monospace">incl_app_filters</fo:inline> but not any filter in
+        <fo:inline font-family="monospace">excl_app_filters</fo:inline>. This parameter defaults to
+        <fo:inline font-family="monospace">[]</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">incl_archive_filters</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This parameter normally contains a list of regular
+        expressions that controls which top level directories in an
+        application should be included in an archive file (as
+        opposed to being included as a regular directory outside the
+        archive). Each top directory in the application must match at
+        least one of the listed regular expressions in order to be
+        included. Further the files may not match any filter in
+        <fo:inline font-family="monospace">excl_app_filters</fo:inline> in order to be included. This
+        parameter defaults to <fo:inline font-family="monospace">[".*"]</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+
+       <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">excl_archive_filters</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This parameter normally contains a list of regular
+        expressions that controls which top level directories in an
+        application should not be included in an archive file. In
+        order to be included in the application archive, a top
+        directory must match some filter in <fo:inline font-family="monospace">incl_archive_filters</fo:inline>
+        but not any filter in <fo:inline font-family="monospace">excl_archive_filters</fo:inline>. This
+        parameter defaults to <fo:inline font-family="monospace">["^include$","^priv$"]</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">archive_opts</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This parameter contains a list of options that are given to
+        <fo:inline font-family="monospace">zip:create/3</fo:inline> when application specific files are
+        packaged into an archive. Only a subset of the options are
+        supported. The most useful options in this context are the ones
+        that control which types of files should be compressed. This
+        parameter defaults to <fo:inline font-family="monospace">[]</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+
+    </fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">On application (<fo:inline font-family="monospace">escript</fo:inline>) level, the following options are
+    supported:</fo:block>
+
+   <fo:block space-after="0.25em" space-before="0.25em">
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">incl_cond</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The value of this parameter overrides the parameter with the
+        same name on system level.</fo:block>
+      </fo:block></fo:block-container>
+    </fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">On application (<fo:inline font-family="monospace">app</fo:inline>) level, the following options are
+       supported:</fo:block>
+
+   <fo:block space-after="0.25em" space-before="0.25em">
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">vsn</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The version of the application. In an installed system there may
+        exist several versions of an application. The <fo:inline font-family="monospace">vsn</fo:inline> parameter
+        controls which version of the application will be chosen.</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This parameter is mutual exclusive with <fo:inline font-family="monospace">lib_dir</fo:inline>. If
+	<fo:inline font-family="monospace">vsn</fo:inline> and <fo:inline font-family="monospace">lib_dir</fo:inline> are both omitted, the latest version
+	will be chosen.</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Note that in order for reltool to sort application versions
+	and thereby be able to select the latest, it is required that
+	the version id for the application consits of integers and
+	dots only, for example <fo:inline font-family="monospace">1</fo:inline>, <fo:inline font-family="monospace">2.0</fo:inline> or
+	<fo:inline font-family="monospace">3.17.1</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">lib_dir</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The directory to read the application from. This parameter
+	can be used to point out a specific location to fetch the
+	application from. This is useful for instance if the parent
+	directory for some reason is no good as a library directory on
+	system level.</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This parameter is mutual exclusive with <fo:inline font-family="monospace">vsn</fo:inline>. If
+	<fo:inline font-family="monospace">vsn</fo:inline> and <fo:inline font-family="monospace">lib_dir</fo:inline> are both omitted, the latest version
+	will be chosen.</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Note that in order for reltool to sort application versions
+	and thereby be able to select the latest, it is required that
+	the version id for the application consits of integers and
+	dots only, for example <fo:inline font-family="monospace">1</fo:inline>, <fo:inline font-family="monospace">2.0</fo:inline> or
+	<fo:inline font-family="monospace">3.17.1</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">mod</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Module specific configuration. A module has a mandatory
+        name and module level options that are described below.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">mod_cond</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The value of this parameter overrides the parameter with the
+        same name on system level.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">incl_cond</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The value of this parameter overrides the parameter with the
+        same name on system level.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">app_file</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The value of this parameter overrides the parameter with the
+        same name on system level.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">debug_info</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The value of this parameter overrides the parameter with the
+        same name on system level.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">incl_app_filters</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The value of this parameter overrides the parameter with the
+        same name on system level.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">excl_app_filters</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The value of this parameter overrides the parameter with the
+        same name on system level.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">incl_archive_filters</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The value of this parameter overrides the parameter with the
+        same name on system level.</fo:block>
+      </fo:block></fo:block-container>
+
+       <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">excl_archive_filters</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The value of this parameter overrides the parameter with the
+        same name on system level.</fo:block>
+      </fo:block></fo:block-container>
+
+     <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">archive_opts</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The value of this parameter overrides the parameter with the
+        same name on system level.</fo:block>
+      </fo:block></fo:block-container>
+    </fo:block>
+
+     <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">On module (<fo:inline font-family="monospace">mod</fo:inline>) level, the following options are
+       supported:</fo:block>
+
+   <fo:block space-after="0.25em" space-before="0.25em">
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">incl_cond</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This parameter controls whether the module is included or not. By
+        default the <fo:inline font-family="monospace">mod_cond</fo:inline> parameter on application and system level
+        will be used to control whether the module is included or not. The
+        value of <fo:inline font-family="monospace">incl_cond</fo:inline> overrides the module inclusion policy.
+        <fo:inline font-family="monospace">include</fo:inline> implies that the module is included, while
+        <fo:inline font-family="monospace">exclude</fo:inline> implies that the module is not included.
+        <fo:inline font-family="monospace">derived</fo:inline> implies that the module is included if it is used
+        by any other included module.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">debug_info</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The value of this parameter overrides the parameter with
+        the same name on application level.</fo:block>
+      </fo:block></fo:block-container>
+    </fo:block>
+
+  
+
+  <fo:block id="idp382640" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">DATA TYPES</fo:block>
+    
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+options()           = [option()]
+option()            = {config, config() | file()}
+                    | {trap_exit, bool()}
+                    | {wx_debug, term()} 
+config()            = {sys, [sys()]}
+sys()               = {root_dir, root_dir()}
+                    | {lib_dirs, [lib_dir()]}
+                    | {profile, profile()}
+                    | {erts, app()}
+                    | {escript, escript_file(), [escript()]}
+                    | {app, app_name(), [app()]}
+                    | {mod_cond, mod_cond()} 
+                    | {incl_cond, incl_cond()}
+                    | {boot_rel, boot_rel()}
+                    | {rel, rel_name(), rel_vsn(), [rel_app()]}
+                    | {relocatable, relocatable()}
+                    | {app_file, app_file()}
+                    | {debug_info, debug_info()}
+                    | {incl_sys_filters, incl_sys_filters()}
+                    | {excl_sys_filters, excl_sys_filters()}
+                    | {incl_app_filters, incl_app_filters()}
+                    | {excl_app_filters, excl_app_filters()}
+                    | {incl_archive_filters, incl_archive_filters()}
+                    | {excl_archive_filters, excl_archive_filters()}
+                    | {archive_opts, [archive_opt()]}
+app()               = {vsn, app_vsn()}
+                    | {lib_dir, lib_dir()}
+                    | {mod, mod_name(), [mod()]}
+                    | {mod_cond, mod_cond()}
+                    | {incl_cond, incl_cond()}
+                    | {debug_info, debug_info()}
+                    | {app_file, app_file()}
+		    | {excl_lib, excl_lib()}
+                    | {incl_sys_filters, incl_sys_filters()}
+                    | {excl_sys_filters, excl_sys_filters()}
+                    | {incl_app_filters, incl_app_filters()}
+                    | {excl_app_filters, excl_app_filters()}
+                    | {incl_archive_filters, incl_archive_filters()}
+                    | {excl_archive_filters, excl_archive_filters()}
+                    | {archive_opts, [archive_opt()]}
+mod()               = {incl_cond, incl_cond()}
+                    | {debug_info, debug_info()}
+rel_app()           = app_name()
+                    | {app_name(), app_type()} 
+                    | {app_name(), [incl_app()]}
+                    | {app_name(), app_type(), [incl_app()]}
+app_name()          = atom()
+app_type()          = permanent | transient | temporary | load | none
+app_vsn()           = string()
+archive_opt         = zip_create_opt()
+boot_rel()          = rel_name()
+app_file()          = keep | strip | all
+debug_info()        = keep | strip
+dir()               = string()
+escript()           = {incl_cond, incl_cond()}
+escript_file()      = file()
+excl_app_filters()  = regexps()
+excl_archive_filters() = regexps()
+excl_lib()          = otp_root
+excl_sys_filters()  = regexps()
+file()              = string()
+incl_app()          = app_name()
+incl_app_filters()  = regexps()
+incl_archive_filters() = regexps()
+incl_cond()         = include | exclude | derived
+incl_sys_filters()  = regexps()
+lib_dir()           = dir()
+mod_cond()          = all | app | ebin | derived | none
+mod_name()          = atom()
+profile()           = development | embedded | standalone
+re_regexp()         = string()
+reason()            = string()
+regexps()           = [re_regexp()]
+                    | {add, [re_regexp()]}
+                    | {del, [re_regexp()]}
+rel_file()          = term()
+rel_name()          = string()
+rel_vsn()           = string()
+relocatable         = boolean()
+root_dir()          = dir()
+script_file()       = term()
+server()            = server_pid() | options()
+server_pid()        = pid()
+target_dir()        = file()
+window_pid()        = pid()
+base_dir()          = dir()
+base_file()         = file()
+top_dir()           = file()
+top_file()          = file()
+target_spec()       = [target_spec()]
+                    | {create_dir, base_dir(), [target_spec()]}
+                    | {create_dir, base_dir(), top_dir(), [target_spec()]}
+                    | {archive, base_file(), [archive_opt()], [target_spec()]}
+                    | {copy_file, base_file()}
+                    | {copy_file, base_file(), top_file()}
+                    | {write_file, base_file(), iolist()}
+                    | {strip_beam_file, base_file()}</fo:block>
+
+    
+  
+
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp697008">create_target(Server, TargetDir) -&gt; ok | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Server     = server()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TargetDir  = target_dir()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason     = reason()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Create a target system. Gives the same result as
+      <fo:inline font-family="monospace">{ok,TargetSpec}=reltool:get_target_spec(Server)</fo:inline> and
+      <fo:inline font-family="monospace">reltool:eval_target_spec(TargetSpec,RootDir,TargetDir)</fo:inline>.</fo:block></fo:block>
+    
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp131504">eval_target_spec(TargetSpec, RootDir, TargetDir) -&gt; ok | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TargetSpec = target_spec()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">RootDir    = root_dir()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TargetDir  = target_dir()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason     = reason()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Create the actual target system from a specification
+      generated by <fo:inline font-family="monospace">reltool:get_target_spec/1</fo:inline>. The creation of
+      the specification for a target system is performed in two
+      steps. In the first step a complete specification will be
+      generated. It will likely contain much more files than you are
+      interested in in your target system. In the second step the
+      specification will be filtered according to your filters. There
+      you have the ability to specify filters per application as well
+      as system wide filters. You can also select a <fo:inline font-family="monospace">profile</fo:inline> for
+      your system. Depending on the <fo:inline font-family="monospace">profile</fo:inline>, different default
+      filters will be used.</fo:block>
+
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The top directories <fo:inline font-family="monospace">bin</fo:inline>, <fo:inline font-family="monospace">releases</fo:inline> and
+      <fo:inline font-family="monospace">lib</fo:inline> are treated differently from other files. All other
+      files are by default copied to the target system. The
+      <fo:inline font-family="monospace">releases</fo:inline> directory contains generated <fo:inline font-family="monospace">rel</fo:inline>,
+      <fo:inline font-family="monospace">script</fo:inline>, and <fo:inline font-family="monospace">boot</fo:inline> files. The <fo:inline font-family="monospace">lib</fo:inline> directory
+      contains the applications. Which applications are included
+      and if they should be customized (archived, stripped from debug
+      info etc.) is specified with various configuration
+      parameters. The files in the <fo:inline font-family="monospace">bin</fo:inline> directory are copied
+      from the <fo:inline font-family="monospace">erts-vsn/bin</fo:inline> directory, but only those files
+      that were originally included in the <fo:inline font-family="monospace">bin</fo:inline> directory of the
+      source system.</fo:block>
+
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the configuration parameter <fo:inline font-family="monospace">relocatable</fo:inline> was set to
+      <fo:inline font-family="monospace">true</fo:inline> there is no need to install the target system with
+      <fo:inline font-family="monospace">reltool:install/2</fo:inline> before it can be started. In that case
+      the file tree containing the target system can be moved without
+      re-installation.</fo:block>
+
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">In most cases, the <fo:inline font-family="monospace">RootDir</fo:inline> parameter should be set to
+      the same as the <fo:inline font-family="monospace">root_dir</fo:inline> configuration parameter used in
+      the call to <fo:inline font-family="monospace">reltool:get_target_spec/1</fo:inline>
+      (or <fo:inline font-family="monospace">code:root_dir()</fo:inline> if the configuration parameter is not
+      set). In some cases it might be useful to evaluate the same
+      target specification towards different root directories. This
+      should, however, be used with great care as it requires
+      equivalent file structures under all roots.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp331664">get_config(Server) -&gt; {ok, Config} | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Server  = server()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Config  = config()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason  = reason()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Get reltool configuration. Shorthand for
+      <fo:inline font-family="monospace">reltool:get_config(Server,false,false)</fo:inline>.</fo:block></fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp745824">get_config(Server, InclDefaults, InclDerived) -&gt; {ok, Config} | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Server        = server()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">InclDefaults  = incl_defaults()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">InclDerived   = incl_derived()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Config        = config()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason        = reason()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Get reltool configuration. Normally, only the explicit
+      configuration parameters with values that differ from their
+      defaults are interesting. But the builtin default values can be
+      returned by setting <fo:inline font-family="monospace">InclDefaults</fo:inline> to <fo:inline font-family="monospace">true</fo:inline>. The
+      derived configuration can be returned by setting
+      <fo:inline font-family="monospace">InclDerived</fo:inline> to <fo:inline font-family="monospace">true</fo:inline>.</fo:block></fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp431600">get_rel(Server, Relname) -&gt; {ok, RelFile} | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Server  = server()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">RelName = rel_name()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">RelFile = rel_file()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason  = reason()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Get contents of a release file. See <fo:inline font-family="monospace">rel(4)</fo:inline> for more
+      details.</fo:block></fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp724048">get_script(Server, Relname) -&gt; {ok, ScriptFile | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Server     = server()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">RelName    = rel_name()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ScriptFile = script_file()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason     = reason()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Get contents of a boot script file. See <fo:inline font-family="monospace">script(4)</fo:inline> for
+      more details.</fo:block></fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idm33472">get_status(Server) -&gt; {ok, [Warning]} | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Server  = server()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Warning = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason  = reason()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Get status about the configuration</fo:block></fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp406352">get_server(WindowPid) -&gt; {ok, ServerPid} | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">WindowPid   = window_pid()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ServerPid   = server_pid()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason      = reason()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Return the process identifier of the server process.</fo:block></fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp334448">get_target_spec(Server) -&gt; {ok, TargetSpec} | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Server     = server()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TargetSpec = target_spec()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason     = reason()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Return a specification of the target system. The actual
+      target system can be created with
+      <fo:inline font-family="monospace">reltool:eval_target_spec/3</fo:inline>.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp295568">install(RelName, TargetDir) -&gt; ok | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">RelName    = rel_name()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TargetDir  = target_dir()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason     = reason()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Install a created target system</fo:block></fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp417984">start() -&gt; {ok, WindowPid} | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">WindowPid   = window_pid()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason      = reason()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Start a main window process with default options</fo:block></fo:block>
+  
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp428432">start(Options) -&gt; {ok, WindowPid} | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Options     = options()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">WindowPid   = window_pid()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason      = reason()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Start a main window process with options</fo:block></fo:block>
+  
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp685280">start_link(Options) -&gt; {ok, WindowPid} | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Options     = options()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">WindowPid   = window_pid()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason      = reason()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Start a main window process with options. The process is linked.</fo:block></fo:block>
+  
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp376592">start_server(Options) -&gt; {ok, ServerPid} | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Options     = options()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ServerPid   = server_pid()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason      = reason()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Start a server process with options. The server process
+      identity can be given as an argument to several other functions in the
+      API.</fo:block></fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp473536">stop(Pid) -&gt; ok | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Pid     = server_pid() | window_pid()()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason  = reason()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Stop a server or window process</fo:block></fo:block>
+  
+  
+</fo:flow>
+  </fo:page-sequence>
+</fo:root>

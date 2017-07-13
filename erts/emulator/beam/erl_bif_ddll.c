@@ -1099,7 +1099,7 @@ void erts_ddll_increment_port_count(DE_Handle *dh)
 void erts_ddll_decrement_port_count(DE_Handle *dh)
 {
     assert_drv_list_locked();
-#if DEBUG
+#ifdef DEBUG
     ASSERT(erts_smp_atomic32_dec_read_nob(&dh->port_count) >= 0);
 #else
     erts_smp_atomic32_dec_nob(&dh->port_count);
@@ -1476,8 +1476,10 @@ static void add_proc_loaded_deref(DE_Handle *dh, Process *proc)
 
 static Eterm copy_ref(Eterm ref, Eterm *hp)
 {
-    RefThing *ptr = ref_thing_ptr(ref);
-    memcpy(hp, ptr, sizeof(RefThing));
+    ErtsORefThing *ptr;
+    ASSERT(is_internal_ordinary_ref(ref));
+    ptr = ordinary_ref_thing_ptr(ref);
+    memcpy(hp, ptr, sizeof(ErtsORefThing));
     return (make_internal_ref(hp));
 }
 
@@ -1720,10 +1722,10 @@ static void notify_proc(Process *proc, Eterm ref, Eterm driver_name, Eterm type,
 	Eterm e;
 	mp = erts_alloc_message_heap(proc, &rp_locks,
 				     (6 /* tuple */ + 3 /* Error tuple */ + 
-				      REF_THING_SIZE + need),
+				      ERTS_REF_THING_SIZE + need),
 				     &hp, &ohp);
 	r = copy_ref(ref,hp);
-	hp += REF_THING_SIZE;
+	hp += ERTS_REF_THING_SIZE;
 	e = build_load_error_hp(hp, errcode);
 	hp += need;
 	mess = TUPLE2(hp,tag,e);
@@ -1731,10 +1733,10 @@ static void notify_proc(Process *proc, Eterm ref, Eterm driver_name, Eterm type,
 	mess = TUPLE5(hp,type,r,am_driver,driver_name,mess);
     } else {	
 	mp = erts_alloc_message_heap(proc, &rp_locks,
-				     6 /* tuple */ + REF_THING_SIZE,
+				     6 /* tuple */ + ERTS_REF_THING_SIZE,
 				     &hp, &ohp);
 	r = copy_ref(ref,hp);
-	hp += REF_THING_SIZE;
+	hp += ERTS_REF_THING_SIZE;
 	mess = TUPLE5(hp,type,r,am_driver,driver_name,tag);
     }
     erts_queue_message(proc, rp_locks, mp, mess, am_system);

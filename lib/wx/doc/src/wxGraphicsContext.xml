@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxGraphicsContext</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxGraphicsContext.xml</file></header>
+<module>wxGraphicsContext</module>
+<modulesummary>See external documentation: wxGraphicsContext.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html">wxGraphicsContext</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxGraphicsObject">wxGraphicsObject</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxGraphicsContext"/>wxGraphicsContext()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>create() -&gt; <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="create-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextcreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(Dc) -&gt; <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Dc = <seealso marker="wxWindowDC#type-wxWindowDC">wxWindowDC:wxWindowDC()</seealso> | <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="create-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextcreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createPen(This, Pen) -&gt; <seealso marker="wxGraphicsPen#type-wxGraphicsPen">wxGraphicsPen:wxGraphicsPen()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Pen = <seealso marker="wxPen#type-wxPen">wxPen:wxPen()</seealso></v></type>
+<desc><marker id="createPen-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextcreatepen">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createBrush(This, Brush) -&gt; <seealso marker="wxGraphicsBrush#type-wxGraphicsBrush">wxGraphicsBrush:wxGraphicsBrush()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Brush = <seealso marker="wxBrush#type-wxBrush">wxBrush:wxBrush()</seealso></v></type>
+<desc><marker id="createBrush-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextcreatebrush">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createRadialGradientBrush(This, Xo, Yo, Xc, Yc, Radius, OColor, CColor) -&gt; <seealso marker="wxGraphicsBrush#type-wxGraphicsBrush">wxGraphicsBrush:wxGraphicsBrush()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Xo = number()</v><v>Yo = number()</v><v>Xc = number()</v><v>Yc = number()</v><v>Radius = number()</v><v>OColor = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v><v>CColor = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="createRadialGradientBrush-8"/>
+<p><em>This function is deprecated: </em>deprecated function not available in wxWidgets-2.9 and later</p>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextcreateradialgradientbrush">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createLinearGradientBrush(This, X1, Y1, X2, Y2, C1, C2) -&gt; <seealso marker="wxGraphicsBrush#type-wxGraphicsBrush">wxGraphicsBrush:wxGraphicsBrush()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>X1 = number()</v><v>Y1 = number()</v><v>X2 = number()</v><v>Y2 = number()</v><v>C1 = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v><v>C2 = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="createLinearGradientBrush-7"/>
+<p><em>This function is deprecated: </em>deprecated function not available in wxWidgets-2.9 and later</p>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextcreatelineargradientbrush">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createFont(This, Font) -&gt; <seealso marker="wxGraphicsFont#type-wxGraphicsFont">wxGraphicsFont:wxGraphicsFont()</seealso></name>
+<fsummary>Equivalent to createFont(This, Font, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v></type>
+<desc><marker id="createFont-2"/>
+<p>Equivalent to <seealso marker="#createFont-3">createFont(This, Font, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>createFont(This, Font, Options::[Option]) -&gt; <seealso marker="wxGraphicsFont#type-wxGraphicsFont">wxGraphicsFont:wxGraphicsFont()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v><v>Option = {col, <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso>}</v></type>
+<desc><marker id="createFont-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextcreatefont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createMatrix(This) -&gt; <seealso marker="wxGraphicsMatrix#type-wxGraphicsMatrix">wxGraphicsMatrix:wxGraphicsMatrix()</seealso></name>
+<fsummary>Equivalent to createMatrix(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v></type>
+<desc><marker id="createMatrix-1"/>
+<p>Equivalent to <seealso marker="#createMatrix-2">createMatrix(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>createMatrix(This, Options::[Option]) -&gt; <seealso marker="wxGraphicsMatrix#type-wxGraphicsMatrix">wxGraphicsMatrix:wxGraphicsMatrix()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Option = {a, number()} | {b, number()} | {c, number()} | {d, number()} | {tx, number()} | {ty, number()}</v></type>
+<desc><marker id="createMatrix-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextcreatematrix">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createPath(This) -&gt; <seealso marker="wxGraphicsPath#type-wxGraphicsPath">wxGraphicsPath:wxGraphicsPath()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v></type>
+<desc><marker id="createPath-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextcreatepath">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>clip(This, Region) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Region = <seealso marker="wxRegion#type-wxRegion">wxRegion:wxRegion()</seealso></v></type>
+<desc><marker id="clip-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextclip">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>clip(This, X, Y, W, H) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>X = number()</v><v>Y = number()</v><v>W = number()</v><v>H = number()</v></type>
+<desc><marker id="clip-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextclip">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>resetClip(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v></type>
+<desc><marker id="resetClip-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextresetclip">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>drawBitmap(This, Bmp, X, Y, W, H) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Bmp = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v><v>X = number()</v><v>Y = number()</v><v>W = number()</v><v>H = number()</v></type>
+<desc><marker id="drawBitmap-6"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextdrawbitmap">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>drawEllipse(This, X, Y, W, H) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>X = number()</v><v>Y = number()</v><v>W = number()</v><v>H = number()</v></type>
+<desc><marker id="drawEllipse-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextdrawellipse">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>drawIcon(This, Icon, X, Y, W, H) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Icon = <seealso marker="wxIcon#type-wxIcon">wxIcon:wxIcon()</seealso></v><v>X = number()</v><v>Y = number()</v><v>W = number()</v><v>H = number()</v></type>
+<desc><marker id="drawIcon-6"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextdrawicon">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>drawLines(This, Points) -&gt; ok</name>
+<fsummary>Equivalent to drawLines(This, Points, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Points = [{X::float(), Y::float()}]</v></type>
+<desc><marker id="drawLines-2"/>
+<p>Equivalent to <seealso marker="#drawLines-3">drawLines(This, Points, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>drawLines(This, Points, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Points = [{X::float(), Y::float()}]</v><v>Option = {fillStyle, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</v></type>
+<desc><marker id="drawLines-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextdrawlines">external documentation</url>.
+ <br/> FillStyle = integer</p>
+</desc></func>
+<func>
+<name>drawPath(This, Path) -&gt; ok</name>
+<fsummary>Equivalent to drawPath(This, Path, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Path = <seealso marker="wxGraphicsPath#type-wxGraphicsPath">wxGraphicsPath:wxGraphicsPath()</seealso></v></type>
+<desc><marker id="drawPath-2"/>
+<p>Equivalent to <seealso marker="#drawPath-3">drawPath(This, Path, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>drawPath(This, Path, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Path = <seealso marker="wxGraphicsPath#type-wxGraphicsPath">wxGraphicsPath:wxGraphicsPath()</seealso></v><v>Option = {fillStyle, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</v></type>
+<desc><marker id="drawPath-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextdrawpath">external documentation</url>.
+ <br/> FillStyle = integer</p>
+</desc></func>
+<func>
+<name>drawRectangle(This, X, Y, W, H) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>X = number()</v><v>Y = number()</v><v>W = number()</v><v>H = number()</v></type>
+<desc><marker id="drawRectangle-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextdrawrectangle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>drawRoundedRectangle(This, X, Y, W, H, Radius) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>X = number()</v><v>Y = number()</v><v>W = number()</v><v>H = number()</v><v>Radius = number()</v></type>
+<desc><marker id="drawRoundedRectangle-6"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextdrawroundedrectangle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>drawText(This, Str, X, Y) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Str = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>X = number()</v><v>Y = number()</v></type>
+<desc><marker id="drawText-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextdrawtext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>drawText(This, Str, X, Y, Angle) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Str = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>X = number()</v><v>Y = number()</v><v>Angle = number()</v></type>
+<desc><marker id="drawText-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextdrawtext">external documentation</url>.
+  <br/> Also:<br/>
+  drawText(This, Str, X, Y, BackgroundBrush) -&gt; 'ok' when<br/>
+  	This::wxGraphicsContext(), Str::unicode:chardata(), X::number(), Y::number(), BackgroundBrush::wxGraphicsBrush:wxGraphicsBrush().<br/>
+ </p>
+</desc></func>
+<func>
+<name>drawText(This, Str, X, Y, Angle, BackgroundBrush) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Str = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>X = number()</v><v>Y = number()</v><v>Angle = number()</v><v>BackgroundBrush = <seealso marker="wxGraphicsBrush#type-wxGraphicsBrush">wxGraphicsBrush:wxGraphicsBrush()</seealso></v></type>
+<desc><marker id="drawText-6"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextdrawtext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>fillPath(This, Path) -&gt; ok</name>
+<fsummary>Equivalent to fillPath(This, Path, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Path = <seealso marker="wxGraphicsPath#type-wxGraphicsPath">wxGraphicsPath:wxGraphicsPath()</seealso></v></type>
+<desc><marker id="fillPath-2"/>
+<p>Equivalent to <seealso marker="#fillPath-3">fillPath(This, Path, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>fillPath(This, Path, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Path = <seealso marker="wxGraphicsPath#type-wxGraphicsPath">wxGraphicsPath:wxGraphicsPath()</seealso></v><v>Option = {fillStyle, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</v></type>
+<desc><marker id="fillPath-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextfillpath">external documentation</url>.
+ <br/> FillStyle = integer</p>
+</desc></func>
+<func>
+<name>strokePath(This, Path) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Path = <seealso marker="wxGraphicsPath#type-wxGraphicsPath">wxGraphicsPath:wxGraphicsPath()</seealso></v></type>
+<desc><marker id="strokePath-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextstrokepath">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPartialTextExtents(This, Text) -&gt; [number()]</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="getPartialTextExtents-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextgetpartialtextextents">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getTextExtent(This, Text) -&gt; Result</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Result = {Width::number(), Height::number(), Descent::number(), ExternalLeading::number()}</v><v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="getTextExtent-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextgettextextent">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>rotate(This, Angle) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Angle = number()</v></type>
+<desc><marker id="rotate-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextrotate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>scale(This, XScale, YScale) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>XScale = number()</v><v>YScale = number()</v></type>
+<desc><marker id="scale-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextscale">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>translate(This, Dx, Dy) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Dx = number()</v><v>Dy = number()</v></type>
+<desc><marker id="translate-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontexttranslate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getTransform(This) -&gt; <seealso marker="wxGraphicsMatrix#type-wxGraphicsMatrix">wxGraphicsMatrix:wxGraphicsMatrix()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v></type>
+<desc><marker id="getTransform-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextgettransform">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setTransform(This, Matrix) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Matrix = <seealso marker="wxGraphicsMatrix#type-wxGraphicsMatrix">wxGraphicsMatrix:wxGraphicsMatrix()</seealso></v></type>
+<desc><marker id="setTransform-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextsettransform">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>concatTransform(This, Matrix) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Matrix = <seealso marker="wxGraphicsMatrix#type-wxGraphicsMatrix">wxGraphicsMatrix:wxGraphicsMatrix()</seealso></v></type>
+<desc><marker id="concatTransform-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextconcattransform">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setBrush(This, Brush) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Brush = <seealso marker="wxGraphicsBrush#type-wxGraphicsBrush">wxGraphicsBrush:wxGraphicsBrush()</seealso> | <seealso marker="wxBrush#type-wxBrush">wxBrush:wxBrush()</seealso></v></type>
+<desc><marker id="setBrush-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextsetbrush">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFont(This, Font) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Font = <seealso marker="wxGraphicsFont#type-wxGraphicsFont">wxGraphicsFont:wxGraphicsFont()</seealso></v></type>
+<desc><marker id="setFont-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextsetfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFont(This, Font, Colour) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v><v>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setFont-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextsetfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setPen(This, Pen) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Pen = <seealso marker="wxPen#type-wxPen">wxPen:wxPen()</seealso> | <seealso marker="wxGraphicsPen#type-wxGraphicsPen">wxGraphicsPen:wxGraphicsPen()</seealso></v></type>
+<desc><marker id="setPen-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextsetpen">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>strokeLine(This, X1, Y1, X2, Y2) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>X1 = number()</v><v>Y1 = number()</v><v>X2 = number()</v><v>Y2 = number()</v></type>
+<desc><marker id="strokeLine-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextstrokeline">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>strokeLines(This, Points) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso></v><v>Points = [{X::float(), Y::float()}]</v></type>
+<desc><marker id="strokeLines-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicscontext.html#wxgraphicscontextstrokelines">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxGraphicsContext">wxGraphicsContext()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

@@ -1,0 +1,1509 @@
+<module name="wxImage">
+<type>
+  <name>wxImage</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxImage">wxImage()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>'Destroy'</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>'Destroy'(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>blur</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>blur(This, Radius) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Radius</typename><string>Radius = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Radius</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>blurHorizontal</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>blurHorizontal(This, Radius) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Radius</typename><string>Radius = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Radius</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>blurVertical</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>blurVertical(This, Radius) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Radius</typename><string>Radius = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Radius</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>convertAlphaToMask</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>convertAlphaToMask(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>convertAlphaToMask</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>convertAlphaToMask(This, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {threshold, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>convertToGreyscale</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>convertToGreyscale(This) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>convertToGreyscale</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>convertToGreyscale(This, Options :: [Option]) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {lr, number()} | {lg, number()} | {lb, number()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>convertToMono</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>convertToMono(This, R, G, B) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>R</typename><string>R = G = B = integer()</string></subtype>
+        <subtype><typename>G</typename><string></string></subtype>
+        <subtype><typename>B</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>B</anno>
+  <anno>G</anno>
+  <anno>R</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>copy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>copy(This) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>create</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>create(This, Width, Height) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>create</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>create(This, Width, Height, Data) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Data</typename><string>Data = binary()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Data</anno>
+  <anno>Height</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>create</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>create(This, Width, Height, Data :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {clear, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Data</anno>
+  <anno>Height</anno>
+  <anno>Option</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>create</name>
+  <arity>5</arity>
+  <contract>
+    <clause>
+      <head>create(This, Width, Height, Data, Alpha) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Data</typename><string>Data = Alpha = binary()</string></subtype>
+        <subtype><typename>Alpha</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Alpha</anno>
+  <anno>Data</anno>
+  <anno>Height</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>create</name>
+  <arity>5</arity>
+  <contract>
+    <clause>
+      <head>create(This, Width, Height, Data, Alpha :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Data</typename><string>Data = binary()</string></subtype>
+        <subtype><typename>Option</typename><string>Option = {static_data, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Alpha</anno>
+  <anno>Data</anno>
+  <anno>Height</anno>
+  <anno>Option</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>create</name>
+  <arity>6</arity>
+  <contract>
+    <clause>
+      <head>create(This, Width, Height, Data, Alpha, Options :: [Option]) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Data</typename><string>Data = Alpha = binary()</string></subtype>
+        <subtype><typename>Alpha</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {static_data, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Alpha</anno>
+  <anno>Data</anno>
+  <anno>Height</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxImage">wxImage()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>findFirstUnusedColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>findFirstUnusedColour(This) -&gt; Result</head>
+      <guard>
+        <subtype><typename>Result</typename><string>Result = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{Res :: boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>R :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>G :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>B :: integer()}</string></subtype>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>B</anno>
+  <anno>G</anno>
+  <anno>R</anno>
+  <anno>Res</anno>
+  <anno>Result</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>findFirstUnusedColour</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>findFirstUnusedColour(This, Options :: [Option]) -&gt; Result</head>
+      <guard>
+        <subtype><typename>Result</typename><string>Result = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{Res :: boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>R :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>G :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>B :: integer()}</string></subtype>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{startR, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{startG, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{startB, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>B</anno>
+  <anno>G</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>R</anno>
+  <anno>Res</anno>
+  <anno>Result</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getAlpha</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getAlpha(This) -&gt; binary()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getAlpha</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>getAlpha(This, X, Y) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getBlue</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>getBlue(This, X, Y) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getData</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getData(This) -&gt; binary()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getGreen</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>getGreen(This, X, Y) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getHeight</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getHeight(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getImageCount</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getImageCount(Name) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+</spec>
+<spec>
+  <name>getImageCount</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getImageCount(Name, Options :: [Option]) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {type, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>getImageExtWildcard</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>getImageExtWildcard() -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>getMaskBlue</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getMaskBlue(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getMaskGreen</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getMaskGreen(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getMaskRed</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getMaskRed(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getOption</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getOption(This, Name) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getOptionInt</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getOptionInt(This, Name) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getOrFindMaskColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getOrFindMaskColour(This) -&gt; Result</head>
+      <guard>
+        <subtype><typename>Result</typename><string>Result = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{Res :: boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>R :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>G :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>B :: integer()}</string></subtype>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>B</anno>
+  <anno>G</anno>
+  <anno>R</anno>
+  <anno>Res</anno>
+  <anno>Result</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getPalette</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getPalette(This) -&gt; <seealso marker="wxPalette#type-wxPalette">wxPalette:wxPalette()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getRed</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>getRed(This, X, Y) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getSubImage</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getSubImage(This, Rect) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Rect</typename><string>Rect = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Rect</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getWidth</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getWidth(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasAlpha</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasAlpha(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasMask</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasMask(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasOption</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>hasOption(This, Name) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>initAlpha</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>initAlpha(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>initStandardHandlers</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>initStandardHandlers() -&gt; ok</head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>isTransparent</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>isTransparent(This, X, Y) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>isTransparent</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>isTransparent(This, X, Y, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {threshold, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>loadFile</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>loadFile(This, Name) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>loadFile</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>loadFile(This, Name, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {type, integer()} | {index, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>loadFile</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>loadFile(This, Name, Mimetype, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = Mimetype = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Mimetype</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {index, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Mimetype</anno>
+  <anno>Name</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>mirror</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>mirror(This) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>mirror</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>mirror(This, Options :: [Option]) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {horizontally, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>new() -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(Name) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>new(Width, Height) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>new(Name, Height :: [Option]) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {type, integer()} | {index, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>Name</anno>
+  <anno>Option</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>new(Width, Height, Data) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Data</typename><string>Data = binary()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Data</anno>
+  <anno>Height</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>new(Width, Height, Data :: [Option]) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {clear, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Data</anno>
+  <anno>Height</anno>
+  <anno>Option</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>new(Name, Mimetype, Data :: [Option]) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>Name</typename><string>Name = Mimetype = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Mimetype</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {index, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Data</anno>
+  <anno>Mimetype</anno>
+  <anno>Name</anno>
+  <anno>Option</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>new(Width, Height, Data, Alpha) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Data</typename><string>Data = Alpha = binary()</string></subtype>
+        <subtype><typename>Alpha</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Alpha</anno>
+  <anno>Data</anno>
+  <anno>Height</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>new(Width, Height, Data, Alpha :: [Option]) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Data</typename><string>Data = binary()</string></subtype>
+        <subtype><typename>Option</typename><string>Option = {static_data, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Alpha</anno>
+  <anno>Data</anno>
+  <anno>Height</anno>
+  <anno>Option</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>5</arity>
+  <contract>
+    <clause>
+      <head>new(Width, Height, Data, Alpha, Options :: [Option]) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Data</typename><string>Data = Alpha = binary()</string></subtype>
+        <subtype><typename>Alpha</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {static_data, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Alpha</anno>
+  <anno>Data</anno>
+  <anno>Height</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>ok</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>ok(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>removeHandler</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>removeHandler(Name) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+</spec>
+<spec>
+  <name>replace</name>
+  <arity>7</arity>
+  <contract>
+    <clause>
+      <head>replace(This, R1, G1, B1, R2, G2, B2) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>R1</typename><string>R1 = G1 = B1 = R2 = G2 = B2 = integer()</string></subtype>
+        <subtype><typename>G1</typename><string></string></subtype>
+        <subtype><typename>B1</typename><string></string></subtype>
+        <subtype><typename>R2</typename><string></string></subtype>
+        <subtype><typename>G2</typename><string></string></subtype>
+        <subtype><typename>B2</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>B1</anno>
+  <anno>B2</anno>
+  <anno>G1</anno>
+  <anno>G2</anno>
+  <anno>R1</anno>
+  <anno>R2</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>rescale</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>rescale(This, Width, Height) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>rescale</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>rescale(This, Width, Height, Options :: [Option]) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {quality, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>resize</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>resize(This, Size, Pos) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Size</typename><string>Size = {W :: integer(), H :: integer()}</string></subtype>
+        <subtype><typename>Pos</typename><string>Pos = {X :: integer(), Y :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Pos</anno>
+  <anno>Size</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>resize</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>resize(This, Size, Pos, Options :: [Option]) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Size</typename><string>Size = {W :: integer(), H :: integer()}</string></subtype>
+        <subtype><typename>Pos</typename><string>Pos = {X :: integer(), Y :: integer()}</string></subtype>
+        <subtype><typename>Option</typename><string>Option = {r, integer()} | {g, integer()} | {b, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Pos</anno>
+  <anno>Size</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>rotate</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>rotate(This, Angle, Centre_of_rotation) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Angle</typename><string>Angle = number()</string></subtype>
+        <subtype><typename>Centre_of_rotation</typename><string>Centre_of_rotation = {X :: integer(), Y :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Angle</anno>
+  <anno>Centre_of_rotation</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>rotate</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>rotate(This, Angle, Centre_of_rotation, Options :: [Option]) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Angle</typename><string>Angle = number()</string></subtype>
+        <subtype><typename>Centre_of_rotation</typename><string>Centre_of_rotation = {X :: integer(), Y :: integer()}</string></subtype>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{interpolating, boolean()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{offset_after_rotation, {X :: integer(), Y :: integer()}}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Angle</anno>
+  <anno>Centre_of_rotation</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>rotate90</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>rotate90(This) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>rotate90</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>rotate90(This, Options :: [Option]) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {clockwise, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>rotateHue</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>rotateHue(This, Angle) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Angle</typename><string>Angle = number()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Angle</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>saveFile</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>saveFile(This, Name) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>saveFile</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>saveFile(This, Name, Type) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Type</typename><string>Type = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>This</anno>
+  <anno>Type</anno>
+</spec>
+<spec>
+  <name>saveFile</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>saveFile(This, Name, Mimetype) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = Mimetype = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Mimetype</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Mimetype</anno>
+  <anno>Name</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>scale</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>scale(This, Width, Height) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>scale</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>scale(This, Width, Height, Options :: [Option]) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {quality, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>setAlpha</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setAlpha(This, Alpha) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Alpha</typename><string>Alpha = binary()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Alpha</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setAlpha</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setAlpha(This, Alpha, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Alpha</typename><string>Alpha = binary()</string></subtype>
+        <subtype><typename>Option</typename><string>Option = {static_data, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Alpha</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setAlpha</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>setAlpha(This, X, Y, Alpha) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = Alpha = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+        <subtype><typename>Alpha</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Alpha</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>setData</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setData(This, Data) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Data</typename><string>Data = binary()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Data</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setData</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setData(This, Data, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Data</typename><string>Data = binary()</string></subtype>
+        <subtype><typename>Option</typename><string>Option = {static_data, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Data</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setData</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>setData(This, Data, New_width, New_height) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Data</typename><string>Data = binary()</string></subtype>
+        <subtype><typename>New_width</typename><string>New_width = New_height = integer()</string></subtype>
+        <subtype><typename>New_height</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Data</anno>
+  <anno>New_height</anno>
+  <anno>New_width</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setData</name>
+  <arity>5</arity>
+  <contract>
+    <clause>
+      <head>setData(This, Data, New_width, New_height, Options :: [Option]) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Data</typename><string>Data = binary()</string></subtype>
+        <subtype><typename>New_width</typename><string>New_width = New_height = integer()</string></subtype>
+        <subtype><typename>New_height</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {static_data, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Data</anno>
+  <anno>New_height</anno>
+  <anno>New_width</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setMask</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>setMask(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setMask</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setMask(This, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {mask, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setMaskColour</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>setMaskColour(This, R, G, B) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>R</typename><string>R = G = B = integer()</string></subtype>
+        <subtype><typename>G</typename><string></string></subtype>
+        <subtype><typename>B</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>B</anno>
+  <anno>G</anno>
+  <anno>R</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setMaskFromImage</name>
+  <arity>5</arity>
+  <contract>
+    <clause>
+      <head>setMaskFromImage(This, Mask, Mr, Mg, Mb) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = Mask = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Mask</typename><string/></subtype>
+        <subtype><typename>Mr</typename><string>Mr = Mg = Mb = integer()</string></subtype>
+        <subtype><typename>Mg</typename><string></string></subtype>
+        <subtype><typename>Mb</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Mask</anno>
+  <anno>Mb</anno>
+  <anno>Mg</anno>
+  <anno>Mr</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setOption</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setOption(This, Name, Value) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Value</typename><string>Value = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>This</anno>
+  <anno>Value</anno>
+</spec>
+<spec>
+  <name>setOption</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setOption(This, Name, Value) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = Value = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Value</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>This</anno>
+  <anno>Value</anno>
+</spec>
+<spec>
+  <name>setPalette</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setPalette(This, Palette) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Palette</typename><string>Palette = <seealso marker="wxPalette#type-wxPalette">wxPalette:wxPalette()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Palette</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setRGB</name>
+  <arity>5</arity>
+  <contract>
+    <clause>
+      <head>setRGB(This, Rect, R, G, B) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Rect</typename><string>Rect = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}</string></subtype>
+        <subtype><typename>R</typename><string>R = G = B = integer()</string></subtype>
+        <subtype><typename>G</typename><string></string></subtype>
+        <subtype><typename>B</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>B</anno>
+  <anno>G</anno>
+  <anno>H</anno>
+  <anno>R</anno>
+  <anno>Rect</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>setRGB</name>
+  <arity>6</arity>
+  <contract>
+    <clause>
+      <head>setRGB(This, X, Y, R, G, B) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = R = G = B = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+        <subtype><typename>R</typename><string></string></subtype>
+        <subtype><typename>G</typename><string></string></subtype>
+        <subtype><typename>B</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>B</anno>
+  <anno>G</anno>
+  <anno>R</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>size</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>size(This, Size, Pos) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Size</typename><string>Size = {W :: integer(), H :: integer()}</string></subtype>
+        <subtype><typename>Pos</typename><string>Pos = {X :: integer(), Y :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Pos</anno>
+  <anno>Size</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>size</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>size(This, Size, Pos, Options :: [Option]) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImage">wxImage()</seealso></string></subtype>
+        <subtype><typename>Size</typename><string>Size = {W :: integer(), H :: integer()}</string></subtype>
+        <subtype><typename>Pos</typename><string>Pos = {X :: integer(), Y :: integer()}</string></subtype>
+        <subtype><typename>Option</typename><string>Option = {r, integer()} | {g, integer()} | {b, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Pos</anno>
+  <anno>Size</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:20.</timestamp>
+</module>

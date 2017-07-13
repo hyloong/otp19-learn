@@ -1,0 +1,1191 @@
+<?xml version="1.0"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="cover" margin="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin="0mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="left-page" margin-top="25mm" margin-bottom="15mm" margin-left="20mm" margin-right="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="left-header" extent="10mm"/>
+      <fo:region-after region-name="left-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="right-page" margin-top="25mm" margin-bottom="15mm" margin-left="25mm" margin-right="20mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="right-header" extent="10mm"/>
+      <fo:region-after region-name="right-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:page-sequence-master master-name="document">
+      <fo:repeatable-page-master-alternatives>
+        <fo:conditional-page-master-reference master-reference="left-page" odd-or-even="even"/>
+        <fo:conditional-page-master-reference master-reference="right-page" odd-or-even="odd"/>
+      </fo:repeatable-page-master-alternatives>
+    </fo:page-sequence-master>
+  </fo:layout-master-set>
+  <fo:bookmark-tree>
+    <fo:bookmark internal-destination="cover-page" starting-state="show">
+      <fo:bookmark-title>OS_Mon</fo:bookmark-title>
+      <fo:bookmark internal-destination="idp105680" starting-state="hide">
+        <fo:bookmark-title>Reference Manual</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp430464" starting-state="hide">
+          <fo:bookmark-title>os_mon</fo:bookmark-title>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp449744" starting-state="hide">
+          <fo:bookmark-title>cpu_sup</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp131184" starting-state="hide">
+            <fo:bookmark-title>nprocs/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp527360" starting-state="hide">
+            <fo:bookmark-title>avg1/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp605824" starting-state="hide">
+            <fo:bookmark-title>avg5/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp542048" starting-state="hide">
+            <fo:bookmark-title>avg15/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp563840" starting-state="hide">
+            <fo:bookmark-title>util/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp463808" starting-state="hide">
+            <fo:bookmark-title>util/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp771776" starting-state="hide">
+          <fo:bookmark-title>disksup</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp888240" starting-state="hide">
+            <fo:bookmark-title>get_disk_data/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp896096" starting-state="hide">
+            <fo:bookmark-title>get_check_interval/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp899376" starting-state="hide">
+            <fo:bookmark-title>set_check_interval/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp904016" starting-state="hide">
+            <fo:bookmark-title>get_almost_full_threshold/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp907248" starting-state="hide">
+            <fo:bookmark-title>set_almost_full_threshold/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp920016" starting-state="hide">
+          <fo:bookmark-title>memsup</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp981664" starting-state="hide">
+            <fo:bookmark-title>get_memory_data/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp992976" starting-state="hide">
+            <fo:bookmark-title>get_system_memory_data/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1014000" starting-state="hide">
+            <fo:bookmark-title>get_os_wordsize/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1017232" starting-state="hide">
+            <fo:bookmark-title>get_check_interval/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1020496" starting-state="hide">
+            <fo:bookmark-title>set_check_interval/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1025120" starting-state="hide">
+            <fo:bookmark-title>get_procmem_high_watermark/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1027488" starting-state="hide">
+            <fo:bookmark-title>set_procmem_high_watermark/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1031248" starting-state="hide">
+            <fo:bookmark-title>get_sysmem_high_watermark/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1033600" starting-state="hide">
+            <fo:bookmark-title>set_sysmem_high_watermark/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1037344" starting-state="hide">
+            <fo:bookmark-title>get_helper_timeout/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1040576" starting-state="hide">
+            <fo:bookmark-title>set_helper_timeout/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp1053936" starting-state="hide">
+          <fo:bookmark-title>os_mon_mib</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp1056528" starting-state="hide">
+            <fo:bookmark-title>load/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1060144" starting-state="hide">
+            <fo:bookmark-title>unload/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp1072080" starting-state="hide">
+          <fo:bookmark-title>os_sup</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp1121520" starting-state="hide">
+            <fo:bookmark-title>enable/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1121984" starting-state="hide">
+            <fo:bookmark-title>enable/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1139808" starting-state="hide">
+            <fo:bookmark-title>disable/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1140272" starting-state="hide">
+            <fo:bookmark-title>disable/2</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp1167472" starting-state="hide">
+          <fo:bookmark-title>nteventlog</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp1177824" starting-state="hide">
+            <fo:bookmark-title>start/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1178288" starting-state="hide">
+            <fo:bookmark-title>start_link/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1187616" starting-state="hide">
+            <fo:bookmark-title>stop/0</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+    </fo:bookmark>
+  </fo:bookmark-tree>
+  <fo:page-sequence font-family="sans-serif" force-page-count="even" master-reference="cover" font-size="10pt">
+    <fo:flow flow-name="xsl-region-body">
+      <fo:block space-before="130mm" space-before.conditionality="retain" text-align="end">
+        <fo:external-graphic src="/root/download/otp_src_20.0/bootstrap/lib/erl_docgen/priv/images/erlang-logo.gif"/>
+      </fo:block>
+      <fo:block id="cover-page" border-before-style="solid" border-before-width="10pt" border-color="#960003" font-size="2.3em" padding-before="0.5em" text-align="end">OS_Mon</fo:block>
+      <fo:block font-size="0.9em" text-align="end">Copyright © 1997-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em" text-align="end">OS_Mon 2.4.2</fo:block>
+      <fo:block font-size="0.9em" text-align="end">July 12, 2017</fo:block>
+      <fo:block padding-before="2.5em" font-size="1.33em" font-weight="bold" color="#C00" text-align="end"/>
+      <fo:block break-before="page" border-before-style="solid" border-before-width="1pt" border-color="#960003" font-weight="bold" padding-before="0.5em" space-before="200mm" space-before.conditionality="retain">Copyright © 1997-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em">
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+ 
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+    
+    Ericsson AB. All Rights Reserved..
+        </fo:block>
+      <fo:block font-size="0.9em" font-weight="bold" space-before="2em">July 12, 2017</fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+  <fo:page-sequence font-family="serif" master-reference="document" initial-page-number="1" font-size="10pt">
+    <fo:static-content flow-name="left-header">
+      <fo:block text-align="start" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-header">
+      <fo:block text-align="end" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="left-footer">
+      <fo:block text-align="start" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold"><fo:page-number/> | Ericsson AB. All Rights Reserved.:
+            OS_Mon</fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-footer">
+      <fo:block text-align="end" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">Ericsson AB. All Rights Reserved.:
+            OS_Mon | <fo:page-number/></fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body"><fo:block/><fo:block id="idp105680" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">1   
+      Reference Manual</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The operating system monitor, OS_Mon, provides services for
+      monitoring CPU load, disk usage, memory usage and OS messages.</fo:block>
+  <fo:block page-break-before="always" id="idp430464" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">os_mon</fo:marker>os_mon</fo:block>Application</fo:block>
+  <fo:block/>
+  os_mon
+  OS Monitoring Application
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The operating system monitor, OS_Mon, provides the following
+      services:</fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-style="italic">cpu_sup</fo:inline>
+       CPU load and utilization supervision (Unix)</fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-style="italic">disksup</fo:inline>
+       Disk supervision(Unix, Windows)</fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-style="italic">memsup</fo:inline>
+       Memory supervision (Unix, Windows, VxWorks)</fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-style="italic">os_sup</fo:inline>
+       Interface to OS system messages (Solaris, Windows)</fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To simplify usage of OS_Mon on distributed Erlang systems, it is
+      not considered an error trying to use a service at a node where it
+      is not available (either because OS_Mon is not running, or because
+      the service is not available for that OS, or because the service
+      is not started). Instead, a warning message is issued via
+      <fo:inline font-family="monospace">error_logger</fo:inline> and a dummy value is returned, which one is
+      specified in the man pages for the respective services.</fo:block>
+  
+
+  <fo:block id="idp513840" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Configuration</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When OS_Mon is started, by default all services available for
+      the OS, except <fo:inline font-family="monospace">os_sup</fo:inline>, are automatically started. This
+      configuration can be changed using the following application
+      configuration parameters:</fo:block>
+    <fo:block space-after="0.25em" space-before="0.25em">
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">start_cpu_sup = bool()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Specifies if <fo:inline font-family="monospace">cpu_sup</fo:inline> should be started. Defaults to
+          <fo:inline font-family="monospace">true</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">start_disksup = bool()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Specifies if <fo:inline font-family="monospace">disksup</fo:inline> should be started. Defaults to
+          <fo:inline font-family="monospace">true</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">start_memsup = bool()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Specifies if <fo:inline font-family="monospace">memsup</fo:inline> should be started. Defaults to
+          <fo:inline font-family="monospace">true</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">start_os_sup = bool()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Specifies if <fo:inline font-family="monospace">os_sup</fo:inline> should be started. Defaults to
+          <fo:inline font-family="monospace">false</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Configuration parameters effecting the different OS_Mon services
+      are described in the respective man pages.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">See <fo:inline font-style="italic">config(4)</fo:inline> for
+      information about how to change the value of configuration
+      parameters.</fo:block>
+  
+
+  <fo:block id="idp582736" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">SNMP MIBs</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The following MIBs are defined in OS_Mon:</fo:block>
+    <fo:block space-after="0.25em" space-before="0.25em">
+      <fo:block keep-with-next.within-page="always">OTP-OS-MON-MIB</fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This MIB contains objects for instrumentation of disk,
+          memory and CPU usage of the nodes in the system.</fo:block>
+      </fo:block></fo:block-container>
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The MIB is stored in the <fo:inline font-family="monospace">mibs</fo:inline> directory.  It is defined
+      in SNMPv2 SMI syntax. An SNMPv1 version of the MIB is delivered
+      in the <fo:inline font-family="monospace">mibs/v1</fo:inline> directory.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The compiled MIB is located under <fo:inline font-family="monospace">priv/mibs</fo:inline>, and
+      the generated <fo:inline font-family="monospace">.hrl</fo:inline> file under the <fo:inline font-family="monospace">include</fo:inline> directory.
+      To compile a MIB that IMPORTS the <fo:inline font-family="monospace">OTP-OS-MON-MIB</fo:inline>, give
+      the option <fo:inline font-family="monospace">{il, ["os_mon/priv/mibs"]}</fo:inline> to the MIB compiler.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the MIB should be used in a system, it should be loaded into
+      an agent with a call to <fo:inline font-family="monospace">os_mon_mib:load(Agent)</fo:inline>, where
+      <fo:inline font-family="monospace">Agent</fo:inline> is the pid or registered name of an SNMP agent. Use
+      <fo:inline font-family="monospace">os_mon_mib:unload(Agent)</fo:inline> to unload the MIB.
+      The implementation of this MIB uses Mnesia to store a cache with
+      data needed, which implicates that Mnesia must be up and running.
+      The MIB also use functions defined for the <fo:inline font-family="monospace">OTP-MIB</fo:inline>, thus
+      that MIB must be loaded as well.</fo:block>
+  
+
+  <fo:block id="idp600768" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">See Also</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">cpu_sup(3)</fo:inline>,
+      <fo:inline font-style="italic">disksup(3)</fo:inline>,
+      <fo:inline font-style="italic">memsup(3)</fo:inline>,
+      <fo:inline font-style="italic">os_sup(3)</fo:inline>,
+      <fo:inline font-style="italic">nteventlog(3)</fo:inline>,
+      <fo:inline font-style="italic">snmp(3)</fo:inline>.</fo:block>
+  
+<fo:block page-break-before="always" id="idp449744" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">cpu_sup</fo:marker>cpu_sup</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  cpu_sup
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">cpu_sup</fo:inline> is a process which supervises the CPU load
+      and CPU utilization. It is part of the OS_Mon application, see
+      <fo:inline font-style="italic">os_mon(6)</fo:inline>. Available for Unix,
+      although CPU utilization values (<fo:inline font-family="monospace">util/0,1</fo:inline>) are only
+      available for Solaris, Linux and FreeBSD.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The load values are proportional to how long time a runnable
+      Unix process has to spend in the run queue before it is scheduled.
+      Accordingly, higher values mean more system load. The returned
+      value divided by 256 produces the figure displayed by <fo:inline font-family="monospace">rup</fo:inline>
+      and <fo:inline font-family="monospace">top</fo:inline>. What is displayed as 2.00 in <fo:inline font-family="monospace">rup</fo:inline>, is
+      displayed as load up to the second mark in <fo:inline font-family="monospace">xload</fo:inline>.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">For example, <fo:inline font-family="monospace">rup</fo:inline> displays a load of 128 as 0.50, and
+      512 as 2.00.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the user wants to view load values as percentage of machine
+      capacity, then this way of measuring presents a problem, because
+      the load values are not restricted to a fixed interval. In this
+      case, the following simple mathematical transformation can
+      produce the load value as a percentage:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+      PercentLoad = 100 * (1 - D/(D + Load))
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">D</fo:inline> determines which load value should be associated with
+      which percentage. Choosing <fo:inline font-family="monospace">D</fo:inline> = 50 means that 128 is 60% 
+      load, 256 is 80%, 512 is 90%, and so on.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Another way of measuring system load is to divide the number of
+      busy CPU cycles by the total number of CPU cycles. This produces 
+      values in the 0-100 range immediately. However, this method hides 
+      the fact that a machine can be more or less saturated. CPU
+      utilization is therefore a better name than system load for this
+      measure.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A server which receives just enough requests to never become
+      idle will score a CPU utilization of 100%. If the server receives
+      50% more requests, it will still score 100%. When the system load
+      is calculated with the percentage formula shown previously,
+      the load will increase from 80% to 87%.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-family="monospace">avg1/0</fo:inline>, <fo:inline font-family="monospace">avg5/0</fo:inline>, and <fo:inline font-family="monospace">avg15/0</fo:inline> functions
+      can be used for retrieving system load values, and
+      the <fo:inline font-family="monospace">util/0</fo:inline> and <fo:inline font-family="monospace">util/1</fo:inline> functions can be used for
+      retrieving CPU utilization values.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When run on Linux, <fo:inline font-family="monospace">cpu_sup</fo:inline> assumes that the <fo:inline font-family="monospace">/proc</fo:inline>
+      file system is present and accessible by <fo:inline font-family="monospace">cpu_sup</fo:inline>. If it is
+      not, <fo:inline font-family="monospace">cpu_sup</fo:inline> will terminate.</fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp131184">nprocs() -&gt; UnixProcesses | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">UnixProcesses = int()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = term()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the number of UNIX processes running on this machine.
+          This is a crude way of measuring the system load, but it may
+          be of interest in some cases.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns 0 if <fo:inline font-family="monospace">cpu_sup</fo:inline> is not available.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp527360">avg1() -&gt; SystemLoad | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">SystemLoad = int()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = term()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the average system load in the last minute, as
+          described above. 0 represents no load, 256 represents the load
+          reported as 1.00 by <fo:inline font-family="monospace">rup</fo:inline>.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns 0 if <fo:inline font-family="monospace">cpu_sup</fo:inline> is not available.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp605824">avg5() -&gt; SystemLoad | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">SystemLoad = int()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = term()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the average system load in the last five minutes, as
+          described above. 0 represents no load, 256 represents the load
+          reported as 1.00 by <fo:inline font-family="monospace">rup</fo:inline>.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns 0 if <fo:inline font-family="monospace">cpu_sup</fo:inline> is not available.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp542048">avg15() -&gt; SystemLoad | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">SystemLoad = int()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = term()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the average system load in the last 15 minutes, as
+          described above. 0 represents no load, 256 represents the load
+          reported as 1.00 by <fo:inline font-family="monospace">rup</fo:inline>.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns 0 if <fo:inline font-family="monospace">cpu_sup</fo:inline> is not available.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp563840">util() -&gt; CpuUtil | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">CpuUtil = float()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = term()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns CPU utilization since the last call to
+          <fo:inline font-family="monospace">util/0</fo:inline> or <fo:inline font-family="monospace">util/1</fo:inline> by the calling process.</fo:block>
+        <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+          <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The returned value of the first call to <fo:inline font-family="monospace">util/0</fo:inline> or
+            <fo:inline font-family="monospace">util/1</fo:inline> by a process will on most systems be the CPU
+            utilization since system boot, but this is not guaranteed
+            and the value should therefore be regarded as garbage. This
+            also applies to the first call after a restart of
+            <fo:inline font-family="monospace">cpu_sup</fo:inline>.</fo:block>
+        </fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The CPU utilization is defined as the sum of the percentage
+          shares of the CPU cycles spent in all busy processor states
+          (see <fo:inline font-family="monospace">util/1</fo:inline> below) in average on all CPUs.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns 0 if <fo:inline font-family="monospace">cpu_sup</fo:inline> is not available.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp463808">util(Opts) -&gt; UtilSpec | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Opts = [detailed | per_cpu]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">UtilSpec = UtilDesc | [UtilDesc]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace"> UtilDesc = {Cpus, Busy, NonBusy, Misc}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">  Cpus = all | int() | [int()]()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">  Busy = NonBusy = {State, Share} | Share</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">   State = user | nice_user | kernel</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">    | wait | idle | atom()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">   Share = float()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">  Misc = []</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = term()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns CPU utilization since the last call to
+          <fo:inline font-family="monospace">util/0</fo:inline> or <fo:inline font-family="monospace">util/1</fo:inline> by the calling process, in
+          more detail than <fo:inline font-family="monospace">util/0</fo:inline>.</fo:block>
+        <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+          <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The returned value of the first call to <fo:inline font-family="monospace">util/0</fo:inline> or
+            <fo:inline font-family="monospace">util/1</fo:inline> by a process will on most systems be the CPU
+            utilization since system boot, but this is not guaranteed
+            and the value should therefore be regarded as garbage. This
+            also applies to the first call after a restart of
+            <fo:inline font-family="monospace">cpu_sup</fo:inline>.</fo:block>
+        </fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Currently recognized options:</fo:block>
+        <fo:block space-after="0.25em" space-before="0.25em">
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">detailed</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The returned <fo:inline font-family="monospace">UtilDesc</fo:inline>(s) will be even more
+              detailed.</fo:block>
+          </fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">per_cpu</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Each CPU will be specified separately (assuming this
+              information can be retrieved from the operating system),
+              that is, a list with one <fo:inline font-family="monospace">UtilDesc</fo:inline> per CPU will be
+              returned.</fo:block>
+          </fo:block></fo:block-container>
+        </fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Description of <fo:inline font-family="monospace">UtilDesc = {Cpus, Busy, NonBusy, Misc}</fo:inline>:</fo:block>
+        <fo:block space-after="0.25em" space-before="0.25em">
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">Cpus</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the <fo:inline font-family="monospace">detailed</fo:inline> and/or <fo:inline font-family="monospace">per_cpu</fo:inline> option is
+              given, this is the CPU number, or a list of the CPU
+              numbers.</fo:block>
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If not, this is the atom <fo:inline font-family="monospace">all</fo:inline> which implies that
+              the <fo:inline font-family="monospace">UtilDesc</fo:inline> contains information about all CPUs.</fo:block>
+          </fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">Busy</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the <fo:inline font-family="monospace">detailed</fo:inline> option is given, this is a list
+              of <fo:inline font-family="monospace">{State, Share}</fo:inline> tuples, where each tuple
+              contains information about a processor state that has
+              been identified as a busy processor state (see below).
+              The atom <fo:inline font-family="monospace">State</fo:inline> is the name of the state, and
+              the float <fo:inline font-family="monospace">Share</fo:inline> represents the percentage share of
+              the CPU cycles spent in this state since the last call to
+              <fo:inline font-family="monospace">util/0</fo:inline> or <fo:inline font-family="monospace">util/1</fo:inline>.</fo:block>
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If not, this is the sum of the percentage shares of
+              the CPU cycles spent in all states identified as busy.</fo:block>
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the <fo:inline font-family="monospace">per_cpu</fo:inline> is not given, the value(s)
+              presented are the average of all CPUs.</fo:block>
+          </fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">NonBusy</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Similar to <fo:inline font-family="monospace">Busy</fo:inline>, but for processor states that
+              have been identified as non-busy (see below).</fo:block>
+          </fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">Misc</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Currently unused; reserved for future use.</fo:block>
+          </fo:block></fo:block-container>
+        </fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Currently these processor states are identified as busy:</fo:block>
+        <fo:block space-after="0.25em" space-before="0.25em">
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">user</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Executing code in user mode.</fo:block>
+          </fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">nice_user</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Executing code in low priority (nice) user mode.
+              This state is currently only identified on Linux.</fo:block>
+          </fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">kernel</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Executing code in kernel mode.</fo:block>
+          </fo:block></fo:block-container>
+        </fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Currently these processor states are identified as non-busy:</fo:block>
+        <fo:block space-after="0.25em" space-before="0.25em">
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">wait</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Waiting. This state is currently only identified on
+              Solaris.</fo:block>
+          </fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">idle</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Idle.</fo:block>
+          </fo:block></fo:block-container>
+        </fo:block>
+        <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+          <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Identified processor states may be different on different
+            operating systems and may change between different versions
+            of <fo:inline font-family="monospace">cpu_sup</fo:inline> on the same operating system. The sum of
+            the percentage shares of the CPU cycles spent in all busy
+            and all non-busy processor states will always add up to
+            100%, though.</fo:block>
+        </fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns <fo:inline font-family="monospace">{all,0,0,[]}</fo:inline> if <fo:inline font-family="monospace">cpu_sup</fo:inline> is not
+          available.</fo:block>
+      </fo:block>
+  
+
+  <fo:block id="idp764464" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">See Also</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">os_mon(3)</fo:inline></fo:block>
+  
+<fo:block page-break-before="always" id="idp771776" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">disksup</fo:marker>disksup</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  disksup
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">disksup</fo:inline> is a process which supervises the available disk
+      space in the system. It is part of the OS_Mon application, see
+      <fo:inline font-style="italic">os_mon(6)</fo:inline>. Available for Unix
+      and Windows.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Periodically checks the disks. For each disk or partition which
+      uses more than a certain amount of the available space, the alarm
+      <fo:inline font-family="monospace">{{disk_almost_full, MountedOn}, []}</fo:inline> is set.</fo:block>
+    <fo:block space-after="0.25em" space-before="0.25em">
+      <fo:block keep-with-next.within-page="always">On Unix</fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">All (locally) mounted disks are checked, including the swap
+          disk if it is present.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always">On WIN32</fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">All logical drives of type "FIXED_DISK" are checked.</fo:block>
+      </fo:block></fo:block-container>
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Alarms are reported to the SASL alarm handler, see
+      <fo:inline font-style="italic">alarm_handler(3)</fo:inline>.
+      To set an alarm, <fo:inline font-family="monospace">alarm_handler:set_alarm(Alarm)</fo:inline> is called
+      where <fo:inline font-family="monospace">Alarm</fo:inline> is the alarm specified above.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The alarms are cleared automatically when the alarm cause is no
+      longer valid.</fo:block>
+  
+
+  <fo:block id="idp782352" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Configuration</fo:block>
+    
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The following configuration parameters can be used to change
+      the default values for time interval and threshold:</fo:block>
+    <fo:block space-after="0.25em" space-before="0.25em">
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">disk_space_check_interval = int()&gt;0</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The time interval, in minutes, for the periodic disk space
+          check. The default is 30 minutes.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">disk_almost_full_threshold = float()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The threshold, as percentage of total disk space, for how
+          much disk can be utilized before the <fo:inline font-family="monospace">disk_almost_full</fo:inline>
+          alarm is set. The default is 0.80 (80%).</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">disksup_posix_only = bool()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Specifies whether the <fo:inline font-family="monospace">disksup</fo:inline> helper process should only
+          use POSIX conformant commands (<fo:inline font-family="monospace">true</fo:inline>) or not. The default is
+          <fo:inline font-family="monospace">false</fo:inline>. Setting this parameter to <fo:inline font-family="monospace">true</fo:inline> can be
+          necessary on embedded systems with stripped-down versions
+          of Unix tools like <fo:inline font-family="monospace">df</fo:inline>. The returned disk data and alarms
+          can be different when using this option.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The parameter is ignored on platforms that are known to not be
+          posix compatible (Windows and SunOS).</fo:block>
+      </fo:block></fo:block-container>
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">See <fo:inline font-style="italic">config(4)</fo:inline> for
+      information about how to change the value of configuration
+      parameters.</fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp888240">get_disk_data() -&gt; [DiskData]</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">DiskData = {Id, KByte, Capacity}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace"> Id = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace"> KByte = int()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace"> Capacity = int()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the result of the latest disk check. <fo:inline font-family="monospace">Id</fo:inline> is a
+          string that identifies the disk or partition. <fo:inline font-family="monospace">KByte</fo:inline> is
+          the total size of the disk or partition in kbytes.
+          <fo:inline font-family="monospace">Capacity</fo:inline> is the percentage of disk space used.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The function is asynchronous in the sense that it does not
+          invoke a disk check, but returns the latest available value.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns <fo:inline font-family="monospace">[{"none",0,0}]</fo:inline> if <fo:inline font-family="monospace">disksup</fo:inline> is not
+          available.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp896096">get_check_interval() -&gt; MS</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MS = int()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the time interval, in milliseconds, for the periodic
+          disk space check.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp899376">set_check_interval(Minutes) -&gt; ok</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Minutes = int()&gt;=1</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Changes the time interval, given in minutes, for the periodic
+          disk space check.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The change will take effect after the next disk space check
+          and is non-persist. That is, in case of a process restart,
+          this value is forgotten and the default value will be used.
+          See <fo:inline font-style="italic">Configuration</fo:inline> above.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp904016">get_almost_full_threshold() -&gt; Percent</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Percent = int()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the threshold, in percent, for disk space utilization.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp907248">set_almost_full_threshold(Float) -&gt; ok</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Float = float(), 0=&lt;Float=&lt;1</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Changes the threshold, given as a float, for disk space
+          utilization.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The change will take effect during the next disk space check
+          and is non-persist. That is, in case of a process restart,
+          this value is forgotten and the default value will be used.
+          See <fo:inline font-style="italic">Configuration</fo:inline> above.</fo:block>
+      </fo:block>
+  
+
+  <fo:block id="idp911872" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">See Also</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">alarm_handler(3)</fo:inline>,
+      <fo:inline font-style="italic">os_mon(3)</fo:inline></fo:block>
+  
+<fo:block page-break-before="always" id="idp920016" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">memsup</fo:marker>memsup</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  memsup
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">memsup</fo:inline> is a process which supervises the memory usage for
+      the system and for individual processes. It is part of the OS_Mon
+      application, see <fo:inline font-style="italic">os_mon(6)</fo:inline>.
+      Available for Unix, Windows and VxWorks.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Periodically performs a memory check:</fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If more than a certain amount of available system memory is
+          allocated, as reported by the underlying operating system,
+          the alarm <fo:inline font-family="monospace">{system_memory_high_watermark, []}</fo:inline> is set.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If any Erlang process <fo:inline font-family="monospace">Pid</fo:inline> in the system has allocated
+          more than a certain amount of total system memory, the alarm
+          <fo:inline font-family="monospace">{process_memory_high_watermark, Pid}</fo:inline> is set.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Alarms are reported to the SASL alarm handler, see
+      <fo:inline font-style="italic">alarm_handler(3)</fo:inline>.
+      To set an alarm, <fo:inline font-family="monospace">alarm_handler:set_alarm(Alarm)</fo:inline> is called
+      where <fo:inline font-family="monospace">Alarm</fo:inline> is either of the alarms specified above.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The alarms are cleared automatically when the alarm cause is no
+      longer valid.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The function 
+      <fo:inline font-style="italic">get_memory_data()</fo:inline>
+      can be used to retrieve the result of the latest periodic memory
+      check.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">There is also a interface to system dependent memory data,
+      <fo:inline font-style="italic">get_system_memory_data()</fo:inline>.
+      The result is highly dependent on the underlying operating
+      system and the interface is targeted primarily for systems
+      without virtual memory (e.g. VxWorks). The output on other
+      systems is however still valid, although sparse.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A call to <fo:inline font-family="monospace">get_system_memory_data/0</fo:inline> is more costly
+      than a call to <fo:inline font-family="monospace">get_memory_data/0</fo:inline> as data is collected
+      synchronously when this function is called.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The total system memory reported under UNIX is the number of
+      physical pages of memory times the page size, and the available
+      memory is the number of available physical pages times the page
+      size. This is a reasonable measure as swapping should be avoided
+      anyway, but the task of defining total memory and available
+      memory is difficult because of virtual memory and swapping.</fo:block>
+  
+
+  <fo:block id="idp935888" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Configuration</fo:block>
+    
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The following configuration parameters can be used to change
+      the default values for time intervals and thresholds:</fo:block>
+    <fo:block space-after="0.25em" space-before="0.25em">
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">memory_check_interval = int()&gt;0</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The time interval, in minutes, for the periodic memory check.
+          The default is one minute.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">system_memory_high_watermark = float()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The threshold, as percentage of system memory, for how much
+          system memory can be allocated before the corresponding alarm
+          is set. The default is 0.80 (80%).</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">process_memory_high_watermark = float()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The threshold, as percentage of system memory, for how much
+          system memory can be allocated by one Erlang process before
+          the corresponding alarm is set. The default is 0.05 (5%).</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">memsup_helper_timeout = int()&gt;0</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A timeout, in seconds, for how long the <fo:inline font-family="monospace">memsup</fo:inline>
+          process should wait for a result from a memory check. If
+          the timeout expires, a warning message <fo:inline font-family="monospace">"OS_MON (memsup) timeout"</fo:inline> is issued via <fo:inline font-family="monospace">error_logger</fo:inline> and any
+          pending, synchronous client calls will return a dummy value.
+          Normally, this situation should not occur. There have been
+          cases on Linux, however, where the pseudo file from which
+          system data is read is temporarily unavailable when the system
+          is heavily loaded.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The default is 30 seconds. </fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">memsup_system_only = bool()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Specifies whether the <fo:inline font-family="monospace">memsup</fo:inline> process should only
+          check system memory usage (<fo:inline font-family="monospace">true</fo:inline>) or not. The default is
+          <fo:inline font-family="monospace">false</fo:inline>, meaning that information regarding both system
+          memory usage and Erlang process memory usage is collected.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">It is recommended to set this parameter to <fo:inline font-family="monospace">false</fo:inline> on
+          systems with many concurrent processes, as each process memory
+          check makes a traversal of the entire list of processes.</fo:block>
+      </fo:block></fo:block-container>
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">See <fo:inline font-style="italic">config(4)</fo:inline> for
+      information about how to change the value of configuration
+      parameters.</fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp981664">get_memory_data() -&gt; {Total,Allocated,Worst}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Total = Allocated = int()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Worst = {Pid, PidAllocated} | undefined</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace"> Pid = pid()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace"> PidAllocated = int()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the result of the latest memory check, where
+          <fo:inline font-family="monospace">Total</fo:inline> is the total memory size and <fo:inline font-family="monospace">Allocated</fo:inline>
+          the allocated memory size, in bytes.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">Worst</fo:inline> is the pid and number of allocated bytes of
+          the largest Erlang process on the node. If <fo:inline font-family="monospace">memsup</fo:inline>
+          should not collect process data, that is if the configuration
+          parameter <fo:inline font-family="monospace">memsup_system_only</fo:inline> was set to <fo:inline font-family="monospace">true</fo:inline>,
+          <fo:inline font-family="monospace">Worst</fo:inline> is <fo:inline font-family="monospace">undefined</fo:inline>.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The function is normally asynchronous in the sense that it
+          does not invoke a memory check, but returns the latest
+          available value. The one exception if is the function is
+          called before a first memory check is finished, in which case
+          it does not return a value until the memory check is finished.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns <fo:inline font-family="monospace">{0,0,{pid(),0}}</fo:inline> or <fo:inline font-family="monospace">{0,0,undefined}</fo:inline> if
+          <fo:inline font-family="monospace">memsup</fo:inline> is not available, or if all memory checks so far
+          have timed out.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp992976">get_system_memory_data() -&gt; MemDataList</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemDataList = [{Tag, Size}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace"> Tag = atom()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace"> Size = int()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Invokes a memory check and returns the resulting, system
+          dependent, data as a list of tagged tuples, where <fo:inline font-family="monospace">Tag</fo:inline>
+          can be one of the following:</fo:block>
+        <fo:block space-after="0.25em" space-before="0.25em">
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">total_memory</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">The total amount of memory available to the Erlang emulator,
+           allocated and free. May or may not be equal to the amount
+           of memory configured in the system.</fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">free_memory</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">The amount of free memory available to the Erlang emulator
+           for allocation.</fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">system_total_memory</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">The amount of memory available to the whole operating
+           system. This may well be equal to <fo:inline font-family="monospace">total_memory</fo:inline> but
+           not necessarily.</fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">largest_free</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">The size of the largest contiguous free memory block
+           available to the Erlang emulator.</fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">number_of_free</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">The number of free blocks available to the Erlang runtime
+           system. This gives a fair indication of how fragmented
+           the memory is.</fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">buffered_memory</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+                The amount of memory the system uses for temporary storing raw disk blocks.
+          </fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">cached_memory</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+                The amount of memory the system uses for cached files read from disk.
+          </fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">total_swap</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+                The amount of total amount of memory the system has available
+                for disk swap.
+          </fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">free_swap</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+                The amount of memory the system has available for disk swap.
+          </fo:block></fo:block-container>
+
+        </fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">All memory sizes are presented as number of <fo:inline font-weight="bold">bytes</fo:inline>.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-family="monospace">largest_free</fo:inline> and <fo:inline font-family="monospace">number_of_free</fo:inline> tags are
+          currently only returned on a VxWorks system.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the empty list [] if <fo:inline font-family="monospace">memsup</fo:inline> is not available,
+          or if the memory check times out.</fo:block>
+	<fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+	On linux the memory available to the emulator is <fo:inline font-family="monospace">cached_memory</fo:inline> and <fo:inline font-family="monospace">buffered_memory</fo:inline> in addition to 
+	<fo:inline font-family="monospace">free_memory</fo:inline>.</fo:block>
+	</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1014000">get_os_wordsize() -&gt; Wordsize</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Wordsize = 32 | 64 | unsupported_os</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the wordsize of the current running operating system. </fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1017232">get_check_interval() -&gt; MS</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MS = int()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the time interval, in milliseconds, for the periodic
+          memory check.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1020496">set_check_interval(Minutes) -&gt; ok</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Minutes = int()&gt;0</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Changes the time interval, given in minutes, for the periodic
+          memory check.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The change will take effect after the next memory check and is
+          non-persistent. That is, in case of a process restart, this
+          value is forgotten and the default value will be used. See
+          <fo:inline font-style="italic">Configuration</fo:inline> above.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1025120">get_procmem_high_watermark() -&gt; int()</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the threshold, in percent, for process memory
+          allocation.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1027488">set_procmem_high_watermark(Float) -&gt; ok</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Changes the threshold, given as a float, for process memory
+          allocation.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The change will take effect during the next periodic memory
+          check and is non-persistent. That is, in case of a process
+          restart, this value is forgotten and the default value will be
+          used. See <fo:inline font-style="italic">Configuration</fo:inline>
+          above.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1031248">get_sysmem_high_watermark() -&gt; int()</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the threshold, in percent, for system memory
+          allocation.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1033600">set_sysmem_high_watermark(Float) -&gt; ok</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Changes the threshold, given as a float, for system memory
+          allocation.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The change will take effect during the next periodic memory
+          check and is non-persistent. That is, in case of a process
+          restart, this value is forgotten and the default value will be
+          used. See <fo:inline font-style="italic">Configuration</fo:inline>
+          above.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1037344">get_helper_timeout() -&gt; Seconds</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Seconds = int()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the timeout value, in seconds, for memory checks.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1040576">set_helper_timeout(Seconds) -&gt; ok</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Seconds = int() (&gt;= 1)</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Changes the timeout value, given in seconds, for memory
+          checks.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The change will take effect for the next memory check and is
+          non-persistent. That is, in the case of a process restart, this
+          value is forgotten and the default value will be used. See
+          <fo:inline font-style="italic">Configuration</fo:inline> above.</fo:block>
+      </fo:block>
+  
+
+  <fo:block id="idp1045344" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">See Also</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">alarm_handler(3)</fo:inline>,
+      <fo:inline font-style="italic">os_mon(3)</fo:inline></fo:block>
+  
+<fo:block page-break-before="always" id="idp1053936" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">os_mon_mib</fo:marker>os_mon_mib</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  os_mon_mib
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Functions for loading and unloading the OTP-OS-MON-MIB into/from
+      an SNMP agent. The instrumentation of the OTP-OS-MON-MIB uses
+      Mnesia, hence Mnesia must be started prior to loading
+      the OTP-OS-MON-MIB.</fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1056528">load(Agent) -&gt; ok | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Agent = pid() | atom()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = term()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Loads the OTP-OS-MON-MIB.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1060144">unload(Agent) -&gt; ok | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Agent = pid() | atom() </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = term()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Unloads the OTP-OS-MON-MIB.</fo:block>
+      </fo:block>
+  
+
+  <fo:block id="idp1063936" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">See Also</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">os_mon(6)</fo:inline>,
+      <fo:inline font-style="italic">snmp(3)</fo:inline></fo:block>
+  
+<fo:block page-break-before="always" id="idp1072080" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">os_sup</fo:marker>os_sup</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  os_sup
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">os_sup</fo:inline> is a process providing a message passing service
+      from the operating system to the error logger in the Erlang
+      runtime system. It is part of the OS_Mon application, see
+      <fo:inline font-style="italic">os_mon(6)</fo:inline>. Available for
+      Solaris and Windows.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Messages received from the operating system results in an
+      user defined callback function being called. This function can do
+      whatever filtering and formatting is necessary and then deploy any
+      type of logging suitable for the user's application.</fo:block>
+  
+
+  <fo:block id="idp1076080" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Solaris Operation</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Solaris (SunOS 5.x) messages are retrieved from
+      the syslog-daemon, <fo:inline font-family="monospace">syslogd</fo:inline>.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Enabling the service includes actions which require root
+      privileges, such as change of ownership and file privileges of an
+      executable binary file, and creating a modified copy of
+      the configuration file for <fo:inline font-family="monospace">syslogd</fo:inline>. When <fo:inline font-family="monospace">os_sup</fo:inline> is
+      terminated, the service must be disabled, meaning the original
+      configuration must be restored. Enabling/disabling can be done
+      either outside or inside <fo:inline font-family="monospace">os_sup</fo:inline>, see
+      <fo:inline font-style="italic">Configuration</fo:inline> below.</fo:block>
+    <fo:block background-color="#ffd6d6" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Warning:</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This process cannot run in multiple instances on the same
+        hardware. OS_Mon must be configured to start <fo:inline font-family="monospace">os_sup</fo:inline> on
+        one node only if two or more Erlang nodes execute on the same
+        machine.</fo:block>
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The format of received events is not defined.</fo:block>
+  
+
+  <fo:block id="idp1082816" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Windows Operation</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Windows messages are retrieved from the eventlog file.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-family="monospace">nteventlog</fo:inline> module is used to implement <fo:inline font-family="monospace">os_sup</fo:inline>.
+      See <fo:inline font-style="italic">nteventlog(3)</fo:inline>. Note
+      that the start functions of <fo:inline font-family="monospace">nteventlog</fo:inline> does not need to be
+      used, in this case the process is started automatically as part of
+      the OS_Mon supervision tree.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">OS messages are formatted as a tuple
+      <fo:inline font-family="monospace">{Time, Category, Facility, Severity, Message}</fo:inline>:</fo:block>
+    <fo:block space-after="0.25em" space-before="0.25em">
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">Time = {MegaSecs, Secs, MicroSecs}</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A time stamp as returned by the BIF <fo:inline font-family="monospace">now()</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">Category = string()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Usually one of <fo:inline font-family="monospace">"System"</fo:inline>, <fo:inline font-family="monospace">"Application"</fo:inline> or
+          <fo:inline font-family="monospace">"Security"</fo:inline>. Note that the NT eventlog viewer has
+          another notion of category, which in most cases is totally
+          meaningless and therefore not imported into Erlang. What is
+          called a category here is one of the main three types of
+          events occurring in a normal NT system.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">Facility = string()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The source of the message, usually the name of
+          the application that generated it. This could be almost any
+          string. When matching messages from certain applications,
+          the version number of the application may have to be
+          accounted for. This is what the NT event viewer calls
+          "source".</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">Severity = string()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">One of <fo:inline font-family="monospace">"Error"</fo:inline>, <fo:inline font-family="monospace">"Warning"</fo:inline>,
+          <fo:inline font-family="monospace">"Informational"</fo:inline>, <fo:inline font-family="monospace">"Audit_Success"</fo:inline>,
+          <fo:inline font-family="monospace">"Audit_Faulure"</fo:inline> or, in case of a currently unknown
+          Windows NT version <fo:inline font-family="monospace">"Severity_Unknown"</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">Message = string()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Formatted exactly as it would be in the NT eventlog viewer.
+          Binary data is not imported into Erlang.</fo:block>
+      </fo:block></fo:block-container>
+    </fo:block>
+  
+
+  <fo:block id="idp1101456" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Configuration</fo:block>
+    
+    
+    <fo:block space-after="0.25em" space-before="0.25em">
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">os_sup_mfa = {Module, Function, Args}</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The callback function to use. <fo:inline font-family="monospace">Module</fo:inline> and
+          <fo:inline font-family="monospace">Function</fo:inline> are atoms and <fo:inline font-family="monospace">Args</fo:inline> is a list of terms.
+          When an OS message <fo:inline font-family="monospace">Msg</fo:inline> is received, this function is
+          called as <fo:inline font-family="monospace">apply(Module, Function, [Msg | Args])</fo:inline>.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Default is <fo:inline font-family="monospace">{os_sup, error_report, [Tag]}</fo:inline> which will
+          send the event to the error logger using
+          <fo:inline font-style="italic">error_logger:error_report(Tag, Msg)</fo:inline>. <fo:inline font-family="monospace">Tag</fo:inline> is the value of
+          <fo:inline font-family="monospace">os_sup_errortag</fo:inline>, see below.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">os_sup_errortag = atom()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This parameter defines the error report type used when
+          messages are sent to error logger using the default callback
+          function. Default is <fo:inline font-family="monospace">std_error</fo:inline>, which means the events
+          are handled by the standard event handler.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">os_sup_enable = bool()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Solaris only. Defines if the service should be enabled (and
+          disabled) inside (<fo:inline font-family="monospace">true</fo:inline>) or outside (<fo:inline font-family="monospace">false</fo:inline>)
+          <fo:inline font-family="monospace">os_sup</fo:inline>. For backwards compatibility reasons,
+          the default is <fo:inline font-family="monospace">true</fo:inline>. The recommended value is
+          <fo:inline font-family="monospace">false</fo:inline>, as the Erlang emulator should normally not be
+          run with <fo:inline font-family="monospace">root</fo:inline> privileges, as is required for enabling
+          the service.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">os_sup_own = string()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Solaris only. Defines the directory which contains
+          the backup copy and the Erlang specific configuration files
+          for <fo:inline font-family="monospace">syslogd</fo:inline>, and a named pipe to receive the messages
+          from <fo:inline font-family="monospace">syslogd</fo:inline>. Default is <fo:inline font-family="monospace">"/etc"</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">os_sup_syslogconf = string()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Solaris only. Defines the full name of the configuration file
+          for <fo:inline font-family="monospace">syslogd</fo:inline>. Default is <fo:inline font-family="monospace">"/etc/syslog.conf"</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+    </fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1121520">enable() -&gt; ok | {error, Res}</fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1121984">enable(Dir, Conf) -&gt; ok | {error, Error}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Dir = Conf = Res = string()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Enables the <fo:inline font-family="monospace">os_sup</fo:inline> service. Needed on Solaris only.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the configuration parameter <fo:inline font-family="monospace">os_sup_enable</fo:inline> is
+          <fo:inline font-family="monospace">false</fo:inline>, this function is called automatically by
+          <fo:inline font-family="monospace">os_sup</fo:inline>, using the values of <fo:inline font-family="monospace">os_sup_own</fo:inline> and
+          <fo:inline font-family="monospace">os_sup_syslogconf</fo:inline> as arguments.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If <fo:inline font-family="monospace">os_sup_enable</fo:inline> is <fo:inline font-family="monospace">true</fo:inline>, this function must
+          be called <fo:inline font-weight="bold">before</fo:inline> OS_Mon/<fo:inline font-family="monospace">os_sup</fo:inline> is started.
+          <fo:inline font-family="monospace">Dir</fo:inline> defines the directory which contains the backup
+          copy and the Erlang specific configuration files for
+          <fo:inline font-family="monospace">syslogd</fo:inline>, and a named pipe to receive the messages
+          from <fo:inline font-family="monospace">syslogd</fo:inline>. Defaults to <fo:inline font-family="monospace">"/etc"</fo:inline>. <fo:inline font-family="monospace">Conf</fo:inline>
+          defines the full name of the configuration file for
+          <fo:inline font-family="monospace">syslogd</fo:inline>. Default is <fo:inline font-family="monospace">"/etc/syslog.conf"</fo:inline>.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Results in a OS call to:</fo:block>
+        <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+&lt;PRIVDIR&gt;/bin/mod_syslog otp Dir Conf
+        </fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">where <fo:inline font-family="monospace">&lt;PRIVDIR&gt;</fo:inline> is the <fo:inline font-family="monospace">priv</fo:inline> directory of
+          OS_Mon, <fo:inline font-family="monospace">code:priv_dir(os_mon)</fo:inline>.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns <fo:inline font-family="monospace">ok</fo:inline> if this yields the expected result
+          <fo:inline font-family="monospace">"0"</fo:inline>, and <fo:inline font-family="monospace">{error, Res}</fo:inline> if it yields anything
+          else.</fo:block>
+        <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+          <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This function requires root privileges to succeed.</fo:block>
+        </fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1139808">disable() -&gt; ok | {error, Res}</fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1140272">disable(Dir, Conf) -&gt; ok | {error, Error}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Dir = Conf = Res = string()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Disables the <fo:inline font-family="monospace">os_sup</fo:inline> service. Needed on Solaris only.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the configuration parameter <fo:inline font-family="monospace">os_sup_enable</fo:inline> is
+          <fo:inline font-family="monospace">false</fo:inline>, this function is called automatically by
+          <fo:inline font-family="monospace">os_sup</fo:inline>, using the same arguments as when
+          <fo:inline font-family="monospace">enable/2</fo:inline> was called.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If <fo:inline font-family="monospace">os_sup_enable</fo:inline> is <fo:inline font-family="monospace">true</fo:inline>, this function must
+          be called <fo:inline font-weight="bold">after</fo:inline> OS_Mon/<fo:inline font-family="monospace">os_sup</fo:inline> is stopped.
+          <fo:inline font-family="monospace">Dir</fo:inline> defines the directory which contains the backup
+          copy and the Erlang specific configuration files for
+          <fo:inline font-family="monospace">syslogd</fo:inline>, and a named pipe to receive the messages
+          from <fo:inline font-family="monospace">syslogd</fo:inline>. Defaults to <fo:inline font-family="monospace">"/etc"</fo:inline>. <fo:inline font-family="monospace">Conf</fo:inline>
+          defines the full name of the configuration file for
+          <fo:inline font-family="monospace">syslogd</fo:inline>. Default is <fo:inline font-family="monospace">"/etc/syslog.conf"</fo:inline>.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Results in a OS call to:</fo:block>
+        <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+&lt;PRIVDIR&gt;/bin/mod_syslog nootp Dir Conf
+        </fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">where <fo:inline font-family="monospace">&lt;PRIVDIR&gt;</fo:inline> is the <fo:inline font-family="monospace">priv</fo:inline> directory of
+          OS_Mon, <fo:inline font-family="monospace">code:priv_dir(os_mon)</fo:inline>.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns <fo:inline font-family="monospace">ok</fo:inline> if this yields the expected result
+          <fo:inline font-family="monospace">"0"</fo:inline>, and <fo:inline font-family="monospace">{error, Res}</fo:inline> if it yields anything
+          else.</fo:block>
+        <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+          <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This function requires root privileges to succeed.</fo:block>
+        </fo:block>
+      </fo:block>
+  
+
+  <fo:block id="idp1157840" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">See also</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">error_logger(3)</fo:inline>,
+      <fo:inline font-style="italic">os_mon(3)</fo:inline></fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">syslogd(1M)</fo:inline>, <fo:inline font-family="monospace">syslog.conf(4)</fo:inline> in the Solaris
+      documentation.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"/>
+  
+<fo:block page-break-before="always" id="idp1167472" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">nteventlog</fo:marker>nteventlog</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  nteventlog
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">nteventlog</fo:inline> provides a generic interface to the Windows
+      event log. It is part of the OS_Mon application, see
+      <fo:inline font-style="italic">os_mon(6)</fo:inline>. Available for
+      Windows versions where the event log is available. That is, not
+      for Windows 98 and some other older Windows versions, but for most
+      (all?) newer Windows versions.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This module is used as the Windows backend for <fo:inline font-family="monospace">os_sup</fo:inline>, see
+      <fo:inline font-style="italic">os_sup(3)</fo:inline>.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To retain backwards compatibility, this module can also be used
+      to start a standalone <fo:inline font-family="monospace">nteventlog</fo:inline> process which is not part
+      of the OS_Mon supervision tree. When starting such a process,
+      the user has to supply an identifier as well as a callback
+      function to handle the messages.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The identifier, an arbitrary string, should be reused whenever
+      the same application (or node) wants to start the process.
+      <fo:inline font-family="monospace">nteventlog</fo:inline> is informed about all events that have arrived
+      to the eventlog since the last accepted message for the current
+      identifier. As long as the same identifier is used, the same
+      eventlog record will not be sent to <fo:inline font-family="monospace">nteventlog</fo:inline> more than
+      once (with the exception of when graved system failures arise, in
+      which case the last records written before the failure may be
+      sent to Erlang again after reboot).</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the event log is configured to wrap around automatically,
+      records that have arrived to the log and been overwritten when
+      <fo:inline font-family="monospace">nteventlog</fo:inline> was not running are lost. It however detects
+      this state and loses no records that are not overwritten.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The callback function works as described in <fo:inline font-family="monospace">os_sup(3)</fo:inline>.</fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1177824">start(Identifier, MFA) -&gt; Result</fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1178288">start_link(Identifier, MFA) -&gt; Result</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Identifier = string() | atom()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MFA = {Mod, Func, Args}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace"> Mod = Func = atom()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace"> Args = [term()]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Result = {ok, Pid} | {error, {already_started, Pid}}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Pid = pid()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This function starts the standalone <fo:inline font-family="monospace">nteventlog</fo:inline> process
+          and, if <fo:inline font-family="monospace">start_link/2</fo:inline> is used, links to it.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">Identifier</fo:inline> is an identifier as described above.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">MFA</fo:inline> is the supplied callback function. When
+          <fo:inline font-family="monospace">nteventlog</fo:inline> receives information about a new event, this
+          function will be called as <fo:inline font-family="monospace">apply(Mod, Func, [Event|Args])</fo:inline> where <fo:inline font-family="monospace">Event</fo:inline> is a tuple</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1187616">stop() -&gt; stopped</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Result = stopped</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Stops <fo:inline font-family="monospace">nteventlog</fo:inline>. Usually only used during
+          development. The server does not have to be shut down
+          gracefully to maintain its state.</fo:block>
+      </fo:block>
+  
+
+  <fo:block id="idp1191488" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">See Also</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">os_mon(6)</fo:inline>,
+      <fo:inline font-style="italic">os_sup(3)</fo:inline></fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Windows NT documentation</fo:block>
+  
+</fo:flow>
+  </fo:page-sequence>
+</fo:root>

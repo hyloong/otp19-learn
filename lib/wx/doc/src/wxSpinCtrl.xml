@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxSpinCtrl</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxSpinCtrl.xml</file></header>
+<module>wxSpinCtrl</module>
+<modulesummary>See external documentation: wxSpinCtrl.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxspinctrl.html">wxSpinCtrl</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxControl">wxControl</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxSpinCtrl"/>wxSpinCtrl()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxSpinCtrl">wxSpinCtrl()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxspinctrl.html#wxspinctrlwxspinctrl">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent) -&gt; <seealso marker="#type-wxSpinCtrl">wxSpinCtrl()</seealso></name>
+<fsummary>Equivalent to new(Parent, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="new-1"/>
+<p>Equivalent to <seealso marker="#new-2">new(Parent, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Options::[Option]) -&gt; <seealso marker="#type-wxSpinCtrl">wxSpinCtrl()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {id, integer()} | {value, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()} | {min, integer()} | {max, integer()} | {initial, integer()}</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxspinctrl.html#wxspinctrlwxspinctrl">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent) -&gt; boolean()</name>
+<fsummary>Equivalent to create(This, Parent, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSpinCtrl">wxSpinCtrl()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="create-2"/>
+<p>Equivalent to <seealso marker="#create-3">create(This, Parent, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSpinCtrl">wxSpinCtrl()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {id, integer()} | {value, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()} | {min, integer()} | {max, integer()} | {initial, integer()}</v></type>
+<desc><marker id="create-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxspinctrl.html#wxspinctrlcreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setValue(This, Value) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSpinCtrl">wxSpinCtrl()</seealso></v><v>Value = integer()</v></type>
+<desc><marker id="setValue-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxspinctrl.html#wxspinctrlsetvalue">external documentation</url>.
+  <br/> Also:<br/>
+  setValue(This, Text) -&gt; 'ok' when<br/>
+  	This::wxSpinCtrl(), Text::unicode:chardata().<br/>
+ </p>
+</desc></func>
+<func>
+<name>getValue(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSpinCtrl">wxSpinCtrl()</seealso></v></type>
+<desc><marker id="getValue-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxspinctrl.html#wxspinctrlgetvalue">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setRange(This, MinVal, MaxVal) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSpinCtrl">wxSpinCtrl()</seealso></v><v>MinVal = integer()</v><v>MaxVal = integer()</v></type>
+<desc><marker id="setRange-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxspinctrl.html#wxspinctrlsetrange">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSelection(This, From, To) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSpinCtrl">wxSpinCtrl()</seealso></v><v>From = integer()</v><v>To = integer()</v></type>
+<desc><marker id="setSelection-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxspinctrl.html#wxspinctrlsetselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMin(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSpinCtrl">wxSpinCtrl()</seealso></v></type>
+<desc><marker id="getMin-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxspinctrl.html#wxspinctrlgetmin">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMax(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSpinCtrl">wxSpinCtrl()</seealso></v></type>
+<desc><marker id="getMax-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxspinctrl.html#wxspinctrlgetmax">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxSpinCtrl">wxSpinCtrl()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

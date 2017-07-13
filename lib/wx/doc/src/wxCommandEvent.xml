@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxCommandEvent</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxCommandEvent.xml</file></header>
+<module>wxCommandEvent</module>
+<modulesummary>See external documentation: wxCommandEvent.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcommandevent.html">wxCommandEvent</url>.
+  </p><taglist><tag>Use <seealso marker="wxEvtHandler#connect-3">wxEvtHandler:connect/3</seealso> with EventType:</tag>
+  <item><p><em>command_button_clicked</em>, <em>command_checkbox_clicked</em>, <em>command_choice_selected</em>, <em>command_listbox_selected</em>, <em>command_listbox_doubleclicked</em>, <em>command_text_updated</em>, <em>command_text_enter</em>, <em>command_menu_selected</em>, <em>command_slider_updated</em>, <em>command_radiobox_selected</em>, <em>command_radiobutton_selected</em>, <em>command_scrollbar_updated</em>, <em>command_vlbox_selected</em>, <em>command_combobox_selected</em>, <em>command_tool_rclicked</em>, <em>command_tool_enter</em>, <em>command_checklistbox_toggled</em>, <em>command_togglebutton_clicked</em>, <em>command_left_click</em>, <em>command_left_dclick</em>, <em>command_right_click</em>, <em>command_set_focus</em>, <em>command_kill_focus</em>, <em>command_enter</em></p></item></taglist><p>
+  See also the message variant <seealso marker="wxEvtHandler#type-wxCommand">#wxCommand{</seealso>} event record type.</p>
+ 
+  <p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxEvent">wxEvent</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxCommandEvent"/>wxCommandEvent()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>getClientData(This) -&gt; term()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCommandEvent">wxCommandEvent()</seealso></v></type>
+<desc><marker id="getClientData-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcommandevent.html#wxcommandeventgetclientobject">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getExtraLong(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCommandEvent">wxCommandEvent()</seealso></v></type>
+<desc><marker id="getExtraLong-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcommandevent.html#wxcommandeventgetextralong">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getInt(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCommandEvent">wxCommandEvent()</seealso></v></type>
+<desc><marker id="getInt-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcommandevent.html#wxcommandeventgetint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSelection(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCommandEvent">wxCommandEvent()</seealso></v></type>
+<desc><marker id="getSelection-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcommandevent.html#wxcommandeventgetselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getString(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCommandEvent">wxCommandEvent()</seealso></v></type>
+<desc><marker id="getString-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcommandevent.html#wxcommandeventgetstring">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isChecked(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCommandEvent">wxCommandEvent()</seealso></v></type>
+<desc><marker id="isChecked-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcommandevent.html#wxcommandeventischecked">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isSelection(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCommandEvent">wxCommandEvent()</seealso></v></type>
+<desc><marker id="isSelection-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcommandevent.html#wxcommandeventisselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setInt(This, I) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCommandEvent">wxCommandEvent()</seealso></v><v>I = integer()</v></type>
+<desc><marker id="setInt-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcommandevent.html#wxcommandeventsetint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setString(This, S) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCommandEvent">wxCommandEvent()</seealso></v><v>S = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setString-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcommandevent.html#wxcommandeventsetstring">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

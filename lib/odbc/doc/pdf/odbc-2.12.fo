@@ -1,0 +1,1257 @@
+<?xml version="1.0"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="cover" margin="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin="0mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="left-page" margin-top="25mm" margin-bottom="15mm" margin-left="20mm" margin-right="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="left-header" extent="10mm"/>
+      <fo:region-after region-name="left-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="right-page" margin-top="25mm" margin-bottom="15mm" margin-left="25mm" margin-right="20mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="right-header" extent="10mm"/>
+      <fo:region-after region-name="right-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:page-sequence-master master-name="document">
+      <fo:repeatable-page-master-alternatives>
+        <fo:conditional-page-master-reference master-reference="left-page" odd-or-even="even"/>
+        <fo:conditional-page-master-reference master-reference="right-page" odd-or-even="odd"/>
+      </fo:repeatable-page-master-alternatives>
+    </fo:page-sequence-master>
+  </fo:layout-master-set>
+  <fo:bookmark-tree>
+    <fo:bookmark internal-destination="cover-page" starting-state="show">
+      <fo:bookmark-title>Erlang ODBC</fo:bookmark-title>
+      <fo:bookmark internal-destination="idp419040" starting-state="hide">
+        <fo:bookmark-title>Erlang ODBC User's Guide</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp490656" starting-state="hide">
+          <fo:bookmark-title>Introduction</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp452672" starting-state="hide">
+            <fo:bookmark-title>Purpose</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp451424" starting-state="hide">
+            <fo:bookmark-title>Prerequisites</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp449360" starting-state="hide">
+            <fo:bookmark-title>About ODBC</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp510736" starting-state="hide">
+            <fo:bookmark-title>About the Erlang ODBC application</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp553232" starting-state="hide">
+          <fo:bookmark-title>Getting started</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp491744" starting-state="hide">
+            <fo:bookmark-title>Setting things up </fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp469952" starting-state="hide">
+            <fo:bookmark-title>Using the Erlang API</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp485232" starting-state="hide">
+          <fo:bookmark-title>Databases</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp442000" starting-state="hide">
+            <fo:bookmark-title>Databases</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp10688" starting-state="hide">
+            <fo:bookmark-title>Database independence </fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp573920" starting-state="hide">
+            <fo:bookmark-title>Data types </fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp610096" starting-state="hide">
+            <fo:bookmark-title>Batch handling</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp612112" starting-state="hide">
+              <fo:bookmark-title>Explicit batches</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp614336" starting-state="hide">
+              <fo:bookmark-title>Procedures </fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp616912" starting-state="hide">
+              <fo:bookmark-title>Parameterized queries</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp623872" starting-state="hide">
+          <fo:bookmark-title>Error handling</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp627392" starting-state="hide">
+            <fo:bookmark-title>Strategy </fo:bookmark-title>
+            <fo:bookmark internal-destination="idp630640" starting-state="hide">
+              <fo:bookmark-title>Clients </fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp632448" starting-state="hide">
+              <fo:bookmark-title>Timeouts </fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp634368" starting-state="hide">
+              <fo:bookmark-title>Gaurds </fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp636432" starting-state="hide">
+            <fo:bookmark-title>The whole picture </fo:bookmark-title>
+            <fo:bookmark internal-destination="idp642736" starting-state="hide">
+              <fo:bookmark-title>Error types</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+      <fo:bookmark internal-destination="idp114320" starting-state="hide">
+        <fo:bookmark-title>Reference Manual</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp851696" starting-state="hide">
+          <fo:bookmark-title>odbc</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp827936" starting-state="hide">
+            <fo:bookmark-title>commit/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp827776" starting-state="hide">
+            <fo:bookmark-title>commit/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp822656" starting-state="hide">
+            <fo:bookmark-title>connect/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp353744" starting-state="hide">
+            <fo:bookmark-title>disconnect/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp349776" starting-state="hide">
+            <fo:bookmark-title>describe_table/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp349392" starting-state="hide">
+            <fo:bookmark-title>describe_table/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp344016" starting-state="hide">
+            <fo:bookmark-title>first/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp343456" starting-state="hide">
+            <fo:bookmark-title>first/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp6128" starting-state="hide">
+            <fo:bookmark-title>last/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp5248" starting-state="hide">
+            <fo:bookmark-title>last/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp675552" starting-state="hide">
+            <fo:bookmark-title>next/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp657776" starting-state="hide">
+            <fo:bookmark-title>next/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp652384" starting-state="hide">
+            <fo:bookmark-title>param_query/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp651408" starting-state="hide">
+            <fo:bookmark-title>param_query/4</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp398928" starting-state="hide">
+            <fo:bookmark-title>prev/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp398176" starting-state="hide">
+            <fo:bookmark-title>prev/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp392832" starting-state="hide">
+            <fo:bookmark-title>start/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp392448" starting-state="hide">
+            <fo:bookmark-title>start/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp752752" starting-state="hide">
+            <fo:bookmark-title>stop/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp750192" starting-state="hide">
+            <fo:bookmark-title>sql_query/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp749008" starting-state="hide">
+            <fo:bookmark-title>sql_query/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp531824" starting-state="hide">
+            <fo:bookmark-title>select_count/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp531696" starting-state="hide">
+            <fo:bookmark-title>select_count/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp410848" starting-state="hide">
+            <fo:bookmark-title>select/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp410432" starting-state="hide">
+            <fo:bookmark-title>select/4</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+    </fo:bookmark>
+  </fo:bookmark-tree>
+  <fo:page-sequence font-family="sans-serif" force-page-count="even" master-reference="cover" font-size="10pt">
+    <fo:flow flow-name="xsl-region-body">
+      <fo:block space-before="130mm" space-before.conditionality="retain" text-align="end">
+        <fo:external-graphic src="/root/download/otp_src_20.0/bootstrap/lib/erl_docgen/priv/images/erlang-logo.gif"/>
+      </fo:block>
+      <fo:block id="cover-page" border-before-style="solid" border-before-width="10pt" border-color="#960003" font-size="2.3em" padding-before="0.5em" text-align="end">Erlang ODBC</fo:block>
+      <fo:block font-size="0.9em" text-align="end">Copyright © 1999-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em" text-align="end">Erlang ODBC 2.12</fo:block>
+      <fo:block font-size="0.9em" text-align="end">July 12, 2017</fo:block>
+      <fo:block padding-before="2.5em" font-size="1.33em" font-weight="bold" color="#C00" text-align="end"/>
+      <fo:block break-before="page" border-before-style="solid" border-before-width="1pt" border-color="#960003" font-weight="bold" padding-before="0.5em" space-before="200mm" space-before.conditionality="retain">Copyright © 1999-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em">
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+ 
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+    
+    Ericsson AB. All Rights Reserved..
+        </fo:block>
+      <fo:block font-size="0.9em" font-weight="bold" space-before="2em">July 12, 2017</fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+  <fo:page-sequence font-family="serif" master-reference="document" initial-page-number="1" font-size="10pt">
+    <fo:static-content flow-name="left-header">
+      <fo:block text-align="start" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-header">
+      <fo:block text-align="end" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="left-footer">
+      <fo:block text-align="start" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold"><fo:page-number/> | Ericsson AB. All Rights Reserved.:
+            Erlang ODBC</fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-footer">
+      <fo:block text-align="end" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">Ericsson AB. All Rights Reserved.:
+            Erlang ODBC | <fo:page-number/></fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body"><fo:block/><fo:block id="idp419040" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">1   
+      Erlang ODBC User's Guide</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-weight="bold">Erlang ODBC Application </fo:inline> provides an interface for
+      accessing relational SQL-databases from Erlang.</fo:block>
+  <fo:block id="idp490656" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.1  Introduction</fo:marker>1.1  Introduction</fo:block><fo:block id="idp452672" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.1 
+      Purpose</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The purpose of the Erlang ODBC application is to provide the
+      programmer with an ODBC interface that has a Erlang/OTP touch and
+      feel. So that the programmer may concentrate on solving his/her
+      actual problem instead of struggling with pointers and memory
+      allocation which is not very relevant for Erlang. This user guide
+      will give you some information about technical issues and provide
+      some examples of how to use the Erlang ODBC interface.</fo:block>
+  <fo:block id="idp451424" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.2 
+      Prerequisites</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">It is assumed that the reader is familiar with the Erlang
+      programming language, concepts of OTP and has a basic
+      understanding of relational databases and SQL.</fo:block>
+  <fo:block id="idp449360" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.3 
+      About ODBC</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Open Database Connectivity (ODBC) is a Microsoft standard for
+      accessing relational databases that has become widely used. The
+      ODBC standard provides a c-level application programming
+      interface (API) for database access. It uses Structured Query
+      Language (SQL) as its database access language.</fo:block>
+  <fo:block id="idp510736" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.4 
+      About the Erlang ODBC application</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Provides an Erlang interface to communicate with relational
+      SQL-databases. It is built on top of Microsofts ODBC interface and
+      therefore requires that you have an ODBC driver to the database
+      that you want to connect to. The Erlang ODBC application is designed 
+      using the version 3.0 of the ODBC-standard, however using the option
+      <fo:inline font-family="monospace">{scrollable_cursors, off} </fo:inline> for a connection has been known
+      to make it work for at least some 2.X drivers.</fo:block>
+  <fo:block id="idp553232" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.2  Getting started</fo:marker>1.2  Getting started</fo:block><fo:block id="idp491744" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.2.1 
+      Setting things up </fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">As the Erlang ODBC application is dependent on third party
+      products there are a few administrative things that needs to be
+      done before you can get things up and running.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"/>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>The first thing you need to do, is to make sure you
+       have an ODBC driver installed for the database that you
+       want to access. Both the client machine where you plan to
+       run your erlang node and the server machine running the
+       database needs the the ODBC driver. (In some cases the
+       client and the server may be the same machine).</fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Secondly you might need to set environment variables
+       and paths to appropriate values. This may differ a lot
+       between different os's, databases and ODBC drivers. This
+       is a configuration problem related to the third party product
+       and hence we can not give you a standard solution in this guide.</fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>The Erlang ODBC application consists of both <fo:inline font-family="monospace">Erlang</fo:inline>
+       and <fo:inline font-family="monospace">C</fo:inline> code. The <fo:inline font-family="monospace">C</fo:inline> code is delivered as a
+       precompiled executable for windows, solaris and linux (SLES10) in the commercial
+       build. In the open source distribution it is built the
+       same way as all other application using configure and make.
+       You may want to provide the the path to your ODBC libraries
+       using --with-odbc=PATH.  </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+    <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Erlang ODBC application should run on all Unix
+        dialects including Linux, Windows 2000, Windows XP and
+        NT. But currently it is only tested for Solaris, Windows
+        2000, Windows XP and NT.</fo:block>
+    </fo:block>
+  <fo:block id="idp469952" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.2.2 
+      Using the Erlang API</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The following dialog within the Erlang shell illustrates the
+      functionality of the Erlang ODBC interface. The table used in
+      the example does not have any relevance to anything that exist
+      in reality, it is just a simple example. The example was created
+      using <fo:inline font-family="monospace">sqlserver 7.0 with servicepack 1</fo:inline> as database and
+      the ODBC driver for <fo:inline font-family="monospace">sqlserver</fo:inline> with version
+      <fo:inline font-family="monospace">2000.80.194.00</fo:inline>.</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 1 &gt; odbc:start().
+      ok    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Connect to the database </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 2 &gt; {ok, Ref} = odbc:connect("DSN=sql-server;UID=aladdin;PWD=sesame", []).
+      {ok,&lt;0.342.0&gt;}    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Create a table </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 3 &gt; odbc:sql_query(Ref, "CREATE TABLE EMPLOYEE (NR integer,
+      FIRSTNAME  char varying(20), LASTNAME  char varying(20), GENDER char(1),
+      PRIMARY KEY(NR))").
+      {updated,undefined}    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Insert some data </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 4 &gt; odbc:sql_query(Ref, "INSERT INTO EMPLOYEE VALUES(1, 'Jane', 'Doe', 'F')").
+      {updated,1}    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Check what data types the database assigned for the columns.
+      Hopefully this is not a surprise, some times it can be! These
+      are the data types that you should use if you want to do a
+      parameterized query.</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 5 &gt; odbc:describe_table(Ref, "EMPLOYEE").
+      {ok, [{"NR", sql_integer},
+            {"FIRSTNAME", {sql_varchar, 20}},
+            {"LASTNAME", {sql_varchar, 20}}
+            {"GENDER", {sql_char, 1}}]}
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">      
+ Use a parameterized query
+      to insert many rows in one go. </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 6 &gt; odbc:param_query(Ref,"INSERT INTO EMPLOYEE (NR, FIRSTNAME, "
+                  "LASTNAME, GENDER) VALUES(?, ?, ?, ?)",
+                   [{sql_integer,[2,3,4,5,6,7,8]},
+                    {{sql_varchar, 20},
+                             ["John", "Monica", "Ross", "Rachel",
+                             "Piper", "Prue", "Louise"]},
+                   {{sql_varchar, 20},
+                             ["Doe","Geller","Geller", "Green",
+                              "Halliwell", "Halliwell", "Lane"]},
+                   {{sql_char, 1}, ["M","F","M","F","F","F","F"]}]).
+      {updated, 7}
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Fetch all data in the table employee </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 7&gt; odbc:sql_query(Ref, "SELECT * FROM EMPLOYEE").
+    {selected,["NR","FIRSTNAME","LASTNAME","GENDER"],
+          [{1,"Jane","Doe","F"},
+           {2,"John","Doe","M"},
+           {3,"Monica","Geller","F"},
+           {4,"Ross","Geller","M"},
+           {5,"Rachel","Green","F"},
+           {6,"Piper","Halliwell","F"},
+           {7,"Prue","Halliwell","F"},
+           {8,"Louise","Lane","F"}]]}     </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Associate a result set containing the whole table
+      <fo:inline font-family="monospace">EMPLOYEE</fo:inline> to the connection. The number of rows in the
+      result set is returned.</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 8 &gt; odbc:select_count(Ref, "SELECT * FROM EMPLOYEE").
+      {ok,8}     </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">You can always traverse the result set sequential by using next</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 9 &gt; odbc:next(Ref).
+      {selected,["NR","FIRSTNAME","LASTNAME","GENDER"],[{1,"Jane","Doe","F"}]}
+    </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 10 &gt; odbc:next(Ref).
+      {selected,["NR","FIRSTNAME","LASTNAME","GENDER"],[{2,"John","Doe","M"}]}
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If your driver supports scrollable cursors you have a little
+      more freedom, and can do things like this. </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 11 &gt; odbc:last(Ref).
+      {selected,["NR","FIRSTNAME","LASTNAME","GENDER"],[{8,"Louise","Lane","F"}]}    </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 12 &gt; odbc:prev(Ref).
+      {selected,["NR","FIRSTNAME","LASTNAME","GENDER"],[{7,"Prue","Halliwell","F"}]}    </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 13 &gt; odbc:first(Ref).
+      {selected,["NR","FIRSTNAME","LASTNAME","GENDER"],[{1,"Jane","Doe","F"}]}        </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 14 &gt; odbc:next(Ref).
+      {selected,["NR","FIRSTNAME","LASTNAME","GENDER"],[{2,"John","Doe","M"}]}
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Fetch the fields <fo:inline font-family="monospace">FIRSTNAME </fo:inline> and <fo:inline font-family="monospace">NR </fo:inline> for all female
+      employees</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 15 &gt; odbc:sql_query(Ref, "SELECT FIRSTNAME, NR FROM EMPLOYEE WHERE GENDER = 'F'").
+     {selected,["FIRSTNAME","NR"],
+          [{"Jane",1},
+           {"Monica",3},
+           {"Rachel",5},
+           {"Piper",6},
+           {"Prue",7},
+           {"Louise",8}]}     </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Fetch the fields <fo:inline font-family="monospace">FIRSTNAME </fo:inline> and <fo:inline font-family="monospace">NR </fo:inline> for all female
+      employees and sort them on the field <fo:inline font-family="monospace">FIRSTNAME </fo:inline>. </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 16 &gt; odbc:sql_query(Ref, "SELECT FIRSTNAME, NR FROM EMPLOYEE WHERE GENDER = 'F'
+      ORDER BY FIRSTNAME").
+    {selected,["FIRSTNAME","NR"],
+          [{"Jane",1},
+           {"Louise",8},
+           {"Monica",3},
+           {"Piper",6},
+           {"Prue",7},
+           {"Rachel",5}]}
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Associate a result set that contains the fields <fo:inline font-family="monospace">FIRSTNAME</fo:inline> and <fo:inline font-family="monospace">NR </fo:inline> for all female employees to the
+      connection. The number of rows in the result set is
+      returned.</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 17 &gt; odbc:select_count(Ref, "SELECT FIRSTNAME, NR FROM EMPLOYEE WHERE GENDER = 'F'").
+      {ok,6}    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A few more ways of retrieving parts of the result set when the
+      driver supports scrollable cursors. Note that next will work even
+      without support for scrollable cursors. </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 18 &gt; odbc:select(Ref, {relative, 2}, 3).
+    {selected,["FIRSTNAME","NR"],[{"Monica",3},{"Rachel",5},{"Piper",6}]}
+    </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 19 &gt; odbc:select(Ref, next, 2).
+      {selected,["FIRSTNAME","NR"],[{"Prue",7},{"Louise",8}]}
+    </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 20 &gt; odbc:select(Ref, {absolute, 1}, 2).
+      {selected,["FIRSTNAME","NR"],[{"Jane",1},{"Monica",3}]}
+    </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 21 &gt; odbc:select(Ref, next, 2).
+    {selected,["FIRSTNAME","NR"],[{"Rachel",5},{"Piper",6}]}
+    </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 22 &gt; odbc:select(Ref, {absolute, 1}, 4). 
+      {selected,["FIRSTNAME","NR"],
+                [{"Jane",1},{"Monica",3},{"Rachel",5},{"Piper",6}]}
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Select, using a parameterized query. </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 23 &gt; odbc:param_query(Ref, "SELECT * FROM EMPLOYEE WHERE GENDER=?",
+      [{{sql_char, 1}, ["M"]}]).
+      {selected,["NR","FIRSTNAME","LASTNAME","GENDER"],
+                [{2,"John", "Doe", "M"},{4,"Ross","Geller","M"}]} 
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Delete the table <fo:inline font-family="monospace">EMPLOYEE</fo:inline>.</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 24 &gt; odbc:sql_query(Ref, "DROP TABLE EMPLOYEE").
+      {updated,undefined}
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Shut down the connection. </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 25 &gt; odbc:disconnect(Ref).
+      ok
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Shut down the application. </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 26 &gt; odbc:stop().
+    =INFO REPORT==== 7-Jan-2004::17:00:59 ===
+    application: odbc
+    exited: stopped
+    type: temporary
+
+    ok
+    </fo:block>
+  <fo:block id="idp485232" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.3  Databases</fo:marker>1.3  Databases</fo:block><fo:block id="idp442000" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.3.1 
+      Databases</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If you need to access a relational database such as
+      <fo:inline font-family="monospace">sqlserver</fo:inline>, <fo:inline font-family="monospace">mysql</fo:inline>, <fo:inline font-family="monospace">postgres</fo:inline>, <fo:inline font-family="monospace">oracle</fo:inline>,
+      <fo:inline font-family="monospace">cybase</fo:inline> etc. from your erlang application using the Erlang
+      ODBC interface is a good way to go about it.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"/>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Erlang ODBC application should work for any relational
+      database that has an ODBC driver. But currently it is only
+      regularly tested for <fo:inline font-family="monospace">sqlserver</fo:inline> and <fo:inline font-family="monospace">postgres</fo:inline>.</fo:block>
+  <fo:block id="idp10688" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.3.2 
+      Database independence </fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Erlang ODBC interface is in principal database
+      independent, e.i. an erlang program using the interface could be
+      run without changes towards different databases. But as SQL is
+      used it is alas possible to write database dependent
+      programs. Even though SQL is an ANSI-standard meant to be
+      database independent, different databases have proprietary
+      extensions to SQL defining their own data types. If you keep to
+      the ANSI data types you will minimize the problem. But
+      unfortunately there is no guarantee that all databases actually
+      treats the ANSI data types equivalently. For instance an
+      installation of <fo:inline font-family="monospace">Oracle Enterprise release 8.0.5.0.0 for unix</fo:inline> will accept that you create a table column with the
+      ANSI data type <fo:inline font-family="monospace">integer</fo:inline>, but when retrieving values from
+      this column the driver reports that it is of type
+      <fo:inline font-family="monospace">SQL_DECIMAL(0, 38)</fo:inline> and not <fo:inline font-family="monospace">SQL_INTEGER</fo:inline> as you may have
+      expected. </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Another obstacle is that some drivers do not support scrollable
+      cursors which has the effect that the only way to traverse the
+      result set is sequentially, with next, from the first row to the
+      last, and once you pass a row you can not go back. This means
+      that some functions in the interface will not work together with
+      certain drivers. A similar problem is that not all drivers
+      support "row count" for select queries, hence resulting in that
+      the function <fo:inline font-family="monospace">select_count/[3,4]</fo:inline> will return <fo:inline font-family="monospace">{ok, undefined}</fo:inline> instead of <fo:inline font-family="monospace">{ok, NrRows}</fo:inline> where
+      <fo:inline font-family="monospace">NrRows</fo:inline> is the number of rows in the result set.</fo:block>
+  <fo:block id="idp573920" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.3.3 
+      Data types </fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The following is a list of the ANSI data types. For details
+      turn to the ANSI standard documentation. Usage of other data types
+      is of course possible, but you should be aware that this makes your
+      application dependent on the database you are using at the moment.</fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>CHARACTER (size), CHAR (size)</fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>NUMERIC (precision, scale), DECIMAL (precision, scale), DEC
+       (precision, scale ) precision - total number of digits, scale
+       - total number of decimal places</fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>INTEGER, INT, SMALLINT</fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>FLOAT (precision)</fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>REAL</fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>DOUBLE PRECISION</fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>CHARACTER VARYING(size), CHAR VARYING(size)</fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When inputting data using sql_query/[2,3] the values will
+      always be in string format as they are part of an SQL-query.
+      Example:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+      odbc:sql_query(Ref, "INSERT INTO TEST VALUES(1, 2, 3)").
+    </fo:block>
+    <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Note that when the value of the data to input is a string, it
+        has to be quoted with <fo:inline font-family="monospace">'</fo:inline>. Example: </fo:block>
+      <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+odbc:sql_query(Ref, "INSERT INTO EMPLOYEE VALUES(1, 'Jane', 'Doe', 'F')").
+      </fo:block>
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">You may also input data using <fo:inline font-style="italic">param_query/[3,4]</fo:inline> and then
+      the input data will have the Erlang type corresponding to the
+      ODBC type of the column.<fo:inline font-style="italic">See ODBC to Erlang mapping</fo:inline></fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">      
+ When selecting data from a table, all data
+      types are returned from the database to the ODBC driver as an
+      ODBC data type. The tables below shows the mapping between those
+      data types and what is returned by the Erlang API.</fo:block>
+    <fo:table border-collapse="separate" space-after="1em" space-before="1em" table-layout="fixed" inline-progression-dimension="100%"><fo:table-body><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">ODBC Data Type </fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">Erlang Data Type </fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_CHAR(size)</fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">String | Binary (configurable)</fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+	<fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_WCHAR(size) </fo:block></fo:table-cell>
+	<fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">Unicode binary encoded as UTF16 little endian.</fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_NUMERIC(p,s)         <fo:block/>
+when (p &gt;= 0 and p &lt;= 9 and s == 0) </fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">Integer </fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_NUMERIC(p,s)         <fo:block/>
+when (p &gt;= 10 and p &lt;= 15 and s == 0) or (s &lt;= 15 and s &gt; 0)</fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">Float </fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_NUMERIC(p,s)        <fo:block/>
+when p &gt;= 16 </fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">String </fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_DECIMAL(p,s)        <fo:block/>
+when (p &gt;= 0 and p &lt;= 9 and s == 0) </fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">Integer </fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_DECIMAL(p,s)         <fo:block/>
+when (p &gt;= 10 and p &lt;= 15 and s == 0) or (s &lt;= 15 and s &gt; 0)</fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">Float </fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_DECIMAL(p,s)        <fo:block/>
+when p &gt;= 16 </fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">String </fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_INTEGER </fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">Integer </fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_SMALLINT </fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">Integer </fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_FLOAT </fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">Float </fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_REAL </fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">Float </fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_DOUBLE</fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">Float</fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_VARCHAR(size) </fo:block></fo:table-cell>
+	<fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">String | Binary (configurable)</fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+	<fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_WVARCHAR(size) </fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">Unicode binary encoded as UTF16 little endian.</fo:block></fo:table-cell>
+      </fo:table-row></fo:table-body></fo:table><fo:block font-family="DejaVuSans, sans-serif" font-size="0.8em" font-weight="bold" keep-with-previous.within-page="always" space-after="2.5em" space-before="0em">
+        Table
+        3.1:
+         
+        Mapping of ODBC data types to the Erlang data types returned to the Erlang application.</fo:block>
+    <fo:table border-collapse="separate" space-after="1em" space-before="1em" table-layout="fixed" inline-progression-dimension="100%"><fo:table-body><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">ODBC Data Type </fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">Erlang Data Type </fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_TYPE_DATE </fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">String </fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_TYPE_TIME </fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">String </fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_TYPE_TIMESTAMP </fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"> {{YY, MM, DD}, {HH, MM, SS}} </fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_LONGVARCHAR </fo:block></fo:table-cell>
+	<fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">String | Binary (configurable)</fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_WLONGVARCHAR(size) </fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">Unicode binary encoded as UTF16 little endian.</fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_BINARY</fo:block></fo:table-cell>
+	<fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">String | Binary (configurable)</fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_VARBINARY</fo:block></fo:table-cell>
+	<fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">String | Binary (configurable)</fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_LONGVARBINARY</fo:block></fo:table-cell>
+	<fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">String | Binary (configurable)</fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_TINYINT </fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">Integer </fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">SQL_BIT</fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">Boolean </fo:block></fo:table-cell>
+      </fo:table-row></fo:table-body></fo:table><fo:block font-family="DejaVuSans, sans-serif" font-size="0.8em" font-weight="bold" keep-with-previous.within-page="always" space-after="2.5em" space-before="0em">
+        Table
+        3.2:
+         
+        Mapping of extended ODBC data types to the Erlang data types returned to the Erlang application.</fo:block>
+    <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To find out which data types will be returned for the
+        columns in a table use the function <fo:inline font-style="italic">describe_table/[2,3]</fo:inline></fo:block>
+    </fo:block>
+  <fo:block id="idp610096" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.3.4 
+      Batch handling</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Grouping of SQL queries can be desirable in order to reduce
+      network traffic. Another benefit can be that the data source
+      sometimes can optimize execution of a batch of SQL queries.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Explicit batches an procedures described below will result
+      in multiple results being returned from sql_query/[2,3].
+      while with parameterized queries only one result will be returned
+      from param_query/[2,3].</fo:block>
+
+    <fo:block id="idp612112" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Explicit batches</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The most basic form of a batch is created by semicolons
+        separated SQL queries, for example:</fo:block>
+      <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+"SELECT * FROM FOO; SELECT * FROM BAR" or
+"INSERT INTO FOO VALUES(1,'bar'); SELECT * FROM FOO"
+      </fo:block>
+    
+
+    <fo:block id="idp614336" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Procedures </fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Different databases may also support creating of procedures
+        that contains more than one SQL query. For example, the
+        following SQLServer-specific statement creates a procedure that
+        returns a result set containing information about employees
+        that work at the department and a result set listing the
+        customers of that department. </fo:block>
+      <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ CREATE PROCEDURE DepartmentInfo (@DepartmentID INT) AS
+ SELECT * FROM Employee WHERE department = @DepartmentID
+ SELECT * FROM Customers WHERE department = @DepartmentID
+      </fo:block>
+    
+
+    <fo:block id="idp616912" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Parameterized queries</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To effectively perform a batch of similar queries, you can use
+        parameterized queries. This means that you in your SQL query
+        string will mark the places that usually would contain values
+        with question marks and then provide lists of values for each
+        parameter. For instance you can use this to insert multiple
+        rows into the <fo:inline font-family="monospace">EMPLOYEE</fo:inline> table while executing only a
+        single SQL statement, for example code see <fo:inline font-style="italic">"Using the Erlang API"</fo:inline> section in the "Getting Started" chapter.</fo:block>
+    
+  <fo:block id="idp623872" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.4  Error handling</fo:marker>1.4  Error handling</fo:block><fo:block id="idp627392" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.4.1 
+      Strategy </fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">On a conceptual level starting a database connection using the
+      Erlang ODBC API is a basic client server application. The client
+      process uses the API to start and communicate with the server
+      process that manages the connection. The strategy of the Erlang
+      ODBC application is that programming faults in the application
+      itself will cause the connection process to terminate
+      abnormally.(When a process terminates abnormally its supervisor
+      will log relevant error reports.) Calls to API functions during or
+      after termination of the connection process, will return <fo:inline font-family="monospace">{error, connection_closed}</fo:inline>. Contextual errors on the other
+      hand will not terminate the connection it will only return
+      <fo:inline font-family="monospace">{error, Reason} </fo:inline> to the client, where <fo:inline font-family="monospace">Reason</fo:inline> may be
+      any erlang term.</fo:block>
+
+    <fo:block id="idp630640" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Clients </fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The connection is associated with the process that created it
+        and can only be accessed through it. The reason for this is to
+        preserve the semantics of result sets and transactions when
+        select_count/[2,3] is called or auto_commit is turned off.
+        Attempts to use the connection from another process will
+        fail. This will not effect the connection. On the other hand, if
+        the client process dies the connection will be terminated.</fo:block>
+    
+
+    <fo:block id="idp632448" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Timeouts </fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">All request made by the client to the connection are
+        synchronous. If the timeout is used and expires the client
+        process will exit with reason timeout. Proably the right thing
+        to do is let the client die and perhaps be restarted by its
+        supervisor. But if the client chooses to catch this timeout,
+        it is a good idea to wait a little while before trying
+        again. If there are too many consecutive timeouts that are
+        caught the connection process will conclude that there is
+        something radically wrong and terminate the connection.</fo:block>
+    
+
+    <fo:block id="idp634368" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Gaurds </fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">All API-functions are guarded and if you pass an argument of
+        the wrong type a runtime error will occur. All input parameters
+        to internal functions are trusted to be correct. It is a good
+        programming practise to only distrust input from truly external
+        sources. You are not supposed to catch these errors, it will
+        only make the code very messy and much more complex, which
+        introduces more bugs and in the worst case also covers up the
+        actual faults. Put your effort on testing instead, you should
+        trust your own input.</fo:block>
+    
+  <fo:block id="idp636432" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.4.2 
+      The whole picture </fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">As the Erlang ODBC application relies on third party products
+      and communicates with a database that probably runs on another
+      computer in the network there are plenty of things that might go
+      wrong. To fully understand the things that might happen it
+      facilitate to know the design of the Erlang ODBC application,
+      hence here follows a short description of the current design.</fo:block>
+    <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Please note that design is something, that not
+        necessarily will, but might change in future releases. While the
+        semantics of the API will not change as it is independent of the
+        implementation.</fo:block>
+    </fo:block>
+    <fo:block space-after="0.5em" space-before="0.5em"><fo:external-graphic content-width="scale-down-to-fit" inline-progression-dimension.maximum="100%" src="odbc_app_arc.gif"/>
+      <fo:block font-family="DejaVuSans, sans-serif" font-size="0.8em" font-weight="bold" keep-with-previous.within-page="always" space-after="2.5em" space-before="0em">
+        Figure
+        4.1:
+         
+        Architecture of the Erlang odbc application</fo:block>
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When you do application:start(odbc) the only thing that
+      happens is that a supervisor process is started. For each call
+      to the API function connect/2 a process is spawned and added as
+      a child to the Erlang ODBC supervisor. The supervisors only
+      tasks are to provide error-log reports, if a child process should
+      die abnormally, and the possibility to do a code change. Only
+      the client process has the knowledge to decide if this
+      connection managing process should be restarted.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The erlang connection process spawned by connect/2, will open a
+      port to a c-process that handles the communication with the
+      database through Microsoft's ODBC API. The erlang port will be
+      kept open for exit signal propagation, if something goes wrong
+      in the c-process and it exits we want know as mush as possible
+      about the reason. The main communication with the c-process is
+      done through sockets. The C-process consists of two threads,
+      the supervisor thread and the database handler thread. The
+      supervisor thread checks for shutdown messages on the supervisor
+      socket and the database handler thread receives requests and sends
+      answers on the database socket. If the database thread seems to
+      hang on some database call, the erlang control process will send
+      a shutdown message on the supervisor socket, in this case the
+      c-process will exit. If the c-process crashes/exits it will
+      bring the erlang-process down too and vice versa i.e. the
+      connection is terminated.</fo:block>
+   
+    <fo:block id="idp642736" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Error types</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The types of errors that may occur can be divide into the
+        following categories.</fo:block>
+      <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Configuration problems - Everything from that the
+         database was not set up right to that the c-program that
+         should be run through the erlang port was not compiled for
+         your platform.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Errors discovered by the ODBC driver - If calls to the
+         ODBC-driver fails due to circumstances that can not be
+         controlled by the Erlang ODBC application programmer, an
+         error string will be dug up from the driver.  This string
+         will be the <fo:inline font-family="monospace">Reason</fo:inline> in the <fo:inline font-family="monospace">{error, Reason} </fo:inline>
+         return value. How good this error message is will of course
+         be driver dependent. Examples of such circumstances are
+         trying to insert the same key twice, invalid SQL-queries and
+         that the database has gone off line.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Connection termination - If a connection is terminated
+         in an abnormal way, or if you try to use a connection that
+         you have already terminated in a normal way by calling
+         disconnect/1, the return value will be<fo:inline font-family="monospace">{error, connection_closed}</fo:inline>. A connection could end abnormally
+         because of an programming error in the Erlang ODBC
+         application, but also if the ODBC driver crashes.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Contextual errors - If API functions are used in the
+         wrong context, the <fo:inline font-family="monospace">Reason</fo:inline> in the error tuple will
+         be a descriptive atom. For instance if you try to call the
+         function <fo:inline font-family="monospace">last/[1,2] </fo:inline> without first calling <fo:inline font-family="monospace">select_count/[2,3] </fo:inline> to associate a result set with the
+         connection.  If the ODBC-driver does not support some
+         functions, or if you disabled some functionality for a
+         connection and then try to use it.</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+    
+  <fo:block id="idp114320" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">2   
+      Reference Manual</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-weight="bold">Erlang ODBC </fo:inline> application provides an interface for
+      accessing relational SQL-databases from Erlang.</fo:block>
+  <fo:block page-break-before="always" id="idp851696" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">odbc</fo:marker>odbc</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  odbc
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This application provides an Erlang interface to communicate
+      with relational SQL-databases. It is built on top of Microsofts
+      ODBC interface and therefore requires that you have an ODBC driver
+      to the database that you want to connect to.</fo:block>
+    <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The functions <fo:inline font-family="monospace">first/[1,2]</fo:inline>, <fo:inline font-family="monospace">last/[1,2]</fo:inline>,
+        <fo:inline font-family="monospace">next/[1,2]</fo:inline>, <fo:inline font-family="monospace">prev[1,2]</fo:inline> and <fo:inline font-family="monospace">select/[3,4]</fo:inline>
+        assumes there is a result set associated with the connection to
+        work on. Calling the function <fo:inline font-family="monospace">select_count/[2,3]</fo:inline>
+        associates such a result set with the connection. Calling
+        select_count again will remove the current result set
+        association and create a new one. Calling a function which dose
+        not operate on an associated result sets, such as
+        <fo:inline font-family="monospace">sql_query/[2,3]</fo:inline>, will remove the current result set
+        association.</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Alas some drivers only support sequential traversal of the
+        result set, e.i. they do not support what in the ODBC world is
+        known as scrollable cursors. This will have the effect that
+        functions such as <fo:inline font-family="monospace">first/[1,2]</fo:inline>, <fo:inline font-family="monospace">last/[1,2]</fo:inline>,
+        <fo:inline font-family="monospace">prev[1,2]</fo:inline>, etc will return <fo:inline font-family="monospace">{error, driver_does_not_support_function}</fo:inline></fo:block>
+    </fo:block>
+  
+
+  <fo:block id="idp843584" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">COMMON DATA TYPES </fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Here follows type definitions that are used by more than one
+      function in the ODBC API. </fo:block>
+    <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The type <fo:inline font-family="monospace">TimeOut</fo:inline> has the default value
+        <fo:inline font-family="monospace">infinity</fo:inline>, so for instance:        <fo:block/>
+
+        commit(Ref, CommitMode) is the same as
+        commit(Ref, CommitMode, infinity). If the
+        timeout expires the client will exit with the reason
+        timeout. </fo:block>
+    </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ connection_reference() - as returned by connect/2    </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ time_out() = milliseconds() | infinity    </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ milliseconds() = integer() &gt;= 0     </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ common_reason() = connection_closed | extended_error() | term() - some kind of
+ explanation of what went wrong    </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ extended_error() = {string(), integer(), Reason} - extended error type with ODBC
+ and native database error codes, as well as the base reason that would have been
+ returned had extended_errors not been enabled. </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ string() = list of ASCII characters    </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ col_name() = string() - Name of column in the result set    </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ col_names() - [col_name()] - e.g. a list of the names of the
+           selected columns in the result set.     </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ row() = {value()} - Tuple of column values e.g. one row of the
+           result set.     </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ value() = null | term() - A column value.     </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ rows() = [row()] - A list of rows from the result set.    </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ result_tuple() =
+      {updated, n_rows()} | {selected, col_names(), rows()}    </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ n_rows() = integer() - The number of affected rows for UPDATE,
+           INSERT, or DELETE queries. For other query types the value
+           is driver defined, and hence should be ignored.    </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ odbc_data_type() = sql_integer | sql_smallint | sql_tinyint |
+      {sql_decimal, precision(), scale()} |
+      {sql_numeric, precision(), scale()} |
+      {sql_char, size()} |
+      {sql_wchar, size()} |
+      {sql_varchar, size()} |
+      {sql_wvarchar, size()}|
+      {sql_float, precision()} |
+      {sql_wlongvarchar, size()} |
+      {sql_float, precision()} |
+      sql_real | sql_double | sql_bit | atom()
+    </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ precision() = integer()    </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ scale() = integer()    </fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ size() = integer()    </fo:block>
+  
+
+  <fo:block id="idp829872" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">ERROR HANDLING </fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The error handling strategy and possible errors sources are
+      described in the Erlang ODBC <fo:inline font-style="italic">User's Guide.</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp827936">commit(Ref, CommitMode) -&gt;</fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp827776">commit(Ref, CommitMode, TimeOut) -&gt; ok | {error, Reason} </fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Ref = connection_reference() </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">CommitMode = commit | rollback</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimeOut = time_out()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = not_an_explicit_commit_connection | process_not_owner_of_odbc_connection | common_reason()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Commits or rollbacks a transaction. Needed on connections
+          where automatic commit is turned off.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp822656">connect(ConnectStr, Options) -&gt; {ok, Ref} | {error, Reason} </fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ConnectStr = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>An example of a connection string: <fo:inline font-family="monospace">"DSN=sql-server;UID=aladdin;PWD=sesame"</fo:inline> where DSN is your ODBC Data Source Name, UID is a database user id and PWD is the password for that user. These are usually the attributes required in the connection string, but some drivers have other driver specific attributes, for example <fo:inline font-family="monospace">"DSN=Oracle8;DBQ=gandalf;UID=aladdin;PWD=sesame"</fo:inline> where DBQ is your TNSNAMES.ORA entry name e.g. some Oracle specific configuration attribute.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Options = [] | [option()]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>All options has default values. </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">option() = {auto_commit, on | off} | {timeout, milliseconds()}
+	| {binary_strings, on | off} | {tuple_row, on | off} | {scrollable_cursors, on | off} |
+	{trace_driver, on | off} | {extended_errors, on | off} </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Ref = connection_reference() - should be used to access the connection. </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = port_program_executable_not_found | common_reason()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Opens a connection to the database. The connection is
+          associated with the process that created it and can only be
+          accessed through it. This function may spawn new processes
+          to handle the connection. These processes will terminate if
+          the process that created the connection dies or if you call
+          disconnect/1.</fo:block>
+	    
+	  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If automatic commit mode is turned on, each query will be
+          considered as an individual transaction and will be
+          automatically committed after it has been executed. If you want
+          more than one query to be part of the same transaction the automatic
+          commit mode should be turned off. Then you will have to call
+          commit/3 explicitly to end a transaction. </fo:block>
+
+	  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The default timeout is infinity </fo:block>
+	  
+	  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"> &gt;If the option binary_strings is turned on all strings
+	  will be returned as binaries and strings inputed to
+	  param_query will be expected to be binaries. The user needs
+	  to ensure that the binary is in an encoding that the
+	  database expects. By default this option is turned off.</fo:block>
+	  
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">As default result sets are returned as a lists of
+          tuples. The <fo:inline font-family="monospace">TupleMode</fo:inline> option still exists to keep some
+          degree of backwards compatibility. If the option is set to
+          off, result sets will be returned as a lists of lists
+          instead of a lists of tuples.</fo:block>
+	  
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Scrollable cursors are nice but causes some overhead. For
+          some connections speed might be more important than flexible
+          data access and then you can disable scrollable cursor for a
+          connection, limiting the API but gaining speed.</fo:block>
+
+	  <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Turning the scrollable_cursors option off is noted
+	  to make old odbc-drivers able to connect that will otherwhise fail.</fo:block></fo:block>
+	  
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If trace mode is turned on this tells the ODBC driver to
+          write a trace log to the file SQL.LOG that is placed in the
+          current directory of the erlang emulator. This information
+          may be useful if you suspect there might be a bug in the
+          erlang ODBC application, and it might be relevant for you to
+          send this file to our support. Otherwise you will probably
+          not have much use of this.</fo:block>
+	  
+        <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+          <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">For more information about the <fo:inline font-family="monospace">ConnectStr</fo:inline> see
+            description of the function SQLDriverConnect in [1].</fo:block>
+        </fo:block>
+
+		  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-family="monospace">extended_errors</fo:inline> option enables extended ODBC error
+			  information when an operation fails. Rather than returning <fo:inline font-family="monospace">{error, Reason}</fo:inline>,
+			  the failing function will reutrn <fo:inline font-family="monospace">{error, {ODBCErrorCode, NativeErrorCode, Reason}}</fo:inline>.
+			  Note that this information is probably of little use when writing database-independent code,
+			  but can be of assistance in providing more sophisticated error handling when dealing with
+			  a known underlying database.
+	           </fo:block>
+			 <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+				  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">ODBCErrorCode</fo:inline> is the ODBC error string returned by the ODBC driver.</fo:block></fo:list-item-body></fo:list-item>
+				  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">NativeErrorCode</fo:inline> is the numberic error code returned by the underlying database. The possible values
+					  and their meanings are dependent on the database being used.</fo:block></fo:list-item-body></fo:list-item>
+				  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">Reason</fo:inline> is as per the <fo:inline font-family="monospace">Reason</fo:inline> field when extended errors are not enabled.</fo:block></fo:list-item-body></fo:list-item>
+		  </fo:list-block>
+
+        <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The current implementation spawns a port programm
+            written in C that utilizes the actual ODBC driver. There
+            is a default timeout of 5000 msec for this port programm
+            to connect to the Erlang ODBC application. This timeout
+            can be changed by setting an application specific
+            environment variable 'port_timeout' with the number of
+            milliseconds for the ODBC application. E.g.: [{odbc,
+            [{port_timeout, 60000}]}] to set it to 60 seconds.
+            </fo:block>
+        </fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp353744">disconnect(Ref) -&gt; ok | {error, Reason} </fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Ref = connection_reference()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = process_not_owner_of_odbc_connection | extended_error()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Closes a connection to a database. This will also
+          terminate all processes that may have been spawned 
+          when the connection was opened. This call will always succeed.
+          If the connection can not be disconnected gracefully it will
+          be brutally killed. However you may receive an error message
+          as result if you try to disconnect a connection started by another
+          process.
+                    
+</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp349776">describe_table(Ref, Table) -&gt; </fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp349392">describe_table(Ref, Table, Timeout) -&gt; {ok, Description} | {error, Reason} </fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Ref = connection_reference()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Table = string() - Name of databas table.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimeOut = time_out()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Description = [{col_name(), odbc_data_type()}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = common_reason()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Queries the database to find out the ODBC data types of the
+          columns of the table <fo:inline font-family="monospace">Table</fo:inline>. </fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp344016">first(Ref) -&gt;</fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp343456">first(Ref, Timeout) -&gt; {selected, ColNames, Rows} | {error, Reason} </fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Ref = connection_reference()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimeOut = time_out()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ColNames = col_names() </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Rows = rows()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = result_set_does_not_exist | driver_does_not_support_function | scrollable_cursors_disabled | process_not_owner_of_odbc_connection | common_reason() </fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the first row of the result set and positions a
+          cursor at this row.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp6128">last(Ref) -&gt;</fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp5248">last(Ref, TimeOut) -&gt; {selected, ColNames, Rows} | {error, Reason} </fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Ref = connection_reference()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimeOut = time_out()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ColNames = col_names() </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Rows = rows()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = result_set_does_not_exist | driver_does_not_support_function | scrollable_cursors_disabled | process_not_owner_of_odbc_connection | common_reason() </fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the last row of the result set and positions a
+          cursor at this row.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp675552">next(Ref) -&gt; </fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp657776">next(Ref, TimeOut) -&gt; {selected, ColNames, Rows} | {error, Reason} </fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Ref = connection_reference()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimeOut = time_out()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ColNames = col_names() </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Rows = rows()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = result_set_does_not_exist | process_not_owner_of_odbc_connection | common_reason() </fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the next row of the result set relative the
+          current cursor position and positions the cursor at this
+          row. If the cursor is positioned at the last row of the
+          result set when this function is called the returned value
+          will be <fo:inline font-family="monospace">{selected, ColNames,[]}</fo:inline> e.i. the list of row
+          values is empty indicating that there is no more data to fetch.
+                    
+</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp652384">param_query(Ref, SQLQuery, Params) -&gt; </fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp651408">param_query(Ref, SQLQuery, Params, TimeOut) -&gt; ResultTuple | {error, Reason} </fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Ref = connection_reference()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">SQLQuery = string() - a SQL query with parameter markers/place holders in form of question marks.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Params = [{odbc_data_type(), [value()]}] |[{odbc_data_type(), in_or_out(), [value()]}]  </fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">in_or_out = in | out | inout</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Defines IN, OUT, and IN OUT Parameter Modes for stored procedures.</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimeOut = time_out()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Values = term() - Must be consistent with the Erlang data type that corresponds to the ODBC data type ODBCDataType</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Executes a parameterized SQL query. For an
+          example see the <fo:inline font-style="italic">"Using the Erlang API"</fo:inline> in the Erlang ODBC 
+          User's Guide.</fo:block>
+        <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+          <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Use the function describe_table/[2,3] to find out which
+            ODBC data type that is expected for each column of that
+            table. If a column has a data type that is described with
+            capital letters, alas it is not currently supported by the
+            param_query function. Too know which Erlang data type
+            corresponds to an ODBC data type see the Erlang to ODBC
+            data type <fo:inline font-style="italic">mapping</fo:inline> in the User's Guide.</fo:block>
+        </fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp398928">prev(Ref) -&gt; </fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp398176">prev(ConnectionReference, TimeOut) -&gt; {selected, ColNames, Rows} | {error, Reason} </fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Ref = connection_reference()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimeOut = time_out()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ColNames = col_names() </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Rows = rows()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = result_set_does_not_exist | driver_does_not_support_function | scrollable_cursors_disabled | process_not_owner_of_odbc_connection | common_reason() </fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the previous row of the result set relative the
+          current cursor position and positions the
+          cursor at this row.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp392832">start() -&gt; </fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp392448">start(Type) -&gt; ok | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type =  permanent | transient | temporary
+	</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"> Starts the odbc application. Default type
+	  is temporary.
+	  <fo:inline font-style="italic">See application(3)</fo:inline>
+	</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp752752">stop() -&gt; ok </fo:block></fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"> Stops the odbc application.
+	  <fo:inline font-style="italic">See application(3)</fo:inline>
+	</fo:block>
+      </fo:block>
+    
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp750192">sql_query(Ref, SQLQuery) -&gt; </fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp749008">sql_query(Ref, SQLQuery, TimeOut) -&gt; ResultTuple | [ResultTuple] |{error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Ref = connection_reference()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">SQLQuery = string() - The string may be composed by several SQL-queries separated by a ";", this is called a batch. </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimeOut = time_out()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ResultTuple = result_tuple() </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = process_not_owner_of_odbc_connection | common_reason() </fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Executes a SQL query or a batch of SQL queries. If it
+          is a SELECT query the result set is returned, on the format
+          <fo:inline font-family="monospace">{selected, ColNames, Rows}</fo:inline>. For other query types the
+          tuple <fo:inline font-family="monospace">{updated, NRows}</fo:inline> is returned, and for batched
+          queries, if the driver supports them, this function can also
+          return a list of result tuples.</fo:block>
+        <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+          <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Some drivers may not have the information of the number
+            of affected rows available and then the return value may
+            be <fo:inline font-family="monospace">{updated, undefined} </fo:inline>. </fo:block>
+          <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The list of column names is ordered in the same way as the
+            list of values of a row, e.g. the first <fo:inline font-family="monospace">ColName</fo:inline> is
+            associated with the first <fo:inline font-family="monospace">Value</fo:inline> in a <fo:inline font-family="monospace">Row</fo:inline>.</fo:block>
+        </fo:block>
+        <fo:block/>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp531824">select_count(Ref, SelectQuery) -&gt; </fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp531696">select_count(Ref, SelectQuery, TimeOut) -&gt; {ok, NrRows} | {error, Reason} </fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Ref = connection_reference()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">SelectQuery = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>SQL SELECT query.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimeOut = time_out()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">NrRows = n_rows()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = process_not_owner_of_odbc_connection | common_reason() </fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Executes a SQL SELECT query and associates the result set
+          with the connection. A cursor is positioned before the first
+          row in the result set and the tuple <fo:inline font-family="monospace">{ok, NrRows}</fo:inline> is
+          returned. </fo:block>
+        <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+          <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Some drivers may not have the information of the number of
+            rows in the result set, then <fo:inline font-family="monospace">NrRows</fo:inline> will have the value
+            <fo:inline font-family="monospace">undefined</fo:inline>. </fo:block>
+        </fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp410848">select(Ref, Position, N) -&gt;</fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp410432">select(Ref, Position, N, TimeOut) -&gt; {selected, ColNames, Rows} | {error, Reason} </fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Ref = connection_reference()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Position = next | {relative, Pos} | {absolute, Pos} </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Selection strategy, determines at which row in the result set to start the selection.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Pos = integer() </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Should indicate a row number in the result set. When used together with the option <fo:inline font-family="monospace">relative</fo:inline>it will be used as an offset from the current cursor position, when used together with the option <fo:inline font-family="monospace">absolute</fo:inline>it will be interpreted as a row number.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">N = integer() </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimeOut = time_out()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = result_set_does_not_exist | driver_does_not_support_function | scrollable_cursors_disabled | process_not_owner_of_odbc_connection | common_reason() </fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Selects <fo:inline font-family="monospace">N</fo:inline> consecutive rows of the result set. If
+          <fo:inline font-family="monospace">Position</fo:inline> is <fo:inline font-family="monospace">next</fo:inline> it is semantically equivalent
+          of calling <fo:inline font-family="monospace">next/[1,2]</fo:inline> <fo:inline font-family="monospace">N</fo:inline> times. If
+          <fo:inline font-family="monospace">Position</fo:inline> is <fo:inline font-family="monospace">{relative, Pos}</fo:inline>, <fo:inline font-family="monospace">Pos</fo:inline> will be
+          used as an offset from the current cursor position to
+          determine the first selected row. If <fo:inline font-family="monospace">Position</fo:inline> is
+          <fo:inline font-family="monospace">{absolute, Pos}</fo:inline>, <fo:inline font-family="monospace">Pos</fo:inline> will be the number of the
+          first row selected. After this function has returned the
+          cursor is positioned at the last selected row. If there is
+          less then <fo:inline font-family="monospace">N</fo:inline> rows left of the result set the length of
+          <fo:inline font-family="monospace">Rows</fo:inline> will be less than <fo:inline font-family="monospace">N</fo:inline>. If the first row to
+          select happens to be beyond the last row of the result set,
+          the returned value will be <fo:inline font-family="monospace">{selected, ColNames,[]}</fo:inline>
+          e.i. the list of row values is empty indicating that there
+          is no more data to fetch.</fo:block>
+      </fo:block>
+  
+
+  <fo:block id="idp738912" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">REFERENCES</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">[1]: Microsoft ODBC 3.0, Programmer's Reference and SDK Guide      <fo:block/>
+
+      See also http://msdn.microsoft.com/</fo:block>
+  
+  
+</fo:flow>
+  </fo:page-sequence>
+</fo:root>

@@ -1,7 +1,7 @@
 %
 %% %CopyrightBegin%
 %%
-%% Copyright Ericsson AB 2005-2016. All Rights Reserved.
+%% Copyright Ericsson AB 2005-2017. All Rights Reserved.
 %%
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -660,7 +660,7 @@ start_channel_sock(Config) ->
     {Host,Port} = proplists:get_value(peer, Config),
 
     %% Get a tcp socket
-    {ok, Sock} = gen_tcp:connect(Host, Port, [{active,false}]),
+    {ok, Sock} = ssh_test_lib:gen_tcp_connect(Host, Port, [{active,false}]),
 
     %% and open one channel on one new Connection
     {ok, ChPid1, Conn} = ssh_sftp:start_channel(Sock, Opts),

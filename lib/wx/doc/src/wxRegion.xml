@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxRegion</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxRegion.xml</file></header>
+<module>wxRegion</module>
+<modulesummary>See external documentation: wxRegion.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html">wxRegion</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxRegion"/>wxRegion()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxRegion">wxRegion()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregionwxregion">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Bmp) -&gt; <seealso marker="#type-wxRegion">wxRegion()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Bmp = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v></type>
+<desc><marker id="new-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregionwxregion">external documentation</url>.
+  <br/> Also:<br/>
+  new(Rect) -&gt; wxRegion() when<br/>
+  	Rect::{X::integer(), Y::integer(), W::integer(), H::integer()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>new(TopLeft, BottomRight) -&gt; <seealso marker="#type-wxRegion">wxRegion()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>TopLeft = {X::integer(), Y::integer()}</v><v>BottomRight = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregionwxregion">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(X, Y, W, H) -&gt; <seealso marker="#type-wxRegion">wxRegion()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>X = integer()</v><v>Y = integer()</v><v>W = integer()</v><v>H = integer()</v></type>
+<desc><marker id="new-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregionwxregion">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>clear(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></v></type>
+<desc><marker id="clear-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregionclear">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>contains(This, Pt) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></v><v>Pt = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="contains-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregioncontains">external documentation</url>.
+  <br/> Also:<br/>
+  contains(This, Rect) -&gt; wx:wx_enum() when<br/>
+  	This::wxRegion(), Rect::{X::integer(), Y::integer(), W::integer(), H::integer()}.<br/></p>
+ 
+ <p><br/> Res = ?wxOutRegion | ?wxPartRegion | ?wxInRegion</p>
+</desc></func>
+<func>
+<name>contains(This, X, Y) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="contains-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregioncontains">external documentation</url>.
+ <br/> Res = ?wxOutRegion | ?wxPartRegion | ?wxInRegion</p>
+</desc></func>
+<func>
+<name>contains(This, X, Y, W, H) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></v><v>X = integer()</v><v>Y = integer()</v><v>W = integer()</v><v>H = integer()</v></type>
+<desc><marker id="contains-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregioncontains">external documentation</url>.
+ <br/> Res = ?wxOutRegion | ?wxPartRegion | ?wxInRegion</p>
+</desc></func>
+<func>
+<name>convertToBitmap(This) -&gt; <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></v></type>
+<desc><marker id="convertToBitmap-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregionconverttobitmap">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getBox(This) -&gt; {X::integer(), Y::integer(), W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></v></type>
+<desc><marker id="getBox-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregiongetbox">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>intersect(This, Region) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></v><v>Region = <seealso marker="#type-wxRegion">wxRegion()</seealso></v></type>
+<desc><marker id="intersect-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregionintersect">external documentation</url>.
+  <br/> Also:<br/>
+  intersect(This, Rect) -&gt; boolean() when<br/>
+  	This::wxRegion(), Rect::{X::integer(), Y::integer(), W::integer(), H::integer()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>intersect(This, X, Y, W, H) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></v><v>X = integer()</v><v>Y = integer()</v><v>W = integer()</v><v>H = integer()</v></type>
+<desc><marker id="intersect-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregionintersect">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isEmpty(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></v></type>
+<desc><marker id="isEmpty-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregionisempty">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>subtract(This, Region) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></v><v>Region = <seealso marker="#type-wxRegion">wxRegion()</seealso></v></type>
+<desc><marker id="subtract-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregionsubtract">external documentation</url>.
+  <br/> Also:<br/>
+  subtract(This, Rect) -&gt; boolean() when<br/>
+  	This::wxRegion(), Rect::{X::integer(), Y::integer(), W::integer(), H::integer()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>subtract(This, X, Y, W, H) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></v><v>X = integer()</v><v>Y = integer()</v><v>W = integer()</v><v>H = integer()</v></type>
+<desc><marker id="subtract-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregionsubtract">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>offset(This, Pt) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></v><v>Pt = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="offset-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregionoffset">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>offset(This, X, Y) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="offset-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregionoffset">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>union(This, Region) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></v><v>Region = <seealso marker="#type-wxRegion">wxRegion()</seealso> | <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v></type>
+<desc><marker id="union-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregionunion">external documentation</url>.
+  <br/> Also:<br/>
+  union(This, Rect) -&gt; boolean() when<br/>
+  	This::wxRegion(), Rect::{X::integer(), Y::integer(), W::integer(), H::integer()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>union(This, Bmp, Transp) -&gt; boolean()</name>
+<fsummary>Equivalent to union(This, Bmp, Transp, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></v><v>Bmp = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v><v>Transp = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="union-3"/>
+<p>Equivalent to <seealso marker="#union-4">union(This, Bmp, Transp, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>union(This, Bmp, Transp, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></v><v>Bmp = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v><v>Transp = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v><v>Option = {tolerance, integer()}</v></type>
+<desc><marker id="union-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregionunion">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>union(This, X, Y, W, H) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></v><v>X = integer()</v><v>Y = integer()</v><v>W = integer()</v><v>H = integer()</v></type>
+<desc><marker id="union-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregionunion">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>Xor(This, Region) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></v><v>Region = <seealso marker="#type-wxRegion">wxRegion()</seealso></v></type>
+<desc><marker id="Xor-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregionxor">external documentation</url>.
+  <br/> Also:<br/>
+  'Xor'(This, Rect) -&gt; boolean() when<br/>
+  	This::wxRegion(), Rect::{X::integer(), Y::integer(), W::integer(), H::integer()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>Xor(This, X, Y, W, H) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></v><v>X = integer()</v><v>Y = integer()</v><v>W = integer()</v><v>H = integer()</v></type>
+<desc><marker id="Xor-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxregion.html#wxregionxor">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxRegion">wxRegion()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

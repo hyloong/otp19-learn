@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxPopupTransientWindow</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxPopupTransientWindow.xml</file></header>
+<module>wxPopupTransientWindow</module>
+<modulesummary>See external documentation: wxPopupTransientWindow.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpopuptransientwindow.html">wxPopupTransientWindow</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxPopupWindow">wxPopupWindow</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxPopupTransientWindow"/>wxPopupTransientWindow()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxPopupTransientWindow">wxPopupTransientWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpopuptransientwindow.html#wxpopuptransientwindowwxpopuptransientwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent) -&gt; <seealso marker="#type-wxPopupTransientWindow">wxPopupTransientWindow()</seealso></name>
+<fsummary>Equivalent to new(Parent, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="new-1"/>
+<p>Equivalent to <seealso marker="#new-2">new(Parent, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Options::[Option]) -&gt; <seealso marker="#type-wxPopupTransientWindow">wxPopupTransientWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {style, integer()}</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpopuptransientwindow.html#wxpopuptransientwindowwxpopuptransientwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>popup(This) -&gt; ok</name>
+<fsummary>Equivalent to popup(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPopupTransientWindow">wxPopupTransientWindow()</seealso></v></type>
+<desc><marker id="popup-1"/>
+<p>Equivalent to <seealso marker="#popup-2">popup(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>popup(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPopupTransientWindow">wxPopupTransientWindow()</seealso></v><v>Option = {focus, <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso>}</v></type>
+<desc><marker id="popup-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpopuptransientwindow.html#wxpopuptransientwindowpopup">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>dismiss(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPopupTransientWindow">wxPopupTransientWindow()</seealso></v></type>
+<desc><marker id="dismiss-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpopuptransientwindow.html#wxpopuptransientwindowdismiss">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxPopupTransientWindow">wxPopupTransientWindow()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

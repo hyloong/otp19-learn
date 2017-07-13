@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxUpdateUIEvent</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxUpdateUIEvent.xml</file></header>
+<module>wxUpdateUIEvent</module>
+<modulesummary>See external documentation: wxUpdateUIEvent.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxupdateuievent.html">wxUpdateUIEvent</url>.
+  </p><taglist><tag>Use <seealso marker="wxEvtHandler#connect-3">wxEvtHandler:connect/3</seealso> with EventType:</tag>
+  <item><p><em>update_ui</em></p></item></taglist><p>
+  See also the message variant <seealso marker="wxEvtHandler#type-wxUpdateUI">#wxUpdateUI{</seealso>} event record type.</p>
+ 
+  <p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxCommandEvent">wxCommandEvent</seealso>
+  <br/><seealso marker="wxEvent">wxEvent</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxUpdateUIEvent"/>wxUpdateUIEvent()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>canUpdate(Win) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Win = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="canUpdate-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxupdateuievent.html#wxupdateuieventcanupdate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>check(This, Check) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></v><v>Check = boolean()</v></type>
+<desc><marker id="check-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxupdateuievent.html#wxupdateuieventcheck">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>enable(This, Enable) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></v><v>Enable = boolean()</v></type>
+<desc><marker id="enable-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxupdateuievent.html#wxupdateuieventenable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>show(This, Show) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></v><v>Show = boolean()</v></type>
+<desc><marker id="show-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxupdateuievent.html#wxupdateuieventshow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getChecked(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></v></type>
+<desc><marker id="getChecked-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxupdateuievent.html#wxupdateuieventgetchecked">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getEnabled(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></v></type>
+<desc><marker id="getEnabled-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxupdateuievent.html#wxupdateuieventgetenabled">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getShown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></v></type>
+<desc><marker id="getShown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxupdateuievent.html#wxupdateuieventgetshown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSetChecked(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></v></type>
+<desc><marker id="getSetChecked-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxupdateuievent.html#wxupdateuieventgetsetchecked">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSetEnabled(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></v></type>
+<desc><marker id="getSetEnabled-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxupdateuievent.html#wxupdateuieventgetsetenabled">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSetShown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></v></type>
+<desc><marker id="getSetShown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxupdateuievent.html#wxupdateuieventgetsetshown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSetText(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></v></type>
+<desc><marker id="getSetText-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxupdateuievent.html#wxupdateuieventgetsettext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getText(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></v></type>
+<desc><marker id="getText-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxupdateuievent.html#wxupdateuieventgettext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMode() -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="getMode-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxupdateuievent.html#wxupdateuieventgetmode">external documentation</url>.
+ <br/> Res = ?wxUPDATE_UI_PROCESS_ALL | ?wxUPDATE_UI_PROCESS_SPECIFIED</p>
+</desc></func>
+<func>
+<name>getUpdateInterval() -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="getUpdateInterval-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxupdateuievent.html#wxupdateuieventgetupdateinterval">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>resetUpdateTime() -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="resetUpdateTime-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxupdateuievent.html#wxupdateuieventresetupdatetime">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMode(Mode) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Mode = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></v></type>
+<desc><marker id="setMode-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxupdateuievent.html#wxupdateuieventsetmode">external documentation</url>.
+ <br/> Mode = ?wxUPDATE_UI_PROCESS_ALL | ?wxUPDATE_UI_PROCESS_SPECIFIED</p>
+</desc></func>
+<func>
+<name>setText(This, Text) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setText-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxupdateuievent.html#wxupdateuieventsettext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setUpdateInterval(UpdateInterval) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>UpdateInterval = integer()</v></type>
+<desc><marker id="setUpdateInterval-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxupdateuievent.html#wxupdateuieventsetupdateinterval">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

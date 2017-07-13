@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxNotifyEvent</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxNotifyEvent.xml</file></header>
+<module>wxNotifyEvent</module>
+<modulesummary>See external documentation: wxNotifyEvent.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxnotifyevent.html">wxNotifyEvent</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxCommandEvent">wxCommandEvent</seealso>
+  <br/><seealso marker="wxEvent">wxEvent</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxNotifyEvent"/>wxNotifyEvent()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>allow(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxNotifyEvent">wxNotifyEvent()</seealso></v></type>
+<desc><marker id="allow-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxnotifyevent.html#wxnotifyeventallow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isAllowed(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxNotifyEvent">wxNotifyEvent()</seealso></v></type>
+<desc><marker id="isAllowed-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxnotifyevent.html#wxnotifyeventisallowed">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>veto(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxNotifyEvent">wxNotifyEvent()</seealso></v></type>
+<desc><marker id="veto-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxnotifyevent.html#wxnotifyeventveto">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

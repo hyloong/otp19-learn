@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxGridCellAttr</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxGridCellAttr.xml</file></header>
+<module>wxGridCellAttr</module>
+<modulesummary>See external documentation: wxGridCellAttr.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html">wxGridCellAttr</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxGridCellAttr"/>wxGridCellAttr()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>setTextColour(This, ColText) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v><v>ColText = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setTextColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html#wxgridcellattrsettextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setBackgroundColour(This, ColBack) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v><v>ColBack = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setBackgroundColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html#wxgridcellattrsetbackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFont(This, Font) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v><v>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v></type>
+<desc><marker id="setFont-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html#wxgridcellattrsetfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setAlignment(This, HAlign, VAlign) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v><v>HAlign = integer()</v><v>VAlign = integer()</v></type>
+<desc><marker id="setAlignment-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html#wxgridcellattrsetalignment">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setReadOnly(This) -&gt; ok</name>
+<fsummary>Equivalent to setReadOnly(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v></type>
+<desc><marker id="setReadOnly-1"/>
+<p>Equivalent to <seealso marker="#setReadOnly-2">setReadOnly(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setReadOnly(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v><v>Option = {isReadOnly, boolean()}</v></type>
+<desc><marker id="setReadOnly-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html#wxgridcellattrsetreadonly">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setRenderer(This, Renderer) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v><v>Renderer = <seealso marker="wxGridCellRenderer#type-wxGridCellRenderer">wxGridCellRenderer:wxGridCellRenderer()</seealso></v></type>
+<desc><marker id="setRenderer-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html#wxgridcellattrsetrenderer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setEditor(This, Editor) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v><v>Editor = <seealso marker="wxGridCellEditor#type-wxGridCellEditor">wxGridCellEditor:wxGridCellEditor()</seealso></v></type>
+<desc><marker id="setEditor-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html#wxgridcellattrseteditor">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasTextColour(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v></type>
+<desc><marker id="hasTextColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html#wxgridcellattrhastextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasBackgroundColour(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v></type>
+<desc><marker id="hasBackgroundColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html#wxgridcellattrhasbackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasFont(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v></type>
+<desc><marker id="hasFont-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html#wxgridcellattrhasfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasAlignment(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v></type>
+<desc><marker id="hasAlignment-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html#wxgridcellattrhasalignment">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasRenderer(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v></type>
+<desc><marker id="hasRenderer-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html#wxgridcellattrhasrenderer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasEditor(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v></type>
+<desc><marker id="hasEditor-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html#wxgridcellattrhaseditor">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getTextColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v></type>
+<desc><marker id="getTextColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html#wxgridcellattrgettextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getBackgroundColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v></type>
+<desc><marker id="getBackgroundColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html#wxgridcellattrgetbackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFont(This) -&gt; <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v></type>
+<desc><marker id="getFont-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html#wxgridcellattrgetfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getAlignment(This) -&gt; {HAlign::integer(), VAlign::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v></type>
+<desc><marker id="getAlignment-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html#wxgridcellattrgetalignment">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getRenderer(This, Grid, Row, Col) -&gt; <seealso marker="wxGridCellRenderer#type-wxGridCellRenderer">wxGridCellRenderer:wxGridCellRenderer()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v><v>Grid = <seealso marker="wxGrid#type-wxGrid">wxGrid:wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="getRenderer-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html#wxgridcellattrgetrenderer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getEditor(This, Grid, Row, Col) -&gt; <seealso marker="wxGridCellEditor#type-wxGridCellEditor">wxGridCellEditor:wxGridCellEditor()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v><v>Grid = <seealso marker="wxGrid#type-wxGrid">wxGrid:wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="getEditor-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html#wxgridcellattrgeteditor">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isReadOnly(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v></type>
+<desc><marker id="isReadOnly-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html#wxgridcellattrisreadonly">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setDefAttr(This, DefAttr) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v><v>DefAttr = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></v></type>
+<desc><marker id="setDefAttr-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellattr.html#wxgridcellattrsetdefattr">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

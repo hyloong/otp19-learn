@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxLayoutAlgorithm</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxLayoutAlgorithm.xml</file></header>
+<module>wxLayoutAlgorithm</module>
+<modulesummary>See external documentation: wxLayoutAlgorithm.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlayoutalgorithm.html">wxLayoutAlgorithm</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxLayoutAlgorithm"/>wxLayoutAlgorithm()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxLayoutAlgorithm">wxLayoutAlgorithm()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlayoutalgorithm.html#wxlayoutalgorithmwxlayoutalgorithm">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>layoutFrame(This, Frame) -&gt; boolean()</name>
+<fsummary>Equivalent to layoutFrame(This, Frame, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxLayoutAlgorithm">wxLayoutAlgorithm()</seealso></v><v>Frame = <seealso marker="wxFrame#type-wxFrame">wxFrame:wxFrame()</seealso></v></type>
+<desc><marker id="layoutFrame-2"/>
+<p>Equivalent to <seealso marker="#layoutFrame-3">layoutFrame(This, Frame, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>layoutFrame(This, Frame, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxLayoutAlgorithm">wxLayoutAlgorithm()</seealso></v><v>Frame = <seealso marker="wxFrame#type-wxFrame">wxFrame:wxFrame()</seealso></v><v>Option = {mainWindow, <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso>}</v></type>
+<desc><marker id="layoutFrame-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlayoutalgorithm.html#wxlayoutalgorithmlayoutframe">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>layoutMDIFrame(This, Frame) -&gt; boolean()</name>
+<fsummary>Equivalent to layoutMDIFrame(This, Frame, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxLayoutAlgorithm">wxLayoutAlgorithm()</seealso></v><v>Frame = <seealso marker="wxMDIParentFrame#type-wxMDIParentFrame">wxMDIParentFrame:wxMDIParentFrame()</seealso></v></type>
+<desc><marker id="layoutMDIFrame-2"/>
+<p>Equivalent to <seealso marker="#layoutMDIFrame-3">layoutMDIFrame(This, Frame, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>layoutMDIFrame(This, Frame, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxLayoutAlgorithm">wxLayoutAlgorithm()</seealso></v><v>Frame = <seealso marker="wxMDIParentFrame#type-wxMDIParentFrame">wxMDIParentFrame:wxMDIParentFrame()</seealso></v><v>Option = {rect, {X::integer(), Y::integer(), W::integer(), H::integer()}}</v></type>
+<desc><marker id="layoutMDIFrame-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlayoutalgorithm.html#wxlayoutalgorithmlayoutmdiframe">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>layoutWindow(This, Frame) -&gt; boolean()</name>
+<fsummary>Equivalent to layoutWindow(This, Frame, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxLayoutAlgorithm">wxLayoutAlgorithm()</seealso></v><v>Frame = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="layoutWindow-2"/>
+<p>Equivalent to <seealso marker="#layoutWindow-3">layoutWindow(This, Frame, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>layoutWindow(This, Frame, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxLayoutAlgorithm">wxLayoutAlgorithm()</seealso></v><v>Frame = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {mainWindow, <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso>}</v></type>
+<desc><marker id="layoutWindow-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlayoutalgorithm.html#wxlayoutalgorithmlayoutwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxLayoutAlgorithm">wxLayoutAlgorithm()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

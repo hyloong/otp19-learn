@@ -1,0 +1,274 @@
+<module name="merl">
+<type>
+  <name>default_action</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-default_action">default_action()</marker> = fun(() -&gt; any())</typehead></typedecl>
+</type>
+<type>
+  <name>env</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-env">env()</marker> = [{Key :: <seealso marker="#type-id">id()</seealso>, <seealso marker="#type-pattern_or_patterns">pattern_or_patterns()</seealso>}]</typehead></typedecl>
+  <anno>Key</anno>
+</type>
+<type>
+  <name>guard_test</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-guard_test">guard_test()</marker> = fun((<seealso marker="#type-env">env()</seealso>) -&gt; boolean())</typehead></typedecl>
+</type>
+<type>
+  <name>guarded_action</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-guarded_action">guarded_action()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-switch_action">switch_action()</seealso> | {<seealso marker="#type-guard_test">guard_test()</seealso>, <seealso marker="#type-switch_action">switch_action()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>guarded_actions</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-guarded_actions">guarded_actions()</marker> = <seealso marker="#type-guarded_action">guarded_action()</seealso> | [<seealso marker="#type-guarded_action">guarded_action()</seealso>]</typehead></typedecl>
+</type>
+<type>
+  <name>id</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-id">id()</marker> = atom() | integer()</typehead></typedecl>
+</type>
+<type>
+  <name>location</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-location">location()</marker> = <seealso marker="erl_anno#type-location">erl_anno:location()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>pattern</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-pattern">pattern()</marker> = <seealso marker="#type-tree">tree()</seealso> | <seealso marker="#type-template">template()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>pattern_or_patterns</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-pattern_or_patterns">pattern_or_patterns()</marker> = <seealso marker="#type-pattern">pattern()</seealso> | [<seealso marker="#type-pattern">pattern()</seealso>]</typehead></typedecl>
+</type>
+<type>
+  <name>switch_action</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-switch_action">switch_action()</marker> = fun((<seealso marker="#type-env">env()</seealso>) -&gt; any())</typehead></typedecl>
+</type>
+<type>
+  <name>switch_clause</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-switch_clause">switch_clause()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{<seealso marker="#type-pattern_or_patterns">pattern_or_patterns()</seealso>, <seealso marker="#type-guarded_actions">guarded_actions()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{<seealso marker="#type-pattern_or_patterns">pattern_or_patterns()</seealso>, <seealso marker="#type-guard_test">guard_test()</seealso>, <seealso marker="#type-switch_action">switch_action()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-default_action">default_action()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>template</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-template">template()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-tree">tree()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{<seealso marker="#type-id">id()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{'*', <seealso marker="#type-id">id()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{template, atom(), term(), [[<seealso marker="#type-template">template()</seealso>]]}</typehead></typedecl>
+</type>
+<type>
+  <name>template_or_templates</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-template_or_templates">template_or_templates()</marker> = <seealso marker="#type-template">template()</seealso> | [<seealso marker="#type-template">template()</seealso>]</typehead></typedecl>
+</type>
+<type>
+  <name>text</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-text">text()</marker> = string() | binary() | [string()] | [binary()]</typehead></typedecl>
+</type>
+<type>
+  <name>tree</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-tree">tree()</marker> = <seealso marker="erl_syntax#type-syntaxTree">erl_syntax:syntaxTree()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>tree_or_trees</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-tree_or_trees">tree_or_trees()</marker> = <seealso marker="#type-tree">tree()</seealso> | [<seealso marker="#type-tree">tree()</seealso>]</typehead></typedecl>
+</type>
+<spec>
+  <name>alpha</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>alpha(Trees :: <seealso marker="#type-pattern_or_patterns">pattern_or_patterns()</seealso>, Env :: [{<seealso marker="#type-id">id()</seealso>, <seealso marker="#type-id">id()</seealso>}]) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-template_or_templates">template_or_templates()</seealso></head></clause>
+  </contract>
+  <anno>Env</anno>
+  <anno>Trees</anno>
+</spec>
+<spec>
+  <name>compile</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>compile</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>compile_and_load</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>compile_and_load</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>match</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>match(Patterns :: <seealso marker="#type-pattern_or_patterns">pattern_or_patterns()</seealso>, Trees :: <seealso marker="#type-tree_or_trees">tree_or_trees()</seealso>) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, <seealso marker="#type-env">env()</seealso>} | error</head></clause>
+  </contract>
+  <anno>Patterns</anno>
+  <anno>Trees</anno>
+</spec>
+<spec>
+  <name>meta_template</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>meta_template(Templates :: <seealso marker="#type-template_or_templates">template_or_templates()</seealso>) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-tree_or_trees">tree_or_trees()</seealso></head></clause>
+  </contract>
+  <anno>Templates</anno>
+</spec>
+<spec>
+  <name>print</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>qquote</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>qquote(Text :: <seealso marker="#type-text">text()</seealso>, Env :: <seealso marker="#type-env">env()</seealso>) -&gt; <seealso marker="#type-tree_or_trees">tree_or_trees()</seealso></head></clause>
+  </contract>
+  <anno>Env</anno>
+  <anno>Text</anno>
+</spec>
+<spec>
+  <name>qquote</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>qquote(StartPos :: <seealso marker="#type-location">location()</seealso>, Text :: <seealso marker="#type-text">text()</seealso>, Env :: <seealso marker="#type-env">env()</seealso>) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-tree_or_trees">tree_or_trees()</seealso></head></clause>
+  </contract>
+  <anno>Env</anno>
+  <anno>StartPos</anno>
+  <anno>Text</anno>
+</spec>
+<spec>
+  <name>quote</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>quote(Text :: <seealso marker="#type-text">text()</seealso>) -&gt; <seealso marker="#type-tree_or_trees">tree_or_trees()</seealso></head></clause>
+  </contract>
+  <anno>Text</anno>
+</spec>
+<spec>
+  <name>quote</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>quote(StartPos :: <seealso marker="#type-location">location()</seealso>, Text :: <seealso marker="#type-text">text()</seealso>) -&gt; <seealso marker="#type-tree_or_trees">tree_or_trees()</seealso></head></clause>
+  </contract>
+  <anno>StartPos</anno>
+  <anno>Text</anno>
+</spec>
+<spec>
+  <name>show</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>subst</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>subst(Trees :: <seealso marker="#type-pattern_or_patterns">pattern_or_patterns()</seealso>, Env :: <seealso marker="#type-env">env()</seealso>) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-tree_or_trees">tree_or_trees()</seealso></head></clause>
+  </contract>
+  <anno>Env</anno>
+  <anno>Trees</anno>
+</spec>
+<spec>
+  <name>switch</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>switch(Trees :: <seealso marker="#type-tree_or_trees">tree_or_trees()</seealso>, Cs :: [<seealso marker="#type-switch_clause">switch_clause()</seealso>]) -&gt; any()</head></clause>
+  </contract>
+  <anno>Cs</anno>
+  <anno>Trees</anno>
+</spec>
+<spec>
+  <name>template</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>template(Trees :: <seealso marker="#type-pattern_or_patterns">pattern_or_patterns()</seealso>) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-template_or_templates">template_or_templates()</seealso></head></clause>
+  </contract>
+  <anno>Trees</anno>
+</spec>
+<spec>
+  <name>template_vars</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>template_vars(Template :: <seealso marker="#type-template_or_templates">template_or_templates()</seealso>) -&gt; [<seealso marker="#type-id">id()</seealso>]</head></clause>
+  </contract>
+  <anno>Template</anno>
+</spec>
+<spec>
+  <name>term</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>term(Term :: term()) -&gt; <seealso marker="#type-tree">tree()</seealso></head></clause>
+  </contract>
+  <anno>Term</anno>
+</spec>
+<spec>
+  <name>tree</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>tree(Templates :: <seealso marker="#type-template_or_templates">template_or_templates()</seealso>) -&gt; <seealso marker="#type-tree_or_trees">tree_or_trees()</seealso></head></clause>
+  </contract>
+  <anno>Templates</anno>
+</spec>
+<spec>
+  <name>tsubst</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>tsubst(Trees :: <seealso marker="#type-pattern_or_patterns">pattern_or_patterns()</seealso>, Env :: <seealso marker="#type-env">env()</seealso>) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-template_or_templates">template_or_templates()</seealso></head></clause>
+  </contract>
+  <anno>Env</anno>
+  <anno>Trees</anno>
+</spec>
+<spec>
+  <name>var</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>var(Name :: atom()) -&gt; <seealso marker="#type-tree">tree()</seealso></head></clause>
+  </contract>
+  <anno>Name</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:31:55.</timestamp>
+</module>

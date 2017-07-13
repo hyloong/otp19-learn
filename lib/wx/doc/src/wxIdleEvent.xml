@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxIdleEvent</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxIdleEvent.xml</file></header>
+<module>wxIdleEvent</module>
+<modulesummary>See external documentation: wxIdleEvent.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxidleevent.html">wxIdleEvent</url>.
+  </p><taglist><tag>Use <seealso marker="wxEvtHandler#connect-3">wxEvtHandler:connect/3</seealso> with EventType:</tag>
+  <item><p><em>idle</em></p></item></taglist><p>
+  See also the message variant <seealso marker="wxEvtHandler#type-wxIdle">#wxIdle{</seealso>} event record type.</p>
+ 
+  <p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxEvent">wxEvent</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxIdleEvent"/>wxIdleEvent()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>canSend(Win) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Win = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="canSend-1"/>
+<p><em>This function is deprecated: </em>deprecated function not available in wxWidgets-2.9 and later</p>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxidleevent.html#wxidleeventcansend">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMode() -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="getMode-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxidleevent.html#wxidleeventgetmode">external documentation</url>.
+ <br/> Res = ?wxIDLE_PROCESS_ALL | ?wxIDLE_PROCESS_SPECIFIED</p>
+</desc></func>
+<func>
+<name>requestMore(This) -&gt; ok</name>
+<fsummary>Equivalent to requestMore(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxIdleEvent">wxIdleEvent()</seealso></v></type>
+<desc><marker id="requestMore-1"/>
+<p>Equivalent to <seealso marker="#requestMore-2">requestMore(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>requestMore(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxIdleEvent">wxIdleEvent()</seealso></v><v>Option = {needMore, boolean()}</v></type>
+<desc><marker id="requestMore-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxidleevent.html#wxidleeventrequestmore">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>moreRequested(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxIdleEvent">wxIdleEvent()</seealso></v></type>
+<desc><marker id="moreRequested-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxidleevent.html#wxidleeventmorerequested">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMode(Mode) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Mode = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></v></type>
+<desc><marker id="setMode-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxidleevent.html#wxidleeventsetmode">external documentation</url>.
+ <br/> Mode = ?wxIDLE_PROCESS_ALL | ?wxIDLE_PROCESS_SPECIFIED</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

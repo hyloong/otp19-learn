@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxArtProvider</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxArtProvider.xml</file></header>
+<module>wxArtProvider</module>
+<modulesummary>See external documentation: wxArtProvider.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxartprovider.html">wxArtProvider</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxArtProvider"/>wxArtProvider()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>getBitmap(Id) -&gt; <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></name>
+<fsummary>Equivalent to getBitmap(Id, []).
+</fsummary>
+<type>
+<v>Id = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="getBitmap-1"/>
+<p>Equivalent to <seealso marker="#getBitmap-2">getBitmap(Id, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>getBitmap(Id, Options::[Option]) -&gt; <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Id = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {client, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {size, {W::integer(), H::integer()}}</v></type>
+<desc><marker id="getBitmap-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxartprovider.html#wxartprovidergetbitmap">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getIcon(Id) -&gt; <seealso marker="wxIcon#type-wxIcon">wxIcon:wxIcon()</seealso></name>
+<fsummary>Equivalent to getIcon(Id, []).
+</fsummary>
+<type>
+<v>Id = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="getIcon-1"/>
+<p>Equivalent to <seealso marker="#getIcon-2">getIcon(Id, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>getIcon(Id, Options::[Option]) -&gt; <seealso marker="wxIcon#type-wxIcon">wxIcon:wxIcon()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Id = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {client, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {size, {W::integer(), H::integer()}}</v></type>
+<desc><marker id="getIcon-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxartprovider.html#wxartprovidergeticon">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

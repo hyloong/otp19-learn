@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxStyledTextEvent</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxStyledTextEvent.xml</file></header>
+<module>wxStyledTextEvent</module>
+<modulesummary>See external documentation: wxStyledTextEvent.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html">wxStyledTextEvent</url>.
+  </p><taglist><tag>Use <seealso marker="wxEvtHandler#connect-3">wxEvtHandler:connect/3</seealso> with EventType:</tag>
+  <item><p><em>stc_change</em>, <em>stc_styleneeded</em>, <em>stc_charadded</em>, <em>stc_savepointreached</em>, <em>stc_savepointleft</em>, <em>stc_romodifyattempt</em>, <em>stc_key</em>, <em>stc_doubleclick</em>, <em>stc_updateui</em>, <em>stc_modified</em>, <em>stc_macrorecord</em>, <em>stc_marginclick</em>, <em>stc_needshown</em>, <em>stc_painted</em>, <em>stc_userlistselection</em>, <em>stc_uridropped</em>, <em>stc_dwellstart</em>, <em>stc_dwellend</em>, <em>stc_start_drag</em>, <em>stc_drag_over</em>, <em>stc_do_drop</em>, <em>stc_zoom</em>, <em>stc_hotspot_click</em>, <em>stc_hotspot_dclick</em>, <em>stc_calltip_click</em>, <em>stc_autocomp_selection</em></p></item></taglist><p>
+  See also the message variant <seealso marker="wxEvtHandler#type-wxStyledText">#wxStyledText{</seealso>} event record type.</p>
+ 
+  <p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxCommandEvent">wxCommandEvent</seealso>
+  <br/><seealso marker="wxEvent">wxEvent</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxStyledTextEvent"/>wxStyledTextEvent()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>getPosition(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getPosition-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgetposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getKey(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getKey-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgetkey">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getModifiers(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getModifiers-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgetmodifiers">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getModificationType(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getModificationType-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgetmodificationtype">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getText(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getText-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgettext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getLength(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getLength-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgetlength">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getLinesAdded(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getLinesAdded-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgetlinesadded">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getLine(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getLine-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgetline">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFoldLevelNow(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getFoldLevelNow-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgetfoldlevelnow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFoldLevelPrev(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getFoldLevelPrev-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgetfoldlevelprev">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMargin(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getMargin-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgetmargin">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMessage(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getMessage-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgetmessage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getWParam(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getWParam-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgetwparam">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getLParam(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getLParam-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgetlparam">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getListType(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getListType-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgetlisttype">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getX(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getX-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgetx">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getY(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getY-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgety">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDragText(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getDragText-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgetdragtext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDragAllowMove(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getDragAllowMove-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgetdragallowmove">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDragResult(This) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getDragResult-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgetdragresult">external documentation</url>.
+ <br/> Res = ?wxDragError | ?wxDragNone | ?wxDragCopy | ?wxDragMove | ?wxDragLink | ?wxDragCancel</p>
+</desc></func>
+<func>
+<name>getShift(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getShift-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgetshift">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getControl(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getControl-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgetcontrol">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getAlt(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStyledTextEvent">wxStyledTextEvent()</seealso></v></type>
+<desc><marker id="getAlt-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstyledtextevent.html#wxstyledtexteventgetalt">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

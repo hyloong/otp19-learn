@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxMDIParentFrame</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxMDIParentFrame.xml</file></header>
+<module>wxMDIParentFrame</module>
+<modulesummary>See external documentation: wxMDIParentFrame.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdiparentframe.html">wxMDIParentFrame</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxFrame">wxFrame</seealso>
+  <br/><seealso marker="wxTopLevelWindow">wxTopLevelWindow</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxMDIParentFrame"/>wxMDIParentFrame()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxMDIParentFrame">wxMDIParentFrame()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdiparentframe.html#wxmdiparentframewxmdiparentframe">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id, Title) -&gt; <seealso marker="#type-wxMDIParentFrame">wxMDIParentFrame()</seealso></name>
+<fsummary>Equivalent to new(Parent, Id, Title, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="new-3"/>
+<p>Equivalent to <seealso marker="#new-4">new(Parent, Id, Title, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id, Title, Options::[Option]) -&gt; <seealso marker="#type-wxMDIParentFrame">wxMDIParentFrame()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()}</v></type>
+<desc><marker id="new-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdiparentframe.html#wxmdiparentframewxmdiparentframe">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>activateNext(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMDIParentFrame">wxMDIParentFrame()</seealso></v></type>
+<desc><marker id="activateNext-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdiparentframe.html#wxmdiparentframeactivatenext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>activatePrevious(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMDIParentFrame">wxMDIParentFrame()</seealso></v></type>
+<desc><marker id="activatePrevious-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdiparentframe.html#wxmdiparentframeactivateprevious">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>arrangeIcons(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMDIParentFrame">wxMDIParentFrame()</seealso></v></type>
+<desc><marker id="arrangeIcons-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdiparentframe.html#wxmdiparentframearrangeicons">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>cascade(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMDIParentFrame">wxMDIParentFrame()</seealso></v></type>
+<desc><marker id="cascade-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdiparentframe.html#wxmdiparentframecascade">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id, Title) -&gt; boolean()</name>
+<fsummary>Equivalent to create(This, Parent, Id, Title, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMDIParentFrame">wxMDIParentFrame()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="create-4"/>
+<p>Equivalent to <seealso marker="#create-5">create(This, Parent, Id, Title, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id, Title, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMDIParentFrame">wxMDIParentFrame()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()}</v></type>
+<desc><marker id="create-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdiparentframe.html#wxmdiparentframecreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getActiveChild(This) -&gt; <seealso marker="wxMDIChildFrame#type-wxMDIChildFrame">wxMDIChildFrame:wxMDIChildFrame()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMDIParentFrame">wxMDIParentFrame()</seealso></v></type>
+<desc><marker id="getActiveChild-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdiparentframe.html#wxmdiparentframegetactivechild">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getClientWindow(This) -&gt; <seealso marker="wxMDIClientWindow#type-wxMDIClientWindow">wxMDIClientWindow:wxMDIClientWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMDIParentFrame">wxMDIParentFrame()</seealso></v></type>
+<desc><marker id="getClientWindow-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdiparentframe.html#wxmdiparentframegetclientwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>tile(This) -&gt; ok</name>
+<fsummary>Equivalent to tile(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMDIParentFrame">wxMDIParentFrame()</seealso></v></type>
+<desc><marker id="tile-1"/>
+<p>Equivalent to <seealso marker="#tile-2">tile(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>tile(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMDIParentFrame">wxMDIParentFrame()</seealso></v><v>Option = {orient, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</v></type>
+<desc><marker id="tile-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdiparentframe.html#wxmdiparentframetile">external documentation</url>.
+ <br/> Orient = ?wxHORIZONTAL | ?wxVERTICAL | ?wxBOTH</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxMDIParentFrame">wxMDIParentFrame()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

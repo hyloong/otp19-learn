@@ -7,9 +7,9 @@
 #define __OPCODES_H__
 
 #define BEAM_FORMAT_NUMBER 0
-#define MAX_GENERIC_OPCODE 158
-#define NUM_GENERIC_OPS 352
-#define NUM_SPECIFIC_OPS 387
+#define MAX_GENERIC_OPCODE 159
+#define NUM_GENERIC_OPS 353
+#define NUM_SPECIFIC_OPS 390
 #define SCRATCH_X_REG 1023
 
 #if !defined(ARCH_64)
@@ -78,8 +78,8 @@
 
 #define TE_MAX_VARS 8
 
-extern char tag_to_letter[];
-extern Uint op_transform[];
+extern const char tag_to_letter[];
+extern const Uint op_transform[];
 
 #define op_allocate_tt 0
 #define op_allocate_heap_tIt 1
@@ -358,505 +358,511 @@ extern Uint op_transform[];
 #define op_is_port_fy 274
 #define op_is_reference_fx 275
 #define op_is_reference_fy 276
-#define op_is_tuple_fr 277
-#define op_is_tuple_fx 278
-#define op_is_tuple_fy 279
-#define op_is_tuple_of_arity_frA 280
-#define op_is_tuple_of_arity_fxA 281
-#define op_is_tuple_of_arity_fyA 282
-#define op_jump_f 283
-#define op_label_L 284
-#define op_line_I 285
-#define op_loop_rec_end_f 286
-#define op_move_nx 287
-#define op_move_rx 288
-#define op_move_ry 289
-#define op_move_xr 290
-#define op_move_xx 291
-#define op_move_xy 292
-#define op_move_yr 293
-#define op_move_yx 294
-#define op_move_yy 295
-#define op_move_cr 296
-#define op_move_cx 297
-#define op_move2_par_xxxx 298
-#define op_move2_par_xxxy 299
-#define op_move2_par_xxyx 300
-#define op_move2_par_xyxy 301
-#define op_move2_par_yxxx 302
-#define op_move2_par_yxxy 303
-#define op_move2_par_yxyx 304
-#define op_move3_xxxxxx 305
-#define op_move3_xyxyxy 306
-#define op_move3_yxyxyx 307
-#define op_move_call_xf 308
-#define op_move_call_yf 309
-#define op_move_call_last_xfQ 310
-#define op_move_call_last_yfQ 311
-#define op_move_call_only_xf 312
-#define op_move_deallocate_return_nQ 313
-#define op_move_deallocate_return_xQ 314
-#define op_move_deallocate_return_yQ 315
-#define op_move_deallocate_return_cQ 316
-#define op_move_dup_xxx 317
-#define op_move_dup_xxy 318
-#define op_move_dup_yxx 319
-#define op_move_dup_yxy 320
-#define op_move_jump_fn 321
-#define op_move_jump_fx 322
-#define op_move_jump_fy 323
-#define op_move_jump_fc 324
-#define op_move_return_n 325
-#define op_move_return_x 326
-#define op_move_return_c 327
-#define op_move_shift_xxx 328
-#define op_move_shift_xxy 329
-#define op_move_shift_xyx 330
-#define op_move_shift_yxx 331
-#define op_move_window3_xxxy 332
-#define op_move_window4_xxxxy 333
-#define op_move_window5_xxxxxy 334
-#define op_move_x1_c 335
-#define op_move_x2_c 336
-#define op_new_map_dII 337
-#define op_node_x 338
-#define op_node_y 339
-#define op_normal_exit 340
-#define op_on_load 341
-#define op_put_list_rnr 342
-#define op_put_list_rnx 343
-#define op_put_list_rxr 344
-#define op_put_list_rxx 345
-#define op_put_list_xnx 346
-#define op_put_list_xrr 347
-#define op_put_list_xxr 348
-#define op_put_list_xxx 349
-#define op_put_list_xyx 350
-#define op_put_list_ynx 351
-#define op_put_list_yrr 352
-#define op_put_list_yxx 353
-#define op_put_list_yyx 354
-#define op_put_list_xcx 355
-#define op_put_list_xcy 356
-#define op_put_list_ycx 357
-#define op_put_list_cxx 358
-#define op_put_list_cyx 359
-#define op_put_list_ssd 360
-#define op_recv_mark_f 361
-#define op_remove_message 362
-#define op_return 363
-#define op_return_trace 364
-#define op_self_x 365
-#define op_self_y 366
-#define op_send 367
-#define op_set_tuple_element_sdP 368
-#define op_swap_xx 369
-#define op_swap_xy 370
-#define op_swap_temp_xxx 371
-#define op_swap_temp_xyx 372
-#define op_system_limit_j 373
-#define op_test_arity_fxA 374
-#define op_test_arity_fyA 375
-#define op_test_heap_It 376
-#define op_test_heap_1_put_list_Iy 377
-#define op_timeout 378
-#define op_timeout_locked 379
-#define op_try_case_end_s 380
-#define op_try_end_y 381
-#define op_update_map_assoc_jsdII 382
-#define op_update_map_exact_jsdII 383
-#define op_wait_f 384
-#define op_wait_locked_f 385
-#define op_wait_unlocked_f 386
+#define op_is_tagged_tuple_frAa 277
+#define op_is_tagged_tuple_fxAa 278
+#define op_is_tagged_tuple_fyAa 279
+#define op_is_tuple_fr 280
+#define op_is_tuple_fx 281
+#define op_is_tuple_fy 282
+#define op_is_tuple_of_arity_frA 283
+#define op_is_tuple_of_arity_fxA 284
+#define op_is_tuple_of_arity_fyA 285
+#define op_jump_f 286
+#define op_label_L 287
+#define op_line_I 288
+#define op_loop_rec_end_f 289
+#define op_move_nx 290
+#define op_move_rx 291
+#define op_move_ry 292
+#define op_move_xr 293
+#define op_move_xx 294
+#define op_move_xy 295
+#define op_move_yr 296
+#define op_move_yx 297
+#define op_move_yy 298
+#define op_move_cr 299
+#define op_move_cx 300
+#define op_move2_par_xxxx 301
+#define op_move2_par_xxxy 302
+#define op_move2_par_xxyx 303
+#define op_move2_par_xyxy 304
+#define op_move2_par_yxxx 305
+#define op_move2_par_yxxy 306
+#define op_move2_par_yxyx 307
+#define op_move3_xxxxxx 308
+#define op_move3_xyxyxy 309
+#define op_move3_yxyxyx 310
+#define op_move_call_xf 311
+#define op_move_call_yf 312
+#define op_move_call_last_xfQ 313
+#define op_move_call_last_yfQ 314
+#define op_move_call_only_xf 315
+#define op_move_deallocate_return_nQ 316
+#define op_move_deallocate_return_xQ 317
+#define op_move_deallocate_return_yQ 318
+#define op_move_deallocate_return_cQ 319
+#define op_move_dup_xxx 320
+#define op_move_dup_xxy 321
+#define op_move_dup_yxx 322
+#define op_move_dup_yxy 323
+#define op_move_jump_fn 324
+#define op_move_jump_fx 325
+#define op_move_jump_fy 326
+#define op_move_jump_fc 327
+#define op_move_return_n 328
+#define op_move_return_x 329
+#define op_move_return_c 330
+#define op_move_shift_xxx 331
+#define op_move_shift_xxy 332
+#define op_move_shift_xyx 333
+#define op_move_shift_yxx 334
+#define op_move_window3_xxxy 335
+#define op_move_window4_xxxxy 336
+#define op_move_window5_xxxxxy 337
+#define op_move_x1_c 338
+#define op_move_x2_c 339
+#define op_new_map_dII 340
+#define op_node_x 341
+#define op_node_y 342
+#define op_normal_exit 343
+#define op_on_load 344
+#define op_put_list_rnr 345
+#define op_put_list_rnx 346
+#define op_put_list_rxr 347
+#define op_put_list_rxx 348
+#define op_put_list_xnx 349
+#define op_put_list_xrr 350
+#define op_put_list_xxr 351
+#define op_put_list_xxx 352
+#define op_put_list_xyx 353
+#define op_put_list_ynx 354
+#define op_put_list_yrr 355
+#define op_put_list_yxx 356
+#define op_put_list_yyx 357
+#define op_put_list_xcx 358
+#define op_put_list_xcy 359
+#define op_put_list_ycx 360
+#define op_put_list_cxx 361
+#define op_put_list_cyx 362
+#define op_put_list_ssd 363
+#define op_recv_mark_f 364
+#define op_remove_message 365
+#define op_return 366
+#define op_return_trace 367
+#define op_self_x 368
+#define op_self_y 369
+#define op_send 370
+#define op_set_tuple_element_sdP 371
+#define op_swap_xx 372
+#define op_swap_xy 373
+#define op_swap_temp_xxx 374
+#define op_swap_temp_xyx 375
+#define op_system_limit_j 376
+#define op_test_arity_fxA 377
+#define op_test_arity_fyA 378
+#define op_test_heap_It 379
+#define op_test_heap_1_put_list_Iy 380
+#define op_timeout 381
+#define op_timeout_locked 382
+#define op_try_case_end_s 383
+#define op_try_end_y 384
+#define op_update_map_assoc_jsdII 385
+#define op_update_map_exact_jsdII 386
+#define op_wait_f 387
+#define op_wait_locked_f 388
+#define op_wait_unlocked_f 389
 
-#define NUMBER_OF_OPCODES 387
-#define op_count_allocate_tt 387
-#define op_count_allocate_heap_tIt 388
-#define op_count_allocate_heap_zero_tIt 389
-#define op_count_allocate_init_tIy 390
-#define op_count_allocate_zero_tt 391
-#define op_count_apply_I 392
-#define op_count_apply_bif 393
-#define op_count_apply_last_IP 394
-#define op_count_badarg_j 395
-#define op_count_badmatch_x 396
-#define op_count_bif1_fbsd 397
-#define op_count_bif1_body_bsd 398
-#define op_count_bs_add_jssId 399
-#define op_count_bs_context_to_binary_x 400
-#define op_count_bs_init_writable 401
-#define op_count_bs_put_string_II 402
-#define op_count_bs_put_utf16_jIs 403
-#define op_count_bs_test_tail_imm2_fxI 404
-#define op_count_bs_test_unit_fxI 405
-#define op_count_bs_test_unit8_fx 406
-#define op_count_bs_test_zero_tail2_fx 407
-#define op_count_call_bif_e 408
-#define op_count_call_error_handler 409
-#define op_count_call_nif 410
-#define op_count_case_end_x 411
-#define op_count_catch_yf 412
-#define op_count_catch_end_y 413
-#define op_count_continue_exit 414
-#define op_count_deallocate_I 415
-#define op_count_deallocate_return_Q 416
-#define op_count_error_action_code 417
-#define op_count_fclearerror 418
-#define op_count_fconv_dl 419
-#define op_count_fmove_ql 420
-#define op_count_fmove_ld 421
-#define op_count_fmove_dl 422
-#define op_count_get_list_rry 423
-#define op_count_get_list_rxr 424
-#define op_count_get_list_rxx 425
-#define op_count_get_list_rxy 426
-#define op_count_get_list_ryr 427
-#define op_count_get_list_xrx 428
-#define op_count_get_list_xxx 429
-#define op_count_get_list_xxy 430
-#define op_count_get_list_xyx 431
-#define op_count_get_list_xyy 432
-#define op_count_get_list_yxx 433
-#define op_count_get_list_yxy 434
-#define op_count_get_list_yyx 435
-#define op_count_get_list_yyy 436
-#define op_count_hipe_call_count 437
-#define op_count_hipe_trap_call 438
-#define op_count_hipe_trap_call_closure 439
-#define op_count_hipe_trap_resume 440
-#define op_count_hipe_trap_return 441
-#define op_count_hipe_trap_throw 442
-#define op_count_i_apply 443
-#define op_count_i_apply_fun 444
-#define op_count_i_apply_fun_last_P 445
-#define op_count_i_apply_fun_only 446
-#define op_count_i_apply_last_P 447
-#define op_count_i_apply_only 448
-#define op_count_i_band_jIxcd 449
-#define op_count_i_band_jIssd 450
-#define op_count_i_bif2_fbssd 451
-#define op_count_i_bif2_body_bssd 452
-#define op_count_i_bor_jIssd 453
-#define op_count_i_bs_append_jIIIsd 454
-#define op_count_i_bs_get_binary2_fxIsId 455
-#define op_count_i_bs_get_binary_all2_fxIId 456
-#define op_count_i_bs_get_binary_all_reuse_xfI 457
-#define op_count_i_bs_get_binary_imm2_fxIIId 458
-#define op_count_i_bs_get_float2_fxIsId 459
-#define op_count_i_bs_get_integer_fIIssd 460
-#define op_count_i_bs_get_integer_16_xfd 461
-#define op_count_i_bs_get_integer_32_xfId 462
-#define op_count_i_bs_get_integer_8_xfd 463
-#define op_count_i_bs_get_integer_imm_xIIfId 464
-#define op_count_i_bs_get_integer_small_imm_xIfId 465
-#define op_count_i_bs_get_utf16_xfId 466
-#define op_count_i_bs_get_utf8_xfd 467
-#define op_count_i_bs_init_IId 468
-#define op_count_i_bs_init_bits_IId 469
-#define op_count_i_bs_init_bits_fail_xjId 470
-#define op_count_i_bs_init_bits_fail_yjId 471
-#define op_count_i_bs_init_bits_fail_heap_sIjId 472
-#define op_count_i_bs_init_bits_heap_IIId 473
-#define op_count_i_bs_init_fail_xjId 474
-#define op_count_i_bs_init_fail_yjId 475
-#define op_count_i_bs_init_fail_heap_sIjId 476
-#define op_count_i_bs_init_heap_IIId 477
-#define op_count_i_bs_init_heap_bin_IId 478
-#define op_count_i_bs_init_heap_bin_heap_IIId 479
-#define op_count_i_bs_match_string_xfII 480
-#define op_count_i_bs_private_append_jIssd 481
-#define op_count_i_bs_put_utf8_js 482
-#define op_count_i_bs_restore2_xI 483
-#define op_count_i_bs_save2_xI 484
-#define op_count_i_bs_skip_bits2_fxxI 485
-#define op_count_i_bs_skip_bits2_fxyI 486
-#define op_count_i_bs_skip_bits_all2_fxI 487
-#define op_count_i_bs_skip_bits_imm2_fxI 488
-#define op_count_i_bs_start_match2_xfIId 489
-#define op_count_i_bs_start_match2_yfIId 490
-#define op_count_i_bs_utf16_size_sd 491
-#define op_count_i_bs_utf8_size_sd 492
-#define op_count_i_bs_validate_unicode_js 493
-#define op_count_i_bs_validate_unicode_retract_jss 494
-#define op_count_i_bsl_jIssd 495
-#define op_count_i_bsr_jIssd 496
-#define op_count_i_bxor_jIssd 497
-#define op_count_i_call_f 498
-#define op_count_i_call_ext_e 499
-#define op_count_i_call_ext_last_eP 500
-#define op_count_i_call_ext_only_e 501
-#define op_count_i_call_fun_I 502
-#define op_count_i_call_fun_last_IP 503
-#define op_count_i_call_last_fP 504
-#define op_count_i_call_only_f 505
-#define op_count_i_debug_breakpoint 506
-#define op_count_i_element_jxsd 507
-#define op_count_i_element_jysd 508
-#define op_count_i_fadd_lll 509
-#define op_count_i_fast_element_jxId 510
-#define op_count_i_fast_element_jyId 511
-#define op_count_i_fcheckerror 512
-#define op_count_i_fdiv_lll 513
-#define op_count_i_fmul_lll 514
-#define op_count_i_fnegate_ll 515
-#define op_count_i_fsub_lll 516
-#define op_count_i_func_info_IaaI 517
-#define op_count_i_gc_bif1_jIsId 518
-#define op_count_i_gc_bif2_jIIssd 519
-#define op_count_i_gc_bif3_jIIssd 520
-#define op_count_i_generic_breakpoint 521
-#define op_count_i_get_sd 522
-#define op_count_i_get_hash_cId 523
-#define op_count_i_get_map_element_fxxx 524
-#define op_count_i_get_map_element_fxxy 525
-#define op_count_i_get_map_element_fyxx 526
-#define op_count_i_get_map_element_fyxy 527
-#define op_count_i_get_map_element_hash_fxcIx 528
-#define op_count_i_get_map_element_hash_fxcIy 529
-#define op_count_i_get_map_element_hash_fycIx 530
-#define op_count_i_get_map_element_hash_fycIy 531
-#define op_count_i_get_map_elements_fsI 532
-#define op_count_i_get_tuple_element_xPx 533
-#define op_count_i_get_tuple_element_xPy 534
-#define op_count_i_get_tuple_element_yPx 535
-#define op_count_i_get_tuple_element_yPy 536
-#define op_count_i_get_tuple_element2_xPx 537
-#define op_count_i_get_tuple_element2y_xPyy 538
-#define op_count_i_get_tuple_element3_xPx 539
-#define op_count_i_hibernate 540
-#define op_count_i_increment_rIId 541
-#define op_count_i_increment_xIId 542
-#define op_count_i_increment_yIId 543
-#define op_count_i_int_bnot_jsId 544
-#define op_count_i_int_div_jIssd 545
-#define op_count_i_is_eq_exact_immed_frc 546
-#define op_count_i_is_eq_exact_immed_fxc 547
-#define op_count_i_is_eq_exact_immed_fyc 548
-#define op_count_i_is_eq_exact_literal_fxc 549
-#define op_count_i_is_eq_exact_literal_fyc 550
-#define op_count_i_is_ne_exact_immed_fxc 551
-#define op_count_i_is_ne_exact_immed_fyc 552
-#define op_count_i_is_ne_exact_literal_fxc 553
-#define op_count_i_is_ne_exact_literal_fyc 554
-#define op_count_i_jump_on_val_xfII 555
-#define op_count_i_jump_on_val_yfII 556
-#define op_count_i_jump_on_val_zero_xfI 557
-#define op_count_i_jump_on_val_zero_yfI 558
-#define op_count_i_loop_rec_f 559
-#define op_count_i_m_div_jIssd 560
-#define op_count_i_make_fun_It 561
-#define op_count_i_minus_jIxxd 562
-#define op_count_i_minus_jIssd 563
-#define op_count_i_move_call_cf 564
-#define op_count_i_move_call_ext_ce 565
-#define op_count_i_move_call_ext_last_ePc 566
-#define op_count_i_move_call_ext_only_ec 567
-#define op_count_i_move_call_last_fPc 568
-#define op_count_i_move_call_only_fc 569
-#define op_count_i_new_bs_put_binary_jsIs 570
-#define op_count_i_new_bs_put_binary_all_jsI 571
-#define op_count_i_new_bs_put_binary_imm_jIs 572
-#define op_count_i_new_bs_put_float_jsIs 573
-#define op_count_i_new_bs_put_float_imm_jIIs 574
-#define op_count_i_new_bs_put_integer_jsIs 575
-#define op_count_i_new_bs_put_integer_imm_jIIs 576
-#define op_count_i_perf_counter 577
-#define op_count_i_plus_jIxxd 578
-#define op_count_i_plus_jIxyd 579
-#define op_count_i_plus_jIssd 580
-#define op_count_i_put_tuple_xI 581
-#define op_count_i_put_tuple_yI 582
-#define op_count_i_raise 583
-#define op_count_i_recv_set 584
-#define op_count_i_rem_jIxxd 585
-#define op_count_i_rem_jIssd 586
-#define op_count_i_return_time_trace 587
-#define op_count_i_return_to_trace 588
-#define op_count_i_select_tuple_arity_xfI 589
-#define op_count_i_select_tuple_arity_yfI 590
-#define op_count_i_select_tuple_arity2_xfAAff 591
-#define op_count_i_select_tuple_arity2_yfAAff 592
-#define op_count_i_select_val2_xfccff 593
-#define op_count_i_select_val2_yfccff 594
-#define op_count_i_select_val_bins_xfI 595
-#define op_count_i_select_val_bins_yfI 596
-#define op_count_i_select_val_lins_xfI 597
-#define op_count_i_select_val_lins_yfI 598
-#define op_count_i_times_jIssd 599
-#define op_count_i_trim_I 600
-#define op_count_i_wait_error 601
-#define op_count_i_wait_error_locked 602
-#define op_count_i_wait_timeout_fI 603
-#define op_count_i_wait_timeout_fs 604
-#define op_count_i_wait_timeout_locked_fI 605
-#define op_count_i_wait_timeout_locked_fs 606
-#define op_count_i_yield 607
-#define op_count_if_end 608
-#define op_count_init_y 609
-#define op_count_init2_yy 610
-#define op_count_init3_yyy 611
-#define op_count_int_code_end 612
-#define op_count_is_atom_fx 613
-#define op_count_is_atom_fy 614
-#define op_count_is_binary_fx 615
-#define op_count_is_binary_fy 616
-#define op_count_is_bitstring_fx 617
-#define op_count_is_bitstring_fy 618
-#define op_count_is_boolean_fx 619
-#define op_count_is_boolean_fy 620
-#define op_count_is_eq_fss 621
-#define op_count_is_eq_exact_fxx 622
-#define op_count_is_eq_exact_fxy 623
-#define op_count_is_eq_exact_fss 624
-#define op_count_is_float_fx 625
-#define op_count_is_float_fy 626
-#define op_count_is_function_fx 627
-#define op_count_is_function_fy 628
-#define op_count_is_function2_fss 629
-#define op_count_is_ge_fxx 630
-#define op_count_is_ge_fxc 631
-#define op_count_is_ge_fcx 632
-#define op_count_is_ge_fss 633
-#define op_count_is_integer_fx 634
-#define op_count_is_integer_fy 635
-#define op_count_is_integer_allocate_fxII 636
-#define op_count_is_list_fx 637
-#define op_count_is_list_fy 638
-#define op_count_is_lt_fxx 639
-#define op_count_is_lt_fxc 640
-#define op_count_is_lt_fcx 641
-#define op_count_is_lt_fss 642
-#define op_count_is_map_fx 643
-#define op_count_is_map_fy 644
-#define op_count_is_ne_fss 645
-#define op_count_is_ne_exact_fss 646
-#define op_count_is_nil_fx 647
-#define op_count_is_nil_fy 648
-#define op_count_is_non_empty_list_test_heap_fIt 649
-#define op_count_is_nonempty_list_fx 650
-#define op_count_is_nonempty_list_fy 651
-#define op_count_is_nonempty_list_allocate_frIt 652
-#define op_count_is_nonempty_list_allocate_fxIt 653
-#define op_count_is_nonempty_list_get_list_frxx 654
-#define op_count_is_nonempty_list_get_list_fxxx 655
-#define op_count_is_number_fx 656
-#define op_count_is_number_fy 657
-#define op_count_is_pid_fx 658
-#define op_count_is_pid_fy 659
-#define op_count_is_port_fx 660
-#define op_count_is_port_fy 661
-#define op_count_is_reference_fx 662
-#define op_count_is_reference_fy 663
-#define op_count_is_tuple_fr 664
-#define op_count_is_tuple_fx 665
-#define op_count_is_tuple_fy 666
-#define op_count_is_tuple_of_arity_frA 667
-#define op_count_is_tuple_of_arity_fxA 668
-#define op_count_is_tuple_of_arity_fyA 669
-#define op_count_jump_f 670
-#define op_count_label_L 671
-#define op_count_line_I 672
-#define op_count_loop_rec_end_f 673
-#define op_count_move_nx 674
-#define op_count_move_rx 675
-#define op_count_move_ry 676
-#define op_count_move_xr 677
-#define op_count_move_xx 678
-#define op_count_move_xy 679
-#define op_count_move_yr 680
-#define op_count_move_yx 681
-#define op_count_move_yy 682
-#define op_count_move_cr 683
-#define op_count_move_cx 684
-#define op_count_move2_par_xxxx 685
-#define op_count_move2_par_xxxy 686
-#define op_count_move2_par_xxyx 687
-#define op_count_move2_par_xyxy 688
-#define op_count_move2_par_yxxx 689
-#define op_count_move2_par_yxxy 690
-#define op_count_move2_par_yxyx 691
-#define op_count_move3_xxxxxx 692
-#define op_count_move3_xyxyxy 693
-#define op_count_move3_yxyxyx 694
-#define op_count_move_call_xf 695
-#define op_count_move_call_yf 696
-#define op_count_move_call_last_xfQ 697
-#define op_count_move_call_last_yfQ 698
-#define op_count_move_call_only_xf 699
-#define op_count_move_deallocate_return_nQ 700
-#define op_count_move_deallocate_return_xQ 701
-#define op_count_move_deallocate_return_yQ 702
-#define op_count_move_deallocate_return_cQ 703
-#define op_count_move_dup_xxx 704
-#define op_count_move_dup_xxy 705
-#define op_count_move_dup_yxx 706
-#define op_count_move_dup_yxy 707
-#define op_count_move_jump_fn 708
-#define op_count_move_jump_fx 709
-#define op_count_move_jump_fy 710
-#define op_count_move_jump_fc 711
-#define op_count_move_return_n 712
-#define op_count_move_return_x 713
-#define op_count_move_return_c 714
-#define op_count_move_shift_xxx 715
-#define op_count_move_shift_xxy 716
-#define op_count_move_shift_xyx 717
-#define op_count_move_shift_yxx 718
-#define op_count_move_window3_xxxy 719
-#define op_count_move_window4_xxxxy 720
-#define op_count_move_window5_xxxxxy 721
-#define op_count_move_x1_c 722
-#define op_count_move_x2_c 723
-#define op_count_new_map_dII 724
-#define op_count_node_x 725
-#define op_count_node_y 726
-#define op_count_normal_exit 727
-#define op_count_on_load 728
-#define op_count_put_list_rnr 729
-#define op_count_put_list_rnx 730
-#define op_count_put_list_rxr 731
-#define op_count_put_list_rxx 732
-#define op_count_put_list_xnx 733
-#define op_count_put_list_xrr 734
-#define op_count_put_list_xxr 735
-#define op_count_put_list_xxx 736
-#define op_count_put_list_xyx 737
-#define op_count_put_list_ynx 738
-#define op_count_put_list_yrr 739
-#define op_count_put_list_yxx 740
-#define op_count_put_list_yyx 741
-#define op_count_put_list_xcx 742
-#define op_count_put_list_xcy 743
-#define op_count_put_list_ycx 744
-#define op_count_put_list_cxx 745
-#define op_count_put_list_cyx 746
-#define op_count_put_list_ssd 747
-#define op_count_recv_mark_f 748
-#define op_count_remove_message 749
-#define op_count_return 750
-#define op_count_return_trace 751
-#define op_count_self_x 752
-#define op_count_self_y 753
-#define op_count_send 754
-#define op_count_set_tuple_element_sdP 755
-#define op_count_swap_xx 756
-#define op_count_swap_xy 757
-#define op_count_swap_temp_xxx 758
-#define op_count_swap_temp_xyx 759
-#define op_count_system_limit_j 760
-#define op_count_test_arity_fxA 761
-#define op_count_test_arity_fyA 762
-#define op_count_test_heap_It 763
-#define op_count_test_heap_1_put_list_Iy 764
-#define op_count_timeout 765
-#define op_count_timeout_locked 766
-#define op_count_try_case_end_s 767
-#define op_count_try_end_y 768
-#define op_count_update_map_assoc_jsdII 769
-#define op_count_update_map_exact_jsdII 770
-#define op_count_wait_f 771
-#define op_count_wait_locked_f 772
-#define op_count_wait_unlocked_f 773
+#define NUMBER_OF_OPCODES 390
+#define op_count_allocate_tt 390
+#define op_count_allocate_heap_tIt 391
+#define op_count_allocate_heap_zero_tIt 392
+#define op_count_allocate_init_tIy 393
+#define op_count_allocate_zero_tt 394
+#define op_count_apply_I 395
+#define op_count_apply_bif 396
+#define op_count_apply_last_IP 397
+#define op_count_badarg_j 398
+#define op_count_badmatch_x 399
+#define op_count_bif1_fbsd 400
+#define op_count_bif1_body_bsd 401
+#define op_count_bs_add_jssId 402
+#define op_count_bs_context_to_binary_x 403
+#define op_count_bs_init_writable 404
+#define op_count_bs_put_string_II 405
+#define op_count_bs_put_utf16_jIs 406
+#define op_count_bs_test_tail_imm2_fxI 407
+#define op_count_bs_test_unit_fxI 408
+#define op_count_bs_test_unit8_fx 409
+#define op_count_bs_test_zero_tail2_fx 410
+#define op_count_call_bif_e 411
+#define op_count_call_error_handler 412
+#define op_count_call_nif 413
+#define op_count_case_end_x 414
+#define op_count_catch_yf 415
+#define op_count_catch_end_y 416
+#define op_count_continue_exit 417
+#define op_count_deallocate_I 418
+#define op_count_deallocate_return_Q 419
+#define op_count_error_action_code 420
+#define op_count_fclearerror 421
+#define op_count_fconv_dl 422
+#define op_count_fmove_ql 423
+#define op_count_fmove_ld 424
+#define op_count_fmove_dl 425
+#define op_count_get_list_rry 426
+#define op_count_get_list_rxr 427
+#define op_count_get_list_rxx 428
+#define op_count_get_list_rxy 429
+#define op_count_get_list_ryr 430
+#define op_count_get_list_xrx 431
+#define op_count_get_list_xxx 432
+#define op_count_get_list_xxy 433
+#define op_count_get_list_xyx 434
+#define op_count_get_list_xyy 435
+#define op_count_get_list_yxx 436
+#define op_count_get_list_yxy 437
+#define op_count_get_list_yyx 438
+#define op_count_get_list_yyy 439
+#define op_count_hipe_call_count 440
+#define op_count_hipe_trap_call 441
+#define op_count_hipe_trap_call_closure 442
+#define op_count_hipe_trap_resume 443
+#define op_count_hipe_trap_return 444
+#define op_count_hipe_trap_throw 445
+#define op_count_i_apply 446
+#define op_count_i_apply_fun 447
+#define op_count_i_apply_fun_last_P 448
+#define op_count_i_apply_fun_only 449
+#define op_count_i_apply_last_P 450
+#define op_count_i_apply_only 451
+#define op_count_i_band_jIxcd 452
+#define op_count_i_band_jIssd 453
+#define op_count_i_bif2_fbssd 454
+#define op_count_i_bif2_body_bssd 455
+#define op_count_i_bor_jIssd 456
+#define op_count_i_bs_append_jIIIsd 457
+#define op_count_i_bs_get_binary2_fxIsId 458
+#define op_count_i_bs_get_binary_all2_fxIId 459
+#define op_count_i_bs_get_binary_all_reuse_xfI 460
+#define op_count_i_bs_get_binary_imm2_fxIIId 461
+#define op_count_i_bs_get_float2_fxIsId 462
+#define op_count_i_bs_get_integer_fIIssd 463
+#define op_count_i_bs_get_integer_16_xfd 464
+#define op_count_i_bs_get_integer_32_xfId 465
+#define op_count_i_bs_get_integer_8_xfd 466
+#define op_count_i_bs_get_integer_imm_xIIfId 467
+#define op_count_i_bs_get_integer_small_imm_xIfId 468
+#define op_count_i_bs_get_utf16_xfId 469
+#define op_count_i_bs_get_utf8_xfd 470
+#define op_count_i_bs_init_IId 471
+#define op_count_i_bs_init_bits_IId 472
+#define op_count_i_bs_init_bits_fail_xjId 473
+#define op_count_i_bs_init_bits_fail_yjId 474
+#define op_count_i_bs_init_bits_fail_heap_sIjId 475
+#define op_count_i_bs_init_bits_heap_IIId 476
+#define op_count_i_bs_init_fail_xjId 477
+#define op_count_i_bs_init_fail_yjId 478
+#define op_count_i_bs_init_fail_heap_sIjId 479
+#define op_count_i_bs_init_heap_IIId 480
+#define op_count_i_bs_init_heap_bin_IId 481
+#define op_count_i_bs_init_heap_bin_heap_IIId 482
+#define op_count_i_bs_match_string_xfII 483
+#define op_count_i_bs_private_append_jIssd 484
+#define op_count_i_bs_put_utf8_js 485
+#define op_count_i_bs_restore2_xI 486
+#define op_count_i_bs_save2_xI 487
+#define op_count_i_bs_skip_bits2_fxxI 488
+#define op_count_i_bs_skip_bits2_fxyI 489
+#define op_count_i_bs_skip_bits_all2_fxI 490
+#define op_count_i_bs_skip_bits_imm2_fxI 491
+#define op_count_i_bs_start_match2_xfIId 492
+#define op_count_i_bs_start_match2_yfIId 493
+#define op_count_i_bs_utf16_size_sd 494
+#define op_count_i_bs_utf8_size_sd 495
+#define op_count_i_bs_validate_unicode_js 496
+#define op_count_i_bs_validate_unicode_retract_jss 497
+#define op_count_i_bsl_jIssd 498
+#define op_count_i_bsr_jIssd 499
+#define op_count_i_bxor_jIssd 500
+#define op_count_i_call_f 501
+#define op_count_i_call_ext_e 502
+#define op_count_i_call_ext_last_eP 503
+#define op_count_i_call_ext_only_e 504
+#define op_count_i_call_fun_I 505
+#define op_count_i_call_fun_last_IP 506
+#define op_count_i_call_last_fP 507
+#define op_count_i_call_only_f 508
+#define op_count_i_debug_breakpoint 509
+#define op_count_i_element_jxsd 510
+#define op_count_i_element_jysd 511
+#define op_count_i_fadd_lll 512
+#define op_count_i_fast_element_jxId 513
+#define op_count_i_fast_element_jyId 514
+#define op_count_i_fcheckerror 515
+#define op_count_i_fdiv_lll 516
+#define op_count_i_fmul_lll 517
+#define op_count_i_fnegate_ll 518
+#define op_count_i_fsub_lll 519
+#define op_count_i_func_info_IaaI 520
+#define op_count_i_gc_bif1_jIsId 521
+#define op_count_i_gc_bif2_jIIssd 522
+#define op_count_i_gc_bif3_jIIssd 523
+#define op_count_i_generic_breakpoint 524
+#define op_count_i_get_sd 525
+#define op_count_i_get_hash_cId 526
+#define op_count_i_get_map_element_fxxx 527
+#define op_count_i_get_map_element_fxxy 528
+#define op_count_i_get_map_element_fyxx 529
+#define op_count_i_get_map_element_fyxy 530
+#define op_count_i_get_map_element_hash_fxcIx 531
+#define op_count_i_get_map_element_hash_fxcIy 532
+#define op_count_i_get_map_element_hash_fycIx 533
+#define op_count_i_get_map_element_hash_fycIy 534
+#define op_count_i_get_map_elements_fsI 535
+#define op_count_i_get_tuple_element_xPx 536
+#define op_count_i_get_tuple_element_xPy 537
+#define op_count_i_get_tuple_element_yPx 538
+#define op_count_i_get_tuple_element_yPy 539
+#define op_count_i_get_tuple_element2_xPx 540
+#define op_count_i_get_tuple_element2y_xPyy 541
+#define op_count_i_get_tuple_element3_xPx 542
+#define op_count_i_hibernate 543
+#define op_count_i_increment_rIId 544
+#define op_count_i_increment_xIId 545
+#define op_count_i_increment_yIId 546
+#define op_count_i_int_bnot_jsId 547
+#define op_count_i_int_div_jIssd 548
+#define op_count_i_is_eq_exact_immed_frc 549
+#define op_count_i_is_eq_exact_immed_fxc 550
+#define op_count_i_is_eq_exact_immed_fyc 551
+#define op_count_i_is_eq_exact_literal_fxc 552
+#define op_count_i_is_eq_exact_literal_fyc 553
+#define op_count_i_is_ne_exact_immed_fxc 554
+#define op_count_i_is_ne_exact_immed_fyc 555
+#define op_count_i_is_ne_exact_literal_fxc 556
+#define op_count_i_is_ne_exact_literal_fyc 557
+#define op_count_i_jump_on_val_xfII 558
+#define op_count_i_jump_on_val_yfII 559
+#define op_count_i_jump_on_val_zero_xfI 560
+#define op_count_i_jump_on_val_zero_yfI 561
+#define op_count_i_loop_rec_f 562
+#define op_count_i_m_div_jIssd 563
+#define op_count_i_make_fun_It 564
+#define op_count_i_minus_jIxxd 565
+#define op_count_i_minus_jIssd 566
+#define op_count_i_move_call_cf 567
+#define op_count_i_move_call_ext_ce 568
+#define op_count_i_move_call_ext_last_ePc 569
+#define op_count_i_move_call_ext_only_ec 570
+#define op_count_i_move_call_last_fPc 571
+#define op_count_i_move_call_only_fc 572
+#define op_count_i_new_bs_put_binary_jsIs 573
+#define op_count_i_new_bs_put_binary_all_jsI 574
+#define op_count_i_new_bs_put_binary_imm_jIs 575
+#define op_count_i_new_bs_put_float_jsIs 576
+#define op_count_i_new_bs_put_float_imm_jIIs 577
+#define op_count_i_new_bs_put_integer_jsIs 578
+#define op_count_i_new_bs_put_integer_imm_jIIs 579
+#define op_count_i_perf_counter 580
+#define op_count_i_plus_jIxxd 581
+#define op_count_i_plus_jIxyd 582
+#define op_count_i_plus_jIssd 583
+#define op_count_i_put_tuple_xI 584
+#define op_count_i_put_tuple_yI 585
+#define op_count_i_raise 586
+#define op_count_i_recv_set 587
+#define op_count_i_rem_jIxxd 588
+#define op_count_i_rem_jIssd 589
+#define op_count_i_return_time_trace 590
+#define op_count_i_return_to_trace 591
+#define op_count_i_select_tuple_arity_xfI 592
+#define op_count_i_select_tuple_arity_yfI 593
+#define op_count_i_select_tuple_arity2_xfAAff 594
+#define op_count_i_select_tuple_arity2_yfAAff 595
+#define op_count_i_select_val2_xfccff 596
+#define op_count_i_select_val2_yfccff 597
+#define op_count_i_select_val_bins_xfI 598
+#define op_count_i_select_val_bins_yfI 599
+#define op_count_i_select_val_lins_xfI 600
+#define op_count_i_select_val_lins_yfI 601
+#define op_count_i_times_jIssd 602
+#define op_count_i_trim_I 603
+#define op_count_i_wait_error 604
+#define op_count_i_wait_error_locked 605
+#define op_count_i_wait_timeout_fI 606
+#define op_count_i_wait_timeout_fs 607
+#define op_count_i_wait_timeout_locked_fI 608
+#define op_count_i_wait_timeout_locked_fs 609
+#define op_count_i_yield 610
+#define op_count_if_end 611
+#define op_count_init_y 612
+#define op_count_init2_yy 613
+#define op_count_init3_yyy 614
+#define op_count_int_code_end 615
+#define op_count_is_atom_fx 616
+#define op_count_is_atom_fy 617
+#define op_count_is_binary_fx 618
+#define op_count_is_binary_fy 619
+#define op_count_is_bitstring_fx 620
+#define op_count_is_bitstring_fy 621
+#define op_count_is_boolean_fx 622
+#define op_count_is_boolean_fy 623
+#define op_count_is_eq_fss 624
+#define op_count_is_eq_exact_fxx 625
+#define op_count_is_eq_exact_fxy 626
+#define op_count_is_eq_exact_fss 627
+#define op_count_is_float_fx 628
+#define op_count_is_float_fy 629
+#define op_count_is_function_fx 630
+#define op_count_is_function_fy 631
+#define op_count_is_function2_fss 632
+#define op_count_is_ge_fxx 633
+#define op_count_is_ge_fxc 634
+#define op_count_is_ge_fcx 635
+#define op_count_is_ge_fss 636
+#define op_count_is_integer_fx 637
+#define op_count_is_integer_fy 638
+#define op_count_is_integer_allocate_fxII 639
+#define op_count_is_list_fx 640
+#define op_count_is_list_fy 641
+#define op_count_is_lt_fxx 642
+#define op_count_is_lt_fxc 643
+#define op_count_is_lt_fcx 644
+#define op_count_is_lt_fss 645
+#define op_count_is_map_fx 646
+#define op_count_is_map_fy 647
+#define op_count_is_ne_fss 648
+#define op_count_is_ne_exact_fss 649
+#define op_count_is_nil_fx 650
+#define op_count_is_nil_fy 651
+#define op_count_is_non_empty_list_test_heap_fIt 652
+#define op_count_is_nonempty_list_fx 653
+#define op_count_is_nonempty_list_fy 654
+#define op_count_is_nonempty_list_allocate_frIt 655
+#define op_count_is_nonempty_list_allocate_fxIt 656
+#define op_count_is_nonempty_list_get_list_frxx 657
+#define op_count_is_nonempty_list_get_list_fxxx 658
+#define op_count_is_number_fx 659
+#define op_count_is_number_fy 660
+#define op_count_is_pid_fx 661
+#define op_count_is_pid_fy 662
+#define op_count_is_port_fx 663
+#define op_count_is_port_fy 664
+#define op_count_is_reference_fx 665
+#define op_count_is_reference_fy 666
+#define op_count_is_tagged_tuple_frAa 667
+#define op_count_is_tagged_tuple_fxAa 668
+#define op_count_is_tagged_tuple_fyAa 669
+#define op_count_is_tuple_fr 670
+#define op_count_is_tuple_fx 671
+#define op_count_is_tuple_fy 672
+#define op_count_is_tuple_of_arity_frA 673
+#define op_count_is_tuple_of_arity_fxA 674
+#define op_count_is_tuple_of_arity_fyA 675
+#define op_count_jump_f 676
+#define op_count_label_L 677
+#define op_count_line_I 678
+#define op_count_loop_rec_end_f 679
+#define op_count_move_nx 680
+#define op_count_move_rx 681
+#define op_count_move_ry 682
+#define op_count_move_xr 683
+#define op_count_move_xx 684
+#define op_count_move_xy 685
+#define op_count_move_yr 686
+#define op_count_move_yx 687
+#define op_count_move_yy 688
+#define op_count_move_cr 689
+#define op_count_move_cx 690
+#define op_count_move2_par_xxxx 691
+#define op_count_move2_par_xxxy 692
+#define op_count_move2_par_xxyx 693
+#define op_count_move2_par_xyxy 694
+#define op_count_move2_par_yxxx 695
+#define op_count_move2_par_yxxy 696
+#define op_count_move2_par_yxyx 697
+#define op_count_move3_xxxxxx 698
+#define op_count_move3_xyxyxy 699
+#define op_count_move3_yxyxyx 700
+#define op_count_move_call_xf 701
+#define op_count_move_call_yf 702
+#define op_count_move_call_last_xfQ 703
+#define op_count_move_call_last_yfQ 704
+#define op_count_move_call_only_xf 705
+#define op_count_move_deallocate_return_nQ 706
+#define op_count_move_deallocate_return_xQ 707
+#define op_count_move_deallocate_return_yQ 708
+#define op_count_move_deallocate_return_cQ 709
+#define op_count_move_dup_xxx 710
+#define op_count_move_dup_xxy 711
+#define op_count_move_dup_yxx 712
+#define op_count_move_dup_yxy 713
+#define op_count_move_jump_fn 714
+#define op_count_move_jump_fx 715
+#define op_count_move_jump_fy 716
+#define op_count_move_jump_fc 717
+#define op_count_move_return_n 718
+#define op_count_move_return_x 719
+#define op_count_move_return_c 720
+#define op_count_move_shift_xxx 721
+#define op_count_move_shift_xxy 722
+#define op_count_move_shift_xyx 723
+#define op_count_move_shift_yxx 724
+#define op_count_move_window3_xxxy 725
+#define op_count_move_window4_xxxxy 726
+#define op_count_move_window5_xxxxxy 727
+#define op_count_move_x1_c 728
+#define op_count_move_x2_c 729
+#define op_count_new_map_dII 730
+#define op_count_node_x 731
+#define op_count_node_y 732
+#define op_count_normal_exit 733
+#define op_count_on_load 734
+#define op_count_put_list_rnr 735
+#define op_count_put_list_rnx 736
+#define op_count_put_list_rxr 737
+#define op_count_put_list_rxx 738
+#define op_count_put_list_xnx 739
+#define op_count_put_list_xrr 740
+#define op_count_put_list_xxr 741
+#define op_count_put_list_xxx 742
+#define op_count_put_list_xyx 743
+#define op_count_put_list_ynx 744
+#define op_count_put_list_yrr 745
+#define op_count_put_list_yxx 746
+#define op_count_put_list_yyx 747
+#define op_count_put_list_xcx 748
+#define op_count_put_list_xcy 749
+#define op_count_put_list_ycx 750
+#define op_count_put_list_cxx 751
+#define op_count_put_list_cyx 752
+#define op_count_put_list_ssd 753
+#define op_count_recv_mark_f 754
+#define op_count_remove_message 755
+#define op_count_return 756
+#define op_count_return_trace 757
+#define op_count_self_x 758
+#define op_count_self_y 759
+#define op_count_send 760
+#define op_count_set_tuple_element_sdP 761
+#define op_count_swap_xx 762
+#define op_count_swap_xy 763
+#define op_count_swap_temp_xxx 764
+#define op_count_swap_temp_xyx 765
+#define op_count_system_limit_j 766
+#define op_count_test_arity_fxA 767
+#define op_count_test_arity_fyA 768
+#define op_count_test_heap_It 769
+#define op_count_test_heap_1_put_list_Iy 770
+#define op_count_timeout 771
+#define op_count_timeout_locked 772
+#define op_count_try_case_end_s 773
+#define op_count_try_end_y 774
+#define op_count_update_map_assoc_jsdII 775
+#define op_count_update_map_exact_jsdII 776
+#define op_count_wait_f 777
+#define op_count_wait_locked_f 778
+#define op_count_wait_unlocked_f 779
 
 #define DEFINE_OPCODES \
 &&lb_allocate_tt, \
@@ -1136,6 +1142,9 @@ extern Uint op_transform[];
 &&lb_is_port_fy, \
 &&lb_is_reference_fx, \
 &&lb_is_reference_fy, \
+&&lb_is_tagged_tuple_frAa, \
+&&lb_is_tagged_tuple_fxAa, \
+&&lb_is_tagged_tuple_fyAa, \
 &&lb_is_tuple_fr, \
 &&lb_is_tuple_fx, \
 &&lb_is_tuple_fy, \
@@ -1525,6 +1534,9 @@ extern Uint op_transform[];
 &&lb_count_is_port_fy, \
 &&lb_count_is_reference_fx, \
 &&lb_count_is_reference_fy, \
+&&lb_count_is_tagged_tuple_frAa, \
+&&lb_count_is_tagged_tuple_fxAa, \
+&&lb_count_is_tagged_tuple_fyAa, \
 &&lb_count_is_tuple_fr, \
 &&lb_count_is_tuple_fx, \
 &&lb_count_is_tuple_fy, \
@@ -1637,393 +1649,396 @@ extern Uint op_transform[];
 &&lb_count_wait_unlocked_f,
 
 #define DEFINE_COUNTING_LABELS \
-CountCase(allocate_tt): opc[0].count++; goto lb_allocate_tt; \
-CountCase(allocate_heap_tIt): opc[1].count++; goto lb_allocate_heap_tIt; \
-CountCase(allocate_heap_zero_tIt): opc[2].count++; goto lb_allocate_heap_zero_tIt; \
-CountCase(allocate_init_tIy): opc[3].count++; goto lb_allocate_init_tIy; \
-CountCase(allocate_zero_tt): opc[4].count++; goto lb_allocate_zero_tt; \
-CountCase(apply_I): opc[5].count++; goto lb_apply_I; \
-CountCase(apply_bif): opc[6].count++; goto lb_apply_bif; \
-CountCase(apply_last_IP): opc[7].count++; goto lb_apply_last_IP; \
-CountCase(badarg_j): opc[8].count++; goto lb_badarg_j; \
-CountCase(badmatch_x): opc[9].count++; goto lb_badmatch_x; \
-CountCase(bif1_fbsd): opc[10].count++; goto lb_bif1_fbsd; \
-CountCase(bif1_body_bsd): opc[11].count++; goto lb_bif1_body_bsd; \
-CountCase(bs_add_jssId): opc[12].count++; goto lb_bs_add_jssId; \
-CountCase(bs_context_to_binary_x): opc[13].count++; goto lb_bs_context_to_binary_x; \
-CountCase(bs_init_writable): opc[14].count++; goto lb_bs_init_writable; \
-CountCase(bs_put_string_II): opc[15].count++; goto lb_bs_put_string_II; \
-CountCase(bs_put_utf16_jIs): opc[16].count++; goto lb_bs_put_utf16_jIs; \
-CountCase(bs_test_tail_imm2_fxI): opc[17].count++; goto lb_bs_test_tail_imm2_fxI; \
-CountCase(bs_test_unit_fxI): opc[18].count++; goto lb_bs_test_unit_fxI; \
-CountCase(bs_test_unit8_fx): opc[19].count++; goto lb_bs_test_unit8_fx; \
-CountCase(bs_test_zero_tail2_fx): opc[20].count++; goto lb_bs_test_zero_tail2_fx; \
-CountCase(call_bif_e): opc[21].count++; goto lb_call_bif_e; \
-CountCase(call_error_handler): opc[22].count++; goto lb_call_error_handler; \
-CountCase(call_nif): opc[23].count++; goto lb_call_nif; \
-CountCase(case_end_x): opc[24].count++; goto lb_case_end_x; \
-CountCase(catch_yf): opc[25].count++; goto lb_catch_yf; \
-CountCase(catch_end_y): opc[26].count++; goto lb_catch_end_y; \
-CountCase(continue_exit): opc[27].count++; goto lb_continue_exit; \
-CountCase(deallocate_I): opc[28].count++; goto lb_deallocate_I; \
-CountCase(deallocate_return_Q): opc[29].count++; goto lb_deallocate_return_Q; \
-CountCase(error_action_code): opc[30].count++; goto lb_error_action_code; \
-CountCase(fclearerror): opc[31].count++; goto lb_fclearerror; \
-CountCase(fconv_dl): opc[32].count++; goto lb_fconv_dl; \
-CountCase(fmove_ql): opc[33].count++; goto lb_fmove_ql; \
-CountCase(fmove_ld): opc[34].count++; goto lb_fmove_ld; \
-CountCase(fmove_dl): opc[35].count++; goto lb_fmove_dl; \
-CountCase(get_list_rry): opc[36].count++; goto lb_get_list_rry; \
-CountCase(get_list_rxr): opc[37].count++; goto lb_get_list_rxr; \
-CountCase(get_list_rxx): opc[38].count++; goto lb_get_list_rxx; \
-CountCase(get_list_rxy): opc[39].count++; goto lb_get_list_rxy; \
-CountCase(get_list_ryr): opc[40].count++; goto lb_get_list_ryr; \
-CountCase(get_list_xrx): opc[41].count++; goto lb_get_list_xrx; \
-CountCase(get_list_xxx): opc[42].count++; goto lb_get_list_xxx; \
-CountCase(get_list_xxy): opc[43].count++; goto lb_get_list_xxy; \
-CountCase(get_list_xyx): opc[44].count++; goto lb_get_list_xyx; \
-CountCase(get_list_xyy): opc[45].count++; goto lb_get_list_xyy; \
-CountCase(get_list_yxx): opc[46].count++; goto lb_get_list_yxx; \
-CountCase(get_list_yxy): opc[47].count++; goto lb_get_list_yxy; \
-CountCase(get_list_yyx): opc[48].count++; goto lb_get_list_yyx; \
-CountCase(get_list_yyy): opc[49].count++; goto lb_get_list_yyy; \
-CountCase(hipe_call_count): opc[50].count++; goto lb_hipe_call_count; \
-CountCase(hipe_trap_call): opc[51].count++; goto lb_hipe_trap_call; \
-CountCase(hipe_trap_call_closure): opc[52].count++; goto lb_hipe_trap_call_closure; \
-CountCase(hipe_trap_resume): opc[53].count++; goto lb_hipe_trap_resume; \
-CountCase(hipe_trap_return): opc[54].count++; goto lb_hipe_trap_return; \
-CountCase(hipe_trap_throw): opc[55].count++; goto lb_hipe_trap_throw; \
-CountCase(i_apply): opc[56].count++; goto lb_i_apply; \
-CountCase(i_apply_fun): opc[57].count++; goto lb_i_apply_fun; \
-CountCase(i_apply_fun_last_P): opc[58].count++; goto lb_i_apply_fun_last_P; \
-CountCase(i_apply_fun_only): opc[59].count++; goto lb_i_apply_fun_only; \
-CountCase(i_apply_last_P): opc[60].count++; goto lb_i_apply_last_P; \
-CountCase(i_apply_only): opc[61].count++; goto lb_i_apply_only; \
-CountCase(i_band_jIxcd): opc[62].count++; goto lb_i_band_jIxcd; \
-CountCase(i_band_jIssd): opc[63].count++; goto lb_i_band_jIssd; \
-CountCase(i_bif2_fbssd): opc[64].count++; goto lb_i_bif2_fbssd; \
-CountCase(i_bif2_body_bssd): opc[65].count++; goto lb_i_bif2_body_bssd; \
-CountCase(i_bor_jIssd): opc[66].count++; goto lb_i_bor_jIssd; \
-CountCase(i_bs_append_jIIIsd): opc[67].count++; goto lb_i_bs_append_jIIIsd; \
-CountCase(i_bs_get_binary2_fxIsId): opc[68].count++; goto lb_i_bs_get_binary2_fxIsId; \
-CountCase(i_bs_get_binary_all2_fxIId): opc[69].count++; goto lb_i_bs_get_binary_all2_fxIId; \
-CountCase(i_bs_get_binary_all_reuse_xfI): opc[70].count++; goto lb_i_bs_get_binary_all_reuse_xfI; \
-CountCase(i_bs_get_binary_imm2_fxIIId): opc[71].count++; goto lb_i_bs_get_binary_imm2_fxIIId; \
-CountCase(i_bs_get_float2_fxIsId): opc[72].count++; goto lb_i_bs_get_float2_fxIsId; \
-CountCase(i_bs_get_integer_fIIssd): opc[73].count++; goto lb_i_bs_get_integer_fIIssd; \
-CountCase(i_bs_get_integer_16_xfd): opc[74].count++; goto lb_i_bs_get_integer_16_xfd; \
-CountCase(i_bs_get_integer_32_xfId): opc[75].count++; goto lb_i_bs_get_integer_32_xfId; \
-CountCase(i_bs_get_integer_8_xfd): opc[76].count++; goto lb_i_bs_get_integer_8_xfd; \
-CountCase(i_bs_get_integer_imm_xIIfId): opc[77].count++; goto lb_i_bs_get_integer_imm_xIIfId; \
-CountCase(i_bs_get_integer_small_imm_xIfId): opc[78].count++; goto lb_i_bs_get_integer_small_imm_xIfId; \
-CountCase(i_bs_get_utf16_xfId): opc[79].count++; goto lb_i_bs_get_utf16_xfId; \
-CountCase(i_bs_get_utf8_xfd): opc[80].count++; goto lb_i_bs_get_utf8_xfd; \
-CountCase(i_bs_init_IId): opc[81].count++; goto lb_i_bs_init_IId; \
-CountCase(i_bs_init_bits_IId): opc[82].count++; goto lb_i_bs_init_bits_IId; \
-CountCase(i_bs_init_bits_fail_xjId): opc[83].count++; goto lb_i_bs_init_bits_fail_xjId; \
-CountCase(i_bs_init_bits_fail_yjId): opc[84].count++; goto lb_i_bs_init_bits_fail_yjId; \
-CountCase(i_bs_init_bits_fail_heap_sIjId): opc[85].count++; goto lb_i_bs_init_bits_fail_heap_sIjId; \
-CountCase(i_bs_init_bits_heap_IIId): opc[86].count++; goto lb_i_bs_init_bits_heap_IIId; \
-CountCase(i_bs_init_fail_xjId): opc[87].count++; goto lb_i_bs_init_fail_xjId; \
-CountCase(i_bs_init_fail_yjId): opc[88].count++; goto lb_i_bs_init_fail_yjId; \
-CountCase(i_bs_init_fail_heap_sIjId): opc[89].count++; goto lb_i_bs_init_fail_heap_sIjId; \
-CountCase(i_bs_init_heap_IIId): opc[90].count++; goto lb_i_bs_init_heap_IIId; \
-CountCase(i_bs_init_heap_bin_IId): opc[91].count++; goto lb_i_bs_init_heap_bin_IId; \
-CountCase(i_bs_init_heap_bin_heap_IIId): opc[92].count++; goto lb_i_bs_init_heap_bin_heap_IIId; \
-CountCase(i_bs_match_string_xfII): opc[93].count++; goto lb_i_bs_match_string_xfII; \
-CountCase(i_bs_private_append_jIssd): opc[94].count++; goto lb_i_bs_private_append_jIssd; \
-CountCase(i_bs_put_utf8_js): opc[95].count++; goto lb_i_bs_put_utf8_js; \
-CountCase(i_bs_restore2_xI): opc[96].count++; goto lb_i_bs_restore2_xI; \
-CountCase(i_bs_save2_xI): opc[97].count++; goto lb_i_bs_save2_xI; \
-CountCase(i_bs_skip_bits2_fxxI): opc[98].count++; goto lb_i_bs_skip_bits2_fxxI; \
-CountCase(i_bs_skip_bits2_fxyI): opc[99].count++; goto lb_i_bs_skip_bits2_fxyI; \
-CountCase(i_bs_skip_bits_all2_fxI): opc[100].count++; goto lb_i_bs_skip_bits_all2_fxI; \
-CountCase(i_bs_skip_bits_imm2_fxI): opc[101].count++; goto lb_i_bs_skip_bits_imm2_fxI; \
-CountCase(i_bs_start_match2_xfIId): opc[102].count++; goto lb_i_bs_start_match2_xfIId; \
-CountCase(i_bs_start_match2_yfIId): opc[103].count++; goto lb_i_bs_start_match2_yfIId; \
-CountCase(i_bs_utf16_size_sd): opc[104].count++; goto lb_i_bs_utf16_size_sd; \
-CountCase(i_bs_utf8_size_sd): opc[105].count++; goto lb_i_bs_utf8_size_sd; \
-CountCase(i_bs_validate_unicode_js): opc[106].count++; goto lb_i_bs_validate_unicode_js; \
-CountCase(i_bs_validate_unicode_retract_jss): opc[107].count++; goto lb_i_bs_validate_unicode_retract_jss; \
-CountCase(i_bsl_jIssd): opc[108].count++; goto lb_i_bsl_jIssd; \
-CountCase(i_bsr_jIssd): opc[109].count++; goto lb_i_bsr_jIssd; \
-CountCase(i_bxor_jIssd): opc[110].count++; goto lb_i_bxor_jIssd; \
-CountCase(i_call_f): opc[111].count++; goto lb_i_call_f; \
-CountCase(i_call_ext_e): opc[112].count++; goto lb_i_call_ext_e; \
-CountCase(i_call_ext_last_eP): opc[113].count++; goto lb_i_call_ext_last_eP; \
-CountCase(i_call_ext_only_e): opc[114].count++; goto lb_i_call_ext_only_e; \
-CountCase(i_call_fun_I): opc[115].count++; goto lb_i_call_fun_I; \
-CountCase(i_call_fun_last_IP): opc[116].count++; goto lb_i_call_fun_last_IP; \
-CountCase(i_call_last_fP): opc[117].count++; goto lb_i_call_last_fP; \
-CountCase(i_call_only_f): opc[118].count++; goto lb_i_call_only_f; \
-CountCase(i_debug_breakpoint): opc[119].count++; goto lb_i_debug_breakpoint; \
-CountCase(i_element_jxsd): opc[120].count++; goto lb_i_element_jxsd; \
-CountCase(i_element_jysd): opc[121].count++; goto lb_i_element_jysd; \
-CountCase(i_fadd_lll): opc[122].count++; goto lb_i_fadd_lll; \
-CountCase(i_fast_element_jxId): opc[123].count++; goto lb_i_fast_element_jxId; \
-CountCase(i_fast_element_jyId): opc[124].count++; goto lb_i_fast_element_jyId; \
-CountCase(i_fcheckerror): opc[125].count++; goto lb_i_fcheckerror; \
-CountCase(i_fdiv_lll): opc[126].count++; goto lb_i_fdiv_lll; \
-CountCase(i_fmul_lll): opc[127].count++; goto lb_i_fmul_lll; \
-CountCase(i_fnegate_ll): opc[128].count++; goto lb_i_fnegate_ll; \
-CountCase(i_fsub_lll): opc[129].count++; goto lb_i_fsub_lll; \
-CountCase(i_func_info_IaaI): opc[130].count++; goto lb_i_func_info_IaaI; \
-CountCase(i_gc_bif1_jIsId): opc[131].count++; goto lb_i_gc_bif1_jIsId; \
-CountCase(i_gc_bif2_jIIssd): opc[132].count++; goto lb_i_gc_bif2_jIIssd; \
-CountCase(i_gc_bif3_jIIssd): opc[133].count++; goto lb_i_gc_bif3_jIIssd; \
-CountCase(i_generic_breakpoint): opc[134].count++; goto lb_i_generic_breakpoint; \
-CountCase(i_get_sd): opc[135].count++; goto lb_i_get_sd; \
-CountCase(i_get_hash_cId): opc[136].count++; goto lb_i_get_hash_cId; \
-CountCase(i_get_map_element_fxxx): opc[137].count++; goto lb_i_get_map_element_fxxx; \
-CountCase(i_get_map_element_fxxy): opc[138].count++; goto lb_i_get_map_element_fxxy; \
-CountCase(i_get_map_element_fyxx): opc[139].count++; goto lb_i_get_map_element_fyxx; \
-CountCase(i_get_map_element_fyxy): opc[140].count++; goto lb_i_get_map_element_fyxy; \
-CountCase(i_get_map_element_hash_fxcIx): opc[141].count++; goto lb_i_get_map_element_hash_fxcIx; \
-CountCase(i_get_map_element_hash_fxcIy): opc[142].count++; goto lb_i_get_map_element_hash_fxcIy; \
-CountCase(i_get_map_element_hash_fycIx): opc[143].count++; goto lb_i_get_map_element_hash_fycIx; \
-CountCase(i_get_map_element_hash_fycIy): opc[144].count++; goto lb_i_get_map_element_hash_fycIy; \
-CountCase(i_get_map_elements_fsI): opc[145].count++; goto lb_i_get_map_elements_fsI; \
-CountCase(i_get_tuple_element_xPx): opc[146].count++; goto lb_i_get_tuple_element_xPx; \
-CountCase(i_get_tuple_element_xPy): opc[147].count++; goto lb_i_get_tuple_element_xPy; \
-CountCase(i_get_tuple_element_yPx): opc[148].count++; goto lb_i_get_tuple_element_yPx; \
-CountCase(i_get_tuple_element_yPy): opc[149].count++; goto lb_i_get_tuple_element_yPy; \
-CountCase(i_get_tuple_element2_xPx): opc[150].count++; goto lb_i_get_tuple_element2_xPx; \
-CountCase(i_get_tuple_element2y_xPyy): opc[151].count++; goto lb_i_get_tuple_element2y_xPyy; \
-CountCase(i_get_tuple_element3_xPx): opc[152].count++; goto lb_i_get_tuple_element3_xPx; \
-CountCase(i_hibernate): opc[153].count++; goto lb_i_hibernate; \
-CountCase(i_increment_rIId): opc[154].count++; goto lb_i_increment_rIId; \
-CountCase(i_increment_xIId): opc[155].count++; goto lb_i_increment_xIId; \
-CountCase(i_increment_yIId): opc[156].count++; goto lb_i_increment_yIId; \
-CountCase(i_int_bnot_jsId): opc[157].count++; goto lb_i_int_bnot_jsId; \
-CountCase(i_int_div_jIssd): opc[158].count++; goto lb_i_int_div_jIssd; \
-CountCase(i_is_eq_exact_immed_frc): opc[159].count++; goto lb_i_is_eq_exact_immed_frc; \
-CountCase(i_is_eq_exact_immed_fxc): opc[160].count++; goto lb_i_is_eq_exact_immed_fxc; \
-CountCase(i_is_eq_exact_immed_fyc): opc[161].count++; goto lb_i_is_eq_exact_immed_fyc; \
-CountCase(i_is_eq_exact_literal_fxc): opc[162].count++; goto lb_i_is_eq_exact_literal_fxc; \
-CountCase(i_is_eq_exact_literal_fyc): opc[163].count++; goto lb_i_is_eq_exact_literal_fyc; \
-CountCase(i_is_ne_exact_immed_fxc): opc[164].count++; goto lb_i_is_ne_exact_immed_fxc; \
-CountCase(i_is_ne_exact_immed_fyc): opc[165].count++; goto lb_i_is_ne_exact_immed_fyc; \
-CountCase(i_is_ne_exact_literal_fxc): opc[166].count++; goto lb_i_is_ne_exact_literal_fxc; \
-CountCase(i_is_ne_exact_literal_fyc): opc[167].count++; goto lb_i_is_ne_exact_literal_fyc; \
-CountCase(i_jump_on_val_xfII): opc[168].count++; goto lb_i_jump_on_val_xfII; \
-CountCase(i_jump_on_val_yfII): opc[169].count++; goto lb_i_jump_on_val_yfII; \
-CountCase(i_jump_on_val_zero_xfI): opc[170].count++; goto lb_i_jump_on_val_zero_xfI; \
-CountCase(i_jump_on_val_zero_yfI): opc[171].count++; goto lb_i_jump_on_val_zero_yfI; \
-CountCase(i_loop_rec_f): opc[172].count++; goto lb_i_loop_rec_f; \
-CountCase(i_m_div_jIssd): opc[173].count++; goto lb_i_m_div_jIssd; \
-CountCase(i_make_fun_It): opc[174].count++; goto lb_i_make_fun_It; \
-CountCase(i_minus_jIxxd): opc[175].count++; goto lb_i_minus_jIxxd; \
-CountCase(i_minus_jIssd): opc[176].count++; goto lb_i_minus_jIssd; \
-CountCase(i_move_call_cf): opc[177].count++; goto lb_i_move_call_cf; \
-CountCase(i_move_call_ext_ce): opc[178].count++; goto lb_i_move_call_ext_ce; \
-CountCase(i_move_call_ext_last_ePc): opc[179].count++; goto lb_i_move_call_ext_last_ePc; \
-CountCase(i_move_call_ext_only_ec): opc[180].count++; goto lb_i_move_call_ext_only_ec; \
-CountCase(i_move_call_last_fPc): opc[181].count++; goto lb_i_move_call_last_fPc; \
-CountCase(i_move_call_only_fc): opc[182].count++; goto lb_i_move_call_only_fc; \
-CountCase(i_new_bs_put_binary_jsIs): opc[183].count++; goto lb_i_new_bs_put_binary_jsIs; \
-CountCase(i_new_bs_put_binary_all_jsI): opc[184].count++; goto lb_i_new_bs_put_binary_all_jsI; \
-CountCase(i_new_bs_put_binary_imm_jIs): opc[185].count++; goto lb_i_new_bs_put_binary_imm_jIs; \
-CountCase(i_new_bs_put_float_jsIs): opc[186].count++; goto lb_i_new_bs_put_float_jsIs; \
-CountCase(i_new_bs_put_float_imm_jIIs): opc[187].count++; goto lb_i_new_bs_put_float_imm_jIIs; \
-CountCase(i_new_bs_put_integer_jsIs): opc[188].count++; goto lb_i_new_bs_put_integer_jsIs; \
-CountCase(i_new_bs_put_integer_imm_jIIs): opc[189].count++; goto lb_i_new_bs_put_integer_imm_jIIs; \
-CountCase(i_perf_counter): opc[190].count++; goto lb_i_perf_counter; \
-CountCase(i_plus_jIxxd): opc[191].count++; goto lb_i_plus_jIxxd; \
-CountCase(i_plus_jIxyd): opc[192].count++; goto lb_i_plus_jIxyd; \
-CountCase(i_plus_jIssd): opc[193].count++; goto lb_i_plus_jIssd; \
-CountCase(i_put_tuple_xI): opc[194].count++; goto lb_i_put_tuple_xI; \
-CountCase(i_put_tuple_yI): opc[195].count++; goto lb_i_put_tuple_yI; \
-CountCase(i_raise): opc[196].count++; goto lb_i_raise; \
-CountCase(i_recv_set): opc[197].count++; goto lb_i_recv_set; \
-CountCase(i_rem_jIxxd): opc[198].count++; goto lb_i_rem_jIxxd; \
-CountCase(i_rem_jIssd): opc[199].count++; goto lb_i_rem_jIssd; \
-CountCase(i_return_time_trace): opc[200].count++; goto lb_i_return_time_trace; \
-CountCase(i_return_to_trace): opc[201].count++; goto lb_i_return_to_trace; \
-CountCase(i_select_tuple_arity_xfI): opc[202].count++; goto lb_i_select_tuple_arity_xfI; \
-CountCase(i_select_tuple_arity_yfI): opc[203].count++; goto lb_i_select_tuple_arity_yfI; \
-CountCase(i_select_tuple_arity2_xfAAff): opc[204].count++; goto lb_i_select_tuple_arity2_xfAAff; \
-CountCase(i_select_tuple_arity2_yfAAff): opc[205].count++; goto lb_i_select_tuple_arity2_yfAAff; \
-CountCase(i_select_val2_xfccff): opc[206].count++; goto lb_i_select_val2_xfccff; \
-CountCase(i_select_val2_yfccff): opc[207].count++; goto lb_i_select_val2_yfccff; \
-CountCase(i_select_val_bins_xfI): opc[208].count++; goto lb_i_select_val_bins_xfI; \
-CountCase(i_select_val_bins_yfI): opc[209].count++; goto lb_i_select_val_bins_yfI; \
-CountCase(i_select_val_lins_xfI): opc[210].count++; goto lb_i_select_val_lins_xfI; \
-CountCase(i_select_val_lins_yfI): opc[211].count++; goto lb_i_select_val_lins_yfI; \
-CountCase(i_times_jIssd): opc[212].count++; goto lb_i_times_jIssd; \
-CountCase(i_trim_I): opc[213].count++; goto lb_i_trim_I; \
-CountCase(i_wait_error): opc[214].count++; goto lb_i_wait_error; \
-CountCase(i_wait_error_locked): opc[215].count++; goto lb_i_wait_error_locked; \
-CountCase(i_wait_timeout_fI): opc[216].count++; goto lb_i_wait_timeout_fI; \
-CountCase(i_wait_timeout_fs): opc[217].count++; goto lb_i_wait_timeout_fs; \
-CountCase(i_wait_timeout_locked_fI): opc[218].count++; goto lb_i_wait_timeout_locked_fI; \
-CountCase(i_wait_timeout_locked_fs): opc[219].count++; goto lb_i_wait_timeout_locked_fs; \
-CountCase(i_yield): opc[220].count++; goto lb_i_yield; \
-CountCase(if_end): opc[221].count++; goto lb_if_end; \
-CountCase(init_y): opc[222].count++; goto lb_init_y; \
-CountCase(init2_yy): opc[223].count++; goto lb_init2_yy; \
-CountCase(init3_yyy): opc[224].count++; goto lb_init3_yyy; \
-CountCase(int_code_end): opc[225].count++; goto lb_int_code_end; \
-CountCase(is_atom_fx): opc[226].count++; goto lb_is_atom_fx; \
-CountCase(is_atom_fy): opc[227].count++; goto lb_is_atom_fy; \
-CountCase(is_binary_fx): opc[228].count++; goto lb_is_binary_fx; \
-CountCase(is_binary_fy): opc[229].count++; goto lb_is_binary_fy; \
-CountCase(is_bitstring_fx): opc[230].count++; goto lb_is_bitstring_fx; \
-CountCase(is_bitstring_fy): opc[231].count++; goto lb_is_bitstring_fy; \
-CountCase(is_boolean_fx): opc[232].count++; goto lb_is_boolean_fx; \
-CountCase(is_boolean_fy): opc[233].count++; goto lb_is_boolean_fy; \
-CountCase(is_eq_fss): opc[234].count++; goto lb_is_eq_fss; \
-CountCase(is_eq_exact_fxx): opc[235].count++; goto lb_is_eq_exact_fxx; \
-CountCase(is_eq_exact_fxy): opc[236].count++; goto lb_is_eq_exact_fxy; \
-CountCase(is_eq_exact_fss): opc[237].count++; goto lb_is_eq_exact_fss; \
-CountCase(is_float_fx): opc[238].count++; goto lb_is_float_fx; \
-CountCase(is_float_fy): opc[239].count++; goto lb_is_float_fy; \
-CountCase(is_function_fx): opc[240].count++; goto lb_is_function_fx; \
-CountCase(is_function_fy): opc[241].count++; goto lb_is_function_fy; \
-CountCase(is_function2_fss): opc[242].count++; goto lb_is_function2_fss; \
-CountCase(is_ge_fxx): opc[243].count++; goto lb_is_ge_fxx; \
-CountCase(is_ge_fxc): opc[244].count++; goto lb_is_ge_fxc; \
-CountCase(is_ge_fcx): opc[245].count++; goto lb_is_ge_fcx; \
-CountCase(is_ge_fss): opc[246].count++; goto lb_is_ge_fss; \
-CountCase(is_integer_fx): opc[247].count++; goto lb_is_integer_fx; \
-CountCase(is_integer_fy): opc[248].count++; goto lb_is_integer_fy; \
-CountCase(is_integer_allocate_fxII): opc[249].count++; goto lb_is_integer_allocate_fxII; \
-CountCase(is_list_fx): opc[250].count++; goto lb_is_list_fx; \
-CountCase(is_list_fy): opc[251].count++; goto lb_is_list_fy; \
-CountCase(is_lt_fxx): opc[252].count++; goto lb_is_lt_fxx; \
-CountCase(is_lt_fxc): opc[253].count++; goto lb_is_lt_fxc; \
-CountCase(is_lt_fcx): opc[254].count++; goto lb_is_lt_fcx; \
-CountCase(is_lt_fss): opc[255].count++; goto lb_is_lt_fss; \
-CountCase(is_map_fx): opc[256].count++; goto lb_is_map_fx; \
-CountCase(is_map_fy): opc[257].count++; goto lb_is_map_fy; \
-CountCase(is_ne_fss): opc[258].count++; goto lb_is_ne_fss; \
-CountCase(is_ne_exact_fss): opc[259].count++; goto lb_is_ne_exact_fss; \
-CountCase(is_nil_fx): opc[260].count++; goto lb_is_nil_fx; \
-CountCase(is_nil_fy): opc[261].count++; goto lb_is_nil_fy; \
-CountCase(is_non_empty_list_test_heap_fIt): opc[262].count++; goto lb_is_non_empty_list_test_heap_fIt; \
-CountCase(is_nonempty_list_fx): opc[263].count++; goto lb_is_nonempty_list_fx; \
-CountCase(is_nonempty_list_fy): opc[264].count++; goto lb_is_nonempty_list_fy; \
-CountCase(is_nonempty_list_allocate_frIt): opc[265].count++; goto lb_is_nonempty_list_allocate_frIt; \
-CountCase(is_nonempty_list_allocate_fxIt): opc[266].count++; goto lb_is_nonempty_list_allocate_fxIt; \
-CountCase(is_nonempty_list_get_list_frxx): opc[267].count++; goto lb_is_nonempty_list_get_list_frxx; \
-CountCase(is_nonempty_list_get_list_fxxx): opc[268].count++; goto lb_is_nonempty_list_get_list_fxxx; \
-CountCase(is_number_fx): opc[269].count++; goto lb_is_number_fx; \
-CountCase(is_number_fy): opc[270].count++; goto lb_is_number_fy; \
-CountCase(is_pid_fx): opc[271].count++; goto lb_is_pid_fx; \
-CountCase(is_pid_fy): opc[272].count++; goto lb_is_pid_fy; \
-CountCase(is_port_fx): opc[273].count++; goto lb_is_port_fx; \
-CountCase(is_port_fy): opc[274].count++; goto lb_is_port_fy; \
-CountCase(is_reference_fx): opc[275].count++; goto lb_is_reference_fx; \
-CountCase(is_reference_fy): opc[276].count++; goto lb_is_reference_fy; \
-CountCase(is_tuple_fr): opc[277].count++; goto lb_is_tuple_fr; \
-CountCase(is_tuple_fx): opc[278].count++; goto lb_is_tuple_fx; \
-CountCase(is_tuple_fy): opc[279].count++; goto lb_is_tuple_fy; \
-CountCase(is_tuple_of_arity_frA): opc[280].count++; goto lb_is_tuple_of_arity_frA; \
-CountCase(is_tuple_of_arity_fxA): opc[281].count++; goto lb_is_tuple_of_arity_fxA; \
-CountCase(is_tuple_of_arity_fyA): opc[282].count++; goto lb_is_tuple_of_arity_fyA; \
-CountCase(jump_f): opc[283].count++; goto lb_jump_f; \
-CountCase(label_L): opc[284].count++; goto lb_label_L; \
-CountCase(line_I): opc[285].count++; goto lb_line_I; \
-CountCase(loop_rec_end_f): opc[286].count++; goto lb_loop_rec_end_f; \
-CountCase(move_nx): opc[287].count++; goto lb_move_nx; \
-CountCase(move_rx): opc[288].count++; goto lb_move_rx; \
-CountCase(move_ry): opc[289].count++; goto lb_move_ry; \
-CountCase(move_xr): opc[290].count++; goto lb_move_xr; \
-CountCase(move_xx): opc[291].count++; goto lb_move_xx; \
-CountCase(move_xy): opc[292].count++; goto lb_move_xy; \
-CountCase(move_yr): opc[293].count++; goto lb_move_yr; \
-CountCase(move_yx): opc[294].count++; goto lb_move_yx; \
-CountCase(move_yy): opc[295].count++; goto lb_move_yy; \
-CountCase(move_cr): opc[296].count++; goto lb_move_cr; \
-CountCase(move_cx): opc[297].count++; goto lb_move_cx; \
-CountCase(move2_par_xxxx): opc[298].count++; goto lb_move2_par_xxxx; \
-CountCase(move2_par_xxxy): opc[299].count++; goto lb_move2_par_xxxy; \
-CountCase(move2_par_xxyx): opc[300].count++; goto lb_move2_par_xxyx; \
-CountCase(move2_par_xyxy): opc[301].count++; goto lb_move2_par_xyxy; \
-CountCase(move2_par_yxxx): opc[302].count++; goto lb_move2_par_yxxx; \
-CountCase(move2_par_yxxy): opc[303].count++; goto lb_move2_par_yxxy; \
-CountCase(move2_par_yxyx): opc[304].count++; goto lb_move2_par_yxyx; \
-CountCase(move3_xxxxxx): opc[305].count++; goto lb_move3_xxxxxx; \
-CountCase(move3_xyxyxy): opc[306].count++; goto lb_move3_xyxyxy; \
-CountCase(move3_yxyxyx): opc[307].count++; goto lb_move3_yxyxyx; \
-CountCase(move_call_xf): opc[308].count++; goto lb_move_call_xf; \
-CountCase(move_call_yf): opc[309].count++; goto lb_move_call_yf; \
-CountCase(move_call_last_xfQ): opc[310].count++; goto lb_move_call_last_xfQ; \
-CountCase(move_call_last_yfQ): opc[311].count++; goto lb_move_call_last_yfQ; \
-CountCase(move_call_only_xf): opc[312].count++; goto lb_move_call_only_xf; \
-CountCase(move_deallocate_return_nQ): opc[313].count++; goto lb_move_deallocate_return_nQ; \
-CountCase(move_deallocate_return_xQ): opc[314].count++; goto lb_move_deallocate_return_xQ; \
-CountCase(move_deallocate_return_yQ): opc[315].count++; goto lb_move_deallocate_return_yQ; \
-CountCase(move_deallocate_return_cQ): opc[316].count++; goto lb_move_deallocate_return_cQ; \
-CountCase(move_dup_xxx): opc[317].count++; goto lb_move_dup_xxx; \
-CountCase(move_dup_xxy): opc[318].count++; goto lb_move_dup_xxy; \
-CountCase(move_dup_yxx): opc[319].count++; goto lb_move_dup_yxx; \
-CountCase(move_dup_yxy): opc[320].count++; goto lb_move_dup_yxy; \
-CountCase(move_jump_fn): opc[321].count++; goto lb_move_jump_fn; \
-CountCase(move_jump_fx): opc[322].count++; goto lb_move_jump_fx; \
-CountCase(move_jump_fy): opc[323].count++; goto lb_move_jump_fy; \
-CountCase(move_jump_fc): opc[324].count++; goto lb_move_jump_fc; \
-CountCase(move_return_n): opc[325].count++; goto lb_move_return_n; \
-CountCase(move_return_x): opc[326].count++; goto lb_move_return_x; \
-CountCase(move_return_c): opc[327].count++; goto lb_move_return_c; \
-CountCase(move_shift_xxx): opc[328].count++; goto lb_move_shift_xxx; \
-CountCase(move_shift_xxy): opc[329].count++; goto lb_move_shift_xxy; \
-CountCase(move_shift_xyx): opc[330].count++; goto lb_move_shift_xyx; \
-CountCase(move_shift_yxx): opc[331].count++; goto lb_move_shift_yxx; \
-CountCase(move_window3_xxxy): opc[332].count++; goto lb_move_window3_xxxy; \
-CountCase(move_window4_xxxxy): opc[333].count++; goto lb_move_window4_xxxxy; \
-CountCase(move_window5_xxxxxy): opc[334].count++; goto lb_move_window5_xxxxxy; \
-CountCase(move_x1_c): opc[335].count++; goto lb_move_x1_c; \
-CountCase(move_x2_c): opc[336].count++; goto lb_move_x2_c; \
-CountCase(new_map_dII): opc[337].count++; goto lb_new_map_dII; \
-CountCase(node_x): opc[338].count++; goto lb_node_x; \
-CountCase(node_y): opc[339].count++; goto lb_node_y; \
-CountCase(normal_exit): opc[340].count++; goto lb_normal_exit; \
-CountCase(on_load): opc[341].count++; goto lb_on_load; \
-CountCase(put_list_rnr): opc[342].count++; goto lb_put_list_rnr; \
-CountCase(put_list_rnx): opc[343].count++; goto lb_put_list_rnx; \
-CountCase(put_list_rxr): opc[344].count++; goto lb_put_list_rxr; \
-CountCase(put_list_rxx): opc[345].count++; goto lb_put_list_rxx; \
-CountCase(put_list_xnx): opc[346].count++; goto lb_put_list_xnx; \
-CountCase(put_list_xrr): opc[347].count++; goto lb_put_list_xrr; \
-CountCase(put_list_xxr): opc[348].count++; goto lb_put_list_xxr; \
-CountCase(put_list_xxx): opc[349].count++; goto lb_put_list_xxx; \
-CountCase(put_list_xyx): opc[350].count++; goto lb_put_list_xyx; \
-CountCase(put_list_ynx): opc[351].count++; goto lb_put_list_ynx; \
-CountCase(put_list_yrr): opc[352].count++; goto lb_put_list_yrr; \
-CountCase(put_list_yxx): opc[353].count++; goto lb_put_list_yxx; \
-CountCase(put_list_yyx): opc[354].count++; goto lb_put_list_yyx; \
-CountCase(put_list_xcx): opc[355].count++; goto lb_put_list_xcx; \
-CountCase(put_list_xcy): opc[356].count++; goto lb_put_list_xcy; \
-CountCase(put_list_ycx): opc[357].count++; goto lb_put_list_ycx; \
-CountCase(put_list_cxx): opc[358].count++; goto lb_put_list_cxx; \
-CountCase(put_list_cyx): opc[359].count++; goto lb_put_list_cyx; \
-CountCase(put_list_ssd): opc[360].count++; goto lb_put_list_ssd; \
-CountCase(recv_mark_f): opc[361].count++; goto lb_recv_mark_f; \
-CountCase(remove_message): opc[362].count++; goto lb_remove_message; \
-CountCase(return): opc[363].count++; goto lb_return; \
-CountCase(return_trace): opc[364].count++; goto lb_return_trace; \
-CountCase(self_x): opc[365].count++; goto lb_self_x; \
-CountCase(self_y): opc[366].count++; goto lb_self_y; \
-CountCase(send): opc[367].count++; goto lb_send; \
-CountCase(set_tuple_element_sdP): opc[368].count++; goto lb_set_tuple_element_sdP; \
-CountCase(swap_xx): opc[369].count++; goto lb_swap_xx; \
-CountCase(swap_xy): opc[370].count++; goto lb_swap_xy; \
-CountCase(swap_temp_xxx): opc[371].count++; goto lb_swap_temp_xxx; \
-CountCase(swap_temp_xyx): opc[372].count++; goto lb_swap_temp_xyx; \
-CountCase(system_limit_j): opc[373].count++; goto lb_system_limit_j; \
-CountCase(test_arity_fxA): opc[374].count++; goto lb_test_arity_fxA; \
-CountCase(test_arity_fyA): opc[375].count++; goto lb_test_arity_fyA; \
-CountCase(test_heap_It): opc[376].count++; goto lb_test_heap_It; \
-CountCase(test_heap_1_put_list_Iy): opc[377].count++; goto lb_test_heap_1_put_list_Iy; \
-CountCase(timeout): opc[378].count++; goto lb_timeout; \
-CountCase(timeout_locked): opc[379].count++; goto lb_timeout_locked; \
-CountCase(try_case_end_s): opc[380].count++; goto lb_try_case_end_s; \
-CountCase(try_end_y): opc[381].count++; goto lb_try_end_y; \
-CountCase(update_map_assoc_jsdII): opc[382].count++; goto lb_update_map_assoc_jsdII; \
-CountCase(update_map_exact_jsdII): opc[383].count++; goto lb_update_map_exact_jsdII; \
-CountCase(wait_f): opc[384].count++; goto lb_wait_f; \
-CountCase(wait_locked_f): opc[385].count++; goto lb_wait_locked_f; \
-CountCase(wait_unlocked_f): opc[386].count++; goto lb_wait_unlocked_f;
+CountCase(allocate_tt): erts_instr_count[0]++; goto lb_allocate_tt; \
+CountCase(allocate_heap_tIt): erts_instr_count[1]++; goto lb_allocate_heap_tIt; \
+CountCase(allocate_heap_zero_tIt): erts_instr_count[2]++; goto lb_allocate_heap_zero_tIt; \
+CountCase(allocate_init_tIy): erts_instr_count[3]++; goto lb_allocate_init_tIy; \
+CountCase(allocate_zero_tt): erts_instr_count[4]++; goto lb_allocate_zero_tt; \
+CountCase(apply_I): erts_instr_count[5]++; goto lb_apply_I; \
+CountCase(apply_bif): erts_instr_count[6]++; goto lb_apply_bif; \
+CountCase(apply_last_IP): erts_instr_count[7]++; goto lb_apply_last_IP; \
+CountCase(badarg_j): erts_instr_count[8]++; goto lb_badarg_j; \
+CountCase(badmatch_x): erts_instr_count[9]++; goto lb_badmatch_x; \
+CountCase(bif1_fbsd): erts_instr_count[10]++; goto lb_bif1_fbsd; \
+CountCase(bif1_body_bsd): erts_instr_count[11]++; goto lb_bif1_body_bsd; \
+CountCase(bs_add_jssId): erts_instr_count[12]++; goto lb_bs_add_jssId; \
+CountCase(bs_context_to_binary_x): erts_instr_count[13]++; goto lb_bs_context_to_binary_x; \
+CountCase(bs_init_writable): erts_instr_count[14]++; goto lb_bs_init_writable; \
+CountCase(bs_put_string_II): erts_instr_count[15]++; goto lb_bs_put_string_II; \
+CountCase(bs_put_utf16_jIs): erts_instr_count[16]++; goto lb_bs_put_utf16_jIs; \
+CountCase(bs_test_tail_imm2_fxI): erts_instr_count[17]++; goto lb_bs_test_tail_imm2_fxI; \
+CountCase(bs_test_unit_fxI): erts_instr_count[18]++; goto lb_bs_test_unit_fxI; \
+CountCase(bs_test_unit8_fx): erts_instr_count[19]++; goto lb_bs_test_unit8_fx; \
+CountCase(bs_test_zero_tail2_fx): erts_instr_count[20]++; goto lb_bs_test_zero_tail2_fx; \
+CountCase(call_bif_e): erts_instr_count[21]++; goto lb_call_bif_e; \
+CountCase(call_error_handler): erts_instr_count[22]++; goto lb_call_error_handler; \
+CountCase(call_nif): erts_instr_count[23]++; goto lb_call_nif; \
+CountCase(case_end_x): erts_instr_count[24]++; goto lb_case_end_x; \
+CountCase(catch_yf): erts_instr_count[25]++; goto lb_catch_yf; \
+CountCase(catch_end_y): erts_instr_count[26]++; goto lb_catch_end_y; \
+CountCase(continue_exit): erts_instr_count[27]++; goto lb_continue_exit; \
+CountCase(deallocate_I): erts_instr_count[28]++; goto lb_deallocate_I; \
+CountCase(deallocate_return_Q): erts_instr_count[29]++; goto lb_deallocate_return_Q; \
+CountCase(error_action_code): erts_instr_count[30]++; goto lb_error_action_code; \
+CountCase(fclearerror): erts_instr_count[31]++; goto lb_fclearerror; \
+CountCase(fconv_dl): erts_instr_count[32]++; goto lb_fconv_dl; \
+CountCase(fmove_ql): erts_instr_count[33]++; goto lb_fmove_ql; \
+CountCase(fmove_ld): erts_instr_count[34]++; goto lb_fmove_ld; \
+CountCase(fmove_dl): erts_instr_count[35]++; goto lb_fmove_dl; \
+CountCase(get_list_rry): erts_instr_count[36]++; goto lb_get_list_rry; \
+CountCase(get_list_rxr): erts_instr_count[37]++; goto lb_get_list_rxr; \
+CountCase(get_list_rxx): erts_instr_count[38]++; goto lb_get_list_rxx; \
+CountCase(get_list_rxy): erts_instr_count[39]++; goto lb_get_list_rxy; \
+CountCase(get_list_ryr): erts_instr_count[40]++; goto lb_get_list_ryr; \
+CountCase(get_list_xrx): erts_instr_count[41]++; goto lb_get_list_xrx; \
+CountCase(get_list_xxx): erts_instr_count[42]++; goto lb_get_list_xxx; \
+CountCase(get_list_xxy): erts_instr_count[43]++; goto lb_get_list_xxy; \
+CountCase(get_list_xyx): erts_instr_count[44]++; goto lb_get_list_xyx; \
+CountCase(get_list_xyy): erts_instr_count[45]++; goto lb_get_list_xyy; \
+CountCase(get_list_yxx): erts_instr_count[46]++; goto lb_get_list_yxx; \
+CountCase(get_list_yxy): erts_instr_count[47]++; goto lb_get_list_yxy; \
+CountCase(get_list_yyx): erts_instr_count[48]++; goto lb_get_list_yyx; \
+CountCase(get_list_yyy): erts_instr_count[49]++; goto lb_get_list_yyy; \
+CountCase(hipe_call_count): erts_instr_count[50]++; goto lb_hipe_call_count; \
+CountCase(hipe_trap_call): erts_instr_count[51]++; goto lb_hipe_trap_call; \
+CountCase(hipe_trap_call_closure): erts_instr_count[52]++; goto lb_hipe_trap_call_closure; \
+CountCase(hipe_trap_resume): erts_instr_count[53]++; goto lb_hipe_trap_resume; \
+CountCase(hipe_trap_return): erts_instr_count[54]++; goto lb_hipe_trap_return; \
+CountCase(hipe_trap_throw): erts_instr_count[55]++; goto lb_hipe_trap_throw; \
+CountCase(i_apply): erts_instr_count[56]++; goto lb_i_apply; \
+CountCase(i_apply_fun): erts_instr_count[57]++; goto lb_i_apply_fun; \
+CountCase(i_apply_fun_last_P): erts_instr_count[58]++; goto lb_i_apply_fun_last_P; \
+CountCase(i_apply_fun_only): erts_instr_count[59]++; goto lb_i_apply_fun_only; \
+CountCase(i_apply_last_P): erts_instr_count[60]++; goto lb_i_apply_last_P; \
+CountCase(i_apply_only): erts_instr_count[61]++; goto lb_i_apply_only; \
+CountCase(i_band_jIxcd): erts_instr_count[62]++; goto lb_i_band_jIxcd; \
+CountCase(i_band_jIssd): erts_instr_count[63]++; goto lb_i_band_jIssd; \
+CountCase(i_bif2_fbssd): erts_instr_count[64]++; goto lb_i_bif2_fbssd; \
+CountCase(i_bif2_body_bssd): erts_instr_count[65]++; goto lb_i_bif2_body_bssd; \
+CountCase(i_bor_jIssd): erts_instr_count[66]++; goto lb_i_bor_jIssd; \
+CountCase(i_bs_append_jIIIsd): erts_instr_count[67]++; goto lb_i_bs_append_jIIIsd; \
+CountCase(i_bs_get_binary2_fxIsId): erts_instr_count[68]++; goto lb_i_bs_get_binary2_fxIsId; \
+CountCase(i_bs_get_binary_all2_fxIId): erts_instr_count[69]++; goto lb_i_bs_get_binary_all2_fxIId; \
+CountCase(i_bs_get_binary_all_reuse_xfI): erts_instr_count[70]++; goto lb_i_bs_get_binary_all_reuse_xfI; \
+CountCase(i_bs_get_binary_imm2_fxIIId): erts_instr_count[71]++; goto lb_i_bs_get_binary_imm2_fxIIId; \
+CountCase(i_bs_get_float2_fxIsId): erts_instr_count[72]++; goto lb_i_bs_get_float2_fxIsId; \
+CountCase(i_bs_get_integer_fIIssd): erts_instr_count[73]++; goto lb_i_bs_get_integer_fIIssd; \
+CountCase(i_bs_get_integer_16_xfd): erts_instr_count[74]++; goto lb_i_bs_get_integer_16_xfd; \
+CountCase(i_bs_get_integer_32_xfId): erts_instr_count[75]++; goto lb_i_bs_get_integer_32_xfId; \
+CountCase(i_bs_get_integer_8_xfd): erts_instr_count[76]++; goto lb_i_bs_get_integer_8_xfd; \
+CountCase(i_bs_get_integer_imm_xIIfId): erts_instr_count[77]++; goto lb_i_bs_get_integer_imm_xIIfId; \
+CountCase(i_bs_get_integer_small_imm_xIfId): erts_instr_count[78]++; goto lb_i_bs_get_integer_small_imm_xIfId; \
+CountCase(i_bs_get_utf16_xfId): erts_instr_count[79]++; goto lb_i_bs_get_utf16_xfId; \
+CountCase(i_bs_get_utf8_xfd): erts_instr_count[80]++; goto lb_i_bs_get_utf8_xfd; \
+CountCase(i_bs_init_IId): erts_instr_count[81]++; goto lb_i_bs_init_IId; \
+CountCase(i_bs_init_bits_IId): erts_instr_count[82]++; goto lb_i_bs_init_bits_IId; \
+CountCase(i_bs_init_bits_fail_xjId): erts_instr_count[83]++; goto lb_i_bs_init_bits_fail_xjId; \
+CountCase(i_bs_init_bits_fail_yjId): erts_instr_count[84]++; goto lb_i_bs_init_bits_fail_yjId; \
+CountCase(i_bs_init_bits_fail_heap_sIjId): erts_instr_count[85]++; goto lb_i_bs_init_bits_fail_heap_sIjId; \
+CountCase(i_bs_init_bits_heap_IIId): erts_instr_count[86]++; goto lb_i_bs_init_bits_heap_IIId; \
+CountCase(i_bs_init_fail_xjId): erts_instr_count[87]++; goto lb_i_bs_init_fail_xjId; \
+CountCase(i_bs_init_fail_yjId): erts_instr_count[88]++; goto lb_i_bs_init_fail_yjId; \
+CountCase(i_bs_init_fail_heap_sIjId): erts_instr_count[89]++; goto lb_i_bs_init_fail_heap_sIjId; \
+CountCase(i_bs_init_heap_IIId): erts_instr_count[90]++; goto lb_i_bs_init_heap_IIId; \
+CountCase(i_bs_init_heap_bin_IId): erts_instr_count[91]++; goto lb_i_bs_init_heap_bin_IId; \
+CountCase(i_bs_init_heap_bin_heap_IIId): erts_instr_count[92]++; goto lb_i_bs_init_heap_bin_heap_IIId; \
+CountCase(i_bs_match_string_xfII): erts_instr_count[93]++; goto lb_i_bs_match_string_xfII; \
+CountCase(i_bs_private_append_jIssd): erts_instr_count[94]++; goto lb_i_bs_private_append_jIssd; \
+CountCase(i_bs_put_utf8_js): erts_instr_count[95]++; goto lb_i_bs_put_utf8_js; \
+CountCase(i_bs_restore2_xI): erts_instr_count[96]++; goto lb_i_bs_restore2_xI; \
+CountCase(i_bs_save2_xI): erts_instr_count[97]++; goto lb_i_bs_save2_xI; \
+CountCase(i_bs_skip_bits2_fxxI): erts_instr_count[98]++; goto lb_i_bs_skip_bits2_fxxI; \
+CountCase(i_bs_skip_bits2_fxyI): erts_instr_count[99]++; goto lb_i_bs_skip_bits2_fxyI; \
+CountCase(i_bs_skip_bits_all2_fxI): erts_instr_count[100]++; goto lb_i_bs_skip_bits_all2_fxI; \
+CountCase(i_bs_skip_bits_imm2_fxI): erts_instr_count[101]++; goto lb_i_bs_skip_bits_imm2_fxI; \
+CountCase(i_bs_start_match2_xfIId): erts_instr_count[102]++; goto lb_i_bs_start_match2_xfIId; \
+CountCase(i_bs_start_match2_yfIId): erts_instr_count[103]++; goto lb_i_bs_start_match2_yfIId; \
+CountCase(i_bs_utf16_size_sd): erts_instr_count[104]++; goto lb_i_bs_utf16_size_sd; \
+CountCase(i_bs_utf8_size_sd): erts_instr_count[105]++; goto lb_i_bs_utf8_size_sd; \
+CountCase(i_bs_validate_unicode_js): erts_instr_count[106]++; goto lb_i_bs_validate_unicode_js; \
+CountCase(i_bs_validate_unicode_retract_jss): erts_instr_count[107]++; goto lb_i_bs_validate_unicode_retract_jss; \
+CountCase(i_bsl_jIssd): erts_instr_count[108]++; goto lb_i_bsl_jIssd; \
+CountCase(i_bsr_jIssd): erts_instr_count[109]++; goto lb_i_bsr_jIssd; \
+CountCase(i_bxor_jIssd): erts_instr_count[110]++; goto lb_i_bxor_jIssd; \
+CountCase(i_call_f): erts_instr_count[111]++; goto lb_i_call_f; \
+CountCase(i_call_ext_e): erts_instr_count[112]++; goto lb_i_call_ext_e; \
+CountCase(i_call_ext_last_eP): erts_instr_count[113]++; goto lb_i_call_ext_last_eP; \
+CountCase(i_call_ext_only_e): erts_instr_count[114]++; goto lb_i_call_ext_only_e; \
+CountCase(i_call_fun_I): erts_instr_count[115]++; goto lb_i_call_fun_I; \
+CountCase(i_call_fun_last_IP): erts_instr_count[116]++; goto lb_i_call_fun_last_IP; \
+CountCase(i_call_last_fP): erts_instr_count[117]++; goto lb_i_call_last_fP; \
+CountCase(i_call_only_f): erts_instr_count[118]++; goto lb_i_call_only_f; \
+CountCase(i_debug_breakpoint): erts_instr_count[119]++; goto lb_i_debug_breakpoint; \
+CountCase(i_element_jxsd): erts_instr_count[120]++; goto lb_i_element_jxsd; \
+CountCase(i_element_jysd): erts_instr_count[121]++; goto lb_i_element_jysd; \
+CountCase(i_fadd_lll): erts_instr_count[122]++; goto lb_i_fadd_lll; \
+CountCase(i_fast_element_jxId): erts_instr_count[123]++; goto lb_i_fast_element_jxId; \
+CountCase(i_fast_element_jyId): erts_instr_count[124]++; goto lb_i_fast_element_jyId; \
+CountCase(i_fcheckerror): erts_instr_count[125]++; goto lb_i_fcheckerror; \
+CountCase(i_fdiv_lll): erts_instr_count[126]++; goto lb_i_fdiv_lll; \
+CountCase(i_fmul_lll): erts_instr_count[127]++; goto lb_i_fmul_lll; \
+CountCase(i_fnegate_ll): erts_instr_count[128]++; goto lb_i_fnegate_ll; \
+CountCase(i_fsub_lll): erts_instr_count[129]++; goto lb_i_fsub_lll; \
+CountCase(i_func_info_IaaI): erts_instr_count[130]++; goto lb_i_func_info_IaaI; \
+CountCase(i_gc_bif1_jIsId): erts_instr_count[131]++; goto lb_i_gc_bif1_jIsId; \
+CountCase(i_gc_bif2_jIIssd): erts_instr_count[132]++; goto lb_i_gc_bif2_jIIssd; \
+CountCase(i_gc_bif3_jIIssd): erts_instr_count[133]++; goto lb_i_gc_bif3_jIIssd; \
+CountCase(i_generic_breakpoint): erts_instr_count[134]++; goto lb_i_generic_breakpoint; \
+CountCase(i_get_sd): erts_instr_count[135]++; goto lb_i_get_sd; \
+CountCase(i_get_hash_cId): erts_instr_count[136]++; goto lb_i_get_hash_cId; \
+CountCase(i_get_map_element_fxxx): erts_instr_count[137]++; goto lb_i_get_map_element_fxxx; \
+CountCase(i_get_map_element_fxxy): erts_instr_count[138]++; goto lb_i_get_map_element_fxxy; \
+CountCase(i_get_map_element_fyxx): erts_instr_count[139]++; goto lb_i_get_map_element_fyxx; \
+CountCase(i_get_map_element_fyxy): erts_instr_count[140]++; goto lb_i_get_map_element_fyxy; \
+CountCase(i_get_map_element_hash_fxcIx): erts_instr_count[141]++; goto lb_i_get_map_element_hash_fxcIx; \
+CountCase(i_get_map_element_hash_fxcIy): erts_instr_count[142]++; goto lb_i_get_map_element_hash_fxcIy; \
+CountCase(i_get_map_element_hash_fycIx): erts_instr_count[143]++; goto lb_i_get_map_element_hash_fycIx; \
+CountCase(i_get_map_element_hash_fycIy): erts_instr_count[144]++; goto lb_i_get_map_element_hash_fycIy; \
+CountCase(i_get_map_elements_fsI): erts_instr_count[145]++; goto lb_i_get_map_elements_fsI; \
+CountCase(i_get_tuple_element_xPx): erts_instr_count[146]++; goto lb_i_get_tuple_element_xPx; \
+CountCase(i_get_tuple_element_xPy): erts_instr_count[147]++; goto lb_i_get_tuple_element_xPy; \
+CountCase(i_get_tuple_element_yPx): erts_instr_count[148]++; goto lb_i_get_tuple_element_yPx; \
+CountCase(i_get_tuple_element_yPy): erts_instr_count[149]++; goto lb_i_get_tuple_element_yPy; \
+CountCase(i_get_tuple_element2_xPx): erts_instr_count[150]++; goto lb_i_get_tuple_element2_xPx; \
+CountCase(i_get_tuple_element2y_xPyy): erts_instr_count[151]++; goto lb_i_get_tuple_element2y_xPyy; \
+CountCase(i_get_tuple_element3_xPx): erts_instr_count[152]++; goto lb_i_get_tuple_element3_xPx; \
+CountCase(i_hibernate): erts_instr_count[153]++; goto lb_i_hibernate; \
+CountCase(i_increment_rIId): erts_instr_count[154]++; goto lb_i_increment_rIId; \
+CountCase(i_increment_xIId): erts_instr_count[155]++; goto lb_i_increment_xIId; \
+CountCase(i_increment_yIId): erts_instr_count[156]++; goto lb_i_increment_yIId; \
+CountCase(i_int_bnot_jsId): erts_instr_count[157]++; goto lb_i_int_bnot_jsId; \
+CountCase(i_int_div_jIssd): erts_instr_count[158]++; goto lb_i_int_div_jIssd; \
+CountCase(i_is_eq_exact_immed_frc): erts_instr_count[159]++; goto lb_i_is_eq_exact_immed_frc; \
+CountCase(i_is_eq_exact_immed_fxc): erts_instr_count[160]++; goto lb_i_is_eq_exact_immed_fxc; \
+CountCase(i_is_eq_exact_immed_fyc): erts_instr_count[161]++; goto lb_i_is_eq_exact_immed_fyc; \
+CountCase(i_is_eq_exact_literal_fxc): erts_instr_count[162]++; goto lb_i_is_eq_exact_literal_fxc; \
+CountCase(i_is_eq_exact_literal_fyc): erts_instr_count[163]++; goto lb_i_is_eq_exact_literal_fyc; \
+CountCase(i_is_ne_exact_immed_fxc): erts_instr_count[164]++; goto lb_i_is_ne_exact_immed_fxc; \
+CountCase(i_is_ne_exact_immed_fyc): erts_instr_count[165]++; goto lb_i_is_ne_exact_immed_fyc; \
+CountCase(i_is_ne_exact_literal_fxc): erts_instr_count[166]++; goto lb_i_is_ne_exact_literal_fxc; \
+CountCase(i_is_ne_exact_literal_fyc): erts_instr_count[167]++; goto lb_i_is_ne_exact_literal_fyc; \
+CountCase(i_jump_on_val_xfII): erts_instr_count[168]++; goto lb_i_jump_on_val_xfII; \
+CountCase(i_jump_on_val_yfII): erts_instr_count[169]++; goto lb_i_jump_on_val_yfII; \
+CountCase(i_jump_on_val_zero_xfI): erts_instr_count[170]++; goto lb_i_jump_on_val_zero_xfI; \
+CountCase(i_jump_on_val_zero_yfI): erts_instr_count[171]++; goto lb_i_jump_on_val_zero_yfI; \
+CountCase(i_loop_rec_f): erts_instr_count[172]++; goto lb_i_loop_rec_f; \
+CountCase(i_m_div_jIssd): erts_instr_count[173]++; goto lb_i_m_div_jIssd; \
+CountCase(i_make_fun_It): erts_instr_count[174]++; goto lb_i_make_fun_It; \
+CountCase(i_minus_jIxxd): erts_instr_count[175]++; goto lb_i_minus_jIxxd; \
+CountCase(i_minus_jIssd): erts_instr_count[176]++; goto lb_i_minus_jIssd; \
+CountCase(i_move_call_cf): erts_instr_count[177]++; goto lb_i_move_call_cf; \
+CountCase(i_move_call_ext_ce): erts_instr_count[178]++; goto lb_i_move_call_ext_ce; \
+CountCase(i_move_call_ext_last_ePc): erts_instr_count[179]++; goto lb_i_move_call_ext_last_ePc; \
+CountCase(i_move_call_ext_only_ec): erts_instr_count[180]++; goto lb_i_move_call_ext_only_ec; \
+CountCase(i_move_call_last_fPc): erts_instr_count[181]++; goto lb_i_move_call_last_fPc; \
+CountCase(i_move_call_only_fc): erts_instr_count[182]++; goto lb_i_move_call_only_fc; \
+CountCase(i_new_bs_put_binary_jsIs): erts_instr_count[183]++; goto lb_i_new_bs_put_binary_jsIs; \
+CountCase(i_new_bs_put_binary_all_jsI): erts_instr_count[184]++; goto lb_i_new_bs_put_binary_all_jsI; \
+CountCase(i_new_bs_put_binary_imm_jIs): erts_instr_count[185]++; goto lb_i_new_bs_put_binary_imm_jIs; \
+CountCase(i_new_bs_put_float_jsIs): erts_instr_count[186]++; goto lb_i_new_bs_put_float_jsIs; \
+CountCase(i_new_bs_put_float_imm_jIIs): erts_instr_count[187]++; goto lb_i_new_bs_put_float_imm_jIIs; \
+CountCase(i_new_bs_put_integer_jsIs): erts_instr_count[188]++; goto lb_i_new_bs_put_integer_jsIs; \
+CountCase(i_new_bs_put_integer_imm_jIIs): erts_instr_count[189]++; goto lb_i_new_bs_put_integer_imm_jIIs; \
+CountCase(i_perf_counter): erts_instr_count[190]++; goto lb_i_perf_counter; \
+CountCase(i_plus_jIxxd): erts_instr_count[191]++; goto lb_i_plus_jIxxd; \
+CountCase(i_plus_jIxyd): erts_instr_count[192]++; goto lb_i_plus_jIxyd; \
+CountCase(i_plus_jIssd): erts_instr_count[193]++; goto lb_i_plus_jIssd; \
+CountCase(i_put_tuple_xI): erts_instr_count[194]++; goto lb_i_put_tuple_xI; \
+CountCase(i_put_tuple_yI): erts_instr_count[195]++; goto lb_i_put_tuple_yI; \
+CountCase(i_raise): erts_instr_count[196]++; goto lb_i_raise; \
+CountCase(i_recv_set): erts_instr_count[197]++; goto lb_i_recv_set; \
+CountCase(i_rem_jIxxd): erts_instr_count[198]++; goto lb_i_rem_jIxxd; \
+CountCase(i_rem_jIssd): erts_instr_count[199]++; goto lb_i_rem_jIssd; \
+CountCase(i_return_time_trace): erts_instr_count[200]++; goto lb_i_return_time_trace; \
+CountCase(i_return_to_trace): erts_instr_count[201]++; goto lb_i_return_to_trace; \
+CountCase(i_select_tuple_arity_xfI): erts_instr_count[202]++; goto lb_i_select_tuple_arity_xfI; \
+CountCase(i_select_tuple_arity_yfI): erts_instr_count[203]++; goto lb_i_select_tuple_arity_yfI; \
+CountCase(i_select_tuple_arity2_xfAAff): erts_instr_count[204]++; goto lb_i_select_tuple_arity2_xfAAff; \
+CountCase(i_select_tuple_arity2_yfAAff): erts_instr_count[205]++; goto lb_i_select_tuple_arity2_yfAAff; \
+CountCase(i_select_val2_xfccff): erts_instr_count[206]++; goto lb_i_select_val2_xfccff; \
+CountCase(i_select_val2_yfccff): erts_instr_count[207]++; goto lb_i_select_val2_yfccff; \
+CountCase(i_select_val_bins_xfI): erts_instr_count[208]++; goto lb_i_select_val_bins_xfI; \
+CountCase(i_select_val_bins_yfI): erts_instr_count[209]++; goto lb_i_select_val_bins_yfI; \
+CountCase(i_select_val_lins_xfI): erts_instr_count[210]++; goto lb_i_select_val_lins_xfI; \
+CountCase(i_select_val_lins_yfI): erts_instr_count[211]++; goto lb_i_select_val_lins_yfI; \
+CountCase(i_times_jIssd): erts_instr_count[212]++; goto lb_i_times_jIssd; \
+CountCase(i_trim_I): erts_instr_count[213]++; goto lb_i_trim_I; \
+CountCase(i_wait_error): erts_instr_count[214]++; goto lb_i_wait_error; \
+CountCase(i_wait_error_locked): erts_instr_count[215]++; goto lb_i_wait_error_locked; \
+CountCase(i_wait_timeout_fI): erts_instr_count[216]++; goto lb_i_wait_timeout_fI; \
+CountCase(i_wait_timeout_fs): erts_instr_count[217]++; goto lb_i_wait_timeout_fs; \
+CountCase(i_wait_timeout_locked_fI): erts_instr_count[218]++; goto lb_i_wait_timeout_locked_fI; \
+CountCase(i_wait_timeout_locked_fs): erts_instr_count[219]++; goto lb_i_wait_timeout_locked_fs; \
+CountCase(i_yield): erts_instr_count[220]++; goto lb_i_yield; \
+CountCase(if_end): erts_instr_count[221]++; goto lb_if_end; \
+CountCase(init_y): erts_instr_count[222]++; goto lb_init_y; \
+CountCase(init2_yy): erts_instr_count[223]++; goto lb_init2_yy; \
+CountCase(init3_yyy): erts_instr_count[224]++; goto lb_init3_yyy; \
+CountCase(int_code_end): erts_instr_count[225]++; goto lb_int_code_end; \
+CountCase(is_atom_fx): erts_instr_count[226]++; goto lb_is_atom_fx; \
+CountCase(is_atom_fy): erts_instr_count[227]++; goto lb_is_atom_fy; \
+CountCase(is_binary_fx): erts_instr_count[228]++; goto lb_is_binary_fx; \
+CountCase(is_binary_fy): erts_instr_count[229]++; goto lb_is_binary_fy; \
+CountCase(is_bitstring_fx): erts_instr_count[230]++; goto lb_is_bitstring_fx; \
+CountCase(is_bitstring_fy): erts_instr_count[231]++; goto lb_is_bitstring_fy; \
+CountCase(is_boolean_fx): erts_instr_count[232]++; goto lb_is_boolean_fx; \
+CountCase(is_boolean_fy): erts_instr_count[233]++; goto lb_is_boolean_fy; \
+CountCase(is_eq_fss): erts_instr_count[234]++; goto lb_is_eq_fss; \
+CountCase(is_eq_exact_fxx): erts_instr_count[235]++; goto lb_is_eq_exact_fxx; \
+CountCase(is_eq_exact_fxy): erts_instr_count[236]++; goto lb_is_eq_exact_fxy; \
+CountCase(is_eq_exact_fss): erts_instr_count[237]++; goto lb_is_eq_exact_fss; \
+CountCase(is_float_fx): erts_instr_count[238]++; goto lb_is_float_fx; \
+CountCase(is_float_fy): erts_instr_count[239]++; goto lb_is_float_fy; \
+CountCase(is_function_fx): erts_instr_count[240]++; goto lb_is_function_fx; \
+CountCase(is_function_fy): erts_instr_count[241]++; goto lb_is_function_fy; \
+CountCase(is_function2_fss): erts_instr_count[242]++; goto lb_is_function2_fss; \
+CountCase(is_ge_fxx): erts_instr_count[243]++; goto lb_is_ge_fxx; \
+CountCase(is_ge_fxc): erts_instr_count[244]++; goto lb_is_ge_fxc; \
+CountCase(is_ge_fcx): erts_instr_count[245]++; goto lb_is_ge_fcx; \
+CountCase(is_ge_fss): erts_instr_count[246]++; goto lb_is_ge_fss; \
+CountCase(is_integer_fx): erts_instr_count[247]++; goto lb_is_integer_fx; \
+CountCase(is_integer_fy): erts_instr_count[248]++; goto lb_is_integer_fy; \
+CountCase(is_integer_allocate_fxII): erts_instr_count[249]++; goto lb_is_integer_allocate_fxII; \
+CountCase(is_list_fx): erts_instr_count[250]++; goto lb_is_list_fx; \
+CountCase(is_list_fy): erts_instr_count[251]++; goto lb_is_list_fy; \
+CountCase(is_lt_fxx): erts_instr_count[252]++; goto lb_is_lt_fxx; \
+CountCase(is_lt_fxc): erts_instr_count[253]++; goto lb_is_lt_fxc; \
+CountCase(is_lt_fcx): erts_instr_count[254]++; goto lb_is_lt_fcx; \
+CountCase(is_lt_fss): erts_instr_count[255]++; goto lb_is_lt_fss; \
+CountCase(is_map_fx): erts_instr_count[256]++; goto lb_is_map_fx; \
+CountCase(is_map_fy): erts_instr_count[257]++; goto lb_is_map_fy; \
+CountCase(is_ne_fss): erts_instr_count[258]++; goto lb_is_ne_fss; \
+CountCase(is_ne_exact_fss): erts_instr_count[259]++; goto lb_is_ne_exact_fss; \
+CountCase(is_nil_fx): erts_instr_count[260]++; goto lb_is_nil_fx; \
+CountCase(is_nil_fy): erts_instr_count[261]++; goto lb_is_nil_fy; \
+CountCase(is_non_empty_list_test_heap_fIt): erts_instr_count[262]++; goto lb_is_non_empty_list_test_heap_fIt; \
+CountCase(is_nonempty_list_fx): erts_instr_count[263]++; goto lb_is_nonempty_list_fx; \
+CountCase(is_nonempty_list_fy): erts_instr_count[264]++; goto lb_is_nonempty_list_fy; \
+CountCase(is_nonempty_list_allocate_frIt): erts_instr_count[265]++; goto lb_is_nonempty_list_allocate_frIt; \
+CountCase(is_nonempty_list_allocate_fxIt): erts_instr_count[266]++; goto lb_is_nonempty_list_allocate_fxIt; \
+CountCase(is_nonempty_list_get_list_frxx): erts_instr_count[267]++; goto lb_is_nonempty_list_get_list_frxx; \
+CountCase(is_nonempty_list_get_list_fxxx): erts_instr_count[268]++; goto lb_is_nonempty_list_get_list_fxxx; \
+CountCase(is_number_fx): erts_instr_count[269]++; goto lb_is_number_fx; \
+CountCase(is_number_fy): erts_instr_count[270]++; goto lb_is_number_fy; \
+CountCase(is_pid_fx): erts_instr_count[271]++; goto lb_is_pid_fx; \
+CountCase(is_pid_fy): erts_instr_count[272]++; goto lb_is_pid_fy; \
+CountCase(is_port_fx): erts_instr_count[273]++; goto lb_is_port_fx; \
+CountCase(is_port_fy): erts_instr_count[274]++; goto lb_is_port_fy; \
+CountCase(is_reference_fx): erts_instr_count[275]++; goto lb_is_reference_fx; \
+CountCase(is_reference_fy): erts_instr_count[276]++; goto lb_is_reference_fy; \
+CountCase(is_tagged_tuple_frAa): erts_instr_count[277]++; goto lb_is_tagged_tuple_frAa; \
+CountCase(is_tagged_tuple_fxAa): erts_instr_count[278]++; goto lb_is_tagged_tuple_fxAa; \
+CountCase(is_tagged_tuple_fyAa): erts_instr_count[279]++; goto lb_is_tagged_tuple_fyAa; \
+CountCase(is_tuple_fr): erts_instr_count[280]++; goto lb_is_tuple_fr; \
+CountCase(is_tuple_fx): erts_instr_count[281]++; goto lb_is_tuple_fx; \
+CountCase(is_tuple_fy): erts_instr_count[282]++; goto lb_is_tuple_fy; \
+CountCase(is_tuple_of_arity_frA): erts_instr_count[283]++; goto lb_is_tuple_of_arity_frA; \
+CountCase(is_tuple_of_arity_fxA): erts_instr_count[284]++; goto lb_is_tuple_of_arity_fxA; \
+CountCase(is_tuple_of_arity_fyA): erts_instr_count[285]++; goto lb_is_tuple_of_arity_fyA; \
+CountCase(jump_f): erts_instr_count[286]++; goto lb_jump_f; \
+CountCase(label_L): erts_instr_count[287]++; goto lb_label_L; \
+CountCase(line_I): erts_instr_count[288]++; goto lb_line_I; \
+CountCase(loop_rec_end_f): erts_instr_count[289]++; goto lb_loop_rec_end_f; \
+CountCase(move_nx): erts_instr_count[290]++; goto lb_move_nx; \
+CountCase(move_rx): erts_instr_count[291]++; goto lb_move_rx; \
+CountCase(move_ry): erts_instr_count[292]++; goto lb_move_ry; \
+CountCase(move_xr): erts_instr_count[293]++; goto lb_move_xr; \
+CountCase(move_xx): erts_instr_count[294]++; goto lb_move_xx; \
+CountCase(move_xy): erts_instr_count[295]++; goto lb_move_xy; \
+CountCase(move_yr): erts_instr_count[296]++; goto lb_move_yr; \
+CountCase(move_yx): erts_instr_count[297]++; goto lb_move_yx; \
+CountCase(move_yy): erts_instr_count[298]++; goto lb_move_yy; \
+CountCase(move_cr): erts_instr_count[299]++; goto lb_move_cr; \
+CountCase(move_cx): erts_instr_count[300]++; goto lb_move_cx; \
+CountCase(move2_par_xxxx): erts_instr_count[301]++; goto lb_move2_par_xxxx; \
+CountCase(move2_par_xxxy): erts_instr_count[302]++; goto lb_move2_par_xxxy; \
+CountCase(move2_par_xxyx): erts_instr_count[303]++; goto lb_move2_par_xxyx; \
+CountCase(move2_par_xyxy): erts_instr_count[304]++; goto lb_move2_par_xyxy; \
+CountCase(move2_par_yxxx): erts_instr_count[305]++; goto lb_move2_par_yxxx; \
+CountCase(move2_par_yxxy): erts_instr_count[306]++; goto lb_move2_par_yxxy; \
+CountCase(move2_par_yxyx): erts_instr_count[307]++; goto lb_move2_par_yxyx; \
+CountCase(move3_xxxxxx): erts_instr_count[308]++; goto lb_move3_xxxxxx; \
+CountCase(move3_xyxyxy): erts_instr_count[309]++; goto lb_move3_xyxyxy; \
+CountCase(move3_yxyxyx): erts_instr_count[310]++; goto lb_move3_yxyxyx; \
+CountCase(move_call_xf): erts_instr_count[311]++; goto lb_move_call_xf; \
+CountCase(move_call_yf): erts_instr_count[312]++; goto lb_move_call_yf; \
+CountCase(move_call_last_xfQ): erts_instr_count[313]++; goto lb_move_call_last_xfQ; \
+CountCase(move_call_last_yfQ): erts_instr_count[314]++; goto lb_move_call_last_yfQ; \
+CountCase(move_call_only_xf): erts_instr_count[315]++; goto lb_move_call_only_xf; \
+CountCase(move_deallocate_return_nQ): erts_instr_count[316]++; goto lb_move_deallocate_return_nQ; \
+CountCase(move_deallocate_return_xQ): erts_instr_count[317]++; goto lb_move_deallocate_return_xQ; \
+CountCase(move_deallocate_return_yQ): erts_instr_count[318]++; goto lb_move_deallocate_return_yQ; \
+CountCase(move_deallocate_return_cQ): erts_instr_count[319]++; goto lb_move_deallocate_return_cQ; \
+CountCase(move_dup_xxx): erts_instr_count[320]++; goto lb_move_dup_xxx; \
+CountCase(move_dup_xxy): erts_instr_count[321]++; goto lb_move_dup_xxy; \
+CountCase(move_dup_yxx): erts_instr_count[322]++; goto lb_move_dup_yxx; \
+CountCase(move_dup_yxy): erts_instr_count[323]++; goto lb_move_dup_yxy; \
+CountCase(move_jump_fn): erts_instr_count[324]++; goto lb_move_jump_fn; \
+CountCase(move_jump_fx): erts_instr_count[325]++; goto lb_move_jump_fx; \
+CountCase(move_jump_fy): erts_instr_count[326]++; goto lb_move_jump_fy; \
+CountCase(move_jump_fc): erts_instr_count[327]++; goto lb_move_jump_fc; \
+CountCase(move_return_n): erts_instr_count[328]++; goto lb_move_return_n; \
+CountCase(move_return_x): erts_instr_count[329]++; goto lb_move_return_x; \
+CountCase(move_return_c): erts_instr_count[330]++; goto lb_move_return_c; \
+CountCase(move_shift_xxx): erts_instr_count[331]++; goto lb_move_shift_xxx; \
+CountCase(move_shift_xxy): erts_instr_count[332]++; goto lb_move_shift_xxy; \
+CountCase(move_shift_xyx): erts_instr_count[333]++; goto lb_move_shift_xyx; \
+CountCase(move_shift_yxx): erts_instr_count[334]++; goto lb_move_shift_yxx; \
+CountCase(move_window3_xxxy): erts_instr_count[335]++; goto lb_move_window3_xxxy; \
+CountCase(move_window4_xxxxy): erts_instr_count[336]++; goto lb_move_window4_xxxxy; \
+CountCase(move_window5_xxxxxy): erts_instr_count[337]++; goto lb_move_window5_xxxxxy; \
+CountCase(move_x1_c): erts_instr_count[338]++; goto lb_move_x1_c; \
+CountCase(move_x2_c): erts_instr_count[339]++; goto lb_move_x2_c; \
+CountCase(new_map_dII): erts_instr_count[340]++; goto lb_new_map_dII; \
+CountCase(node_x): erts_instr_count[341]++; goto lb_node_x; \
+CountCase(node_y): erts_instr_count[342]++; goto lb_node_y; \
+CountCase(normal_exit): erts_instr_count[343]++; goto lb_normal_exit; \
+CountCase(on_load): erts_instr_count[344]++; goto lb_on_load; \
+CountCase(put_list_rnr): erts_instr_count[345]++; goto lb_put_list_rnr; \
+CountCase(put_list_rnx): erts_instr_count[346]++; goto lb_put_list_rnx; \
+CountCase(put_list_rxr): erts_instr_count[347]++; goto lb_put_list_rxr; \
+CountCase(put_list_rxx): erts_instr_count[348]++; goto lb_put_list_rxx; \
+CountCase(put_list_xnx): erts_instr_count[349]++; goto lb_put_list_xnx; \
+CountCase(put_list_xrr): erts_instr_count[350]++; goto lb_put_list_xrr; \
+CountCase(put_list_xxr): erts_instr_count[351]++; goto lb_put_list_xxr; \
+CountCase(put_list_xxx): erts_instr_count[352]++; goto lb_put_list_xxx; \
+CountCase(put_list_xyx): erts_instr_count[353]++; goto lb_put_list_xyx; \
+CountCase(put_list_ynx): erts_instr_count[354]++; goto lb_put_list_ynx; \
+CountCase(put_list_yrr): erts_instr_count[355]++; goto lb_put_list_yrr; \
+CountCase(put_list_yxx): erts_instr_count[356]++; goto lb_put_list_yxx; \
+CountCase(put_list_yyx): erts_instr_count[357]++; goto lb_put_list_yyx; \
+CountCase(put_list_xcx): erts_instr_count[358]++; goto lb_put_list_xcx; \
+CountCase(put_list_xcy): erts_instr_count[359]++; goto lb_put_list_xcy; \
+CountCase(put_list_ycx): erts_instr_count[360]++; goto lb_put_list_ycx; \
+CountCase(put_list_cxx): erts_instr_count[361]++; goto lb_put_list_cxx; \
+CountCase(put_list_cyx): erts_instr_count[362]++; goto lb_put_list_cyx; \
+CountCase(put_list_ssd): erts_instr_count[363]++; goto lb_put_list_ssd; \
+CountCase(recv_mark_f): erts_instr_count[364]++; goto lb_recv_mark_f; \
+CountCase(remove_message): erts_instr_count[365]++; goto lb_remove_message; \
+CountCase(return): erts_instr_count[366]++; goto lb_return; \
+CountCase(return_trace): erts_instr_count[367]++; goto lb_return_trace; \
+CountCase(self_x): erts_instr_count[368]++; goto lb_self_x; \
+CountCase(self_y): erts_instr_count[369]++; goto lb_self_y; \
+CountCase(send): erts_instr_count[370]++; goto lb_send; \
+CountCase(set_tuple_element_sdP): erts_instr_count[371]++; goto lb_set_tuple_element_sdP; \
+CountCase(swap_xx): erts_instr_count[372]++; goto lb_swap_xx; \
+CountCase(swap_xy): erts_instr_count[373]++; goto lb_swap_xy; \
+CountCase(swap_temp_xxx): erts_instr_count[374]++; goto lb_swap_temp_xxx; \
+CountCase(swap_temp_xyx): erts_instr_count[375]++; goto lb_swap_temp_xyx; \
+CountCase(system_limit_j): erts_instr_count[376]++; goto lb_system_limit_j; \
+CountCase(test_arity_fxA): erts_instr_count[377]++; goto lb_test_arity_fxA; \
+CountCase(test_arity_fyA): erts_instr_count[378]++; goto lb_test_arity_fyA; \
+CountCase(test_heap_It): erts_instr_count[379]++; goto lb_test_heap_It; \
+CountCase(test_heap_1_put_list_Iy): erts_instr_count[380]++; goto lb_test_heap_1_put_list_Iy; \
+CountCase(timeout): erts_instr_count[381]++; goto lb_timeout; \
+CountCase(timeout_locked): erts_instr_count[382]++; goto lb_timeout_locked; \
+CountCase(try_case_end_s): erts_instr_count[383]++; goto lb_try_case_end_s; \
+CountCase(try_end_y): erts_instr_count[384]++; goto lb_try_end_y; \
+CountCase(update_map_assoc_jsdII): erts_instr_count[385]++; goto lb_update_map_assoc_jsdII; \
+CountCase(update_map_exact_jsdII): erts_instr_count[386]++; goto lb_update_map_exact_jsdII; \
+CountCase(wait_f): erts_instr_count[387]++; goto lb_wait_f; \
+CountCase(wait_locked_f): erts_instr_count[388]++; goto lb_wait_locked_f; \
+CountCase(wait_unlocked_f): erts_instr_count[389]++; goto lb_wait_unlocked_f;
 
 #define genop_label_1 1
 #define genop_func_info_3 2
@@ -2183,197 +2198,198 @@ CountCase(wait_unlocked_f): opc[386].count++; goto lb_wait_unlocked_f;
 #define genop_is_map_2 156
 #define genop_has_map_fields_3 157
 #define genop_get_map_elements_3 158
-#define genop_too_old_compiler_0 159
-#define genop_i_func_info_4 160
-#define genop_i_generic_breakpoint_0 161
-#define genop_i_debug_breakpoint_0 162
-#define genop_i_return_time_trace_0 163
-#define genop_i_return_to_trace_0 164
-#define genop_i_yield_0 165
-#define genop_i_trim_1 166
-#define genop_init2_2 167
-#define genop_init3_3 168
-#define genop_i_select_val_bins_3 169
-#define genop_i_select_val_lins_3 170
-#define genop_i_select_val2_6 171
-#define genop_i_select_tuple_arity_3 172
-#define genop_i_select_tuple_arity2_6 173
-#define genop_i_jump_on_val_zero_3 174
-#define genop_i_jump_on_val_4 175
-#define genop_i_get_tuple_element_3 176
-#define genop_i_get_tuple_element2_3 177
-#define genop_i_get_tuple_element2y_4 178
-#define genop_i_get_tuple_element3_3 179
-#define genop_i_raise_0 180
-#define genop_badarg_1 181
-#define genop_system_limit_1 182
-#define genop_move_jump_2 183
-#define genop_move_window_5 184
-#define genop_move_window_6 185
-#define genop_move_window3_4 186
-#define genop_move_window4_5 187
-#define genop_move_window5_6 188
-#define genop_swap_temp_3 189
-#define genop_swap_2 190
-#define genop_move_x1_1 191
-#define genop_move_x2_1 192
-#define genop_move_shift_3 193
-#define genop_move_dup_3 194
-#define genop_move2_par_4 195
-#define genop_move3_6 196
-#define genop_timeout_locked_0 197
-#define genop_i_loop_rec_1 198
-#define genop_wait_locked_1 199
-#define genop_wait_unlocked_1 200
-#define genop_i_wait_timeout_2 201
-#define genop_i_wait_timeout_locked_2 202
-#define genop_i_wait_error_0 203
-#define genop_i_wait_error_locked_0 204
-#define genop_i_is_eq_exact_immed_3 205
-#define genop_i_is_eq_exact_literal_3 206
-#define genop_i_is_ne_exact_immed_3 207
-#define genop_i_is_ne_exact_literal_3 208
-#define genop_i_put_tuple_2 209
-#define genop_normal_exit_0 210
-#define genop_continue_exit_0 211
-#define genop_apply_bif_0 212
-#define genop_call_nif_0 213
-#define genop_call_error_handler_0 214
-#define genop_error_action_code_0 215
-#define genop_return_trace_0 216
-#define genop_move_return_1 217
-#define genop_move_deallocate_return_2 218
-#define genop_deallocate_return_1 219
-#define genop_test_heap_1_put_list_2 220
-#define genop_is_tuple_of_arity_3 221
-#define genop_is_integer_allocate_4 222
-#define genop_is_nonempty_list_allocate_4 223
-#define genop_is_non_empty_list_test_heap_3 224
-#define genop_is_nonempty_list_get_list_4 225
-#define genop_is_bitstring_2 226
-#define genop_allocate_init_3 227
-#define genop_i_apply_0 228
-#define genop_i_apply_last_1 229
-#define genop_i_apply_only_0 230
-#define genop_i_apply_fun_0 231
-#define genop_i_apply_fun_last_1 232
-#define genop_i_apply_fun_only_0 233
-#define genop_i_hibernate_0 234
-#define genop_i_perf_counter_0 235
-#define genop_call_bif_1 236
-#define genop_i_get_hash_3 237
-#define genop_i_get_2 238
-#define genop_self_1 239
-#define genop_node_1 240
-#define genop_i_fast_element_4 241
-#define genop_i_element_4 242
-#define genop_bif1_body_3 243
-#define genop_i_bif2_5 244
-#define genop_i_bif2_body_4 245
-#define genop_i_move_call_2 246
-#define genop_move_call_2 247
-#define genop_i_move_call_last_3 248
-#define genop_move_call_last_3 249
-#define genop_i_move_call_only_2 250
-#define genop_move_call_only_2 251
-#define genop_i_call_1 252
-#define genop_i_call_last_2 253
-#define genop_i_call_only_1 254
-#define genop_i_call_ext_1 255
-#define genop_i_call_ext_last_2 256
-#define genop_i_call_ext_only_1 257
-#define genop_i_move_call_ext_2 258
-#define genop_i_move_call_ext_last_3 259
-#define genop_i_move_call_ext_only_2 260
-#define genop_i_call_fun_1 261
-#define genop_i_call_fun_last_2 262
-#define genop_i_make_fun_2 263
-#define genop_i_bs_start_match2_5 264
-#define genop_i_bs_save2_2 265
-#define genop_i_bs_restore2_2 266
-#define genop_i_bs_match_string_4 267
-#define genop_i_bs_get_integer_small_imm_5 268
-#define genop_i_bs_get_integer_imm_6 269
-#define genop_i_bs_get_integer_6 270
-#define genop_i_bs_get_integer_8_3 271
-#define genop_i_bs_get_integer_16_3 272
-#define genop_i_bs_get_integer_32_4 273
-#define genop_i_bs_get_binary_imm2_6 274
-#define genop_i_bs_get_binary2_6 275
-#define genop_i_bs_get_binary_all2_5 276
-#define genop_i_bs_get_binary_all_reuse_3 277
-#define genop_i_bs_get_float2_6 278
-#define genop_i_bs_skip_bits_imm2_3 279
-#define genop_i_bs_skip_bits2_4 280
-#define genop_i_bs_skip_bits_all2_3 281
-#define genop_bs_test_zero_tail2_2 282
-#define genop_bs_test_tail_imm2_3 283
-#define genop_bs_test_unit8_2 284
-#define genop_i_bs_get_utf8_3 285
-#define genop_i_bs_get_utf16_4 286
-#define genop_i_bs_validate_unicode_retract_3 287
-#define genop_i_bs_init_fail_4 288
-#define genop_i_bs_init_fail_heap_5 289
-#define genop_i_bs_init_3 290
-#define genop_i_bs_init_heap_bin_3 291
-#define genop_i_bs_init_heap_4 292
-#define genop_i_bs_init_heap_bin_heap_4 293
-#define genop_i_bs_init_bits_fail_4 294
-#define genop_i_bs_init_bits_fail_heap_5 295
-#define genop_i_bs_init_bits_3 296
-#define genop_i_bs_init_bits_heap_4 297
-#define genop_i_bs_append_6 298
-#define genop_i_bs_private_append_5 299
-#define genop_i_new_bs_put_integer_4 300
-#define genop_i_new_bs_put_integer_imm_4 301
-#define genop_i_bs_utf8_size_2 302
-#define genop_i_bs_utf16_size_2 303
-#define genop_i_bs_put_utf8_2 304
-#define genop_i_bs_validate_unicode_2 305
-#define genop_i_new_bs_put_float_4 306
-#define genop_i_new_bs_put_float_imm_4 307
-#define genop_i_new_bs_put_binary_4 308
-#define genop_i_new_bs_put_binary_imm_3 309
-#define genop_i_new_bs_put_binary_all_3 310
-#define genop_i_fadd_3 311
-#define genop_i_fsub_3 312
-#define genop_i_fmul_3 313
-#define genop_i_fdiv_3 314
-#define genop_i_fnegate_2 315
-#define genop_i_fcheckerror_0 316
-#define genop_sorted_put_map_assoc_5 317
-#define genop_sorted_put_map_exact_5 318
-#define genop_new_map_3 319
-#define genop_update_map_assoc_5 320
-#define genop_update_map_exact_5 321
-#define genop_i_get_map_elements_3 322
-#define genop_i_get_map_element_hash_5 323
-#define genop_i_get_map_element_4 324
-#define genop_gen_plus_5 325
-#define genop_gen_minus_5 326
-#define genop_i_increment_4 327
-#define genop_i_plus_5 328
-#define genop_i_minus_5 329
-#define genop_i_times_5 330
-#define genop_i_m_div_5 331
-#define genop_i_int_div_5 332
-#define genop_i_rem_5 333
-#define genop_i_bsl_5 334
-#define genop_i_bsr_5 335
-#define genop_i_band_5 336
-#define genop_i_bor_5 337
-#define genop_i_bxor_5 338
-#define genop_i_int_bnot_4 339
-#define genop_i_gc_bif1_5 340
-#define genop_i_gc_bif2_6 341
-#define genop_ii_gc_bif3_7 342
-#define genop_i_gc_bif3_6 343
-#define genop_unsupported_guard_bif_3 344
-#define genop_i_recv_set_0 345
-#define genop_hipe_trap_call_0 346
-#define genop_hipe_trap_call_closure_0 347
-#define genop_hipe_trap_return_0 348
-#define genop_hipe_trap_throw_0 349
-#define genop_hipe_trap_resume_0 350
-#define genop_hipe_call_count_0 351
+#define genop_is_tagged_tuple_4 159
+#define genop_too_old_compiler_0 160
+#define genop_i_func_info_4 161
+#define genop_i_generic_breakpoint_0 162
+#define genop_i_debug_breakpoint_0 163
+#define genop_i_return_time_trace_0 164
+#define genop_i_return_to_trace_0 165
+#define genop_i_yield_0 166
+#define genop_i_trim_1 167
+#define genop_init2_2 168
+#define genop_init3_3 169
+#define genop_i_select_val_bins_3 170
+#define genop_i_select_val_lins_3 171
+#define genop_i_select_val2_6 172
+#define genop_i_select_tuple_arity_3 173
+#define genop_i_select_tuple_arity2_6 174
+#define genop_i_jump_on_val_zero_3 175
+#define genop_i_jump_on_val_4 176
+#define genop_i_get_tuple_element_3 177
+#define genop_i_get_tuple_element2_3 178
+#define genop_i_get_tuple_element2y_4 179
+#define genop_i_get_tuple_element3_3 180
+#define genop_i_raise_0 181
+#define genop_badarg_1 182
+#define genop_system_limit_1 183
+#define genop_move_jump_2 184
+#define genop_move_window_5 185
+#define genop_move_window_6 186
+#define genop_move_window3_4 187
+#define genop_move_window4_5 188
+#define genop_move_window5_6 189
+#define genop_swap_temp_3 190
+#define genop_swap_2 191
+#define genop_move_x1_1 192
+#define genop_move_x2_1 193
+#define genop_move_shift_3 194
+#define genop_move_dup_3 195
+#define genop_move2_par_4 196
+#define genop_move3_6 197
+#define genop_timeout_locked_0 198
+#define genop_i_loop_rec_1 199
+#define genop_wait_locked_1 200
+#define genop_wait_unlocked_1 201
+#define genop_i_wait_timeout_2 202
+#define genop_i_wait_timeout_locked_2 203
+#define genop_i_wait_error_0 204
+#define genop_i_wait_error_locked_0 205
+#define genop_i_is_eq_exact_immed_3 206
+#define genop_i_is_eq_exact_literal_3 207
+#define genop_i_is_ne_exact_immed_3 208
+#define genop_i_is_ne_exact_literal_3 209
+#define genop_i_put_tuple_2 210
+#define genop_normal_exit_0 211
+#define genop_continue_exit_0 212
+#define genop_apply_bif_0 213
+#define genop_call_nif_0 214
+#define genop_call_error_handler_0 215
+#define genop_error_action_code_0 216
+#define genop_return_trace_0 217
+#define genop_move_return_1 218
+#define genop_move_deallocate_return_2 219
+#define genop_deallocate_return_1 220
+#define genop_test_heap_1_put_list_2 221
+#define genop_is_tuple_of_arity_3 222
+#define genop_is_integer_allocate_4 223
+#define genop_is_nonempty_list_allocate_4 224
+#define genop_is_non_empty_list_test_heap_3 225
+#define genop_is_nonempty_list_get_list_4 226
+#define genop_is_bitstring_2 227
+#define genop_allocate_init_3 228
+#define genop_i_apply_0 229
+#define genop_i_apply_last_1 230
+#define genop_i_apply_only_0 231
+#define genop_i_apply_fun_0 232
+#define genop_i_apply_fun_last_1 233
+#define genop_i_apply_fun_only_0 234
+#define genop_i_hibernate_0 235
+#define genop_i_perf_counter_0 236
+#define genop_call_bif_1 237
+#define genop_i_get_hash_3 238
+#define genop_i_get_2 239
+#define genop_self_1 240
+#define genop_node_1 241
+#define genop_i_fast_element_4 242
+#define genop_i_element_4 243
+#define genop_bif1_body_3 244
+#define genop_i_bif2_5 245
+#define genop_i_bif2_body_4 246
+#define genop_i_move_call_2 247
+#define genop_move_call_2 248
+#define genop_i_move_call_last_3 249
+#define genop_move_call_last_3 250
+#define genop_i_move_call_only_2 251
+#define genop_move_call_only_2 252
+#define genop_i_call_1 253
+#define genop_i_call_last_2 254
+#define genop_i_call_only_1 255
+#define genop_i_call_ext_1 256
+#define genop_i_call_ext_last_2 257
+#define genop_i_call_ext_only_1 258
+#define genop_i_move_call_ext_2 259
+#define genop_i_move_call_ext_last_3 260
+#define genop_i_move_call_ext_only_2 261
+#define genop_i_call_fun_1 262
+#define genop_i_call_fun_last_2 263
+#define genop_i_make_fun_2 264
+#define genop_i_bs_start_match2_5 265
+#define genop_i_bs_save2_2 266
+#define genop_i_bs_restore2_2 267
+#define genop_i_bs_match_string_4 268
+#define genop_i_bs_get_integer_small_imm_5 269
+#define genop_i_bs_get_integer_imm_6 270
+#define genop_i_bs_get_integer_6 271
+#define genop_i_bs_get_integer_8_3 272
+#define genop_i_bs_get_integer_16_3 273
+#define genop_i_bs_get_integer_32_4 274
+#define genop_i_bs_get_binary_imm2_6 275
+#define genop_i_bs_get_binary2_6 276
+#define genop_i_bs_get_binary_all2_5 277
+#define genop_i_bs_get_binary_all_reuse_3 278
+#define genop_i_bs_get_float2_6 279
+#define genop_i_bs_skip_bits_imm2_3 280
+#define genop_i_bs_skip_bits2_4 281
+#define genop_i_bs_skip_bits_all2_3 282
+#define genop_bs_test_zero_tail2_2 283
+#define genop_bs_test_tail_imm2_3 284
+#define genop_bs_test_unit8_2 285
+#define genop_i_bs_get_utf8_3 286
+#define genop_i_bs_get_utf16_4 287
+#define genop_i_bs_validate_unicode_retract_3 288
+#define genop_i_bs_init_fail_4 289
+#define genop_i_bs_init_fail_heap_5 290
+#define genop_i_bs_init_3 291
+#define genop_i_bs_init_heap_bin_3 292
+#define genop_i_bs_init_heap_4 293
+#define genop_i_bs_init_heap_bin_heap_4 294
+#define genop_i_bs_init_bits_fail_4 295
+#define genop_i_bs_init_bits_fail_heap_5 296
+#define genop_i_bs_init_bits_3 297
+#define genop_i_bs_init_bits_heap_4 298
+#define genop_i_bs_append_6 299
+#define genop_i_bs_private_append_5 300
+#define genop_i_new_bs_put_integer_4 301
+#define genop_i_new_bs_put_integer_imm_4 302
+#define genop_i_bs_utf8_size_2 303
+#define genop_i_bs_utf16_size_2 304
+#define genop_i_bs_put_utf8_2 305
+#define genop_i_bs_validate_unicode_2 306
+#define genop_i_new_bs_put_float_4 307
+#define genop_i_new_bs_put_float_imm_4 308
+#define genop_i_new_bs_put_binary_4 309
+#define genop_i_new_bs_put_binary_imm_3 310
+#define genop_i_new_bs_put_binary_all_3 311
+#define genop_i_fadd_3 312
+#define genop_i_fsub_3 313
+#define genop_i_fmul_3 314
+#define genop_i_fdiv_3 315
+#define genop_i_fnegate_2 316
+#define genop_i_fcheckerror_0 317
+#define genop_sorted_put_map_assoc_5 318
+#define genop_sorted_put_map_exact_5 319
+#define genop_new_map_3 320
+#define genop_update_map_assoc_5 321
+#define genop_update_map_exact_5 322
+#define genop_i_get_map_elements_3 323
+#define genop_i_get_map_element_hash_5 324
+#define genop_i_get_map_element_4 325
+#define genop_gen_plus_5 326
+#define genop_gen_minus_5 327
+#define genop_i_increment_4 328
+#define genop_i_plus_5 329
+#define genop_i_minus_5 330
+#define genop_i_times_5 331
+#define genop_i_m_div_5 332
+#define genop_i_int_div_5 333
+#define genop_i_rem_5 334
+#define genop_i_bsl_5 335
+#define genop_i_bsr_5 336
+#define genop_i_band_5 337
+#define genop_i_bor_5 338
+#define genop_i_bxor_5 339
+#define genop_i_int_bnot_4 340
+#define genop_i_gc_bif1_5 341
+#define genop_i_gc_bif2_6 342
+#define genop_ii_gc_bif3_7 343
+#define genop_i_gc_bif3_6 344
+#define genop_unsupported_guard_bif_3 345
+#define genop_i_recv_set_0 346
+#define genop_hipe_trap_call_0 347
+#define genop_hipe_trap_call_closure_0 348
+#define genop_hipe_trap_return_0 349
+#define genop_hipe_trap_throw_0 350
+#define genop_hipe_trap_resume_0 351
+#define genop_hipe_call_count_0 352
 #endif

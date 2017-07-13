@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxGraphicsMatrix</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxGraphicsMatrix.xml</file></header>
+<module>wxGraphicsMatrix</module>
+<modulesummary>See external documentation: wxGraphicsMatrix.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsmatrix.html">wxGraphicsMatrix</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxGraphicsObject">wxGraphicsObject</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxGraphicsMatrix"/>wxGraphicsMatrix()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>concat(This, T) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsMatrix">wxGraphicsMatrix()</seealso></v><v>T = <seealso marker="#type-wxGraphicsMatrix">wxGraphicsMatrix()</seealso></v></type>
+<desc><marker id="concat-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsmatrix.html#wxgraphicsmatrixconcat">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>get(This) -&gt; Result</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Result = {A::number(), B::number(), C::number(), D::number(), Tx::number(), Ty::number()}</v><v>This = <seealso marker="#type-wxGraphicsMatrix">wxGraphicsMatrix()</seealso></v></type>
+<desc><marker id="get-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsmatrix.html#wxgraphicsmatrixget">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>invert(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsMatrix">wxGraphicsMatrix()</seealso></v></type>
+<desc><marker id="invert-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsmatrix.html#wxgraphicsmatrixinvert">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isEqual(This, T) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsMatrix">wxGraphicsMatrix()</seealso></v><v>T = <seealso marker="#type-wxGraphicsMatrix">wxGraphicsMatrix()</seealso></v></type>
+<desc><marker id="isEqual-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsmatrix.html#wxgraphicsmatrixisequal">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isIdentity(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsMatrix">wxGraphicsMatrix()</seealso></v></type>
+<desc><marker id="isIdentity-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsmatrix.html#wxgraphicsmatrixisidentity">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>rotate(This, Angle) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsMatrix">wxGraphicsMatrix()</seealso></v><v>Angle = number()</v></type>
+<desc><marker id="rotate-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsmatrix.html#wxgraphicsmatrixrotate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>scale(This, XScale, YScale) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsMatrix">wxGraphicsMatrix()</seealso></v><v>XScale = number()</v><v>YScale = number()</v></type>
+<desc><marker id="scale-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsmatrix.html#wxgraphicsmatrixscale">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>translate(This, Dx, Dy) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsMatrix">wxGraphicsMatrix()</seealso></v><v>Dx = number()</v><v>Dy = number()</v></type>
+<desc><marker id="translate-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsmatrix.html#wxgraphicsmatrixtranslate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>set(This) -&gt; ok</name>
+<fsummary>Equivalent to set(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsMatrix">wxGraphicsMatrix()</seealso></v></type>
+<desc><marker id="set-1"/>
+<p>Equivalent to <seealso marker="#set-2">set(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>set(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsMatrix">wxGraphicsMatrix()</seealso></v><v>Option = {a, number()} | {b, number()} | {c, number()} | {d, number()} | {tx, number()} | {ty, number()}</v></type>
+<desc><marker id="set-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsmatrix.html#wxgraphicsmatrixset">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>transformPoint(This) -&gt; {X::number(), Y::number()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsMatrix">wxGraphicsMatrix()</seealso></v></type>
+<desc><marker id="transformPoint-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsmatrix.html#wxgraphicsmatrixtransformpoint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>transformDistance(This) -&gt; {Dx::number(), Dy::number()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsMatrix">wxGraphicsMatrix()</seealso></v></type>
+<desc><marker id="transformDistance-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsmatrix.html#wxgraphicsmatrixtransformdistance">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

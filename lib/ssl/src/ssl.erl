@@ -38,15 +38,12 @@
 	 getopts/2, setopts/2, getstat/1, getstat/2
 	]).
 %% SSL/TLS protocol handling
--export([cipher_suites/0, cipher_suites/1, eccs/0, eccs/1,
-	 connection_info/1, versions/0, session_info/1, format_error/1,
-     renegotiate/1, prf/5, negotiated_protocol/1, negotiated_next_protocol/1,
+
+-export([cipher_suites/0, cipher_suites/1, eccs/0, eccs/1, versions/0, 
+         format_error/1, renegotiate/1, prf/5, negotiated_protocol/1, 
 	 connection_information/1, connection_information/2]).
 %% Misc
 -export([handle_options/2, tls_version/1]).
-
--deprecated({negotiated_next_protocol, 1, next_major_release}).
--deprecated({connection_info, 1, next_major_release}).
 
 -include("ssl_api.hrl").
 -include("ssl_internal.hrl").
@@ -115,7 +112,7 @@ connect(Host, Port, Options) ->
 
 connect(Host, Port, Options, Timeout) when (is_integer(Timeout) andalso Timeout >= 0) or (Timeout == infinity) ->
     try
-	{ok, Config} = handle_options(Options, client),
+	{ok, Config} = handle_options(Options, client, Host),
 	case Config#config.connection_cb of
 	    tls_connection ->
 		tls_socket:connect(Host,Port,Config,Timeout);
@@ -307,7 +304,7 @@ controlling_process(#sslsocket{pid = {Listen,
 %% Description: Return SSL information for the connection
 %%--------------------------------------------------------------------
 connection_information(#sslsocket{pid = Pid}) when is_pid(Pid) -> 
-    case ssl_connection:connection_information(Pid) of
+    case ssl_connection:connection_information(Pid, false) of
 	{ok, Info} ->
 	    {ok, [Item || Item = {_Key, Value} <- Info,  Value =/= undefined]};
 	Error ->
@@ -323,27 +320,12 @@ connection_information(#sslsocket{pid = {udp,_}}) ->
 %%
 %% Description: Return SSL information for the connection
 %%--------------------------------------------------------------------
-connection_information(#sslsocket{} = SSLSocket, Items) -> 
-    case connection_information(SSLSocket) of
+connection_information(#sslsocket{pid = Pid}, Items) when is_pid(Pid) -> 
+    case ssl_connection:connection_information(Pid, include_security_info(Items)) of
         {ok, Info} ->
             {ok, [Item || Item = {Key, Value} <- Info,  lists:member(Key, Items),
 			  Value =/= undefined]};
 	Error ->
-            Error
-    end.
-
-%%--------------------------------------------------------------------
-%% Deprecated
--spec connection_info(#sslsocket{}) -> 	{ok, {tls_record:tls_atom_version(), ssl_cipher:erl_cipher_suite()}} |
-					{error, reason()}.
-%%
-%% Description: Returns ssl protocol and cipher used for the connection
-%%--------------------------------------------------------------------
-connection_info(#sslsocket{} = SSLSocket) ->
-    case connection_information(SSLSocket) of
-        {ok, Result} ->
-            {ok, {proplists:get_value(protocol, Result), proplists:get_value(cipher_suite, Result)}};
-        Error ->
             Error
     end.
 
@@ -390,20 +372,6 @@ peercert(#sslsocket{pid = {Listen, _}}) when is_port(Listen) ->
 %%--------------------------------------------------------------------
 negotiated_protocol(#sslsocket{pid = Pid}) ->
     ssl_connection:negotiated_protocol(Pid).
-
-%%--------------------------------------------------------------------
--spec negotiated_next_protocol(#sslsocket{}) -> {ok, binary()} | {error, reason()}.
-%%
-%% Description: Returns the next protocol that has been negotiated. If no
-%% protocol has been negotiated will return {error, next_protocol_not_negotiated}
-%%--------------------------------------------------------------------
-negotiated_next_protocol(Socket) ->
-    case negotiated_protocol(Socket) of
-        {error, protocol_not_negotiated} ->
-            {error, next_protocol_not_negotiated};
-        Res ->
-            Res
-    end.
 
 %%--------------------------------------------------------------------
 -spec cipher_suites() -> [ssl_cipher:erl_cipher_suite()] | [string()].
@@ -459,6 +427,16 @@ eccs_filter_supported(Curves) ->
 %%--------------------------------------------------------------------
 getopts(#sslsocket{pid = Pid}, OptionTags) when is_pid(Pid), is_list(OptionTags) ->
     ssl_connection:get_opts(Pid, OptionTags);
+getopts(#sslsocket{pid = {udp, #config{transport_info = {Transport,_,_,_}}}} = ListenSocket, OptionTags) when is_list(OptionTags) ->
+    try dtls_socket:getopts(Transport, ListenSocket, OptionTags) of
+        {ok, _} = Result ->
+            Result;
+	{error, InetError} ->
+	    {error, {options, {socket_options, OptionTags, InetError}}}
+    catch
+	_:Error ->
+	    {error, {options, {socket_options, OptionTags, Error}}}
+    end;
 getopts(#sslsocket{pid = {_,  #config{transport_info = {Transport,_,_,_}}}} = ListenSocket,
 	OptionTags) when is_list(OptionTags) ->
     try tls_socket:getopts(Transport, ListenSocket, OptionTags) of
@@ -487,7 +465,16 @@ setopts(#sslsocket{pid = Pid}, Options0) when is_pid(Pid), is_list(Options0)  ->
 	_:_ ->
 	    {error, {options, {not_a_proplist, Options0}}}
     end;
-
+setopts(#sslsocket{pid = {udp, #config{transport_info = {Transport,_,_,_}}}} = ListenSocket, Options) when is_list(Options) ->
+    try dtls_socket:setopts(Transport, ListenSocket, Options) of
+	ok ->
+	    ok;
+	{error, InetError} ->
+	    {error, {options, {socket_options, Options, InetError}}}
+    catch
+	_:Error ->
+	    {error, {options, {socket_options, Options, Error}}}
+    end;
 setopts(#sslsocket{pid = {_, #config{transport_info = {Transport,_,_,_}}}} = ListenSocket, Options) when is_list(Options) ->
     try tls_socket:setopts(Transport, ListenSocket, Options) of
 	ok ->
@@ -553,19 +540,6 @@ sockname(#sslsocket{pid = Pid, fd = {Transport, Socket, _}}) when is_pid(Pid) ->
     dtls_socket:sockname(Transport, Socket);
 sockname(#sslsocket{pid = Pid, fd = {Transport, Socket, _, _}}) when is_pid(Pid) ->
     tls_socket:sockname(Transport, Socket).
-
-%%---------------------------------------------------------------
--spec session_info(#sslsocket{}) -> {ok, list()} | {error, reason()}.
-%%
-%% Description: Returns list of session info currently [{session_id, session_id(),
-%% {cipher_suite, cipher_suite()}]
-%%--------------------------------------------------------------------
-session_info(#sslsocket{pid = Pid}) when is_pid(Pid) ->
-    ssl_connection:session_info(Pid);
-session_info(#sslsocket{pid = {udp,_}}) ->
-    {error, enotconn};
-session_info(#sslsocket{pid = {Listen,_}}) when is_port(Listen) ->
-    {error, enotconn}.
 
 %%---------------------------------------------------------------
 -spec versions() -> [{ssl_app, string()} | {supported, [tls_record:tls_atom_version()]} |
@@ -677,8 +651,12 @@ do_listen(Port,  #config{transport_info = {Transport, _, _, _}} = Config, dtls_c
 %% Handle extra ssl options given to ssl_accept
 -spec handle_options([any()], #ssl_options{}) -> #ssl_options{}
       ;             ([any()], client | server) -> {ok, #config{}}.
+handle_options(Opts, Role) ->
+    handle_options(Opts, Role, undefined).   
+
+
 handle_options(Opts0, #ssl_options{protocol = Protocol, cacerts = CaCerts0,
-				   cacertfile = CaCertFile0} = InheritedSslOpts) ->
+				   cacertfile = CaCertFile0} = InheritedSslOpts, _) ->
     RecordCB = record_cb(Protocol),
     CaCerts = handle_option(cacerts, Opts0, CaCerts0),
     {Verify, FailIfNoPeerCert, CaCertDefault, VerifyFun, PartialChainHanlder,
@@ -711,7 +689,7 @@ handle_options(Opts0, #ssl_options{protocol = Protocol, cacerts = CaCerts0,
     end;
 
 %% Handle all options in listen and connect
-handle_options(Opts0, Role) ->
+handle_options(Opts0, Role, Host) ->
     Opts = proplists:expand([{binary, [{mode, binary}]},
 			     {list, [{mode, list}]}], Opts0),
     assert_proplist(Opts),
@@ -783,7 +761,9 @@ handle_options(Opts0, Role) ->
 			make_next_protocol_selector(
 			  handle_option(client_preferred_next_protocols, Opts, undefined)),
 		    log_alert = handle_option(log_alert, Opts, true),
-		    server_name_indication = handle_option(server_name_indication, Opts, undefined),
+		    server_name_indication = handle_option(server_name_indication, Opts, 
+                                                           default_option_role(client,
+                                                                               server_name_indication_default(Host), Role)),
 		    sni_hosts = handle_option(sni_hosts, Opts, []),
 		    sni_fun = handle_option(sni_fun, Opts, undefined),
 		    honor_cipher_order = handle_option(honor_cipher_order, Opts, 
@@ -1027,12 +1007,20 @@ validate_option(next_protocols_advertised = Opt, Value) when is_list(Value) ->
 
 validate_option(next_protocols_advertised, undefined) ->
     undefined;
-validate_option(server_name_indication, Value) when is_list(Value) ->
+validate_option(server_name_indication = Opt, Value) when is_list(Value) ->
+    %% RFC 6066, Section 3: Currently, the only server names supported are
+    %% DNS hostnames
+     case inet_parse:domain(Value) of
+        false -> 
+           throw({error, {options, {{Opt, Value}}}});
+        true -> 
+            Value
+     end;
+validate_option(server_name_indication, undefined = Value) ->
     Value;
 validate_option(server_name_indication, disable) ->
-    disable;
-validate_option(server_name_indication, undefined) ->
     undefined;
+
 validate_option(sni_hosts, []) ->
     [];
 validate_option(sni_hosts, [{Hostname, SSLOptions} | Tail]) when is_list(Hostname) ->
@@ -1076,15 +1064,15 @@ validate_option(protocol, Value = dtls) ->
 validate_option(Opt, Value) ->
     throw({error, {options, {Opt, Value}}}).
 
-handle_hashsigns_option(Value, {Major, Minor} = Version) when is_list(Value) 
-							      andalso Major >= 3 andalso Minor >= 3->
+handle_hashsigns_option(Value, Version) when is_list(Value) 
+                                             andalso Version >= {3, 3} ->
     case tls_v1:signature_algs(Version, Value) of
 	[] ->
 	    throw({error, {options, no_supported_algorithms, {signature_algs, Value}}});
 	_ ->	
 	    Value
     end;
-handle_hashsigns_option(_, {Major, Minor} = Version) when Major >= 3 andalso Minor >= 3->
+handle_hashsigns_option(_, Version) when Version >= {3, 3} ->
     handle_hashsigns_option(tls_v1:default_signature_algs(Version), Version);
 handle_hashsigns_option(_, _Version) ->
     undefined.
@@ -1118,7 +1106,7 @@ validate_versions([Version | Rest], Versions) when Version == 'tlsv1.2';
                                                    Version == sslv3 ->
     tls_validate_versions(Rest, Versions);                                      
 validate_versions([Version | Rest], Versions) when Version == 'dtlsv1';
-                                                   Version == 'dtlsv2'->
+                                                   Version == 'dtlsv1.2'->
     dtls_validate_versions(Rest, Versions);
 validate_versions([Ver| _], Versions) ->
     throw({error, {options, {Ver, {versions, Versions}}}}).
@@ -1136,7 +1124,7 @@ tls_validate_versions([Ver| _], Versions) ->
 dtls_validate_versions([], Versions) ->
     Versions;
 dtls_validate_versions([Version | Rest], Versions) when  Version == 'dtlsv1';
-                                                         Version == 'dtlsv2'->
+                                                         Version == 'dtlsv1.2'->
     dtls_validate_versions(Rest, Versions);
 dtls_validate_versions([Ver| _], Versions) ->
     throw({error, {options, {Ver, {versions, Versions}}}}).
@@ -1480,3 +1468,18 @@ default_cb_info(tls) ->
     {gen_tcp, tcp, tcp_closed, tcp_error};
 default_cb_info(dtls) ->
     {gen_udp, udp, udp_closed, udp_error}.
+
+include_security_info([]) ->
+    false;
+include_security_info([Item | Items]) ->
+    case lists:member(Item, [client_random, server_random, master_secret]) of
+        true ->
+            true;
+        false  ->
+            include_security_info(Items)
+    end.
+
+server_name_indication_default(Host) when is_list(Host) ->
+    Host;
+server_name_indication_default(_) ->
+    undefined.

@@ -75,7 +75,7 @@ groups() ->
        no_appup_relup, bad_appup_relup, app_start_type_relup, regexp_relup
       ]},
      {hybrid, [], [normal_hybrid,hybrid_no_old_sasl,hybrid_no_new_sasl]},
-     {options, [], [otp_6226_outdir]}].
+     {options, [], [otp_6226_outdir,app_file_defaults]}].
 
 init_per_group(_GroupName, Config) ->
     Config.
@@ -87,24 +87,24 @@ end_per_group(_GroupName, Config) ->
 
 
 init_per_suite(Config) when is_list(Config) ->
+    %% To use in end_per_testcase
+    Path = code:get_path(),
+    {ok,Cwd} = file:get_cwd(),
+
     %% Make of copy of the data directory.
     DataDir = ?datadir,
     PrivDir = ?privdir,
     CopyDir = fname(PrivDir, "datacopy"),
+    ok = file:make_dir(CopyDir),
     TarFile = fname(PrivDir, "datacopy.tgz"),
-    {ok, Tar} = erl_tar:open(TarFile, [write, compressed]),
-    ok = erl_tar:add(Tar, DataDir, CopyDir, [compressed]),
-    ok = erl_tar:close(Tar),
-    ok = erl_tar:extract(TarFile, [compressed]),
+    ok = file:set_cwd(DataDir),
+    ok = erl_tar:create(TarFile, ["."], [compressed]),
+    ok = erl_tar:extract(TarFile, [compressed, {cwd,CopyDir}]),
     ok = file:delete(TarFile),
 
     %% Compile source files in the copy directory.
     Sources = filelib:wildcard(fname([CopyDir,'*','*','*','*','*.erl'])),
     lists:foreach(fun compile_source/1, Sources),
-
-    %% To use in end_per_testcase
-    Path = code:get_path(),
-    {ok,Cwd} = file:get_cwd(),
 
     [{copy_dir, CopyDir}, {cwd,Cwd}, {path,Path} | Config].
 
@@ -2045,6 +2045,37 @@ otp_6226_outdir(Config) when is_list(Config) ->
     ok = file:set_cwd(OldDir),
     ok.
 
+
+%% Test that all default values can be used as values in the .app file
+app_file_defaults(Config) ->
+    PrivDir = ?config(priv_dir,Config),
+    Name = app1,
+    NameStr = atom_to_list(Name),
+    Vsn = "1.0",
+    AppSpec = app_spec(Name,#{vsn=>"1.0"}),
+    ok = file:write_file(filename:join(PrivDir,NameStr ++ ".app"),
+			 io_lib:format("~p.~n",[AppSpec])),
+    {ok,_} = systools_make:read_application(NameStr,Vsn,[PrivDir],[]),
+    ok.
+
+app_spec(Name,New) ->
+    {application,Name,app_spec(New)}.
+
+app_spec(New) ->
+    Default = #{description => "",
+		id => "",
+		vsn => "",
+		modules => [],
+		maxP => infinity,
+		maxT => infinity,
+		registered => [],
+		included_applications => [],
+		applications => [],
+		env => [],
+		mod => [],
+		start_phases => undefined,
+		runtime_dependencies => []},
+    maps:to_list(maps:merge(Default,New)).
 
 %%%%%%
 %%%%%% Utilities

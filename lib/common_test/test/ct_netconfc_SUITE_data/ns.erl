@@ -1,7 +1,7 @@
 %%--------------------------------------------------------------------
 %% %CopyrightBegin%
 %%
-%% Copyright Ericsson AB 2012-2016. All Rights Reserved.
+%% Copyright Ericsson AB 2012-2017. All Rights Reserved.
 %%
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -254,7 +254,7 @@ data(Data, State = #session{connection = ConnRef,
     end.
 
 stop_channel(CM, Ch, State) ->
-    ssh:close(CM),
+    ssh_connection:close(CM,Ch),
     {stop, Ch, State}.
 
 
@@ -290,8 +290,8 @@ send_frag({CM,Ch},Data) ->
 
 
 %%% Kill ssh connection
-kill({CM,_Ch}) ->
-    ssh:close(CM).
+kill({CM,Ch}) ->
+    ssh_connection:close(CM,Ch).
 
 add_expect(SessionId,Add) ->
     table_trans(fun do_add_expect/2,[SessionId,Add]).

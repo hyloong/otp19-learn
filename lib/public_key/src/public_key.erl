@@ -395,9 +395,15 @@ dh_gex_group(Min, N, Max, Groups) ->
     pubkey_ssh:dh_gex_group(Min, N, Max, Groups).
 
 %%--------------------------------------------------------------------
--spec generate_key(#'DHParameter'{} | {namedCurve, Name ::oid()} |
-		   #'ECParameters'{}) -> {Public::binary(), Private::binary()} |
-					    #'ECPrivateKey'{}.
+-spec generate_key(#'DHParameter'{}) ->
+                          {Public::binary(), Private::binary()};
+                  ({namedCurve, Name ::oid()}) ->
+                          #'ECPrivateKey'{};
+                  (#'ECParameters'{}) ->
+                          #'ECPrivateKey'{};
+                  ({rsa, Size::pos_integer(), PubExp::pos_integer()}) ->
+                          #'RSAPrivateKey'{}.
+
 %% Description: Generates a new keypair
 %%--------------------------------------------------------------------
 generate_key(#'DHParameter'{prime = P, base = G}) ->
@@ -405,7 +411,43 @@ generate_key(#'DHParameter'{prime = P, base = G}) ->
 generate_key({namedCurve, _} = Params) ->
     ec_generate_key(Params);
 generate_key(#'ECParameters'{} = Params) ->
-    ec_generate_key(Params).
+    ec_generate_key(Params);
+generate_key({rsa, ModulusSize, PublicExponent}) ->
+    case crypto:generate_key(rsa, {ModulusSize,PublicExponent}) of
+        {[E, N], [E, N, D, P, Q, D_mod_P_1, D_mod_Q_1, InvQ_mod_P]} ->
+            Nint = crypto:bytes_to_integer(N),
+            Eint = crypto:bytes_to_integer(E),
+            #'RSAPrivateKey'{version = 0, % Two-factor (I guess since otherPrimeInfos is not given)
+                             modulus = Nint,
+                             publicExponent = Eint,
+                             privateExponent = crypto:bytes_to_integer(D),
+                             prime1 = crypto:bytes_to_integer(P),
+                             prime2 = crypto:bytes_to_integer(Q),
+                             exponent1 = crypto:bytes_to_integer(D_mod_P_1),
+                             exponent2 = crypto:bytes_to_integer(D_mod_Q_1),
+                             coefficient = crypto:bytes_to_integer(InvQ_mod_P)};
+
+        {[E, N], [E, N, D]} -> % FIXME: what to set the other fields in #'RSAPrivateKey'?
+                               % Answer: Miller [Mil76]
+                               %   G.L. Miller. Riemann's hypothesis and tests for primality.
+                               %   Journal of Computer and Systems Sciences,
+                               %   13(3):300-307,
+                               %   1976.
+            Nint = crypto:bytes_to_integer(N),
+            Eint = crypto:bytes_to_integer(E),
+            #'RSAPrivateKey'{version = 0, % Two-factor (I guess since otherPrimeInfos is not given)
+                              modulus = Nint,
+                              publicExponent = Eint,
+                              privateExponent = crypto:bytes_to_integer(D),
+                              prime1 = '?',
+                              prime2 = '?',
+                              exponent1 = '?',
+                              exponent2 = '?',
+                              coefficient = '?'};
+        
+        Other ->
+            Other
+    end.
 
 %%--------------------------------------------------------------------
 -spec compute_key(#'ECPoint'{} , #'ECPrivateKey'{}) -> binary().
@@ -562,7 +604,7 @@ pkix_match_dist_point(#'CertificateList'{
 
 %%--------------------------------------------------------------------
 -spec pkix_sign(#'OTPTBSCertificate'{},
-		rsa_private_key() | dsa_private_key()) -> Der::binary().
+		rsa_private_key() | dsa_private_key() | ec_private_key()) -> Der::binary().
 %%
 %% Description: Sign a pkix x.509 certificate. Returns the corresponding
 %% der encoded 'Certificate'{}
@@ -827,7 +869,7 @@ pkix_verify_hostname(Cert = #'OTPCertificate'{tbsCertificate = TbsCert}, Referen
 		false ->
 		    %% Try to extract DNS-IDs from URIs etc
 		    DNS_ReferenceIDs =
-			[{dns_is,X} || X <- verify_hostname_fqnds(ReferenceIDs, FqdnFun)],
+			[{dns_id,X} || X <- verify_hostname_fqnds(ReferenceIDs, FqdnFun)],
 		    verify_hostname_match_loop(DNS_ReferenceIDs, PresentedIDs,
 					       MatchFun, FailCB, Cert);
 		true ->
@@ -858,6 +900,7 @@ ssh_decode(SshBin, Type) when is_binary(SshBin),
 %%--------------------------------------------------------------------
 -spec ssh_encode([{public_key(), Attributes::list()}], ssh_file()) -> binary()
 	      ; (public_key(), ssh2_pubkey) -> binary()
+	      ; ({public_key(),atom()}, ssh2_pubkey) -> binary()
 	      .
 %%
 %% Description: Encodes a list of ssh file entries (public keys and
@@ -1110,19 +1153,16 @@ do_pkix_crls_validate(OtpCert, [{DP, CRL, DeltaCRL} | Rest],  All, Options, Revo
     end.
 
 sort_dp_crls(DpsAndCrls, FreshCB) ->
-    Sorted = do_sort_dp_crls(DpsAndCrls, dict:new()),
-    sort_crls(Sorted, FreshCB, []).
+    sort_crls(maps:to_list(lists:foldl(fun group_dp_crls/2,
+                                       #{},
+                                       DpsAndCrls)),
+              FreshCB, []).
 
-do_sort_dp_crls([], Dict) ->
-    dict:to_list(Dict);
-do_sort_dp_crls([{DP, CRL} | Rest], Dict0) ->
-    Dict = try dict:fetch(DP, Dict0) of
-	       _ ->
-		   dict:append(DP, CRL, Dict0)
-	   catch _:_ ->
-		   dict:store(DP, [CRL], Dict0)
-	   end,
-    do_sort_dp_crls(Rest, Dict).
+group_dp_crls({DP,CRL}, M) ->
+    case M of
+        #{DP := CRLs} -> M#{DP := [CRL|CRLs]};
+        _ -> M#{DP => [CRL]}
+    end.
 
 sort_crls([], _, Acc) ->
     Acc;
@@ -1201,8 +1241,11 @@ ec_curve_spec( #'ECParameters'{fieldID = FieldId, curve = PCurve, base = Base, o
 	     FieldId#'FieldID'.parameters},
     Curve = {PCurve#'Curve'.a, PCurve#'Curve'.b, none},
     {Field, Curve, Base, Order, CoFactor};
-ec_curve_spec({namedCurve, OID}) ->
-    pubkey_cert_records:namedCurves(OID).
+ec_curve_spec({namedCurve, OID}) when is_tuple(OID), is_integer(element(1,OID)) ->
+    ec_curve_spec({namedCurve,  pubkey_cert_records:namedCurves(OID)});
+ec_curve_spec({namedCurve, Name}) when is_atom(Name) ->
+    crypto:ec_curve(Name).
+
 
 ec_key({PubKey, PrivateKey}, Params) ->
     #'ECPrivateKey'{version = 1,

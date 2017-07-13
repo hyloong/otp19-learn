@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE chapter SYSTEM "chapter.dtd">
+<chapter>
+<header>
+<title>Erlang Syntax and Metaprogramming tools
+</title>
+<prepared></prepared>
+<docno></docno>
+<date></date>
+<rev></rev>
+<file>chapter.xml</file></header>
+<section>
+<title>Overview</title>
+<p>This package contains modules for handling abstract syntax trees (ASTs)
+in Erlang, in a way that is compatible with the "abstract format" parse
+trees of the stdlib module <c>erl_parse</c>, together with utilities for reading
+source files, <seealso marker="erl_prettypr">pretty-printing syntax trees</seealso>, <seealso marker="igor">merging and renaming modules</seealso>, <seealso marker="erl_tidy">cleaning up obsolete
+constructs</seealso>, and doing <seealso marker="merl">metaprogramming</seealso> in Erlang.</p>
+
+<p>The abstract layer (defined in <seealso marker="erl_syntax">erl_syntax</seealso>) is nicely
+structured and the node types are context-independent. The layer makes
+it possible to transparently attach source-code comments and user
+annotations to nodes of the tree. Using the abstract layer makes
+applications less sensitive to changes in the <seealso marker="stdlib:erl_parse">erl_parse(3)</seealso>
+data structures, only requiring the <c>erl_syntax</c> module to be up-to-date.</p>
+
+<p>The pretty printer <seealso marker="erl_prettypr">erl_prettypr</seealso> is implemented on top of the
+library module <seealso marker="prettypr">prettypr</seealso>: this is a powerful and flexible generic
+pretty printing library, which is also distributed separately.</p>
+
+<p>For a short demonstration of parsing and pretty-printing, simply
+compile the included module <url href="../../examples/demo.erl">demo.erl</url>,
+and execute <c>demo:run()</c> from the Erlang shell. It will compile the
+remaining modules and give you further instructions.</p>
+
+<p>Also try the <seealso marker="erl_tidy">erl_tidy</seealso> module, as follows:
+</p><pre>   erl_tidy:dir("any-erlang-source-dir", [test, old_guard_tests]).</pre><p>
+(the <c>test</c> option assures that no files are modified).
+</p></section></chapter>

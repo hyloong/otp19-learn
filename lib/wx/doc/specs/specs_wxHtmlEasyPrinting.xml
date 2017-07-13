@@ -1,0 +1,267 @@
+<module name="wxHtmlEasyPrinting">
+<type>
+  <name>wxHtmlEasyPrinting</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getPageSetupData</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getPageSetupData(This) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="wxPageSetupDialogData#type-wxPageSetupDialogData">wxPageSetupDialogData:wxPageSetupDialogData()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getPrintData</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getPrintData(This) -&gt; <seealso marker="wxPrintData#type-wxPrintData">wxPrintData:wxPrintData()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>new() -&gt; <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(Options :: [Option]) -&gt; <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></head>
+      <guard>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{name, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{parentWindow, <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>pageSetup</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>pageSetup(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>previewFile</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>previewFile(This, Htmlfile) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></string></subtype>
+        <subtype><typename>Htmlfile</typename><string>Htmlfile = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Htmlfile</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>previewText</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>previewText(This, Htmltext) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></string></subtype>
+        <subtype><typename>Htmltext</typename><string>Htmltext = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Htmltext</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>previewText</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>previewText(This, Htmltext, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></string></subtype>
+        <subtype><typename>Htmltext</typename><string>Htmltext = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {basepath, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Htmltext</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>printFile</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>printFile(This, Htmlfile) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></string></subtype>
+        <subtype><typename>Htmlfile</typename><string>Htmlfile = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Htmlfile</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>printText</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>printText(This, Htmltext) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></string></subtype>
+        <subtype><typename>Htmltext</typename><string>Htmltext = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Htmltext</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>printText</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>printText(This, Htmltext, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></string></subtype>
+        <subtype><typename>Htmltext</typename><string>Htmltext = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {basepath, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Htmltext</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setFonts</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setFonts(This, Normal_face, Fixed_face) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></string></subtype>
+        <subtype><typename>Normal_face</typename><string>Normal_face = Fixed_face = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Fixed_face</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Fixed_face</anno>
+  <anno>Normal_face</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setFonts</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>setFonts(This, Normal_face, Fixed_face, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></string></subtype>
+        <subtype><typename>Normal_face</typename><string>Normal_face = Fixed_face = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Fixed_face</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {sizes, [integer()]}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Fixed_face</anno>
+  <anno>Normal_face</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setFooter</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setFooter(This, Footer) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></string></subtype>
+        <subtype><typename>Footer</typename><string>Footer = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Footer</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setFooter</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setFooter(This, Footer, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></string></subtype>
+        <subtype><typename>Footer</typename><string>Footer = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {pg, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Footer</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setHeader</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setHeader(This, Header) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></string></subtype>
+        <subtype><typename>Header</typename><string>Header = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Header</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setHeader</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setHeader(This, Header, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></string></subtype>
+        <subtype><typename>Header</typename><string>Header = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {pg, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Header</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:18.</timestamp>
+</module>

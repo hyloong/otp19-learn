@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxFlexGridSizer</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxFlexGridSizer.xml</file></header>
+<module>wxFlexGridSizer</module>
+<modulesummary>See external documentation: wxFlexGridSizer.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxflexgridsizer.html">wxFlexGridSizer</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxGridSizer">wxGridSizer</seealso>
+  <br/><seealso marker="wxSizer">wxSizer</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxFlexGridSizer"/>wxFlexGridSizer()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new(Cols) -&gt; <seealso marker="#type-wxFlexGridSizer">wxFlexGridSizer()</seealso></name>
+<fsummary>Equivalent to new(Cols, []).
+</fsummary>
+<type>
+<v>Cols = integer()</v></type>
+<desc><marker id="new-1"/>
+<p>Equivalent to <seealso marker="#new-2">new(Cols, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Cols, Options::[Option]) -&gt; <seealso marker="#type-wxFlexGridSizer">wxFlexGridSizer()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Cols = integer()</v><v>Option = {vgap, integer()} | {hgap, integer()}</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxflexgridsizer.html#wxflexgridsizerwxflexgridsizer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Rows, Cols, Vgap, Hgap) -&gt; <seealso marker="#type-wxFlexGridSizer">wxFlexGridSizer()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Rows = integer()</v><v>Cols = integer()</v><v>Vgap = integer()</v><v>Hgap = integer()</v></type>
+<desc><marker id="new-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxflexgridsizer.html#wxflexgridsizerwxflexgridsizer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addGrowableCol(This, Idx) -&gt; ok</name>
+<fsummary>Equivalent to addGrowableCol(This, Idx, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFlexGridSizer">wxFlexGridSizer()</seealso></v><v>Idx = integer()</v></type>
+<desc><marker id="addGrowableCol-2"/>
+<p>Equivalent to <seealso marker="#addGrowableCol-3">addGrowableCol(This, Idx, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>addGrowableCol(This, Idx, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFlexGridSizer">wxFlexGridSizer()</seealso></v><v>Idx = integer()</v><v>Option = {proportion, integer()}</v></type>
+<desc><marker id="addGrowableCol-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxflexgridsizer.html#wxflexgridsizeraddgrowablecol">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addGrowableRow(This, Idx) -&gt; ok</name>
+<fsummary>Equivalent to addGrowableRow(This, Idx, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFlexGridSizer">wxFlexGridSizer()</seealso></v><v>Idx = integer()</v></type>
+<desc><marker id="addGrowableRow-2"/>
+<p>Equivalent to <seealso marker="#addGrowableRow-3">addGrowableRow(This, Idx, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>addGrowableRow(This, Idx, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFlexGridSizer">wxFlexGridSizer()</seealso></v><v>Idx = integer()</v><v>Option = {proportion, integer()}</v></type>
+<desc><marker id="addGrowableRow-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxflexgridsizer.html#wxflexgridsizeraddgrowablerow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFlexibleDirection(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFlexGridSizer">wxFlexGridSizer()</seealso></v></type>
+<desc><marker id="getFlexibleDirection-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxflexgridsizer.html#wxflexgridsizergetflexibledirection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getNonFlexibleGrowMode(This) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFlexGridSizer">wxFlexGridSizer()</seealso></v></type>
+<desc><marker id="getNonFlexibleGrowMode-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxflexgridsizer.html#wxflexgridsizergetnonflexiblegrowmode">external documentation</url>.
+ <br/> Res = ?wxFLEX_GROWMODE_NONE | ?wxFLEX_GROWMODE_SPECIFIED | ?wxFLEX_GROWMODE_ALL</p>
+</desc></func>
+<func>
+<name>removeGrowableCol(This, Idx) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFlexGridSizer">wxFlexGridSizer()</seealso></v><v>Idx = integer()</v></type>
+<desc><marker id="removeGrowableCol-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxflexgridsizer.html#wxflexgridsizerremovegrowablecol">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>removeGrowableRow(This, Idx) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFlexGridSizer">wxFlexGridSizer()</seealso></v><v>Idx = integer()</v></type>
+<desc><marker id="removeGrowableRow-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxflexgridsizer.html#wxflexgridsizerremovegrowablerow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFlexibleDirection(This, Direction) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFlexGridSizer">wxFlexGridSizer()</seealso></v><v>Direction = integer()</v></type>
+<desc><marker id="setFlexibleDirection-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxflexgridsizer.html#wxflexgridsizersetflexibledirection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setNonFlexibleGrowMode(This, Mode) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFlexGridSizer">wxFlexGridSizer()</seealso></v><v>Mode = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></v></type>
+<desc><marker id="setNonFlexibleGrowMode-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxflexgridsizer.html#wxflexgridsizersetnonflexiblegrowmode">external documentation</url>.
+ <br/> Mode = ?wxFLEX_GROWMODE_NONE | ?wxFLEX_GROWMODE_SPECIFIED | ?wxFLEX_GROWMODE_ALL</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxFlexGridSizer">wxFlexGridSizer()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

@@ -1,7 +1,7 @@
 %%
 %% %CopyrightBegin%
 %% 
-%% Copyright Ericsson AB 1997-2016. All Rights Reserved.
+%% Copyright Ericsson AB 1997-2017. All Rights Reserved.
 %% 
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -127,7 +127,7 @@ init_per_testcase(Case, Config) when is_atom(Case), is_list(Config) ->
     0 = element(1, erts_debug:get_internal_state(check_io_debug)),
     [{testcase, Case}|Config].
 
-end_per_testcase(Case, Config) ->
+end_per_testcase(Case, _Config) ->
     erlang:display({end_per_testcase, Case}),
     0 = element(1, erts_debug:get_internal_state(check_io_debug)),
     ok.
@@ -1749,12 +1749,6 @@ thread_mseg_alloc_cache_clean(Config) when is_list(Config) ->
             ok = erl_ddll:stop(),
             ok
     end.
-
-mseg_alloc_cci(MsegAllocInfo) ->
-    {value,{options, OL}}
-    = lists:keysearch(options, 1, MsegAllocInfo),
-    {value,{cci,CCI}} = lists:keysearch(cci,1,OL),
-    CCI.
 
 mseg_alloc_ccc() ->
     mseg_alloc_ccc(mseg_inst_info(0)).

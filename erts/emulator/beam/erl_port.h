@@ -1,7 +1,7 @@
 /*
  * %CopyrightBegin%
  *
- * Copyright Ericsson AB 2012-2016. All Rights Reserved.
+ * Copyright Ericsson AB 2012-2017. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -733,7 +733,7 @@ erts_thr_drvport2port(ErlDrvPort drvport, int lock_pdl)
     if (lock_pdl && prt->port_data_lock)
 	driver_pdl_lock(prt->port_data_lock);
 
-#if ERTS_ENABLE_LOCK_CHECK
+#ifdef ERTS_ENABLE_LOCK_CHECK
     if (!ERTS_IS_CRASH_DUMPING) {
 	if (erts_lc_is_emu_thr()) {
 	    ERTS_SMP_LC_ASSERT(erts_lc_is_port_locked(prt));
@@ -987,16 +987,6 @@ typedef enum {
     ERTS_PORT_OP_DROPPED,
     ERTS_PORT_OP_DONE
 } ErtsPortOpResult;
-
-ErtsPortOpResult
-erts_schedule_proc2port_signal(Process *,
-			       Port *,
-			       Eterm,
-			       Eterm *,
-			       ErtsProc2PortSigData *,
-			       int,
-			       ErtsPortTaskHandle *,
-			       ErtsProc2PortSigCallback);
 
 int erts_deliver_port_exit(Port *, Eterm, Eterm, int, int);
 

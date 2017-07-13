@@ -86,7 +86,7 @@ debug=
 run_valgrind=no
 
 # Default rootdir
-ROOTDIR=/root/download/otp_src_19.3
+ROOTDIR=/root/download/otp_src_20.0
 BINDIR="$ROOTDIR/bin/`$ROOTDIR/erts/autoconf/config.guess`"
 TARGET=x86_64-unknown-linux-gnu
 #BINDIR="$ROOTDIR/bin/x86_64-unknown-linux-gnu"
@@ -126,7 +126,7 @@ while [ $# -gt 0 ]; do
 	    shift
 	    cargs="$cargs -rootdir $1"
 	    ROOTDIR="$1"
-	    BINDIR=$ROOTDIR/erts-8.3/bin
+	    BINDIR=$ROOTDIR/erts-9.0/bin
 	    shift
 	    ;;
 	"-display")

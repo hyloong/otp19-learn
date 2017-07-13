@@ -1,7 +1,7 @@
 %%
 %% %CopyrightBegin%
 %%
-%% Copyright Ericsson AB 1997-2016. All Rights Reserved.
+%% Copyright Ericsson AB 1997-2017. All Rights Reserved.
 %%
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -24,7 +24,9 @@
 -export([all/0, suite/0,groups/0,init_per_suite/1, end_per_suite/1, 
 	 init_per_group/2,end_per_group/2]).
 
--export([tick/1, tick_change/1, illegal_nodenames/1, hidden_node/1,
+-export([tick/1, tick_change/1,
+         nodenames/1, hostnames/1,
+         illegal_nodenames/1, hidden_node/1,
 	 setopts/1,
 	 table_waste/1, net_setuptime/1,
 	 inet_dist_options_options/1,
@@ -53,7 +55,6 @@
 
 -export([pinger/1]).
 
-
 -define(DUMMY_NODE,dummy@test01).
 
 %%-----------------------------------------------------------------
@@ -68,8 +69,8 @@ suite() ->
      {timetrap,{minutes,4}}].
 
 all() -> 
-    [tick, tick_change, illegal_nodenames, hidden_node,
-     setopts,
+    [tick, tick_change, nodenames, hostnames, illegal_nodenames,
+     hidden_node, setopts,
      table_waste, net_setuptime, inet_dist_options_options,
      {group, monitor_nodes}].
 
@@ -179,7 +180,105 @@ table_waste(Config) when is_list(Config) ->
     stop_node(N),
     ok.
 
+%% Test that starting nodes with different legal name part works, and that illegal
+%% ones are filtered
+nodenames(Config) when is_list(Config) ->
+    legal("a1@b"),
+    legal("a-1@b"),
+    legal("a_1@b"),
 
+    illegal("cdé@a"),
+    illegal("te欢st@a").
+
+%% Test that starting nodes with different legal host part works, and that illegal
+%% ones are filtered
+hostnames(Config) when is_list(Config) ->
+    Host = gethostname(),
+    legal([$a,$@|atom_to_list(Host)]),
+    legal("1@b1"),
+    legal("b@b1-c"),
+    legal("c@b1_c"),
+    legal("d@b1#c"),
+    legal("f@::1"),
+    legal("g@1:bc3:4e3f:f20:0:1"),
+
+    case file:native_name_encoding() of
+        latin1 -> ignore;
+        _ -> legal("e@b1é")
+    end,
+    long_hostnames(net_kernel:longnames()),
+
+    illegal("h@testالع"),
+    illegal("i@языtest"),
+    illegal("j@te欢st").
+
+long_hostnames(true) ->
+    legal("k@b.b.c"),
+    legal("l@b.b-c.d"),
+    legal("m@b.b_c.d"),
+    legal("n@127.0.0.1"),
+    legal("o@207.123.456.789");
+long_hostnames(false) ->
+    illegal("k@b.b.c").
+
+legal(Name) ->
+    case test_node(Name) of
+        started ->
+            ok;
+        not_started ->
+            ct:fail("no ~p node started", [Name])
+    end.
+
+illegal(Name) ->
+    case test_node(Name, true) of
+        not_started ->
+            ok;
+        started ->
+            ct:fail("~p node started with illegal name", [Name])
+    end.
+
+test_node(Name) ->
+    test_node(Name, false).
+test_node(Name, Illigal) ->
+    ProgName = atom_to_list(lib:progname()),
+    Command = ProgName ++ " -noinput " ++ long_or_short() ++ Name ++
+        " -eval \"net_adm:ping('" ++ atom_to_list(node()) ++ "')\"" ++
+        case Illigal of
+            true ->
+                " -eval \"timer:sleep(10000),init:stop().\"";
+            false ->
+                ""
+        end,
+    net_kernel:monitor_nodes(true),
+    BinCommand = unicode:characters_to_binary(Command, utf8),
+    Prt = open_port({spawn, BinCommand}, [stream]),
+    Node = list_to_atom(Name),
+    receive
+        {nodeup, Node} ->
+            net_kernel:monitor_nodes(false),
+            slave:stop(Node),
+            started
+    after 5000 ->
+        net_kernel:monitor_nodes(false),
+        not_started
+    end.
+
+long_or_short() ->
+    case net_kernel:longnames() of
+        true -> " -name ";
+        false -> " -sname "
+    end.
+
+% get the localhost's name, depending on the using name policy
+gethostname() ->
+    Hostname = case net_kernel:longnames() of
+       true->
+           net_adm:localhost();
+       _->
+           {ok, Name}=inet:gethostname(),
+           Name
+    end,
+    list_to_atom(Hostname).
 
 %% Test that pinging an illegal nodename does not kill the node.
 illegal_nodenames(Config) when is_list(Config) ->
@@ -230,10 +329,10 @@ time_ping(Node) ->
     T0 = erlang:monotonic_time(),
     pang = net_adm:ping(Node),
     T1 = erlang:monotonic_time(),
-    erlang:convert_time_unit(T1 - T0, native, milli_seconds).
+    erlang:convert_time_unit(T1 - T0, native, millisecond).
 
 %% Keep the connection with the client node up.
-%% This is neccessary as the client node runs with much shorter
+%% This is necessary as the client node runs with much shorter
 %% tick time !!
 keep_conn(Node) ->
     sleep(1),
@@ -274,7 +373,7 @@ tick_cli_test1(Node) ->
 	    receive
 		{whats_the_result, From} ->
 		    Diff = erlang:convert_time_unit(T2-T1, native,
-						    milli_seconds),
+						    millisecond),
 		    case Diff of
 			T when T > 8000, T < 16000 ->
 			    From ! {tick_test, T};
@@ -1059,7 +1158,7 @@ monitor_nodes_otp_6481_test(Config, TestType) when is_list(Config) ->
     RemotePid = spawn(Node,
 		      fun () ->
 			      receive after 1500 -> ok end,
-			      %% infinit loop of msgs
+			      %% infinite loop of msgs
 			      %% we want an endless stream of messages and the kill
 			      %% the node mercilessly.
 			      %% We then want to ensure that the nodedown message arrives

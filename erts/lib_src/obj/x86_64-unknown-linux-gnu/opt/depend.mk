@@ -2,7 +2,7 @@
 # 
 # ethread lib objects...
 $(r_OBJ_DIR)/ethr_aux.o: common/ethr_aux.c \
- /root/download/otp_src_19.3/erts/$(TARGET)/config.h \
+ /root/download/otp_src_20.0/erts/$(TARGET)/config.h \
  ../include/internal/ethread.h ../include/internal/ethread_inline.h \
  ../include/internal/erl_errno.h ../include/internal/x86_64/ethread.h \
  ../include/internal/x86_64/../i386/ethread.h \
@@ -18,7 +18,7 @@ $(r_OBJ_DIR)/ethr_aux.o: common/ethr_aux.c \
  ../include/internal/ethr_mutex.h ../include/internal/ethr_internal.h \
  ../include/internal/erl_misc_utils.h
 $(r_OBJ_DIR)/ethr_atomics.o: common/ethr_atomics.c \
- /root/download/otp_src_19.3/erts/$(TARGET)/config.h \
+ /root/download/otp_src_20.0/erts/$(TARGET)/config.h \
  ../include/internal/ethread.h ../include/internal/ethread_inline.h \
  ../include/internal/erl_errno.h ../include/internal/x86_64/ethread.h \
  ../include/internal/x86_64/../i386/ethread.h \
@@ -34,7 +34,7 @@ $(r_OBJ_DIR)/ethr_atomics.o: common/ethr_atomics.c \
  ../include/internal/ethr_mutex.h ../include/internal/ethr_internal.h \
  ../include/internal/erl_misc_utils.h
 $(r_OBJ_DIR)/ethr_mutex.o: common/ethr_mutex.c \
- /root/download/otp_src_19.3/erts/$(TARGET)/config.h \
+ /root/download/otp_src_20.0/erts/$(TARGET)/config.h \
  ../include/internal/ethread.h ../include/internal/ethread_inline.h \
  ../include/internal/erl_errno.h ../include/internal/x86_64/ethread.h \
  ../include/internal/x86_64/../i386/ethread.h \
@@ -50,7 +50,7 @@ $(r_OBJ_DIR)/ethr_mutex.o: common/ethr_mutex.c \
  ../include/internal/ethr_mutex.h ../include/internal/ethr_internal.h \
  ../include/internal/erl_misc_utils.h
 $(r_OBJ_DIR)/ethr_cbf.o: common/ethr_cbf.c \
- /root/download/otp_src_19.3/erts/$(TARGET)/config.h \
+ /root/download/otp_src_20.0/erts/$(TARGET)/config.h \
  ../include/internal/ethread.h ../include/internal/ethread_inline.h \
  ../include/internal/erl_errno.h ../include/internal/x86_64/ethread.h \
  ../include/internal/x86_64/../i386/ethread.h \
@@ -65,7 +65,7 @@ $(r_OBJ_DIR)/ethr_cbf.o: common/ethr_cbf.c \
  ../include/internal/pthread/ethr_event.h \
  ../include/internal/ethr_mutex.h
 $(r_OBJ_DIR)/ethread.o: pthread/ethread.c \
- /root/download/otp_src_19.3/erts/$(TARGET)/config.h \
+ /root/download/otp_src_20.0/erts/$(TARGET)/config.h \
  ../include/internal/ethread.h ../include/internal/ethread_inline.h \
  ../include/internal/erl_errno.h ../include/internal/x86_64/ethread.h \
  ../include/internal/x86_64/../i386/ethread.h \
@@ -81,7 +81,7 @@ $(r_OBJ_DIR)/ethread.o: pthread/ethread.c \
  ../include/internal/ethr_mutex.h ../include/internal/ethr_internal.h \
  ../include/internal/erl_misc_utils.h
 $(r_OBJ_DIR)/ethr_event.o: pthread/ethr_event.c \
- /root/download/otp_src_19.3/erts/$(TARGET)/config.h \
+ /root/download/otp_src_20.0/erts/$(TARGET)/config.h \
  ../include/internal/ethread.h ../include/internal/ethread_inline.h \
  ../include/internal/erl_errno.h ../include/internal/x86_64/ethread.h \
  ../include/internal/x86_64/../i386/ethread.h \
@@ -98,36 +98,36 @@ $(r_OBJ_DIR)/ethr_event.o: pthread/ethr_event.c \
  ../include/internal/erl_misc_utils.h
 # erts_internal_r lib objects...
 $(r_OBJ_DIR)/erl_printf_format.o: common/erl_printf_format.c \
- /root/download/otp_src_19.3/erts/$(TARGET)/config.h \
+ /root/download/otp_src_20.0/erts/$(TARGET)/config.h \
  ../include/internal/erl_errno.h ../include/internal/erl_printf.h \
  ../include/internal/erl_printf_format.h \
  ../include/$(TARGET)/erl_int_sizes_config.h \
  ../include/internal/erl_printf.h
 $(r_OBJ_DIR)/erl_printf.o: common/erl_printf.c \
- /root/download/otp_src_19.3/erts/$(TARGET)/config.h \
+ /root/download/otp_src_20.0/erts/$(TARGET)/config.h \
  ../include/internal/erl_errno.h ../include/internal/erl_printf.h \
  ../include/internal/erl_printf_format.h \
  ../include/$(TARGET)/erl_int_sizes_config.h \
  ../include/internal/erl_printf.h
 $(r_OBJ_DIR)/erl_misc_utils.o: common/erl_misc_utils.c \
- /root/download/otp_src_19.3/erts/$(TARGET)/config.h \
+ /root/download/otp_src_20.0/erts/$(TARGET)/config.h \
  ../include/internal/ethread_inline.h \
  ../include/internal/erl_misc_utils.h ../include/internal/erl_errno.h
 # erts_internal lib objects...
 $(OBJ_DIR)/erl_printf_format.o: common/erl_printf_format.c \
- /root/download/otp_src_19.3/erts/$(TARGET)/config.h \
+ /root/download/otp_src_20.0/erts/$(TARGET)/config.h \
  ../include/internal/erl_errno.h ../include/internal/erl_printf.h \
  ../include/internal/erl_printf_format.h \
  ../include/$(TARGET)/erl_int_sizes_config.h \
  ../include/internal/erl_printf.h
 $(OBJ_DIR)/erl_printf.o: common/erl_printf.c \
- /root/download/otp_src_19.3/erts/$(TARGET)/config.h \
+ /root/download/otp_src_20.0/erts/$(TARGET)/config.h \
  ../include/internal/erl_errno.h ../include/internal/erl_printf.h \
  ../include/internal/erl_printf_format.h \
  ../include/$(TARGET)/erl_int_sizes_config.h \
  ../include/internal/erl_printf.h
 $(OBJ_DIR)/erl_misc_utils.o: common/erl_misc_utils.c \
- /root/download/otp_src_19.3/erts/$(TARGET)/config.h \
+ /root/download/otp_src_20.0/erts/$(TARGET)/config.h \
  ../include/internal/ethread_inline.h \
  ../include/internal/erl_misc_utils.h ../include/internal/erl_errno.h
 # erts_r lib objects...

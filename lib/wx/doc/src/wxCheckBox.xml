@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxCheckBox</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxCheckBox.xml</file></header>
+<module>wxCheckBox</module>
+<modulesummary>See external documentation: wxCheckBox.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcheckbox.html">wxCheckBox</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxControl">wxControl</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxCheckBox"/>wxCheckBox()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxCheckBox">wxCheckBox()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcheckbox.html#wxcheckboxwxcheckbox">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id, Label) -&gt; <seealso marker="#type-wxCheckBox">wxCheckBox()</seealso></name>
+<fsummary>Equivalent to new(Parent, Id, Label, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="new-3"/>
+<p>Equivalent to <seealso marker="#new-4">new(Parent, Id, Label, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id, Label, Options::[Option]) -&gt; <seealso marker="#type-wxCheckBox">wxCheckBox()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()} | {validator, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</v></type>
+<desc><marker id="new-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcheckbox.html#wxcheckboxwxcheckbox">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id, Label) -&gt; boolean()</name>
+<fsummary>Equivalent to create(This, Parent, Id, Label, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCheckBox">wxCheckBox()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="create-4"/>
+<p>Equivalent to <seealso marker="#create-5">create(This, Parent, Id, Label, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id, Label, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCheckBox">wxCheckBox()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()} | {validator, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</v></type>
+<desc><marker id="create-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcheckbox.html#wxcheckboxcreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getValue(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCheckBox">wxCheckBox()</seealso></v></type>
+<desc><marker id="getValue-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcheckbox.html#wxcheckboxgetvalue">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>get3StateValue(This) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCheckBox">wxCheckBox()</seealso></v></type>
+<desc><marker id="get3StateValue-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcheckbox.html#wxcheckboxget3statevalue">external documentation</url>.
+ <br/> Res = ?wxCHK_UNCHECKED | ?wxCHK_CHECKED | ?wxCHK_UNDETERMINED</p>
+</desc></func>
+<func>
+<name>is3rdStateAllowedForUser(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCheckBox">wxCheckBox()</seealso></v></type>
+<desc><marker id="is3rdStateAllowedForUser-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcheckbox.html#wxcheckboxis3rdstateallowedforuser">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>is3State(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCheckBox">wxCheckBox()</seealso></v></type>
+<desc><marker id="is3State-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcheckbox.html#wxcheckboxis3state">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isChecked(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCheckBox">wxCheckBox()</seealso></v></type>
+<desc><marker id="isChecked-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcheckbox.html#wxcheckboxischecked">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setValue(This, State) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCheckBox">wxCheckBox()</seealso></v><v>State = boolean()</v></type>
+<desc><marker id="setValue-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcheckbox.html#wxcheckboxsetvalue">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>set3StateValue(This, State) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCheckBox">wxCheckBox()</seealso></v><v>State = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></v></type>
+<desc><marker id="set3StateValue-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcheckbox.html#wxcheckboxset3statevalue">external documentation</url>.
+ <br/> State = ?wxCHK_UNCHECKED | ?wxCHK_CHECKED | ?wxCHK_UNDETERMINED</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxCheckBox">wxCheckBox()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

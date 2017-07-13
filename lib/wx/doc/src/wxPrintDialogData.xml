@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxPrintDialogData</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxPrintDialogData.xml</file></header>
+<module>wxPrintDialogData</module>
+<modulesummary>See external documentation: wxPrintDialogData.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html">wxPrintDialogData</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxPrintDialogData"/>wxPrintDialogData()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdatawxprintdialogdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(DialogData) -&gt; <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>DialogData = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso> | <seealso marker="wxPrintData#type-wxPrintData">wxPrintData:wxPrintData()</seealso></v></type>
+<desc><marker id="new-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdatawxprintdialogdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>enableHelp(This, Flag) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v><v>Flag = boolean()</v></type>
+<desc><marker id="enableHelp-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdataenablehelp">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>enablePageNumbers(This, Flag) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v><v>Flag = boolean()</v></type>
+<desc><marker id="enablePageNumbers-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdataenablepagenumbers">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>enablePrintToFile(This, Flag) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v><v>Flag = boolean()</v></type>
+<desc><marker id="enablePrintToFile-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdataenableprinttofile">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>enableSelection(This, Flag) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v><v>Flag = boolean()</v></type>
+<desc><marker id="enableSelection-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdataenableselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getAllPages(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v></type>
+<desc><marker id="getAllPages-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdatagetallpages">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCollate(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v></type>
+<desc><marker id="getCollate-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdatagetcollate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFromPage(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v></type>
+<desc><marker id="getFromPage-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdatagetfrompage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMaxPage(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v></type>
+<desc><marker id="getMaxPage-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdatagetmaxpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMinPage(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v></type>
+<desc><marker id="getMinPage-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdatagetminpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getNoCopies(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v></type>
+<desc><marker id="getNoCopies-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdatagetnocopies">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPrintData(This) -&gt; <seealso marker="wxPrintData#type-wxPrintData">wxPrintData:wxPrintData()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v></type>
+<desc><marker id="getPrintData-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdatagetprintdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPrintToFile(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v></type>
+<desc><marker id="getPrintToFile-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdatagetprinttofile">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSelection(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v></type>
+<desc><marker id="getSelection-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdatagetselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getToPage(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v></type>
+<desc><marker id="getToPage-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdatagettopage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isOk(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v></type>
+<desc><marker id="isOk-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdataisok">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setCollate(This, Flag) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v><v>Flag = boolean()</v></type>
+<desc><marker id="setCollate-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdatasetcollate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFromPage(This, V) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v><v>V = integer()</v></type>
+<desc><marker id="setFromPage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdatasetfrompage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMaxPage(This, V) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v><v>V = integer()</v></type>
+<desc><marker id="setMaxPage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdatasetmaxpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMinPage(This, V) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v><v>V = integer()</v></type>
+<desc><marker id="setMinPage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdatasetminpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setNoCopies(This, V) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v><v>V = integer()</v></type>
+<desc><marker id="setNoCopies-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdatasetnocopies">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setPrintData(This, PrintData) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v><v>PrintData = <seealso marker="wxPrintData#type-wxPrintData">wxPrintData:wxPrintData()</seealso></v></type>
+<desc><marker id="setPrintData-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdatasetprintdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setPrintToFile(This, Flag) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v><v>Flag = boolean()</v></type>
+<desc><marker id="setPrintToFile-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdatasetprinttofile">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSelection(This, Flag) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v><v>Flag = boolean()</v></type>
+<desc><marker id="setSelection-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdatasetselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setToPage(This, V) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></v><v>V = integer()</v></type>
+<desc><marker id="setToPage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintdialogdata.html#wxprintdialogdatasettopage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

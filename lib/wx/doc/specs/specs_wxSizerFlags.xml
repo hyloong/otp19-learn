@@ -1,0 +1,175 @@
+<module name="wxSizerFlags">
+<type>
+  <name>wxSizerFlags</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxSizerFlags">wxSizerFlags()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>align</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>align(This, Alignment) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></string></subtype>
+        <subtype><typename>Alignment</typename><string>Alignment = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Alignment</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>border</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>border(This) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>border</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>border(This, Options :: [Option]) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {direction, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>border</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>border(This, Direction, BorderInPixels) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></string></subtype>
+        <subtype><typename>Direction</typename><string>Direction = BorderInPixels = integer()</string></subtype>
+        <subtype><typename>BorderInPixels</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>BorderInPixels</anno>
+  <anno>Direction</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>center</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>center(This) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>centre</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>centre(This) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>expand</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>expand(This) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>left</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>left(This) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>new() -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(Options :: [Option]) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></head>
+      <guard>
+        <subtype><typename>Option</typename><string>Option = {proportion, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>proportion</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>proportion(This, Proportion) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></string></subtype>
+        <subtype><typename>Proportion</typename><string>Proportion = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Proportion</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>right</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>right(This) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:46.</timestamp>
+</module>

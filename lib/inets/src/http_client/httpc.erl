@@ -1,7 +1,7 @@
 %%
 %% %CopyrightBegin%
 %%
-%% Copyright Ericsson AB 2009-2016. All Rights Reserved.
+%% Copyright Ericsson AB 2009-2017. All Rights Reserved.
 %%
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -524,7 +524,7 @@ handle_request(Method, Url,
 	    Options       = request_options(Options0), 
 	    Sync          = proplists:get_value(sync,   Options),
 	    Stream        = proplists:get_value(stream, Options),
-	    Host2         = header_host(Scheme, Host, Port), 
+	    Host2         = http_request:normalize_host(Scheme, Host, Port),
 	    HeadersRecord = header_record(NewHeaders, Host2, HTTPOptions),
 	    Receiver      = proplists:get_value(receiver, Options),
 	    SocketOpts    = proplists:get_value(socket_opts, Options),
@@ -1033,14 +1033,6 @@ validate_verbose(BadValue) ->
 
 bad_option(Option, BadValue) ->
     throw({error, {bad_option, Option, BadValue}}).
-
-
-header_host(https, Host, 443 = _Port) ->
-    Host;
-header_host(http, Host, 80 = _Port) ->
-    Host;
-header_host(_Scheme, Host, Port) ->
-    Host ++ ":" ++ integer_to_list(Port).
 
 
 header_record(NewHeaders, Host, #http_options{version = Version}) ->

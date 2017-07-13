@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxFontDialog</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxFontDialog.xml</file></header>
+<module>wxFontDialog</module>
+<modulesummary>See external documentation: wxFontDialog.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfontdialog.html">wxFontDialog</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxDialog">wxDialog</seealso>
+  <br/><seealso marker="wxTopLevelWindow">wxTopLevelWindow</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxFontDialog"/>wxFontDialog()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxFontDialog">wxFontDialog()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfontdialog.html#wxfontdialogwxfontdialog">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Data) -&gt; <seealso marker="#type-wxFontDialog">wxFontDialog()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Data = <seealso marker="wxFontData#type-wxFontData">wxFontData:wxFontData()</seealso></v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfontdialog.html#wxfontdialogwxfontdialog">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Data) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFontDialog">wxFontDialog()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Data = <seealso marker="wxFontData#type-wxFontData">wxFontData:wxFontData()</seealso></v></type>
+<desc><marker id="create-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfontdialog.html#wxfontdialogcreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFontData(This) -&gt; <seealso marker="wxFontData#type-wxFontData">wxFontData:wxFontData()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFontDialog">wxFontDialog()</seealso></v></type>
+<desc><marker id="getFontData-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfontdialog.html#wxfontdialoggetfontdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxFontDialog">wxFontDialog()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

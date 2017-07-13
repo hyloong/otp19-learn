@@ -233,11 +233,11 @@
 
 #if defined(ERTS_ENABLE_LOCK_CHECK) && defined(ERTS_SMP)
 #  define CALL_BIF(F) \
-		movq CSYM(F)@GOTPCREL(%rip), %r11; \
+		movq CSYM(nbif_impl_##F)@GOTPCREL(%rip), %r11; \
 		movq %r11, P_BIF_CALLEE(P); \
 		call CSYM(hipe_debug_bif_wrapper)
 #else
-#  define CALL_BIF(F)	call	CSYM(F)
+#  define CALL_BIF(F)	call	CSYM(nbif_impl_##F)
 #endif
 
 /*
@@ -344,13 +344,9 @@ ASYM(nbif_handle_fp_exception):
 #endif /* NO_FPE_SIGNALS */
 
 /*
- * Implement gc_bif_interface_0 as nofail_primop_interface_0.
+ * Implement gc_bif_interface_N as standard_bif_interface_N.
  */
 
-
-/*
- * Implement gc_bif_interface_N as standard_bif_interface_N (N=1,2,3).
- */
 
 
 
@@ -433,6 +429,32 @@ ASYM(nbif_handle_fp_exception):
  ****************************************************************/
 
 /*
+ * NOTE:
+ *  Beam BIFs have the prototype:
+ *    Eterm (*BIF)(Process *c_p, Eterm *regs, UWord *I)
+ *  Native BIFs have the prototype:
+ *    Eterm (*BIF)(Process *c_p, Eterm *regs)
+ *
+ * Beam BIFs expect 'I' to contain current instruction
+ * pointer when called from beam, and expect 'I' to
+ * contain a pointer to the export entry of the BIF
+ * when called from native code. In order to facilitate
+ * this, beam BIFs are called via wrapper functions
+ * when called from native code. These wrapper functions
+ * are auto-generated (by utils/make_tables) and have
+ * the function names nbif_impl_<BIF>.
+ *
+ * The standard_bif_interface_*() and
+ * gc_bif_interface_*() will add the prefix and
+ * thus call nbif_impl_<cbif_name>. That is, all
+ * functions (true BIFs as well as other c-functions)
+ * called via these interfaces have to be named
+ * nbif_impl_<FUNC>.
+ */
+
+/*
+ * See NOTE above!
+ *
  * standard_bif_interface_0(nbif_name, cbif_name)
  * standard_bif_interface_1(nbif_name, cbif_name)
  * standard_bif_interface_2(nbif_name, cbif_name)
@@ -455,6 +477,8 @@ ASYM(nbif_handle_fp_exception):
  */
 
 /*
+ * See NOTE above!
+ *
  * gc_bif_interface_0(nbif_name, cbif_name)
  * gc_bif_interface_1(nbif_name, cbif_name)
  * gc_bif_interface_2(nbif_name, cbif_name)
@@ -572,24 +596,23 @@ ASYM(nbif_ports_0):
  * XXX: erase/1 and put/2 cannot fail
  */
 
-#ifndef HAVE_nbif_erts_internal_check_process_code_2
-#define HAVE_nbif_erts_internal_check_process_code_2
+#ifndef HAVE_nbif_erts_internal_check_process_code_1
+#define HAVE_nbif_erts_internal_check_process_code_1
 	TEXT
 	.align	4
-	GLOBAL(ASYM(nbif_erts_internal_check_process_code_2))
-ASYM(nbif_erts_internal_check_process_code_2):
+	GLOBAL(ASYM(nbif_erts_internal_check_process_code_1))
+ASYM(nbif_erts_internal_check_process_code_1):
 	/* set up the parameters */
 	movq	P, %rdi
 	# movq	%rsi, %rsi
-	# movq	%rdx, %rdx
 
 	/* make the call on the C stack */
 	SWITCH_ERLANG_TO_C
-	pushq	%rdx
-	pushq 	%rsi
+	pushq	%rsi
 	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
-	CALL_BIF(hipe_erts_internal_check_process_code_2)
-	add	$(2*8), %rsp
+	sub	$(8), %rsp	/* stack frame 16-byte alignment */
+	CALL_BIF(hipe_erts_internal_check_process_code_1)
+	add	$(1*8 + 8), %rsp
 	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
 	testq %rdx, %rdx
 	jnz 3f	
@@ -598,13 +621,13 @@ ASYM(nbif_erts_internal_check_process_code_2):
 
 	/* throw exception if failure, otherwise return */
 	TEST_GOT_EXN
-	jz	nbif_2_simple_exception
+	jz	nbif_1_simple_exception
 	NSP_RET0
 	
-3:	call nbif_2_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+3:	call nbif_1_gc_after_bif	/* `HANDLE_GOT_MBUF' */
 	jmp 2b
-	SET_SIZE(ASYM(nbif_erts_internal_check_process_code_2))
-	TYPE_FUNCTION(ASYM(nbif_erts_internal_check_process_code_2))
+	SET_SIZE(ASYM(nbif_erts_internal_check_process_code_1))
+	TYPE_FUNCTION(ASYM(nbif_erts_internal_check_process_code_1))
 #endif
 
 #ifndef HAVE_nbif_erase_1
@@ -641,31 +664,38 @@ ASYM(nbif_erase_1):
 	TYPE_FUNCTION(ASYM(nbif_erase_1))
 #endif
 
-#ifndef HAVE_nbif_garbage_collect_0
-#define HAVE_nbif_garbage_collect_0
+#ifndef HAVE_nbif_erts_internal_garbage_collect_1
+#define HAVE_nbif_erts_internal_garbage_collect_1
 	TEXT
 	.align	4
-	GLOBAL(ASYM(nbif_garbage_collect_0))
-ASYM(nbif_garbage_collect_0):
+	GLOBAL(ASYM(nbif_erts_internal_garbage_collect_1))
+ASYM(nbif_erts_internal_garbage_collect_1):
 	/* set up the parameters */
 	movq	P, %rdi
+	# movq	%rsi, %rsi
 
 	/* make the call on the C stack */
 	SWITCH_ERLANG_TO_C
-	call	CSYM(garbage_collect_0)
+	pushq	%rsi
+	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
+	sub	$(8), %rsp	/* stack frame 16-byte alignment */
+	CALL_BIF(erts_internal_garbage_collect_1)
+	add	$(1*8 + 8), %rsp
 	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
 	testq %rdx, %rdx
 	jnz 3f	
 2:
 	SWITCH_C_TO_ERLANG
 
-	/* return */
+	/* throw exception if failure, otherwise return */
+	TEST_GOT_EXN
+	jz	nbif_1_simple_exception
 	NSP_RET0
 	
-3:	call nbif_0_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+3:	call nbif_1_gc_after_bif	/* `HANDLE_GOT_MBUF' */
 	jmp 2b
-	SET_SIZE(ASYM(nbif_garbage_collect_0))
-	TYPE_FUNCTION(ASYM(nbif_garbage_collect_0))
+	SET_SIZE(ASYM(nbif_erts_internal_garbage_collect_1))
+	TYPE_FUNCTION(ASYM(nbif_erts_internal_garbage_collect_1))
 #endif
 
 #ifndef HAVE_nbif_gc_1
@@ -816,14 +846,16 @@ ASYM(nbif_hipe_bifs_nstack_used_size_0):
 
 	/* make the call on the C stack */
 	SWITCH_ERLANG_TO_C
-	call	CSYM(hipe_bifs_nstack_used_size_0)
+	CALL_BIF(hipe_bifs_nstack_used_size_0)
 	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
 	testq %rdx, %rdx
 	jnz 3f	
 2:
 	SWITCH_C_TO_ERLANG
 
-	/* return */
+	/* throw exception if failure, otherwise return */
+	TEST_GOT_EXN
+	jz	nbif_0_simple_exception
 	NSP_RET0
 	
 3:	call nbif_0_gc_after_bif	/* `HANDLE_GOT_MBUF' */
@@ -2726,7 +2758,7 @@ ASYM(nbif_maps_merge_2):
 
 /*
  *  Warning: Do not edit this file.  It was automatically
- *  generated by 'make_tables' on Fri Jun 23 14:44:45 2017.
+ *  generated by 'make_tables' on Wed Jul 12 20:40:22 2017.
  */
 
 
@@ -3690,18 +3722,23 @@ ASYM(nbif_fun_info_2):
 	TYPE_FUNCTION(ASYM(nbif_fun_info_2))
 #endif
 
-#ifndef HAVE_nbif_garbage_collect_0
-#define HAVE_nbif_garbage_collect_0
+#ifndef HAVE_nbif_erts_internal_garbage_collect_1
+#define HAVE_nbif_erts_internal_garbage_collect_1
 	TEXT
 	.align	4
-	GLOBAL(ASYM(nbif_garbage_collect_0))
-ASYM(nbif_garbage_collect_0):
+	GLOBAL(ASYM(nbif_erts_internal_garbage_collect_1))
+ASYM(nbif_erts_internal_garbage_collect_1):
 	/* set up the parameters */
 	movq	P, %rdi
+	# movq	%rsi, %rsi
 
 	/* make the call on the C stack */
 	SWITCH_ERLANG_TO_C
-	CALL_BIF(garbage_collect_0)
+	pushq	%rsi
+	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
+	sub	$(8), %rsp	/* stack frame 16-byte alignment */
+	CALL_BIF(erts_internal_garbage_collect_1)
+	add	$(1*8 + 8), %rsp
 	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
 	testq %rdx, %rdx
 	jnz 3f	
@@ -3710,13 +3747,13 @@ ASYM(nbif_garbage_collect_0):
 
 	/* throw exception if failure, otherwise return */
 	TEST_GOT_EXN
-	jz	nbif_0_simple_exception
+	jz	nbif_1_simple_exception
 	NSP_RET0
 	
-3:	call nbif_0_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+3:	call nbif_1_gc_after_bif	/* `HANDLE_GOT_MBUF' */
 	jmp 2b
-	SET_SIZE(ASYM(nbif_garbage_collect_0))
-	TYPE_FUNCTION(ASYM(nbif_garbage_collect_0))
+	SET_SIZE(ASYM(nbif_erts_internal_garbage_collect_1))
+	TYPE_FUNCTION(ASYM(nbif_erts_internal_garbage_collect_1))
 #endif
 
 #ifndef HAVE_nbif_get_0
@@ -4352,6 +4389,74 @@ ASYM(nbif_list_to_pid_1):
 	jmp 2b
 	SET_SIZE(ASYM(nbif_list_to_pid_1))
 	TYPE_FUNCTION(ASYM(nbif_list_to_pid_1))
+#endif
+
+#ifndef HAVE_nbif_list_to_port_1
+#define HAVE_nbif_list_to_port_1
+	TEXT
+	.align	4
+	GLOBAL(ASYM(nbif_list_to_port_1))
+ASYM(nbif_list_to_port_1):
+	/* set up the parameters */
+	movq	P, %rdi
+	# movq	%rsi, %rsi
+
+	/* make the call on the C stack */
+	SWITCH_ERLANG_TO_C
+	pushq	%rsi
+	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
+	sub	$(8), %rsp	/* stack frame 16-byte alignment */
+	CALL_BIF(list_to_port_1)
+	add	$(1*8 + 8), %rsp
+	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
+	testq %rdx, %rdx
+	jnz 3f	
+2:
+	SWITCH_C_TO_ERLANG
+
+	/* throw exception if failure, otherwise return */
+	TEST_GOT_EXN
+	jz	nbif_1_simple_exception
+	NSP_RET0
+	
+3:	call nbif_1_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+	jmp 2b
+	SET_SIZE(ASYM(nbif_list_to_port_1))
+	TYPE_FUNCTION(ASYM(nbif_list_to_port_1))
+#endif
+
+#ifndef HAVE_nbif_list_to_ref_1
+#define HAVE_nbif_list_to_ref_1
+	TEXT
+	.align	4
+	GLOBAL(ASYM(nbif_list_to_ref_1))
+ASYM(nbif_list_to_ref_1):
+	/* set up the parameters */
+	movq	P, %rdi
+	# movq	%rsi, %rsi
+
+	/* make the call on the C stack */
+	SWITCH_ERLANG_TO_C
+	pushq	%rsi
+	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
+	sub	$(8), %rsp	/* stack frame 16-byte alignment */
+	CALL_BIF(list_to_ref_1)
+	add	$(1*8 + 8), %rsp
+	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
+	testq %rdx, %rdx
+	jnz 3f	
+2:
+	SWITCH_C_TO_ERLANG
+
+	/* throw exception if failure, otherwise return */
+	TEST_GOT_EXN
+	jz	nbif_1_simple_exception
+	NSP_RET0
+	
+3:	call nbif_1_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+	jmp 2b
+	SET_SIZE(ASYM(nbif_list_to_ref_1))
+	TYPE_FUNCTION(ASYM(nbif_list_to_ref_1))
 #endif
 
 #ifndef HAVE_nbif_list_to_tuple_1
@@ -6744,24 +6849,23 @@ ASYM(nbif_erts_internal_request_system_task_4):
 	TYPE_FUNCTION(ASYM(nbif_erts_internal_request_system_task_4))
 #endif
 
-#ifndef HAVE_nbif_erts_internal_check_process_code_2
-#define HAVE_nbif_erts_internal_check_process_code_2
+#ifndef HAVE_nbif_erts_internal_check_process_code_1
+#define HAVE_nbif_erts_internal_check_process_code_1
 	TEXT
 	.align	4
-	GLOBAL(ASYM(nbif_erts_internal_check_process_code_2))
-ASYM(nbif_erts_internal_check_process_code_2):
+	GLOBAL(ASYM(nbif_erts_internal_check_process_code_1))
+ASYM(nbif_erts_internal_check_process_code_1):
 	/* set up the parameters */
 	movq	P, %rdi
 	# movq	%rsi, %rsi
-	# movq	%rdx, %rdx
 
 	/* make the call on the C stack */
 	SWITCH_ERLANG_TO_C
-	pushq	%rdx
-	pushq 	%rsi
+	pushq	%rsi
 	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
-	CALL_BIF(erts_internal_check_process_code_2)
-	add	$(2*8), %rsp
+	sub	$(8), %rsp	/* stack frame 16-byte alignment */
+	CALL_BIF(erts_internal_check_process_code_1)
+	add	$(1*8 + 8), %rsp
 	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
 	testq %rdx, %rdx
 	jnz 3f	
@@ -6770,13 +6874,13 @@ ASYM(nbif_erts_internal_check_process_code_2):
 
 	/* throw exception if failure, otherwise return */
 	TEST_GOT_EXN
-	jz	nbif_2_simple_exception
+	jz	nbif_1_simple_exception
 	NSP_RET0
 	
-3:	call nbif_2_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+3:	call nbif_1_gc_after_bif	/* `HANDLE_GOT_MBUF' */
 	jmp 2b
-	SET_SIZE(ASYM(nbif_erts_internal_check_process_code_2))
-	TYPE_FUNCTION(ASYM(nbif_erts_internal_check_process_code_2))
+	SET_SIZE(ASYM(nbif_erts_internal_check_process_code_1))
+	TYPE_FUNCTION(ASYM(nbif_erts_internal_check_process_code_1))
 #endif
 
 #ifndef HAVE_nbif_erts_internal_map_to_tuple_keys_1
@@ -10961,18 +11065,18 @@ ASYM(nbif_match_spec_test_3):
 	TYPE_FUNCTION(ASYM(nbif_match_spec_test_3))
 #endif
 
-#ifndef HAVE_nbif_ets_all_0
-#define HAVE_nbif_ets_all_0
+#ifndef HAVE_nbif_ets_internal_request_all_0
+#define HAVE_nbif_ets_internal_request_all_0
 	TEXT
 	.align	4
-	GLOBAL(ASYM(nbif_ets_all_0))
-ASYM(nbif_ets_all_0):
+	GLOBAL(ASYM(nbif_ets_internal_request_all_0))
+ASYM(nbif_ets_internal_request_all_0):
 	/* set up the parameters */
 	movq	P, %rdi
 
 	/* make the call on the C stack */
 	SWITCH_ERLANG_TO_C
-	CALL_BIF(ets_all_0)
+	CALL_BIF(ets_internal_request_all_0)
 	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
 	testq %rdx, %rdx
 	jnz 3f	
@@ -10986,8 +11090,8 @@ ASYM(nbif_ets_all_0):
 	
 3:	call nbif_0_gc_after_bif	/* `HANDLE_GOT_MBUF' */
 	jmp 2b
-	SET_SIZE(ASYM(nbif_ets_all_0))
-	TYPE_FUNCTION(ASYM(nbif_ets_all_0))
+	SET_SIZE(ASYM(nbif_ets_internal_request_all_0))
+	TYPE_FUNCTION(ASYM(nbif_ets_internal_request_all_0))
 #endif
 
 #ifndef HAVE_nbif_ets_new_2
@@ -12223,6 +12327,41 @@ ASYM(nbif_ets_select_delete_2):
 	TYPE_FUNCTION(ASYM(nbif_ets_select_delete_2))
 #endif
 
+#ifndef HAVE_nbif_ets_select_replace_2
+#define HAVE_nbif_ets_select_replace_2
+	TEXT
+	.align	4
+	GLOBAL(ASYM(nbif_ets_select_replace_2))
+ASYM(nbif_ets_select_replace_2):
+	/* set up the parameters */
+	movq	P, %rdi
+	# movq	%rsi, %rsi
+	# movq	%rdx, %rdx
+
+	/* make the call on the C stack */
+	SWITCH_ERLANG_TO_C
+	pushq	%rdx
+	pushq 	%rsi
+	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
+	CALL_BIF(ets_select_replace_2)
+	add	$(2*8), %rsp
+	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
+	testq %rdx, %rdx
+	jnz 3f	
+2:
+	SWITCH_C_TO_ERLANG
+
+	/* throw exception if failure, otherwise return */
+	TEST_GOT_EXN
+	jz	nbif_2_simple_exception
+	NSP_RET0
+	
+3:	call nbif_2_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+	jmp 2b
+	SET_SIZE(ASYM(nbif_ets_select_replace_2))
+	TYPE_FUNCTION(ASYM(nbif_ets_select_replace_2))
+#endif
+
 #ifndef HAVE_nbif_ets_match_spec_compile_1
 #define HAVE_nbif_ets_match_spec_compile_1
 	TEXT
@@ -12781,6 +12920,35 @@ ASYM(nbif_erl_ddll_demonitor_1):
 	jmp 2b
 	SET_SIZE(ASYM(nbif_erl_ddll_demonitor_1))
 	TYPE_FUNCTION(ASYM(nbif_erl_ddll_demonitor_1))
+#endif
+
+#ifndef HAVE_nbif_re_version_0
+#define HAVE_nbif_re_version_0
+	TEXT
+	.align	4
+	GLOBAL(ASYM(nbif_re_version_0))
+ASYM(nbif_re_version_0):
+	/* set up the parameters */
+	movq	P, %rdi
+
+	/* make the call on the C stack */
+	SWITCH_ERLANG_TO_C
+	CALL_BIF(re_version_0)
+	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
+	testq %rdx, %rdx
+	jnz 3f	
+2:
+	SWITCH_C_TO_ERLANG
+
+	/* throw exception if failure, otherwise return */
+	TEST_GOT_EXN
+	jz	nbif_0_simple_exception
+	NSP_RET0
+	
+3:	call nbif_0_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+	jmp 2b
+	SET_SIZE(ASYM(nbif_re_version_0))
+	TYPE_FUNCTION(ASYM(nbif_re_version_0))
 #endif
 
 #ifndef HAVE_nbif_re_compile_1
@@ -13414,6 +13582,114 @@ ASYM(nbif_erts_debug_instructions_0):
 	TYPE_FUNCTION(ASYM(nbif_erts_debug_instructions_0))
 #endif
 
+#ifndef HAVE_nbif_erts_debug_dirty_cpu_2
+#define HAVE_nbif_erts_debug_dirty_cpu_2
+	TEXT
+	.align	4
+	GLOBAL(ASYM(nbif_erts_debug_dirty_cpu_2))
+ASYM(nbif_erts_debug_dirty_cpu_2):
+	/* set up the parameters */
+	movq	P, %rdi
+	# movq	%rsi, %rsi
+	# movq	%rdx, %rdx
+
+	/* make the call on the C stack */
+	SWITCH_ERLANG_TO_C
+	pushq	%rdx
+	pushq 	%rsi
+	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
+	CALL_BIF(erts_debug_dirty_cpu_2)
+	add	$(2*8), %rsp
+	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
+	testq %rdx, %rdx
+	jnz 3f	
+2:
+	SWITCH_C_TO_ERLANG
+
+	/* throw exception if failure, otherwise return */
+	TEST_GOT_EXN
+	jz	nbif_2_simple_exception
+	NSP_RET0
+	
+3:	call nbif_2_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+	jmp 2b
+	SET_SIZE(ASYM(nbif_erts_debug_dirty_cpu_2))
+	TYPE_FUNCTION(ASYM(nbif_erts_debug_dirty_cpu_2))
+#endif
+
+#ifndef HAVE_nbif_erts_debug_dirty_io_2
+#define HAVE_nbif_erts_debug_dirty_io_2
+	TEXT
+	.align	4
+	GLOBAL(ASYM(nbif_erts_debug_dirty_io_2))
+ASYM(nbif_erts_debug_dirty_io_2):
+	/* set up the parameters */
+	movq	P, %rdi
+	# movq	%rsi, %rsi
+	# movq	%rdx, %rdx
+
+	/* make the call on the C stack */
+	SWITCH_ERLANG_TO_C
+	pushq	%rdx
+	pushq 	%rsi
+	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
+	CALL_BIF(erts_debug_dirty_io_2)
+	add	$(2*8), %rsp
+	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
+	testq %rdx, %rdx
+	jnz 3f	
+2:
+	SWITCH_C_TO_ERLANG
+
+	/* throw exception if failure, otherwise return */
+	TEST_GOT_EXN
+	jz	nbif_2_simple_exception
+	NSP_RET0
+	
+3:	call nbif_2_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+	jmp 2b
+	SET_SIZE(ASYM(nbif_erts_debug_dirty_io_2))
+	TYPE_FUNCTION(ASYM(nbif_erts_debug_dirty_io_2))
+#endif
+
+#ifndef HAVE_nbif_erts_debug_dirty_3
+#define HAVE_nbif_erts_debug_dirty_3
+	TEXT
+	.align	4
+	GLOBAL(ASYM(nbif_erts_debug_dirty_3))
+ASYM(nbif_erts_debug_dirty_3):
+	/* set up the parameters */
+	movq	P, %rdi
+	# movq	%rsi, %rsi
+	# movq	%rdx, %rdx
+	# movq	%rcx, %rcx
+
+	/* make the call on the C stack */
+	SWITCH_ERLANG_TO_C
+	pushq 	%rcx
+	pushq	%rdx
+	pushq	%rsi
+	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
+	sub	$(8), %rsp	/* stack frame 16-byte alignment */  
+	CALL_BIF(erts_debug_dirty_3)
+	add	$(3*8 + 8), %rsp
+	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
+	testq %rdx, %rdx
+	jnz 3f	
+2:
+	SWITCH_C_TO_ERLANG
+
+	/* throw exception if failure, otherwise return */
+	TEST_GOT_EXN
+	jz	nbif_3_simple_exception
+	NSP_RET0
+	
+3:	call nbif_3_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+	jmp 2b
+	SET_SIZE(ASYM(nbif_erts_debug_dirty_3))
+	TYPE_FUNCTION(ASYM(nbif_erts_debug_dirty_3))
+#endif
+
 #ifndef HAVE_nbif_erts_debug_dump_monitors_1
 #define HAVE_nbif_erts_debug_dump_monitors_1
 	TEXT
@@ -13827,12 +14103,12 @@ ASYM(nbif_is_boolean_1):
 	TYPE_FUNCTION(ASYM(nbif_is_boolean_1))
 #endif
 
-#ifndef HAVE_nbif_string_to_integer_1
-#define HAVE_nbif_string_to_integer_1
+#ifndef HAVE_nbif_string_list_to_integer_1
+#define HAVE_nbif_string_list_to_integer_1
 	TEXT
 	.align	4
-	GLOBAL(ASYM(nbif_string_to_integer_1))
-ASYM(nbif_string_to_integer_1):
+	GLOBAL(ASYM(nbif_string_list_to_integer_1))
+ASYM(nbif_string_list_to_integer_1):
 	/* set up the parameters */
 	movq	P, %rdi
 	# movq	%rsi, %rsi
@@ -13842,7 +14118,7 @@ ASYM(nbif_string_to_integer_1):
 	pushq	%rsi
 	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
 	sub	$(8), %rsp	/* stack frame 16-byte alignment */
-	CALL_BIF(string_to_integer_1)
+	CALL_BIF(string_list_to_integer_1)
 	add	$(1*8 + 8), %rsp
 	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
 	testq %rdx, %rdx
@@ -13857,16 +14133,16 @@ ASYM(nbif_string_to_integer_1):
 	
 3:	call nbif_1_gc_after_bif	/* `HANDLE_GOT_MBUF' */
 	jmp 2b
-	SET_SIZE(ASYM(nbif_string_to_integer_1))
-	TYPE_FUNCTION(ASYM(nbif_string_to_integer_1))
+	SET_SIZE(ASYM(nbif_string_list_to_integer_1))
+	TYPE_FUNCTION(ASYM(nbif_string_list_to_integer_1))
 #endif
 
-#ifndef HAVE_nbif_string_to_float_1
-#define HAVE_nbif_string_to_float_1
+#ifndef HAVE_nbif_string_list_to_float_1
+#define HAVE_nbif_string_list_to_float_1
 	TEXT
 	.align	4
-	GLOBAL(ASYM(nbif_string_to_float_1))
-ASYM(nbif_string_to_float_1):
+	GLOBAL(ASYM(nbif_string_list_to_float_1))
+ASYM(nbif_string_list_to_float_1):
 	/* set up the parameters */
 	movq	P, %rdi
 	# movq	%rsi, %rsi
@@ -13876,7 +14152,7 @@ ASYM(nbif_string_to_float_1):
 	pushq	%rsi
 	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
 	sub	$(8), %rsp	/* stack frame 16-byte alignment */
-	CALL_BIF(string_to_float_1)
+	CALL_BIF(string_list_to_float_1)
 	add	$(1*8 + 8), %rsp
 	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
 	testq %rdx, %rdx
@@ -13891,8 +14167,8 @@ ASYM(nbif_string_to_float_1):
 	
 3:	call nbif_1_gc_after_bif	/* `HANDLE_GOT_MBUF' */
 	jmp 2b
-	SET_SIZE(ASYM(nbif_string_to_float_1))
-	TYPE_FUNCTION(ASYM(nbif_string_to_float_1))
+	SET_SIZE(ASYM(nbif_string_list_to_float_1))
+	TYPE_FUNCTION(ASYM(nbif_string_list_to_float_1))
 #endif
 
 #ifndef HAVE_nbif_make_fun_3
@@ -17698,12 +17974,148 @@ ASYM(nbif_maps_take_2):
 	TYPE_FUNCTION(ASYM(nbif_maps_take_2))
 #endif
 
-#ifndef HAVE_nbif_hash_2
-#define HAVE_nbif_hash_2
+#ifndef HAVE_nbif_floor_1
+#define HAVE_nbif_floor_1
 	TEXT
 	.align	4
-	GLOBAL(ASYM(nbif_hash_2))
-ASYM(nbif_hash_2):
+	GLOBAL(ASYM(nbif_floor_1))
+ASYM(nbif_floor_1):
+	/* set up the parameters */
+	movq	P, %rdi
+	# movq	%rsi, %rsi
+
+	/* make the call on the C stack */
+	SWITCH_ERLANG_TO_C
+	pushq	%rsi
+	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
+	sub	$(8), %rsp	/* stack frame 16-byte alignment */
+	CALL_BIF(floor_1)
+	add	$(1*8 + 8), %rsp
+	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
+	testq %rdx, %rdx
+	jnz 3f	
+2:
+	SWITCH_C_TO_ERLANG
+
+	/* throw exception if failure, otherwise return */
+	TEST_GOT_EXN
+	jz	nbif_1_simple_exception
+	NSP_RET0
+	
+3:	call nbif_1_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+	jmp 2b
+	SET_SIZE(ASYM(nbif_floor_1))
+	TYPE_FUNCTION(ASYM(nbif_floor_1))
+#endif
+
+#ifndef HAVE_nbif_ceil_1
+#define HAVE_nbif_ceil_1
+	TEXT
+	.align	4
+	GLOBAL(ASYM(nbif_ceil_1))
+ASYM(nbif_ceil_1):
+	/* set up the parameters */
+	movq	P, %rdi
+	# movq	%rsi, %rsi
+
+	/* make the call on the C stack */
+	SWITCH_ERLANG_TO_C
+	pushq	%rsi
+	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
+	sub	$(8), %rsp	/* stack frame 16-byte alignment */
+	CALL_BIF(ceil_1)
+	add	$(1*8 + 8), %rsp
+	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
+	testq %rdx, %rdx
+	jnz 3f	
+2:
+	SWITCH_C_TO_ERLANG
+
+	/* throw exception if failure, otherwise return */
+	TEST_GOT_EXN
+	jz	nbif_1_simple_exception
+	NSP_RET0
+	
+3:	call nbif_1_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+	jmp 2b
+	SET_SIZE(ASYM(nbif_ceil_1))
+	TYPE_FUNCTION(ASYM(nbif_ceil_1))
+#endif
+
+#ifndef HAVE_nbif_math_floor_1
+#define HAVE_nbif_math_floor_1
+	TEXT
+	.align	4
+	GLOBAL(ASYM(nbif_math_floor_1))
+ASYM(nbif_math_floor_1):
+	/* set up the parameters */
+	movq	P, %rdi
+	# movq	%rsi, %rsi
+
+	/* make the call on the C stack */
+	SWITCH_ERLANG_TO_C
+	pushq	%rsi
+	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
+	sub	$(8), %rsp	/* stack frame 16-byte alignment */
+	CALL_BIF(math_floor_1)
+	add	$(1*8 + 8), %rsp
+	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
+	testq %rdx, %rdx
+	jnz 3f	
+2:
+	SWITCH_C_TO_ERLANG
+
+	/* throw exception if failure, otherwise return */
+	TEST_GOT_EXN
+	jz	nbif_1_simple_exception
+	NSP_RET0
+	
+3:	call nbif_1_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+	jmp 2b
+	SET_SIZE(ASYM(nbif_math_floor_1))
+	TYPE_FUNCTION(ASYM(nbif_math_floor_1))
+#endif
+
+#ifndef HAVE_nbif_math_ceil_1
+#define HAVE_nbif_math_ceil_1
+	TEXT
+	.align	4
+	GLOBAL(ASYM(nbif_math_ceil_1))
+ASYM(nbif_math_ceil_1):
+	/* set up the parameters */
+	movq	P, %rdi
+	# movq	%rsi, %rsi
+
+	/* make the call on the C stack */
+	SWITCH_ERLANG_TO_C
+	pushq	%rsi
+	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
+	sub	$(8), %rsp	/* stack frame 16-byte alignment */
+	CALL_BIF(math_ceil_1)
+	add	$(1*8 + 8), %rsp
+	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
+	testq %rdx, %rdx
+	jnz 3f	
+2:
+	SWITCH_C_TO_ERLANG
+
+	/* throw exception if failure, otherwise return */
+	TEST_GOT_EXN
+	jz	nbif_1_simple_exception
+	NSP_RET0
+	
+3:	call nbif_1_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+	jmp 2b
+	SET_SIZE(ASYM(nbif_math_ceil_1))
+	TYPE_FUNCTION(ASYM(nbif_math_ceil_1))
+#endif
+
+#ifndef HAVE_nbif_math_fmod_2
+#define HAVE_nbif_math_fmod_2
+	TEXT
+	.align	4
+	GLOBAL(ASYM(nbif_math_fmod_2))
+ASYM(nbif_math_fmod_2):
 	/* set up the parameters */
 	movq	P, %rdi
 	# movq	%rsi, %rsi
@@ -17714,7 +18126,7 @@ ASYM(nbif_hash_2):
 	pushq	%rdx
 	pushq 	%rsi
 	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
-	CALL_BIF(hash_2)
+	CALL_BIF(math_fmod_2)
 	add	$(2*8), %rsp
 	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
 	testq %rdx, %rdx
@@ -17729,8 +18141,78 @@ ASYM(nbif_hash_2):
 	
 3:	call nbif_2_gc_after_bif	/* `HANDLE_GOT_MBUF' */
 	jmp 2b
-	SET_SIZE(ASYM(nbif_hash_2))
-	TYPE_FUNCTION(ASYM(nbif_hash_2))
+	SET_SIZE(ASYM(nbif_math_fmod_2))
+	TYPE_FUNCTION(ASYM(nbif_math_fmod_2))
+#endif
+
+#ifndef HAVE_nbif_os_set_signal_2
+#define HAVE_nbif_os_set_signal_2
+	TEXT
+	.align	4
+	GLOBAL(ASYM(nbif_os_set_signal_2))
+ASYM(nbif_os_set_signal_2):
+	/* set up the parameters */
+	movq	P, %rdi
+	# movq	%rsi, %rsi
+	# movq	%rdx, %rdx
+
+	/* make the call on the C stack */
+	SWITCH_ERLANG_TO_C
+	pushq	%rdx
+	pushq 	%rsi
+	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
+	CALL_BIF(os_set_signal_2)
+	add	$(2*8), %rsp
+	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
+	testq %rdx, %rdx
+	jnz 3f	
+2:
+	SWITCH_C_TO_ERLANG
+
+	/* throw exception if failure, otherwise return */
+	TEST_GOT_EXN
+	jz	nbif_2_simple_exception
+	NSP_RET0
+	
+3:	call nbif_2_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+	jmp 2b
+	SET_SIZE(ASYM(nbif_os_set_signal_2))
+	TYPE_FUNCTION(ASYM(nbif_os_set_signal_2))
+#endif
+
+#ifndef HAVE_nbif_erts_internal_maps_to_list_2
+#define HAVE_nbif_erts_internal_maps_to_list_2
+	TEXT
+	.align	4
+	GLOBAL(ASYM(nbif_erts_internal_maps_to_list_2))
+ASYM(nbif_erts_internal_maps_to_list_2):
+	/* set up the parameters */
+	movq	P, %rdi
+	# movq	%rsi, %rsi
+	# movq	%rdx, %rdx
+
+	/* make the call on the C stack */
+	SWITCH_ERLANG_TO_C
+	pushq	%rdx
+	pushq 	%rsi
+	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
+	CALL_BIF(erts_internal_maps_to_list_2)
+	add	$(2*8), %rsp
+	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
+	testq %rdx, %rdx
+	jnz 3f	
+2:
+	SWITCH_C_TO_ERLANG
+
+	/* throw exception if failure, otherwise return */
+	TEST_GOT_EXN
+	jz	nbif_2_simple_exception
+	NSP_RET0
+	
+3:	call nbif_2_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+	jmp 2b
+	SET_SIZE(ASYM(nbif_erts_internal_maps_to_list_2))
+	TYPE_FUNCTION(ASYM(nbif_erts_internal_maps_to_list_2))
 #endif
 
 #ifndef HAVE_nbif_hipe_bifs_write_u8_2
@@ -18264,24 +18746,27 @@ ASYM(nbif_hipe_bifs_ref_set_2):
 	TYPE_FUNCTION(ASYM(nbif_hipe_bifs_ref_set_2))
 #endif
 
-#ifndef HAVE_nbif_hipe_bifs_enter_code_2
-#define HAVE_nbif_hipe_bifs_enter_code_2
+#ifndef HAVE_nbif_hipe_bifs_enter_code_3
+#define HAVE_nbif_hipe_bifs_enter_code_3
 	TEXT
 	.align	4
-	GLOBAL(ASYM(nbif_hipe_bifs_enter_code_2))
-ASYM(nbif_hipe_bifs_enter_code_2):
+	GLOBAL(ASYM(nbif_hipe_bifs_enter_code_3))
+ASYM(nbif_hipe_bifs_enter_code_3):
 	/* set up the parameters */
 	movq	P, %rdi
 	# movq	%rsi, %rsi
 	# movq	%rdx, %rdx
+	# movq	%rcx, %rcx
 
 	/* make the call on the C stack */
 	SWITCH_ERLANG_TO_C
+	pushq 	%rcx
 	pushq	%rdx
-	pushq 	%rsi
+	pushq	%rsi
 	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
-	CALL_BIF(hipe_bifs_enter_code_2)
-	add	$(2*8), %rsp
+	sub	$(8), %rsp	/* stack frame 16-byte alignment */  
+	CALL_BIF(hipe_bifs_enter_code_3)
+	add	$(3*8 + 8), %rsp
 	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
 	testq %rdx, %rdx
 	jnz 3f	
@@ -18290,33 +18775,36 @@ ASYM(nbif_hipe_bifs_enter_code_2):
 
 	/* throw exception if failure, otherwise return */
 	TEST_GOT_EXN
-	jz	nbif_2_simple_exception
+	jz	nbif_3_simple_exception
 	NSP_RET0
 	
-3:	call nbif_2_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+3:	call nbif_3_gc_after_bif	/* `HANDLE_GOT_MBUF' */
 	jmp 2b
-	SET_SIZE(ASYM(nbif_hipe_bifs_enter_code_2))
-	TYPE_FUNCTION(ASYM(nbif_hipe_bifs_enter_code_2))
+	SET_SIZE(ASYM(nbif_hipe_bifs_enter_code_3))
+	TYPE_FUNCTION(ASYM(nbif_hipe_bifs_enter_code_3))
 #endif
 
-#ifndef HAVE_nbif_hipe_bifs_alloc_data_2
-#define HAVE_nbif_hipe_bifs_alloc_data_2
+#ifndef HAVE_nbif_hipe_bifs_alloc_data_3
+#define HAVE_nbif_hipe_bifs_alloc_data_3
 	TEXT
 	.align	4
-	GLOBAL(ASYM(nbif_hipe_bifs_alloc_data_2))
-ASYM(nbif_hipe_bifs_alloc_data_2):
+	GLOBAL(ASYM(nbif_hipe_bifs_alloc_data_3))
+ASYM(nbif_hipe_bifs_alloc_data_3):
 	/* set up the parameters */
 	movq	P, %rdi
 	# movq	%rsi, %rsi
 	# movq	%rdx, %rdx
+	# movq	%rcx, %rcx
 
 	/* make the call on the C stack */
 	SWITCH_ERLANG_TO_C
+	pushq 	%rcx
 	pushq	%rdx
-	pushq 	%rsi
+	pushq	%rsi
 	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
-	CALL_BIF(hipe_bifs_alloc_data_2)
-	add	$(2*8), %rsp
+	sub	$(8), %rsp	/* stack frame 16-byte alignment */  
+	CALL_BIF(hipe_bifs_alloc_data_3)
+	add	$(3*8 + 8), %rsp
 	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
 	testq %rdx, %rdx
 	jnz 3f	
@@ -18325,13 +18813,13 @@ ASYM(nbif_hipe_bifs_alloc_data_2):
 
 	/* throw exception if failure, otherwise return */
 	TEST_GOT_EXN
-	jz	nbif_2_simple_exception
+	jz	nbif_3_simple_exception
 	NSP_RET0
 	
-3:	call nbif_2_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+3:	call nbif_3_gc_after_bif	/* `HANDLE_GOT_MBUF' */
 	jmp 2b
-	SET_SIZE(ASYM(nbif_hipe_bifs_alloc_data_2))
-	TYPE_FUNCTION(ASYM(nbif_hipe_bifs_alloc_data_2))
+	SET_SIZE(ASYM(nbif_hipe_bifs_alloc_data_3))
+	TYPE_FUNCTION(ASYM(nbif_hipe_bifs_alloc_data_3))
 #endif
 
 #ifndef HAVE_nbif_hipe_bifs_constants_size_0
@@ -18431,6 +18919,40 @@ ASYM(nbif_hipe_bifs_fun_to_address_1):
 	TYPE_FUNCTION(ASYM(nbif_hipe_bifs_fun_to_address_1))
 #endif
 
+#ifndef HAVE_nbif_hipe_bifs_commit_patch_load_1
+#define HAVE_nbif_hipe_bifs_commit_patch_load_1
+	TEXT
+	.align	4
+	GLOBAL(ASYM(nbif_hipe_bifs_commit_patch_load_1))
+ASYM(nbif_hipe_bifs_commit_patch_load_1):
+	/* set up the parameters */
+	movq	P, %rdi
+	# movq	%rsi, %rsi
+
+	/* make the call on the C stack */
+	SWITCH_ERLANG_TO_C
+	pushq	%rsi
+	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
+	sub	$(8), %rsp	/* stack frame 16-byte alignment */
+	CALL_BIF(hipe_bifs_commit_patch_load_1)
+	add	$(1*8 + 8), %rsp
+	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
+	testq %rdx, %rdx
+	jnz 3f	
+2:
+	SWITCH_C_TO_ERLANG
+
+	/* throw exception if failure, otherwise return */
+	TEST_GOT_EXN
+	jz	nbif_1_simple_exception
+	NSP_RET0
+	
+3:	call nbif_1_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+	jmp 2b
+	SET_SIZE(ASYM(nbif_hipe_bifs_commit_patch_load_1))
+	TYPE_FUNCTION(ASYM(nbif_hipe_bifs_commit_patch_load_1))
+#endif
+
 #ifndef HAVE_nbif_hipe_bifs_set_native_address_3
 #define HAVE_nbif_hipe_bifs_set_native_address_3
 	TEXT
@@ -18507,61 +19029,24 @@ ASYM(nbif_hipe_bifs_set_funinfo_native_address_3):
 	TYPE_FUNCTION(ASYM(nbif_hipe_bifs_set_funinfo_native_address_3))
 #endif
 
-#ifndef HAVE_nbif_hipe_bifs_invalidate_funinfo_native_addresses_1
-#define HAVE_nbif_hipe_bifs_invalidate_funinfo_native_addresses_1
+#ifndef HAVE_nbif_hipe_bifs_enter_sdesc_2
+#define HAVE_nbif_hipe_bifs_enter_sdesc_2
 	TEXT
 	.align	4
-	GLOBAL(ASYM(nbif_hipe_bifs_invalidate_funinfo_native_addresses_1))
-ASYM(nbif_hipe_bifs_invalidate_funinfo_native_addresses_1):
-	/* set up the parameters */
-	movq	P, %rdi
-	# movq	%rsi, %rsi
-
-	/* make the call on the C stack */
-	SWITCH_ERLANG_TO_C
-	pushq	%rsi
-	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
-	sub	$(8), %rsp	/* stack frame 16-byte alignment */
-	CALL_BIF(hipe_bifs_invalidate_funinfo_native_addresses_1)
-	add	$(1*8 + 8), %rsp
-	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
-	testq %rdx, %rdx
-	jnz 3f	
-2:
-	SWITCH_C_TO_ERLANG
-
-	/* throw exception if failure, otherwise return */
-	TEST_GOT_EXN
-	jz	nbif_1_simple_exception
-	NSP_RET0
-	
-3:	call nbif_1_gc_after_bif	/* `HANDLE_GOT_MBUF' */
-	jmp 2b
-	SET_SIZE(ASYM(nbif_hipe_bifs_invalidate_funinfo_native_addresses_1))
-	TYPE_FUNCTION(ASYM(nbif_hipe_bifs_invalidate_funinfo_native_addresses_1))
-#endif
-
-#ifndef HAVE_nbif_hipe_bifs_update_code_size_3
-#define HAVE_nbif_hipe_bifs_update_code_size_3
-	TEXT
-	.align	4
-	GLOBAL(ASYM(nbif_hipe_bifs_update_code_size_3))
-ASYM(nbif_hipe_bifs_update_code_size_3):
+	GLOBAL(ASYM(nbif_hipe_bifs_enter_sdesc_2))
+ASYM(nbif_hipe_bifs_enter_sdesc_2):
 	/* set up the parameters */
 	movq	P, %rdi
 	# movq	%rsi, %rsi
 	# movq	%rdx, %rdx
-	# movq	%rcx, %rcx
 
 	/* make the call on the C stack */
 	SWITCH_ERLANG_TO_C
-	pushq 	%rcx
 	pushq	%rdx
-	pushq	%rsi
+	pushq 	%rsi
 	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
-	sub	$(8), %rsp	/* stack frame 16-byte alignment */  
-	CALL_BIF(hipe_bifs_update_code_size_3)
-	add	$(3*8 + 8), %rsp
+	CALL_BIF(hipe_bifs_enter_sdesc_2)
+	add	$(2*8), %rsp
 	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
 	testq %rdx, %rdx
 	jnz 3f	
@@ -18570,81 +19055,13 @@ ASYM(nbif_hipe_bifs_update_code_size_3):
 
 	/* throw exception if failure, otherwise return */
 	TEST_GOT_EXN
-	jz	nbif_3_simple_exception
+	jz	nbif_2_simple_exception
 	NSP_RET0
 	
-3:	call nbif_3_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+3:	call nbif_2_gc_after_bif	/* `HANDLE_GOT_MBUF' */
 	jmp 2b
-	SET_SIZE(ASYM(nbif_hipe_bifs_update_code_size_3))
-	TYPE_FUNCTION(ASYM(nbif_hipe_bifs_update_code_size_3))
-#endif
-
-#ifndef HAVE_nbif_hipe_bifs_code_size_1
-#define HAVE_nbif_hipe_bifs_code_size_1
-	TEXT
-	.align	4
-	GLOBAL(ASYM(nbif_hipe_bifs_code_size_1))
-ASYM(nbif_hipe_bifs_code_size_1):
-	/* set up the parameters */
-	movq	P, %rdi
-	# movq	%rsi, %rsi
-
-	/* make the call on the C stack */
-	SWITCH_ERLANG_TO_C
-	pushq	%rsi
-	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
-	sub	$(8), %rsp	/* stack frame 16-byte alignment */
-	CALL_BIF(hipe_bifs_code_size_1)
-	add	$(1*8 + 8), %rsp
-	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
-	testq %rdx, %rdx
-	jnz 3f	
-2:
-	SWITCH_C_TO_ERLANG
-
-	/* throw exception if failure, otherwise return */
-	TEST_GOT_EXN
-	jz	nbif_1_simple_exception
-	NSP_RET0
-	
-3:	call nbif_1_gc_after_bif	/* `HANDLE_GOT_MBUF' */
-	jmp 2b
-	SET_SIZE(ASYM(nbif_hipe_bifs_code_size_1))
-	TYPE_FUNCTION(ASYM(nbif_hipe_bifs_code_size_1))
-#endif
-
-#ifndef HAVE_nbif_hipe_bifs_enter_sdesc_1
-#define HAVE_nbif_hipe_bifs_enter_sdesc_1
-	TEXT
-	.align	4
-	GLOBAL(ASYM(nbif_hipe_bifs_enter_sdesc_1))
-ASYM(nbif_hipe_bifs_enter_sdesc_1):
-	/* set up the parameters */
-	movq	P, %rdi
-	# movq	%rsi, %rsi
-
-	/* make the call on the C stack */
-	SWITCH_ERLANG_TO_C
-	pushq	%rsi
-	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
-	sub	$(8), %rsp	/* stack frame 16-byte alignment */
-	CALL_BIF(hipe_bifs_enter_sdesc_1)
-	add	$(1*8 + 8), %rsp
-	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
-	testq %rdx, %rdx
-	jnz 3f	
-2:
-	SWITCH_C_TO_ERLANG
-
-	/* throw exception if failure, otherwise return */
-	TEST_GOT_EXN
-	jz	nbif_1_simple_exception
-	NSP_RET0
-	
-3:	call nbif_1_gc_after_bif	/* `HANDLE_GOT_MBUF' */
-	jmp 2b
-	SET_SIZE(ASYM(nbif_hipe_bifs_enter_sdesc_1))
-	TYPE_FUNCTION(ASYM(nbif_hipe_bifs_enter_sdesc_1))
+	SET_SIZE(ASYM(nbif_hipe_bifs_enter_sdesc_2))
+	TYPE_FUNCTION(ASYM(nbif_hipe_bifs_enter_sdesc_2))
 #endif
 
 #ifndef HAVE_nbif_hipe_bifs_bif_address_3
@@ -18857,24 +19274,23 @@ ASYM(nbif_hipe_bifs_set_native_address_in_fe_2):
 	TYPE_FUNCTION(ASYM(nbif_hipe_bifs_set_native_address_in_fe_2))
 #endif
 
-#ifndef HAVE_nbif_hipe_bifs_find_na_or_make_stub_2
-#define HAVE_nbif_hipe_bifs_find_na_or_make_stub_2
+#ifndef HAVE_nbif_hipe_bifs_find_na_or_make_stub_1
+#define HAVE_nbif_hipe_bifs_find_na_or_make_stub_1
 	TEXT
 	.align	4
-	GLOBAL(ASYM(nbif_hipe_bifs_find_na_or_make_stub_2))
-ASYM(nbif_hipe_bifs_find_na_or_make_stub_2):
+	GLOBAL(ASYM(nbif_hipe_bifs_find_na_or_make_stub_1))
+ASYM(nbif_hipe_bifs_find_na_or_make_stub_1):
 	/* set up the parameters */
 	movq	P, %rdi
 	# movq	%rsi, %rsi
-	# movq	%rdx, %rdx
 
 	/* make the call on the C stack */
 	SWITCH_ERLANG_TO_C
-	pushq	%rdx
-	pushq 	%rsi
+	pushq	%rsi
 	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
-	CALL_BIF(hipe_bifs_find_na_or_make_stub_2)
-	add	$(2*8), %rsp
+	sub	$(8), %rsp	/* stack frame 16-byte alignment */
+	CALL_BIF(hipe_bifs_find_na_or_make_stub_1)
+	add	$(1*8 + 8), %rsp
 	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
 	testq %rdx, %rdx
 	jnz 3f	
@@ -18883,13 +19299,13 @@ ASYM(nbif_hipe_bifs_find_na_or_make_stub_2):
 
 	/* throw exception if failure, otherwise return */
 	TEST_GOT_EXN
-	jz	nbif_2_simple_exception
+	jz	nbif_1_simple_exception
 	NSP_RET0
 	
-3:	call nbif_2_gc_after_bif	/* `HANDLE_GOT_MBUF' */
+3:	call nbif_1_gc_after_bif	/* `HANDLE_GOT_MBUF' */
 	jmp 2b
-	SET_SIZE(ASYM(nbif_hipe_bifs_find_na_or_make_stub_2))
-	TYPE_FUNCTION(ASYM(nbif_hipe_bifs_find_na_or_make_stub_2))
+	SET_SIZE(ASYM(nbif_hipe_bifs_find_na_or_make_stub_1))
+	TYPE_FUNCTION(ASYM(nbif_hipe_bifs_find_na_or_make_stub_1))
 #endif
 
 #ifndef HAVE_nbif_hipe_bifs_check_crc_1
@@ -19100,12 +19516,12 @@ ASYM(nbif_hipe_bifs_add_ref_2):
 	TYPE_FUNCTION(ASYM(nbif_hipe_bifs_add_ref_2))
 #endif
 
-#ifndef HAVE_nbif_hipe_bifs_mark_referred_from_1
-#define HAVE_nbif_hipe_bifs_mark_referred_from_1
+#ifndef HAVE_nbif_hipe_bifs_alloc_loader_state_1
+#define HAVE_nbif_hipe_bifs_alloc_loader_state_1
 	TEXT
 	.align	4
-	GLOBAL(ASYM(nbif_hipe_bifs_mark_referred_from_1))
-ASYM(nbif_hipe_bifs_mark_referred_from_1):
+	GLOBAL(ASYM(nbif_hipe_bifs_alloc_loader_state_1))
+ASYM(nbif_hipe_bifs_alloc_loader_state_1):
 	/* set up the parameters */
 	movq	P, %rdi
 	# movq	%rsi, %rsi
@@ -19115,7 +19531,7 @@ ASYM(nbif_hipe_bifs_mark_referred_from_1):
 	pushq	%rsi
 	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
 	sub	$(8), %rsp	/* stack frame 16-byte alignment */
-	CALL_BIF(hipe_bifs_mark_referred_from_1)
+	CALL_BIF(hipe_bifs_alloc_loader_state_1)
 	add	$(1*8 + 8), %rsp
 	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
 	testq %rdx, %rdx
@@ -19130,76 +19546,8 @@ ASYM(nbif_hipe_bifs_mark_referred_from_1):
 	
 3:	call nbif_1_gc_after_bif	/* `HANDLE_GOT_MBUF' */
 	jmp 2b
-	SET_SIZE(ASYM(nbif_hipe_bifs_mark_referred_from_1))
-	TYPE_FUNCTION(ASYM(nbif_hipe_bifs_mark_referred_from_1))
-#endif
-
-#ifndef HAVE_nbif_hipe_bifs_remove_refs_from_1
-#define HAVE_nbif_hipe_bifs_remove_refs_from_1
-	TEXT
-	.align	4
-	GLOBAL(ASYM(nbif_hipe_bifs_remove_refs_from_1))
-ASYM(nbif_hipe_bifs_remove_refs_from_1):
-	/* set up the parameters */
-	movq	P, %rdi
-	# movq	%rsi, %rsi
-
-	/* make the call on the C stack */
-	SWITCH_ERLANG_TO_C
-	pushq	%rsi
-	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
-	sub	$(8), %rsp	/* stack frame 16-byte alignment */
-	CALL_BIF(hipe_bifs_remove_refs_from_1)
-	add	$(1*8 + 8), %rsp
-	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
-	testq %rdx, %rdx
-	jnz 3f	
-2:
-	SWITCH_C_TO_ERLANG
-
-	/* throw exception if failure, otherwise return */
-	TEST_GOT_EXN
-	jz	nbif_1_simple_exception
-	NSP_RET0
-	
-3:	call nbif_1_gc_after_bif	/* `HANDLE_GOT_MBUF' */
-	jmp 2b
-	SET_SIZE(ASYM(nbif_hipe_bifs_remove_refs_from_1))
-	TYPE_FUNCTION(ASYM(nbif_hipe_bifs_remove_refs_from_1))
-#endif
-
-#ifndef HAVE_nbif_hipe_bifs_redirect_referred_from_1
-#define HAVE_nbif_hipe_bifs_redirect_referred_from_1
-	TEXT
-	.align	4
-	GLOBAL(ASYM(nbif_hipe_bifs_redirect_referred_from_1))
-ASYM(nbif_hipe_bifs_redirect_referred_from_1):
-	/* set up the parameters */
-	movq	P, %rdi
-	# movq	%rsi, %rsi
-
-	/* make the call on the C stack */
-	SWITCH_ERLANG_TO_C
-	pushq	%rsi
-	movq	%rsp, %rsi	/* Eterm* BIF__ARGS */
-	sub	$(8), %rsp	/* stack frame 16-byte alignment */
-	CALL_BIF(hipe_bifs_redirect_referred_from_1)
-	add	$(1*8 + 8), %rsp
-	movq P_MBUF(P), %rdx	/* `TEST_GOT_MBUF' */
-	testq %rdx, %rdx
-	jnz 3f	
-2:
-	SWITCH_C_TO_ERLANG
-
-	/* throw exception if failure, otherwise return */
-	TEST_GOT_EXN
-	jz	nbif_1_simple_exception
-	NSP_RET0
-	
-3:	call nbif_1_gc_after_bif	/* `HANDLE_GOT_MBUF' */
-	jmp 2b
-	SET_SIZE(ASYM(nbif_hipe_bifs_redirect_referred_from_1))
-	TYPE_FUNCTION(ASYM(nbif_hipe_bifs_redirect_referred_from_1))
+	SET_SIZE(ASYM(nbif_hipe_bifs_alloc_loader_state_1))
+	TYPE_FUNCTION(ASYM(nbif_hipe_bifs_alloc_loader_state_1))
 #endif
 
 #ifndef HAVE_nbif_hipe_bifs_call_count_on_1

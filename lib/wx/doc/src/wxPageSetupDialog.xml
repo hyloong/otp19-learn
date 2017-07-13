@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxPageSetupDialog</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxPageSetupDialog.xml</file></header>
+<module>wxPageSetupDialog</module>
+<modulesummary>See external documentation: wxPageSetupDialog.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpagesetupdialog.html">wxPageSetupDialog</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxPageSetupDialog"/>wxPageSetupDialog()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new(Parent) -&gt; <seealso marker="#type-wxPageSetupDialog">wxPageSetupDialog()</seealso></name>
+<fsummary>Equivalent to new(Parent, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="new-1"/>
+<p>Equivalent to <seealso marker="#new-2">new(Parent, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Options::[Option]) -&gt; <seealso marker="#type-wxPageSetupDialog">wxPageSetupDialog()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {data, <seealso marker="wxPageSetupDialogData#type-wxPageSetupDialogData">wxPageSetupDialogData:wxPageSetupDialogData()</seealso>}</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpagesetupdialog.html#wxpagesetupdialogwxpagesetupdialog">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPageSetupData(This) -&gt; <seealso marker="wxPageSetupDialogData#type-wxPageSetupDialogData">wxPageSetupDialogData:wxPageSetupDialogData()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPageSetupDialog">wxPageSetupDialog()</seealso></v></type>
+<desc><marker id="getPageSetupData-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpagesetupdialog.html#wxpagesetupdialoggetpagesetupdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>showModal(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPageSetupDialog">wxPageSetupDialog()</seealso></v></type>
+<desc><marker id="showModal-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpagesetupdialog.html#wxpagesetupdialogshowmodal">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxPageSetupDialog">wxPageSetupDialog()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

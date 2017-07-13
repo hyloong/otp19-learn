@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxSashWindow</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxSashWindow.xml</file></header>
+<module>wxSashWindow</module>
+<modulesummary>See external documentation: wxSashWindow.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsashwindow.html">wxSashWindow</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxSashWindow"/>wxSashWindow()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxSashWindow">wxSashWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsashwindow.html#wxsashwindowwxsashwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent) -&gt; <seealso marker="#type-wxSashWindow">wxSashWindow()</seealso></name>
+<fsummary>Equivalent to new(Parent, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="new-1"/>
+<p>Equivalent to <seealso marker="#new-2">new(Parent, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Options::[Option]) -&gt; <seealso marker="#type-wxSashWindow">wxSashWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {id, integer()} | {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()}</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsashwindow.html#wxsashwindowwxsashwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSashVisible(This, Edge) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSashWindow">wxSashWindow()</seealso></v><v>Edge = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></v></type>
+<desc><marker id="getSashVisible-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsashwindow.html#wxsashwindowgetsashvisible">external documentation</url>.
+ <br/> Edge = ?wxSASH_TOP | ?wxSASH_RIGHT | ?wxSASH_BOTTOM | ?wxSASH_LEFT | ?wxSASH_NONE</p>
+</desc></func>
+<func>
+<name>getMaximumSizeX(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSashWindow">wxSashWindow()</seealso></v></type>
+<desc><marker id="getMaximumSizeX-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsashwindow.html#wxsashwindowgetmaximumsizex">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMaximumSizeY(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSashWindow">wxSashWindow()</seealso></v></type>
+<desc><marker id="getMaximumSizeY-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsashwindow.html#wxsashwindowgetmaximumsizey">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMinimumSizeX(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSashWindow">wxSashWindow()</seealso></v></type>
+<desc><marker id="getMinimumSizeX-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsashwindow.html#wxsashwindowgetminimumsizex">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMinimumSizeY(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSashWindow">wxSashWindow()</seealso></v></type>
+<desc><marker id="getMinimumSizeY-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsashwindow.html#wxsashwindowgetminimumsizey">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMaximumSizeX(This, Max) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSashWindow">wxSashWindow()</seealso></v><v>Max = integer()</v></type>
+<desc><marker id="setMaximumSizeX-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsashwindow.html#wxsashwindowsetmaximumsizex">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMaximumSizeY(This, Max) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSashWindow">wxSashWindow()</seealso></v><v>Max = integer()</v></type>
+<desc><marker id="setMaximumSizeY-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsashwindow.html#wxsashwindowsetmaximumsizey">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMinimumSizeX(This, Min) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSashWindow">wxSashWindow()</seealso></v><v>Min = integer()</v></type>
+<desc><marker id="setMinimumSizeX-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsashwindow.html#wxsashwindowsetminimumsizex">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMinimumSizeY(This, Min) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSashWindow">wxSashWindow()</seealso></v><v>Min = integer()</v></type>
+<desc><marker id="setMinimumSizeY-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsashwindow.html#wxsashwindowsetminimumsizey">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSashVisible(This, Edge, Sash) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSashWindow">wxSashWindow()</seealso></v><v>Edge = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></v><v>Sash = boolean()</v></type>
+<desc><marker id="setSashVisible-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsashwindow.html#wxsashwindowsetsashvisible">external documentation</url>.
+ <br/> Edge = ?wxSASH_TOP | ?wxSASH_RIGHT | ?wxSASH_BOTTOM | ?wxSASH_LEFT | ?wxSASH_NONE</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxSashWindow">wxSashWindow()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

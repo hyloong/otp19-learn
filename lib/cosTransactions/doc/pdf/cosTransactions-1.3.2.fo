@@ -1,0 +1,1457 @@
+<?xml version="1.0"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="cover" margin="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin="0mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="left-page" margin-top="25mm" margin-bottom="15mm" margin-left="20mm" margin-right="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="left-header" extent="10mm"/>
+      <fo:region-after region-name="left-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="right-page" margin-top="25mm" margin-bottom="15mm" margin-left="25mm" margin-right="20mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="right-header" extent="10mm"/>
+      <fo:region-after region-name="right-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:page-sequence-master master-name="document">
+      <fo:repeatable-page-master-alternatives>
+        <fo:conditional-page-master-reference master-reference="left-page" odd-or-even="even"/>
+        <fo:conditional-page-master-reference master-reference="right-page" odd-or-even="odd"/>
+      </fo:repeatable-page-master-alternatives>
+    </fo:page-sequence-master>
+  </fo:layout-master-set>
+  <fo:bookmark-tree>
+    <fo:bookmark internal-destination="cover-page" starting-state="show">
+      <fo:bookmark-title>cosTransactions</fo:bookmark-title>
+      <fo:bookmark internal-destination="idp514976" starting-state="hide">
+        <fo:bookmark-title>cosTransactions User's Guide</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp540064" starting-state="hide">
+          <fo:bookmark-title>The cosTransactions Application</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp424448" starting-state="hide">
+            <fo:bookmark-title>Content Overview</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp487488" starting-state="hide">
+            <fo:bookmark-title>Brief Description of the User's Guide</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idm28656" starting-state="hide">
+          <fo:bookmark-title>Introduction to cosTransactions</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp552928" starting-state="hide">
+            <fo:bookmark-title>Overview</fo:bookmark-title>
+            <fo:bookmark internal-destination="idm34080" starting-state="hide">
+              <fo:bookmark-title>Purpose and Dependencies</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp17280" starting-state="hide">
+              <fo:bookmark-title>Prerequisites</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp457520" starting-state="hide">
+          <fo:bookmark-title>Installing cosTransactions</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp15280" starting-state="hide">
+            <fo:bookmark-title>Installation Process </fo:bookmark-title>
+            <fo:bookmark internal-destination="idp451376" starting-state="hide">
+              <fo:bookmark-title>Preparation</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp281248" starting-state="hide">
+              <fo:bookmark-title>Configuration</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp481312" starting-state="hide">
+          <fo:bookmark-title>cosTransactions Examples</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp251808" starting-state="hide">
+            <fo:bookmark-title>A Tutorial on How to Create a Simple Service</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp555184" starting-state="hide">
+              <fo:bookmark-title>Interface design</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp530480" starting-state="hide">
+              <fo:bookmark-title>Generating a Participant Interface</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp546400" starting-state="hide">
+              <fo:bookmark-title>Implementation of Participant interface</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp525216" starting-state="hide">
+              <fo:bookmark-title>Participant Operations Behavior</fo:bookmark-title>
+              <fo:bookmark internal-destination="idp559488" starting-state="hide">
+                <fo:bookmark-title>prepare</fo:bookmark-title>
+              </fo:bookmark>
+              <fo:bookmark internal-destination="idp567712" starting-state="hide">
+                <fo:bookmark-title>rollback</fo:bookmark-title>
+              </fo:bookmark>
+              <fo:bookmark internal-destination="idp501760" starting-state="hide">
+                <fo:bookmark-title>commit</fo:bookmark-title>
+              </fo:bookmark>
+              <fo:bookmark internal-destination="idp503392" starting-state="hide">
+                <fo:bookmark-title>commit_one_phase</fo:bookmark-title>
+              </fo:bookmark>
+              <fo:bookmark internal-destination="idp505136" starting-state="hide">
+                <fo:bookmark-title>forget</fo:bookmark-title>
+              </fo:bookmark>
+              <fo:bookmark internal-destination="idp507888" starting-state="hide">
+                <fo:bookmark-title>commit_subtransaction</fo:bookmark-title>
+              </fo:bookmark>
+              <fo:bookmark internal-destination="idp577920" starting-state="hide">
+                <fo:bookmark-title>rollback_subtransaction</fo:bookmark-title>
+              </fo:bookmark>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp580752" starting-state="hide">
+              <fo:bookmark-title>How to Run Everything</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp464896" starting-state="hide">
+          <fo:bookmark-title>Resource Skeletons</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp467712" starting-state="hide">
+            <fo:bookmark-title>Resource Skeletons</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+      <fo:bookmark internal-destination="idp113808" starting-state="hide">
+        <fo:bookmark-title>Reference Manual</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp886704" starting-state="hide">
+          <fo:bookmark-title>cosTransactions</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp631152" starting-state="hide">
+            <fo:bookmark-title>start/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp636480" starting-state="hide">
+            <fo:bookmark-title>stop/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp738048" starting-state="hide">
+            <fo:bookmark-title>start_factory/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp804016" starting-state="hide">
+            <fo:bookmark-title>start_factory/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp609776" starting-state="hide">
+            <fo:bookmark-title>stop_factory/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp403152" starting-state="hide">
+          <fo:bookmark-title>CosTransactions_Control</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp745744" starting-state="hide">
+            <fo:bookmark-title>get_coordinator/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp405680" starting-state="hide">
+            <fo:bookmark-title>get_terminator/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp641632" starting-state="hide">
+          <fo:bookmark-title>CosTransactions_Coordinator</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp740032" starting-state="hide">
+            <fo:bookmark-title>create_subtransaction/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp645760" starting-state="hide">
+            <fo:bookmark-title>get_transaction_name/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp634784" starting-state="hide">
+            <fo:bookmark-title>get_parent_status/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp719280" starting-state="hide">
+            <fo:bookmark-title>get_status/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp722816" starting-state="hide">
+            <fo:bookmark-title>get_top_level_status/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp726304" starting-state="hide">
+            <fo:bookmark-title>hash_top_level_tran/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp898416" starting-state="hide">
+            <fo:bookmark-title>hash_transaction/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp901904" starting-state="hide">
+            <fo:bookmark-title>is_descendant_transaction/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp906192" starting-state="hide">
+            <fo:bookmark-title>is_same_transaction/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp910448" starting-state="hide">
+            <fo:bookmark-title>is_top_level_transaction/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp914240" starting-state="hide">
+            <fo:bookmark-title>register_resource/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp922432" starting-state="hide">
+            <fo:bookmark-title>register_subtran_aware/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp928256" starting-state="hide">
+            <fo:bookmark-title>rollback_only/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp829120" starting-state="hide">
+          <fo:bookmark-title>CosTransactions_RecoveryCoordinator</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp832240" starting-state="hide">
+            <fo:bookmark-title>replay_completion/3</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp853488" starting-state="hide">
+          <fo:bookmark-title>CosTransactions_Resource</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp856592" starting-state="hide">
+            <fo:bookmark-title>commit/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp863168" starting-state="hide">
+            <fo:bookmark-title>commit_one_phase/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp867552" starting-state="hide">
+            <fo:bookmark-title>forget/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp871312" starting-state="hide">
+            <fo:bookmark-title>prepare/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp879984" starting-state="hide">
+            <fo:bookmark-title>rollback/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp945376" starting-state="hide">
+          <fo:bookmark-title>CosTransactions_SubtransactionAwareResource</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp949088" starting-state="hide">
+            <fo:bookmark-title>commit_subtransaction/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp955792" starting-state="hide">
+            <fo:bookmark-title>rollback_subtransaction/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp968256" starting-state="hide">
+          <fo:bookmark-title>CosTransactions_Terminator</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp971360" starting-state="hide">
+            <fo:bookmark-title>commit/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp977232" starting-state="hide">
+            <fo:bookmark-title>rollback/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp988096" starting-state="hide">
+          <fo:bookmark-title>CosTransactions_TransactionFactory</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp991216" starting-state="hide">
+            <fo:bookmark-title>create/2</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+    </fo:bookmark>
+  </fo:bookmark-tree>
+  <fo:page-sequence font-family="sans-serif" force-page-count="even" master-reference="cover" font-size="10pt">
+    <fo:flow flow-name="xsl-region-body">
+      <fo:block space-before="130mm" space-before.conditionality="retain" text-align="end">
+        <fo:external-graphic src="/root/download/otp_src_20.0/bootstrap/lib/erl_docgen/priv/images/erlang-logo.gif"/>
+      </fo:block>
+      <fo:block id="cover-page" border-before-style="solid" border-before-width="10pt" border-color="#960003" font-size="2.3em" padding-before="0.5em" text-align="end">cosTransactions</fo:block>
+      <fo:block font-size="0.9em" text-align="end">Copyright © 1999-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em" text-align="end">cosTransactions 1.3.2</fo:block>
+      <fo:block font-size="0.9em" text-align="end">July 12, 2017</fo:block>
+      <fo:block padding-before="2.5em" font-size="1.33em" font-weight="bold" color="#C00" text-align="end"/>
+      <fo:block break-before="page" border-before-style="solid" border-before-width="1pt" border-color="#960003" font-weight="bold" padding-before="0.5em" space-before="200mm" space-before.conditionality="retain">Copyright © 1999-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em">
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+ 
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+    
+    Ericsson AB. All Rights Reserved..
+        </fo:block>
+      <fo:block font-size="0.9em" font-weight="bold" space-before="2em">July 12, 2017</fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+  <fo:page-sequence font-family="serif" master-reference="document" initial-page-number="1" font-size="10pt">
+    <fo:static-content flow-name="left-header">
+      <fo:block text-align="start" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-header">
+      <fo:block text-align="end" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="left-footer">
+      <fo:block text-align="start" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold"><fo:page-number/> | Ericsson AB. All Rights Reserved.:
+            cosTransactions</fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-footer">
+      <fo:block text-align="end" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">Ericsson AB. All Rights Reserved.:
+            cosTransactions | <fo:page-number/></fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body"><fo:block/><fo:block id="idp514976" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">1   
+      cosTransactions User's Guide</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-weight="bold">cosTransactions</fo:inline> application is an Erlang implementation
+      of the OMG CORBA Transaction Service.</fo:block>
+  <fo:block id="idp540064" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.1  The cosTransactions Application</fo:marker>1.1  The cosTransactions Application</fo:block><fo:block id="idp424448" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.1 
+      Content Overview</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The cosTransactions documentation is divided into three sections:
+      </fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">PART ONE - The User's Guide  
+                    <fo:block/>
+Description of the cosTransactions Application including 
+          services and a small tutorial demonstrating 
+          the development of a simple service.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">PART TWO - Release Notes
+                    <fo:block/>
+A concise history of cosTransactions.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">PART THREE - The Reference Manual
+                    <fo:block/>
+ A quick reference guide, including a
+          brief description, to all the functions available in cosTransactions.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+  <fo:block id="idp487488" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.2 
+      Brief Description of the User's Guide</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The User's Guide  contains the following parts:</fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">cosTransactions overview</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">cosTransactions installation</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A tutorial example</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+  <fo:block id="idm28656" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.2  Introduction to cosTransactions</fo:marker>1.2  Introduction to cosTransactions</fo:block><fo:block id="idp552928" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.2.1 
+      Overview</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The cosTransactions application is a Transaction Service compliant with the <fo:inline font-weight="bold"><fo:basic-link external-destination="href">OMG</fo:basic-link></fo:inline> 
+      Transaction Service CosTransactions 1.1.
+      </fo:block>
+
+    <fo:block id="idm34080" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Purpose and Dependencies</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">cosTransactions</fo:inline> is dependent on  <fo:inline font-weight="bold">Orber version 3.0.1</fo:inline> or later(see the Orber
+        documentation), which provides CORBA functionality in an Erlang environment.</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">cosTransactions</fo:inline> is dependent on  <fo:inline font-weight="bold">supervisor/stdlib-1.7</fo:inline> or later.</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Basically, cosTransaction implements a <fo:inline font-weight="bold">two-phase commit protocol</fo:inline> and allows objects running
+        on different platforms to participate in a transaction.</fo:block>
+    
+
+    <fo:block id="idp17280" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Prerequisites</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To fully understand the concepts presented in the
+        documentation, it is recommended that the user is familiar
+        with distributed programming, CORBA and the Orber application.
+        </fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Recommended reading includes <fo:inline font-weight="bold">CORBA, Fundamentals and Programming - Jon Siegel</fo:inline> and <fo:inline font-weight="bold">Open Telecom Platform Documentation Set</fo:inline>. It is also helpful to  have read
+        <fo:inline font-weight="bold">Concurrent Programming in Erlang</fo:inline> and, for example, <fo:inline font-weight="bold">Transaction Processing: concepts and techniques - Jim Gray, Andreas Reuter</fo:inline>.</fo:block>
+      <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The cosTransaction application is compliant with the OMG CosTransactions specification 1.1. Using
+          other vendors transaction service, compliant with the OMG CosTransactions specification 1.0, may
+          not work since the <fo:inline font-family="monospace">'TRANSACTION_REQUIRED', 'TRANSACTION_ROLLEDBACK'</fo:inline> and <fo:inline font-family="monospace">'INVALID_TRANSACTION'</fo:inline>
+          exceptions have been redefined to be system exceptions, i.e., used to be transaction-specific ('CosTransactions_Exc').</fo:block>
+      </fo:block>
+    
+  <fo:block id="idp457520" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.3  Installing cosTransactions</fo:marker>1.3  Installing cosTransactions</fo:block><fo:block id="idp15280" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.3.1 
+      Installation Process </fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This chapter describes how to install 
+      <fo:inline font-style="italic">cosTransactions</fo:inline> 
+      in an Erlang Environment.
+      </fo:block>
+
+    <fo:block id="idp451376" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Preparation</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Before starting the installation process for cosTransactions,
+        the application Orber must be running.</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The cosTransactions application must be able to log progress to disk. The log files are
+        created in the current directory as "oe_name@machine_type_timestamp". Hence, <fo:inline font-family="monospace">read</fo:inline> and 
+        <fo:inline font-family="monospace">write</fo:inline> rights must be granted. If the transaction completes in an orderly fashion the 
+        logfiles are removed, but not if an error, which demands human intervention, occur.</fo:block>
+    
+
+    <fo:block id="idp281248" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Configuration</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When using the Transaction Service the <fo:inline font-family="monospace">cosTransactions</fo:inline> application 
+        must be started using either <fo:inline font-family="monospace">cosTransactions:start()</fo:inline> or 
+        <fo:inline font-family="monospace">application:start(cosTransactions)</fo:inline>.
+        </fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The following application configuration parameters exist:</fo:block>
+      <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">maxRetries</fo:inline> - default is 40 times, i.e., if a transaction participant is unreachable
+         the application will retry to contact it <fo:inline font-family="monospace">N</fo:inline> times. Reaching the maximum is considered to be a disaster.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">comFailWait</fo:inline> - default is 5000 milliseconds, i.e., before the application
+         retries to contact unreachable transaction participants the application wait <fo:inline font-family="monospace">Time</fo:inline> milliseconds.</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Then the <fo:inline font-style="italic">Transaction Factory</fo:inline>
+        must be started:</fo:block>
+      <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">cosTransactions:start_factory()</fo:inline> - starts and returns a reference to a factory using default configuration parameters.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">cosTransactions:start_factory(Options)</fo:inline> - starts and returns a reference to a factory using given configuration parameters.</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The following options exist:
+        </fo:block>
+      <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">{hash_max, HashValue}</fo:inline> - 
+         This value denotes the upper bound of the hash value the <fo:inline font-style="italic">Coordinator</fo:inline>  uses.
+         Default is <fo:inline font-family="monospace">1013</fo:inline>. HashValue must be an integer.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">{allow_subtr, Boolean}</fo:inline> -
+         If set to true it is possible to create <fo:inline font-style="italic">subtransactions</fo:inline>.
+         Default is <fo:inline font-family="monospace">true</fo:inline>.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">{typecheck, Boolean}</fo:inline> -
+         If set to to true all transaction operation's arguments will be type-checked.
+         Default is <fo:inline font-family="monospace">true</fo:inline>.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">{tty, Boolean}</fo:inline> -  
+         Enables or disables error printouts to the tty. 
+         If Flag is false, all text that the error logger would have sent to the terminal is discarded. 
+         If Flag is true, error messages are sent to the terminal screen. </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">{logfile, FileName}</fo:inline> -
+         This function makes it possible to store all system information in <fo:inline font-family="monospace">FileName</fo:inline> (string()).
+         It can be used in combination with the tty(false) item to have a silent system, 
+         where all system information are logged to a file. 
+         As default no logfile is used.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">{maxRetries, Integer}</fo:inline> -
+         default is 40 times, i.e., if a transaction participant is unreachable the application will 
+         retry to contact it <fo:inline font-family="monospace">N</fo:inline> times. Reaching the maximum is considered to be a disaster.
+         This option overrides the application configuration parameter.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">{comFailWait, Integer}</fo:inline> -
+         default is 5000 milliseconds, i.e., before the application retries to contact unreachable 
+         transaction participants the application wait <fo:inline font-family="monospace">Time</fo:inline> milliseconds.
+         This option overrides the application configuration parameter.</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Factory is now ready to use. For a more detailed description see <fo:inline font-style="italic">Examples</fo:inline>.
+        </fo:block>
+    
+  <fo:block id="idp481312" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.4  cosTransactions Examples</fo:marker>1.4  cosTransactions Examples</fo:block><fo:block id="idp251808" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.4.1 
+      A Tutorial on How to Create a Simple Service</fo:block>
+    
+
+    <fo:block id="idp555184" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Interface design</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To use the cosTransactions application <fo:inline font-weight="bold">participants</fo:inline> must be implemented. 
+        There are two types of participants: </fo:block>
+      <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-style="italic">CosTransactions_Resource</fo:inline> - operations used to commit or rollback resources.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-style="italic">CosTransactions_SubtransactionAwareResource</fo:inline> - 
+         operations used when the resources want to be notified when a subtransaction commits. 
+         This interface inherits the CosTransactions_Resource</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The interfaces for these participants are defined in <fo:inline font-weight="bold">CosTransactions.idl</fo:inline></fo:block>
+    
+
+    <fo:block id="idp530480" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Generating a Participant Interface</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">We start by creating an interface which inherits from <fo:inline font-weight="bold">CosTransactions::Resource</fo:inline>. Hence, 
+        we must also implement all operations defined in the Resource interface. The IDL-file could look like: </fo:block>
+      <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+#ifndef _OWNRESOURCEIMPL_IDL
+#define _OWNRESOURCEIMPL_IDL
+#include &lt;CosTransactions.idl&gt;
+
+module ownResourceImpl {
+
+  interface ownInterface:CosTransactions::Resource {
+
+    void ownFunctions(in any NeededArguments)
+       raises(Systemexceptions,OwnExceptions);
+
+  };
+};
+
+#endif
+      </fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Run the IDL compiler on this file by calling the <fo:inline font-family="monospace">ic:gen/1</fo:inline> function. 
+        This will produce the API named <fo:inline font-family="monospace">ownResourceImpl_ownInterface.erl</fo:inline>.
+        After generating the API stubs and the server skeletons it is time to 
+        implement the servers and if no special options are sent 
+        to the IDl compiler the file name is <fo:inline font-family="monospace">ownResourceImpl_ownInterface_impl.erl</fo:inline>.</fo:block>
+    
+
+    <fo:block id="idp546400" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Implementation of Participant interface</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the participant is intended to be a plain Resource, we must implement the following operations:</fo:block>
+      <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">prepare/1</fo:inline> - this operation is invoked on the Resource to begin the two-phase commit protocol.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">rollback/1</fo:inline> - this operation instructs the Resource to rollback all changes made as a part of the transaction. </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">commit/1</fo:inline> - this operation instructs the Resource to commit all changes made as a part of the transaction.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">commit_one_phase/1</fo:inline> - if possible, the Resource should commit all changes made as part of the transaction. 
+         This operation can only be used if the Resource is the only child of its parent. </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">forget/1</fo:inline> - this operation informs the Resource that it is safe to forget any 
+        Heuristic decisions is a unilateral decision by a participant to commit
+              or rollback without receiving the true outcome of the transaction from its parent's coordinator.
+              and the knowledge of the transaction.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">ownFunctions</fo:inline> - all application specific operations.</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the participant wants to be notified when a subtransaction commits, we must also implement the following operations 
+        (besides the operations above):</fo:block>
+      <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">commit_subtransaction/2</fo:inline> - if the <fo:inline font-family="monospace">SubtransactionAwareResource</fo:inline> have been registered 
+         with a transactions using the operation <fo:inline font-family="monospace">CosTransactions_Coordinator:register_subtran_aware/2</fo:inline> it will 
+         be notified when the transaction has
+         committed. </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">rollback_subtransaction/1</fo:inline> - if the <fo:inline font-family="monospace">SubtransactionAwareResource</fo:inline> have been registered 
+         with a transactions using the operation <fo:inline font-family="monospace">CosTransactions_Coordinator:register_subtran_aware/2</fo:inline>
+         it will be notified when the transaction has
+         rolled back. </fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+      <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The results of a committed subtransaction are relative to the completion of its ancestor transactions, 
+          that is, these results can be undone if any ancestor transaction is rolled back. </fo:block>
+      </fo:block>
+    
+
+    <fo:block id="idp525216" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Participant Operations Behavior</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Each application participant must behave in a certain way to ensure that the two-phase commit protocol
+        can complete the transactions correctly.</fo:block>
+
+      <fo:block id="idp559488" font-family="DejaVuSans, sans-serif" font-size="1em" font-weight="bold" keep-with-next.within-page="always" space-after="0.2em" space-before="0.4em">prepare</fo:block>
+        
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation ask the participant to vote on the outcome of the transaction. Possible replies are:</fo:block>
+        <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-weight="bold">'VoteReadOnly'</fo:inline> - if no data associated with the transaction has been modified VoteReadOnly may be returned.
+           The Resource can forget all knowledge of the transaction and terminate.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-weight="bold">'VoteCommit'</fo:inline> - if the Resource is able to write all the data needed to commit the transaction to a stable storage,
+           VoteCommit may be returned. The Resource will then wait until it is informed of the outcome of the transaction.
+           The Resource may, however, make a unilateral decision (Heuristic) to commit or rollback changes associated 
+           with the transaction. When the Resource is informed of the true outcome (rollback/commit) and it is equal to
+           the Heuristic decision the Resource just return 'ok'. But, if there is a mismatch and the commit-operation is irreversible,
+           the Resource must raise a <fo:inline font-style="italic">Heuristic Exception</fo:inline> and wait 
+           until the <fo:inline font-family="monospace">forget</fo:inline> operation is invoked. The Heuristic Decision must be recorded in stable storage.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-weight="bold">'VoteRollback'</fo:inline> - the Resource may vote VoteRollback under any circumstances.
+           The Resource can forget all knowledge of the transaction and terminate.</fo:block></fo:list-item-body></fo:list-item>
+        </fo:list-block>
+        <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+          <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Before replying to the prepare operation, the Resource must record the prepare state, the reference of its
+            superior <fo:inline font-style="italic">RecoveryCoordinator</fo:inline> in stable storage.
+            The RecoveryCoordinator is obtained when registering as a participant in a transaction.</fo:block>
+        </fo:block>
+      
+
+      <fo:block id="idp567712" font-family="DejaVuSans, sans-serif" font-size="1em" font-weight="bold" keep-with-next.within-page="always" space-after="0.2em" space-before="0.4em">rollback</fo:block>
+        
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Resource should, if necessary, rollback all changes made as part of the transaction. If the Resource is not aware of the
+          transaction it should do nothing, e.g., recovered after a failure and have no data in stable storage. Heuristic Decisions
+          must be handled as described above.</fo:block>
+      
+
+      <fo:block id="idp501760" font-family="DejaVuSans, sans-serif" font-size="1em" font-weight="bold" keep-with-next.within-page="always" space-after="0.2em" space-before="0.4em">commit</fo:block>
+        
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Resource should, if necessary, commit all changes made as part of the transaction. If the Resource is not aware of the
+          transaction it should do nothing, e.g., recovered after a failure and have no data in stable storage. Heuristic Decisions
+          must be handled as described above.</fo:block>
+      
+
+      <fo:block id="idp503392" font-family="DejaVuSans, sans-serif" font-size="1em" font-weight="bold" keep-with-next.within-page="always" space-after="0.2em" space-before="0.4em">commit_one_phase</fo:block>
+        
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If possible, the Resource should commit all changes made as part of the transaction. If it cannot, it should raise the
+          TRANSACTION_ROLLEDBACK exception. This operation can only be used if the Resource is the only child of its parent.
+          If a failure occurs the completion of the operation must be retried when the failure is repaired. Heuristic Decisions
+          must be handled as described above.</fo:block>
+      
+
+      <fo:block id="idp505136" font-family="DejaVuSans, sans-serif" font-size="1em" font-weight="bold" keep-with-next.within-page="always" space-after="0.2em" space-before="0.4em">forget</fo:block>
+        
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the Resource raised a Heuristic Exception to <fo:inline font-family="monospace">commit</fo:inline>, <fo:inline font-family="monospace">rollback</fo:inline> or <fo:inline font-family="monospace">commit_one_phase</fo:inline> this operation
+          will be performed. The Resource can forget all knowledge of the transaction and terminate.</fo:block>
+      
+
+      <fo:block id="idp507888" font-family="DejaVuSans, sans-serif" font-size="1em" font-weight="bold" keep-with-next.within-page="always" space-after="0.2em" space-before="0.4em">commit_subtransaction</fo:block>
+        
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the <fo:inline font-family="monospace">SubtransactionAwareResource</fo:inline> have been registered with a <fo:inline font-weight="bold">subtransaction</fo:inline>
+          using the operation <fo:inline font-family="monospace">CosTransactions_Coordinator:register_subtran_aware/2</fo:inline>
+          it will be notified when the transaction has committed. The Resource may raise the exception
+          <fo:inline font-family="monospace">'TRANSACTION_ROLLEDBACK'</fo:inline>.</fo:block>
+        <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+          <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The result of a committed subtransaction is relative to the completion of its ancestor
+            transactions, that is, these results can be undone if any ancestor transaction is rolled back.</fo:block>
+        </fo:block>
+      
+
+      <fo:block id="idp577920" font-family="DejaVuSans, sans-serif" font-size="1em" font-weight="bold" keep-with-next.within-page="always" space-after="0.2em" space-before="0.4em">rollback_subtransaction</fo:block>
+        
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the <fo:inline font-family="monospace">SubtransactionAwareResource</fo:inline> have been registered with a <fo:inline font-weight="bold">subtransaction</fo:inline>
+          using the operation <fo:inline font-family="monospace">CosTransactions_Coordinator:register_subtran_aware/2</fo:inline>
+          it will be notified when the subtransaction has rolled back.</fo:block>
+      
+    
+
+    <fo:block id="idp580752" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">How to Run Everything</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Below is a short transcript on how to run cosTransactions. </fo:block>
+      <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+
+%% Start Mnesia and Orber
+mnesia:delete_schema([node()]),
+mnesia:create_schema([node()]),
+orber:install([node()]),
+application:start(mnesia),
+application:start(orber),
+
+%% Register CosTransactions in the IFR.
+'oe_CosTransactions':'oe_register'(), 
+
+%% Register the application specific Resource implementations
+%% in the IFR.
+'oe_ownResourceImpl':'oe_register'(), 
+
+%%-- Set parameters --
+%% Timeout can be either 0 (no timeout) or an integer N &gt; 0.
+%% The later state that the transaction should be rolled 
+%% back if the transaction have not completed within N seconds.
+TimeOut = 0,
+
+%% Do we want the transaction to report Heuristic Exceptions?
+%% This variable must be boolean and indicates the way the
+%% Terminator should behave.
+Heuristics = true,
+
+%% Start the cosTransactions application.
+cosTransactions:start(),  %% or application:start(cosTransactions),
+
+%% Start a factory using the default configuration
+TrFac = cosTransactions:start_factory(),
+%% ... or use configuration parameters.
+TrFac = cosTransactions:start_factory([{typecheck, false}, {hash_max, 3013}]),
+
+%% Create a new top-level transaction.
+Control = 'CosTransactions_TransactionFactory':create(TrFac, TimeOut),
+
+%% Retrieve the Coordinator and Terminator object references from
+%% the Control Object.
+Term = 'CosTransactions_Control':get_terminator(Control),
+Coord = 'CosTransactions_Control':get_coordinator(Control),
+
+%% Create two SubTransactions with the root-Coordinator as parent.
+SubCont1 = 'CosTransactions_Coordinator':create_subtransaction(Coord),
+SubCont2 = 'CosTransactions_Coordinator':create_subtransaction(Coord),
+
+%% Retrieve the Coordinator references from the Control Objects.
+SubCoord1 = 'CosTransactions_Control':get_coordinator(SubCont1),
+SubCoord2 = 'CosTransactions_Control':get_coordinator(SubCont2),
+
+%% Create application Resources. We can, for example, start the Resources 
+%% our selves or look them up in the naming service. This is application
+%% specific.
+Res1 = ...
+Res2 = ...
+Res3 = ...
+Res4 = ...
+
+%% Register Resources with respective Coordinator. Each call returns
+%% a RecoveryCoordinator object reference.
+RC1 = 'CosTransactions_Coordinator':register_resource(SubCoord1, Res1),
+RC2 = 'CosTransactions_Coordinator':register_resource(SubCoord1, Res2),
+RC3 = 'CosTransactions_Coordinator':register_resource(SubCoord2, Res3),
+RC4 = 'CosTransactions_Coordinator':register_resource(SubCoord2, Res4),
+
+%% Register Resource 4 with SubCoordinator 1 so that the Resource will be 
+%% informed when the SubCoordinator commits or roll-back.
+'CosTransactions_Coordinator':register_subtran_aware(SubCoord1, Res4),
+
+%% We are now ready to try to commit the transaction. The second argument
+%% must be a boolean
+Outcome = (catch 'CosTransactions_Terminator':commit(Term, Heuristics)),
+      </fo:block>
+      <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">For the cosTransaction application to be able to recognize if a Resource is
+          dead or in the process of restarting the Resource must be started as persistent,
+          e.g., 'OwnResource':oe_create_link(Env, [{regname, {global, RegName}}, {persistent, true}]).
+          For more information see the Orber documentation.</fo:block>
+      </fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The outcome of the transaction can be:</fo:block>
+      <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>ok - the transaction was successfully committed.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>{'EXCEPTION', HeuristicExc} - at least one participant made a
+         Heuristic decision or, due to a failure, one or more participants
+         where unreachable.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>{'EXCEPTION', #'TRANSACTION_ROLLEDBACK'{}} - 
+         the transaction was successfully rolled back.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Any system exception - 
+         the transaction failed with unknown reason.</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+    
+  <fo:block id="idp464896" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.5  Resource Skeletons</fo:marker>1.5  Resource Skeletons</fo:block><fo:block id="idp467712" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.5.1 
+      Resource Skeletons</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This chapter provides a skeleton for application Resources. For more information
+      see the Orber documentation.</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+%%%-----------------------------------------------------------
+%%% File    : Module_Interface_impl.erl
+%%% Author  : 
+%%% Purpose : 
+%%% Created : 
+%%%-----------------------------------------------------------
+ 
+-module('Module_Interface_impl').
+ 
+%%--------------- INCLUDES -----------------------------------
+-include_lib("orber/include/corba.hrl").
+-include_lib("cosTransactions/include/CosTransactions.hrl").
+
+%%--------------- EXPORTS-------------------------------------
+%%- Inherit from CosTransactions::Resource -------------------
+-export([prepare/2, 
+         rollback/2, 
+         commit/2, 
+         commit_one_phase/2, 
+         forget/2]).
+
+%%- Inherit from CosTransactions::SubtransactionAwareResource 
+-export([commit_subtransaction/3,
+         rollback_subtransaction/2]).
+ 
+%%--------------- gen_server specific ------------------------
+-export([init/1, terminate/2, code_change/3, handle_info/2]).
+ 
+%%------------------------------------------------------------
+%% function : gen_server specific
+%%------------------------------------------------------------
+init(Env) -&gt;
+    %% 'trap_exit' optional
+    process_flag(trap_exit,true),
+
+    %%--- Possible replies ---
+    %% Reply and await next request
+    {ok, State}.
+
+    %% Reply and if no more requests within Time the special 
+    %% timeout message should be handled in the 
+    %% Module_Interface_impl:handle_info/2 call-back function (use the 
+    %% IC option {{handle_info, "Module::Interface"}, true}).
+    {ok, State, TimeOut}.
+
+     %% Return ignore in order to inform the parent, especially if it is a 
+     %% supervisor, that the server, as an example, did not start in 
+     %% accordance with the configuration data. 
+     ignore.
+
+     %% If the initializing procedure fails, the reason 
+     %% is supplied as StopReason.
+     {stop, StopReason}.
+
+
+terminate(Reason, State) -&gt;
+    ok.
+
+code_change(OldVsn, State, Extra) -&gt;
+    {ok, NewState}.
+
+%% If use IC option {{handle_info, "Module::Interface"}, true}
+handle_info(Info, State) -&gt;
+     %%--- Possible replies ---
+     %% Await the next invocation.
+     {noreply, State}.
+     %% Stop with Reason.
+     {stop, Reason, State}.
+
+ 
+%%- Inherit from CosTransactions::Resource -------------------
+prepare(State) -&gt;
+
+    %%% Do application specific actions here %%%
+
+    %%-- Reply: --
+    %% If no data related to the transaction changed.
+    {reply, 'VoteReadOnly', State}
+    %% .. or (for example): 
+    {stop, normal, 'VoteReadOnly', State}.
+
+    %% If able to commit
+    {reply, 'VoteCommit', State}
+
+    %% If not able to commit
+    {reply, 'VoteRollback', State}
+    %% .. or (for example): 
+    {stop, normal, 'VoteRollback', State}.
+
+rollback(State) -&gt;
+
+    %%% Do application specific actions here %%%
+
+    %%-- Reply: --
+    %% If able to rollback successfully
+    {reply, ok, State}
+    %% .. or (for example): 
+    {stop, normal, ok, State}.
+
+    %% If Heuristic Decision. Raise exception:
+    corba:raise(#'CosTransactions_HeuristicMixed' {})
+    corba:raise(#'CosTransactions_HeuristicHazard' {})
+    corba:raise(#'CosTransactions_HeuristicCommit'{})
+
+
+commit(State) -&gt;
+
+    %%% Do application specific actions here %%%
+
+    %%-- Reply: --
+    %% If able to commit successfully
+    {reply, ok, State}
+    %% .. or (for example): 
+    {stop, normal, ok, State}.
+
+    %% If the prepare operation never been invoked:
+    corba:raise(#'CosTransactions_NotPrepared'{})
+
+    %% If Heuristic Decision. Raise exception:
+    corba:raise(#'CosTransactions_HeuristicMixed' {})
+    corba:raise(#'CosTransactions_HeuristicHazard' {})
+    corba:raise(#'CosTransactions_HeuristicRollback'{})
+
+ 
+commit_one_phase(State) -&gt;
+
+    %%% Do application specific actions here %%%
+
+    %%-- Reply: --
+    %% If able to commit successfully
+    {reply, ok, State}
+    %% .. or (for example): 
+    {stop, normal, ok, State}.
+
+    %% If fails. Raise exception:
+    corba:raise(#'CosTransactions_HeuristicHazard' {})
+
+    %% If able to rollback successfully
+    corba:raise(#'CosTransactions_TransactionRolledBack' {})
+
+ 
+forget(State) -&gt;
+
+    %%% Do application specific actions here %%%
+
+    %%-- Reply: --
+    {reply, ok, State}.
+    %% .. or (for example): 
+    {stop, normal, ok, State}.
+  
+
+
+%%%%%% If the Resource is also supposed to be a     %%%%%%
+%%%%%% SubtransactionAwareResource implement these. %%%%%%
+
+%%- Inherit from CosTransactions::SubtransactionAwareResource
+commit_subtransaction(State, Parent) -&gt;
+    %%% Do application specific actions here %%%
+
+    %%-- Reply: --
+    {reply, ok, State}.
+    %% .. or (for example): 
+    {stop, normal, ok, State}.
+
+rollback_subtransaction(State) -&gt;
+    %%% Do application specific actions here %%%
+
+    %%-- Reply: --
+    {reply, ok, State}.
+    %% .. or (for example): 
+    {stop, normal, ok, State}.
+ 
+%%--------------- END OF MODULE ------------------------------
+    </fo:block>
+  <fo:block id="idp113808" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">2   
+      Reference Manual</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-weight="bold">cosTransactions</fo:inline> application is an Erlang implementation
+      of the OMG CORBA Transaction Service.</fo:block>
+  <fo:block page-break-before="always" id="idp886704" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">cosTransactions</fo:marker>cosTransactions</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  cosTransactions
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosTransactions/include/CosTransactions.hrl").</fo:inline></fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This module contains the functions for starting and stopping the application.
+      If the application is started using <fo:inline font-family="monospace">application:start(cosTransactions)</fo:inline> the 
+      default configuration is used (see listing below). The Factory reference is stored using the CosNaming Service
+      under the id <fo:inline font-family="monospace">"oe_cosTransactionsFac_IPNo"</fo:inline>.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The following application configuration parameters exist:</fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-weight="bold">maxRetries</fo:inline> - default is 40 times, i.e., if a transaction participant is unreachable
+       the application will retry to contact it <fo:inline font-family="monospace">N</fo:inline> times. Reaching the maximum is considered to be a disaster.</fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-weight="bold">comFailWait</fo:inline> - default is 5000 milliseconds, i.e., before the application
+       retries to contact unreachable transaction participants the application wait <fo:inline font-family="monospace">Time</fo:inline> milliseconds.</fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp631152">start() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {error, Reason}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation starts the cosTransactions application.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp636480">stop() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {error, Reason}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation stops the cosTransactions application.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp738048">start_factory() -&gt; TransactionFactory</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TransactionFactory = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation creates a <fo:inline font-style="italic">Transaction Factory</fo:inline>.
+          The Factory is used to create a new top-level <fo:inline font-style="italic">transaction</fo:inline> using default options (see listing below).</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp804016">start_factory(FacDef) -&gt; TransactionFactory</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">FacDef = [Options], see Option listing below.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TransactionFactory = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation creates a <fo:inline font-style="italic">Transaction Factory</fo:inline>.
+          The Factory is used to create a new top-level transaction. </fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The FacDef list must be a list of {Item, Value} tuples, 
+          where the following values are allowed: </fo:block>
+        <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>{hash_max, HashValue} - 
+           This value denotes the upper bound of the hash value the 
+          <fo:inline font-style="italic">Coordinator</fo:inline> uses.
+           Default is <fo:inline font-family="monospace">1013</fo:inline>. HashValue must be an integer.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>{allow_subtr, Boolean} -
+           If set to true it is possible to create <fo:inline font-style="italic">subtransactions</fo:inline>.
+           Default is <fo:inline font-family="monospace">true</fo:inline>.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>{typecheck, Boolean} -
+           If set to to true all transaction operation's arguments will be type-checked.
+           Default is <fo:inline font-family="monospace">true</fo:inline>.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>{tty, Boolean} -  
+           Enables or disables error printouts to the tty. 
+           If Flag is false, all text that the error logger would have sent to the terminal is discarded. 
+           If Flag is true, error messages are sent to the terminal screen. </fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>{logfile, FileName} -
+           This function makes it possible to store all system information in <fo:inline font-family="monospace">FileName</fo:inline> (string()).
+           It can be used in combination with the tty(false) item in to have a silent system, 
+           where all system information are logged to a file. 
+           As default no logfile is used.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">{maxRetries, Integer}</fo:inline> -
+           default is 40 times, i.e., if a transaction participant is unreachable the application will 
+           retry to contact it <fo:inline font-family="monospace">N</fo:inline> times. Reaching the maximum is considered to be a disaster.
+           This option overrides the application configuration parameter.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">{comFailWait, Integer}</fo:inline> -
+           default is 5000 milliseconds, i.e., before the application retries to contact unreachable 
+           transaction participants the application wait <fo:inline font-family="monospace">Time</fo:inline> milliseconds.
+           This option overrides the application configuration parameter.</fo:block></fo:list-item-body></fo:list-item>
+        </fo:list-block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp609776">stop_factory(TransactionFactory) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TransactionFactory = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = ok | {'EXCEPTION', E}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation stop the target transaction factory.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp403152" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosTransactions_Control</fo:marker>CosTransactions_Control</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosTransactions_Control
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosTransactions/include/CosTransactions.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp745744">get_coordinator(Control) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Control = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return =  Coordinator | {'EXCEPTION', E}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Coordinator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">E = #'CosTransactions_Unavailable' {}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns the Coordinator object associated with the target object.
+          The Coordinator supports operations for termination of a transaction.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp405680">get_terminator(Control) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Control = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return =  Terminator | {'EXCEPTION', E}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Terminator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">E = #'CosTransactions_Unavailable' {}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns the Terminator object associated with the target object.
+          The Terminator supports operations for termination of a transaction.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp641632" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosTransactions_Coordinator</fo:marker>CosTransactions_Coordinator</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosTransactions_Coordinator
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosTransactions/include/CosTransactions.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp740032">create_subtransaction(Coordinator) -&gt; Control</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Coordinator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Control = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A new subtransaction is created whose parent is the Coordinator argument.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Raises exception:</fo:block>
+        <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'SubtransactionsUnavailable' - if nested transactions are not supported.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'Inactive' - if target transaction has already been prepared.</fo:block></fo:list-item-body></fo:list-item>
+        </fo:list-block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp645760">get_transaction_name(Coordinator) -&gt; Name</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Coordinator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = string() of type "oe_name@machine_type_timestamp"</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns a printable string, which describe the transaction. The main purpose is to support debugging.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp634784">get_parent_status(Coordinator) -&gt; Status</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Coordinator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Status = atom()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the status of the parent transaction
+          associated with the target object. If the target object is a top-level
+          transaction this operation is equivalent to <fo:inline font-family="monospace">get_status/1</fo:inline> operation. </fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Possible Status replies:</fo:block>
+        <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'StatusCommitted'</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'StatusCommitting'</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'StatusMarkedRollback'</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'StatusRollingBack'</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'StatusRolledBack'</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'StatusActive'</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'StatusPrepared'</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'StatusUnknown'</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'StatusNoTransaction'</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'StatusPreparing'</fo:block></fo:list-item-body></fo:list-item>
+        </fo:list-block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp719280">get_status(Coordinator) -&gt; Status</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Coordinator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Status = atom()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the status of the transaction associated with the target object.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp722816">get_top_level_status(Coordinator) -&gt; Status</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Coordinator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Status = atom()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the status of the top-level transaction associated with the target object.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp726304">hash_top_level_tran(Coordinator) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Coordinator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = integer()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns a hash code for the top-level transaction 
+          associated with the target object. Equals the operation
+          <fo:inline font-family="monospace">hash_transaction/1</fo:inline> if the target object is a top-level transaction.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp898416">hash_transaction(Coordinator) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Coordinator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = integer()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns a hash code for the transaction associated with the target object.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp901904">is_descendant_transaction(Coordinator, OtherCoordinator) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Coordinator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">OtherCoordinator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = Boolean</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns true if the transaction associated with the target object is a 
+          descendant of the transaction associated with the parameter object.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp906192">is_same_transaction(Coordinator, OtherCoordinator) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Coordinator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">OtherCoordinator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = Boolean</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns true if the transaction associated with the target object is 
+          related to the transaction associated with the parameter object.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp910448">is_top_level_transaction(Coordinator) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Coordinator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = Boolean</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns true if the transaction associated with the target object is 
+          a top-level transaction.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp914240">register_resource(Coordinator, Resource) -&gt; RecoveryCoordinator</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Coordinator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Resource = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">RecoveryCoordinator = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation registers the parameter <fo:inline font-family="monospace">Resource</fo:inline> object as a participant in the
+          transaction associated with the target object. The <fo:inline font-family="monospace">RecoveryCoordinator</fo:inline> returned
+          by this operation can be used by this Resource during recovery.</fo:block>
+        <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+          <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Resources will be called in FIFO-order when preparing or committing.
+            Hence, be sure to register the Resources in the correct order.</fo:block>
+        </fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Raises exception:</fo:block>
+        <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'Inactive' - if target transaction has already been prepared.</fo:block></fo:list-item-body></fo:list-item>
+        </fo:list-block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp922432">register_subtran_aware(Coordinator, SubtransactionAwareResource) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Coordinator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation registers the parameter <fo:inline font-family="monospace">SubtransactionAwareResource</fo:inline> object such that
+          it will be notified when the transaction, associated wit the target object, 
+          has committed or rolled back.</fo:block>
+        <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+          <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Resources will be called in FIFO-order.
+            Hence, be sure to register the Resources in the correct order.</fo:block>
+        </fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp928256">rollback_only(Coordinator) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Coordinator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The transaction associated with the target object is modified so the only
+          possible outcome is to rollback the transaction.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp829120" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosTransactions_RecoveryCoordinator</fo:marker>CosTransactions_RecoveryCoordinator</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosTransactions_RecoveryCoordinator
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosTransactions/include/CosTransactions.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp832240">replay_completion(RecoveryCoordinator, Timeout, Resource) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">RecoveryCoordinator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Timeout = integer(), milliseconds | 'infinity'</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Resource = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = Status | {'EXCEPTION', E}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">E = #'CosTransactions_NotPrepared'{}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Status = atom()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-family="monospace">RecoveryCoordinator</fo:inline> object is returned by the operation
+          <fo:inline font-family="monospace">CosTransactions_Coordinator:register_resource/3</fo:inline>. The <fo:inline font-family="monospace">replay_completion/2</fo:inline>
+          may only be used by the registered Resource and returns the current status
+          of the transaction. The operation is used when recovering after a failure.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Possible Status replies:</fo:block>
+        <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'StatusCommitted'</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'StatusCommitting'</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'StatusMarkedRollback'</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'StatusRollingBack'</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'StatusRolledBack'</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'StatusActive'</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'StatusPrepared'</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'StatusUnknown'</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'StatusNoTransaction'</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'StatusPreparing'</fo:block></fo:list-item-body></fo:list-item>
+        </fo:list-block>
+        <fo:block background-color="#ffd6d6" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Warning:</fo:block>
+          <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">replay_completion/3</fo:inline> is blocking and may cause dead-lock if a child
+            calls this function at the same time as its parent invokes an operation
+            on the child. Dead-lock will not occur if the timeout has any value except 'infinity'.</fo:block>
+          <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the call is external incoming (intra-ORB) the timeout will not be activated.
+            Hence, similar action must be taken if the Resource resides on another vendors ORB.</fo:block>
+        </fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp853488" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosTransactions_Resource</fo:marker>CosTransactions_Resource</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosTransactions_Resource
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosTransactions/include/CosTransactions.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp856592">commit(Resource) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Resource = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {'EXCEPTION', E}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">E = #'CosTransactions_NotPrepared'{} | #'CosTransactions_HeuristicRollback'{} | #'CosTransactions_HeuristicMixed'{} | #'CosTransactions_HeuristicHazard'{}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation instructs the Resource to commit all changes made as a part of the transaction.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Resource can raise:</fo:block>
+        <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Heuristic Exception - if a Heuristic decision is made which differ
+           from the true outcome of the transaction. The Resource must remember
+           the Heuristic outcome until the <fo:inline font-family="monospace">forget</fo:inline> operation is performed.</fo:block></fo:list-item-body></fo:list-item>
+        </fo:list-block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp863168">commit_one_phase(Resource) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Resource = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {'EXCEPTION', E}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">E = #'CosTransactions_HeuristicHazard'{} | #'CosTransactions_TransactionRolledBack'{}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If possible, the Resource should commit all changes made as part of the transaction,
+          else it should raise the TRANSACTION_ROLLEDBACK exception. 
+          This operation can only be used if the Resource is the only child of its parent.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp867552">forget(Resource) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Resource = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation informs the Resource that it is safe to forget any Heuristic
+          decisions and the knowledge of the transaction.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp871312">prepare(Resource) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Resource = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = Vote | {'EXCEPTION', E}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Vote = 'VoteReadOnly' | 'VoteCommit' | 'VoteRollback'</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">E = #'CosTransactions_HeuristicMixed'{} | #'CosTransactions_HeuristicHazard'{}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation is invoked on the Resource to begin the two-phase commit protocol.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Resource can reply:</fo:block>
+        <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'VoteReadOnly' - if no persistent data has been modified by the transaction. 
+           The Resource can forget all knowledge of the transaction. </fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'VoteCommit' - if the Resource has been prepared and is able to write all the
+           data needed to commit the transaction to stable storage.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'VoteRollback' - under any circumstances but must do so if none of the alternatives above
+           are applicable.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Heuristic Exception - if a Heuristic decision is made which differ
+           from the true outcome of the transaction. The Resource must remember
+           the Heuristic outcome until the <fo:inline font-family="monospace">forget</fo:inline> operation is performed.</fo:block></fo:list-item-body></fo:list-item>
+        </fo:list-block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp879984">rollback(Resource) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Resource = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {'EXCEPTION', E}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">E = #'CosTransactions_HeuristicCommit'{} | #'CosTransactions_HeuristicMixed'{} | #'CosTransactions_HeuristicHazard'{}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation instructs the Resource to rollback all changes made as a part of the transaction.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Resource can raise:</fo:block>
+        <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Heuristic Exception - if a Heuristic decision is made which differ
+           from the true outcome of the transaction. The Resource must remember
+           the Heuristic outcome until the <fo:inline font-family="monospace">forget</fo:inline> operation is performed.</fo:block></fo:list-item-body></fo:list-item>
+        </fo:list-block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp945376" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosTransactions_SubtransactionAwareResource</fo:marker>CosTransactions_SubtransactionAwareResource</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosTransactions_SubtransactionAwareResource
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This interface inherits the CosTransactions::Resource interface. Hence, 
+      it must also support all operations defined in the Resource interface.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosTransactions/include/CosTransactions.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp949088">commit_subtransaction(SubtransactionAwareResource, Coordinator) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">SubtransactionAwareResource = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Coordinator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the <fo:inline font-family="monospace">SubtransactionAwareResource</fo:inline> have been registered with a <fo:inline font-weight="bold">subtransaction</fo:inline>
+          using the operation <fo:inline font-family="monospace">CosTransactions_Coordinator:register_subtran_aware/2</fo:inline>,
+          it will be notified when the transaction has committed.</fo:block>
+        <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+          <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The results of a committed subtransaction are relative to the completion of its ancestor
+            transactions, that is, these results can be undone if any ancestor transaction is rolled back.</fo:block>
+        </fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp955792">rollback_subtransaction(SubtransactionAwareResource) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">SubtransactionAwareResource = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the <fo:inline font-family="monospace">SubtransactionAwareResource</fo:inline> have been registered with a transactions
+          using the operation <fo:inline font-family="monospace">CosTransactions_Coordinator:register_subtran_aware/2</fo:inline>
+          it will be notified when the transaction has rolled back.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp968256" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosTransactions_Terminator</fo:marker>CosTransactions_Terminator</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosTransactions_Terminator
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosTransactions/include/CosTransactions.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp971360">commit(Terminator, ReportHeuristics) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Terminator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ReportHeuristics = boolean()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return =  ok | {'EXCEPTION', E}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">E = #'CosTransactions_HeuristicMixed'{} | #'CosTransactions_HeuristicHazrd'{} | #'CosTransactions_TransactionRolledBack'{}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation initiates the two-phase commit protocol. If the transaction has not been marked
+          <fo:inline font-family="monospace">'rollback only'</fo:inline> and all the participants agree to commit, the operation terminates normally. Otherwise,
+          the TransactionRolledBack is raised. If the parameter <fo:inline font-family="monospace">ReportHeuristics</fo:inline> is true and inconsistent
+          outcomes by raising an Heuristic Exception.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp977232">rollback(Terminator) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Terminator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation roles back the transaction. </fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp988096" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosTransactions_TransactionFactory</fo:marker>CosTransactions_TransactionFactory</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosTransactions_TransactionFactory
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosTransactions/include/CosTransactions.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp991216">create(TransactionFactory, Timeout) -&gt; Control</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TransactionFactory = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Timeout = integer()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Control = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation creates a new top-level transaction.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-family="monospace">Timeout</fo:inline> argument can be:</fo:block>
+        <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>0 - no timeout.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>N (integer() &gt; 0) -  the transaction will be subject to being rolled back
+           if it does not complete before N seconds have elapsed.</fo:block></fo:list-item-body></fo:list-item>
+        </fo:list-block>
+      </fo:block>
+  
+  
+</fo:flow>
+  </fo:page-sequence>
+</fo:root>

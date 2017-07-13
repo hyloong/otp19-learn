@@ -17,6 +17,6 @@
 %%
 %% %CopyrightEnd%
 %%
-{release, {"Erlang/OTP","19"}, {erts, "8.3"},
- [{kernel,"5.2"},
-  {stdlib,"3.3"}]}.
+{release, {"Erlang/OTP","20"}, {erts, "9.0"},
+ [{kernel,"5.3"},
+  {stdlib,"3.4"}]}.

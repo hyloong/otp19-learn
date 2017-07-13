@@ -27,14 +27,16 @@ $(OBJDIR)/atom.o: beam/atom.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_process_dict.h beam/erl_hl_timer.h \
- beam/erl_async.h beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h \
- beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_process_dict.h \
+ beam/erl_hl_timer.h beam/erl_async.h beam/erl_gc.h beam/erl_trace.h \
+ beam/erl_db.h hipe/hipe_process.h beam/erl_alloc.h beam/export.h \
+ beam/erl_bits.h beam/module.h hipe/hipe_module.h beam/global.h \
  beam/register.h beam/erl_fun.h beam/erl_debug.h beam/error.h \
+ beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
  beam/dtrace-wrapper.h
 $(OBJDIR)/beam_bif_load.o: beam/beam_bif_load.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
@@ -62,21 +64,25 @@ $(OBJDIR)/beam_bif_load.o: beam/beam_bif_load.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h beam/big.h \
- beam/beam_bp.h beam/beam_catches.h beam/erl_binary.h beam/erl_nif.h \
- beam/erl_nif_api_funcs.h hipe/hipe_stack.h hipe/hipe_arch.h \
- hipe/hipe_amd64.h hipe/hipe_x86.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h \
+ beam/beam_bp.h beam/beam_catches.h beam/erl_bif_unique.h \
+ beam/erl_nfunc_sched.h hipe/hipe_bif0.h hipe/hipe_stack.h \
+ hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h
 $(OBJDIR)/beam_bp.o: beam/beam_bp.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -103,19 +109,22 @@ $(OBJDIR)/beam_bp.o: beam/beam_bp.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h beam/erl_binary.h \
- beam/beam_bp.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_bif_unique.h \
+ beam/big.h beam/beam_bp.h beam/erl_nfunc_sched.h
 $(OBJDIR)/beam_catches.o: beam/beam_catches.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -135,24 +144,26 @@ $(OBJDIR)/beam_catches.o: beam/beam_catches.c \
  ../include/internal/pthread/ethr_event.h \
  ../include/internal/ethr_mutex.h beam/erl_lock_count.h beam/erl_term.h \
  sys/common/erl_mmap.h beam/sys.h ../include/internal/erl_printf.h \
- beam/erl_msacc.h beam/beam_catches.h beam/code_ix.h beam/global.h \
+ beam/erl_msacc.h beam/beam_catches.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/global.h \
  beam/erl_alloc.h $(TTF_DIR)/erl_alloc_types.h \
  beam/erl_thr_progress.h beam/erl_alloc_util.h sys/common/erl_mseg.h \
  sys/common/erl_mmap.h beam/lttng-wrapper.h \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
+ beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
+ beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
+ beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h
 $(OBJDIR)/beam_debug.o: beam/beam_debug.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -179,19 +190,22 @@ $(OBJDIR)/beam_debug.o: beam/beam_debug.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h beam/big.h \
- beam/beam_bp.h beam/erl_binary.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h \
+ beam/beam_bp.h beam/erl_bif_unique.h beam/erl_nfunc_sched.h
 $(OBJDIR)/beam_emu.o: beam/beam_emu.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -218,25 +232,28 @@ $(OBJDIR)/beam_emu.o: beam/beam_emu.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h beam/big.h \
- beam/erl_binary.h beam/erl_map.h beam/dist.h zlib/zlib.h zlib/zconf.h \
- beam/beam_bp.h beam/beam_catches.h hipe/hipe_mode_switch.h beam/error.h \
- beam/erl_gc.h hipe/hipe_stack.h hipe/hipe_arch.h hipe/hipe_amd64.h \
- hipe/hipe_x86.h hipe/hipe_amd64_glue.h \
- $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_x86_glue.h \
- $(TTF_DIR)/hipe_x86_asm.h hipe/hipe_bif1.h \
- $(TTF_DIR)/beam_hot.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h \
+ beam/erl_bif_unique.h beam/erl_map.h beam/dist.h zlib/zlib.h \
+ zlib/zconf.h beam/beam_bp.h beam/beam_catches.h beam/erl_nfunc_sched.h \
+ hipe/hipe_mode_switch.h beam/error.h beam/erl_gc.h hipe/hipe_stack.h \
+ hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_amd64_glue.h \
+ hipe/hipe_x86_glue.h $(TTF_DIR)/hipe_x86_asm.h \
+ hipe/hipe_bif1.h $(TTF_DIR)/beam_hot.h \
  $(TTF_DIR)/beam_cold.h
 $(OBJDIR)/beam_load.o: beam/beam_load.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
@@ -264,25 +281,29 @@ $(OBJDIR)/beam_load.o: beam/beam_load.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h \
  x86_64-unknown-linux-gnu/erl_version.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h beam/beam_bp.h beam/big.h \
- beam/beam_catches.h beam/erl_binary.h beam/erl_zlib.h zlib/zlib.h \
- zlib/zconf.h beam/erl_map.h hipe/hipe_bif0.h hipe/hipe_mode_switch.h \
- beam/error.h beam/erl_gc.h hipe/hipe_stack.h hipe/hipe_arch.h \
- hipe/hipe_amd64.h hipe/hipe_x86.h hipe/hipe_amd64_glue.h \
- $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_x86_glue.h \
- $(TTF_DIR)/hipe_x86_asm.h hipe/hipe_arch.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/beam_bp.h \
+ beam/big.h beam/beam_catches.h beam/erl_bif_unique.h beam/erl_zlib.h \
+ zlib/zlib.h zlib/zconf.h beam/erl_map.h hipe/hipe_bif0.h \
+ hipe/hipe_mode_switch.h beam/error.h beam/erl_gc.h hipe/hipe_stack.h \
+ hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_amd64_glue.h \
+ hipe/hipe_x86_glue.h $(TTF_DIR)/hipe_x86_asm.h \
+ hipe/hipe_arch.h hipe/hipe_load.h \
  $(TTF_DIR)/beam_pred_funcs.h \
  $(TTF_DIR)/beam_tr_funcs.h
 $(OBJDIR)/beam_ranges.o: beam/beam_ranges.c \
@@ -311,17 +332,19 @@ $(OBJDIR)/beam_ranges.o: beam/beam_ranges.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h
 $(OBJDIR)/bif.o: beam/bif.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -350,23 +373,26 @@ $(OBJDIR)/bif.o: beam/bif.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_process_dict.h beam/erl_hl_timer.h \
- beam/erl_async.h beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h \
- beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_process_dict.h \
+ beam/erl_hl_timer.h beam/erl_async.h beam/erl_gc.h beam/erl_trace.h \
+ beam/erl_db.h hipe/hipe_process.h beam/erl_alloc.h beam/export.h \
+ beam/erl_bits.h beam/module.h hipe/hipe_module.h beam/global.h \
  beam/register.h beam/erl_fun.h beam/erl_debug.h beam/error.h \
+ beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
  beam/dtrace-wrapper.h beam/bif.h hipe/hipe_mode_switch.h beam/error.h \
  beam/erl_gc.h hipe/hipe_stack.h hipe/hipe_arch.h hipe/hipe_amd64.h \
- hipe/hipe_x86.h hipe/hipe_amd64_glue.h \
- $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_x86_glue.h \
+ hipe/hipe_x86.h $(TTF_DIR)/hipe_amd64_asm.h \
+ hipe/hipe_amd64_glue.h hipe/hipe_x86_glue.h \
  $(TTF_DIR)/hipe_x86_asm.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h beam/big.h beam/dist.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h beam/dist.h \
  zlib/zlib.h zlib/zconf.h x86_64-unknown-linux-gnu/erl_version.h \
- beam/erl_binary.h beam/beam_bp.h beam/erl_db_util.h \
- beam/erl_bif_unique.h beam/erl_map.h
+ beam/erl_bif_unique.h beam/beam_bp.h beam/erl_db_util.h beam/erl_map.h \
+ beam/erl_nfunc_sched.h
 $(OBJDIR)/big.o: beam/big.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -393,18 +419,21 @@ $(OBJDIR)/big.o: beam/big.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/big.h beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/big.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h
 $(OBJDIR)/binary.o: beam/binary.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -431,22 +460,26 @@ $(OBJDIR)/binary.o: beam/binary.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h hipe/hipe_mode_switch.h beam/error.h beam/erl_gc.h \
- hipe/hipe_stack.h hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
- hipe/hipe_amd64_glue.h $(TTF_DIR)/hipe_amd64_asm.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ hipe/hipe_mode_switch.h beam/error.h beam/erl_gc.h hipe/hipe_stack.h \
+ hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_amd64_glue.h \
  hipe/hipe_x86_glue.h $(TTF_DIR)/hipe_x86_asm.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h beam/big.h beam/erl_binary.h
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h \
+ beam/erl_bif_unique.h
 $(OBJDIR)/break.o: beam/break.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -473,20 +506,22 @@ $(OBJDIR)/break.o: beam/break.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/version.h beam/erl_db.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h beam/erl_db_util.h \
- beam/erl_db_hash.h beam/erl_db_tree.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/version.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_db_util.h \
+ beam/erl_bif_unique.h beam/big.h beam/erl_db_hash.h beam/erl_db_tree.h \
  x86_64-unknown-linux-gnu/erl_version.h beam/erl_instrument.h \
  beam/erl_mtrace.h
 $(OBJDIR)/code_ix.o: beam/code_ix.c \
@@ -509,25 +544,26 @@ $(OBJDIR)/code_ix.o: beam/code_ix.c \
  ../include/internal/pthread/ethr_event.h \
  ../include/internal/ethr_mutex.h beam/erl_lock_count.h beam/erl_term.h \
  sys/common/erl_mmap.h beam/sys.h ../include/internal/erl_printf.h \
- beam/erl_msacc.h beam/global.h beam/erl_alloc.h \
+ beam/erl_msacc.h $(TTF_DIR)/beam_opcodes.h \
+ beam/global.h beam/erl_alloc.h \
  $(TTF_DIR)/erl_alloc_types.h \
  beam/erl_thr_progress.h beam/erl_alloc_util.h sys/common/erl_mseg.h \
  sys/common/erl_mmap.h beam/lttng-wrapper.h \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
+ beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
+ beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
+ beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/beam_catches.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/beam_catches.h
 $(OBJDIR)/copy.o: beam/copy.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -554,19 +590,21 @@ $(OBJDIR)/copy.o: beam/copy.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_map.h beam/erl_trace.h hipe/hipe_process.h \
- beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
- beam/register.h beam/erl_fun.h beam/erl_debug.h beam/error.h \
- beam/dtrace-wrapper.h beam/big.h beam/erl_binary.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h
+ beam/erl_gc.h beam/erl_map.h beam/erl_fun.h beam/erl_bits.h \
+ beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h beam/erl_alloc.h \
+ beam/export.h beam/module.h hipe/hipe_module.h beam/global.h \
+ beam/register.h beam/erl_debug.h beam/error.h beam/erl_nif.h \
+ beam/erl_nif_api_funcs.h beam/erl_binary.h beam/dtrace-wrapper.h \
+ beam/big.h beam/bif.h $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_bif_unique.h
 $(OBJDIR)/dist.o: beam/dist.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -593,19 +631,22 @@ $(OBJDIR)/dist.o: beam/dist.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/dist.h zlib/zlib.h zlib/zconf.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h beam/erl_binary.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/dist.h zlib/zlib.h \
+ zlib/zconf.h beam/bif.h $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_bif_unique.h \
+ beam/big.h
 $(OBJDIR)/elib_memmove.o: beam/elib_memmove.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h
 $(OBJDIR)/erl_afit_alloc.o: beam/erl_afit_alloc.c \
@@ -635,18 +676,19 @@ $(OBJDIR)/erl_afit_alloc.o: beam/erl_afit_alloc.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_afit_alloc.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/erl_afit_alloc.h
 $(OBJDIR)/erl_alloc.o: beam/erl_alloc.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -672,21 +714,24 @@ $(OBJDIR)/erl_alloc.o: beam/erl_alloc.c \
  beam/lttng-wrapper.h beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_db.h beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h \
- beam/erl_db_util.h beam/erl_db_hash.h beam/erl_db_tree.h \
- beam/erl_binary.h beam/erl_instrument.h beam/erl_mtrace.h \
- beam/erl_cpu_topology.h beam/erl_thr_queue.h sys/common/erl_check_io.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_db_util.h \
+ beam/erl_bif_unique.h beam/big.h beam/erl_db_hash.h beam/erl_db_tree.h \
+ beam/erl_instrument.h beam/erl_mtrace.h beam/erl_cpu_topology.h \
+ beam/erl_thr_queue.h beam/erl_nfunc_sched.h sys/common/erl_check_io.h \
  beam/erl_sys_driver.h sys/common/erl_poll.h beam/erl_port_task.h \
  beam/erl_goodfit_alloc.h beam/erl_bestfit_alloc.h beam/erl_afit_alloc.h \
  beam/erl_ao_firstfit_alloc.h
@@ -717,18 +762,19 @@ $(OBJDIR)/erl_alloc_util.o: beam/erl_alloc_util.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/big.h beam/erl_mtrace.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/big.h beam/erl_mtrace.h
 $(OBJDIR)/erl_ao_firstfit_alloc.o: beam/erl_ao_firstfit_alloc.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/global.h beam/sys.h sys/unix/erl_unix_sys.h \
@@ -756,18 +802,19 @@ $(OBJDIR)/erl_ao_firstfit_alloc.o: beam/erl_ao_firstfit_alloc.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_ao_firstfit_alloc.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/erl_ao_firstfit_alloc.h
 $(OBJDIR)/erl_arith.o: beam/erl_arith.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -794,18 +841,21 @@ $(OBJDIR)/erl_arith.o: beam/erl_arith.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h beam/big.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h
 $(OBJDIR)/erl_async.o: beam/erl_async.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -834,16 +884,17 @@ $(OBJDIR)/erl_async.o: beam/erl_async.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_thr_queue.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/erl_thr_queue.h
 $(OBJDIR)/erl_bestfit_alloc.o: beam/erl_bestfit_alloc.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/global.h beam/sys.h sys/unix/erl_unix_sys.h \
@@ -871,18 +922,19 @@ $(OBJDIR)/erl_bestfit_alloc.o: beam/erl_bestfit_alloc.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_bestfit_alloc.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/erl_bestfit_alloc.h
 $(OBJDIR)/erl_bif_binary.o: beam/erl_bif_binary.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -909,22 +961,25 @@ $(OBJDIR)/erl_bif_binary.o: beam/erl_bif_binary.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h hipe/hipe_mode_switch.h beam/error.h beam/erl_gc.h \
- hipe/hipe_stack.h hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
- hipe/hipe_amd64_glue.h $(TTF_DIR)/hipe_amd64_asm.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ hipe/hipe_mode_switch.h beam/error.h beam/erl_gc.h hipe/hipe_stack.h \
+ hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_amd64_glue.h \
  hipe/hipe_x86_glue.h $(TTF_DIR)/hipe_x86_asm.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h beam/big.h beam/erl_binary.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h \
  beam/erl_bif_unique.h
 $(OBJDIR)/erl_bif_chksum.o: beam/erl_bif_chksum.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
@@ -952,18 +1007,21 @@ $(OBJDIR)/erl_bif_chksum.o: beam/erl_bif_chksum.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h beam/erl_binary.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_bif_unique.h \
  beam/big.h zlib/zlib.h zlib/zconf.h
 $(OBJDIR)/erl_bif_ddll.o: beam/erl_bif_ddll.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
@@ -991,20 +1049,23 @@ $(OBJDIR)/erl_bif_ddll.o: beam/erl_bif_ddll.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h beam/big.h \
- beam/dist.h zlib/zlib.h zlib/zconf.h \
- x86_64-unknown-linux-gnu/erl_version.h beam/erl_bif_unique.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h beam/dist.h \
+ zlib/zlib.h zlib/zconf.h x86_64-unknown-linux-gnu/erl_version.h \
+ beam/erl_bif_unique.h
 $(OBJDIR)/erl_bif_guard.o: beam/erl_bif_guard.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -1031,19 +1092,22 @@ $(OBJDIR)/erl_bif_guard.o: beam/erl_bif_guard.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h beam/big.h \
- beam/erl_binary.h beam/erl_map.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h \
+ beam/erl_bif_unique.h beam/erl_map.h
 $(OBJDIR)/erl_bif_info.o: beam/erl_bif_info.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -1069,25 +1133,28 @@ $(OBJDIR)/erl_bif_info.o: beam/erl_bif_info.c \
  beam/lttng-wrapper.h beam/erl_sched_spec_pre_alloc.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_nif.h beam/erl_nif_api_funcs.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h beam/big.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h \
  x86_64-unknown-linux-gnu/erl_version.h \
  $(TTF_DIR)/erl_compile_flags.h beam/erl_db_util.h \
- beam/erl_binary.h beam/erl_db.h beam/erl_db_hash.h beam/erl_db_tree.h \
+ beam/erl_bif_unique.h beam/erl_db_hash.h beam/erl_db_tree.h \
  beam/erl_instrument.h beam/erl_mtrace.h beam/dist.h zlib/zlib.h \
- zlib/zconf.h beam/erl_cpu_topology.h beam/erl_bif_unique.h \
- beam/erl_map.h hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h
+ zlib/zconf.h beam/erl_cpu_topology.h beam/erl_map.h hipe/hipe_arch.h \
+ hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h
 $(OBJDIR)/erl_bif_lists.o: beam/erl_bif_lists.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -1114,18 +1181,21 @@ $(OBJDIR)/erl_bif_lists.o: beam/erl_bif_lists.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h
 $(OBJDIR)/erl_bif_op.o: beam/erl_bif_op.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -1152,20 +1222,23 @@ $(OBJDIR)/erl_bif_op.o: beam/erl_bif_op.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h beam/big.h \
- beam/dist.h zlib/zlib.h zlib/zconf.h \
- x86_64-unknown-linux-gnu/erl_version.h beam/erl_binary.h beam/erl_map.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h beam/dist.h \
+ zlib/zlib.h zlib/zconf.h x86_64-unknown-linux-gnu/erl_version.h \
+ beam/erl_bif_unique.h beam/erl_map.h
 $(OBJDIR)/erl_bif_os.o: beam/erl_bif_os.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -1192,20 +1265,22 @@ $(OBJDIR)/erl_bif_os.o: beam/erl_bif_os.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h beam/big.h \
- beam/dist.h zlib/zlib.h zlib/zconf.h \
- x86_64-unknown-linux-gnu/erl_version.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h beam/dist.h \
+ zlib/zlib.h zlib/zconf.h x86_64-unknown-linux-gnu/erl_version.h
 $(OBJDIR)/erl_bif_port.o: beam/erl_bif_port.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -1234,19 +1309,22 @@ $(OBJDIR)/erl_bif_port.o: beam/erl_bif_port.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_process_dict.h beam/erl_hl_timer.h \
- beam/erl_async.h beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h \
- beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_process_dict.h \
+ beam/erl_hl_timer.h beam/erl_async.h beam/erl_gc.h beam/erl_trace.h \
+ beam/erl_db.h hipe/hipe_process.h beam/erl_alloc.h beam/export.h \
+ beam/erl_bits.h beam/module.h hipe/hipe_module.h beam/global.h \
  beam/register.h beam/erl_fun.h beam/erl_debug.h beam/error.h \
+ beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
  beam/dtrace-wrapper.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h beam/big.h beam/dist.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h beam/dist.h \
  zlib/zlib.h zlib/zconf.h x86_64-unknown-linux-gnu/erl_version.h \
- beam/erl_binary.h beam/erl_db_util.h beam/packet_parser.h \
- beam/erl_driver.h beam/erl_bif_unique.h
+ beam/erl_bif_unique.h beam/erl_db_util.h beam/packet_parser.h \
+ beam/erl_driver.h
 $(OBJDIR)/erl_bif_re.o: beam/erl_bif_re.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -1273,18 +1351,21 @@ $(OBJDIR)/erl_bif_re.o: beam/erl_bif_re.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h beam/erl_binary.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_bif_unique.h \
  beam/big.h pcre/pcre.h
 $(OBJDIR)/erl_bif_trace.o: beam/erl_bif_trace.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
@@ -1312,21 +1393,23 @@ $(OBJDIR)/erl_bif_trace.o: beam/erl_bif_trace.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h beam/big.h \
- beam/dist.h zlib/zlib.h zlib/zconf.h \
- x86_64-unknown-linux-gnu/erl_version.h beam/beam_bp.h beam/erl_binary.h \
- beam/erl_bif_unique.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h beam/dist.h \
+ zlib/zlib.h zlib/zconf.h x86_64-unknown-linux-gnu/erl_version.h \
+ beam/beam_bp.h beam/erl_bif_unique.h
 $(OBJDIR)/erl_bif_unique.o: beam/erl_bif_unique.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -1351,20 +1434,22 @@ $(OBJDIR)/erl_bif_unique.o: beam/erl_bif_unique.c \
  beam/erl_thr_progress.h beam/erl_alloc_util.h sys/common/erl_mseg.h \
  sys/common/erl_mmap.h beam/lttng-wrapper.h \
  beam/erl_sched_spec_pre_alloc.h beam/export.h beam/index.h beam/hash.h \
- beam/code_ix.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
- beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
- beam/external.h beam/erl_node_tables.h beam/erl_monitors.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_monitors.h beam/erl_port_task.h \
+ beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_node_container_utils.h beam/erl_ptab.h \
  beam/erl_time.h beam/erl_utils.h beam/erl_hl_timer.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/erl_async.h beam/erl_gc.h \
- beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h beam/export.h \
- beam/erl_bits.h beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h \
- beam/erl_bif_unique.h beam/big.h beam/global.h beam/atom.h beam/module.h \
- beam/register.h beam/erl_fun.h beam/erl_debug.h beam/error.h \
+ $(TTF_DIR)/erl_atom_table.h beam/erl_async.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_bif_unique.h \
+ beam/big.h beam/global.h beam/atom.h beam/module.h hipe/hipe_module.h \
+ beam/global.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
  beam/dtrace-wrapper.h
 $(OBJDIR)/erl_bits.o: beam/erl_bits.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
@@ -1392,19 +1477,22 @@ $(OBJDIR)/erl_bits.o: beam/erl_bits.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h beam/big.h \
- beam/erl_binary.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h \
+ beam/erl_bif_unique.h
 $(OBJDIR)/erl_cpu_topology.o: beam/erl_cpu_topology.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/global.h beam/sys.h sys/unix/erl_unix_sys.h \
@@ -1432,18 +1520,21 @@ $(OBJDIR)/erl_cpu_topology.o: beam/erl_cpu_topology.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h \
  beam/erl_cpu_topology.h
 $(OBJDIR)/erl_db.o: beam/erl_db.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
@@ -1471,19 +1562,23 @@ $(OBJDIR)/erl_db.o: beam/erl_db.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_db.h beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h \
- beam/erl_db_util.h beam/erl_db_hash.h beam/erl_db_tree.h beam/big.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_db_util.h \
+ beam/erl_bif_unique.h beam/big.h beam/erl_db_hash.h beam/erl_db_tree.h \
+ beam/erl_rbtree.h
 $(OBJDIR)/erl_db_hash.o: beam/erl_db_hash.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -1510,20 +1605,22 @@ $(OBJDIR)/erl_db_hash.o: beam/erl_db_hash.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_db.h beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h \
- beam/erl_db_util.h beam/erl_db_hash.h beam/erl_db_tree.h beam/big.h \
- beam/erl_binary.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_db_util.h \
+ beam/erl_bif_unique.h beam/big.h beam/erl_db_hash.h beam/erl_db_tree.h
 $(OBJDIR)/erl_db_tree.o: beam/erl_db_tree.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -1550,20 +1647,22 @@ $(OBJDIR)/erl_db_tree.o: beam/erl_db_tree.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_db.h beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h \
- beam/erl_db_util.h beam/erl_db_hash.h beam/erl_db_tree.h beam/big.h \
- beam/erl_binary.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_db_util.h \
+ beam/erl_bif_unique.h beam/big.h beam/erl_db_hash.h beam/erl_db_tree.h
 $(OBJDIR)/erl_db_util.o: beam/erl_db_util.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -1590,20 +1689,23 @@ $(OBJDIR)/erl_db_util.o: beam/erl_db_util.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_db.h beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h \
- beam/erl_db_util.h beam/erl_db_hash.h beam/erl_db_tree.h beam/big.h \
- beam/erl_binary.h beam/erl_map.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_db_util.h \
+ beam/erl_bif_unique.h beam/big.h beam/erl_db_hash.h beam/erl_db_tree.h \
+ beam/erl_map.h
 $(OBJDIR)/erl_debug.o: beam/erl_debug.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -1630,19 +1732,22 @@ $(OBJDIR)/erl_debug.o: beam/erl_debug.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/big.h beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h \
- beam/beam_catches.h beam/erl_map.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/big.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/beam_catches.h \
+ beam/erl_map.h
 $(OBJDIR)/erl_drv_thread.o: beam/erl_drv_thread.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/global.h beam/sys.h sys/unix/erl_unix_sys.h \
@@ -1670,17 +1775,19 @@ $(OBJDIR)/erl_drv_thread.o: beam/erl_drv_thread.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h
 $(OBJDIR)/erl_fun.o: beam/erl_fun.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -1707,17 +1814,23 @@ $(OBJDIR)/erl_fun.o: beam/erl_fun.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h hipe/hipe_mode_switch.h \
+ beam/error.h beam/erl_gc.h hipe/hipe_stack.h hipe/hipe_arch.h \
+ hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_amd64_glue.h \
+ hipe/hipe_x86_glue.h $(TTF_DIR)/hipe_x86_asm.h
 $(OBJDIR)/erl_gc.o: beam/erl_gc.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -1744,26 +1857,28 @@ $(OBJDIR)/erl_gc.o: beam/erl_gc.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_map.h beam/erl_trace.h hipe/hipe_process.h \
- beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
- beam/register.h beam/erl_fun.h beam/erl_debug.h beam/error.h \
- beam/dtrace-wrapper.h beam/erl_db.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h beam/erl_db_util.h \
- beam/erl_db_hash.h beam/erl_db_tree.h beam/beam_catches.h \
- beam/erl_binary.h beam/big.h hipe/hipe_stack.h hipe/hipe_arch.h \
- hipe/hipe_amd64.h hipe/hipe_x86.h hipe/hipe_mode_switch.h beam/error.h \
- beam/erl_gc.h hipe/hipe_stack.h hipe/hipe_amd64_glue.h \
- $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_x86_glue.h \
- $(TTF_DIR)/hipe_x86_asm.h beam/erl_bif_unique.h \
- beam/dist.h zlib/zlib.h zlib/zconf.h
+ beam/erl_gc.h beam/erl_map.h beam/erl_fun.h beam/erl_bits.h \
+ beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h beam/erl_alloc.h \
+ beam/export.h beam/module.h hipe/hipe_module.h beam/global.h \
+ beam/register.h beam/erl_debug.h beam/error.h beam/erl_nif.h \
+ beam/erl_nif_api_funcs.h beam/erl_binary.h beam/dtrace-wrapper.h \
+ beam/bif.h $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_db_util.h \
+ beam/erl_bif_unique.h beam/big.h beam/erl_db_hash.h beam/erl_db_tree.h \
+ beam/beam_catches.h hipe/hipe_stack.h hipe/hipe_arch.h hipe/hipe_amd64.h \
+ hipe/hipe_x86.h $(TTF_DIR)/hipe_amd64_asm.h \
+ hipe/hipe_mode_switch.h beam/error.h beam/erl_gc.h hipe/hipe_stack.h \
+ hipe/hipe_amd64_glue.h hipe/hipe_x86_glue.h \
+ $(TTF_DIR)/hipe_x86_asm.h beam/dist.h zlib/zlib.h \
+ zlib/zconf.h beam/erl_nfunc_sched.h
 $(OBJDIR)/erl_goodfit_alloc.o: beam/erl_goodfit_alloc.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/global.h beam/sys.h sys/unix/erl_unix_sys.h \
@@ -1791,18 +1906,19 @@ $(OBJDIR)/erl_goodfit_alloc.o: beam/erl_goodfit_alloc.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_goodfit_alloc.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/erl_goodfit_alloc.h
 $(OBJDIR)/erl_hl_timer.o: beam/erl_hl_timer.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -1829,19 +1945,22 @@ $(OBJDIR)/erl_hl_timer.o: beam/erl_hl_timer.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h \
- beam/erl_bif_unique.h beam/big.h beam/erl_rbtree.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_bif_unique.h \
+ beam/big.h beam/erl_rbtree.h
 $(OBJDIR)/erl_init.o: beam/erl_init.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -1868,28 +1987,30 @@ $(OBJDIR)/erl_init.o: beam/erl_init.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- x86_64-unknown-linux-gnu/erl_version.h beam/erl_db.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h beam/erl_db_util.h \
- beam/erl_db_hash.h beam/erl_db_tree.h beam/beam_bp.h beam/erl_binary.h \
- beam/dist.h zlib/zlib.h zlib/zconf.h beam/erl_instrument.h \
- beam/erl_mtrace.h beam/erl_printf_term.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h \
+ x86_64-unknown-linux-gnu/erl_version.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_db_util.h \
+ beam/erl_bif_unique.h beam/big.h beam/erl_db_hash.h beam/erl_db_tree.h \
+ beam/beam_bp.h beam/dist.h zlib/zlib.h zlib/zconf.h \
+ beam/erl_instrument.h beam/erl_mtrace.h beam/erl_printf_term.h \
  ../include/internal/erl_printf_format.h ../include/internal/erl_printf.h \
  beam/packet_parser.h beam/erl_driver.h beam/erl_cpu_topology.h \
- beam/erl_thr_queue.h beam/erl_bif_unique.h beam/big.h \
- hipe/hipe_mode_switch.h beam/error.h beam/erl_gc.h hipe/hipe_stack.h \
- hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
- hipe/hipe_amd64_glue.h $(TTF_DIR)/hipe_amd64_asm.h \
+ beam/erl_thr_queue.h hipe/hipe_mode_switch.h beam/error.h beam/erl_gc.h \
+ hipe/hipe_stack.h hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_amd64_glue.h \
  hipe/hipe_x86_glue.h $(TTF_DIR)/hipe_x86_asm.h \
  hipe/hipe_signal.h
 $(OBJDIR)/erl_instrument.o: beam/erl_instrument.c \
@@ -1919,18 +2040,20 @@ $(OBJDIR)/erl_instrument.o: beam/erl_instrument.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/big.h beam/erl_instrument.h beam/erl_mtrace.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/big.h beam/erl_instrument.h \
+ beam/erl_mtrace.h
 $(OBJDIR)/erl_lock_check.o: beam/erl_lock_check.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -1970,12 +2093,7 @@ $(OBJDIR)/erl_lock_count.o: beam/erl_lock_count.c \
  ../include/internal/pthread/ethr_event.h \
  ../include/internal/ethr_mutex.h beam/erl_lock_count.h beam/erl_term.h \
  sys/common/erl_mmap.h beam/sys.h ../include/internal/erl_printf.h \
- beam/erl_msacc.h beam/atom.h beam/index.h beam/hash.h beam/erl_alloc.h \
- $(TTF_DIR)/erl_alloc_types.h \
- beam/erl_thr_progress.h beam/erl_alloc_util.h sys/common/erl_mseg.h \
- sys/common/erl_mmap.h beam/lttng-wrapper.h \
- beam/erl_sched_spec_pre_alloc.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h
+ beam/erl_msacc.h
 $(OBJDIR)/erl_map.o: beam/erl_map.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -2002,23 +2120,26 @@ $(OBJDIR)/erl_map.o: beam/erl_map.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h hipe/hipe_mode_switch.h beam/error.h beam/erl_gc.h \
- hipe/hipe_stack.h hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
- hipe/hipe_amd64_glue.h $(TTF_DIR)/hipe_amd64_asm.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ hipe/hipe_mode_switch.h beam/error.h beam/erl_gc.h hipe/hipe_stack.h \
+ hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_amd64_glue.h \
  hipe/hipe_x86_glue.h $(TTF_DIR)/hipe_x86_asm.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h beam/erl_binary.h \
- beam/erl_map.h
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_bif_unique.h \
+ beam/big.h beam/erl_map.h
 $(OBJDIR)/erl_math.o: beam/erl_math.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -2045,18 +2166,21 @@ $(OBJDIR)/erl_math.o: beam/erl_math.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h beam/big.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h
 $(OBJDIR)/erl_md5.o: beam/erl_md5.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -2083,18 +2207,22 @@ $(OBJDIR)/erl_md5.o: beam/erl_md5.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h beam/erl_binary.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_bif_unique.h \
+ beam/big.h
 $(OBJDIR)/erl_message.o: beam/erl_message.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -2121,19 +2249,22 @@ $(OBJDIR)/erl_message.o: beam/erl_message.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_binary.h beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h \
- beam/beam_bp.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_bif_unique.h \
+ beam/big.h beam/beam_bp.h
 $(OBJDIR)/erl_monitors.o: beam/erl_monitors.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -2160,19 +2291,22 @@ $(OBJDIR)/erl_monitors.o: beam/erl_monitors.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_db.h beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h \
- beam/erl_db_util.h beam/erl_db_hash.h beam/erl_db_tree.h beam/big.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_db_util.h \
+ beam/erl_bif_unique.h beam/big.h beam/erl_db_hash.h beam/erl_db_tree.h
 $(OBJDIR)/erl_msacc.o: beam/erl_msacc.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -2199,19 +2333,21 @@ $(OBJDIR)/erl_msacc.o: beam/erl_msacc.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_bif_unique.h beam/big.h beam/erl_map.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/erl_bif_unique.h beam/big.h \
+ beam/erl_map.h $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h
 $(OBJDIR)/erl_mtrace.o: beam/erl_mtrace.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -2238,19 +2374,62 @@ $(OBJDIR)/erl_mtrace.o: beam/erl_mtrace.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_sock.h ../include/internal/erl_memory_trace_protocol.h \
- beam/erl_mtrace.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/erl_sock.h \
+ ../include/internal/erl_memory_trace_protocol.h beam/erl_mtrace.h
+$(OBJDIR)/erl_nfunc_sched.o: beam/erl_nfunc_sched.c \
+ $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
+ beam/global.h beam/sys.h sys/unix/erl_unix_sys.h \
+ ../include/internal/erl_errno.h ../include/internal/erl_misc_utils.h \
+ ../include/internal/erl_errno.h beam/erl_lock_check.h beam/erl_smp.h \
+ beam/erl_threads.h ../include/internal/ethread.h \
+ ../include/internal/ethread_inline.h \
+ ../include/internal/x86_64/ethread.h \
+ ../include/internal/x86_64/../i386/ethread.h \
+ ../include/internal/x86_64/../i386/ethr_membar.h \
+ ../include/internal/x86_64/../i386/atomic.h \
+ ../include/internal/x86_64/../i386/ethr_dw_atomic.h \
+ ../include/internal/x86_64/../i386/spinlock.h \
+ ../include/internal/x86_64/../i386/rwlock.h \
+ ../include/internal/libatomic_ops/ethread.h \
+ ../include/internal/gcc/ethread.h ../include/internal/ethr_atomics.h \
+ ../include/internal/ethr_optimized_fallbacks.h \
+ ../include/internal/pthread/ethr_event.h \
+ ../include/internal/ethr_mutex.h beam/erl_lock_count.h beam/erl_term.h \
+ sys/common/erl_mmap.h beam/sys.h ../include/internal/erl_printf.h \
+ beam/erl_msacc.h beam/erl_alloc.h \
+ $(TTF_DIR)/erl_alloc_types.h \
+ beam/erl_thr_progress.h beam/erl_alloc_util.h sys/common/erl_mseg.h \
+ sys/common/erl_mmap.h beam/lttng-wrapper.h \
+ beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
+ beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
+ beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
+ beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
+ beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
+ beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
+ ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
+ beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_nfunc_sched.h
 $(OBJDIR)/erl_nif.o: beam/erl_nif.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/erl_nif.h beam/erl_drv_nif.h \
@@ -2280,18 +2459,20 @@ $(OBJDIR)/erl_nif.o: beam/erl_nif.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_process_dict.h \
  beam/erl_hl_timer.h beam/erl_async.h beam/erl_gc.h beam/erl_trace.h \
- hipe/hipe_process.h beam/erl_alloc.h beam/export.h beam/erl_bits.h \
- beam/module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
- beam/error.h beam/dtrace-wrapper.h beam/erl_binary.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h beam/big.h beam/erl_map.h \
- beam/beam_bp.h beam/erl_bif_unique.h
+ beam/erl_db.h hipe/hipe_process.h beam/erl_alloc.h beam/export.h \
+ beam/erl_bits.h beam/module.h hipe/hipe_module.h beam/global.h \
+ beam/register.h beam/erl_fun.h beam/erl_debug.h beam/error.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_bif_unique.h \
+ beam/big.h beam/erl_map.h beam/beam_bp.h beam/erl_nfunc_sched.h
 $(OBJDIR)/erl_node_tables.o: beam/erl_node_tables.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/global.h beam/sys.h sys/unix/erl_unix_sys.h \
@@ -2319,20 +2500,23 @@ $(OBJDIR)/erl_node_tables.o: beam/erl_node_tables.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/dist.h zlib/zlib.h zlib/zconf.h beam/big.h beam/erl_db.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h beam/erl_db_util.h \
- beam/erl_db_hash.h beam/erl_db_tree.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/dist.h zlib/zlib.h \
+ zlib/zconf.h beam/big.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_db_util.h \
+ beam/erl_bif_unique.h beam/erl_db_hash.h beam/erl_db_tree.h
 $(OBJDIR)/erl_port_task.o: beam/erl_port_task.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/global.h beam/sys.h sys/unix/erl_unix_sys.h \
@@ -2360,19 +2544,20 @@ $(OBJDIR)/erl_port_task.o: beam/erl_port_task.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/dist.h zlib/zlib.h zlib/zconf.h sys/common/erl_check_io.h \
- beam/erl_sys_driver.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/dist.h zlib/zlib.h \
+ zlib/zconf.h sys/common/erl_check_io.h beam/erl_sys_driver.h
 $(OBJDIR)/erl_posix_str.o: beam/erl_posix_str.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  ../include/internal/erl_errno.h beam/sys.h sys/unix/erl_unix_sys.h \
@@ -2423,18 +2608,20 @@ $(OBJDIR)/erl_printf_term.o: beam/erl_printf_term.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_map.h beam/erl_binary.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/erl_map.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_bif_unique.h
 $(OBJDIR)/erl_process.o: beam/erl_process.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -2461,25 +2648,28 @@ $(OBJDIR)/erl_process.o: beam/erl_process.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h beam/erl_db.h \
- beam/erl_db_util.h beam/erl_db_hash.h beam/erl_db_tree.h beam/dist.h \
- zlib/zlib.h zlib/zconf.h beam/beam_catches.h beam/erl_instrument.h \
- beam/erl_mtrace.h beam/erl_binary.h beam/beam_bp.h \
- beam/erl_cpu_topology.h beam/erl_thr_queue.h beam/erl_bif_unique.h \
- beam/big.h hipe/hipe_mode_switch.h beam/error.h beam/erl_gc.h \
- hipe/hipe_stack.h hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
- hipe/hipe_amd64_glue.h $(TTF_DIR)/hipe_amd64_asm.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_db_util.h \
+ beam/erl_bif_unique.h beam/big.h beam/erl_db_hash.h beam/erl_db_tree.h \
+ beam/dist.h zlib/zlib.h zlib/zconf.h beam/beam_catches.h \
+ beam/erl_instrument.h beam/erl_mtrace.h beam/beam_bp.h \
+ beam/erl_cpu_topology.h beam/erl_thr_queue.h beam/erl_nfunc_sched.h \
+ hipe/hipe_mode_switch.h beam/error.h beam/erl_gc.h hipe/hipe_stack.h \
+ hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_amd64_glue.h \
  hipe/hipe_x86_glue.h $(TTF_DIR)/hipe_x86_asm.h \
  hipe/hipe_signal.h
 $(OBJDIR)/erl_process_dict.o: beam/erl_process_dict.c \
@@ -2508,20 +2698,22 @@ $(OBJDIR)/erl_process_dict.o: beam/erl_process_dict.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h beam/big.h \
- beam/dist.h zlib/zlib.h zlib/zconf.h \
- x86_64-unknown-linux-gnu/erl_version.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h beam/dist.h \
+ zlib/zlib.h zlib/zconf.h x86_64-unknown-linux-gnu/erl_version.h
 $(OBJDIR)/erl_process_dump.o: beam/erl_process_dump.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -2548,20 +2740,23 @@ $(OBJDIR)/erl_process_dump.o: beam/erl_process_dump.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h beam/erl_db.h \
- beam/erl_db_util.h beam/erl_db_hash.h beam/erl_db_tree.h beam/dist.h \
- zlib/zlib.h zlib/zconf.h beam/beam_catches.h beam/erl_binary.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_db_util.h \
+ beam/erl_bif_unique.h beam/big.h beam/erl_db_hash.h beam/erl_db_tree.h \
+ beam/dist.h zlib/zlib.h zlib/zconf.h beam/beam_catches.h
 $(OBJDIR)/erl_process_lock.o: beam/erl_process_lock.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/erl_process.h beam/sys.h sys/unix/erl_unix_sys.h \
@@ -2592,11 +2787,11 @@ $(OBJDIR)/erl_process_lock.o: beam/erl_process_lock.c \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_node_container_utils.h beam/erl_ptab.h \
  beam/erl_time.h beam/erl_utils.h beam/erl_hl_timer.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/erl_async.h beam/erl_gc.h \
- beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h beam/export.h \
- beam/index.h beam/code_ix.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/export.h \
- beam/erl_bits.h
+ $(TTF_DIR)/erl_atom_table.h beam/erl_async.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/index.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/beam_load.h \
+ beam/export.h beam/erl_bits.h
 $(OBJDIR)/erl_ptab.o: beam/erl_ptab.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/erl_ptab.h beam/sys.h sys/unix/erl_unix_sys.h \
@@ -2627,14 +2822,17 @@ $(OBJDIR)/erl_ptab.o: beam/erl_ptab.c \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_node_container_utils.h \
- beam/erl_hl_timer.h x86_64-unknown-linux-gnu/erl_atom_table.h \
- beam/erl_async.h beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h \
- beam/erl_alloc.h beam/export.h beam/index.h beam/code_ix.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/export.h beam/erl_bits.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h beam/global.h beam/atom.h \
- beam/module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
- beam/error.h beam/dtrace-wrapper.h beam/erl_binary.h
+ beam/erl_hl_timer.h $(TTF_DIR)/erl_atom_table.h \
+ beam/erl_async.h beam/erl_gc.h beam/erl_trace.h beam/erl_db.h \
+ hipe/hipe_process.h beam/erl_alloc.h beam/export.h beam/index.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/beam_load.h beam/export.h beam/erl_bits.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/global.h \
+ beam/atom.h beam/module.h hipe/hipe_module.h beam/global.h \
+ beam/register.h beam/erl_fun.h beam/erl_debug.h beam/error.h \
+ beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h beam/erl_bif_unique.h beam/big.h
 $(OBJDIR)/erl_sched_spec_pre_alloc.o: beam/erl_sched_spec_pre_alloc.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/erl_process.h beam/sys.h sys/unix/erl_unix_sys.h \
@@ -2665,11 +2863,11 @@ $(OBJDIR)/erl_sched_spec_pre_alloc.o: beam/erl_sched_spec_pre_alloc.c \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_node_container_utils.h beam/erl_ptab.h \
  beam/erl_time.h beam/erl_utils.h beam/erl_hl_timer.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/erl_async.h beam/erl_gc.h \
- beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h beam/export.h \
- beam/index.h beam/code_ix.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/export.h \
- beam/erl_bits.h
+ $(TTF_DIR)/erl_atom_table.h beam/erl_async.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/index.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/beam_load.h \
+ beam/export.h beam/erl_bits.h
 $(OBJDIR)/erl_term.o: beam/erl_term.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -2696,18 +2894,19 @@ $(OBJDIR)/erl_term.o: beam/erl_term.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_map.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/erl_map.h
 $(OBJDIR)/erl_thr_progress.o: beam/erl_thr_progress.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/erl_thr_progress.h beam/sys.h sys/unix/erl_unix_sys.h \
@@ -2738,12 +2937,14 @@ $(OBJDIR)/erl_thr_progress.o: beam/erl_thr_progress.c \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_node_container_utils.h beam/erl_ptab.h \
  beam/erl_time.h beam/erl_utils.h beam/erl_hl_timer.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/erl_async.h beam/erl_gc.h \
- beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h beam/export.h \
- beam/index.h beam/code_ix.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/export.h \
- beam/erl_bits.h beam/global.h beam/atom.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h
+ $(TTF_DIR)/erl_atom_table.h beam/erl_async.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/index.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/beam_load.h \
+ beam/export.h beam/erl_bits.h beam/global.h beam/atom.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h
 $(OBJDIR)/erl_thr_queue.o: beam/erl_thr_queue.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/erl_thr_queue.h beam/sys.h sys/unix/erl_unix_sys.h \
@@ -2776,11 +2977,11 @@ $(OBJDIR)/erl_thr_queue.o: beam/erl_thr_queue.c \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_node_container_utils.h beam/erl_ptab.h \
  beam/erl_time.h beam/erl_utils.h beam/erl_hl_timer.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/erl_async.h beam/erl_gc.h \
- beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h beam/export.h \
- beam/index.h beam/code_ix.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/export.h \
- beam/erl_bits.h
+ $(TTF_DIR)/erl_atom_table.h beam/erl_async.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/index.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/beam_load.h \
+ beam/export.h beam/erl_bits.h
 $(OBJDIR)/erl_time_sup.o: beam/erl_time_sup.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -2807,19 +3008,21 @@ $(OBJDIR)/erl_time_sup.o: beam/erl_time_sup.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_nif.h beam/erl_nif_api_funcs.h beam/big.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/big.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h
 $(OBJDIR)/erl_trace.o: beam/erl_trace.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -2846,21 +3049,23 @@ $(OBJDIR)/erl_trace.o: beam/erl_trace.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/big.h beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h \
- beam/dist.h zlib/zlib.h zlib/zconf.h beam/beam_bp.h beam/erl_binary.h \
- beam/erl_bif_unique.h beam/erl_map.h beam/erl_nif.h \
- beam/erl_nif_api_funcs.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/big.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/dist.h \
+ zlib/zlib.h zlib/zconf.h beam/beam_bp.h beam/erl_bif_unique.h \
+ beam/erl_map.h
 $(OBJDIR)/erl_unicode.o: beam/erl_unicode.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -2887,18 +3092,21 @@ $(OBJDIR)/erl_unicode.o: beam/erl_unicode.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h beam/erl_binary.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_bif_unique.h \
  beam/big.h beam/erl_unicode.h beam/erl_unicode_normalize.h
 $(OBJDIR)/erl_zlib.o: beam/erl_zlib.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
@@ -2953,17 +3161,19 @@ $(OBJDIR)/export.o: beam/export.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h
 $(OBJDIR)/external.o: beam/external.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -2990,23 +3200,26 @@ $(OBJDIR)/external.o: beam/external.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h hipe/hipe_mode_switch.h beam/error.h beam/erl_gc.h \
- hipe/hipe_stack.h hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
- hipe/hipe_amd64_glue.h $(TTF_DIR)/hipe_amd64_asm.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ hipe/hipe_mode_switch.h beam/error.h beam/erl_gc.h hipe/hipe_stack.h \
+ hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_amd64_glue.h \
  hipe/hipe_x86_glue.h $(TTF_DIR)/hipe_x86_asm.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h beam/big.h beam/dist.h \
- zlib/zlib.h zlib/zconf.h beam/erl_binary.h beam/erl_zlib.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h beam/dist.h \
+ zlib/zlib.h zlib/zconf.h beam/erl_bif_unique.h beam/erl_zlib.h \
  beam/erl_map.h
 $(OBJDIR)/hash.o: beam/hash.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
@@ -3054,17 +3267,19 @@ $(OBJDIR)/index.o: beam/index.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h
 $(OBJDIR)/io.o: beam/io.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -3094,18 +3309,20 @@ $(OBJDIR)/io.o: beam/io.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_process_dict.h beam/erl_hl_timer.h \
- beam/erl_async.h beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h \
- beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_process_dict.h \
+ beam/erl_hl_timer.h beam/erl_async.h beam/erl_gc.h beam/erl_trace.h \
+ beam/erl_db.h hipe/hipe_process.h beam/erl_alloc.h beam/export.h \
+ beam/erl_bits.h beam/module.h hipe/hipe_module.h beam/global.h \
  beam/register.h beam/erl_fun.h beam/erl_debug.h beam/error.h \
- beam/dtrace-wrapper.h beam/dist.h zlib/zlib.h zlib/zconf.h beam/big.h \
- beam/erl_binary.h beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h \
- x86_64-unknown-linux-gnu/erl_version.h beam/erl_map.h \
- beam/erl_bif_unique.h
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/dist.h zlib/zlib.h \
+ zlib/zconf.h beam/big.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_bif_unique.h \
+ x86_64-unknown-linux-gnu/erl_version.h beam/erl_map.h
 $(OBJDIR)/module.o: beam/module.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -3132,17 +3349,19 @@ $(OBJDIR)/module.o: beam/module.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/beam_catches.h
 $(OBJDIR)/packet_parser.o: beam/packet_parser.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/packet_parser.h beam/erl_driver.h beam/erl_drv_nif.h \
@@ -3191,18 +3410,21 @@ $(OBJDIR)/register.o: beam/register.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h
 $(OBJDIR)/safe_hash.o: beam/safe_hash.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/safe_hash.h beam/sys.h sys/unix/erl_unix_sys.h \
@@ -3254,17 +3476,19 @@ $(OBJDIR)/time.o: beam/time.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/global.h beam/register.h beam/erl_fun.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h
 $(OBJDIR)/utils.o: beam/utils.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -3291,27 +3515,30 @@ $(OBJDIR)/utils.o: beam/utils.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_node_container_utils.h \
  beam/erl_ptab.h beam/erl_time.h beam/erl_utils.h beam/erl_monitors.h \
  beam/hash.h beam/index.h beam/atom.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h beam/export.h \
- beam/beam_load.h $(TTF_DIR)/beam_opcodes.h \
- beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h \
- beam/erl_message.h beam/external.h beam/erl_node_tables.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ $(TTF_DIR)/erl_atom_table.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/export.h \
+ beam/beam_load.h beam/erl_process.h beam/erl_process_lock.h \
+ beam/erl_port.h beam/erl_message.h beam/external.h \
+ beam/erl_node_tables.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_map.h beam/erl_trace.h hipe/hipe_process.h \
- beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
- beam/register.h beam/erl_fun.h beam/erl_debug.h beam/error.h \
- beam/dtrace-wrapper.h beam/big.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h beam/erl_binary.h \
- beam/packet_parser.h beam/erl_driver.h beam/erl_db.h beam/erl_db_util.h \
+ beam/erl_gc.h beam/erl_map.h beam/erl_fun.h beam/erl_bits.h \
+ beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h beam/erl_alloc.h \
+ beam/export.h beam/module.h hipe/hipe_module.h beam/global.h \
+ beam/register.h beam/erl_debug.h beam/error.h beam/erl_nif.h \
+ beam/erl_nif_api_funcs.h beam/erl_binary.h beam/dtrace-wrapper.h \
+ beam/big.h beam/bif.h $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_bif_unique.h \
+ beam/packet_parser.h beam/erl_driver.h beam/erl_db_util.h \
  beam/erl_db_hash.h beam/erl_db_tree.h beam/dist.h zlib/zlib.h \
  zlib/zconf.h beam/erl_thr_queue.h beam/beam_bp.h \
- sys/common/erl_check_io.h beam/erl_sys_driver.h beam/erl_bif_unique.h \
- hipe/hipe_mode_switch.h beam/error.h beam/erl_gc.h hipe/hipe_stack.h \
- hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
- hipe/hipe_amd64_glue.h $(TTF_DIR)/hipe_amd64_asm.h \
- hipe/hipe_x86_glue.h $(TTF_DIR)/hipe_x86_asm.h
+ sys/common/erl_check_io.h beam/erl_sys_driver.h hipe/hipe_mode_switch.h \
+ beam/error.h beam/erl_gc.h hipe/hipe_stack.h hipe/hipe_arch.h \
+ hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_amd64_glue.h \
+ hipe/hipe_x86_glue.h $(TTF_DIR)/hipe_x86_asm.h \
+ beam/erl_nfunc_sched.h
 $(OBJDIR)/efile_drv.o: drivers/common/efile_drv.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -3584,17 +3811,19 @@ $(OBJDIR)/erl_main.o: sys/unix/erl_main.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h
 $(OBJDIR)/erl_unix_sys_ddll.o: sys/unix/erl_unix_sys_ddll.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -3621,17 +3850,19 @@ $(OBJDIR)/erl_unix_sys_ddll.o: sys/unix/erl_unix_sys_ddll.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h
 $(OBJDIR)/sys.o: sys/unix/sys.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -3662,15 +3893,17 @@ $(OBJDIR)/sys.o: sys/unix/sys.c \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_node_container_utils.h beam/erl_ptab.h \
  beam/erl_time.h beam/erl_utils.h beam/erl_hl_timer.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/erl_async.h beam/erl_gc.h \
- beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h beam/export.h \
- beam/index.h beam/code_ix.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/export.h \
- beam/erl_bits.h beam/erl_threads.h beam/global.h beam/atom.h \
- beam/module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
- beam/error.h beam/dtrace-wrapper.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h sys/common/erl_check_io.h \
- beam/erl_sys_driver.h beam/erl_cpu_topology.h
+ $(TTF_DIR)/erl_atom_table.h beam/erl_async.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/index.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/beam_load.h \
+ beam/export.h beam/erl_bits.h beam/erl_threads.h beam/global.h \
+ beam/atom.h beam/module.h hipe/hipe_module.h beam/register.h \
+ beam/erl_fun.h beam/erl_debug.h beam/error.h beam/erl_nif.h \
+ beam/erl_nif_api_funcs.h beam/erl_binary.h beam/dtrace-wrapper.h \
+ beam/bif.h $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h \
+ sys/common/erl_check_io.h beam/erl_sys_driver.h beam/erl_cpu_topology.h
 $(OBJDIR)/sys_drivers.o: sys/unix/sys_drivers.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -3697,19 +3930,20 @@ $(OBJDIR)/sys_drivers.o: sys/unix/sys_drivers.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_cpu_topology.h beam/erl_sys_driver.h sys/unix/sys_uds.h \
- sys/unix/erl_child_setup.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h beam/erl_cpu_topology.h beam/erl_sys_driver.h \
+ sys/unix/sys_uds.h sys/unix/erl_child_setup.h
 $(OBJDIR)/sys_float.o: sys/unix/sys_float.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -3736,18 +3970,19 @@ $(OBJDIR)/sys_float.o: sys/unix/sys_float.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_process.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h beam/erl_process.h
 $(OBJDIR)/sys_time.o: sys/unix/sys_time.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -3774,18 +4009,20 @@ $(OBJDIR)/sys_time.o: sys/unix/sys_time.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- sys/common/erl_os_monotonic_time_extender.h beam/erl_threads.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h sys/common/erl_os_monotonic_time_extender.h \
+ beam/erl_threads.h
 $(OBJDIR)/sys_uds.o: sys/unix/sys_uds.c sys/unix/sys_uds.h \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -3831,19 +4068,21 @@ $(OBJDIR)/erl_check_io.kp.o $(OBJDIR)/erl_check_io.nkp.o: sys/common/erl_check_i
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_port.h sys/common/erl_check_io.h beam/erl_sys_driver.h \
- sys/common/erl_poll.h beam/erl_port_task.h beam/erl_thr_progress.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h beam/erl_port.h sys/common/erl_check_io.h \
+ beam/erl_sys_driver.h sys/common/erl_poll.h beam/erl_port_task.h \
+ beam/erl_thr_progress.h beam/erl_bif_unique.h beam/big.h beam/global.h \
  beam/dtrace-wrapper.h beam/lttng-wrapper.h beam/erl_time.h
 $(OBJDIR)/erl_mmap.o: sys/common/erl_mmap.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
@@ -3863,23 +4102,23 @@ $(OBJDIR)/erl_mmap.o: sys/common/erl_mmap.c \
  ../include/internal/ethr_optimized_fallbacks.h \
  ../include/internal/pthread/ethr_event.h \
  ../include/internal/ethr_mutex.h beam/erl_lock_count.h beam/erl_term.h \
- sys/common/erl_mmap.h ../include/internal/erl_printf.h beam/erl_msacc.h \
+ sys/common/erl_mmap.h ../include/internal/erl_printf.h \
+ $(TTF_DIR)/erl_alloc_types.h beam/erl_msacc.h \
  beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h beam/erl_vm.h \
  beam/erl_message.h beam/external.h beam/erl_node_tables.h beam/hash.h \
- beam/erl_alloc.h $(TTF_DIR)/erl_alloc_types.h \
- beam/erl_thr_progress.h beam/erl_alloc_util.h sys/common/erl_mseg.h \
- sys/common/erl_mmap.h beam/lttng-wrapper.h \
+ beam/erl_alloc.h beam/erl_thr_progress.h beam/erl_alloc_util.h \
+ sys/common/erl_mseg.h sys/common/erl_mmap.h beam/lttng-wrapper.h \
  beam/erl_sched_spec_pre_alloc.h beam/erl_process.h beam/erl_monitors.h \
  beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
  beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_node_container_utils.h beam/erl_ptab.h \
  beam/erl_time.h beam/erl_utils.h beam/erl_hl_timer.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/erl_async.h beam/erl_gc.h \
- beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h beam/export.h \
- beam/index.h beam/code_ix.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/export.h \
- beam/erl_bits.h beam/erl_smp.h beam/atom.h
+ $(TTF_DIR)/erl_atom_table.h beam/erl_async.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/index.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/beam_load.h \
+ beam/export.h beam/erl_bits.h beam/erl_smp.h beam/atom.h
 $(OBJDIR)/erl_mseg.o: sys/common/erl_mseg.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -3906,19 +4145,21 @@ $(OBJDIR)/erl_mseg.o: sys/common/erl_mseg.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_threads.h beam/erl_mtrace.h beam/erl_time.h beam/big.h \
- beam/global.h beam/erl_thr_progress.h sys/common/erl_util_queue.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h beam/erl_threads.h beam/erl_mtrace.h \
+ beam/erl_time.h beam/big.h beam/global.h beam/erl_thr_progress.h \
+ sys/common/erl_util_queue.h
 $(OBJDIR)/erl_mtrace_sys_wrap.o: sys/common/erl_mtrace_sys_wrap.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -3992,11 +4233,11 @@ $(OBJDIR)/erl_poll.kp.o $(OBJDIR)/erl_poll.nkp.o: sys/common/erl_poll.c \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_node_container_utils.h beam/erl_ptab.h \
  beam/erl_time.h beam/erl_utils.h beam/erl_hl_timer.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/erl_async.h beam/erl_gc.h \
- beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h beam/export.h \
- beam/index.h beam/code_ix.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/export.h \
- beam/erl_bits.h beam/erl_driver.h beam/erl_msacc.h
+ $(TTF_DIR)/erl_atom_table.h beam/erl_async.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/index.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/beam_load.h \
+ beam/export.h beam/erl_bits.h beam/erl_driver.h beam/erl_msacc.h
 $(OBJDIR)/erl_sys_common_misc.o: sys/common/erl_sys_common_misc.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -4023,139 +4264,19 @@ $(OBJDIR)/erl_sys_common_misc.o: sys/common/erl_sys_common_misc.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h
-$(OBJDIR)/erl_atom_table.o: x86_64-unknown-linux-gnu/erl_atom_table.c
-$(OBJDIR)/erl_bif_table.o: x86_64-unknown-linux-gnu/erl_bif_table.c \
- $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
- beam/export.h beam/sys.h sys/unix/erl_unix_sys.h \
- ../include/internal/erl_errno.h ../include/internal/erl_misc_utils.h \
- ../include/internal/erl_errno.h beam/erl_lock_check.h beam/erl_smp.h \
- beam/erl_threads.h ../include/internal/ethread.h \
- ../include/internal/ethread_inline.h \
- ../include/internal/x86_64/ethread.h \
- ../include/internal/x86_64/../i386/ethread.h \
- ../include/internal/x86_64/../i386/ethr_membar.h \
- ../include/internal/x86_64/../i386/atomic.h \
- ../include/internal/x86_64/../i386/ethr_dw_atomic.h \
- ../include/internal/x86_64/../i386/spinlock.h \
- ../include/internal/x86_64/../i386/rwlock.h \
- ../include/internal/libatomic_ops/ethread.h \
- ../include/internal/gcc/ethread.h ../include/internal/ethr_atomics.h \
- ../include/internal/ethr_optimized_fallbacks.h \
- ../include/internal/pthread/ethr_event.h \
- ../include/internal/ethr_mutex.h beam/erl_lock_count.h beam/erl_term.h \
- sys/common/erl_mmap.h beam/sys.h ../include/internal/erl_printf.h \
- beam/erl_msacc.h beam/index.h beam/hash.h beam/erl_alloc.h \
- $(TTF_DIR)/erl_alloc_types.h \
- beam/erl_thr_progress.h beam/erl_alloc_util.h sys/common/erl_mseg.h \
- sys/common/erl_mmap.h beam/lttng-wrapper.h \
- beam/erl_sched_spec_pre_alloc.h beam/code_ix.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
- beam/erl_process_lock.h beam/erl_port.h beam/erl_vm.h beam/erl_message.h \
- beam/external.h beam/erl_node_tables.h beam/erl_monitors.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
- ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
- beam/erl_process_dict.h beam/erl_node_container_utils.h beam/erl_ptab.h \
- beam/erl_time.h beam/erl_utils.h beam/erl_hl_timer.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/erl_async.h beam/erl_gc.h \
- beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h beam/export.h \
- beam/erl_bits.h beam/erl_vm.h beam/erl_process.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h
-$(OBJDIR)/erl_bif_wrap.o: x86_64-unknown-linux-gnu/erl_bif_wrap.c \
- $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
- beam/export.h beam/sys.h sys/unix/erl_unix_sys.h \
- ../include/internal/erl_errno.h ../include/internal/erl_misc_utils.h \
- ../include/internal/erl_errno.h beam/erl_lock_check.h beam/erl_smp.h \
- beam/erl_threads.h ../include/internal/ethread.h \
- ../include/internal/ethread_inline.h \
- ../include/internal/x86_64/ethread.h \
- ../include/internal/x86_64/../i386/ethread.h \
- ../include/internal/x86_64/../i386/ethr_membar.h \
- ../include/internal/x86_64/../i386/atomic.h \
- ../include/internal/x86_64/../i386/ethr_dw_atomic.h \
- ../include/internal/x86_64/../i386/spinlock.h \
- ../include/internal/x86_64/../i386/rwlock.h \
- ../include/internal/libatomic_ops/ethread.h \
- ../include/internal/gcc/ethread.h ../include/internal/ethr_atomics.h \
- ../include/internal/ethr_optimized_fallbacks.h \
- ../include/internal/pthread/ethr_event.h \
- ../include/internal/ethr_mutex.h beam/erl_lock_count.h beam/erl_term.h \
- sys/common/erl_mmap.h beam/sys.h ../include/internal/erl_printf.h \
- beam/erl_msacc.h beam/index.h beam/hash.h beam/erl_alloc.h \
- $(TTF_DIR)/erl_alloc_types.h \
- beam/erl_thr_progress.h beam/erl_alloc_util.h sys/common/erl_mseg.h \
- sys/common/erl_mmap.h beam/lttng-wrapper.h \
- beam/erl_sched_spec_pre_alloc.h beam/code_ix.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
- beam/erl_process_lock.h beam/erl_port.h beam/erl_vm.h beam/erl_message.h \
- beam/external.h beam/erl_node_tables.h beam/erl_monitors.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
- ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
- beam/erl_process_dict.h beam/erl_node_container_utils.h beam/erl_ptab.h \
- beam/erl_time.h beam/erl_utils.h beam/erl_hl_timer.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/erl_async.h beam/erl_gc.h \
- beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h beam/export.h \
- beam/erl_bits.h beam/erl_vm.h beam/global.h beam/atom.h beam/module.h \
- beam/register.h beam/erl_fun.h beam/erl_debug.h beam/error.h \
- beam/dtrace-wrapper.h beam/erl_process.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h
-$(OBJDIR)/erl_pbifs.o: x86_64-unknown-linux-gnu/erl_pbifs.c \
- $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
- beam/export.h beam/sys.h sys/unix/erl_unix_sys.h \
- ../include/internal/erl_errno.h ../include/internal/erl_misc_utils.h \
- ../include/internal/erl_errno.h beam/erl_lock_check.h beam/erl_smp.h \
- beam/erl_threads.h ../include/internal/ethread.h \
- ../include/internal/ethread_inline.h \
- ../include/internal/x86_64/ethread.h \
- ../include/internal/x86_64/../i386/ethread.h \
- ../include/internal/x86_64/../i386/ethr_membar.h \
- ../include/internal/x86_64/../i386/atomic.h \
- ../include/internal/x86_64/../i386/ethr_dw_atomic.h \
- ../include/internal/x86_64/../i386/spinlock.h \
- ../include/internal/x86_64/../i386/rwlock.h \
- ../include/internal/libatomic_ops/ethread.h \
- ../include/internal/gcc/ethread.h ../include/internal/ethr_atomics.h \
- ../include/internal/ethr_optimized_fallbacks.h \
- ../include/internal/pthread/ethr_event.h \
- ../include/internal/ethr_mutex.h beam/erl_lock_count.h beam/erl_term.h \
- sys/common/erl_mmap.h beam/sys.h ../include/internal/erl_printf.h \
- beam/erl_msacc.h beam/index.h beam/hash.h beam/erl_alloc.h \
- $(TTF_DIR)/erl_alloc_types.h \
- beam/erl_thr_progress.h beam/erl_alloc_util.h sys/common/erl_mseg.h \
- sys/common/erl_mmap.h beam/lttng-wrapper.h \
- beam/erl_sched_spec_pre_alloc.h beam/code_ix.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
- beam/erl_process_lock.h beam/erl_port.h beam/erl_vm.h beam/erl_message.h \
- beam/external.h beam/erl_node_tables.h beam/erl_monitors.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
- ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
- beam/erl_process_dict.h beam/erl_node_container_utils.h beam/erl_ptab.h \
- beam/erl_time.h beam/erl_utils.h beam/erl_hl_timer.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/erl_async.h beam/erl_gc.h \
- beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h beam/export.h \
- beam/erl_bits.h beam/erl_vm.h beam/global.h beam/atom.h beam/module.h \
- beam/register.h beam/erl_fun.h beam/erl_debug.h beam/error.h \
- beam/dtrace-wrapper.h beam/erl_process.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h
 $(OBJDIR)/preload.o: x86_64-unknown-linux-gnu/preload.c
 $(OBJDIR)/beam_opcodes.o: $(TTF_DIR)/beam_opcodes.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
@@ -4180,19 +4301,21 @@ $(OBJDIR)/beam_opcodes.o: $(TTF_DIR)/beam_opcodes.c \
  $(TTF_DIR)/erl_alloc_types.h \
  beam/erl_thr_progress.h beam/erl_alloc_util.h sys/common/erl_mseg.h \
  sys/common/erl_mmap.h beam/lttng-wrapper.h \
- beam/erl_sched_spec_pre_alloc.h beam/code_ix.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
- beam/erl_process_lock.h beam/erl_port.h beam/erl_vm.h beam/erl_message.h \
- beam/external.h beam/erl_node_tables.h beam/erl_monitors.h \
- beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
- beam/erl_drv_nif.h \
+ beam/erl_sched_spec_pre_alloc.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/beam_load.h \
+ beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h beam/erl_vm.h \
+ beam/erl_message.h beam/external.h beam/erl_node_tables.h \
+ beam/erl_monitors.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_node_container_utils.h beam/erl_ptab.h \
  beam/erl_time.h beam/erl_utils.h beam/erl_hl_timer.h \
- x86_64-unknown-linux-gnu/erl_atom_table.h beam/erl_async.h beam/erl_gc.h \
- beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h beam/export.h \
- beam/erl_bits.h beam/erl_process.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h beam/beam_load.h
+ $(TTF_DIR)/erl_atom_table.h beam/erl_async.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/erl_process.h \
+ beam/bif.h $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h \
+ $(TTF_DIR)/erl_atom_table.h beam/beam_load.h
 $(OBJDIR)/driver_tab.o: $(TTF_DIR)/driver_tab.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/global.h beam/sys.h sys/unix/erl_unix_sys.h \
@@ -4220,47 +4343,259 @@ $(OBJDIR)/driver_tab.o: $(TTF_DIR)/driver_tab.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h
+$(OBJDIR)/erl_atom_table.o: $(TTF_DIR)/erl_atom_table.c
+$(OBJDIR)/erl_bif_table.o: $(TTF_DIR)/erl_bif_table.c \
+ $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
+ beam/export.h beam/sys.h sys/unix/erl_unix_sys.h \
+ ../include/internal/erl_errno.h ../include/internal/erl_misc_utils.h \
+ ../include/internal/erl_errno.h beam/erl_lock_check.h beam/erl_smp.h \
+ beam/erl_threads.h ../include/internal/ethread.h \
+ ../include/internal/ethread_inline.h \
+ ../include/internal/x86_64/ethread.h \
+ ../include/internal/x86_64/../i386/ethread.h \
+ ../include/internal/x86_64/../i386/ethr_membar.h \
+ ../include/internal/x86_64/../i386/atomic.h \
+ ../include/internal/x86_64/../i386/ethr_dw_atomic.h \
+ ../include/internal/x86_64/../i386/spinlock.h \
+ ../include/internal/x86_64/../i386/rwlock.h \
+ ../include/internal/libatomic_ops/ethread.h \
+ ../include/internal/gcc/ethread.h ../include/internal/ethr_atomics.h \
+ ../include/internal/ethr_optimized_fallbacks.h \
+ ../include/internal/pthread/ethr_event.h \
+ ../include/internal/ethr_mutex.h beam/erl_lock_count.h beam/erl_term.h \
+ sys/common/erl_mmap.h beam/sys.h ../include/internal/erl_printf.h \
+ beam/erl_msacc.h beam/index.h beam/hash.h beam/erl_alloc.h \
+ $(TTF_DIR)/erl_alloc_types.h \
+ beam/erl_thr_progress.h beam/erl_alloc_util.h sys/common/erl_mseg.h \
+ sys/common/erl_mmap.h beam/lttng-wrapper.h \
+ beam/erl_sched_spec_pre_alloc.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/beam_load.h \
+ beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h beam/erl_vm.h \
+ beam/erl_message.h beam/external.h beam/erl_node_tables.h \
+ beam/erl_monitors.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
+ ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
+ beam/erl_process_dict.h beam/erl_node_container_utils.h beam/erl_ptab.h \
+ beam/erl_time.h beam/erl_utils.h beam/erl_hl_timer.h \
+ $(TTF_DIR)/erl_atom_table.h beam/erl_async.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/erl_vm.h \
+ beam/erl_process.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/erl_atom_table.h
+$(OBJDIR)/erl_bif_wrap.o: $(TTF_DIR)/erl_bif_wrap.c \
+ $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
+ beam/export.h beam/sys.h sys/unix/erl_unix_sys.h \
+ ../include/internal/erl_errno.h ../include/internal/erl_misc_utils.h \
+ ../include/internal/erl_errno.h beam/erl_lock_check.h beam/erl_smp.h \
+ beam/erl_threads.h ../include/internal/ethread.h \
+ ../include/internal/ethread_inline.h \
+ ../include/internal/x86_64/ethread.h \
+ ../include/internal/x86_64/../i386/ethread.h \
+ ../include/internal/x86_64/../i386/ethr_membar.h \
+ ../include/internal/x86_64/../i386/atomic.h \
+ ../include/internal/x86_64/../i386/ethr_dw_atomic.h \
+ ../include/internal/x86_64/../i386/spinlock.h \
+ ../include/internal/x86_64/../i386/rwlock.h \
+ ../include/internal/libatomic_ops/ethread.h \
+ ../include/internal/gcc/ethread.h ../include/internal/ethr_atomics.h \
+ ../include/internal/ethr_optimized_fallbacks.h \
+ ../include/internal/pthread/ethr_event.h \
+ ../include/internal/ethr_mutex.h beam/erl_lock_count.h beam/erl_term.h \
+ sys/common/erl_mmap.h beam/sys.h ../include/internal/erl_printf.h \
+ beam/erl_msacc.h beam/index.h beam/hash.h beam/erl_alloc.h \
+ $(TTF_DIR)/erl_alloc_types.h \
+ beam/erl_thr_progress.h beam/erl_alloc_util.h sys/common/erl_mseg.h \
+ sys/common/erl_mmap.h beam/lttng-wrapper.h \
+ beam/erl_sched_spec_pre_alloc.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/beam_load.h \
+ beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h beam/erl_vm.h \
+ beam/erl_message.h beam/external.h beam/erl_node_tables.h \
+ beam/erl_monitors.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
+ ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
+ beam/erl_process_dict.h beam/erl_node_container_utils.h beam/erl_ptab.h \
+ beam/erl_time.h beam/erl_utils.h beam/erl_hl_timer.h \
+ $(TTF_DIR)/erl_atom_table.h beam/erl_async.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/erl_vm.h \
+ beam/global.h beam/atom.h beam/module.h hipe/hipe_module.h \
+ beam/register.h beam/erl_fun.h beam/erl_debug.h beam/error.h \
+ beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h beam/erl_process.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/erl_atom_table.h
+$(OBJDIR)/erl_dirty_bif_wrap.o: \
+ $(TTF_DIR)/erl_dirty_bif_wrap.c \
+ $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
+ beam/erl_process.h beam/sys.h sys/unix/erl_unix_sys.h \
+ ../include/internal/erl_errno.h ../include/internal/erl_misc_utils.h \
+ ../include/internal/erl_errno.h beam/erl_lock_check.h beam/erl_smp.h \
+ beam/erl_threads.h ../include/internal/ethread.h \
+ ../include/internal/ethread_inline.h \
+ ../include/internal/x86_64/ethread.h \
+ ../include/internal/x86_64/../i386/ethread.h \
+ ../include/internal/x86_64/../i386/ethr_membar.h \
+ ../include/internal/x86_64/../i386/atomic.h \
+ ../include/internal/x86_64/../i386/ethr_dw_atomic.h \
+ ../include/internal/x86_64/../i386/spinlock.h \
+ ../include/internal/x86_64/../i386/rwlock.h \
+ ../include/internal/libatomic_ops/ethread.h \
+ ../include/internal/gcc/ethread.h ../include/internal/ethr_atomics.h \
+ ../include/internal/ethr_optimized_fallbacks.h \
+ ../include/internal/pthread/ethr_event.h \
+ ../include/internal/ethr_mutex.h beam/erl_lock_count.h beam/erl_term.h \
+ sys/common/erl_mmap.h beam/sys.h ../include/internal/erl_printf.h \
+ beam/erl_msacc.h beam/erl_process_lock.h beam/erl_port.h beam/erl_vm.h \
+ beam/erl_message.h beam/external.h beam/erl_node_tables.h beam/hash.h \
+ beam/erl_alloc.h $(TTF_DIR)/erl_alloc_types.h \
+ beam/erl_thr_progress.h beam/erl_alloc_util.h sys/common/erl_mseg.h \
+ sys/common/erl_mmap.h beam/lttng-wrapper.h \
+ beam/erl_sched_spec_pre_alloc.h beam/erl_process.h beam/erl_monitors.h \
+ beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
+ beam/erl_drv_nif.h \
+ ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
+ beam/erl_process_dict.h beam/erl_node_container_utils.h beam/erl_ptab.h \
+ beam/erl_time.h beam/erl_utils.h beam/erl_hl_timer.h \
+ $(TTF_DIR)/erl_atom_table.h beam/erl_async.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/index.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/beam_load.h \
+ beam/export.h beam/erl_bits.h beam/erl_nfunc_sched.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/error.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/erl_atom_table.h
+$(OBJDIR)/erl_guard_bifs.o: $(TTF_DIR)/erl_guard_bifs.c \
+ $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
+ beam/export.h beam/sys.h sys/unix/erl_unix_sys.h \
+ ../include/internal/erl_errno.h ../include/internal/erl_misc_utils.h \
+ ../include/internal/erl_errno.h beam/erl_lock_check.h beam/erl_smp.h \
+ beam/erl_threads.h ../include/internal/ethread.h \
+ ../include/internal/ethread_inline.h \
+ ../include/internal/x86_64/ethread.h \
+ ../include/internal/x86_64/../i386/ethread.h \
+ ../include/internal/x86_64/../i386/ethr_membar.h \
+ ../include/internal/x86_64/../i386/atomic.h \
+ ../include/internal/x86_64/../i386/ethr_dw_atomic.h \
+ ../include/internal/x86_64/../i386/spinlock.h \
+ ../include/internal/x86_64/../i386/rwlock.h \
+ ../include/internal/libatomic_ops/ethread.h \
+ ../include/internal/gcc/ethread.h ../include/internal/ethr_atomics.h \
+ ../include/internal/ethr_optimized_fallbacks.h \
+ ../include/internal/pthread/ethr_event.h \
+ ../include/internal/ethr_mutex.h beam/erl_lock_count.h beam/erl_term.h \
+ sys/common/erl_mmap.h beam/sys.h ../include/internal/erl_printf.h \
+ beam/erl_msacc.h beam/index.h beam/hash.h beam/erl_alloc.h \
+ $(TTF_DIR)/erl_alloc_types.h \
+ beam/erl_thr_progress.h beam/erl_alloc_util.h sys/common/erl_mseg.h \
+ sys/common/erl_mmap.h beam/lttng-wrapper.h \
+ beam/erl_sched_spec_pre_alloc.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/beam_load.h \
+ beam/erl_process.h beam/erl_process_lock.h beam/erl_port.h beam/erl_vm.h \
+ beam/erl_message.h beam/external.h beam/erl_node_tables.h \
+ beam/erl_monitors.h beam/erl_port_task.h beam/erl_sys_driver.h \
+ beam/erl_driver.h beam/erl_drv_nif.h \
+ ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
+ beam/erl_process_dict.h beam/erl_node_container_utils.h beam/erl_ptab.h \
+ beam/erl_time.h beam/erl_utils.h beam/erl_hl_timer.h \
+ $(TTF_DIR)/erl_atom_table.h beam/erl_async.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/erl_vm.h \
+ beam/global.h beam/atom.h beam/module.h hipe/hipe_module.h \
+ beam/register.h beam/erl_fun.h beam/erl_debug.h beam/error.h \
+ beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h beam/erl_process.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h \
+ $(TTF_DIR)/erl_bif_table.h
+$(OBJDIR)/hipe_nbif_impl.o: $(TTF_DIR)/hipe_nbif_impl.c \
+ $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
+ beam/erl_process.h beam/sys.h sys/unix/erl_unix_sys.h \
+ ../include/internal/erl_errno.h ../include/internal/erl_misc_utils.h \
+ ../include/internal/erl_errno.h beam/erl_lock_check.h beam/erl_smp.h \
+ beam/erl_threads.h ../include/internal/ethread.h \
+ ../include/internal/ethread_inline.h \
+ ../include/internal/x86_64/ethread.h \
+ ../include/internal/x86_64/../i386/ethread.h \
+ ../include/internal/x86_64/../i386/ethr_membar.h \
+ ../include/internal/x86_64/../i386/atomic.h \
+ ../include/internal/x86_64/../i386/ethr_dw_atomic.h \
+ ../include/internal/x86_64/../i386/spinlock.h \
+ ../include/internal/x86_64/../i386/rwlock.h \
+ ../include/internal/libatomic_ops/ethread.h \
+ ../include/internal/gcc/ethread.h ../include/internal/ethr_atomics.h \
+ ../include/internal/ethr_optimized_fallbacks.h \
+ ../include/internal/pthread/ethr_event.h \
+ ../include/internal/ethr_mutex.h beam/erl_lock_count.h beam/erl_term.h \
+ sys/common/erl_mmap.h beam/sys.h ../include/internal/erl_printf.h \
+ beam/erl_msacc.h beam/erl_process_lock.h beam/erl_port.h beam/erl_vm.h \
+ beam/erl_message.h beam/external.h beam/erl_node_tables.h beam/hash.h \
+ beam/erl_alloc.h $(TTF_DIR)/erl_alloc_types.h \
+ beam/erl_thr_progress.h beam/erl_alloc_util.h sys/common/erl_mseg.h \
+ sys/common/erl_mmap.h beam/lttng-wrapper.h \
+ beam/erl_sched_spec_pre_alloc.h beam/erl_process.h beam/erl_monitors.h \
+ beam/erl_port_task.h beam/erl_sys_driver.h beam/erl_driver.h \
+ beam/erl_drv_nif.h \
+ ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
+ beam/erl_process_dict.h beam/erl_node_container_utils.h beam/erl_ptab.h \
+ beam/erl_time.h beam/erl_utils.h beam/erl_hl_timer.h \
+ $(TTF_DIR)/erl_atom_table.h beam/erl_async.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/index.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/beam_load.h \
+ beam/export.h beam/erl_bits.h beam/erl_nfunc_sched.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/error.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/erl_atom_table.h
 $(ZLIB_OBJDIR)/adler32.o: zlib/adler32.c \
- /root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu/config.h \
+ /root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu/config.h \
  zlib/zutil.h zlib/zlib.h zlib/zconf.h
 $(ZLIB_OBJDIR)/compress.o: zlib/compress.c \
- /root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu/config.h \
+ /root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu/config.h \
  zlib/zlib.h zlib/zconf.h
 $(ZLIB_OBJDIR)/crc32.o: zlib/crc32.c \
- /root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu/config.h \
+ /root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu/config.h \
  zlib/zutil.h zlib/zlib.h zlib/zconf.h zlib/crc32.h
 $(ZLIB_OBJDIR)/uncompr.o: zlib/uncompr.c \
- /root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu/config.h \
+ /root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu/config.h \
  zlib/zlib.h zlib/zconf.h
 $(ZLIB_OBJDIR)/deflate.o: zlib/deflate.c \
- /root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu/config.h \
+ /root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu/config.h \
  zlib/deflate.h zlib/zutil.h zlib/zlib.h zlib/zconf.h
 $(ZLIB_OBJDIR)/trees.o: zlib/trees.c \
- /root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu/config.h \
+ /root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu/config.h \
  zlib/deflate.h zlib/zutil.h zlib/zlib.h zlib/zconf.h zlib/trees.h
 $(ZLIB_OBJDIR)/zutil.o: zlib/zutil.c \
- /root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu/config.h \
+ /root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu/config.h \
  zlib/zutil.h zlib/zlib.h zlib/zconf.h zlib/gzguts.h
 $(ZLIB_OBJDIR)/inflate.o: zlib/inflate.c \
- /root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu/config.h \
+ /root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu/config.h \
  zlib/zutil.h zlib/zlib.h zlib/zconf.h zlib/inftrees.h zlib/inflate.h \
  zlib/inffast.h zlib/inffixed.h
 $(ZLIB_OBJDIR)/inftrees.o: zlib/inftrees.c \
- /root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu/config.h \
+ /root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu/config.h \
  zlib/zutil.h zlib/zlib.h zlib/zconf.h zlib/inftrees.h
 $(ZLIB_OBJDIR)/inffast.o: zlib/inffast.c \
- /root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu/config.h \
+ /root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu/config.h \
  zlib/zutil.h zlib/zlib.h zlib/zconf.h zlib/inftrees.h zlib/inflate.h \
  zlib/inffast.h
 $(OBJDIR)/hipe_amd64.o: hipe/hipe_amd64.c \
@@ -4290,21 +4625,24 @@ $(OBJDIR)/hipe_amd64.o: hipe/hipe_amd64.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/error.h beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h \
- beam/big.h beam/global.h hipe/hipe_arch.h hipe/hipe_amd64.h \
- hipe/hipe_x86.h hipe/hipe_bif0.h hipe/hipe_native_bif.h \
- x86_64-unknown-linux-gnu/erl_bif_list.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h beam/error.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h \
+ beam/global.h hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_bif0.h \
+ hipe/hipe_native_bif.h $(TTF_DIR)/erl_bif_list.h \
  $(TTF_DIR)/hipe_literals.h
 $(OBJDIR)/hipe_arm.o: hipe/hipe_arm.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
@@ -4333,21 +4671,25 @@ $(OBJDIR)/hipe_arm.o: hipe/hipe_arm.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_binary.h beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h \
- hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h beam/erl_binary.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_bif_unique.h \
+ beam/big.h beam/global.h hipe/hipe_arch.h hipe/hipe_amd64.h \
+ hipe/hipe_x86.h $(TTF_DIR)/hipe_amd64_asm.h \
  hipe/hipe_native_bif.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_list.h hipe/hipe_bif0.h
+ $(TTF_DIR)/erl_bif_list.h hipe/hipe_bif0.h
 $(OBJDIR)/hipe_bif0.o: hipe/hipe_bif0.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -4367,34 +4709,40 @@ $(OBJDIR)/hipe_bif0.o: hipe/hipe_bif0.c \
  ../include/internal/pthread/ethr_event.h \
  ../include/internal/ethr_mutex.h beam/erl_lock_count.h beam/erl_term.h \
  sys/common/erl_mmap.h ../include/internal/erl_printf.h beam/erl_msacc.h \
- beam/error.h beam/erl_vm.h beam/global.h beam/erl_alloc.h \
+ beam/error.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/erl_vm.h \
+ beam/global.h beam/erl_alloc.h \
  $(TTF_DIR)/erl_alloc_types.h \
  beam/erl_thr_progress.h beam/erl_alloc_util.h sys/common/erl_mseg.h \
  sys/common/erl_mmap.h beam/lttng-wrapper.h \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_process.h beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h \
- beam/big.h beam/global.h beam/beam_load.h beam/erl_db.h beam/bif.h \
- beam/erl_db_util.h beam/erl_db_hash.h beam/erl_db_tree.h beam/hash.h \
- beam/erl_bits.h beam/erl_binary.h hipe/hipe_arch.h hipe/hipe_amd64.h \
- hipe/hipe_x86.h hipe/hipe_stack.h hipe/hipe_mode_switch.h beam/erl_gc.h \
- hipe/hipe_amd64_glue.h $(TTF_DIR)/hipe_amd64_asm.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h beam/erl_process.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h \
+ beam/global.h beam/beam_load.h beam/erl_db.h beam/bif.h \
+ beam/erl_db_util.h beam/erl_bif_unique.h beam/big.h beam/erl_db_hash.h \
+ beam/erl_db_tree.h beam/hash.h beam/erl_bits.h beam/erl_binary.h \
+ hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_stack.h \
+ hipe/hipe_mode_switch.h beam/erl_gc.h hipe/hipe_amd64_glue.h \
  hipe/hipe_x86_glue.h $(TTF_DIR)/hipe_x86_asm.h \
- hipe/hipe_native_bif.h x86_64-unknown-linux-gnu/erl_bif_list.h \
- hipe/hipe_bif0.h $(TTF_DIR)/hipe_literals.h \
- hipe/hipe_primops.h hipe/hipe_amd64_primops.h
+ hipe/hipe_native_bif.h $(TTF_DIR)/erl_bif_list.h \
+ hipe/hipe_bif0.h hipe/hipe_load.h \
+ $(TTF_DIR)/hipe_literals.h hipe/hipe_primops.h \
+ hipe/hipe_amd64_primops.h
 $(OBJDIR)/hipe_bif1.o: hipe/hipe_bif1.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -4421,18 +4769,21 @@ $(OBJDIR)/hipe_bif1.o: hipe/hipe_bif1.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h beam/big.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h \
  beam/global.h beam/error.h beam/beam_load.h hipe/hipe_bif0.h \
  hipe/hipe_bif1.h
 $(OBJDIR)/hipe_bif2.o: hipe/hipe_bif2.c \
@@ -4454,29 +4805,33 @@ $(OBJDIR)/hipe_bif2.o: hipe/hipe_bif2.c \
  ../include/internal/pthread/ethr_event.h \
  ../include/internal/ethr_mutex.h beam/erl_lock_count.h beam/erl_term.h \
  sys/common/erl_mmap.h ../include/internal/erl_printf.h beam/erl_msacc.h \
- beam/error.h beam/erl_vm.h beam/global.h beam/erl_alloc.h \
+ beam/error.h beam/code_ix.h \
+ $(TTF_DIR)/beam_opcodes.h beam/erl_vm.h \
+ beam/global.h beam/erl_alloc.h \
  $(TTF_DIR)/erl_alloc_types.h \
  beam/erl_thr_progress.h beam/erl_alloc_util.h sys/common/erl_mseg.h \
  sys/common/erl_mmap.h beam/lttng-wrapper.h \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_process.h beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h \
- beam/big.h beam/global.h beam/erl_map.h hipe/hipe_debug.h \
- hipe/hipe_mode_switch.h beam/erl_gc.h hipe/hipe_stack.h hipe/hipe_arch.h \
- hipe/hipe_amd64.h hipe/hipe_x86.h hipe/hipe_amd64_glue.h \
- $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_x86_glue.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h beam/erl_process.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h \
+ beam/global.h beam/erl_map.h hipe/hipe_debug.h hipe/hipe_mode_switch.h \
+ beam/erl_gc.h hipe/hipe_stack.h hipe/hipe_arch.h hipe/hipe_amd64.h \
+ hipe/hipe_x86.h $(TTF_DIR)/hipe_amd64_asm.h \
+ hipe/hipe_amd64_glue.h hipe/hipe_x86_glue.h \
  $(TTF_DIR)/hipe_x86_asm.h
 $(OBJDIR)/hipe_bif64.o: hipe/hipe_bif64.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
@@ -4505,20 +4860,24 @@ $(OBJDIR)/hipe_bif64.o: hipe/hipe_bif64.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/error.h beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h \
- beam/big.h beam/global.h hipe/hipe_arch.h hipe/hipe_amd64.h \
- hipe/hipe_x86.h hipe/hipe_bif0.h hipe/hipe_bif64.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h beam/error.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/big.h \
+ beam/global.h hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_bif0.h \
+ hipe/hipe_bif64.h
 $(OBJDIR)/hipe_debug.o: hipe/hipe_debug.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -4545,21 +4904,22 @@ $(OBJDIR)/hipe_debug.o: hipe/hipe_debug.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_process.h beam/beam_catches.h beam/beam_load.h \
- hipe/hipe_mode_switch.h beam/error.h beam/erl_gc.h hipe/hipe_stack.h \
- hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
- hipe/hipe_amd64_glue.h $(TTF_DIR)/hipe_amd64_asm.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h beam/erl_process.h beam/beam_catches.h \
+ beam/beam_load.h hipe/hipe_mode_switch.h beam/error.h beam/erl_gc.h \
+ hipe/hipe_stack.h hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_amd64_glue.h \
  hipe/hipe_x86_glue.h $(TTF_DIR)/hipe_x86_asm.h \
  hipe/hipe_debug.h beam/erl_map.h
 $(OBJDIR)/hipe_gc.o: hipe/hipe_gc.c \
@@ -4589,21 +4949,65 @@ $(OBJDIR)/hipe_gc.o: hipe/hipe_gc.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_map.h beam/erl_trace.h hipe/hipe_process.h \
- beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
- beam/register.h beam/erl_fun.h beam/erl_debug.h beam/error.h \
- beam/dtrace-wrapper.h beam/erl_gc.h hipe/hipe_stack.h hipe/hipe_arch.h \
- hipe/hipe_amd64.h hipe/hipe_x86.h hipe/hipe_gc.h hipe/hipe_amd64_gc.h \
- $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_x86_gc.h \
+ beam/erl_gc.h beam/erl_map.h beam/erl_fun.h beam/erl_bits.h \
+ beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h beam/erl_alloc.h \
+ beam/export.h beam/module.h hipe/hipe_module.h beam/register.h \
+ beam/erl_debug.h beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h \
+ beam/erl_binary.h beam/dtrace-wrapper.h beam/erl_gc.h hipe/hipe_stack.h \
+ hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_gc.h \
+ hipe/hipe_amd64_gc.h hipe/hipe_x86_gc.h \
  $(TTF_DIR)/hipe_x86_asm.h
+$(OBJDIR)/hipe_load.o: hipe/hipe_load.c \
+ $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
+ beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
+ ../include/internal/erl_misc_utils.h ../include/internal/erl_errno.h \
+ beam/erl_lock_check.h beam/sys.h beam/erl_smp.h beam/erl_threads.h \
+ ../include/internal/ethread.h ../include/internal/ethread_inline.h \
+ ../include/internal/x86_64/ethread.h \
+ ../include/internal/x86_64/../i386/ethread.h \
+ ../include/internal/x86_64/../i386/ethr_membar.h \
+ ../include/internal/x86_64/../i386/atomic.h \
+ ../include/internal/x86_64/../i386/ethr_dw_atomic.h \
+ ../include/internal/x86_64/../i386/spinlock.h \
+ ../include/internal/x86_64/../i386/rwlock.h \
+ ../include/internal/libatomic_ops/ethread.h \
+ ../include/internal/gcc/ethread.h ../include/internal/ethr_atomics.h \
+ ../include/internal/ethr_optimized_fallbacks.h \
+ ../include/internal/pthread/ethr_event.h \
+ ../include/internal/ethr_mutex.h beam/erl_lock_count.h beam/erl_term.h \
+ sys/common/erl_mmap.h ../include/internal/erl_printf.h beam/erl_msacc.h \
+ beam/global.h beam/erl_alloc.h \
+ $(TTF_DIR)/erl_alloc_types.h \
+ beam/erl_thr_progress.h beam/erl_alloc_util.h sys/common/erl_mseg.h \
+ sys/common/erl_mmap.h beam/lttng-wrapper.h \
+ beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
+ beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
+ beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
+ beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
+ beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
+ beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
+ ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
+ beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h beam/erl_binary.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_bif_unique.h \
+ beam/big.h beam/global.h hipe/hipe_load.h hipe/hipe_bif0.h
 $(OBJDIR)/hipe_mkliterals.o: hipe/hipe_mkliterals.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -4630,24 +5034,27 @@ $(OBJDIR)/hipe_mkliterals.o: hipe/hipe_mkliterals.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_process.h beam/error.h beam/erl_bits.h beam/erl_message.h \
- $(TTF_DIR)/hipe_arm_asm.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h beam/erl_process.h beam/error.h beam/erl_bits.h \
+ beam/erl_message.h $(TTF_DIR)/hipe_arm_asm.h \
  $(TTF_DIR)/hipe_ppc_asm.h \
  $(TTF_DIR)/hipe_amd64_asm.h \
  $(TTF_DIR)/hipe_x86_asm.h \
  $(TTF_DIR)/hipe_sparc_asm.h beam/erl_binary.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h
+ beam/bif.h $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_bif_unique.h \
+ beam/big.h beam/global.h
 $(OBJDIR)/hipe_mode_switch.o: hipe/hipe_mode_switch.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -4674,23 +5081,66 @@ $(OBJDIR)/hipe_mode_switch.o: hipe/hipe_mode_switch.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_process.h beam/beam_load.h beam/beam_catches.h \
- hipe/hipe_mode_switch.h beam/error.h beam/erl_gc.h hipe/hipe_stack.h \
- hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
- hipe/hipe_amd64_glue.h $(TTF_DIR)/hipe_amd64_asm.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h beam/erl_process.h beam/beam_load.h \
+ beam/beam_catches.h hipe/hipe_mode_switch.h beam/error.h beam/erl_gc.h \
+ hipe/hipe_stack.h hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_amd64_glue.h \
  hipe/hipe_x86_glue.h $(TTF_DIR)/hipe_x86_asm.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h hipe/hipe_bif0.h
+ beam/bif.h $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h hipe/hipe_bif0.h
+$(OBJDIR)/hipe_module.o: hipe/hipe_module.c \
+ $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
+ beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
+ ../include/internal/erl_misc_utils.h ../include/internal/erl_errno.h \
+ beam/erl_lock_check.h beam/sys.h beam/erl_smp.h beam/erl_threads.h \
+ ../include/internal/ethread.h ../include/internal/ethread_inline.h \
+ ../include/internal/x86_64/ethread.h \
+ ../include/internal/x86_64/../i386/ethread.h \
+ ../include/internal/x86_64/../i386/ethr_membar.h \
+ ../include/internal/x86_64/../i386/atomic.h \
+ ../include/internal/x86_64/../i386/ethr_dw_atomic.h \
+ ../include/internal/x86_64/../i386/spinlock.h \
+ ../include/internal/x86_64/../i386/rwlock.h \
+ ../include/internal/libatomic_ops/ethread.h \
+ ../include/internal/gcc/ethread.h ../include/internal/ethr_atomics.h \
+ ../include/internal/ethr_optimized_fallbacks.h \
+ ../include/internal/pthread/ethr_event.h \
+ ../include/internal/ethr_mutex.h beam/erl_lock_count.h beam/erl_term.h \
+ sys/common/erl_mmap.h ../include/internal/erl_printf.h beam/erl_msacc.h \
+ hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_module.h \
+ beam/global.h beam/erl_alloc.h \
+ $(TTF_DIR)/erl_alloc_types.h \
+ beam/erl_thr_progress.h beam/erl_alloc_util.h sys/common/erl_mseg.h \
+ sys/common/erl_mmap.h beam/lttng-wrapper.h \
+ beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
+ beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
+ beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
+ beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
+ beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
+ beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
+ ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
+ beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h
 $(OBJDIR)/hipe_native_bif.o: hipe/hipe_native_bif.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/sys.h sys/unix/erl_unix_sys.h ../include/internal/erl_errno.h \
@@ -4717,24 +5167,27 @@ $(OBJDIR)/hipe_native_bif.o: hipe/hipe_native_bif.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_process.h beam/error.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h beam/erl_bits.h \
- beam/erl_binary.h beam/bif.h hipe/hipe_mode_switch.h beam/erl_gc.h \
- hipe/hipe_stack.h hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
- hipe/hipe_amd64_glue.h $(TTF_DIR)/hipe_amd64_asm.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h beam/erl_process.h beam/error.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_bits.h \
+ beam/erl_binary.h beam/bif.h beam/erl_bif_unique.h beam/big.h \
+ beam/global.h hipe/hipe_mode_switch.h beam/erl_gc.h hipe/hipe_stack.h \
+ hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_amd64_glue.h \
  hipe/hipe_x86_glue.h $(TTF_DIR)/hipe_x86_asm.h \
- hipe/hipe_native_bif.h x86_64-unknown-linux-gnu/erl_bif_list.h
+ hipe/hipe_native_bif.h $(TTF_DIR)/erl_bif_list.h
 $(OBJDIR)/hipe_ppc.o: hipe/hipe_ppc.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/global.h beam/sys.h sys/unix/erl_unix_sys.h \
@@ -4762,21 +5215,25 @@ $(OBJDIR)/hipe_ppc.o: hipe/hipe_ppc.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/erl_binary.h beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h \
- hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h beam/erl_binary.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h beam/erl_bif_unique.h \
+ beam/big.h beam/global.h hipe/hipe_arch.h hipe/hipe_amd64.h \
+ hipe/hipe_x86.h $(TTF_DIR)/hipe_amd64_asm.h \
  hipe/hipe_native_bif.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_list.h hipe/hipe_bif0.h
+ $(TTF_DIR)/erl_bif_list.h hipe/hipe_bif0.h
 $(OBJDIR)/hipe_risc_stack.o: hipe/hipe_risc_stack.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/global.h beam/sys.h sys/unix/erl_unix_sys.h \
@@ -4804,19 +5261,23 @@ $(OBJDIR)/hipe_risc_stack.o: hipe/hipe_risc_stack.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h hipe/hipe_stack.h \
- hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h hipe/hipe_stack.h \
+ hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h
 $(OBJDIR)/hipe_sparc.o: hipe/hipe_sparc.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/global.h beam/sys.h sys/unix/erl_unix_sys.h \
@@ -4844,21 +5305,23 @@ $(OBJDIR)/hipe_sparc.o: hipe/hipe_sparc.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
- hipe/hipe_native_bif.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h \
- x86_64-unknown-linux-gnu/erl_bif_list.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_native_bif.h \
+ beam/bif.h $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h \
+ $(TTF_DIR)/erl_bif_list.h
 $(OBJDIR)/hipe_stack.o: hipe/hipe_stack.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/global.h beam/sys.h sys/unix/erl_unix_sys.h \
@@ -4886,18 +5349,21 @@ $(OBJDIR)/hipe_stack.o: hipe/hipe_stack.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- hipe/hipe_stack.h hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h hipe/hipe_stack.h hipe/hipe_arch.h \
+ hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h
 $(OBJDIR)/hipe_x86.o: hipe/hipe_x86.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
  beam/global.h beam/sys.h sys/unix/erl_unix_sys.h \
@@ -4925,21 +5391,23 @@ $(OBJDIR)/hipe_x86.o: hipe/hipe_x86.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
- hipe/hipe_native_bif.h beam/bif.h \
- x86_64-unknown-linux-gnu/erl_bif_table.h \
- x86_64-unknown-linux-gnu/erl_bif_list.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
+ $(TTF_DIR)/hipe_amd64_asm.h hipe/hipe_native_bif.h \
+ beam/bif.h $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h \
+ $(TTF_DIR)/erl_bif_list.h \
  $(TTF_DIR)/hipe_literals.h
 $(OBJDIR)/hipe_x86_signal.o: hipe/hipe_x86_signal.c \
  $(ERL_TOP)/erts/x86_64-unknown-linux-gnu/config.h \
@@ -4991,17 +5459,20 @@ $(OBJDIR)/hipe_x86_stack.o: hipe/hipe_x86_stack.c \
  beam/erl_sched_spec_pre_alloc.h beam/erl_vm.h \
  beam/erl_node_container_utils.h beam/erl_ptab.h beam/erl_time.h \
  beam/erl_utils.h beam/erl_monitors.h beam/hash.h beam/index.h \
- beam/atom.h x86_64-unknown-linux-gnu/erl_atom_table.h beam/code_ix.h \
- beam/export.h beam/beam_load.h \
- $(TTF_DIR)/beam_opcodes.h beam/erl_process.h \
+ beam/atom.h $(TTF_DIR)/erl_atom_table.h \
+ beam/code_ix.h $(TTF_DIR)/beam_opcodes.h \
+ beam/export.h beam/beam_load.h beam/erl_process.h \
  beam/erl_process_lock.h beam/erl_port.h beam/erl_message.h \
  beam/external.h beam/erl_node_tables.h beam/erl_port_task.h \
  beam/erl_sys_driver.h beam/erl_driver.h beam/erl_drv_nif.h \
  ../include/x86_64-unknown-linux-gnu/erl_int_sizes_config.h \
  beam/erl_process_dict.h beam/erl_hl_timer.h beam/erl_async.h \
- beam/erl_gc.h beam/erl_trace.h hipe/hipe_process.h beam/erl_alloc.h \
- beam/export.h beam/erl_bits.h beam/module.h beam/register.h \
- beam/erl_fun.h beam/erl_debug.h beam/error.h beam/dtrace-wrapper.h \
- beam/bif.h x86_64-unknown-linux-gnu/erl_bif_table.h hipe/hipe_stack.h \
+ beam/erl_gc.h beam/erl_trace.h beam/erl_db.h hipe/hipe_process.h \
+ beam/erl_alloc.h beam/export.h beam/erl_bits.h beam/module.h \
+ hipe/hipe_module.h beam/register.h beam/erl_fun.h beam/erl_debug.h \
+ beam/error.h beam/erl_nif.h beam/erl_nif_api_funcs.h beam/erl_binary.h \
+ beam/dtrace-wrapper.h beam/bif.h \
+ $(TTF_DIR)/erl_bif_table.h \
+ $(TTF_DIR)/hipe_nbif_impl.h hipe/hipe_stack.h \
  hipe/hipe_arch.h hipe/hipe_amd64.h hipe/hipe_x86.h \
  $(TTF_DIR)/hipe_amd64_asm.h

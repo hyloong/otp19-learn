@@ -10,11 +10,11 @@
 
 
 
--file("/net/isildur/ldisk/daily_build/19_prebuild_opu_o.2017-03-14_21/otp_src_19/bootstrap/lib/parsetools/include/yeccpre.hrl", 0).
+-file("/net/isildur/ldisk/daily_build/20_prebuild_master-opu_o.2017-06-20_20/otp_src_20/bootstrap/lib/parsetools/include/yeccpre.hrl", 0).
 %%
 %% %CopyrightBegin%
 %%
-%% Copyright Ericsson AB 1996-2015. All Rights Reserved.
+%% Copyright Ericsson AB 1996-2017. All Rights Reserved.
 %%
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -164,27 +164,26 @@ yecctoken_location(Token) ->
     end.
 
 -compile({nowarn_unused_function, yecctoken2string/1}).
-yecctoken2string({atom, _, A}) -> io_lib:write(A);
+yecctoken2string({atom, _, A}) -> io_lib:write_atom(A);
 yecctoken2string({integer,_,N}) -> io_lib:write(N);
 yecctoken2string({float,_,F}) -> io_lib:write(F);
 yecctoken2string({char,_,C}) -> io_lib:write_char(C);
 yecctoken2string({var,_,V}) -> io_lib:format("~s", [V]);
 yecctoken2string({string,_,S}) -> io_lib:write_string(S);
 yecctoken2string({reserved_symbol, _, A}) -> io_lib:write(A);
-yecctoken2string({_Cat, _, Val}) -> io_lib:format("~p",[Val]);
+yecctoken2string({_Cat, _, Val}) -> io_lib:format("~tp", [Val]);
 yecctoken2string({dot, _}) -> "'.'";
-yecctoken2string({'$end', _}) ->
-    [];
+yecctoken2string({'$end', _}) -> [];
 yecctoken2string({Other, _}) when is_atom(Other) ->
-    io_lib:write(Other);
+    io_lib:write_atom(Other);
 yecctoken2string(Other) ->
-    io_lib:write(Other).
+    io_lib:format("~tp", [Other]).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
--file("megaco_text_parser_prev3a.erl", 187).
+-file("megaco_text_parser_prev3a.erl", 186).
 
 -dialyzer({nowarn_function, yeccpars2/7}).
 yeccpars2(0=S, Cat, Ss, Stack, T, Ts, Tzr) ->
@@ -3967,10 +3966,10 @@ yeccpars2_232(_S, Cat, Ss, Stack, T, Ts, Tzr) ->
  yeccgoto_safeToken2(hd(Ss), Cat, Ss, Stack, T, Ts, Tzr).
 
 yeccpars2_233(_S, 'COMMA', Ss, Stack, T, Ts, Tzr) ->
- NewStack = yeccpars2_233_COMMA(Stack),
+ NewStack = 'yeccpars2_233_\'COMMA\''(Stack),
  yeccgoto_sigParameter(hd(Ss), 'COMMA', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_233(_S, 'RBRKT', Ss, Stack, T, Ts, Tzr) ->
- NewStack = yeccpars2_233_RBRKT(Stack),
+ NewStack = 'yeccpars2_233_\'RBRKT\''(Stack),
  yeccgoto_sigParameter(hd(Ss), 'RBRKT', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_233(_S, Cat, Ss, Stack, T, Ts, Tzr) ->
  yeccgoto_safeToken2(hd(Ss), Cat, Ss, Stack, T, Ts, Tzr).
@@ -6856,10 +6855,10 @@ yeccpars2_682(_S, Cat, Ss, Stack, T, Ts, Tzr) ->
  yeccgoto_safeToken2(hd(Ss), Cat, Ss, Stack, T, Ts, Tzr).
 
 yeccpars2_683(_S, 'COMMA', Ss, Stack, T, Ts, Tzr) ->
- NewStack = yeccpars2_683_COMMA(Stack),
+ NewStack = 'yeccpars2_683_\'COMMA\''(Stack),
  yeccgoto_eventParameter(hd(Ss), 'COMMA', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_683(_S, 'RBRKT', Ss, Stack, T, Ts, Tzr) ->
- NewStack = yeccpars2_683_RBRKT(Stack),
+ NewStack = 'yeccpars2_683_\'RBRKT\''(Stack),
  yeccgoto_eventParameter(hd(Ss), 'RBRKT', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_683(_S, Cat, Ss, Stack, T, Ts, Tzr) ->
  yeccgoto_safeToken2(hd(Ss), Cat, Ss, Stack, T, Ts, Tzr).
@@ -6991,10 +6990,10 @@ yeccpars2_699(_S, Cat, Ss, Stack, T, Ts, Tzr) ->
  yeccgoto_safeToken2(hd(Ss), Cat, Ss, Stack, T, Ts, Tzr).
 
 yeccpars2_700(_S, 'COMMA', Ss, Stack, T, Ts, Tzr) ->
- NewStack = yeccpars2_700_COMMA(Stack),
+ NewStack = 'yeccpars2_700_\'COMMA\''(Stack),
  yeccgoto_secondEventParameter(hd(Ss), 'COMMA', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_700(_S, 'RBRKT', Ss, Stack, T, Ts, Tzr) ->
- NewStack = yeccpars2_700_RBRKT(Stack),
+ NewStack = 'yeccpars2_700_\'RBRKT\''(Stack),
  yeccgoto_secondEventParameter(hd(Ss), 'RBRKT', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_700(_S, Cat, Ss, Stack, T, Ts, Tzr) ->
  yeccgoto_safeToken2(hd(Ss), Cat, Ss, Stack, T, Ts, Tzr).
@@ -10845,17 +10844,17 @@ yeccpars2_229_(__Stack0) ->
    [ ]
   end | __Stack0].
 
--compile({inline,yeccpars2_233_COMMA/1}).
+-compile({inline,'yeccpars2_233_\'COMMA\''/1}).
 -file("megaco_text_parser_prev3a.yrl", 1241).
-yeccpars2_233_COMMA(__Stack0) ->
+'yeccpars2_233_\'COMMA\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    keepActive
   end | __Stack].
 
--compile({inline,yeccpars2_233_RBRKT/1}).
+-compile({inline,'yeccpars2_233_\'RBRKT\''/1}).
 -file("megaco_text_parser_prev3a.yrl", 1241).
-yeccpars2_233_RBRKT(__Stack0) ->
+'yeccpars2_233_\'RBRKT\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    keepActive
@@ -12894,17 +12893,17 @@ yeccpars2_681_(__Stack0) ->
    ensure_eventDM ( __1 )
   end | __Stack].
 
--compile({inline,yeccpars2_683_COMMA/1}).
+-compile({inline,'yeccpars2_683_\'COMMA\''/1}).
 -file("megaco_text_parser_prev3a.yrl", 1140).
-yeccpars2_683_COMMA(__Stack0) ->
+'yeccpars2_683_\'COMMA\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    keepActive
   end | __Stack].
 
--compile({inline,yeccpars2_683_RBRKT/1}).
+-compile({inline,'yeccpars2_683_\'RBRKT\''/1}).
 -file("megaco_text_parser_prev3a.yrl", 1140).
-yeccpars2_683_RBRKT(__Stack0) ->
+'yeccpars2_683_\'RBRKT\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    keepActive
@@ -12948,17 +12947,17 @@ yeccpars2_695_(__Stack0) ->
    [ ]
   end | __Stack0].
 
--compile({inline,yeccpars2_700_COMMA/1}).
+-compile({inline,'yeccpars2_700_\'COMMA\''/1}).
 -file("megaco_text_parser_prev3a.yrl", 1178).
-yeccpars2_700_COMMA(__Stack0) ->
+'yeccpars2_700_\'COMMA\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    keepActive
   end | __Stack].
 
--compile({inline,yeccpars2_700_RBRKT/1}).
+-compile({inline,'yeccpars2_700_\'RBRKT\''/1}).
 -file("megaco_text_parser_prev3a.yrl", 1178).
-yeccpars2_700_RBRKT(__Stack0) ->
+'yeccpars2_700_\'RBRKT\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    keepActive

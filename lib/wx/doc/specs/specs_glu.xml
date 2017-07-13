@@ -1,0 +1,611 @@
+<module name="glu">
+<type>
+  <name>enum</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-enum">enum()</marker> = integer() &gt;= 0</typehead></typedecl>
+</type>
+<type>
+  <name>matrix</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-matrix">matrix()</marker> = <seealso marker="#type-matrix12">matrix12()</seealso> | <seealso marker="#type-matrix16">matrix16()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>matrix12</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-matrix12">matrix12()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float()}</typehead></typedecl>
+</type>
+<type>
+  <name>matrix16</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-matrix16">matrix16()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>float()}</typehead></typedecl>
+</type>
+<type>
+  <name>mem</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-mem">mem()</marker> = binary() | tuple()</typehead></typedecl>
+</type>
+<type>
+  <name>vertex</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-vertex">vertex()</marker> = {float(), float(), float()}</typehead></typedecl>
+</type>
+<spec>
+  <name>build1DMipmapLevels</name>
+  <arity>9</arity>
+  <contract>
+    <clause>
+      <head>build1DMipmapLevels(Target,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>InternalFormat,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Width,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Format,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Type,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Level,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Base,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Max,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Data) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>integer()</head>
+      <guard>
+        <subtype><typename>Target</typename><string>Target = <seealso marker="#type-enum">enum()</seealso></string></subtype>
+        <subtype><typename>InternalFormat</typename><string>InternalFormat = Width = integer()</string></subtype>
+        <subtype><typename>Width</typename><string/></subtype>
+        <subtype><typename>Format</typename><string>Format = Type = <seealso marker="#type-enum">enum()</seealso></string></subtype>
+        <subtype><typename>Type</typename><string/></subtype>
+        <subtype><typename>Level</typename><string>Level = Base = Max = integer()</string></subtype>
+        <subtype><typename>Base</typename><string/></subtype>
+        <subtype><typename>Max</typename><string/></subtype>
+        <subtype><typename>Data</typename><string>Data = binary()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Base</anno>
+  <anno>Data</anno>
+  <anno>Format</anno>
+  <anno>InternalFormat</anno>
+  <anno>Level</anno>
+  <anno>Max</anno>
+  <anno>Target</anno>
+  <anno>Type</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>build1DMipmaps</name>
+  <arity>6</arity>
+  <contract>
+    <clause>
+      <head>build1DMipmaps(Target, InternalFormat, Width, Format, Type, Data) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>integer()</head>
+      <guard>
+        <subtype><typename>Target</typename><string>Target = <seealso marker="#type-enum">enum()</seealso></string></subtype>
+        <subtype><typename>InternalFormat</typename><string>InternalFormat = Width = integer()</string></subtype>
+        <subtype><typename>Width</typename><string/></subtype>
+        <subtype><typename>Format</typename><string>Format = Type = <seealso marker="#type-enum">enum()</seealso></string></subtype>
+        <subtype><typename>Type</typename><string/></subtype>
+        <subtype><typename>Data</typename><string>Data = binary()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Data</anno>
+  <anno>Format</anno>
+  <anno>InternalFormat</anno>
+  <anno>Target</anno>
+  <anno>Type</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>build2DMipmapLevels</name>
+  <arity>10</arity>
+  <contract>
+    <clause>
+      <head>build2DMipmapLevels(Target,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>InternalFormat,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Width,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Height,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Format,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Type,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Level,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Base,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Max,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Data) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>integer()</head>
+      <guard>
+        <subtype><typename>Target</typename><string>Target = <seealso marker="#type-enum">enum()</seealso></string></subtype>
+        <subtype><typename>InternalFormat</typename><string>InternalFormat = Width = Height = integer()</string></subtype>
+        <subtype><typename>Width</typename><string/></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Format</typename><string>Format = Type = <seealso marker="#type-enum">enum()</seealso></string></subtype>
+        <subtype><typename>Type</typename><string/></subtype>
+        <subtype><typename>Level</typename><string>Level = Base = Max = integer()</string></subtype>
+        <subtype><typename>Base</typename><string/></subtype>
+        <subtype><typename>Max</typename><string/></subtype>
+        <subtype><typename>Data</typename><string>Data = binary()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Base</anno>
+  <anno>Data</anno>
+  <anno>Format</anno>
+  <anno>Height</anno>
+  <anno>InternalFormat</anno>
+  <anno>Level</anno>
+  <anno>Max</anno>
+  <anno>Target</anno>
+  <anno>Type</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>build2DMipmaps</name>
+  <arity>7</arity>
+  <contract>
+    <clause>
+      <head>build2DMipmaps(Target,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>InternalFormat,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Width,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Height,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Format,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Type,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Data) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>integer()</head>
+      <guard>
+        <subtype><typename>Target</typename><string>Target = <seealso marker="#type-enum">enum()</seealso></string></subtype>
+        <subtype><typename>InternalFormat</typename><string>InternalFormat = Width = Height = integer()</string></subtype>
+        <subtype><typename>Width</typename><string/></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Format</typename><string>Format = Type = <seealso marker="#type-enum">enum()</seealso></string></subtype>
+        <subtype><typename>Type</typename><string/></subtype>
+        <subtype><typename>Data</typename><string>Data = binary()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Data</anno>
+  <anno>Format</anno>
+  <anno>Height</anno>
+  <anno>InternalFormat</anno>
+  <anno>Target</anno>
+  <anno>Type</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>build3DMipmapLevels</name>
+  <arity>11</arity>
+  <contract>
+    <clause>
+      <head>build3DMipmapLevels(Target,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>InternalFormat,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Width,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Height,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Depth,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Format,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Type,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Level,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Base,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Max,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Data) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>integer()</head>
+      <guard>
+        <subtype><typename>Target</typename><string>Target = <seealso marker="#type-enum">enum()</seealso></string></subtype>
+        <subtype><typename>InternalFormat</typename><string>InternalFormat = Width = Height = Depth = integer()</string></subtype>
+        <subtype><typename>Width</typename><string/></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Depth</typename><string/></subtype>
+        <subtype><typename>Format</typename><string>Format = Type = <seealso marker="#type-enum">enum()</seealso></string></subtype>
+        <subtype><typename>Type</typename><string/></subtype>
+        <subtype><typename>Level</typename><string>Level = Base = Max = integer()</string></subtype>
+        <subtype><typename>Base</typename><string/></subtype>
+        <subtype><typename>Max</typename><string/></subtype>
+        <subtype><typename>Data</typename><string>Data = binary()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Base</anno>
+  <anno>Data</anno>
+  <anno>Depth</anno>
+  <anno>Format</anno>
+  <anno>Height</anno>
+  <anno>InternalFormat</anno>
+  <anno>Level</anno>
+  <anno>Max</anno>
+  <anno>Target</anno>
+  <anno>Type</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>build3DMipmaps</name>
+  <arity>8</arity>
+  <contract>
+    <clause>
+      <head>build3DMipmaps(Target,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>InternalFormat,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Width,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Height,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Depth,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Format,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Type,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Data) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>integer()</head>
+      <guard>
+        <subtype><typename>Target</typename><string>Target = <seealso marker="#type-enum">enum()</seealso></string></subtype>
+        <subtype><typename>InternalFormat</typename><string>InternalFormat = Width = Height = Depth = integer()</string></subtype>
+        <subtype><typename>Width</typename><string/></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Depth</typename><string/></subtype>
+        <subtype><typename>Format</typename><string>Format = Type = <seealso marker="#type-enum">enum()</seealso></string></subtype>
+        <subtype><typename>Type</typename><string/></subtype>
+        <subtype><typename>Data</typename><string>Data = binary()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Data</anno>
+  <anno>Depth</anno>
+  <anno>Format</anno>
+  <anno>Height</anno>
+  <anno>InternalFormat</anno>
+  <anno>Target</anno>
+  <anno>Type</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>checkExtension</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>checkExtension(ExtName, ExtString) -&gt; 0 | 1</head>
+      <guard>
+        <subtype><typename>ExtName</typename><string>ExtName = ExtString = string()</string></subtype>
+        <subtype><typename>ExtString</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ExtName</anno>
+  <anno>ExtString</anno>
+</spec>
+<spec>
+  <name>cylinder</name>
+  <arity>6</arity>
+  <contract>
+    <clause>
+      <head>cylinder(Quad, Base, Top, Height, Slices, Stacks) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Quad</typename><string>Quad = integer()</string></subtype>
+        <subtype><typename>Base</typename><string>Base = Top = Height = float()</string></subtype>
+        <subtype><typename>Top</typename><string/></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Slices</typename><string>Slices = Stacks = integer()</string></subtype>
+        <subtype><typename>Stacks</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Base</anno>
+  <anno>Height</anno>
+  <anno>Quad</anno>
+  <anno>Slices</anno>
+  <anno>Stacks</anno>
+  <anno>Top</anno>
+</spec>
+<spec>
+  <name>deleteQuadric</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>deleteQuadric(Quad) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Quad</typename><string>Quad = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Quad</anno>
+</spec>
+<spec>
+  <name>disk</name>
+  <arity>5</arity>
+  <contract>
+    <clause>
+      <head>disk(Quad, Inner, Outer, Slices, Loops) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Quad</typename><string>Quad = integer()</string></subtype>
+        <subtype><typename>Inner</typename><string>Inner = Outer = float()</string></subtype>
+        <subtype><typename>Outer</typename><string/></subtype>
+        <subtype><typename>Slices</typename><string>Slices = Loops = integer()</string></subtype>
+        <subtype><typename>Loops</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Inner</anno>
+  <anno>Loops</anno>
+  <anno>Outer</anno>
+  <anno>Quad</anno>
+  <anno>Slices</anno>
+</spec>
+<spec>
+  <name>errorString</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>errorString(Error) -&gt; string()</head>
+      <guard>
+        <subtype><typename>Error</typename><string>Error = <seealso marker="#type-enum">enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Error</anno>
+</spec>
+<spec>
+  <name>getString</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getString(Name) -&gt; string()</head>
+      <guard>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="#type-enum">enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+</spec>
+<spec>
+  <name>lookAt</name>
+  <arity>9</arity>
+  <contract>
+    <clause>
+      <head>lookAt(EyeX, EyeY, EyeZ, CenterX, CenterY, CenterZ, UpX, UpY, UpZ) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ok</head>
+      <guard>
+        <subtype><typename>EyeX</typename><string>EyeX = EyeY = EyeZ = CenterX = CenterY = CenterZ = UpX = UpY = UpZ = float()</string></subtype>
+        <subtype><typename>EyeY</typename><string></string></subtype>
+        <subtype><typename>EyeZ</typename><string></string></subtype>
+        <subtype><typename>CenterX</typename><string></string></subtype>
+        <subtype><typename>CenterY</typename><string></string></subtype>
+        <subtype><typename>CenterZ</typename><string></string></subtype>
+        <subtype><typename>UpX</typename><string></string></subtype>
+        <subtype><typename>UpY</typename><string></string></subtype>
+        <subtype><typename>UpZ</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>CenterX</anno>
+  <anno>CenterY</anno>
+  <anno>CenterZ</anno>
+  <anno>EyeX</anno>
+  <anno>EyeY</anno>
+  <anno>EyeZ</anno>
+  <anno>UpX</anno>
+  <anno>UpY</anno>
+  <anno>UpZ</anno>
+</spec>
+<spec>
+  <name>newQuadric</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>newQuadric() -&gt; integer()</head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>ortho2D</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>ortho2D(Left, Right, Bottom, Top) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Left</typename><string>Left = Right = Bottom = Top = float()</string></subtype>
+        <subtype><typename>Right</typename><string></string></subtype>
+        <subtype><typename>Bottom</typename><string></string></subtype>
+        <subtype><typename>Top</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Bottom</anno>
+  <anno>Left</anno>
+  <anno>Right</anno>
+  <anno>Top</anno>
+</spec>
+<spec>
+  <name>partialDisk</name>
+  <arity>7</arity>
+  <contract>
+    <clause>
+      <head>partialDisk(Quad, Inner, Outer, Slices, Loops, Start, Sweep) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Quad</typename><string>Quad = integer()</string></subtype>
+        <subtype><typename>Inner</typename><string>Inner = Outer = float()</string></subtype>
+        <subtype><typename>Outer</typename><string/></subtype>
+        <subtype><typename>Slices</typename><string>Slices = Loops = integer()</string></subtype>
+        <subtype><typename>Loops</typename><string/></subtype>
+        <subtype><typename>Start</typename><string>Start = Sweep = float()</string></subtype>
+        <subtype><typename>Sweep</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Inner</anno>
+  <anno>Loops</anno>
+  <anno>Outer</anno>
+  <anno>Quad</anno>
+  <anno>Slices</anno>
+  <anno>Start</anno>
+  <anno>Sweep</anno>
+</spec>
+<spec>
+  <name>perspective</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>perspective(Fovy, Aspect, ZNear, ZFar) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Fovy</typename><string>Fovy = Aspect = ZNear = ZFar = float()</string></subtype>
+        <subtype><typename>Aspect</typename><string></string></subtype>
+        <subtype><typename>ZNear</typename><string></string></subtype>
+        <subtype><typename>ZFar</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Aspect</anno>
+  <anno>Fovy</anno>
+  <anno>ZFar</anno>
+  <anno>ZNear</anno>
+</spec>
+<spec>
+  <name>pickMatrix</name>
+  <arity>5</arity>
+  <contract>
+    <clause>
+      <head>pickMatrix(X, Y, DelX, DelY, Viewport) -&gt; ok</head>
+      <guard>
+        <subtype><typename>X</typename><string>X = Y = DelX = DelY = float()</string></subtype>
+        <subtype><typename>Y</typename><string/></subtype>
+        <subtype><typename>DelX</typename><string/></subtype>
+        <subtype><typename>DelY</typename><string/></subtype>
+        <subtype><typename>Viewport</typename><string>Viewport = {integer(), integer(), integer(), integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>DelX</anno>
+  <anno>DelY</anno>
+  <anno>Viewport</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>project</name>
+  <arity>6</arity>
+  <contract>
+    <clause>
+      <head>project(ObjX, ObjY, ObjZ, Model, Proj, View) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>WinX :: float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>WinY :: float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>WinZ :: float()}</head>
+      <guard>
+        <subtype><typename>ObjX</typename><string>ObjX = ObjY = ObjZ = float()</string></subtype>
+        <subtype><typename>ObjY</typename><string/></subtype>
+        <subtype><typename>ObjZ</typename><string/></subtype>
+        <subtype><typename>Model</typename><string>Model = Proj = <seealso marker="#type-matrix">matrix()</seealso></string></subtype>
+        <subtype><typename>Proj</typename><string/></subtype>
+        <subtype><typename>View</typename><string>View = {integer(), integer(), integer(), integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Model</anno>
+  <anno>ObjX</anno>
+  <anno>ObjY</anno>
+  <anno>ObjZ</anno>
+  <anno>Proj</anno>
+  <anno>View</anno>
+  <anno>WinX</anno>
+  <anno>WinY</anno>
+  <anno>WinZ</anno>
+</spec>
+<spec>
+  <name>quadricDrawStyle</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>quadricDrawStyle(Quad, Draw) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Quad</typename><string>Quad = integer()</string></subtype>
+        <subtype><typename>Draw</typename><string>Draw = <seealso marker="#type-enum">enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Draw</anno>
+  <anno>Quad</anno>
+</spec>
+<spec>
+  <name>quadricNormals</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>quadricNormals(Quad, Normal) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Quad</typename><string>Quad = integer()</string></subtype>
+        <subtype><typename>Normal</typename><string>Normal = <seealso marker="#type-enum">enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Normal</anno>
+  <anno>Quad</anno>
+</spec>
+<spec>
+  <name>quadricOrientation</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>quadricOrientation(Quad, Orientation) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Quad</typename><string>Quad = integer()</string></subtype>
+        <subtype><typename>Orientation</typename><string>Orientation = <seealso marker="#type-enum">enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Orientation</anno>
+  <anno>Quad</anno>
+</spec>
+<spec>
+  <name>quadricTexture</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>quadricTexture(Quad, Texture) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Quad</typename><string>Quad = integer()</string></subtype>
+        <subtype><typename>Texture</typename><string>Texture = 0 | 1</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Quad</anno>
+  <anno>Texture</anno>
+</spec>
+<spec>
+  <name>scaleImage</name>
+  <arity>9</arity>
+  <contract>
+    <clause>
+      <head>scaleImage(Format,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>WIn,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>HIn,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>TypeIn,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>DataIn,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>WOut,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>HOut,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>TypeOut,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>DataOut) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>integer()</head>
+      <guard>
+        <subtype><typename>Format</typename><string>Format = <seealso marker="#type-enum">enum()</seealso></string></subtype>
+        <subtype><typename>WIn</typename><string>WIn = HIn = integer()</string></subtype>
+        <subtype><typename>HIn</typename><string/></subtype>
+        <subtype><typename>TypeIn</typename><string>TypeIn = <seealso marker="#type-enum">enum()</seealso></string></subtype>
+        <subtype><typename>DataIn</typename><string>DataIn = binary()</string></subtype>
+        <subtype><typename>WOut</typename><string>WOut = HOut = integer()</string></subtype>
+        <subtype><typename>HOut</typename><string/></subtype>
+        <subtype><typename>TypeOut</typename><string>TypeOut = <seealso marker="#type-enum">enum()</seealso></string></subtype>
+        <subtype><typename>DataOut</typename><string>DataOut = <seealso marker="#type-mem">mem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>DataIn</anno>
+  <anno>DataOut</anno>
+  <anno>Format</anno>
+  <anno>HIn</anno>
+  <anno>HOut</anno>
+  <anno>TypeIn</anno>
+  <anno>TypeOut</anno>
+  <anno>WIn</anno>
+  <anno>WOut</anno>
+</spec>
+<spec>
+  <name>sphere</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>sphere(Quad, Radius, Slices, Stacks) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Quad</typename><string>Quad = integer()</string></subtype>
+        <subtype><typename>Radius</typename><string>Radius = float()</string></subtype>
+        <subtype><typename>Slices</typename><string>Slices = Stacks = integer()</string></subtype>
+        <subtype><typename>Stacks</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Quad</anno>
+  <anno>Radius</anno>
+  <anno>Slices</anno>
+  <anno>Stacks</anno>
+</spec>
+<spec>
+  <name>tesselate</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>tesselate(Normal, Vs :: [Vs]) -&gt; {Triangles, VertexPos}</head>
+      <guard>
+        <subtype><typename>Normal</typename><string>Normal = Vs = <seealso marker="#type-vertex">vertex()</seealso></string></subtype>
+        <subtype><typename>Vs</typename><string/></subtype>
+        <subtype><typename>Triangles</typename><string>Triangles = [integer()]</string></subtype>
+        <subtype><typename>VertexPos</typename><string>VertexPos = binary()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Normal</anno>
+  <anno>Triangles</anno>
+  <anno>VertexPos</anno>
+  <anno>Vs</anno>
+</spec>
+<spec>
+  <name>unProject</name>
+  <arity>6</arity>
+  <contract>
+    <clause>
+      <head>unProject(WinX, WinY, WinZ, Model, Proj, View) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ObjX :: float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ObjY :: float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ObjZ :: float()}</head>
+      <guard>
+        <subtype><typename>WinX</typename><string>WinX = WinY = WinZ = float()</string></subtype>
+        <subtype><typename>WinY</typename><string/></subtype>
+        <subtype><typename>WinZ</typename><string/></subtype>
+        <subtype><typename>Model</typename><string>Model = Proj = <seealso marker="#type-matrix">matrix()</seealso></string></subtype>
+        <subtype><typename>Proj</typename><string/></subtype>
+        <subtype><typename>View</typename><string>View = {integer(), integer(), integer(), integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Model</anno>
+  <anno>ObjX</anno>
+  <anno>ObjY</anno>
+  <anno>ObjZ</anno>
+  <anno>Proj</anno>
+  <anno>View</anno>
+  <anno>WinX</anno>
+  <anno>WinY</anno>
+  <anno>WinZ</anno>
+</spec>
+<spec>
+  <name>unProject4</name>
+  <arity>9</arity>
+  <contract>
+    <clause>
+      <head>unProject4(WinX,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>WinY,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>WinZ,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ClipW,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Model,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Proj,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>View,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>NearVal,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>FarVal) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ObjX :: float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ObjY :: float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ObjZ :: float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ObjW :: float()}</head>
+      <guard>
+        <subtype><typename>WinX</typename><string>WinX = WinY = WinZ = ClipW = float()</string></subtype>
+        <subtype><typename>WinY</typename><string/></subtype>
+        <subtype><typename>WinZ</typename><string/></subtype>
+        <subtype><typename>ClipW</typename><string/></subtype>
+        <subtype><typename>Model</typename><string>Model = Proj = <seealso marker="#type-matrix">matrix()</seealso></string></subtype>
+        <subtype><typename>Proj</typename><string/></subtype>
+        <subtype><typename>View</typename><string>View = {integer(), integer(), integer(), integer()}</string></subtype>
+        <subtype><typename>NearVal</typename><string>NearVal = FarVal = float()</string></subtype>
+        <subtype><typename>FarVal</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ClipW</anno>
+  <anno>FarVal</anno>
+  <anno>Model</anno>
+  <anno>NearVal</anno>
+  <anno>ObjW</anno>
+  <anno>ObjX</anno>
+  <anno>ObjY</anno>
+  <anno>ObjZ</anno>
+  <anno>Proj</anno>
+  <anno>View</anno>
+  <anno>WinX</anno>
+  <anno>WinY</anno>
+  <anno>WinZ</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:31:01.</timestamp>
+</module>

@@ -1,0 +1,1016 @@
+<?xml version="1.0"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="cover" margin="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin="0mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="left-page" margin-top="25mm" margin-bottom="15mm" margin-left="20mm" margin-right="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="left-header" extent="10mm"/>
+      <fo:region-after region-name="left-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="right-page" margin-top="25mm" margin-bottom="15mm" margin-left="25mm" margin-right="20mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="right-header" extent="10mm"/>
+      <fo:region-after region-name="right-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:page-sequence-master master-name="document">
+      <fo:repeatable-page-master-alternatives>
+        <fo:conditional-page-master-reference master-reference="left-page" odd-or-even="even"/>
+        <fo:conditional-page-master-reference master-reference="right-page" odd-or-even="odd"/>
+      </fo:repeatable-page-master-alternatives>
+    </fo:page-sequence-master>
+  </fo:layout-master-set>
+  <fo:bookmark-tree>
+    <fo:bookmark internal-destination="cover-page" starting-state="show">
+      <fo:bookmark-title>Dialyzer</fo:bookmark-title>
+      <fo:bookmark internal-destination="idp251072" starting-state="hide">
+        <fo:bookmark-title>Dialyzer User's Guide</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp466368" starting-state="hide">
+          <fo:bookmark-title>Dialyzer</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp463696" starting-state="hide">
+            <fo:bookmark-title>Introduction</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp462928" starting-state="hide">
+              <fo:bookmark-title>Scope</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp460880" starting-state="hide">
+              <fo:bookmark-title>Prerequisites</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp459280" starting-state="hide">
+            <fo:bookmark-title>The Persistent Lookup Table</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idm29856" starting-state="hide">
+            <fo:bookmark-title>Using Dialyzer from the Command Line</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idm31952" starting-state="hide">
+            <fo:bookmark-title>Using Dialyzer from Erlang</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idm35072" starting-state="hide">
+            <fo:bookmark-title>Using Dialyzer from the GUI</fo:bookmark-title>
+            <fo:bookmark internal-destination="idm35200" starting-state="hide">
+              <fo:bookmark-title>Choosing the Applications or Modules</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp25712" starting-state="hide">
+              <fo:bookmark-title>Analysis Modes</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp23632" starting-state="hide">
+              <fo:bookmark-title>Controlling the Discrepancies Reported by Dialyzer</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp19840" starting-state="hide">
+              <fo:bookmark-title>Running the Analysis</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp430784" starting-state="hide">
+              <fo:bookmark-title>Include Directories and Macro Definitions</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp423328" starting-state="hide">
+              <fo:bookmark-title>Saving the Information on the Log and Warnings Windows</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp451616" starting-state="hide">
+              <fo:bookmark-title>Inspecting the Inferred Types of the Analyzed Functions</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp450080" starting-state="hide">
+            <fo:bookmark-title>Feedback and Bug Reports</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+      <fo:bookmark internal-destination="idp34896" starting-state="hide">
+        <fo:bookmark-title>Reference Manual</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp322016" starting-state="hide">
+          <fo:bookmark-title>dialyzer</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp327296" starting-state="hide">
+            <fo:bookmark-title>format_warning/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp332256" starting-state="hide">
+            <fo:bookmark-title>gui/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp332720" starting-state="hide">
+            <fo:bookmark-title>gui/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp337008" starting-state="hide">
+            <fo:bookmark-title>plt_info/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idm14768" starting-state="hide">
+            <fo:bookmark-title>run/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp118240" starting-state="hide">
+          <fo:bookmark-title>typer</fo:bookmark-title>
+        </fo:bookmark>
+      </fo:bookmark>
+    </fo:bookmark>
+  </fo:bookmark-tree>
+  <fo:page-sequence font-family="sans-serif" force-page-count="even" master-reference="cover" font-size="10pt">
+    <fo:flow flow-name="xsl-region-body">
+      <fo:block space-before="130mm" space-before.conditionality="retain" text-align="end">
+        <fo:external-graphic src="/root/download/otp_src_20.0/bootstrap/lib/erl_docgen/priv/images/erlang-logo.gif"/>
+      </fo:block>
+      <fo:block id="cover-page" border-before-style="solid" border-before-width="10pt" border-color="#960003" font-size="2.3em" padding-before="0.5em" text-align="end">Dialyzer</fo:block>
+      <fo:block font-size="0.9em" text-align="end">Copyright © 2006-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em" text-align="end">Dialyzer 3.2</fo:block>
+      <fo:block font-size="0.9em" text-align="end">July 12, 2017</fo:block>
+      <fo:block padding-before="2.5em" font-size="1.33em" font-weight="bold" color="#C00" text-align="end"/>
+      <fo:block break-before="page" border-before-style="solid" border-before-width="1pt" border-color="#960003" font-weight="bold" padding-before="0.5em" space-before="200mm" space-before.conditionality="retain">Copyright © 2006-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em">
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+ 
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+    
+    Ericsson AB. All Rights Reserved..
+        </fo:block>
+      <fo:block font-size="0.9em" font-weight="bold" space-before="2em">July 12, 2017</fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+  <fo:page-sequence font-family="serif" master-reference="document" initial-page-number="1" font-size="10pt">
+    <fo:static-content flow-name="left-header">
+      <fo:block text-align="start" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-header">
+      <fo:block text-align="end" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="left-footer">
+      <fo:block text-align="start" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold"><fo:page-number/> | Ericsson AB. All Rights Reserved.:
+            Dialyzer</fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-footer">
+      <fo:block text-align="end" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">Ericsson AB. All Rights Reserved.:
+            Dialyzer | <fo:page-number/></fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body"><fo:block/><fo:block id="idp251072" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">1   
+      Dialyzer User's Guide</fo:block>
+  <fo:block id="idp466368" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.1  Dialyzer</fo:marker>1.1  Dialyzer</fo:block><fo:block id="idp463696" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.1 
+      Introduction</fo:block>
+    
+    <fo:block id="idp462928" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Scope</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Dialyzer is a static analysis tool that identifies software
+        discrepancies, such as definite type errors, code that has become dead
+        or unreachable because of programming error, and unnecessary tests,
+        in single Erlang modules or entire (sets of) applications.</fo:block>
+
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Dialyzer can be called from the command line, from Erlang,
+        and from a GUI.</fo:block>
+    
+
+    <fo:block id="idp460880" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Prerequisites</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">It is assumed that the reader is familiar with the Erlang programming
+        language.</fo:block>
+    
+  <fo:block id="idp459280" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.2 
+      The Persistent Lookup Table</fo:block>
+    
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Dialyzer stores the result of an analysis in a Persistent
+      Lookup Table (PLT). The PLT can then be used as a starting
+      point for later analyses. It is recommended to build a PLT with the
+      Erlang/OTP applications that you are using, but also to include your
+      own applications that you are using frequently.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The PLT is built using option <fo:inline font-family="monospace">--build_plt</fo:inline> to Dialyzer.
+      The following command builds the recommended minimal PLT for
+      Erlang/OTP:</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+dialyzer --build_plt --apps erts kernel stdlib mnesia</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Dialyzer looks if there is an environment variable called
+      <fo:inline font-family="monospace">DIALYZER_PLT</fo:inline> and places the PLT at this location. If no such
+      variable is set, Dialyzer places the PLT at
+      <fo:inline font-family="monospace">$HOME/.dialyzer_plt</fo:inline>. The placement can also be specified using
+      the options <fo:inline font-family="monospace">--plt</fo:inline> or <fo:inline font-family="monospace">--output_plt</fo:inline>.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Information can be added to an existing PLT using option
+      <fo:inline font-family="monospace">--add_to_plt</fo:inline>. If you also want to include the Erlang compiler in
+      the PLT and place it in a new PLT, then use the following command:</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+dialyzer --add_to_plt --apps compiler --output_plt my.plt</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Then you can add your favorite application my_app to the new
+      PLT:</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+dialyzer --add_to_plt --plt my.plt -r my_app/ebin</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">But you realize that it is unnecessary to have the Erlang compiler in this
+      one:</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+dialyzer --remove_from_plt --plt my.plt --apps compiler</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Later, when you have fixed a bug in your application my_app,
+      you want to update the PLT so that it becomes fresh the next time
+      you run Dialyzer. In this case, run the following command:</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+dialyzer --check_plt --plt my.plt</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Dialyzer then reanalyzes the changed files
+      and the files that depend on these files. Notice that this
+      consistency check is performed automatically the next time you
+      run Dialyzer with this PLT. Option <fo:inline font-family="monospace">--check_plt</fo:inline> is only
+      for doing so without doing any other analysis.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get information about a PLT, use the following option:</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+dialyzer --plt_info</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To specify which PLT, use option <fo:inline font-family="monospace">--plt</fo:inline>.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get the output printed to a file, use option <fo:inline font-family="monospace">--output_file</fo:inline>.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Notice that when manipulating the PLT, no warnings are
+      emitted. To turn on warnings during (re)analysis of the PLT, use
+      option <fo:inline font-family="monospace">--get_warnings</fo:inline>.</fo:block>
+  <fo:block id="idm29856" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.3 
+      Using Dialyzer from the Command Line</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Dialyzer has a command-line version for automated use.
+      See <fo:inline font-style="italic"><fo:inline font-family="monospace">dialyzer(3)</fo:inline></fo:inline>.</fo:block>
+  <fo:block id="idm31952" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.4 
+      Using Dialyzer from Erlang</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Dialyzer can also be used directly from Erlang.
+      See <fo:inline font-style="italic"><fo:inline font-family="monospace">dialyzer(3)</fo:inline></fo:inline>.</fo:block>
+  <fo:block id="idm35072" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.5 
+      Using Dialyzer from the GUI</fo:block>
+   
+    
+    <fo:block id="idm35200" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Choosing the Applications or Modules</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-weight="bold">File</fo:inline> window displays a listing of the current directory.
+        Click your way to the directories/modules you want to add or type the
+        correct path in the entry.</fo:block>
+
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Mark the directories/modules you want to analyze for discrepancies and
+        click <fo:inline font-weight="bold">Add</fo:inline>. You can either add the <fo:inline font-family="monospace">.beam</fo:inline> and
+        <fo:inline font-family="monospace">.erl</fo:inline> files directly, or add directories that contain
+        these kind of files. Notice that
+        you are only allowed to add the type of files that can be analyzed in
+        the current mode of operation (see below), and that you cannot mix
+        <fo:inline font-family="monospace">.beam</fo:inline> and <fo:inline font-family="monospace">.erl</fo:inline> files.</fo:block>
+    
+
+    <fo:block id="idp25712" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Analysis Modes</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Dialyzer has two analysis modes: "Byte Code" and "Source Code".
+         They are controlled by the buttons in the top-middle part of the
+         main window, under <fo:inline font-weight="bold">Analysis Options</fo:inline>.</fo:block>
+    
+
+    <fo:block id="idp23632" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Controlling the Discrepancies Reported by Dialyzer</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Under the <fo:inline font-weight="bold">Warnings</fo:inline> pull-down menu, there are buttons that
+        control which discrepancies are reported to the user in the
+        <fo:inline font-weight="bold">Warnings</fo:inline> window. By clicking these buttons, you can
+        enable/disable a whole class of warnings. Information about the classes
+        of warnings is found on the "Warnings" item under the <fo:inline font-weight="bold">Help</fo:inline>
+        menu (in the rightmost top corner).</fo:block>
+
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If modules are compiled with inlining, spurious warnings can be
+        emitted. In the <fo:inline font-weight="bold">Options</fo:inline> menu you can choose to ignore
+        inline-compiled modules when analyzing byte code.
+        When starting from source code, this is not a problem because
+        inlining is explicitly turned off by Dialyzer. The option causes
+        Dialyzer to suppress all warnings from inline-compiled
+        modules, as there is currently no way for Dialyzer to find what
+        parts of the code have been produced by inlining.</fo:block>
+    
+
+    <fo:block id="idp19840" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Running the Analysis</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Once you have chosen the modules or directories you want to analyze,
+        click the <fo:inline font-weight="bold">Run</fo:inline> button to start the analysis. If you for some
+        reason want to stop the analysis while it is running, click the
+        <fo:inline font-weight="bold">Stop</fo:inline> button.</fo:block>
+
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The information from the analysis is displayed in the <fo:inline font-weight="bold">Log</fo:inline>
+        window and the <fo:inline font-weight="bold">Warnings</fo:inline> window.</fo:block>
+    
+
+    <fo:block id="idp430784" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Include Directories and Macro Definitions</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When analyzing from source, you might have to supply Dialyzer
+        with a list of include directories and macro definitions (as you can do
+        with the <fo:inline font-style="italic"><fo:inline font-family="monospace">erlc</fo:inline></fo:inline> flags
+        <fo:inline font-family="monospace">-I</fo:inline> and <fo:inline font-family="monospace">-D</fo:inline>). This can be done
+        either by starting Dialyzer with these flags from the command
+        line as in:</fo:block>
+
+      <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+dialyzer -I my_includes -DDEBUG -Dvsn=42 -I one_more_dir</fo:block>
+
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">or by adding these explicitly using submenu
+        <fo:inline font-weight="bold">Manage Macro Definitions</fo:inline> or
+        <fo:inline font-weight="bold">Manage Include Directories</fo:inline> in the <fo:inline font-weight="bold">Options</fo:inline> menu.</fo:block>
+    
+
+    <fo:block id="idp423328" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Saving the Information on the Log and Warnings Windows</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-weight="bold">File</fo:inline> menu includes options to save the contents of the
+        <fo:inline font-weight="bold">Log</fo:inline> window and the <fo:inline font-weight="bold">Warnings</fo:inline> window. Simply choose the
+        options and enter the file to save the contents in.</fo:block>
+
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">There are also buttons to clear the contents of each window.</fo:block>
+    
+
+    <fo:block id="idp451616" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Inspecting the Inferred Types of the Analyzed Functions</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Dialyzer stores the information of the analyzed functions in a
+        Persistent Lookup Table (PLT), see section
+        <fo:inline font-style="italic">The Persistent Lookup Table</fo:inline>.</fo:block>
+
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">After an analysis, you can inspect this information.
+        In the <fo:inline font-weight="bold">PLT</fo:inline> menu you can choose to either search the PLT
+        or inspect the contents of the whole PLT. The information is presented
+        in <fo:inline font-style="italic"><fo:inline font-family="monospace">EDoc</fo:inline></fo:inline> format.</fo:block>
+    
+  <fo:block id="idp450080" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.6 
+      Feedback and Bug Reports</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">We very much welcome user feedback - even wishlists!
+      If you notice anything weird, especially if Dialyzer reports
+      any discrepancy that is a false positive, please send an error report
+      describing the symptoms and how to reproduce them.</fo:block>
+  <fo:block id="idp34896" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">2   
+      Reference Manual</fo:block>
+  <fo:block page-break-before="always" id="idp322016" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">dialyzer</fo:marker>dialyzer</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  dialyzer
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Dialyzer is a static analysis tool that identifies software
+      discrepancies, such as definite type errors, code that has become dead
+      or unreachable because of programming error, and unnecessary tests,
+      in single Erlang modules or entire (sets of) applications.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Dialyzer starts its analysis from either
+      debug-compiled BEAM bytecode or from Erlang source code. The file
+      and line number of a discrepancy is reported along with an
+      indication of what the discrepancy is about. Dialyzer bases its
+      analysis on the concept of success typings, which allows for sound
+      warnings (no false positives).</fo:block>
+  
+
+  <fo:block id="idp319440" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Using Dialyzer from the Command Line</fo:block>
+    
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Dialyzer has a command-line version for automated use. This
+      section provides a brief description of the options. The same information
+      can be obtained by writing the following in a shell:</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+dialyzer --help</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">For more details about the operation of Dialyzer, see section
+      <fo:inline font-style="italic">
+      Using Dialyzer from the GUI</fo:inline> in the User's Guide.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">Exit status of the command-line version:</fo:inline></fo:block>
+
+    <fo:block space-after="0.25em" space-before="0.25em">
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">0</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">No problems were found during the analysis and no warnings were
+          emitted.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">1</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Problems were found during the analysis.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">2</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">No problems were found during the analysis, but warnings were
+          emitted.</fo:block>
+      </fo:block></fo:block-container>
+    </fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">Usage:</fo:inline></fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+dialyzer [--add_to_plt] [--apps applications] [--build_plt]
+         [--check_plt] [-Ddefine]* [-Dname] [--dump_callgraph file]
+         [files_or_dirs] [--fullpath] [--get_warnings] [--gui] [--help]
+         [-I include_dir]* [--no_check_plt] [--no_native]
+         [--no_native_cache] [-o outfile] [--output_plt file] [-pa dir]*
+         [--plt plt] [--plt_info] [--plts plt*] [--quiet] [-r dirs]
+         [--raw] [--remove_from_plt] [--shell] [--src] [--statistics]
+         [--verbose] [--version] [-Wwarn]*</fo:block>
+
+    <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">* denotes that multiple occurrences of the option are possible.</fo:block>
+    </fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">Options:</fo:inline></fo:block>
+
+    <fo:block space-after="0.25em" space-before="0.25em">
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--add_to_plt</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The PLT is extended to also include the files specified with
+          <fo:inline font-family="monospace">-c</fo:inline> and <fo:inline font-family="monospace">-r</fo:inline>. Use
+          <fo:inline font-family="monospace">--plt</fo:inline> to specify which PLT to start from,
+          and <fo:inline font-family="monospace">--output_plt</fo:inline> to specify where to put the PLT.
+          Notice that the analysis possibly can include files from the PLT if
+          they depend on the new files. This option only works for BEAM
+          files.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--apps applications</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This option is typically used when building or modifying a PLT as
+          in:</fo:block>
+        <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+dialyzer --build_plt --apps erts kernel stdlib mnesia ...</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">to refer conveniently to library applications corresponding to the
+          Erlang/OTP installation. However, this option is general and can also
+          be used during analysis to refer to Erlang/OTP applications.
+          File or directory names can also be included, as in:</fo:block>
+        <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+dialyzer --apps inets ssl ./ebin ../other_lib/ebin/my_module.beam</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--build_plt</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The analysis starts from an empty PLT and creates a new one from
+          the files specified with <fo:inline font-family="monospace">-c</fo:inline> and
+          <fo:inline font-family="monospace">-r</fo:inline>. This option only works for BEAM files.
+          To override the default PLT location, use
+          <fo:inline font-family="monospace">--plt</fo:inline> or <fo:inline font-family="monospace">--output_plt</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--check_plt</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Check the PLT for consistency and rebuild it if it is not
+          up-to-date.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-Dname</fo:inline> (or <fo:inline font-family="monospace">-Dname=value</fo:inline>)</fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When analyzing from source, pass the define to Dialyzer.
+          (**)</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--dump_callgraph file</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Dump the call graph into the specified file whose format is
+          determined by the filename extension. Supported extensions are:
+          <fo:inline font-family="monospace">raw</fo:inline>, <fo:inline font-family="monospace">dot</fo:inline>, and <fo:inline font-family="monospace">ps</fo:inline>. If something else is used as
+          filename extension, default format <fo:inline font-family="monospace">.raw</fo:inline> is used.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">files_or_dirs</fo:inline> (for backward compatibility also
+        as <fo:inline font-family="monospace">-c files_or_dirs</fo:inline>)</fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Use Dialyzer from the command line to detect defects in the
+          specified files or directories containing <fo:inline font-family="monospace">.erl</fo:inline> or
+          <fo:inline font-family="monospace">.beam</fo:inline> files, depending on the type of the
+          analysis.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--fullpath</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Display the full path names of files for which warnings are
+          emitted.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--get_warnings</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Make Dialyzer emit warnings even when manipulating the PLT.
+          Warnings are only emitted for files that are analyzed.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--gui</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Use the GUI.</fo:block></fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--help</fo:inline> (or <fo:inline font-family="monospace">-h</fo:inline>)</fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Print this message and exit.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-I include_dir</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When analyzing from source, pass the <fo:inline font-family="monospace">include_dir</fo:inline>
+          to Dialyzer. (**)</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--no_check_plt</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Skip the PLT check when running Dialyzer. This is useful when
+          working with installed PLTs that never change.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--no_native</fo:inline> (or <fo:inline font-family="monospace">-nn</fo:inline>)</fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Bypass the native code compilation of some key files that
+          Dialyzer heuristically performs when dialyzing many files.
+          This avoids the compilation time, but can result in (much) longer
+          analysis time.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--no_native_cache</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">By default, Dialyzer caches the results of native compilation
+          in directory <fo:inline font-family="monospace">$XDG_CACHE_HOME/erlang/dialyzer_hipe_cache</fo:inline>.
+          <fo:inline font-family="monospace">XDG_CACHE_HOME</fo:inline> defaults to <fo:inline font-family="monospace">$HOME/.cache</fo:inline>.
+          Use this option to disable caching.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-o outfile</fo:inline> (or
+        <fo:inline font-family="monospace">--output outfile</fo:inline>)</fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When using Dialyzer from the command line, send the analysis
+          results to the specified outfile rather than to <fo:inline font-family="monospace">stdout</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--output_plt file</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Store the PLT at the specified file after building it.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-pa dir</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Include <fo:inline font-family="monospace">dir</fo:inline> in the path for Erlang. This is useful
+          when analyzing files that have <fo:inline font-family="monospace">-include_lib()</fo:inline>
+          directives.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--plt plt</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Use the specified PLT as the initial PLT. If the PLT was built
+          during setup, the files are checked for consistency.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--plt_info</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Make Dialyzer print information about the PLT and then quit.
+          The PLT can be specified with <fo:inline font-family="monospace">--plt(s)</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--plts plt*</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Merge the specified PLTs to create the initial PLT. This requires
+          that the PLTs are disjoint (that is, do not have any module
+          appearing in more than one PLT).
+          The PLTs are created in the usual way:</fo:block>
+        <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+dialyzer --build_plt --output_plt plt_1 files_to_include
+...
+dialyzer --build_plt --output_plt plt_n files_to_include</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">They can then be used in either of the following ways:</fo:block>
+        <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+dialyzer files_to_analyze --plts plt_1 ... plt_n</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">or</fo:block>
+        <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+dialyzer --plts plt_1 ... plt_n -- files_to_analyze</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Notice the <fo:inline font-family="monospace">--</fo:inline> delimiter in the second case.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--quiet</fo:inline> (or <fo:inline font-family="monospace">-q</fo:inline>)</fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Make Dialyzer a bit more quiet.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-r dirs</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Same as <fo:inline font-family="monospace">files_or_dirs</fo:inline>, but the specified
+          directories are searched
+          recursively for subdirectories containing <fo:inline font-family="monospace">.erl</fo:inline> or
+          <fo:inline font-family="monospace">.beam</fo:inline> files in them, depending on the type of
+          analysis.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--raw</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When using Dialyzer from the command line, output the raw
+          analysis results (Erlang terms) instead of the formatted result.
+          The raw format
+          is easier to post-process (for example, to filter warnings or to
+          output HTML pages).</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--remove_from_plt</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The information from the files specified with
+          <fo:inline font-family="monospace">-c</fo:inline> and <fo:inline font-family="monospace">-r</fo:inline> is removed from
+          the PLT. Notice that this can cause a reanalysis of the remaining
+          dependent files.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--shell</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Do not disable the Erlang shell while running the GUI.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--src</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Override the default, which is to analyze BEAM files, and
+          analyze starting from Erlang source code instead.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--statistics</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Print information about the progress of execution (analysis phases,
+          time spent in each, and size of the relative input).</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--verbose</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Make Dialyzer a bit more verbose.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--version</fo:inline> (or <fo:inline font-family="monospace">-v</fo:inline>)</fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Print the Dialyzer version and some more information and
+          exit.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-Wwarn</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A family of options that selectively turn on/off warnings.
+          (For help on the names of warnings, use
+          <fo:inline font-family="monospace">dialyzer -Whelp</fo:inline>.)
+          Notice that the options can also be specified in the file with a
+          <fo:inline font-family="monospace">-dialyzer()</fo:inline> attribute. For details, see section <fo:inline font-style="italic">Requesting or Suppressing Warnings in
+          Source Files</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+    </fo:block>
+
+    <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">** options <fo:inline font-family="monospace">-D</fo:inline> and <fo:inline font-family="monospace">-I</fo:inline> work both
+        from the command line and in the Dialyzer GUI; the syntax of
+        defines and includes is the same as that used by
+        <fo:inline font-style="italic">erlc(1)</fo:inline>.</fo:block>
+    </fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">Warning options:</fo:inline></fo:block>
+
+    <fo:block space-after="0.25em" space-before="0.25em">
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-Werror_handling</fo:inline> (***)</fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Include warnings for functions that only return by an exception.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-Wno_behaviours</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Suppress warnings about behavior callbacks that drift from the
+          published recommended interfaces.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-Wno_contracts</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Suppress warnings about invalid contracts.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-Wno_fail_call</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Suppress warnings for failing calls.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-Wno_fun_app</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Suppress warnings for fun applications that will fail.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-Wno_improper_lists</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Suppress warnings for construction of improper lists.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-Wno_match</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Suppress warnings for patterns that are unused or cannot match.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-Wno_missing_calls</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Suppress warnings about calls to missing functions.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-Wno_opaque</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Suppress warnings for violations of opacity of data types.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-Wno_return</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Suppress warnings for functions that will never return a value.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-Wno_undefined_callbacks</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Suppress warnings about behaviors that have no
+          <fo:inline font-family="monospace">-callback</fo:inline> attributes for their callbacks.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-Wno_unused</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Suppress warnings for unused functions.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-Wrace_conditions</fo:inline> (***)</fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Include warnings for possible race conditions. Notice that the
+          analysis that finds data races performs intra-procedural data flow
+          analysis and can sometimes explode in time. Enable it at your own
+          risk.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-Wunderspecs</fo:inline> (***)</fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Warn about underspecified functions (the specification is strictly
+          more allowing than the success typing).</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-Wunknown</fo:inline> (***)</fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Let warnings about unknown functions and types affect the
+          exit status of the command-line version. The default is to ignore
+          warnings about unknown functions and types when setting the exit
+          status. When using Dialyzer from Erlang, warnings about unknown
+          functions and types are returned; the default is not to return
+          these warnings.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-Wunmatched_returns</fo:inline> (***)</fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Include warnings for function calls that ignore a structured return
+          value or do not match against one of many possible return
+          value(s).</fo:block>
+      </fo:block></fo:block-container>
+    </fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The following options are also available, but their use is not
+      recommended (they are mostly for Dialyzer developers and internal
+      debugging):</fo:block>
+
+    <fo:block space-after="0.25em" space-before="0.25em">
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-Woverspecs</fo:inline> (***)</fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Warn about overspecified functions (the specification is strictly
+          less allowing than the success typing).</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-Wspecdiffs</fo:inline> (***)</fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Warn when the specification is different than the success typing.</fo:block>
+      </fo:block></fo:block-container>
+    </fo:block>
+
+    <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">*** denotes options that turn on warnings rather than
+        turning them off.</fo:block>
+    </fo:block>
+  
+
+  <fo:block id="idp291360" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Using Dialyzer from Erlang</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Dialyzer can be used directly from Erlang. Both the GUI and the
+      command-line versions are also available. The options are similar to the
+      ones given from the command line, see section
+      <fo:inline font-style="italic">
+      Using Dialyzer from the Command Line</fo:inline>.</fo:block>
+  
+
+  <fo:block id="idp848592" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Requesting or Suppressing Warnings in Source Files</fo:block>
+    
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Attribute <fo:inline font-family="monospace">-dialyzer()</fo:inline> can be used for turning off
+      warnings in a module by specifying functions or warning options.
+      For example, to turn off all warnings for the function
+      <fo:inline font-family="monospace">f/0</fo:inline>, include the following line:</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+-dialyzer({nowarn_function, f/0}).</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To turn off warnings for improper lists, add the following line
+      to the source file:</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+-dialyzer(no_improper_lists).</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Attribute <fo:inline font-family="monospace">-dialyzer()</fo:inline> is allowed after function
+      declarations. Lists of warning options or functions are allowed:</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+-dialyzer([{nowarn_function, [f/0]}, no_improper_lists]).</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Warning options can be restricted to functions:</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+-dialyzer({no_improper_lists, g/0}).</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+-dialyzer({[no_return, no_match], [g/0, h/0]}).</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">For help on the warning options, use <fo:inline font-family="monospace">dialyzer -Whelp</fo:inline>. The
+      options are also enumerated, see function <fo:inline font-style="italic">
+      <fo:inline font-family="monospace">gui/1</fo:inline></fo:inline> below (<fo:inline font-family="monospace">WarnOpts</fo:inline>).</fo:block>
+
+    <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Warning option <fo:inline font-family="monospace">-Wrace_conditions</fo:inline> has no effect when
+        set in source files.</fo:block>
+    </fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Attribute <fo:inline font-family="monospace">-dialyzer()</fo:inline> can also be used for turning on
+      warnings. For example, if a module has been fixed regarding
+      unmatched returns, adding the following line can help in assuring
+      that no new unmatched return warnings are introduced:</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+-dialyzer(unmatched_returns).</fo:block>
+  
+
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp327296">format_warning(Msg) -&gt; string()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Msg = {Tag, Id, msg()}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>See <fo:inline font-family="monospace">run/1</fo:inline>.</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Get a string from warnings as returned by
+          <fo:inline font-style="italic"><fo:inline font-family="monospace">run/1</fo:inline></fo:inline>.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp332256">gui() -&gt; ok | {error, Msg}</fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp332720">gui(OptList) -&gt; ok | {error, Msg}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">OptList</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>See below.</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Dialyzer GUI version.</fo:block>
+        <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+OptList  :: [Option]
+Option   :: {files,          [Filename :: string()]}
+          | {files_rec,      [DirName :: string()]}
+          | {defines,        [{Macro :: atom(), Value :: term()}]}
+          | {from,           src_code | byte_code}
+                               %% Defaults to byte_code
+          | {init_plt,       FileName :: string()}
+                               %% If changed from default
+          | {plts,           [FileName :: string()]}
+                               %% If changed from default
+          | {include_dirs,   [DirName :: string()]}
+          | {output_file,    FileName :: string()}
+          | {output_plt,     FileName :: string()}
+          | {check_plt,      boolean()},
+          | {analysis_type,  'succ_typings' |
+                             'plt_add' |
+                             'plt_build' |
+                             'plt_check' |
+                             'plt_remove'}
+          | {warnings,       [WarnOpts]}
+          | {get_warnings,   bool()}
+
+WarnOpts :: error_handling
+          | no_behaviours
+          | no_contracts
+          | no_fail_call
+          | no_fun_app
+          | no_improper_lists
+          | no_match
+	  | no_missing_calls
+          | no_opaque
+	  | no_return
+          | no_undefined_callbacks
+          | no_unused
+          | race_conditions
+          | underspecs
+          | unknown
+          | unmatched_returns
+          | overspecs
+          | specdiffs</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp337008">plt_info(string()) -&gt; {'ok', [{atom(), any()}]} | {'error', atom()}</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns information about the specified PLT.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idm14768">run(OptList) -&gt; Warnings</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">OptList</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>See <fo:inline font-family="monospace">gui/0,1</fo:inline>.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Warnings</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>See below.</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Dialyzer command-line version.</fo:block>
+        <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+Warnings :: [{Tag, Id, Msg}]
+Tag      :: 'warn_behaviour'
+          | 'warn_bin_construction'
+          | 'warn_callgraph'
+          | 'warn_contract_not_equal'
+          | 'warn_contract_range'
+          | 'warn_contract_subtype'
+          | 'warn_contract_supertype'
+          | 'warn_contract_syntax'
+          | 'warn_contract_types'
+          | 'warn_failing_call'
+          | 'warn_fun_app'
+          | 'warn_matching'
+          | 'warn_non_proper_list'
+          | 'warn_not_called'
+          | 'warn_opaque'
+          | 'warn_race_condition'
+          | 'warn_return_no_exit'
+          | 'warn_return_only_exit'
+          | 'warn_umatched_return'
+          | 'warn_undefined_callbacks'
+          | 'warn_unknown'
+Id  = {File :: string(), Line :: integer()}
+Msg = msg() -- Undefined</fo:block>
+      </fo:block>
+  
+<fo:block page-break-before="always" id="idp118240" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">typer</fo:marker>typer</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  typer
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">TypEr shows type information for Erlang modules to the user.
+    Additionally, it can annotate the code of files with such type
+    information.</fo:block>
+  
+
+  <fo:block id="idp121040" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Using TypEr from the Command Line</fo:block>
+    
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">TypEr is used from the command-line. This section provides a
+    brief description of the options. The same information can be
+    obtained by writing the following in a shell:</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+typer --help</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">Usage:</fo:inline></fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+typer [--help] [--version] [--plt PLT] [--edoc]
+      [--show | --show-exported | --annotate | --annotate-inc-files]
+      [-Ddefine]* [-I include_dir]* [-pa dir]* [-pz dir]*
+      [-T application]* [-r] file*</fo:block>
+
+    <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">* denotes that multiple occurrences of the option are possible.</fo:block>
+    </fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">Options:</fo:inline></fo:block>
+
+    <fo:block space-after="0.25em" space-before="0.25em">
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--r</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Search directories recursively for .erl files below them.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--show</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Print type specifications for all functions on stdout.
+        (This is the default behaviour; this option is not really
+        needed.)</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--show-exported</fo:inline> (or <fo:inline font-family="monospace">show_exported</fo:inline>)</fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Same as <fo:inline font-family="monospace">--show</fo:inline>, but print specifications for
+        exported functions only. Specs are displayed sorted
+        alphabetically on the function's name.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--annotate</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Annotate the specified files with type specifications.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--annotate-inc-files</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Same as <fo:inline font-family="monospace">--annotate</fo:inline> but annotates all
+        <fo:inline font-family="monospace">-include()</fo:inline> files as well as all .erl files. (Use this
+        option with caution - it has not been tested much).</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--edoc</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Print type information as Edoc <fo:inline font-family="monospace">@spec</fo:inline> comments, not
+        as type specs.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--plt</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Use the specified dialyzer PLT file rather than the default one.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-T file*</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The specified file(s) already contain type specifications
+        and these are to be trusted in order to print specs for the
+        rest of the files. (Multiple files or dirs, separated by
+        spaces, can be specified.)</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-Dname</fo:inline> (or <fo:inline font-family="monospace">-Dname=value</fo:inline>)</fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Pass the defined name(s) to TypEr. (**)</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-I</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Pass the include_dir to TypEr. (**)</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-pa dir</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Include <fo:inline font-family="monospace">dir</fo:inline> in the path for Erlang. This is useful
+          when analyzing files that have <fo:inline font-family="monospace">-include_lib()</fo:inline>
+          directives or use parse transforms.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">-pz dir</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Include <fo:inline font-family="monospace">dir</fo:inline> in the path for Erlang. This is useful
+          when analyzing files that have <fo:inline font-family="monospace">-include_lib()</fo:inline>
+          directives or use parse transforms.</fo:block>
+      </fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">--version</fo:inline> (or <fo:inline font-family="monospace">-v</fo:inline>)</fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Print the TypEr version and some more information and
+          exit.</fo:block>
+      </fo:block></fo:block-container>
+
+    </fo:block>
+
+    <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">** options <fo:inline font-family="monospace">-D</fo:inline> and <fo:inline font-family="monospace">-I</fo:inline> work both
+        from the command line and in the TypEr GUI; the syntax of
+        defines and includes is the same as that used by
+        <fo:inline font-style="italic">erlc(1)</fo:inline>.</fo:block>
+    </fo:block>
+
+  
+
+</fo:flow>
+  </fo:page-sequence>
+</fo:root>

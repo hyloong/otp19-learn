@@ -1,7 +1,7 @@
 %%
 %% %CopyrightBegin%
 %%
-%% Copyright Ericsson AB 1996-2016. All Rights Reserved.
+%% Copyright Ericsson AB 1996-2017. All Rights Reserved.
 %%
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
 %% %CopyrightEnd%
 %%
 
-%% This is a developement feature when developing a new file module,
+%% This is a development feature when developing a new file module,
 %% ugly but practical.
 -ifndef(FILE_MODULE).
 -define(FILE_MODULE, file).
@@ -3738,7 +3738,7 @@ response_analysis(Module, Function, Arguments) ->
     {Result, Comment}.
 
 micro_ts() ->
-    erlang:monotonic_time(micro_seconds).
+    erlang:monotonic_time(microsecond).
 
 response_stat(init, Ts) ->
     {0, 0, Ts, 0, 0};

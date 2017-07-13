@@ -1,0 +1,276 @@
+<module name="wxPrintPreview">
+<type>
+  <name>wxPrintPreview</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxPrintPreview">wxPrintPreview()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getCanvas</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getCanvas(This) -&gt; <seealso marker="wxPreviewCanvas#type-wxPreviewCanvas">wxPreviewCanvas:wxPreviewCanvas()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getCurrentPage</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getCurrentPage(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getFrame</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getFrame(This) -&gt; <seealso marker="wxFrame#type-wxFrame">wxFrame:wxFrame()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getMaxPage</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getMaxPage(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getMinPage</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getMinPage(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getPrintout</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getPrintout(This) -&gt; <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getPrintoutForPrinting</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getPrintoutForPrinting(This) -&gt; <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isOk</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isOk(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(Printout) -&gt; <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></head>
+      <guard>
+        <subtype><typename>Printout</typename><string>Printout = <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Printout</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>new(Printout, Options :: [Option]) -&gt; <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></head>
+      <guard>
+        <subtype><typename>Printout</typename><string>Printout = <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{printoutForPrinting, <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{data, <seealso marker="wxPrintDialogData#type-wxPrintDialogData">wxPrintDialogData:wxPrintDialogData()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Printout</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>new(Printout, PrintoutForPrinting, Data) -&gt; <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></head>
+      <guard>
+        <subtype><typename>Printout</typename><string>Printout = PrintoutForPrinting = <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></string></subtype>
+        <subtype><typename>PrintoutForPrinting</typename><string/></subtype>
+        <subtype><typename>Data</typename><string>Data = <seealso marker="wxPrintData#type-wxPrintData">wxPrintData:wxPrintData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Data</anno>
+  <anno>Printout</anno>
+  <anno>PrintoutForPrinting</anno>
+</spec>
+<spec>
+  <name>paintPage</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>paintPage(This, Canvas, Dc) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></string></subtype>
+        <subtype><typename>Canvas</typename><string>Canvas = <seealso marker="wxPreviewCanvas#type-wxPreviewCanvas">wxPreviewCanvas:wxPreviewCanvas()</seealso></string></subtype>
+        <subtype><typename>Dc</typename><string>Dc = <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Canvas</anno>
+  <anno>Dc</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>print</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>print(This, Interactive) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></string></subtype>
+        <subtype><typename>Interactive</typename><string>Interactive = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Interactive</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>renderPage</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>renderPage(This, PageNum) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></string></subtype>
+        <subtype><typename>PageNum</typename><string>PageNum = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>PageNum</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setCanvas</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setCanvas(This, Canvas) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></string></subtype>
+        <subtype><typename>Canvas</typename><string>Canvas = <seealso marker="wxPreviewCanvas#type-wxPreviewCanvas">wxPreviewCanvas:wxPreviewCanvas()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Canvas</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setCurrentPage</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setCurrentPage(This, PageNum) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></string></subtype>
+        <subtype><typename>PageNum</typename><string>PageNum = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>PageNum</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setFrame</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setFrame(This, Frame) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></string></subtype>
+        <subtype><typename>Frame</typename><string>Frame = <seealso marker="wxFrame#type-wxFrame">wxFrame:wxFrame()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Frame</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setPrintout</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setPrintout(This, Printout) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></string></subtype>
+        <subtype><typename>Printout</typename><string>Printout = <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Printout</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setZoom</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setZoom(This, Percent) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></string></subtype>
+        <subtype><typename>Percent</typename><string>Percent = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Percent</anno>
+  <anno>This</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:39.</timestamp>
+</module>

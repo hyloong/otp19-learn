@@ -1,7 +1,7 @@
 %%
 %% %CopyrightBegin%
 %%
-%% Copyright Ericsson AB 1996-2016. All Rights Reserved.
+%% Copyright Ericsson AB 1996-2017. All Rights Reserved.
 %%
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -26,15 +26,13 @@
 
 %%-define(dist_debug, true).
 
-%-define(DBG,erlang:display([?MODULE,?LINE])).
-
 -ifdef(dist_debug).
 -define(debug(Term), erlang:display(Term)).
 -else.
 -define(debug(Term), ok).
 -endif.
 
--ifdef(DEBUG).
+-ifdef(dist_debug).
 -define(connect_failure(Node,Term),
 	io:format("Net Kernel 2: Failed connection to node ~p, reason ~p~n",
 		  [Node,Term])).
@@ -1264,11 +1262,22 @@ create_name(Name, LongOrShortNames, Try) ->
     {Head,Host1} = create_hostpart(Name, LongOrShortNames),
     case Host1 of
 	{ok,HostPart} ->
-	    {ok,list_to_atom(Head ++ HostPart)};
+            case valid_name_head(Head) of
+                true ->
+                    {ok,list_to_atom(Head ++ HostPart)};
+                false ->
+                    error_logger:info_msg("Invalid node name!\n"
+                                          "Please check your configuration\n"),
+                    {error, badarg}
+            end;
 	{error,long} when Try =:= 1 ->
 	    %% It could be we haven't read domain name from resolv file yet
 	    inet_config:do_load_resolv(os:type(), longnames),
 	    create_name(Name, LongOrShortNames, 0);
+        {error, hostname_not_allowed} ->
+            error_logger:info_msg("Invalid node name!\n"
+                                  "Please check your configuration\n"),
+            {error, badarg};
 	{error,Type} ->
 	    error_logger:info_msg(
 	      lists:concat(["Can\'t set ",
@@ -1281,12 +1290,13 @@ create_name(Name, LongOrShortNames, Try) ->
 create_hostpart(Name, LongOrShortNames) ->
     {Head,Host} = split_node(Name),
     Host1 = case {Host,LongOrShortNames} of
-		{[$@,_|_],longnames} ->
-		    {ok,Host};
+		{[$@,_|_] = Host,longnames} ->
+                    validate_hostname(Host);
 		{[$@,_|_],shortnames} ->
 		    case lists:member($.,Host) of
 			true -> {error,short};
-			_ -> {ok,Host}
+			_ ->
+                            validate_hostname(Host)
 		    end;
 		{_,shortnames} ->
 		    case inet_db:gethostname() of
@@ -1305,6 +1315,24 @@ create_hostpart(Name, LongOrShortNames) ->
 		    end
 	    end,
     {Head,Host1}.
+
+validate_hostname([$@|HostPart] = Host) ->
+    {ok, MP} = re:compile("^[!-ÿ]*$", [unicode]),
+    case re:run(HostPart, MP) of
+        {match, _} ->
+            {ok, Host};
+        nomatch ->
+            {error, hostname_not_allowed}
+    end.
+
+valid_name_head(Head) ->
+    {ok, MP} = re:compile("^[0-9A-Za-z_\\-]*$", [unicode]),
+        case re:run(Head, MP) of
+            {match, _} ->
+                true;
+            nomatch ->
+                false
+    end.
 
 split_node(Name) ->
     lists:splitwith(fun(C) -> C =/= $@ end, atom_to_list(Name)).

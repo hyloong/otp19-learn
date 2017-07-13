@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxPrinter</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxPrinter.xml</file></header>
+<module>wxPrinter</module>
+<modulesummary>See external documentation: wxPrinter.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprinter.html">wxPrinter</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxPrinter"/>wxPrinter()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxPrinter">wxPrinter()</seealso></name>
+<fsummary>Equivalent to new([]).
+</fsummary>
+
+<desc><marker id="new-0"/>
+<p>Equivalent to <seealso marker="#new-1">new([])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Options::[Option]) -&gt; <seealso marker="#type-wxPrinter">wxPrinter()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Option = {data, <seealso marker="wxPrintDialogData#type-wxPrintDialogData">wxPrintDialogData:wxPrintDialogData()</seealso>}</v></type>
+<desc><marker id="new-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprinter.html#wxprinterwxprinter">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createAbortWindow(This, Parent, Printout) -&gt; <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrinter">wxPrinter()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Printout = <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></v></type>
+<desc><marker id="createAbortWindow-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprinter.html#wxprintercreateabortwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getAbort(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrinter">wxPrinter()</seealso></v></type>
+<desc><marker id="getAbort-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprinter.html#wxprintergetabort">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getLastError() -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="getLastError-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprinter.html#wxprintergetlasterror">external documentation</url>.
+ <br/> Res = ?wxPRINTER_NO_ERROR | ?wxPRINTER_CANCELLED | ?wxPRINTER_ERROR</p>
+</desc></func>
+<func>
+<name>getPrintDialogData(This) -&gt; <seealso marker="wxPrintDialogData#type-wxPrintDialogData">wxPrintDialogData:wxPrintDialogData()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrinter">wxPrinter()</seealso></v></type>
+<desc><marker id="getPrintDialogData-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprinter.html#wxprintergetprintdialogdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>print(This, Parent, Printout) -&gt; boolean()</name>
+<fsummary>Equivalent to print(This, Parent, Printout, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrinter">wxPrinter()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Printout = <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></v></type>
+<desc><marker id="print-3"/>
+<p>Equivalent to <seealso marker="#print-4">print(This, Parent, Printout, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>print(This, Parent, Printout, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrinter">wxPrinter()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Printout = <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></v><v>Option = {prompt, boolean()}</v></type>
+<desc><marker id="print-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprinter.html#wxprinterprint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>printDialog(This, Parent) -&gt; <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrinter">wxPrinter()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="printDialog-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprinter.html#wxprinterprintdialog">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>reportError(This, Parent, Printout, Message) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrinter">wxPrinter()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Printout = <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></v><v>Message = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="reportError-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprinter.html#wxprinterreporterror">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setup(This, Parent) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrinter">wxPrinter()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="setup-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprinter.html#wxprintersetup">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxPrinter">wxPrinter()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

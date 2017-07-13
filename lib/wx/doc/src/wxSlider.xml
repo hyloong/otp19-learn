@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxSlider</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxSlider.xml</file></header>
+<module>wxSlider</module>
+<modulesummary>See external documentation: wxSlider.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxslider.html">wxSlider</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxControl">wxControl</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxSlider"/>wxSlider()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxSlider">wxSlider()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxslider.html#wxsliderwxslider">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id, Value, MinValue, MaxValue) -&gt; <seealso marker="#type-wxSlider">wxSlider()</seealso></name>
+<fsummary>Equivalent to new(Parent, Id, Value, MinValue, MaxValue, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Value = integer()</v><v>MinValue = integer()</v><v>MaxValue = integer()</v></type>
+<desc><marker id="new-5"/>
+<p>Equivalent to <seealso marker="#new-6">new(Parent, Id, Value, MinValue, MaxValue, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id, Value, MinValue, MaxValue, Options::[Option]) -&gt; <seealso marker="#type-wxSlider">wxSlider()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Value = integer()</v><v>MinValue = integer()</v><v>MaxValue = integer()</v><v>Option = {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()} | {validator, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</v></type>
+<desc><marker id="new-6"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxslider.html#wxsliderwxslider">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id, Value, MinValue, MaxValue) -&gt; boolean()</name>
+<fsummary>Equivalent to create(This, Parent, Id, Value, MinValue, MaxValue, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSlider">wxSlider()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Value = integer()</v><v>MinValue = integer()</v><v>MaxValue = integer()</v></type>
+<desc><marker id="create-6"/>
+<p>Equivalent to <seealso marker="#create-7">create(This, Parent, Id, Value, MinValue, MaxValue, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id, Value, MinValue, MaxValue, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSlider">wxSlider()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Value = integer()</v><v>MinValue = integer()</v><v>MaxValue = integer()</v><v>Option = {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()} | {validator, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</v></type>
+<desc><marker id="create-7"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxslider.html#wxslidercreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getLineSize(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSlider">wxSlider()</seealso></v></type>
+<desc><marker id="getLineSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxslider.html#wxslidergetlinesize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMax(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSlider">wxSlider()</seealso></v></type>
+<desc><marker id="getMax-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxslider.html#wxslidergetmax">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMin(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSlider">wxSlider()</seealso></v></type>
+<desc><marker id="getMin-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxslider.html#wxslidergetmin">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPageSize(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSlider">wxSlider()</seealso></v></type>
+<desc><marker id="getPageSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxslider.html#wxslidergetpagesize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getThumbLength(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSlider">wxSlider()</seealso></v></type>
+<desc><marker id="getThumbLength-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxslider.html#wxslidergetthumblength">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getValue(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSlider">wxSlider()</seealso></v></type>
+<desc><marker id="getValue-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxslider.html#wxslidergetvalue">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setLineSize(This, LineSize) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSlider">wxSlider()</seealso></v><v>LineSize = integer()</v></type>
+<desc><marker id="setLineSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxslider.html#wxslidersetlinesize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setPageSize(This, PageSize) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSlider">wxSlider()</seealso></v><v>PageSize = integer()</v></type>
+<desc><marker id="setPageSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxslider.html#wxslidersetpagesize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setRange(This, MinValue, MaxValue) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSlider">wxSlider()</seealso></v><v>MinValue = integer()</v><v>MaxValue = integer()</v></type>
+<desc><marker id="setRange-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxslider.html#wxslidersetrange">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setThumbLength(This, LenPixels) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSlider">wxSlider()</seealso></v><v>LenPixels = integer()</v></type>
+<desc><marker id="setThumbLength-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxslider.html#wxslidersetthumblength">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setValue(This, Value) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSlider">wxSlider()</seealso></v><v>Value = integer()</v></type>
+<desc><marker id="setValue-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxslider.html#wxslidersetvalue">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxSlider">wxSlider()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

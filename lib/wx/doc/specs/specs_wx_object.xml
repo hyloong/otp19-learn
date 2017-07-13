@@ -1,0 +1,219 @@
+<module name="wx_object">
+<spec>
+  <name>call</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>call(Obj, Request) -&gt; term()</head>
+      <guard>
+        <subtype><typename>Obj</typename><string>Obj = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso> | atom() | pid()</string></subtype>
+        <subtype><typename>Request</typename><string>Request = term()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Obj</anno>
+  <anno>Request</anno>
+</spec>
+<spec>
+  <name>call</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>call(Obj, Request, Timeout) -&gt; term()</head>
+      <guard>
+        <subtype><typename>Obj</typename><string>Obj = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso> | atom() | pid()</string></subtype>
+        <subtype><typename>Request</typename><string>Request = term()</string></subtype>
+        <subtype><typename>Timeout</typename><string>Timeout = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Obj</anno>
+  <anno>Request</anno>
+  <anno>Timeout</anno>
+</spec>
+<spec>
+  <name>cast</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>cast(Obj, Request) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Obj</typename><string>Obj = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso> | atom() | pid()</string></subtype>
+        <subtype><typename>Request</typename><string>Request = term()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Obj</anno>
+  <anno>Request</anno>
+</spec>
+<spec>
+  <name>format_status</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>get_pid</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>get_pid(Obj) -&gt; pid()</head>
+      <guard>
+        <subtype><typename>Obj</typename><string>Obj = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso> | atom() | pid()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Obj</anno>
+</spec>
+<spec>
+  <name>init_it</name>
+  <arity>6</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>reply</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>reply(X1 :: {pid(), Tag :: term()}, Reply :: term()) -&gt; pid()</head></clause>
+  </contract>
+  <anno>Reply</anno>
+  <anno>Tag</anno>
+  <anno>X1</anno>
+</spec>
+<spec>
+  <name>set_pid</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>set_pid(Obj, Pid :: pid()) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></head>
+      <guard>
+        <subtype><typename>Obj</typename><string>Obj = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso> | atom() | pid()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Obj</anno>
+  <anno>Pid</anno>
+</spec>
+<spec>
+  <name>start</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>start(Mod, Args, Options) -&gt; <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso> | {error, term()}</head>
+      <guard>
+        <subtype><typename>Mod</typename><string>Mod = atom()</string></subtype>
+        <subtype><typename>Args</typename><string>Args = term()</string></subtype>
+        <subtype><typename>Flag</typename><string>Flag = trace | log | {logfile, string()} | statistics | debug</string></subtype>
+        <subtype><typename>Options</typename><string>Options = [{timeout, timeout()} | {debug, [Flag]}]</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Args</anno>
+  <anno>Flag</anno>
+  <anno>Mod</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>start</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>start(Name, Mod, Args, Options) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso> | {error, term()}</head>
+      <guard>
+        <subtype><typename>Name</typename><string>Name = {local, atom()}</string></subtype>
+        <subtype><typename>Mod</typename><string>Mod = atom()</string></subtype>
+        <subtype><typename>Args</typename><string>Args = term()</string></subtype>
+        <subtype><typename>Flag</typename><string>Flag = trace | log | {logfile, string()} | statistics | debug</string></subtype>
+        <subtype><typename>Options</typename><string>Options = [{timeout, timeout()} | {debug, [Flag]}]</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Args</anno>
+  <anno>Flag</anno>
+  <anno>Mod</anno>
+  <anno>Name</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>start_link</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>start_link(Mod, Args, Options) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso> | {error, term()}</head>
+      <guard>
+        <subtype><typename>Mod</typename><string>Mod = atom()</string></subtype>
+        <subtype><typename>Args</typename><string>Args = term()</string></subtype>
+        <subtype><typename>Flag</typename><string>Flag = trace | log | {logfile, string()} | statistics | debug</string></subtype>
+        <subtype><typename>Options</typename><string>Options = [{timeout, timeout()} | {debug, [Flag]}]</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Args</anno>
+  <anno>Flag</anno>
+  <anno>Mod</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>start_link</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>start_link(Name, Mod, Args, Options) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso> | {error, term()}</head>
+      <guard>
+        <subtype><typename>Name</typename><string>Name = {local, atom()}</string></subtype>
+        <subtype><typename>Mod</typename><string>Mod = atom()</string></subtype>
+        <subtype><typename>Args</typename><string>Args = term()</string></subtype>
+        <subtype><typename>Flag</typename><string>Flag = trace | log | {logfile, string()} | statistics | debug</string></subtype>
+        <subtype><typename>Options</typename><string>Options = [{timeout, timeout()} | {debug, [Flag]}]</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Args</anno>
+  <anno>Flag</anno>
+  <anno>Mod</anno>
+  <anno>Name</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>stop</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>stop(Obj) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Obj</typename><string>Obj = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso> | atom() | pid()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Obj</anno>
+</spec>
+<spec>
+  <name>stop</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>stop(Obj, Reason, Timeout) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Obj</typename><string>Obj = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso> | atom() | pid()</string></subtype>
+        <subtype><typename>Reason</typename><string>Reason = term()</string></subtype>
+        <subtype><typename>Timeout</typename><string>Timeout = timeout()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Obj</anno>
+  <anno>Reason</anno>
+  <anno>Timeout</anno>
+</spec>
+<spec>
+  <name>system_code_change</name>
+  <arity>4</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>system_continue</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>system_terminate</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>system_terminate(Reason :: term(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Parent :: term(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Debug :: term(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>X4 :: [term()]) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>no_return()</head></clause>
+  </contract>
+  <anno>Debug</anno>
+  <anno>Parent</anno>
+  <anno>Reason</anno>
+  <anno>X4</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:29:44.</timestamp>
+</module>

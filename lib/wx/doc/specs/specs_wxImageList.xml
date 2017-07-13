@@ -1,0 +1,305 @@
+<module name="wxImageList">
+<type>
+  <name>wxImageList</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxImageList">wxImageList()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>add</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>add(This, Bitmap) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImageList">wxImageList()</seealso></string></subtype>
+        <subtype><typename>Bitmap</typename><string>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Bitmap</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>add</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>add(This, Bitmap, Mask) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImageList">wxImageList()</seealso></string></subtype>
+        <subtype><typename>Bitmap</typename><string>Bitmap = Mask = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></string></subtype>
+        <subtype><typename>Mask</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Bitmap</anno>
+  <anno>Mask</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>add</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>add(This, Bitmap, MaskColour) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImageList">wxImageList()</seealso></string></subtype>
+        <subtype><typename>Bitmap</typename><string>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></string></subtype>
+        <subtype><typename>MaskColour</typename><string>MaskColour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Bitmap</anno>
+  <anno>MaskColour</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>create</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>create(This, Width, Height) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImageList">wxImageList()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>create</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>create(This, Width, Height, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImageList">wxImageList()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {mask, boolean()} | {initialCount, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxImageList">wxImageList()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>draw</name>
+  <arity>5</arity>
+  <contract>
+    <clause>
+      <head>draw(This, Index, Dc, X, Y) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImageList">wxImageList()</seealso></string></subtype>
+        <subtype><typename>Index</typename><string>Index = integer()</string></subtype>
+        <subtype><typename>Dc</typename><string>Dc = <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Dc</anno>
+  <anno>Index</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>draw</name>
+  <arity>6</arity>
+  <contract>
+    <clause>
+      <head>draw(This, Index, Dc, X, Y, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImageList">wxImageList()</seealso></string></subtype>
+        <subtype><typename>Index</typename><string>Index = integer()</string></subtype>
+        <subtype><typename>Dc</typename><string>Dc = <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {flags, integer()} | {solidBackground, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Dc</anno>
+  <anno>Index</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getBitmap</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getBitmap(This, Index) -&gt; <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImageList">wxImageList()</seealso></string></subtype>
+        <subtype><typename>Index</typename><string>Index = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Index</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getIcon</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getIcon(This, Index) -&gt; <seealso marker="wxIcon#type-wxIcon">wxIcon:wxIcon()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImageList">wxImageList()</seealso></string></subtype>
+        <subtype><typename>Index</typename><string>Index = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Index</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getImageCount</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getImageCount(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImageList">wxImageList()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getSize</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getSize(This, Index) -&gt; Result</head>
+      <guard>
+        <subtype><typename>Result</typename><string>Result = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{Res :: boolean(), Width :: integer(), Height :: integer()}</string></subtype>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImageList">wxImageList()</seealso></string></subtype>
+        <subtype><typename>Index</typename><string>Index = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>Index</anno>
+  <anno>Res</anno>
+  <anno>Result</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>new() -&gt; <seealso marker="#type-wxImageList">wxImageList()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>new(Width, Height) -&gt; <seealso marker="#type-wxImageList">wxImageList()</seealso></head>
+      <guard>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>new(Width, Height, Options :: [Option]) -&gt; <seealso marker="#type-wxImageList">wxImageList()</seealso></head>
+      <guard>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {mask, boolean()} | {initialCount, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>remove</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>remove(This, Index) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImageList">wxImageList()</seealso></string></subtype>
+        <subtype><typename>Index</typename><string>Index = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Index</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>removeAll</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>removeAll(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImageList">wxImageList()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>replace</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>replace(This, Index, Bitmap) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImageList">wxImageList()</seealso></string></subtype>
+        <subtype><typename>Index</typename><string>Index = integer()</string></subtype>
+        <subtype><typename>Bitmap</typename><string>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Bitmap</anno>
+  <anno>Index</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>replace</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>replace(This, Index, Bitmap, Mask) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxImageList">wxImageList()</seealso></string></subtype>
+        <subtype><typename>Index</typename><string>Index = integer()</string></subtype>
+        <subtype><typename>Bitmap</typename><string>Bitmap = Mask = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></string></subtype>
+        <subtype><typename>Mask</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Bitmap</anno>
+  <anno>Index</anno>
+  <anno>Mask</anno>
+  <anno>This</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:20.</timestamp>
+</module>

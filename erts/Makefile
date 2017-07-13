@@ -1,7 +1,7 @@
 # 
 # %CopyrightBegin%
 #
-# Copyright Ericsson AB 2006-2016. All Rights Reserved.
+# Copyright Ericsson AB 2006-2017. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,9 +20,9 @@
 
 .NOTPARALLEL:
 
-include $(ERL_TOP)/make/output.mk
 include $(ERL_TOP)/make/target.mk
 include vsn.mk
+include $(ERL_TOP)/make/$(TARGET)/otp.mk
 
 # ----------------------------------------------------------------------
 
@@ -33,17 +33,15 @@ ifeq ($(NO_START_SCRIPTS),)
 ERTSDIRS += start_scripts
 endif
 
-EXTRA_FLAVORS=smp
-
 .PHONY: all
-all: smp opt
+all: $(FLAVORS)
 
 .PHONY: docs
 docs:
 	$(V_at)( cd doc/src && $(MAKE) $@ )
 
-.PHONY: debug opt clean
-debug opt clean:
+.PHONY: debug opt lcnt clean
+debug opt lcnt clean:
 	$(V_at)for d in emulator $(ERTSDIRS); do \
 		if test -d $$d; then \
 			( cd $$d && $(MAKE) $@ FLAVOR=$(FLAVOR) ) || exit $$? ; \
@@ -56,13 +54,15 @@ debug opt clean:
 # - don't use them in scripts or assume they will always stay like this!
 #
 
-.PHONY: $(EXTRA_FLAVORS)
-$(EXTRA_FLAVORS):
-	$(V_at)( cd emulator && $(MAKE) opt FLAVOR=$@ )
+.PHONY: $(FLAVORS)
+$(FLAVORS):
+	$(V_at)for type in $(TYPES); do \
+		( $(MAKE) $$type FLAVOR=$@ ); \
+	done
 
 # Make erl script and erlc in $(ERL_TOP)/bin which runs the compiled version
 # Note that erlc is not a script and requires extra handling on cygwin.
-# also note that this file is not created by autoconf, that's why 
+# also note that this file is not created by autoconf, that's why @EXEEXT@
 # is not used.
 
 # The copying of beam.dll should be removed when the beam dll need no longer be
@@ -129,8 +129,10 @@ makefiles:
 
 .PHONY: release
 release:
-	$(V_at)for f in plain $(EXTRA_FLAVORS) ; do \
-		( cd emulator && $(MAKE) release FLAVOR=$$f ) \
+	$(V_at)for f in $(FLAVORS); do \
+		for t in $(TYPES); do \
+		  ( cd emulator && $(MAKE) release FLAVOR=$$f TYPE=$$t ) \
+		done \
 	done
 	$(V_at)for d in $(ERTSDIRS) $(XINSTDIRS); do \
 		if test -d $$d; then \

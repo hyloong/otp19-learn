@@ -1,7 +1,7 @@
 #
 # %CopyrightBegin%
 #
-# Copyright Ericsson AB 1996-2016. All Rights Reserved.
+# Copyright Ericsson AB 1996-2017. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -33,8 +33,8 @@ Z_LIB=
 NO_INLINE_FUNCTIONS=false
 OPCODE_TABLES = $(ERL_TOP)/lib/compiler/src/genop.tab beam/ops.tab
 
-DEBUG_CFLAGS = -g  -D_GNU_SOURCE -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   
-CONFIGURE_CFLAGS = -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE
+DEBUG_CFLAGS = -g  -D_GNU_SOURCE -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   
+CONFIGURE_CFLAGS = -Werror=undef -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE
 
 #
 # Run this make file with TYPE set to the type of emulator you want.
@@ -42,7 +42,7 @@ CONFIGURE_CFLAGS = -Werror=implicit -Werror=return-type  -g -O2 -I/root/download
 # is "debug". For a normal version use "opt".
 #
 DEFS=-DHAVE_CONFIG_H
-THR_DEFS= -DUSE_THREADS -D_THREAD_SAFE -D_REENTRANT -DPOSIX_THREADS -D_POSIX_THREAD_SAFE_FUNCTIONS -DERTS_ENABLE_LOCK_COUNT
+THR_DEFS= -DUSE_THREADS -D_THREAD_SAFE -D_REENTRANT -DPOSIX_THREADS -D_POSIX_THREAD_SAFE_FUNCTIONS
 M4FLAGS=
 CREATE_DIRS=
 
@@ -51,8 +51,8 @@ ARFLAGS=rc
 OMIT_OMIT_FP=no
 TYPE_LIBS=
 
-DIRTY_SCHEDULER_SUPPORT=no
-NEW_PURGE_STRATEGY=no
+DIRTY_SCHEDULER_SUPPORT=yes
+DIRTY_SCHEDULER_TEST=no
 
 ifeq ($(TYPE),debug)
 PURIFY =
@@ -76,7 +76,7 @@ ifeq ($(TYPE),quantify)
 PURIFY = quantify $(QUANTIFY_BUILD_OPTIONS)
 TYPEMARKER = .quantify
 ENABLE_ALLOC_TYPE_VARS += quantify
-  TYPE_FLAGS = -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -g -O2 -DQUANTIFY -DNO_JUMP_TABLE
+  TYPE_FLAGS = -Werror=undef -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -g -O2 -DQUANTIFY -DNO_JUMP_TABLE
 else
 
 ifeq ($(TYPE),purecov)
@@ -106,7 +106,7 @@ else
 ifeq ($(TYPE),gprof)
 PURIFY = 
 TYPEMARKER = .gprof
-TYPE_FLAGS = -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -DGPROF -pg -DERTS_CAN_INLINE=0 -DERTS_INLINE=
+TYPE_FLAGS = -Werror=undef -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -DGPROF -pg -DERTS_CAN_INLINE=0 -DERTS_INLINE=
 LDFLAGS += -pg
 ENABLE_ALLOC_TYPE_VARS += gprof
 NO_INLINE_FUNCTIONS=true
@@ -115,27 +115,27 @@ else
 ifeq ($(TYPE),lcnt)
 PURIFY =
 TYPEMARKER = .lcnt
-TYPE_FLAGS = -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -DERTS_ENABLE_LOCK_COUNT
+TYPE_FLAGS = -Werror=undef -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -DERTS_ENABLE_LOCK_COUNT
 else
 
 ifeq ($(TYPE),frmptr)
 PURIFY =
 OMIT_OMIT_FP=yes
 TYPEMARKER = .frmptr
-TYPE_FLAGS = -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -DERTS_FRMPTR
+TYPE_FLAGS = -Werror=undef -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -DERTS_FRMPTR
 else
 
 ifeq ($(TYPE),icount)
 PURIFY =
 TYPEMARKER = .icount
-TYPE_FLAGS = -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -DERTS_OPCODE_COUNTER_SUPPORT
+TYPE_FLAGS = -Werror=undef -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -DERTS_OPCODE_COUNTER_SUPPORT
 else
 
 # If type isn't one of the above, it *is* opt type...
 override TYPE=opt
 PURIFY =
 TYPEMARKER =
-TYPE_FLAGS = -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE
+TYPE_FLAGS = -Werror=undef -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE
 endif
 endif
 endif
@@ -148,6 +148,8 @@ endif
 endif
 
 LIBS += $(TYPE_LIBS)
+
+ORIG_LIBS:= $(LIBS)
 
 comma:=,
 space:=
@@ -175,35 +177,51 @@ endif
 # NOTE: When adding a new type update ERL_BUILD_TYPE_MARKER in sys/unix/sys.c
 #
 
-ifeq ($(FLAVOR),smp)
+FLAVOR=$(DEFAULT_FLAVOR)
+
+ifeq ($(FLAVOR),plain)
+
+DS_SUPPORT=no
+DS_TEST=no
+
+FLAVOR_MARKER=
+FLAVOR_FLAGS=
+ENABLE_ALLOC_TYPE_VARS += nofrag
+M4FLAGS +=
+
+else # FLAVOR
+
+# If flavor isn't one of the above, it *is* smp flavor...
+override FLAVOR=smp
+
 FLAVOR_MARKER=.smp
 FLAVOR_FLAGS=-DERTS_SMP
 ENABLE_ALLOC_TYPE_VARS += smp nofrag
 M4FLAGS += -DERTS_SMP=1
 ifeq ($(DIRTY_SCHEDULER_SUPPORT),yes)
 THR_DEFS += -DERTS_DIRTY_SCHEDULERS
-endif
+DS_SUPPORT=yes
 
-else
+ifeq ($(DIRTY_SCHEDULER_TEST),yes)
+DS_TEST=yes
+THR_DEFS += -DERTS_DIRTY_SCHEDULERS_TEST
+else # DIRTY_SCHEDULER_TEST
+DS_TEST=no
+endif # DIRTY_SCHEDULER_TEST
 
-# If flavor isn't one of the above, it *is* plain flavor...
-override FLAVOR=plain
-FLAVOR_MARKER=
-FLAVOR_FLAGS=
-ENABLE_ALLOC_TYPE_VARS += nofrag
-M4FLAGS +=
-endif
+else # DIRTY_SCHEDULER_SUPPORT
+DS_SUPPORT=no
+DS_TEST=no
+endif # DIRTY_SCHEDULER_SUPPORT
+
+endif # FLAVOR
 
 TF_MARKER=$(TYPEMARKER)$(FLAVOR_MARKER)
 
-ifeq ($(FLAVOR)-yes,smp-no)
-VOID_EMULATOR = '*** SMP emulator disabled by configure'
-else
 ifeq ($(TYPE)-no,valgrind-no)
 VOID_EMULATOR = '*** valgrind emulator disabled by configure'
 else
 VOID_EMULATOR =
-endif
 endif
 
 OPSYS=linux
@@ -549,8 +567,10 @@ GENERATE += $(TTF_DIR)/OPCODES-GENERATED
 
 # bif and atom table
 ATOMS=	beam/atom.names
+DIRTY_BIFS = beam/erl_dirty_bif.tab
 BIFS =	beam/bif.tab
 ifdef HIPE_ENABLED
+HIPE=yes
 HIPE_ARCH64_TAB=hipe/hipe_bif64.tab
 HIPE_x86_TAB=hipe/hipe_x86.tab
 HIPE_amd64_TAB=hipe/hipe_amd64.tab $(HIPE_ARCH64_TAB)
@@ -560,20 +580,26 @@ HIPE_ppc64_TAB=hipe/hipe_ppc64.tab $(HIPE_ARCH64_TAB)
 HIPE_arm_TAB=hipe/hipe_arm.tab
 HIPE_ARCH_TAB=$(HIPE_$(ARCH)_TAB)
 BIFS += hipe/hipe_bif0.tab hipe/hipe_bif1.tab hipe/hipe_bif2.tab $(HIPE_ARCH_TAB)
+HIPE_NBIF_FILES=$(TTF_DIR)/hipe_nbif_impl.h $(TTF_DIR)/hipe_nbif_impl.c
+else
+HIPE=no
+HIPE_NBIF_FILES=
 endif
 
-$(TARGET)/erl_bif_table.c \
-$(TARGET)/erl_bif_table.h \
-$(TARGET)/erl_bif_wrap.c \
-$(TARGET)/erl_bif_list.h \
-$(TARGET)/erl_atom_table.c \
-$(TARGET)/erl_atom_table.h \
-$(TARGET)/erl_pbifs.c \
-	: $(TARGET)/TABLES-GENERATED
-$(TARGET)/TABLES-GENERATED: $(ATOMS) $(BIFS) utils/make_tables
-	$(gen_verbose)LANG=C $(PERL) utils/make_tables -src $(TARGET) -include $(TARGET)\
-		$(ATOMS) $(BIFS) && echo $? >$(TARGET)/TABLES-GENERATED
-GENERATE += $(TARGET)/TABLES-GENERATED
+$(TTF_DIR)/erl_bif_table.c \
+$(TTF_DIR)/erl_bif_table.h \
+$(TTF_DIR)/erl_bif_wrap.c \
+$(TTF_DIR)/erl_bif_list.h \
+$(TTF_DIR)/erl_atom_table.c \
+$(TTF_DIR)/erl_atom_table.h \
+$(TTF_DIR)/erl_guard_bifs.c \
+$(TTF_DIR)/erl_dirty_bif_wrap.c \
+$(HIPE_NBIF_FILES) \
+	: $(TTF_DIR)/TABLES-GENERATED
+$(TTF_DIR)/TABLES-GENERATED: $(ATOMS) $(DIRTY_BIFS) $(BIFS) utils/make_tables
+	$(gen_verbose)LANG=C $(PERL) utils/make_tables -src $(TTF_DIR) -include $(TTF_DIR)\
+		-ds $(DS_SUPPORT) -dst $(DS_TEST) -hipe $(HIPE) $(ATOMS) $(DIRTY_BIFS) $(BIFS) && echo $? >$(TTF_DIR)/TABLES-GENERATED
+GENERATE += $(TTF_DIR)/TABLES-GENERATED
 
 $(TTF_DIR)/erl_alloc_types.h: beam/erl_alloc.types utils/make_alloc_types
 	$(gen_verbose)LANG=C $(PERL) utils/make_alloc_types -src $< -dst $@ $(ENABLE_ALLOC_TYPE_VARS)
@@ -633,6 +659,10 @@ generate: $(TTF_DIR)/GENERATED $(PRELOAD_SRC)
 
 $(TTF_DIR)/GENERATED: $(GENERATE)
 	$(gen_verbose)echo $? >$(TTF_DIR)/GENERATED
+
+# Regenerate if Makefile has changed
+$(GENERATE): $(TARGET)/Makefile
+
 endif
 
 $(TARGET)/erlang_dtrace.h: beam/erlang_dtrace.d
@@ -742,7 +772,6 @@ EMU_OBJS = \
 	$(OBJDIR)/beam_ranges.o
 
 RUN_OBJS = \
-	$(OBJDIR)/erl_pbifs.o		\
 	$(OBJDIR)/erl_alloc.o		$(OBJDIR)/erl_mtrace.o \
 	$(OBJDIR)/erl_alloc_util.o	$(OBJDIR)/erl_goodfit_alloc.o \
 	$(OBJDIR)/erl_bestfit_alloc.o	$(OBJDIR)/erl_afit_alloc.o \
@@ -752,7 +781,8 @@ RUN_OBJS = \
 	$(OBJDIR)/erl_bif_info.o	$(OBJDIR)/erl_bif_op.o \
 	$(OBJDIR)/erl_bif_os.o		$(OBJDIR)/erl_bif_lists.o \
 	$(OBJDIR)/erl_bif_trace.o	$(OBJDIR)/erl_bif_unique.o \
-	$(OBJDIR)/erl_bif_wrap.o \
+	$(OBJDIR)/erl_bif_wrap.o	$(OBJDIR)/erl_nfunc_sched.o \
+	$(OBJDIR)/erl_guard_bifs.o 	$(OBJDIR)/erl_dirty_bif_wrap.o \
 	$(OBJDIR)/erl_trace.o		$(OBJDIR)/copy.o \
 	$(OBJDIR)/utils.o		$(OBJDIR)/bif.o \
 	$(OBJDIR)/io.o 			$(OBJDIR)/erl_printf_term.o\
@@ -883,12 +913,15 @@ HIPE_noarch_OBJS=
 HIPE_ARCH_OBJS=$(HIPE_$(ARCH)_OBJS)
 
 HIPE_OBJS= \
+	$(OBJDIR)/hipe_nbif_impl.o \
 	$(OBJDIR)/hipe_bif0.o \
 	$(OBJDIR)/hipe_bif1.o \
 	$(OBJDIR)/hipe_bif2.o \
 	$(OBJDIR)/hipe_debug.o \
 	$(OBJDIR)/hipe_gc.o \
+	$(OBJDIR)/hipe_load.o \
 	$(OBJDIR)/hipe_mode_switch.o \
+	$(OBJDIR)/hipe_module.o \
 	$(OBJDIR)/hipe_native_bif.o \
 	$(OBJDIR)/hipe_stack.o $(HIPE_ARCH_OBJS)
 ifdef HIPE_ENABLED
@@ -916,7 +949,7 @@ $(OBJS): $(TTF_DIR)/GENERATED
 ########################################
 # HiPE section
 
-M4FLAGS += -DTARGET=$(TARGET) -DOPSYS=$(OPSYS) -DARCH=$(ARCH)
+M4FLAGS += -DTARGET=$(TARGET) -DTTF_DIR=$(TTF_DIR) -DOPSYS=$(OPSYS) -DARCH=$(ARCH)
 
 $(TTF_DIR)/%.S: hipe/%.m4
 	$(m4_verbose)m4 $(M4FLAGS) $< > $@
@@ -934,10 +967,10 @@ $(OBJDIR)/%.o: hipe/%.c
 	$(V_CC) $(subst O2,O3, $(CFLAGS)) $(INCLUDES) -c $< -o $@
 
 $(BINDIR)/hipe_mkliterals$(TF_MARKER):	$(OBJDIR)/hipe_mkliterals.o
-	$(ld_verbose)$(CC) $(LDFLAGS) -o $@ $< $(TYPE_LIBS)
+	$(ld_verbose)$(CC) $(LDFLAGS) -o $@ $< $(ORIG_LIBS)
 
 $(OBJDIR)/hipe_mkliterals.o:	$(HIPE_ASM) $(TTF_DIR)/erl_alloc_types.h $(DTRACE_HEADERS) \
-	$(TTF_DIR)/OPCODES-GENERATED $(TARGET)/TABLES-GENERATED
+	$(TTF_DIR)/OPCODES-GENERATED $(TTF_DIR)/TABLES-GENERATED
 
 $(TTF_DIR)/hipe_literals.h:	$(BINDIR)/hipe_mkliterals$(TF_MARKER)
 	$(gen_verbose)$(BINDIR)/hipe_mkliterals$(TF_MARKER) -c > $@
@@ -946,7 +979,7 @@ $(OBJDIR)/hipe_x86_glue.o:	hipe/hipe_x86_glue.S \
 	$(TTF_DIR)/hipe_x86_asm.h $(TTF_DIR)/hipe_literals.h \
 	hipe/hipe_mode_switch.h
 $(TTF_DIR)/hipe_x86_bifs.S:	hipe/hipe_x86_bifs.m4 hipe/hipe_x86_asm.m4 \
-	hipe/hipe_bif_list.m4 $(TARGET)/erl_bif_list.h hipe/hipe_gbif_list.h
+	hipe/hipe_bif_list.m4 $(TTF_DIR)/erl_bif_list.h hipe/hipe_gbif_list.h
 $(OBJDIR)/hipe_x86_bifs.o:	$(TTF_DIR)/hipe_x86_bifs.S \
 	$(TTF_DIR)/hipe_literals.h
 
@@ -954,7 +987,7 @@ $(OBJDIR)/hipe_amd64_glue.o:	hipe/hipe_amd64_glue.S \
 	$(TTF_DIR)/hipe_amd64_asm.h $(TTF_DIR)/hipe_literals.h \
 	hipe/hipe_mode_switch.h
 $(TTF_DIR)/hipe_amd64_bifs.S:	hipe/hipe_amd64_bifs.m4 hipe/hipe_amd64_asm.m4 \
-	hipe/hipe_bif_list.m4 $(TARGET)/erl_bif_list.h hipe/hipe_gbif_list.h
+	hipe/hipe_bif_list.m4 $(TTF_DIR)/erl_bif_list.h hipe/hipe_gbif_list.h
 $(OBJDIR)/hipe_amd64_bifs.o:	$(TTF_DIR)/hipe_amd64_bifs.S \
 	$(TTF_DIR)/hipe_literals.h
 
@@ -962,21 +995,21 @@ $(OBJDIR)/hipe_sparc_glue.o:	hipe/hipe_sparc_glue.S \
 	$(TTF_DIR)/hipe_sparc_asm.h hipe/hipe_mode_switch.h \
 	$(TTF_DIR)/hipe_literals.h
 $(TTF_DIR)/hipe_sparc_bifs.S:	hipe/hipe_sparc_bifs.m4 hipe/hipe_sparc_asm.m4 \
-	hipe/hipe_bif_list.m4 $(TARGET)/erl_bif_list.h hipe/hipe_gbif_list.h
+	hipe/hipe_bif_list.m4 $(TTF_DIR)/erl_bif_list.h hipe/hipe_gbif_list.h
 $(OBJDIR)/hipe_sparc_bifs.o:	$(TTF_DIR)/hipe_sparc_bifs.S \
 	$(TTF_DIR)/hipe_literals.h
 
 $(OBJDIR)/hipe_ppc_glue.o:	hipe/hipe_ppc_glue.S $(TTF_DIR)/hipe_ppc_asm.h \
 	hipe/hipe_mode_switch.h $(TTF_DIR)/hipe_literals.h
 $(TTF_DIR)/hipe_ppc_bifs.S:	hipe/hipe_ppc_bifs.m4 hipe/hipe_ppc_asm.m4 \
-	hipe/hipe_bif_list.m4 $(TARGET)/erl_bif_list.h hipe/hipe_gbif_list.h
+	hipe/hipe_bif_list.m4 $(TTF_DIR)/erl_bif_list.h hipe/hipe_gbif_list.h
 $(OBJDIR)/hipe_ppc_bifs.o:	$(TTF_DIR)/hipe_ppc_bifs.S \
 	$(TTF_DIR)/hipe_literals.h
 
 $(OBJDIR)/hipe_arm_glue.o:	hipe/hipe_arm_glue.S $(TTF_DIR)/hipe_arm_asm.h \
 	hipe/hipe_mode_switch.h $(TTF_DIR)/hipe_literals.h
 $(TTF_DIR)/hipe_arm_bifs.S:	hipe/hipe_arm_bifs.m4 hipe/hipe_arm_asm.m4 \
-	hipe/hipe_bif_list.m4 $(TARGET)/erl_bif_list.h hipe/hipe_gbif_list.h
+	hipe/hipe_bif_list.m4 $(TTF_DIR)/erl_bif_list.h hipe/hipe_gbif_list.h
 $(OBJDIR)/hipe_arm_bifs.o:	$(TTF_DIR)/hipe_arm_bifs.S \
 	$(TTF_DIR)/hipe_literals.h
 

@@ -1,7 +1,7 @@
 %%
 %% %CopyrightBegin%
 %%
-%% Copyright Ericsson AB 2008-2016. All Rights Reserved.
+%% Copyright Ericsson AB 2008-2017. All Rights Reserved.
 %%
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -46,7 +46,8 @@
 	 exec_key_differs2/1,
 	 exec_key_differs3/1,
 	 exec_key_differs_fail/1,
-	 idle_time/1,
+	 idle_time_client/1,
+	 idle_time_server/1,
 	 inet6_option/1,
 	 inet_option/1,
 	 internal_error/1,
@@ -139,7 +140,7 @@ basic_tests() ->
      exec, exec_compressed, 
      shell, shell_no_unicode, shell_unicode_string,
      cli, known_hosts, 
-     idle_time, openssh_zlib_basic_test, 
+     idle_time_client, idle_time_server, openssh_zlib_basic_test, 
      misc_ssh_options, inet_option, inet6_option].
 
 
@@ -152,15 +153,27 @@ end_per_suite(_Config) ->
 
 %%--------------------------------------------------------------------
 init_per_group(dsa_key, Config) ->
-    DataDir = proplists:get_value(data_dir, Config),
-    PrivDir = proplists:get_value(priv_dir, Config),
-    ssh_test_lib:setup_dsa(DataDir, PrivDir),
-    Config;
+    case lists:member('ssh-dss',
+		      ssh_transport:default_algorithms(public_key)) of
+	true ->
+            DataDir = proplists:get_value(data_dir, Config),
+            PrivDir = proplists:get_value(priv_dir, Config),
+            ssh_test_lib:setup_dsa(DataDir, PrivDir),
+            Config;
+	false ->
+	    {skip, unsupported_pub_key}
+    end;
 init_per_group(rsa_key, Config) ->
-    DataDir = proplists:get_value(data_dir, Config),
-    PrivDir = proplists:get_value(priv_dir, Config),
-    ssh_test_lib:setup_rsa(DataDir, PrivDir),
-    Config;
+    case lists:member('ssh-rsa',
+		      ssh_transport:default_algorithms(public_key)) of
+	true ->
+            DataDir = proplists:get_value(data_dir, Config),
+            PrivDir = proplists:get_value(priv_dir, Config),
+            ssh_test_lib:setup_rsa(DataDir, PrivDir),
+            Config;
+	false ->
+	    {skip, unsupported_pub_key}
+    end;
 init_per_group(ecdsa_sha2_nistp256_key, Config) ->
     case lists:member('ecdsa-sha2-nistp256',
 		      ssh_transport:default_algorithms(public_key)) of
@@ -195,15 +208,27 @@ init_per_group(ecdsa_sha2_nistp521_key, Config) ->
 	    {skip, unsupported_pub_key}
     end;
 init_per_group(rsa_pass_key, Config) ->
-    DataDir = proplists:get_value(data_dir, Config),
-    PrivDir = proplists:get_value(priv_dir, Config),
-    ssh_test_lib:setup_rsa_pass_pharse(DataDir, PrivDir, "Password"),
-    [{pass_phrase, {rsa_pass_phrase, "Password"}}| Config];
+    case lists:member('ssh-rsa',
+		      ssh_transport:default_algorithms(public_key)) of
+	true ->
+            DataDir = proplists:get_value(data_dir, Config),
+            PrivDir = proplists:get_value(priv_dir, Config),
+            ssh_test_lib:setup_rsa_pass_pharse(DataDir, PrivDir, "Password"),
+            [{pass_phrase, {rsa_pass_phrase, "Password"}}| Config];
+	false ->
+	    {skip, unsupported_pub_key}
+    end;
 init_per_group(dsa_pass_key, Config) ->
-    DataDir = proplists:get_value(data_dir, Config),
-    PrivDir = proplists:get_value(priv_dir, Config),
-    ssh_test_lib:setup_dsa_pass_pharse(DataDir, PrivDir, "Password"),
-    [{pass_phrase, {dsa_pass_phrase, "Password"}}| Config];
+    case lists:member('ssh-dss',
+		      ssh_transport:default_algorithms(public_key)) of
+	true ->
+            DataDir = proplists:get_value(data_dir, Config),
+            PrivDir = proplists:get_value(priv_dir, Config),
+            ssh_test_lib:setup_dsa_pass_pharse(DataDir, PrivDir, "Password"),
+            [{pass_phrase, {dsa_pass_phrase, "Password"}}| Config];
+	false ->
+	    {skip, unsupported_pub_key}
+    end;
 init_per_group(host_user_key_differs, Config) ->
     Data = proplists:get_value(data_dir, Config),
     Sys = filename:join(proplists:get_value(priv_dir, Config), system_rsa),
@@ -220,10 +245,16 @@ init_per_group(host_user_key_differs, Config) ->
     ssh_test_lib:setup_rsa_known_host(Sys, Usr),
     Config;
 init_per_group(key_cb, Config) ->
-    DataDir = proplists:get_value(data_dir, Config),
-    PrivDir = proplists:get_value(priv_dir, Config),
-    ssh_test_lib:setup_dsa(DataDir, PrivDir),
-    Config;
+    case lists:member('ssh-rsa',
+		      ssh_transport:default_algorithms(public_key)) of
+	true ->
+            DataDir = proplists:get_value(data_dir, Config),
+            PrivDir = proplists:get_value(priv_dir, Config),
+            ssh_test_lib:setup_rsa(DataDir, PrivDir),
+            Config;
+	false ->
+	    {skip, unsupported_pub_key}
+    end;
 init_per_group(internal_error, Config) ->
     DataDir = proplists:get_value(data_dir, Config),
     PrivDir = proplists:get_value(priv_dir, Config),
@@ -293,7 +324,7 @@ end_per_group(rsa_pass_key, Config) ->
     Config;
 end_per_group(key_cb, Config) ->
     PrivDir = proplists:get_value(priv_dir, Config),
-    ssh_test_lib:clean_dsa(PrivDir),
+    ssh_test_lib:clean_rsa(PrivDir),
     Config;
 end_per_group(internal_error, Config) ->
     PrivDir = proplists:get_value(priv_dir, Config),
@@ -492,8 +523,8 @@ exec_compressed(Config) when is_list(Config) ->
     end.
 
 %%--------------------------------------------------------------------
-%%% Idle timeout test
-idle_time(Config) ->
+%%% Idle timeout test, client 
+idle_time_client(Config) ->
     SystemDir = filename:join(proplists:get_value(priv_dir, Config), system),
     UserDir = proplists:get_value(priv_dir, Config),
 
@@ -505,6 +536,28 @@ idle_time(Config) ->
 					  {user_dir, UserDir},
 					  {user_interaction, false},
 					  {idle_time, 2000}]),
+    {ok, Id} = ssh_connection:session_channel(ConnectionRef, 1000),
+    ssh_connection:close(ConnectionRef, Id),
+    receive
+    after 10000 ->
+	    {error, closed} = ssh_connection:session_channel(ConnectionRef, 1000)
+    end,
+    ssh:stop_daemon(Pid).
+
+%%--------------------------------------------------------------------
+%%% Idle timeout test, server
+idle_time_server(Config) ->
+    SystemDir = filename:join(proplists:get_value(priv_dir, Config), system),
+    UserDir = proplists:get_value(priv_dir, Config),
+
+    {Pid, Host, Port} = ssh_test_lib:daemon([{system_dir, SystemDir},
+					     {user_dir, UserDir},
+                                             {idle_time, 2000},
+					     {failfun, fun ssh_test_lib:failfun/2}]),
+    ConnectionRef =
+	ssh_test_lib:connect(Host, Port, [{silently_accept_hosts, true},
+					  {user_dir, UserDir},
+					  {user_interaction, false}]),
     {ok, Id} = ssh_connection:session_channel(ConnectionRef, 1000),
     ssh_connection:close(ConnectionRef, Id),
     receive
@@ -559,7 +612,7 @@ exec_key_differs(Config, UserPKAlgs) ->
 	    {_Pid, _Host, Port} = ssh_test_lib:daemon([{system_dir, SystemDir},
 						       {user_dir, SystemUserDir},
 						       {preferred_algorithms,
-							[{public_key,['ssh-rsa']}]}]),
+							[{public_key,['ssh-rsa'|UserPKAlgs]}]}]),
 	    ct:sleep(500),
 
 	    IO = ssh_test_lib:start_io_server(),
@@ -598,6 +651,7 @@ exec_key_differs_fail(Config) when is_list(Config) ->
 
     IO = ssh_test_lib:start_io_server(),
     ssh_test_lib:start_shell(Port, IO, [{user_dir,UserDir},
+                                        {recv_ext_info, false},
 					{preferred_algorithms,[{public_key,['ssh-rsa']}]},
 					{pref_public_key_algs,['ssh-dss']}]),
     receive
@@ -689,7 +743,8 @@ known_hosts(Config) when is_list(Config) ->
     Lines = string:tokens(binary_to_list(Binary), "\n"),
     [Line] = Lines,
     [HostAndIp, Alg, _KeyData] = string:tokens(Line, " "),
-    [Host, _Ip] = string:tokens(HostAndIp, ","),
+    [StoredHost, _Ip] = string:tokens(HostAndIp, ","),
+    true = ssh_test_lib:match_ip(StoredHost, Host),
     "ssh-" ++ _ = Alg,
     ssh:stop_daemon(Pid).
 %%--------------------------------------------------------------------
@@ -750,7 +805,7 @@ key_callback_options(Config) when is_list(Config) ->
                                              {user_dir, UserDir},
                                              {failfun, fun ssh_test_lib:failfun/2}]),
 
-    {ok, PrivKey} = file:read_file(filename:join(UserDir, "id_dsa")),
+    {ok, PrivKey} = file:read_file(filename:join(UserDir, "id_rsa")),
 
     ConnectOpts = [{silently_accept_hosts, true},
                    {user_dir, NoPubKeyDir},
@@ -1118,13 +1173,10 @@ login_bad_pwd_no_retry3(Config) ->
     login_bad_pwd_no_retry(Config, "password,publickey,keyboard-interactive").
 
 login_bad_pwd_no_retry4(Config) ->
-    login_bad_pwd_no_retry(Config, "password,other,keyboard-interactive").
+    login_bad_pwd_no_retry(Config, "password,keyboard-interactive").
 
 login_bad_pwd_no_retry5(Config) ->
-    login_bad_pwd_no_retry(Config, "password,other,keyboard-interactive,password,password").
-
-
-
+    login_bad_pwd_no_retry(Config, "password,keyboard-interactive,password,password").
 
 
 login_bad_pwd_no_retry(Config, AuthMethods) ->
@@ -1206,7 +1258,7 @@ check_error("Invalid state") ->
     ok;
 check_error("Connection closed") ->
     ok;
-check_error("Selection of key exchange algorithm failed") ->
+check_error("Selection of key exchange algorithm failed"++_) ->
     ok;
 check_error(Error) ->
     ct:fail(Error).
@@ -1312,13 +1364,25 @@ new_do_shell(IO, N, Ops=[{Order,Arg}|More]) ->
 	    ct:log("Skip newline ~p",[_X]),
 	    new_do_shell(IO, N, Ops);
 	
-	<<Pfx:PfxSize/binary,P1,"> ">> when (P1-$0)==N -> 
+	<<P1,"> ">> when (P1-$0)==N -> 
+	    new_do_shell_prompt(IO, N, Order, Arg, More);
+	<<"(",Pfx:PfxSize/binary,")",P1,"> ">> when (P1-$0)==N -> 
+	    new_do_shell_prompt(IO, N, Order, Arg, More);
+	<<"('",Pfx:PfxSize/binary,"')",P1,"> ">> when (P1-$0)==N -> 
 	    new_do_shell_prompt(IO, N, Order, Arg, More);
 
-	<<Pfx:PfxSize/binary,P1,P2,"> ">> when (P1-$0)*10 + (P2-$0) == N -> 
+	<<P1,P2,"> ">> when (P1-$0)*10 + (P2-$0) == N -> 
+	    new_do_shell_prompt(IO, N, Order, Arg, More);
+	<<"(",Pfx:PfxSize/binary,")",P1,P2,"> ">> when (P1-$0)*10 + (P2-$0) == N -> 
+	    new_do_shell_prompt(IO, N, Order, Arg, More);
+	<<"('",Pfx:PfxSize/binary,"')",P1,P2,"> ">> when (P1-$0)*10 + (P2-$0) == N -> 
 	    new_do_shell_prompt(IO, N, Order, Arg, More);
 
-	<<Pfx:PfxSize/binary,P1,P2,P3,"> ">> when (P1-$0)*100 + (P2-$0)*10 + (P3-$0) == N -> 
+	<<P1,P2,P3,"> ">> when (P1-$0)*100 + (P2-$0)*10 + (P3-$0) == N -> 
+	    new_do_shell_prompt(IO, N, Order, Arg, More);
+	<<"(",Pfx:PfxSize/binary,")",P1,P2,P3,"> ">> when (P1-$0)*100 + (P2-$0)*10 + (P3-$0) == N -> 
+	    new_do_shell_prompt(IO, N, Order, Arg, More);
+	<<"('",Pfx:PfxSize/binary,"')",P1,P2,P3,"> ">> when (P1-$0)*100 + (P2-$0)*10 + (P3-$0) == N -> 
 	    new_do_shell_prompt(IO, N, Order, Arg, More);
 
 	Err when element(1,Err)==error ->
@@ -1354,7 +1418,7 @@ prompt_prefix() ->
     case node() of
 	nonode@nohost -> <<>>;
 	Node -> list_to_binary(
-		  lists:concat(["(",Node,")"]))
+                  atom_to_list(Node))
     end.
 	    
 

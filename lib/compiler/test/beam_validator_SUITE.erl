@@ -1,7 +1,7 @@
 %%
 %% %CopyrightBegin%
 %%
-%% Copyright Ericsson AB 2004-2016. All Rights Reserved.
+%% Copyright Ericsson AB 2004-2017. All Rights Reserved.
 %%
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -446,7 +446,7 @@ do_bin_opt(Mod, Asm) ->
 do_bin_opt(Transform, Mod, Asm0) ->
     Asm = Transform(Asm0),
     case compile:forms(Asm, [from_asm,no_postopt,return]) of
-	{ok,[],Code,_Warnings} when is_binary(Code) ->
+	{ok,Mod,Code,_Warnings} when is_binary(Code) ->
 	    ok;
 	{error,Errors0,_} ->
 	    %% beam_validator must return errors, not simply crash,

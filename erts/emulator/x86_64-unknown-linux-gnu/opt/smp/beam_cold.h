@@ -4,32 +4,36 @@
  */
 
 OpCase(i_bs_get_binary2_fxIsId):
-    { Eterm targ1; Eterm dst; 
+    { Eterm targ1; Eterm dst; Eterm* dst_ptr; 
     GetR(3, targ1);
     dst = Arg(5);
-    BsGetBinary_2(xb(Arg(1)), Arg(2), targ1, Arg(4), dst, StoreResult, ClauseFail());
+    dst_ptr = REG_TARGET_PTR(dst);
+    BsGetBinary_2(xb(Arg(1)), Arg(2), targ1, Arg(4), *dst_ptr, ClauseFail());
     Next(6);
     }
 
 OpCase(i_bs_get_binary_all2_fxIId):
-    { Eterm dst; 
+    { Eterm dst; Eterm* dst_ptr; 
     dst = Arg(4);
-    BsGetBinaryAll_2(xb(Arg(1)), Arg(2), Arg(3), dst, StoreResult, ClauseFail());
+    dst_ptr = REG_TARGET_PTR(dst);
+    BsGetBinaryAll_2(xb(Arg(1)), Arg(2), Arg(3), *dst_ptr, ClauseFail());
     Next(5);
     }
 
 OpCase(i_bs_get_binary_imm2_fxIIId):
-    { Eterm dst; 
+    { Eterm dst; Eterm* dst_ptr; 
     dst = Arg(5);
-    BsGetBinaryImm_2(xb(Arg(1)), Arg(2), Arg(3), Arg(4), dst, StoreResult, ClauseFail());
+    dst_ptr = REG_TARGET_PTR(dst);
+    BsGetBinaryImm_2(xb(Arg(1)), Arg(2), Arg(3), Arg(4), *dst_ptr, ClauseFail());
     Next(6);
     }
 
 OpCase(i_bs_get_float2_fxIsId):
-    { Eterm targ1; Eterm dst; 
+    { Eterm targ1; Eterm dst; Eterm* dst_ptr; 
     GetR(3, targ1);
     dst = Arg(5);
-    BsGetFloat2(xb(Arg(1)), Arg(2), targ1, Arg(4), dst, StoreResult, ClauseFail());
+    dst_ptr = REG_TARGET_PTR(dst);
+    BsGetFloat2(xb(Arg(1)), Arg(2), targ1, Arg(4), *dst_ptr, ClauseFail());
     Next(6);
     }
 
@@ -244,13 +248,14 @@ OpCase(node_y):
     }
 
 OpCase(put_list_ssd):
-    { Eterm targ1; Eterm targ2; Eterm dst; 
+    { Eterm targ1; Eterm targ2; Eterm dst; Eterm* dst_ptr; 
     BeamInstr* next;
     PreFetch(3, next);
     GetR(0, targ1);
     GetR(1, targ2);
     dst = Arg(2);
-    PutList(targ1, targ2, dst, StoreResult);
+    dst_ptr = REG_TARGET_PTR(dst);
+    PutList(targ1, targ2, *dst_ptr);
     NextPF(3, next);
     }
 

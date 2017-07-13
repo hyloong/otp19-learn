@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf8" ?>
+<!DOCTYPE chapter SYSTEM "chapter.dtd">
+<chapter>
+<header>
+<copyright>
+<year>2017</year>
+<year>2017</year>
+<holder>Ericsson AB. All Rights Reserved.</holder>
+</copyright>
+<legalnotice>
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</legalnotice>
+
+<title>Patching OTP Applications</title>
+<prepared>emd2exml</prepared>
+<responsible>emd2exml</responsible>
+<docno>1</docno>
+<approved>yes</approved>
+<checked>yes</checked>
+<date>2017-7-12</date>
+<rev>1</rev>
+<file>OTP-PATCH-APPLY.xml</file>
+</header>
+
+<section>
+<marker id="Introduction"/>
+<title>Introduction</title>
+
+<p>
+This document describes the process of patching an existing OTP
+installation with one or more Erlang/OTP applications of newer versions
+than already installed. The tool <c>otp_patch_apply</c> is available for this
+specific purpose. It resides in the top directory of the Erlang/OTP
+source tree.
+</p>
+
+<p>
+The <c>otp_patch_apply</c> tool utilizes the <seealso marker="kernel:app#runtime_dependencies">runtime_dependencies</seealso> tag in
+the <seealso marker="kernel:app">application resource file</seealso>. This information is used to determine
+if the patch can be installed in the given Erlang/OTP installation
+directory.
+</p>
+
+<p>
+Read more about the <seealso marker="../system_principles/versions">version handling</seealso> introduced in Erlang/OTP release
+17, which also describes how to determine if an installation includes one
+or more patched applications.
+</p>
+
+<p>
+If you want to apply patches of multiple OTP applications that resides
+in different OTP versions, you have to apply these patches in multiple
+steps. It is only possible to apply multiple OTP applications from the
+same OTP version at once.
+</p>
+
+</section>
+
+<section>
+<marker id="Prerequisites"/>
+<title>Prerequisites</title>
+
+<p>
+It's assumed that the reader is familiar with
+<seealso marker="INSTALL">building and installing Erlang/OTP</seealso>. To be able to patch an
+application, the following must exist:
+</p>
+
+<list type="bulleted"><item>
+<p>An Erlang/OTP installation.
+</p>
+
+</item>
+<item>
+<p>An Erlang/OTP source tree containing the updated applications that
+you want to patch into the existing Erlang/OTP installation.
+</p>
+</item></list>
+</section>
+
+<section>
+<marker id="Using-otppatchapply"/>
+<title>Using otp_patch_apply</title>
+
+<warning>
+<p>
+Patching applications is a one-way process.
+ Create a backup of your OTP installation directory before
+ proceeding.
+</p>
+</warning>
+
+<p>
+First of all, build the OTP source tree at <c>$ERL_TOP</c> containing
+the updated applications.
+</p>
+
+<note>
+<p>
+Before applying a patch you need to do a <em>full</em> build
+ of OTP in the source directory.
+</p>
+</note>
+
+<p>
+If you are building in <c>git</c> you first need to generate the
+<c>configure</c> scripts:
+</p>
+
+<code type="none">
+$ ./otp_build autoconf
+</code>
+<p>
+Configure and build all applications in OTP:
+</p>
+
+<code type="none">
+$ configure
+$ make
+</code>
+<p>
+or
+</p>
+
+<code type="none">
+$ ./otp_build configure
+$ ./otp_build boot -a
+</code>
+<p>
+If you have installed documentation in the OTP installation, also
+build the documentation:
+</p>
+
+<code type="none">
+$ make docs
+</code>
+<p>
+After the successful build it's time to patch. The source tree directory,
+the directory of the installation and the applications to patch are given
+as arguments to <c>otp_patch_apply</c>. The dependencies of each application
+are validated against the applications in the installation and the other
+applications given as arguments. If a dependency error is detected, the
+script will be aborted.
+</p>
+
+<p>
+The <c>otp_patch_apply</c> syntax:
+</p>
+
+<code type="none">
+$ otp_patch_apply -s &lt;Dir&gt; -i &lt;Dir&gt; [-l &lt;Dir&gt;] [-c] [-f] [-h] \
+      [-n] [-v] &lt;App1&gt; [... &lt;AppN&gt;]
+
+-s &lt;Dir&gt;  -- OTP source directory that contains build results.
+-i &lt;Dir&gt;  -- OTP installation directory to patch.
+-l &lt;Dir&gt;  -- Alternative OTP source library directory path(s)
+             containing build results of OTP applications.
+             Multiple paths should be colon separated.
+-c        -- Cleanup (remove) old versions of applications
+             patched in the installation.
+-f        -- Force patch of application(s) even though
+             dependencies are not fulfilled (should only be
+             considered in a test environment).
+-h        -- Print help then exit.
+-n        -- Do not install documentation.
+-v        -- Print version then exit.
+&lt;AppX&gt;    -- Application to patch.
+
+Environment Variable:
+  ERL_LIBS  -- Alternative OTP source library directory path(s)
+               containing build results of OTP applications.
+               Multiple paths should be colon separated.
+</code>
+<note>
+<p>
+The complete build environment is required while running
+ <c>otp_patch_apply</c>.
+</p>
+</note>
+
+<note>
+<p>
+All source directories identified by <c>-s</c> and <c>-l</c> should
+ contain build results of OTP applications.
+</p>
+</note>
+
+<p>
+For example, if the user wants to install patched versions of <c>mnesia</c>
+and <c>ssl</c> built in <c>/home/me/git/otp</c> into the OTP installation
+located in <c>/opt/erlang/my_otp</c> type
+</p>
+
+<code type="none">
+$ otp_patch_apply -s /home/me/git/otp -i /opt/erlang/my_otp \
+  mnesia ssl
+</code>
+<note>
+<p>
+If the list of applications contains core applications,
+ i.e <c>erts</c>, <c>kernel</c>, <c>stdlib</c> or <c>sasl</c>, the <c>Install</c> script in
+ the patched Erlang/OTP installation must be rerun.
+</p>
+</note>
+
+<p>
+The patched applications are appended to the list of installed
+applications. Take a look at
+<c>&lt;InstallDir&gt;/releases/OTP-REL/installed_application_versions</c>.
+</p>
+
+</section>
+
+<section>
+<marker id="Sanity-check"/>
+<title>Sanity check</title>
+
+<p>
+The application dependencies can be checked using the Erlang shell.
+Application dependencies are verified among installed applications by
+<c>otp_patch_apply</c>, but these are not necessarily those actually loaded.
+By calling <c>system_information:sanity_check()</c> one can validate
+dependencies among applications actually loaded.
+</p>
+
+<code type="none">
+1&gt; system_information:sanity_check().
+    ok
+</code>
+<p>
+Please take a look at the reference of <seealso marker="runtime_tools:system_information#sanity_check-0">sanity_check()</seealso> for more
+information.
+</p>
+
+</section>
+
+</chapter>
+

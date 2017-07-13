@@ -1,0 +1,532 @@
+<module name="wxMouseEvent">
+<type>
+  <name>wxMouseEvent</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxMouseEvent">wxMouseEvent()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>altDown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>altDown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>button</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>button(This, But) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+        <subtype><typename>But</typename><string>But = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>But</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>buttonDClick</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>buttonDClick(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>buttonDClick</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>buttonDClick(This, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {but, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>buttonDown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>buttonDown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>buttonDown</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>buttonDown(This, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {but, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>buttonUp</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>buttonUp(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>buttonUp</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>buttonUp(This, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {but, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>cmdDown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>cmdDown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>controlDown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>controlDown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>dragging</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>dragging(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>entering</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>entering(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getButton</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getButton(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getId</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getLinesPerAction</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getLinesPerAction(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getLogicalPosition</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getLogicalPosition(This, Dc) -&gt; {X :: integer(), Y :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+        <subtype><typename>Dc</typename><string>Dc = <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Dc</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getPosition</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getPosition(This) -&gt; {X :: integer(), Y :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getSkipped</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getTimestamp</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getWheelDelta</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getWheelDelta(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getWheelRotation</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getWheelRotation(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getX</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getX(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getY</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getY(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isButton</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isButton(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isCommandEvent</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>isPageScroll</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isPageScroll(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>leaving</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>leaving(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>leftDClick</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>leftDClick(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>leftDown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>leftDown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>leftIsDown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>leftIsDown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>leftUp</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>leftUp(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>metaDown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>metaDown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>middleDClick</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>middleDClick(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>middleDown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>middleDown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>middleIsDown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>middleIsDown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>middleUp</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>middleUp(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>moving</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>moving(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>resumePropagation</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>rightDClick</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>rightDClick(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>rightDown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>rightDown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>rightIsDown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>rightIsDown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>rightUp</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>rightUp(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>shiftDown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>shiftDown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>shouldPropagate</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>skip</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>skip</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>stopPropagation</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:30.</timestamp>
+</module>

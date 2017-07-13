@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>glu</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>glu.xml</file></header>
+<module>glu</module>
+<modulesummary> A part of the standard OpenGL Utility api.</modulesummary>
+<description>
+<p> A part of the standard OpenGL Utility api.
+  See <url href="http://www.opengl.org/sdk/docs/man/">www.opengl.org</url></p>
+ 
+  <p>Booleans are represented by integers 0 and 1.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-enum"/>enum() = non_neg_integer()</tag>
+<item><p/>
+<p>  See wx/include/gl.hrl or glu.hrl</p>
+</item>
+<tag><marker id="type-matrix"/>matrix() = <seealso marker="#type-matrix12">matrix12()</seealso> | <seealso marker="#type-matrix16">matrix16()</seealso></tag>
+<item><p/> </item>
+<tag><marker id="type-matrix12"/>matrix12() = {float(), float(), float(), float(), float(), float(), float(), float(), float(), float(), float(), float()}</tag>
+<item><p/> </item>
+<tag><marker id="type-matrix16"/>matrix16() = {float(), float(), float(), float(), float(), float(), float(), float(), float(), float(), float(), float(), float(), float(), float(), float()}</tag>
+<item><p/> </item>
+<tag><marker id="type-mem"/>mem() = binary() | tuple()</tag>
+<item><p/>
+<p>  Memory block</p>
+</item>
+<tag><marker id="type-vertex"/>vertex() = {float(), float(), float()}</tag>
+<item><p/> </item>
+</taglist></section>
+<funcs>
+<func>
+<name>tesselate(Normal, Vs::[Vs]) -&gt; {Triangles, VertexPos}</name>
+<fsummary>General purpose polygon triangulation.</fsummary>
+<type>
+<v>Normal = <seealso marker="#type-vertex">vertex()</seealso></v><v>Vs = <seealso marker="#type-vertex">vertex()</seealso></v><v>Triangles = [integer()]</v><v>VertexPos = binary()</v></type>
+<desc><marker id="tesselate-2"/>
+
+<p>General purpose polygon triangulation.
+  The first argument is the normal and the second a list of
+  vertex positions. Returned is a list of indecies of the vertices
+  and a binary (64bit native float) containing an array of
+  vertex positions, it starts with the vertices in Vs and
+  may contain newly created vertices in the end.</p>
+</desc></func>
+<func>
+<name>build1DMipmapLevels(Target, InternalFormat, Width, Format, Type, Level, Base, Max, Data) -&gt; integer()</name>
+<fsummary>Builds a subset of one-dimensional mipmap levels.</fsummary>
+<type>
+<v>Target = <seealso marker="#type-enum">enum()</seealso></v><v>InternalFormat = integer()</v><v>Width = integer()</v><v>Format = <seealso marker="#type-enum">enum()</seealso></v><v>Type = <seealso marker="#type-enum">enum()</seealso></v><v>Level = integer()</v><v>Base = integer()</v><v>Max = integer()</v><v>Data = binary()</v></type>
+<desc><marker id="build1DMipmapLevels-9"/>
+
+<p>Builds a subset of one-dimensional mipmap levels</p>
+ 
+  <p><c>glu:build1DMipmapLevels</c> builds a subset of prefiltered one-dimensional texture maps  
+of decreasing resolutions called a mipmap. This is used for the antialiasing of texture  
+mapped primitives.</p>
+ 
+   <p>A return value of zero indicates success, otherwise a GLU error code is returned (see  <seealso marker="glu#errorString-1">glu:errorString/1</seealso>  
+).</p>
+ 
+   <p>A series of mipmap levels from  <c>Base</c>  to  <c>Max</c>  is built by decimating   <c>Data</c>
+   in half  until size   1×1 is reached. At each level, each texel in the halved mipmap
+  level is an average of the corresponding two texels in the larger mipmap level.   <seealso marker="gl#texImage1D-8">gl:texImage1D/8</seealso>
+   is called to load these mipmap levels from  <c>Base</c>  to  <c>Max</c> . If  <c>Max</c>  is
+  larger than the highest mipmap level for the texture of the specified size, then a GLU
+  error code is returned (see  <seealso marker="glu#errorString-1">glu:errorString/1</seealso> ) and nothing is loaded.</p>
+ 
+   <p>For example, if  <c>Level</c>  is 2 and  <c>Width</c>  is 16, the following levels are possible:
+    16×1,   8×1,   4×1,  2×1,   1×1. These correspond to levels 2 through 6 respectively.
+  If  <c>Base</c>  is 3 and  <c>Max</c>  is 5, then only mipmap levels   8×1,  4×1 and   2×1
+  are loaded. However, if  <c>Max</c>  is 7, then an error is returned and nothing is loaded
+  since  <c>Max</c>  is larger than the highest mipmap level which is, in  this case, 6.</p>
+ 
+   <p>The highest mipmap level can be derived from the formula  log 2(width×2 level).</p>
+ 
+   <p>See the  <seealso marker="gl#texImage1D-8">gl:texImage1D/8</seealso>  reference page for a description of the acceptable values
+  for  <c>Type</c>  parameter. See the  <seealso marker="gl#drawPixels-5">gl:drawPixels/5</seealso>   reference page for a description
+  of the acceptable values  for  <c>Level</c>  parameter.</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluBuild1DMipmapLevels.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>build1DMipmaps(Target, InternalFormat, Width, Format, Type, Data) -&gt; integer()</name>
+<fsummary>Builds a one-dimensional mipmap.</fsummary>
+<type>
+<v>Target = <seealso marker="#type-enum">enum()</seealso></v><v>InternalFormat = integer()</v><v>Width = integer()</v><v>Format = <seealso marker="#type-enum">enum()</seealso></v><v>Type = <seealso marker="#type-enum">enum()</seealso></v><v>Data = binary()</v></type>
+<desc><marker id="build1DMipmaps-6"/>
+
+<p>Builds a one-dimensional mipmap</p>
+ 
+  <p><c>glu:build1DMipmaps</c> builds a series of prefiltered one-dimensional texture maps of  
+decreasing resolutions called a mipmap. This is used for the antialiasing of texture mapped  
+primitives.</p>
+ 
+   <p>A return value of zero indicates success, otherwise a GLU error code is returned (see  <seealso marker="glu#errorString-1">glu:errorString/1</seealso>  
+).</p>
+ 
+   <p>Initially, the  <c>Width</c>  of  <c>Data</c>  is checked to see if it is a power of 2. If
+  not, a copy of  <c>Data</c>  is scaled up or down to the nearest power of 2. (If  <c>Width</c>
+   is exactly between powers of 2, then the copy of  <c>Data</c>  will scale upwards.) This
+  copy will be used for subsequent mipmapping operations described below.  For example, if  <c>Width</c>
+   is 57, then a copy of  <c>Data</c>  will scale up to 64 before mipmapping takes place.</p>
+ 
+   <p>Then, proxy textures (see  <seealso marker="gl#texImage1D-8">gl:texImage1D/8</seealso> ) are used to determine if the implementation
+  can fit the requested texture. If not,  <c>Width</c>  is continually halved until it fits.</p>
+ 
+   <p>Next, a series of mipmap levels is built by decimating a copy of  <c>Data</c>  in half  
+until size   1×1 is reached. At each level, each texel in the halved mipmap level is an  
+average of the corresponding two texels in the larger mipmap level.</p>
+ 
+   <p><seealso marker="gl#texImage1D-8">gl:texImage1D/8</seealso>  is called to load each of these mipmap levels. Level 0 is a copy
+  of  <c>Data</c> .  The highest level is  (log 2)(width). For example, if  <c>Width</c>  is 64 and the implementation  
+can store a texture of this size, the following mipmap levels are built:   64×1,   32×1,    
+16×1,   8×1,  4×1,   2×1, and   1×1. These correspond to  levels 0 through 6, respectively.</p>
+ 
+ 
+   <p>See the  <seealso marker="gl#texImage1D-8">gl:texImage1D/8</seealso>  reference page for a description of the acceptable values
+  for the  <c>Type</c>  parameter. See the  <seealso marker="gl#drawPixels-5">gl:drawPixels/5</seealso>   reference page for a description
+  of the acceptable values  for the  <c>Data</c>  parameter.</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluBuild1DMipmaps.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>build2DMipmapLevels(Target, InternalFormat, Width, Height, Format, Type, Level, Base, Max, Data) -&gt; integer()</name>
+<fsummary>Builds a subset of two-dimensional mipmap levels.</fsummary>
+<type>
+<v>Target = <seealso marker="#type-enum">enum()</seealso></v><v>InternalFormat = integer()</v><v>Width = integer()</v><v>Height = integer()</v><v>Format = <seealso marker="#type-enum">enum()</seealso></v><v>Type = <seealso marker="#type-enum">enum()</seealso></v><v>Level = integer()</v><v>Base = integer()</v><v>Max = integer()</v><v>Data = binary()</v></type>
+<desc><marker id="build2DMipmapLevels-10"/>
+
+<p>Builds a subset of two-dimensional mipmap levels</p>
+ 
+  <p><c>glu:build2DMipmapLevels</c> builds a subset of prefiltered two-dimensional texture maps  
+of decreasing resolutions called a mipmap. This is used for the antialiasing of texture  
+mapped primitives.</p>
+ 
+   <p>A return value of zero indicates success, otherwise a GLU error code is returned (see  <seealso marker="glu#errorString-1">glu:errorString/1</seealso>  
+).</p>
+ 
+   <p>A series of mipmap levels from  <c>Base</c>  to  <c>Max</c>  is built by decimating   <c>Data</c>
+   in half along both dimensions until size   1×1 is reached. At each level, each texel
+  in the halved mipmap level is an average of the corresponding four texels in the larger
+  mipmap level. (In the case of rectangular images, the decimation will ultimately  reach
+  an   N×1 or   1×N configuration. Here, two texels are averaged instead.)  <seealso marker="gl#texImage2D-9">gl:texImage2D/9</seealso>
+   is called to load these mipmap levels from  <c>Base</c>  to  <c>Max</c> . If  <c>Max</c>  is
+  larger than the highest mipmap level for the texture of the specified size, then a GLU
+  error code is returned (see  <seealso marker="glu#errorString-1">glu:errorString/1</seealso> ) and nothing is loaded.</p>
+ 
+   <p>For example, if  <c>Level</c>  is 2 and  <c>Width</c>  is 16 and  <c>Height</c>  is 8, the
+  following levels are possible:   16×8,   8×4,   4×2,  2×1,   1×1. These correspond to
+  levels 2 through 6 respectively. If  <c>Base</c>  is 3 and  <c>Max</c>  is 5, then only mipmap
+  levels  8×4,   4×2, and   2×1 are loaded. However, if  <c>Max</c>  is 7, then an error is
+  returned and nothing is loaded since  <c>Max</c>  is larger than the highest mipmap level  
+which is, in this case, 6.</p>
+ 
+   <p>The highest mipmap level can be derived from the formula  log 2(max(width height)×2 level).</p>
+ 
+   <p>See the  <seealso marker="gl#texImage1D-8">gl:texImage1D/8</seealso>  reference page for a description of the acceptable values
+  for  <c>Format</c>  parameter. See the  <seealso marker="gl#drawPixels-5">gl:drawPixels/5</seealso>   reference page for a description
+  of the acceptable values  for  <c>Type</c>  parameter.</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluBuild2DMipmapLevels.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>build2DMipmaps(Target, InternalFormat, Width, Height, Format, Type, Data) -&gt; integer()</name>
+<fsummary>Builds a two-dimensional mipmap.</fsummary>
+<type>
+<v>Target = <seealso marker="#type-enum">enum()</seealso></v><v>InternalFormat = integer()</v><v>Width = integer()</v><v>Height = integer()</v><v>Format = <seealso marker="#type-enum">enum()</seealso></v><v>Type = <seealso marker="#type-enum">enum()</seealso></v><v>Data = binary()</v></type>
+<desc><marker id="build2DMipmaps-7"/>
+
+<p>Builds a two-dimensional mipmap</p>
+ 
+  <p><c>glu:build2DMipmaps</c> builds a series of prefiltered two-dimensional texture maps of  
+decreasing resolutions called a mipmap. This is used for the antialiasing of texture-mapped  
+primitives.</p>
+ 
+   <p>A return value of zero indicates success, otherwise a GLU error code is returned (see  <seealso marker="glu#errorString-1">glu:errorString/1</seealso>  
+).</p>
+ 
+   <p>Initially, the  <c>Width</c>  and  <c>Height</c>  of  <c>Data</c>  are checked to see if they
+  are a power of 2. If not, a copy of  <c>Data</c>  (not  <c>Data</c> ), is scaled up or down
+  to the nearest power of 2. This copy will be used for subsequent mipmapping operations
+  described below. (If  <c>Width</c>  or  <c>Height</c>  is exactly between powers of 2, then
+  the copy of  <c>Data</c>  will scale upwards.) For example, if  <c>Width</c>  is 57 and  <c>Height</c>
+   is 23, then a copy of  <c>Data</c>  will scale up to 64 in  <c>Width</c>  and down to 16  
+in depth, before mipmapping takes place.</p>
+ 
+   <p>Then, proxy textures (see  <seealso marker="gl#texImage2D-9">gl:texImage2D/9</seealso> ) are used to determine if the implementation
+  can fit the requested texture. If not, both dimensions are continually halved until it
+  fits. (If the OpenGL version is (&lt;= 1.0, both maximum texture dimensions are clamped
+  to the value returned by  <seealso marker="gl#getBooleanv-1">gl:getBooleanv/1</seealso>  with the argument <c>?GLU_MAX_TEXTURE_SIZE</c>  
+.)</p>
+ 
+   <p>Next, a series of mipmap levels is built by decimating a copy of  <c>Data</c>  in half  
+along both dimensions until size   1×1 is reached. At each level, each texel in the halved  
+mipmap level is an average of the corresponding four texels in the larger mipmap level.  
+(In the case of rectangular images, the decimation will ultimately reach an   N×1 or  1×N  
+configuration. Here, two texels are averaged instead.)</p>
+ 
+   <p><seealso marker="gl#texImage2D-9">gl:texImage2D/9</seealso>  is called to load each of these mipmap levels. Level 0 is a copy
+  of  <c>Data</c> . The highest level is (log 2)(max(width height)). For example, if  <c>Width</c>  is 64 and  <c>Height</c>   
+is 16 and the implementation can store a texture of this size, the following mipmap levels  
+are built:   64×16,   32×8,   16×4,  8×2,   4×1,   2×1, and   1×1 These correspond to  
+levels 0 through 6, respectively.</p>
+ 
+   <p>See the  <seealso marker="gl#texImage1D-8">gl:texImage1D/8</seealso>  reference page for a description of the acceptable values
+  for  <c>Format</c>  parameter. See the  <seealso marker="gl#drawPixels-5">gl:drawPixels/5</seealso>   reference page for a description
+  of the acceptable values  for  <c>Type</c>  parameter.</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluBuild2DMipmaps.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>build3DMipmapLevels(Target, InternalFormat, Width, Height, Depth, Format, Type, Level, Base, Max, Data) -&gt; integer()</name>
+<fsummary>Builds a subset of three-dimensional mipmap levels.</fsummary>
+<type>
+<v>Target = <seealso marker="#type-enum">enum()</seealso></v><v>InternalFormat = integer()</v><v>Width = integer()</v><v>Height = integer()</v><v>Depth = integer()</v><v>Format = <seealso marker="#type-enum">enum()</seealso></v><v>Type = <seealso marker="#type-enum">enum()</seealso></v><v>Level = integer()</v><v>Base = integer()</v><v>Max = integer()</v><v>Data = binary()</v></type>
+<desc><marker id="build3DMipmapLevels-11"/>
+
+<p>Builds a subset of three-dimensional mipmap levels</p>
+ 
+  <p><c>glu:build3DMipmapLevels</c> builds a subset of prefiltered three-dimensional texture  
+maps of decreasing resolutions called a mipmap. This is used for the antialiasing of texture  
+mapped primitives.</p>
+ 
+   <p>A return value of zero indicates success, otherwise a GLU error code is returned (see  <seealso marker="glu#errorString-1">glu:errorString/1</seealso>  
+).</p>
+ 
+   <p>A series of mipmap levels from  <c>Base</c>  to  <c>Max</c>  is built by decimating  <c>Data</c>
+   in half along both dimensions until size  1×1×1 is reached. At each level, each texel
+  in the halved mipmap level is an average of the corresponding eight texels in the larger
+  mipmap level. (If exactly one of the dimensions is 1, four texels are averaged. If exactly
+  two of the dimensions are 1, two texels are averaged.)  <seealso marker="gl#texImage3D-10">gl:texImage3D/10</seealso>  is called
+  to load these mipmap levels from  <c>Base</c>  to  <c>Max</c> . If  <c>Max</c>  is larger than
+  the highest mipmap level for the texture of the specified size, then a GLU error code
+  is returned (see  <seealso marker="glu#errorString-1">glu:errorString/1</seealso> ) and nothing is loaded.</p>
+ 
+   <p>For example, if  <c>Level</c>  is 2 and  <c>Width</c>  is 16,  <c>Height</c>  is 8 and  <c>Depth</c>
+   is 4, the following levels are possible:   16×8×4,   8×4×2,  4×2×1,   2×1×1,  1×1×1.
+  These correspond to levels 2 through 6 respectively. If  <c>Base</c>  is 3 and  <c>Max</c>
+  is 5, then only mipmap levels   8×4×2,  4×2×1, and   2×1×1 are loaded. However, if  <c>Max</c>
+   is 7, then an error is returned and nothing is loaded, since  <c>Max</c>  is larger than  
+the highest mipmap level which is, in this case, 6.</p>
+ 
+   <p>The highest mipmap level can be derived from the formula  log 2(max(width height depth)×2 level).</p>
+ 
+   <p>See the  <seealso marker="gl#texImage1D-8">gl:texImage1D/8</seealso>  reference page for a description of the acceptable values
+  for  <c>Format</c>  parameter. See the  <seealso marker="gl#drawPixels-5">gl:drawPixels/5</seealso>   reference page for a description
+  of the acceptable values  for  <c>Type</c>  parameter.</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluBuild3DMipmapLevels.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>build3DMipmaps(Target, InternalFormat, Width, Height, Depth, Format, Type, Data) -&gt; integer()</name>
+<fsummary>Builds a three-dimensional mipmap.</fsummary>
+<type>
+<v>Target = <seealso marker="#type-enum">enum()</seealso></v><v>InternalFormat = integer()</v><v>Width = integer()</v><v>Height = integer()</v><v>Depth = integer()</v><v>Format = <seealso marker="#type-enum">enum()</seealso></v><v>Type = <seealso marker="#type-enum">enum()</seealso></v><v>Data = binary()</v></type>
+<desc><marker id="build3DMipmaps-8"/>
+
+<p>Builds a three-dimensional mipmap</p>
+ 
+  <p><c>glu:build3DMipmaps</c> builds a series of prefiltered three-dimensional texture maps  
+of decreasing resolutions called a mipmap. This is used for the antialiasing of texture-mapped  
+primitives.</p>
+ 
+   <p>A return value of zero indicates success, otherwise a GLU error code is returned (see  <seealso marker="glu#errorString-1">glu:errorString/1</seealso>  
+).</p>
+ 
+   <p>Initially, the  <c>Width</c> ,  <c>Height</c>  and  <c>Depth</c>  of  <c>Data</c>  are checked
+  to see if they are a power of 2. If not, a copy of  <c>Data</c>  is made and scaled up or
+  down to the nearest power of 2. (If  <c>Width</c> ,  <c>Height</c> , or  <c>Depth</c>  is exactly
+  between powers of 2, then the copy of  <c>Data</c>  will scale upwards.) This copy will
+  be used for subsequent mipmapping operations described below. For example, if  <c>Width</c>
+  is 57,  <c>Height</c>  is 23, and  <c>Depth</c>  is 24, then a copy of  <c>Data</c>  will scale  
+up to 64 in width, down to 16 in height, and up to 32 in depth before mipmapping takes  
+place.</p>
+ 
+   <p>Then, proxy textures (see  <seealso marker="gl#texImage3D-10">gl:texImage3D/10</seealso> ) are used to determine if the implementation  
+can fit the requested texture. If not, all three dimensions are continually halved until  
+it fits.</p>
+ 
+   <p>Next, a series of mipmap levels is built by decimating a copy of  <c>Data</c>  in half  
+along all three dimensions until size   1×1×1 is reached. At each level, each texel in  
+the halved mipmap level is an average of the corresponding eight texels in the larger  
+mipmap level. (If exactly one of the dimensions is 1, four texels are averaged. If exactly  
+two of the dimensions are 1, two texels are averaged.)</p>
+ 
+   <p><seealso marker="gl#texImage3D-10">gl:texImage3D/10</seealso>  is called to load each of these mipmap levels. Level 0 is a copy
+  of  <c>Data</c> . The highest level is (log 2)(max(width height depth)). For example, if  <c>Width</c>  is 64,  <c>Height</c>
+  is 16, and  <c>Depth</c>  is 32, and the implementation can store a texture of this size,  
+the following mipmap levels are built:   64×16×32,  32×8×16,   16×4×8,  8×2×4,   4×1×2,  
+2×1×1, and   1×1×1. These correspond to levels 0 through 6, respectively.</p>
+ 
+   <p>See the  <seealso marker="gl#texImage1D-8">gl:texImage1D/8</seealso>  reference page for a description of the acceptable values
+  for  <c>Format</c>  parameter. See the  <seealso marker="gl#drawPixels-5">gl:drawPixels/5</seealso>   reference page for a description
+  of the acceptable values  for  <c>Type</c>  parameter.</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluBuild3DMipmaps.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>checkExtension(ExtName, ExtString) -&gt; 0 | 1</name>
+<fsummary>Determines if an extension name is supported.</fsummary>
+<type>
+<v>ExtName = string()</v><v>ExtString = string()</v></type>
+<desc><marker id="checkExtension-2"/>
+
+<p>Determines if an extension name is supported</p>
+ 
+  <p><c>glu:checkExtension</c> returns <c>?GLU_TRUE</c> if  <c>ExtName</c>  is supported otherwise
+   <c>?GLU_FALSE</c> is returned.</p>
+ 
+   <p>This is used to check for the presence for OpenGL, GLU, or GLX extension names by passing
+  the extension strings returned by  <seealso marker="gl#getString-1">gl:getString/1</seealso> ,   <seealso marker="glu#getString-1">glu:getString/1</seealso> , see <c>glXGetClientString</c>
+  , see <c>glXQueryExtensionsString</c>, or see <c>glXQueryServerString</c>, respectively,
+  as  <c>ExtString</c> .</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluCheckExtension.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>cylinder(Quad, Base, Top, Height, Slices, Stacks) -&gt; ok</name>
+<fsummary>Draw a cylinder.</fsummary>
+<type>
+<v>Quad = integer()</v><v>Base = float()</v><v>Top = float()</v><v>Height = float()</v><v>Slices = integer()</v><v>Stacks = integer()</v></type>
+<desc><marker id="cylinder-6"/>
+
+<p>Draw a cylinder</p>
+ 
+  <p><c>glu:cylinder</c> draws a cylinder oriented along the <c>z</c> axis. The base of the
+  cylinder is placed at <c>z</c> = 0 and the top at   z=height. Like a sphere, a cylinder
+  is subdivided around the <c>z</c> axis into slices and along the  <c>z</c> axis into stacks.</p>
+ 
+ 
+   <p>Note that if  <c>Top</c>  is set to 0.0, this routine generates a cone.</p>
+ 
+   <p>If the orientation is set to <c>?GLU_OUTSIDE</c>  (with  <seealso marker="glu#quadricOrientation-2">glu:quadricOrientation/2</seealso> ),
+  then any generated normals point away from the <c>z</c> axis. Otherwise, they point toward
+  the  <c>z</c> axis.</p>
+ 
+   <p>If texturing is turned on (with  <seealso marker="glu#quadricTexture-2">glu:quadricTexture/2</seealso> ), then texture  coordinates
+  are generated so that <c>t</c> ranges linearly from 0.0  at <c>z</c> = 0 to 1.0 at <c>z</c>
+   =  <c>Height</c> , and <c>s</c>  ranges from 0.0 at the +<c>y</c> axis, to 0.25 at the +<c>x</c>
+   axis,  to 0.5 at the -<c>y</c> axis, to 0.75 at the -<c>x</c> axis,  and back to 1.0
+  at the +<c>y</c> axis.</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluCylinder.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>deleteQuadric(Quad) -&gt; ok</name>
+<fsummary>Destroy a quadrics object.</fsummary>
+<type>
+<v>Quad = integer()</v></type>
+<desc><marker id="deleteQuadric-1"/>
+
+<p>Destroy a quadrics object</p>
+ 
+  <p><c>glu:deleteQuadric</c> destroys the quadrics object (created with  <seealso marker="glu#newQuadric-0">glu:newQuadric/0</seealso> )
+  and frees any memory it uses.  Once <c>glu:deleteQuadric</c> has been called,  <c>Quad</c>  
+cannot be used again.</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluDeleteQuadric.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>disk(Quad, Inner, Outer, Slices, Loops) -&gt; ok</name>
+<fsummary>Draw a disk.</fsummary>
+<type>
+<v>Quad = integer()</v><v>Inner = float()</v><v>Outer = float()</v><v>Slices = integer()</v><v>Loops = integer()</v></type>
+<desc><marker id="disk-5"/>
+
+<p>Draw a disk</p>
+ 
+  <p><c>glu:disk</c> renders a disk on the <c>z</c> = 0 plane. The disk has a radius of   <c>Outer</c>
+   and contains a concentric circular hole with a radius  of  <c>Inner</c> . If  <c>Inner</c>
+  is 0, then no hole is generated. The disk is subdivided around the <c>z</c> axis into
+  slices (like pizza slices) and also about the <c>z</c> axis into rings  (as specified by  <c>Slices</c>
+   and  <c>Loops</c> , respectively).</p>
+ 
+   <p>With respect to orientation, the +<c>z</c> side of the disk is considered to be  <c>outside</c>
+  (see  <seealso marker="glu#quadricOrientation-2">glu:quadricOrientation/2</seealso> ). This means that if the orientation is set to <c>?GLU_OUTSIDE</c>
+  , then any normals generated  point along the +<c>z</c> axis. Otherwise, they point along
+  the -<c>z</c>  axis.</p>
+ 
+   <p>If texturing has been turned on (with  <seealso marker="glu#quadricTexture-2">glu:quadricTexture/2</seealso> ),  texture coordinates
+  are generated linearly such that where   r=outer, the value at (<c>r</c>, 0, 0) is  (1,
+  0.5), at (0, <c>r</c>, 0) it is (0.5, 1), at (-<c>r</c>, 0, 0)  it is (0, 0.5), and  at
+  (0, -<c>r</c>, 0) it is (0.5, 0).</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluDisk.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>errorString(Error) -&gt; string()</name>
+<fsummary>Produce an error string from a GL or GLU error code.</fsummary>
+<type>
+<v>Error = <seealso marker="#type-enum">enum()</seealso></v></type>
+<desc><marker id="errorString-1"/>
+
+<p>Produce an error string from a GL or GLU error code</p>
+ 
+  <p><c>glu:errorString</c> produces an error string from a GL or GLU error code. The string
+  is in ISO Latin 1 format. For example, <c>glu:errorString</c>(<c>?GLU_OUT_OF_MEMORY</c>)
+  returns the string  <c>out of memory</c>.</p>
+ 
+   <p>The standard GLU error codes are <c>?GLU_INVALID_ENUM</c>,  <c>?GLU_INVALID_VALUE</c>,
+  and <c>?GLU_OUT_OF_MEMORY</c>. Certain other GLU functions can return specialized error
+  codes through callbacks. See the  <seealso marker="gl#getError-0">gl:getError/0</seealso>  reference page for the list of  
+GL error codes.</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluErrorString.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>getString(Name) -&gt; string()</name>
+<fsummary>Return a string describing the GLU version or GLU extensions.</fsummary>
+<type>
+<v>Name = <seealso marker="#type-enum">enum()</seealso></v></type>
+<desc><marker id="getString-1"/>
+
+<p>Return a string describing the GLU version or GLU extensions</p>
+ 
+  <p><c>glu:getString</c> returns a pointer to a static string describing the  GLU version or  
+the GLU extensions that are supported.</p>
+ 
+   <p>The version number is one of the following forms:</p>
+ 
+  <p><c>major_number.minor_number</c><c>major_number.minor_number.release_number</c>.</p>
+ 
+   <p>The version string is of the following form:</p>
+ 
+  <p><c>version number&amp;lt;space&amp;gt;vendor-specific information</c></p>
+ 
+   <p>Vendor-specific information is optional. Its format and contents depend on the implementation.</p>
+ 
+ 
+   <p>The standard GLU contains a basic set of features and capabilities. If a company or group
+  of companies wish to support other features, these may be included as extensions to the
+  GLU.  If  <c>Name</c>  is  <c>?GLU_EXTENSIONS</c>, then <c>glu:getString</c> returns a space-separated  
+list of names of supported GLU extensions. (Extension names never contain spaces.)</p>
+ 
+   <p>All strings are null-terminated.</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluGetString.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>lookAt(EyeX, EyeY, EyeZ, CenterX, CenterY, CenterZ, UpX, UpY, UpZ) -&gt; ok</name>
+<fsummary>Define a viewing transformation.</fsummary>
+<type>
+<v>EyeX = float()</v><v>EyeY = float()</v><v>EyeZ = float()</v><v>CenterX = float()</v><v>CenterY = float()</v><v>CenterZ = float()</v><v>UpX = float()</v><v>UpY = float()</v><v>UpZ = float()</v></type>
+<desc><marker id="lookAt-9"/>
+
+<p>Define a viewing transformation</p>
+ 
+  <p><c>glu:lookAt</c> creates a viewing matrix derived from an eye point, a reference point
+  indicating the center of the scene, and an <c>UP</c> vector.</p>
+ 
+   <p>The matrix maps the reference point to the negative <c>z</c> axis and the eye point to
+  the origin. When a typical projection matrix is used, the center of the scene therefore
+  maps to the center of the viewport. Similarly, the direction described by the <c>UP</c>
+  vector projected onto the viewing plane is mapped to the positive <c>y</c>  axis so that
+  it points upward in the viewport. The <c>UP</c> vector must not be parallel to the line  
+of sight from the eye point to the reference point.</p>
+ 
+   <p>Let</p>
+ 
+   <p>F=(centerX-eyeX centerY-eyeY centerZ-eyeZ)</p>
+ 
+   <p>Let <c>UP</c> be the vector  (upX upY upZ).</p>
+ 
+   <p>Then normalize as follows:   f=F/(||F||)</p>
+ 
+   <p>UP"=UP/(||UP||)</p>
+ 
+   <p>Finally, let   s=f×UP", and   u=s×f.</p>
+ 
+   <p>M is then constructed as follows:  M=(s[0] s[1] s[2] 0 u[0] u[1] u[2] 0-f[0]-f[1]-f[2] 0 0 0 0 1)</p>
+ 
+   <p>and <c>glu:lookAt</c> is equivalent to   glMultMatrixf(M); glTranslated(-eyex, -eyey,  
+-eyez);</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluLookAt.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>newQuadric() -&gt; integer()</name>
+<fsummary>Create a quadrics object.</fsummary>
+
+<desc><marker id="newQuadric-0"/>
+
+<p>Create a quadrics object</p>
+ 
+  <p><c>glu:newQuadric</c> creates and returns a pointer to a new quadrics object. This object  
+must be referred to when calling quadrics rendering and control functions. A return value  
+of 0 means that there is not enough memory to allocate the object.</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluNewQuadric.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>ortho2D(Left, Right, Bottom, Top) -&gt; ok</name>
+<fsummary>Define a 2D orthographic projection matrix.</fsummary>
+<type>
+<v>Left = float()</v><v>Right = float()</v><v>Bottom = float()</v><v>Top = float()</v></type>
+<desc><marker id="ortho2D-4"/>
+
+<p>Define a 2D orthographic projection matrix</p>
+ 
+  <p><c>glu:ortho2D</c> sets up a two-dimensional orthographic viewing region.  This is equivalent
+  to calling  <seealso marker="gl#ortho-6">gl:ortho/6</seealso>  with   near=-1 and   far=1.</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluOrtho2D.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>partialDisk(Quad, Inner, Outer, Slices, Loops, Start, Sweep) -&gt; ok</name>
+<fsummary>Draw an arc of a disk.</fsummary>
+<type>
+<v>Quad = integer()</v><v>Inner = float()</v><v>Outer = float()</v><v>Slices = integer()</v><v>Loops = integer()</v><v>Start = float()</v><v>Sweep = float()</v></type>
+<desc><marker id="partialDisk-7"/>
+
+<p>Draw an arc of a disk</p>
+ 
+  <p><c>glu:partialDisk</c> renders a partial disk on the   z=0 plane. A partial disk is  similar
+  to a full disk, except that only the subset of the disk from  <c>Start</c>  through  <c>Start</c>
+   +  <c>Sweep</c>  is included (where 0 degrees is along the  +f2yf axis, 90 degrees along
+  the +<c>x</c> axis, 180 degrees along the -<c>y</c> axis, and  270 degrees along the -<c>x</c>   
+axis).</p>
+ 
+   <p>The partial disk has a radius of   <c>Outer</c>  and contains a concentric circular hole
+  with a radius  of  <c>Inner</c> . If  <c>Inner</c>  is 0, then no hole is generated. The partial
+  disk is subdivided around the <c>z</c> axis into slices (like pizza slices) and also about
+  the <c>z</c> axis into rings  (as specified by  <c>Slices</c>  and  <c>Loops</c> , respectively).</p>
+ 
+ 
+   <p>With respect to orientation, the +<c>z</c>  side of the partial disk is considered to
+   be outside (see  <seealso marker="glu#quadricOrientation-2">glu:quadricOrientation/2</seealso> ). This means that if the  orientation
+  is set to <c>?GLU_OUTSIDE</c>, then any normals generated  point along the +<c>z</c> axis.
+  Otherwise, they point along the -<c>z</c>  axis.</p>
+ 
+   <p>If texturing is turned on (with  <seealso marker="glu#quadricTexture-2">glu:quadricTexture/2</seealso> ), texture coordinates are
+  generated linearly such that where   r=outer, the value at (<c>r</c>, 0, 0) is  (1.0,
+  0.5), at (0, <c>r</c>, 0) it is (0.5, 1.0), at (-<c>r</c>, 0, 0)  it is (0.0, 0.5), and
+   at (0, -<c>r</c>, 0) it is (0.5, 0.0).</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluPartialDisk.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>perspective(Fovy, Aspect, ZNear, ZFar) -&gt; ok</name>
+<fsummary>Set up a perspective projection matrix.</fsummary>
+<type>
+<v>Fovy = float()</v><v>Aspect = float()</v><v>ZNear = float()</v><v>ZFar = float()</v></type>
+<desc><marker id="perspective-4"/>
+
+<p>Set up a perspective projection matrix</p>
+ 
+  <p><c>glu:perspective</c> specifies a viewing frustum into the world coordinate system. In
+  general, the aspect ratio in <c>glu:perspective</c> should match the aspect ratio of the
+  associated viewport. For example,   aspect=2.0 means  the viewer's angle of view is twice
+  as wide in <c>x</c> as it is in <c>y</c>. If the viewport is twice as wide as it is tall,  
+it displays the image without distortion.</p>
+ 
+   <p>The matrix generated by <c>glu:perspective</c> is multipled by the current matrix, just
+  as if  <seealso marker="gl#multMatrixd-1">gl:multMatrixd/1</seealso>  were called with the generated matrix. To load the perspective
+  matrix onto the current matrix stack instead, precede the call to <c>glu:perspective</c>
+  with a call to  <seealso marker="gl#loadIdentity-0">gl:loadIdentity/0</seealso> .</p>
+ 
+   <p>Given <c>f</c> defined as follows:</p>
+ 
+   <p>f=cotangent(fovy/2) The generated matrix is</p>
+ 
+  <p>(f/aspect 0 0 0 0 f 0 0 0 0(zFar+zNear)/(zNear-zFar)(2×zFar×zNear)/(zNear-zFar) 0 0 -1 0)</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluPerspective.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>pickMatrix(X, Y, DelX, DelY, Viewport) -&gt; ok</name>
+<fsummary>Define a picking region.</fsummary>
+<type>
+<v>X = float()</v><v>Y = float()</v><v>DelX = float()</v><v>DelY = float()</v><v>Viewport = {integer(), integer(), integer(), integer()}</v></type>
+<desc><marker id="pickMatrix-5"/>
+
+<p>Define a picking region</p>
+ 
+  <p><c>glu:pickMatrix</c> creates a projection matrix that can be used to restrict drawing
+  to a small region of the viewport. This is typically useful to determine what objects
+  are being drawn near the cursor. Use <c>glu:pickMatrix</c> to restrict drawing to a small
+  region around the cursor. Then, enter selection mode (with  <seealso marker="gl#renderMode-1">gl:renderMode/1</seealso> ) and  
+rerender the scene. All primitives that would have been drawn near the cursor are identified  
+and stored in the selection buffer.</p>
+ 
+   <p>The matrix created by <c>glu:pickMatrix</c> is multiplied by the current matrix just as
+  if  <seealso marker="gl#multMatrixd-1">gl:multMatrixd/1</seealso>  is called with the generated matrix. To effectively use the
+  generated pick matrix for picking, first call  <seealso marker="gl#loadIdentity-0">gl:loadIdentity/0</seealso>  to load an identity
+  matrix onto the perspective matrix stack. Then call <c>glu:pickMatrix</c>, and, finally,
+  call a command (such as  <seealso marker="glu#perspective-4">glu:perspective/4</seealso> ) to multiply the perspective matrix by  
+the pick matrix.</p>
+ 
+   <p>When using <c>glu:pickMatrix</c> to pick NURBS, be careful to turn off the NURBS  property
+  <c>?GLU_AUTO_LOAD_MATRIX</c>. If <c>?GLU_AUTO_LOAD_MATRIX</c> is not turned off, then  
+any NURBS surface rendered is subdivided differently with the pick matrix than the way  
+it was subdivided without the pick matrix.</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluPickMatrix.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>project(ObjX, ObjY, ObjZ, Model, Proj, View) -&gt; {integer(), WinX::float(), WinY::float(), WinZ::float()}</name>
+<fsummary>Map object coordinates to window coordinates.</fsummary>
+<type>
+<v>ObjX = float()</v><v>ObjY = float()</v><v>ObjZ = float()</v><v>Model = <seealso marker="#type-matrix">matrix()</seealso></v><v>Proj = <seealso marker="#type-matrix">matrix()</seealso></v><v>View = {integer(), integer(), integer(), integer()}</v></type>
+<desc><marker id="project-6"/>
+
+<p>Map object coordinates to window coordinates</p>
+ 
+  <p><c>glu:project</c> transforms the specified object coordinates into window coordinates
+  using  <c>Model</c> ,  <c>Proj</c> , and  <c>View</c> . The result is stored  in  <c>WinX</c> ,  <c>WinY</c>
+  , and  <c>WinZ</c> . A return value of  <c>?GLU_TRUE</c> indicates success, a return value
+  of <c>?GLU_FALSE</c> indicates failure.</p>
+ 
+   <p>To compute the coordinates, let   v=(objX objY objZ 1.0) represented as a matrix with 4 rows and 1 column.
+  Then <c>glu:project</c> computes   v" as follows:</p>
+ 
+   <p>v"=P×M×v</p>
+ 
+   <p>where   P is the current projection matrix  <c>Proj</c>  and   M is the current modelview
+  matrix  <c>Model</c>  (both represented as  4×4 matrices in column-major order).</p>
+ 
+   <p>The window coordinates are then computed as follows:</p>
+ 
+   <p>winX=view(0)+view(2)×(v"(0)+1)/2</p>
+ 
+   <p>winY=view(1)+view(3)×(v"(1)+1)/2</p>
+ 
+   <p>winZ=(v"(2)+1)/2</p>
+ 
+ 
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluProject.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>quadricDrawStyle(Quad, Draw) -&gt; ok</name>
+<fsummary>Specify the draw style desired for quadrics.</fsummary>
+<type>
+<v>Quad = integer()</v><v>Draw = <seealso marker="#type-enum">enum()</seealso></v></type>
+<desc><marker id="quadricDrawStyle-2"/>
+
+<p>Specify the draw style desired for quadrics</p>
+ 
+  <p><c>glu:quadricDrawStyle</c> specifies the draw style for quadrics rendered with  <c>Quad</c> .  
+The legal values are as follows:</p>
+ 
+  <p><c>?GLU_FILL</c>:  Quadrics are rendered with polygon primitives. The polygons  are drawn
+  in a counterclockwise fashion with respect to their normals (as defined with  <seealso marker="glu#quadricOrientation-2">glu:quadricOrientation/2</seealso>  
+).</p>
+ 
+  <p><c>?GLU_LINE</c>:  Quadrics are rendered as a set of lines.</p>
+ 
+  <p><c>?GLU_SILHOUETTE</c>:  Quadrics are rendered as a set of lines, except that edges separating  
+coplanar faces will not be drawn.</p>
+ 
+  <p><c>?GLU_POINT</c>:  Quadrics are rendered as a set of points.</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluQuadricDrawStyle.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>quadricNormals(Quad, Normal) -&gt; ok</name>
+<fsummary>Specify what kind of normals are desired for quadrics.</fsummary>
+<type>
+<v>Quad = integer()</v><v>Normal = <seealso marker="#type-enum">enum()</seealso></v></type>
+<desc><marker id="quadricNormals-2"/>
+
+<p>Specify what kind of normals are desired for quadrics</p>
+ 
+  <p><c>glu:quadricNormals</c> specifies what kind of normals are desired for quadrics rendered
+  with  <c>Quad</c> . The legal values are as follows:</p>
+ 
+  <p><c>?GLU_NONE</c>:  No normals are generated.</p>
+ 
+  <p><c>?GLU_FLAT</c>:  One normal is generated for every facet of a quadric.</p>
+ 
+  <p><c>?GLU_SMOOTH</c>:  One normal is generated for every vertex of a quadric. This is the  
+initial value.</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluQuadricNormals.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>quadricOrientation(Quad, Orientation) -&gt; ok</name>
+<fsummary>Specify inside/outside orientation for quadrics.</fsummary>
+<type>
+<v>Quad = integer()</v><v>Orientation = <seealso marker="#type-enum">enum()</seealso></v></type>
+<desc><marker id="quadricOrientation-2"/>
+
+<p>Specify inside/outside orientation for quadrics</p>
+ 
+  <p><c>glu:quadricOrientation</c> specifies what kind of orientation is desired for quadrics
+  rendered  with  <c>Quad</c> . The  <c>Orientation</c>  values are as follows:</p>
+ 
+  <p><c>?GLU_OUTSIDE</c>:  Quadrics are drawn with normals pointing outward (the initial value).</p>
+ 
+ 
+  <p><c>?GLU_INSIDE</c>:  Quadrics are drawn with normals pointing inward.</p>
+ 
+   <p>Note that the interpretation of <c>outward</c> and <c>inward</c> depends on the quadric  
+being drawn.</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluQuadricOrientation.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>quadricTexture(Quad, Texture) -&gt; ok</name>
+<fsummary>Specify if texturing is desired for quadrics.</fsummary>
+<type>
+<v>Quad = integer()</v><v>Texture = 0 | 1</v></type>
+<desc><marker id="quadricTexture-2"/>
+
+<p>Specify if texturing is desired for quadrics</p>
+ 
+  <p><c>glu:quadricTexture</c> specifies if texture coordinates should be generated for quadrics
+  rendered with  <c>Quad</c> . If the value of  <c>Texture</c>  is <c>?GLU_TRUE</c>, then texture
+  coordinates  are generated, and if  <c>Texture</c>  is <c>?GLU_FALSE</c>, they are not.
+  The initial value is <c>?GLU_FALSE</c>.</p>
+ 
+   <p>The manner in which texture coordinates are generated depends  upon the specific quadric  
+rendered.</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluQuadricTexture.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>scaleImage(Format, WIn, HIn, TypeIn, DataIn, WOut, HOut, TypeOut, DataOut) -&gt; integer()</name>
+<fsummary>Scale an image to an arbitrary size.</fsummary>
+<type>
+<v>Format = <seealso marker="#type-enum">enum()</seealso></v><v>WIn = integer()</v><v>HIn = integer()</v><v>TypeIn = <seealso marker="#type-enum">enum()</seealso></v><v>DataIn = binary()</v><v>WOut = integer()</v><v>HOut = integer()</v><v>TypeOut = <seealso marker="#type-enum">enum()</seealso></v><v>DataOut = <seealso marker="#type-mem">mem()</seealso></v></type>
+<desc><marker id="scaleImage-9"/>
+
+<p>Scale an image to an arbitrary size</p>
+ 
+  <p><c>glu:scaleImage</c> scales a pixel image using the appropriate pixel store modes to  
+unpack data from the source image and pack data into the destination image.</p>
+ 
+   <p>When shrinking an image, <c>glu:scaleImage</c> uses a box filter to sample the source  
+image and create pixels for the destination image. When magnifying an image, the pixels  
+from the source image are linearly interpolated to create the destination image.</p>
+ 
+   <p>A return value of zero indicates success, otherwise a GLU error code is returned (see  <seealso marker="glu#errorString-1">glu:errorString/1</seealso>  
+).</p>
+ 
+   <p>See the  <seealso marker="gl#readPixels-7">gl:readPixels/7</seealso>  reference page for a description of the acceptable values
+  for the  <c>Format</c> ,  <c>TypeIn</c> , and  <c>TypeOut</c>  parameters.</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluScaleImage.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>sphere(Quad, Radius, Slices, Stacks) -&gt; ok</name>
+<fsummary>Draw a sphere.</fsummary>
+<type>
+<v>Quad = integer()</v><v>Radius = float()</v><v>Slices = integer()</v><v>Stacks = integer()</v></type>
+<desc><marker id="sphere-4"/>
+
+<p>Draw a sphere</p>
+ 
+  <p><c>glu:sphere</c> draws a sphere of the given radius centered around the origin. The sphere
+  is subdivided around the <c>z</c> axis into slices and along the  <c>z</c> axis  into  
+stacks (similar to lines of longitude and latitude).</p>
+ 
+   <p>If the orientation is set to <c>?GLU_OUTSIDE</c>  (with  <seealso marker="glu#quadricOrientation-2">glu:quadricOrientation/2</seealso> ),  
+then any normals generated  point away from the center of the sphere. Otherwise, they  
+point toward the center of the sphere.</p>
+ 
+   <p>If texturing is turned on (with  <seealso marker="glu#quadricTexture-2">glu:quadricTexture/2</seealso> ), then texture  coordinates
+  are  generated so that <c>t</c> ranges from 0.0 at   z=-radius to 1.0 at   z=radius (<c>t</c>
+   increases linearly along longitudinal lines), and <c>s</c> ranges from 0.0 at the +<c>y</c>
+   axis, to 0.25 at the  +<c>x</c> axis,  to 0.5 at the -<c>y</c> axis, to 0.75 at the -<c>x</c>
+   axis, and back to 1.0  at the +<c>y</c> axis.</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluSphere.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>unProject(WinX, WinY, WinZ, Model, Proj, View) -&gt; {integer(), ObjX::float(), ObjY::float(), ObjZ::float()}</name>
+<fsummary>Map window coordinates to object coordinates.</fsummary>
+<type>
+<v>WinX = float()</v><v>WinY = float()</v><v>WinZ = float()</v><v>Model = <seealso marker="#type-matrix">matrix()</seealso></v><v>Proj = <seealso marker="#type-matrix">matrix()</seealso></v><v>View = {integer(), integer(), integer(), integer()}</v></type>
+<desc><marker id="unProject-6"/>
+
+<p>Map window coordinates to object coordinates</p>
+ 
+  <p><c>glu:unProject</c> maps the specified window coordinates into object  coordinates using  <c>Model</c>
+  ,  <c>Proj</c> , and  <c>View</c> . The result is stored in  <c>ObjX</c> ,  <c>ObjY</c> , and  <c>ObjZ</c>
+  . A return value of  <c>?GLU_TRUE</c> indicates success; a return value of <c>?GLU_FALSE</c>   
+indicates failure.</p>
+ 
+   <p>To compute the coordinates  (objX objY objZ), <c>glu:unProject</c> multiplies the normalized device coordinates
+  by the inverse of  <c>Model</c>  *  <c>Proj</c>  as follows:</p>
+ 
+  <p>(objX objY objZ W)=INV(P  M) ((2(winX-view[0]))/(view[2])-1(2(winY-view[1]))/(view[3])-1 2(winZ)-1 1) INV denotes matrix inversion.  W is an unused variable, included for consistent  
+matrix notation.</p>
+ 
+  <p>See <url href="http://www.opengl.org/sdk/docs/man/xhtml/gluUnProject.xml">external</url> documentation.</p>
+</desc></func>
+<func>
+<name>unProject4(WinX, WinY, WinZ, ClipW, Model, Proj, View, NearVal, FarVal) -&gt; {integer(), ObjX::float(), ObjY::float(), ObjZ::float(), ObjW::float()}</name>
+<fsummary>
+  See unProject/6</fsummary>
+<type>
+<v>WinX = float()</v><v>WinY = float()</v><v>WinZ = float()</v><v>ClipW = float()</v><v>Model = <seealso marker="#type-matrix">matrix()</seealso></v><v>Proj = <seealso marker="#type-matrix">matrix()</seealso></v><v>View = {integer(), integer(), integer(), integer()}</v><v>NearVal = float()</v><v>FarVal = float()</v></type>
+<desc><marker id="unProject4-9"/>
+
+<p>
+  See <seealso marker="#unProject-6">unProject/6</seealso></p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

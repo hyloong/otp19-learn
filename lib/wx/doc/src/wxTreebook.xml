@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxTreebook</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxTreebook.xml</file></header>
+<module>wxTreebook</module>
+<modulesummary>See external documentation: wxTreebook.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html">wxTreebook</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxControl">wxControl</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxTreebook"/>wxTreebook()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxTreebook">wxTreebook()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookwxtreebook">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id) -&gt; <seealso marker="#type-wxTreebook">wxTreebook()</seealso></name>
+<fsummary>Equivalent to new(Parent, Id, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v></type>
+<desc><marker id="new-2"/>
+<p>Equivalent to <seealso marker="#new-3">new(Parent, Id, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id, Options::[Option]) -&gt; <seealso marker="#type-wxTreebook">wxTreebook()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Option = {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()}</v></type>
+<desc><marker id="new-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookwxtreebook">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addPage(This, Page, Text) -&gt; boolean()</name>
+<fsummary>Equivalent to addPage(This, Page, Text, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>Page = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="addPage-3"/>
+<p>Equivalent to <seealso marker="#addPage-4">addPage(This, Page, Text, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>addPage(This, Page, Text, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>Page = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {bSelect, boolean()} | {imageId, integer()}</v></type>
+<desc><marker id="addPage-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookaddpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>advanceSelection(This) -&gt; ok</name>
+<fsummary>Equivalent to advanceSelection(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v></type>
+<desc><marker id="advanceSelection-1"/>
+<p>Equivalent to <seealso marker="#advanceSelection-2">advanceSelection(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>advanceSelection(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>Option = {forward, boolean()}</v></type>
+<desc><marker id="advanceSelection-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookadvanceselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>assignImageList(This, ImageList) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>ImageList = <seealso marker="wxImageList#type-wxImageList">wxImageList:wxImageList()</seealso></v></type>
+<desc><marker id="assignImageList-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookassignimagelist">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id) -&gt; boolean()</name>
+<fsummary>Equivalent to create(This, Parent, Id, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v></type>
+<desc><marker id="create-3"/>
+<p>Equivalent to <seealso marker="#create-4">create(This, Parent, Id, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Option = {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()}</v></type>
+<desc><marker id="create-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookcreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>deleteAllPages(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v></type>
+<desc><marker id="deleteAllPages-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookdeleteallpages">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>deletePage(This, Pos) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>Pos = integer()</v></type>
+<desc><marker id="deletePage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookdeletepage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>removePage(This, N) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>N = integer()</v></type>
+<desc><marker id="removePage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookremovepage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCurrentPage(This) -&gt; <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v></type>
+<desc><marker id="getCurrentPage-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookgetcurrentpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getImageList(This) -&gt; <seealso marker="wxImageList#type-wxImageList">wxImageList:wxImageList()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v></type>
+<desc><marker id="getImageList-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookgetimagelist">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPage(This, N) -&gt; <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>N = integer()</v></type>
+<desc><marker id="getPage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookgetpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPageCount(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v></type>
+<desc><marker id="getPageCount-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookgetpagecount">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPageImage(This, N) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>N = integer()</v></type>
+<desc><marker id="getPageImage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookgetpageimage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPageText(This, N) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>N = integer()</v></type>
+<desc><marker id="getPageText-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookgetpagetext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSelection(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v></type>
+<desc><marker id="getSelection-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookgetselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>expandNode(This, Pos) -&gt; boolean()</name>
+<fsummary>Equivalent to expandNode(This, Pos, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>Pos = integer()</v></type>
+<desc><marker id="expandNode-2"/>
+<p>Equivalent to <seealso marker="#expandNode-3">expandNode(This, Pos, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>expandNode(This, Pos, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>Pos = integer()</v><v>Option = {expand, boolean()}</v></type>
+<desc><marker id="expandNode-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookexpandnode">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isNodeExpanded(This, Pos) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>Pos = integer()</v></type>
+<desc><marker id="isNodeExpanded-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookisnodeexpanded">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hitTest(This, Pt) -&gt; Result</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Result = {Res::integer(), Flags::integer()}</v><v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>Pt = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="hitTest-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookhittest">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>insertPage(This, Pos, Page, Text) -&gt; boolean()</name>
+<fsummary>Equivalent to insertPage(This, Pos, Page, Text, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>Pos = integer()</v><v>Page = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="insertPage-4"/>
+<p>Equivalent to <seealso marker="#insertPage-5">insertPage(This, Pos, Page, Text, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>insertPage(This, Pos, Page, Text, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>Pos = integer()</v><v>Page = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {bSelect, boolean()} | {imageId, integer()}</v></type>
+<desc><marker id="insertPage-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookinsertpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>insertSubPage(This, Pos, Page, Text) -&gt; boolean()</name>
+<fsummary>Equivalent to insertSubPage(This, Pos, Page, Text, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>Pos = integer()</v><v>Page = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="insertSubPage-4"/>
+<p>Equivalent to <seealso marker="#insertSubPage-5">insertSubPage(This, Pos, Page, Text, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>insertSubPage(This, Pos, Page, Text, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>Pos = integer()</v><v>Page = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {bSelect, boolean()} | {imageId, integer()}</v></type>
+<desc><marker id="insertSubPage-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookinsertsubpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setImageList(This, ImageList) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>ImageList = <seealso marker="wxImageList#type-wxImageList">wxImageList:wxImageList()</seealso></v></type>
+<desc><marker id="setImageList-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebooksetimagelist">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setPageSize(This, Size) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>Size = {W::integer(), H::integer()}</v></type>
+<desc><marker id="setPageSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebooksetpagesize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setPageImage(This, N, ImageId) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>N = integer()</v><v>ImageId = integer()</v></type>
+<desc><marker id="setPageImage-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebooksetpageimage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setPageText(This, N, StrText) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>N = integer()</v><v>StrText = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setPageText-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebooksetpagetext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSelection(This, N) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>N = integer()</v></type>
+<desc><marker id="setSelection-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebooksetselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>changeSelection(This, N) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreebook">wxTreebook()</seealso></v><v>N = integer()</v></type>
+<desc><marker id="changeSelection-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreebook.html#wxtreebookchangeselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxTreebook">wxTreebook()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

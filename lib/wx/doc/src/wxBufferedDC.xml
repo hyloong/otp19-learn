@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxBufferedDC</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxBufferedDC.xml</file></header>
+<module>wxBufferedDC</module>
+<modulesummary>See external documentation: wxBufferedDC.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbuffereddc.html">wxBufferedDC</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxMemoryDC">wxMemoryDC</seealso>
+  <br/><seealso marker="wxDC">wxDC</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxBufferedDC"/>wxBufferedDC()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxBufferedDC">wxBufferedDC()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbuffereddc.html#wxbuffereddcwxbuffereddc">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Dc) -&gt; <seealso marker="#type-wxBufferedDC">wxBufferedDC()</seealso></name>
+<fsummary>Equivalent to new(Dc, []).
+</fsummary>
+<type>
+<v>Dc = <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso></v></type>
+<desc><marker id="new-1"/>
+<p>Equivalent to <seealso marker="#new-2">new(Dc, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Dc, Area) -&gt; <seealso marker="#type-wxBufferedDC">wxBufferedDC()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Dc = <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso></v><v>Area = {W::integer(), H::integer()}</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbuffereddc.html#wxbuffereddcwxbuffereddc">external documentation</url>.
+  <br/> Also:<br/>
+  new(Dc, [Option]) -&gt; wxBufferedDC() when<br/>
+  	Dc::wxDC:wxDC(),<br/>
+  	Option :: {'buffer', wxBitmap:wxBitmap()}<br/>
+  		 | {'style', integer()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>new(Dc, Area, Options::[Option]) -&gt; <seealso marker="#type-wxBufferedDC">wxBufferedDC()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Dc = <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso></v><v>Area = {W::integer(), H::integer()}</v><v>Option = {style, integer()}</v></type>
+<desc><marker id="new-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbuffereddc.html#wxbuffereddcwxbuffereddc">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>init(This, Dc) -&gt; ok</name>
+<fsummary>Equivalent to init(This, Dc, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBufferedDC">wxBufferedDC()</seealso></v><v>Dc = <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso></v></type>
+<desc><marker id="init-2"/>
+<p>Equivalent to <seealso marker="#init-3">init(This, Dc, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>init(This, Dc, Area) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBufferedDC">wxBufferedDC()</seealso></v><v>Dc = <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso></v><v>Area = {W::integer(), H::integer()}</v></type>
+<desc><marker id="init-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbuffereddc.html#wxbuffereddcinit">external documentation</url>.
+  <br/> Also:<br/>
+  init(This, Dc, [Option]) -&gt; 'ok' when<br/>
+  	This::wxBufferedDC(), Dc::wxDC:wxDC(),<br/>
+  	Option :: {'buffer', wxBitmap:wxBitmap()}<br/>
+  		 | {'style', integer()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>init(This, Dc, Area, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBufferedDC">wxBufferedDC()</seealso></v><v>Dc = <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso></v><v>Area = {W::integer(), H::integer()}</v><v>Option = {style, integer()}</v></type>
+<desc><marker id="init-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbuffereddc.html#wxbuffereddcinit">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxBufferedDC">wxBufferedDC()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

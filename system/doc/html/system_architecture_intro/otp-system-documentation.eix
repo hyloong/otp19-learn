@@ -1,0 +1,5 @@
+%% 
+%% Search data file for otp-system-documentation 9.0
+%% generated July 12, 2017
+%% 
+{notused, application, ["otp-system-documentation"]}.

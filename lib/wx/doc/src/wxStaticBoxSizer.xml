@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxStaticBoxSizer</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxStaticBoxSizer.xml</file></header>
+<module>wxStaticBoxSizer</module>
+<modulesummary>See external documentation: wxStaticBoxSizer.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstaticboxsizer.html">wxStaticBoxSizer</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxBoxSizer">wxBoxSizer</seealso>
+  <br/><seealso marker="wxSizer">wxSizer</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxStaticBoxSizer"/>wxStaticBoxSizer()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new(Orient, Win) -&gt; <seealso marker="#type-wxStaticBoxSizer">wxStaticBoxSizer()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Orient = integer()</v><v>Win = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstaticboxsizer.html#wxstaticboxsizerwxstaticboxsizer">external documentation</url>.
+  <br/> Also:<br/>
+  new(Box, Orient) -&gt; wxStaticBoxSizer() when<br/>
+  	Box::wxStaticBox:wxStaticBox(), Orient::integer().<br/>
+ </p>
+</desc></func>
+<func>
+<name>new(Orient, Win, Options::[Option]) -&gt; <seealso marker="#type-wxStaticBoxSizer">wxStaticBoxSizer()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Orient = integer()</v><v>Win = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {label, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>}</v></type>
+<desc><marker id="new-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstaticboxsizer.html#wxstaticboxsizerwxstaticboxsizer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getStaticBox(This) -&gt; <seealso marker="wxStaticBox#type-wxStaticBox">wxStaticBox:wxStaticBox()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxStaticBoxSizer">wxStaticBoxSizer()</seealso></v></type>
+<desc><marker id="getStaticBox-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxstaticboxsizer.html#wxstaticboxsizergetstaticbox">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxStaticBoxSizer">wxStaticBoxSizer()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

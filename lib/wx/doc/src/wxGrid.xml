@@ -1,0 +1,1927 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxGrid</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxGrid.xml</file></header>
+<module>wxGrid</module>
+<modulesummary>See external documentation: wxGrid.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html">wxGrid</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxScrolledWindow">wxScrolledWindow</seealso>
+  <br/><seealso marker="wxPanel">wxPanel</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxGrid"/>wxGrid()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxGrid">wxGrid()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridwxgrid">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id) -&gt; <seealso marker="#type-wxGrid">wxGrid()</seealso></name>
+<fsummary>Equivalent to new(Parent, Id, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v></type>
+<desc><marker id="new-2"/>
+<p>Equivalent to <seealso marker="#new-3">new(Parent, Id, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, X, Y) -&gt; <seealso marker="#type-wxGrid">wxGrid()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="new-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridwxgrid">external documentation</url>.
+  <br/> Also:<br/>
+  new(Parent, Id, [Option]) -&gt; wxGrid() when<br/>
+  	Parent::wxWindow:wxWindow(), Id::integer(),<br/>
+  	Option :: {'pos', {X::integer(), Y::integer()}}<br/>
+  		 | {'size', {W::integer(), H::integer()}}<br/>
+  		 | {'style', integer()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>new(Parent, X, Y, Options::[Option]) -&gt; <seealso marker="#type-wxGrid">wxGrid()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>X = integer()</v><v>Y = integer()</v><v>Option = {w, integer()} | {h, integer()} | {style, integer()}</v></type>
+<desc><marker id="new-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridwxgrid">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>appendCols(This) -&gt; boolean()</name>
+<fsummary>Equivalent to appendCols(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="appendCols-1"/>
+<p>Equivalent to <seealso marker="#appendCols-2">appendCols(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>appendCols(This, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Option = {numCols, integer()} | {updateLabels, boolean()}</v></type>
+<desc><marker id="appendCols-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridappendcols">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>appendRows(This) -&gt; boolean()</name>
+<fsummary>Equivalent to appendRows(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="appendRows-1"/>
+<p>Equivalent to <seealso marker="#appendRows-2">appendRows(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>appendRows(This, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Option = {numRows, integer()} | {updateLabels, boolean()}</v></type>
+<desc><marker id="appendRows-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridappendrows">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>autoSize(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="autoSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridautosize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>autoSizeColumn(This, Col) -&gt; ok</name>
+<fsummary>Equivalent to autoSizeColumn(This, Col, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Col = integer()</v></type>
+<desc><marker id="autoSizeColumn-2"/>
+<p>Equivalent to <seealso marker="#autoSizeColumn-3">autoSizeColumn(This, Col, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>autoSizeColumn(This, Col, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Col = integer()</v><v>Option = {setAsMin, boolean()}</v></type>
+<desc><marker id="autoSizeColumn-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridautosizecolumn">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>autoSizeColumns(This) -&gt; ok</name>
+<fsummary>Equivalent to autoSizeColumns(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="autoSizeColumns-1"/>
+<p>Equivalent to <seealso marker="#autoSizeColumns-2">autoSizeColumns(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>autoSizeColumns(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Option = {setAsMin, boolean()}</v></type>
+<desc><marker id="autoSizeColumns-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridautosizecolumns">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>autoSizeRow(This, Row) -&gt; ok</name>
+<fsummary>Equivalent to autoSizeRow(This, Row, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v></type>
+<desc><marker id="autoSizeRow-2"/>
+<p>Equivalent to <seealso marker="#autoSizeRow-3">autoSizeRow(This, Row, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>autoSizeRow(This, Row, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Option = {setAsMin, boolean()}</v></type>
+<desc><marker id="autoSizeRow-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridautosizerow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>autoSizeRows(This) -&gt; ok</name>
+<fsummary>Equivalent to autoSizeRows(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="autoSizeRows-1"/>
+<p>Equivalent to <seealso marker="#autoSizeRows-2">autoSizeRows(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>autoSizeRows(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Option = {setAsMin, boolean()}</v></type>
+<desc><marker id="autoSizeRows-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridautosizerows">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>beginBatch(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="beginBatch-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridbeginbatch">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>blockToDeviceRect(This, TopLeft, BottomRight) -&gt; {X::integer(), Y::integer(), W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>TopLeft = {R::integer(), C::integer()}</v><v>BottomRight = {R::integer(), C::integer()}</v></type>
+<desc><marker id="blockToDeviceRect-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridblocktodevicerect">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>canDragColSize(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="canDragColSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridcandragcolsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>canDragRowSize(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="canDragRowSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridcandragrowsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>canDragGridSize(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="canDragGridSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridcandraggridsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>canEnableCellControl(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="canEnableCellControl-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridcanenablecellcontrol">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>cellToRect(This, Coords) -&gt; {X::integer(), Y::integer(), W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Coords = {R::integer(), C::integer()}</v></type>
+<desc><marker id="cellToRect-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridcelltorect">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>cellToRect(This, Row, Col) -&gt; {X::integer(), Y::integer(), W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="cellToRect-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridcelltorect">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>clearGrid(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="clearGrid-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridcleargrid">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>clearSelection(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="clearSelection-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridclearselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createGrid(This, NumRows, NumCols) -&gt; boolean()</name>
+<fsummary>Equivalent to createGrid(This, NumRows, NumCols, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>NumRows = integer()</v><v>NumCols = integer()</v></type>
+<desc><marker id="createGrid-3"/>
+<p>Equivalent to <seealso marker="#createGrid-4">createGrid(This, NumRows, NumCols, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>createGrid(This, NumRows, NumCols, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>NumRows = integer()</v><v>NumCols = integer()</v><v>Option = {selmode, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</v></type>
+<desc><marker id="createGrid-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridcreategrid">external documentation</url>.
+ <br/> Selmode = ?wxGrid_wxGridSelectCells | ?wxGrid_wxGridSelectRows | ?wxGrid_wxGridSelectColumns</p>
+</desc></func>
+<func>
+<name>deleteCols(This) -&gt; boolean()</name>
+<fsummary>Equivalent to deleteCols(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="deleteCols-1"/>
+<p>Equivalent to <seealso marker="#deleteCols-2">deleteCols(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>deleteCols(This, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Option = {pos, integer()} | {numCols, integer()} | {updateLabels, boolean()}</v></type>
+<desc><marker id="deleteCols-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgriddeletecols">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>deleteRows(This) -&gt; boolean()</name>
+<fsummary>Equivalent to deleteRows(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="deleteRows-1"/>
+<p>Equivalent to <seealso marker="#deleteRows-2">deleteRows(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>deleteRows(This, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Option = {pos, integer()} | {numRows, integer()} | {updateLabels, boolean()}</v></type>
+<desc><marker id="deleteRows-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgriddeleterows">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>disableCellEditControl(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="disableCellEditControl-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgriddisablecelleditcontrol">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>disableDragColSize(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="disableDragColSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgriddisabledragcolsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>disableDragGridSize(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="disableDragGridSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgriddisabledraggridsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>disableDragRowSize(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="disableDragRowSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgriddisabledragrowsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>enableCellEditControl(This) -&gt; ok</name>
+<fsummary>Equivalent to enableCellEditControl(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="enableCellEditControl-1"/>
+<p>Equivalent to <seealso marker="#enableCellEditControl-2">enableCellEditControl(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>enableCellEditControl(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Option = {enable, boolean()}</v></type>
+<desc><marker id="enableCellEditControl-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridenablecelleditcontrol">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>enableDragColSize(This) -&gt; ok</name>
+<fsummary>Equivalent to enableDragColSize(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="enableDragColSize-1"/>
+<p>Equivalent to <seealso marker="#enableDragColSize-2">enableDragColSize(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>enableDragColSize(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Option = {enable, boolean()}</v></type>
+<desc><marker id="enableDragColSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridenabledragcolsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>enableDragGridSize(This) -&gt; ok</name>
+<fsummary>Equivalent to enableDragGridSize(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="enableDragGridSize-1"/>
+<p>Equivalent to <seealso marker="#enableDragGridSize-2">enableDragGridSize(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>enableDragGridSize(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Option = {enable, boolean()}</v></type>
+<desc><marker id="enableDragGridSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridenabledraggridsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>enableDragRowSize(This) -&gt; ok</name>
+<fsummary>Equivalent to enableDragRowSize(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="enableDragRowSize-1"/>
+<p>Equivalent to <seealso marker="#enableDragRowSize-2">enableDragRowSize(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>enableDragRowSize(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Option = {enable, boolean()}</v></type>
+<desc><marker id="enableDragRowSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridenabledragrowsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>enableEditing(This, Edit) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Edit = boolean()</v></type>
+<desc><marker id="enableEditing-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridenableediting">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>enableGridLines(This) -&gt; ok</name>
+<fsummary>Equivalent to enableGridLines(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="enableGridLines-1"/>
+<p>Equivalent to <seealso marker="#enableGridLines-2">enableGridLines(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>enableGridLines(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Option = {enable, boolean()}</v></type>
+<desc><marker id="enableGridLines-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridenablegridlines">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>endBatch(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="endBatch-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridendbatch">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>fit(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="fit-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridfit">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>forceRefresh(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="forceRefresh-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridforcerefresh">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getBatchCount(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getBatchCount-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetbatchcount">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCellAlignment(This, Row, Col) -&gt; {Horiz::integer(), Vert::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="getCellAlignment-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetcellalignment">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCellBackgroundColour(This, Row, Col) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="getCellBackgroundColour-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetcellbackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCellEditor(This, Row, Col) -&gt; <seealso marker="wxGridCellEditor#type-wxGridCellEditor">wxGridCellEditor:wxGridCellEditor()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="getCellEditor-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetcelleditor">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCellFont(This, Row, Col) -&gt; <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="getCellFont-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetcellfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCellRenderer(This, Row, Col) -&gt; <seealso marker="wxGridCellRenderer#type-wxGridCellRenderer">wxGridCellRenderer:wxGridCellRenderer()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="getCellRenderer-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetcellrenderer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCellTextColour(This, Row, Col) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="getCellTextColour-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetcelltextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCellValue(This, Coords) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Coords = {R::integer(), C::integer()}</v></type>
+<desc><marker id="getCellValue-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetcellvalue">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCellValue(This, Row, Col) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="getCellValue-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetcellvalue">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getColLabelAlignment(This) -&gt; {Horiz::integer(), Vert::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getColLabelAlignment-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetcollabelalignment">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getColLabelSize(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getColLabelSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetcollabelsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getColLabelValue(This, Col) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Col = integer()</v></type>
+<desc><marker id="getColLabelValue-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetcollabelvalue">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getColMinimalAcceptableWidth(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getColMinimalAcceptableWidth-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetcolminimalacceptablewidth">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDefaultCellAlignment(This) -&gt; {Horiz::integer(), Vert::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getDefaultCellAlignment-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetdefaultcellalignment">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDefaultCellBackgroundColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getDefaultCellBackgroundColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetdefaultcellbackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDefaultCellFont(This) -&gt; <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getDefaultCellFont-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetdefaultcellfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDefaultCellTextColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getDefaultCellTextColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetdefaultcelltextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDefaultColLabelSize(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getDefaultColLabelSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetdefaultcollabelsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDefaultColSize(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getDefaultColSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetdefaultcolsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDefaultEditor(This) -&gt; <seealso marker="wxGridCellEditor#type-wxGridCellEditor">wxGridCellEditor:wxGridCellEditor()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getDefaultEditor-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetdefaulteditor">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDefaultEditorForCell(This, C) -&gt; <seealso marker="wxGridCellEditor#type-wxGridCellEditor">wxGridCellEditor:wxGridCellEditor()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>C = {R::integer(), C::integer()}</v></type>
+<desc><marker id="getDefaultEditorForCell-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetdefaulteditorforcell">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDefaultEditorForCell(This, Row, Col) -&gt; <seealso marker="wxGridCellEditor#type-wxGridCellEditor">wxGridCellEditor:wxGridCellEditor()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="getDefaultEditorForCell-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetdefaulteditorforcell">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDefaultEditorForType(This, TypeName) -&gt; <seealso marker="wxGridCellEditor#type-wxGridCellEditor">wxGridCellEditor:wxGridCellEditor()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>TypeName = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="getDefaultEditorForType-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetdefaulteditorfortype">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDefaultRenderer(This) -&gt; <seealso marker="wxGridCellRenderer#type-wxGridCellRenderer">wxGridCellRenderer:wxGridCellRenderer()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getDefaultRenderer-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetdefaultrenderer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDefaultRendererForCell(This, Row, Col) -&gt; <seealso marker="wxGridCellRenderer#type-wxGridCellRenderer">wxGridCellRenderer:wxGridCellRenderer()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="getDefaultRendererForCell-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetdefaultrendererforcell">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDefaultRendererForType(This, TypeName) -&gt; <seealso marker="wxGridCellRenderer#type-wxGridCellRenderer">wxGridCellRenderer:wxGridCellRenderer()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>TypeName = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="getDefaultRendererForType-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetdefaultrendererfortype">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDefaultRowLabelSize(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getDefaultRowLabelSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetdefaultrowlabelsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDefaultRowSize(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getDefaultRowSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetdefaultrowsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getGridCursorCol(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getGridCursorCol-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetgridcursorcol">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getGridCursorRow(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getGridCursorRow-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetgridcursorrow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getGridLineColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getGridLineColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetgridlinecolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>gridLinesEnabled(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="gridLinesEnabled-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgridlinesenabled">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getLabelBackgroundColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getLabelBackgroundColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetlabelbackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getLabelFont(This) -&gt; <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getLabelFont-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetlabelfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getLabelTextColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getLabelTextColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetlabeltextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getNumberCols(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getNumberCols-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetnumbercols">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getNumberRows(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getNumberRows-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetnumberrows">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getOrCreateCellAttr(This, Row, Col) -&gt; <seealso marker="wxGridCellAttr#type-wxGridCellAttr">wxGridCellAttr:wxGridCellAttr()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="getOrCreateCellAttr-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetorcreatecellattr">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getRowMinimalAcceptableHeight(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getRowMinimalAcceptableHeight-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetrowminimalacceptableheight">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getRowLabelAlignment(This) -&gt; {Horiz::integer(), Vert::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getRowLabelAlignment-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetrowlabelalignment">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getRowLabelSize(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getRowLabelSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetrowlabelsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getRowLabelValue(This, Row) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v></type>
+<desc><marker id="getRowLabelValue-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetrowlabelvalue">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getRowSize(This, Row) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v></type>
+<desc><marker id="getRowSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetrowsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getScrollLineX(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getScrollLineX-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetscrolllinex">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getScrollLineY(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getScrollLineY-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetscrollliney">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSelectedCells(This) -&gt; [{R::integer(), C::integer()}]</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getSelectedCells-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetselectedcells">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSelectedCols(This) -&gt; [integer()]</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getSelectedCols-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetselectedcols">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSelectedRows(This) -&gt; [integer()]</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getSelectedRows-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetselectedrows">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSelectionBackground(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getSelectionBackground-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetselectionbackground">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSelectionBlockTopLeft(This) -&gt; [{R::integer(), C::integer()}]</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getSelectionBlockTopLeft-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetselectionblocktopleft">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSelectionBlockBottomRight(This) -&gt; [{R::integer(), C::integer()}]</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getSelectionBlockBottomRight-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetselectionblockbottomright">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSelectionForeground(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getSelectionForeground-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetselectionforeground">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getViewWidth(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getViewWidth-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetviewwidth">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getGridWindow(This) -&gt; <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getGridWindow-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetgridwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getGridRowLabelWindow(This) -&gt; <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getGridRowLabelWindow-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetgridrowlabelwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getGridColLabelWindow(This) -&gt; <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getGridColLabelWindow-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetgridcollabelwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getGridCornerLabelWindow(This) -&gt; <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="getGridCornerLabelWindow-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridgetgridcornerlabelwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hideCellEditControl(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="hideCellEditControl-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridhidecelleditcontrol">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>insertCols(This) -&gt; boolean()</name>
+<fsummary>Equivalent to insertCols(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="insertCols-1"/>
+<p>Equivalent to <seealso marker="#insertCols-2">insertCols(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>insertCols(This, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Option = {pos, integer()} | {numCols, integer()} | {updateLabels, boolean()}</v></type>
+<desc><marker id="insertCols-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridinsertcols">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>insertRows(This) -&gt; boolean()</name>
+<fsummary>Equivalent to insertRows(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="insertRows-1"/>
+<p>Equivalent to <seealso marker="#insertRows-2">insertRows(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>insertRows(This, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Option = {pos, integer()} | {numRows, integer()} | {updateLabels, boolean()}</v></type>
+<desc><marker id="insertRows-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridinsertrows">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isCellEditControlEnabled(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="isCellEditControlEnabled-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridiscelleditcontrolenabled">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isCurrentCellReadOnly(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="isCurrentCellReadOnly-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridiscurrentcellreadonly">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isEditable(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="isEditable-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridiseditable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isInSelection(This, Coords) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Coords = {R::integer(), C::integer()}</v></type>
+<desc><marker id="isInSelection-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridisinselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isInSelection(This, Row, Col) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="isInSelection-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridisinselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isReadOnly(This, Row, Col) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="isReadOnly-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridisreadonly">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isSelection(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="isSelection-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridisselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isVisible(This, Coords) -&gt; boolean()</name>
+<fsummary>Equivalent to isVisible(This, Coords, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Coords = {R::integer(), C::integer()}</v></type>
+<desc><marker id="isVisible-2"/>
+<p>Equivalent to <seealso marker="#isVisible-3">isVisible(This, Coords, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>isVisible(This, Row, Col) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="isVisible-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridisvisible">external documentation</url>.
+  <br/> Also:<br/>
+  isVisible(This, Coords, [Option]) -&gt; boolean() when<br/>
+  	This::wxGrid(), Coords::{R::integer(), C::integer()},<br/>
+  	Option :: {'wholeCellVisible', boolean()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>isVisible(This, Row, Col, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v><v>Option = {wholeCellVisible, boolean()}</v></type>
+<desc><marker id="isVisible-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridisvisible">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>makeCellVisible(This, Coords) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Coords = {R::integer(), C::integer()}</v></type>
+<desc><marker id="makeCellVisible-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridmakecellvisible">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>makeCellVisible(This, Row, Col) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="makeCellVisible-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridmakecellvisible">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>moveCursorDown(This, ExpandSelection) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>ExpandSelection = boolean()</v></type>
+<desc><marker id="moveCursorDown-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridmovecursordown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>moveCursorLeft(This, ExpandSelection) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>ExpandSelection = boolean()</v></type>
+<desc><marker id="moveCursorLeft-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridmovecursorleft">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>moveCursorRight(This, ExpandSelection) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>ExpandSelection = boolean()</v></type>
+<desc><marker id="moveCursorRight-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridmovecursorright">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>moveCursorUp(This, ExpandSelection) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>ExpandSelection = boolean()</v></type>
+<desc><marker id="moveCursorUp-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridmovecursorup">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>moveCursorDownBlock(This, ExpandSelection) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>ExpandSelection = boolean()</v></type>
+<desc><marker id="moveCursorDownBlock-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridmovecursordownblock">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>moveCursorLeftBlock(This, ExpandSelection) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>ExpandSelection = boolean()</v></type>
+<desc><marker id="moveCursorLeftBlock-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridmovecursorleftblock">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>moveCursorRightBlock(This, ExpandSelection) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>ExpandSelection = boolean()</v></type>
+<desc><marker id="moveCursorRightBlock-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridmovecursorrightblock">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>moveCursorUpBlock(This, ExpandSelection) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>ExpandSelection = boolean()</v></type>
+<desc><marker id="moveCursorUpBlock-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridmovecursorupblock">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>movePageDown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="movePageDown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridmovepagedown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>movePageUp(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="movePageUp-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridmovepageup">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>registerDataType(This, TypeName, Renderer, Editor) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>TypeName = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Renderer = <seealso marker="wxGridCellRenderer#type-wxGridCellRenderer">wxGridCellRenderer:wxGridCellRenderer()</seealso></v><v>Editor = <seealso marker="wxGridCellEditor#type-wxGridCellEditor">wxGridCellEditor:wxGridCellEditor()</seealso></v></type>
+<desc><marker id="registerDataType-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridregisterdatatype">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>saveEditControlValue(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="saveEditControlValue-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsaveeditcontrolvalue">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>selectAll(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="selectAll-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridselectall">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>selectBlock(This, TopLeft, BottomRight) -&gt; ok</name>
+<fsummary>Equivalent to selectBlock(This, TopLeft, BottomRight, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>TopLeft = {R::integer(), C::integer()}</v><v>BottomRight = {R::integer(), C::integer()}</v></type>
+<desc><marker id="selectBlock-3"/>
+<p>Equivalent to <seealso marker="#selectBlock-4">selectBlock(This, TopLeft, BottomRight, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>selectBlock(This, TopLeft, BottomRight, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>TopLeft = {R::integer(), C::integer()}</v><v>BottomRight = {R::integer(), C::integer()}</v><v>Option = {addToSelected, boolean()}</v></type>
+<desc><marker id="selectBlock-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridselectblock">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>selectBlock(This, TopRow, LeftCol, BottomRow, RightCol) -&gt; ok</name>
+<fsummary>Equivalent to selectBlock(This, TopRow, LeftCol, BottomRow, RightCol,
+	    []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>TopRow = integer()</v><v>LeftCol = integer()</v><v>BottomRow = integer()</v><v>RightCol = integer()</v></type>
+<desc><marker id="selectBlock-5"/>
+<p>Equivalent to <seealso marker="#selectBlock-6">selectBlock(This, TopRow, LeftCol, BottomRow, RightCol,
+	    [])</seealso>.</p>
+</desc></func>
+<func>
+<name>selectBlock(This, TopRow, LeftCol, BottomRow, RightCol, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>TopRow = integer()</v><v>LeftCol = integer()</v><v>BottomRow = integer()</v><v>RightCol = integer()</v><v>Option = {addToSelected, boolean()}</v></type>
+<desc><marker id="selectBlock-6"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridselectblock">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>selectCol(This, Col) -&gt; ok</name>
+<fsummary>Equivalent to selectCol(This, Col, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Col = integer()</v></type>
+<desc><marker id="selectCol-2"/>
+<p>Equivalent to <seealso marker="#selectCol-3">selectCol(This, Col, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>selectCol(This, Col, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Col = integer()</v><v>Option = {addToSelected, boolean()}</v></type>
+<desc><marker id="selectCol-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridselectcol">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>selectRow(This, Row) -&gt; ok</name>
+<fsummary>Equivalent to selectRow(This, Row, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v></type>
+<desc><marker id="selectRow-2"/>
+<p>Equivalent to <seealso marker="#selectRow-3">selectRow(This, Row, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>selectRow(This, Row, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Option = {addToSelected, boolean()}</v></type>
+<desc><marker id="selectRow-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridselectrow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setCellAlignment(This, Align) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Align = integer()</v></type>
+<desc><marker id="setCellAlignment-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcellalignment">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setCellAlignment(This, Align, Row, Col) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Align = integer()</v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="setCellAlignment-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcellalignment">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setCellAlignment(This, Row, Col, Horiz, Vert) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v><v>Horiz = integer()</v><v>Vert = integer()</v></type>
+<desc><marker id="setCellAlignment-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcellalignment">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setCellBackgroundColour(This, Col) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Col = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setCellBackgroundColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcellbackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setCellBackgroundColour(This, Row, Col, Val) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v><v>Val = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setCellBackgroundColour-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcellbackgroundcolour">external documentation</url>.
+  <br/> Also:<br/>
+  setCellBackgroundColour(This, Colour, Row, Col) -&gt; 'ok' when<br/>
+  	This::wxGrid(), Colour::wx:wx_colour(), Row::integer(), Col::integer().<br/>
+ </p>
+</desc></func>
+<func>
+<name>setCellEditor(This, Row, Col, Editor) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v><v>Editor = <seealso marker="wxGridCellEditor#type-wxGridCellEditor">wxGridCellEditor:wxGridCellEditor()</seealso></v></type>
+<desc><marker id="setCellEditor-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcelleditor">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setCellFont(This, Row, Col, Val) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v><v>Val = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v></type>
+<desc><marker id="setCellFont-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcellfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setCellRenderer(This, Row, Col, Renderer) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v><v>Renderer = <seealso marker="wxGridCellRenderer#type-wxGridCellRenderer">wxGridCellRenderer:wxGridCellRenderer()</seealso></v></type>
+<desc><marker id="setCellRenderer-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcellrenderer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setCellTextColour(This, Col) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Col = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setCellTextColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcelltextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setCellTextColour(This, Row, Col, Val) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v><v>Val = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setCellTextColour-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcelltextcolour">external documentation</url>.
+  <br/> Also:<br/>
+  setCellTextColour(This, Val, Row, Col) -&gt; 'ok' when<br/>
+  	This::wxGrid(), Val::wx:wx_colour(), Row::integer(), Col::integer().<br/>
+ </p>
+</desc></func>
+<func>
+<name>setCellValue(This, Coords, S) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Coords = {R::integer(), C::integer()}</v><v>S = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setCellValue-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcellvalue">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setCellValue(This, Row, Col, S) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v><v>S = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setCellValue-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcellvalue">external documentation</url>.
+  <br/> Also:<br/>
+  setCellValue(This, Val, Row, Col) -&gt; 'ok' when<br/>
+  	This::wxGrid(), Val::unicode:chardata(), Row::integer(), Col::integer().<br/>
+ </p>
+</desc></func>
+<func>
+<name>setColAttr(This, Col, Attr) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Col = integer()</v><v>Attr = <seealso marker="wxGridCellAttr#type-wxGridCellAttr">wxGridCellAttr:wxGridCellAttr()</seealso></v></type>
+<desc><marker id="setColAttr-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcolattr">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setColFormatBool(This, Col) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Col = integer()</v></type>
+<desc><marker id="setColFormatBool-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcolformatbool">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setColFormatNumber(This, Col) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Col = integer()</v></type>
+<desc><marker id="setColFormatNumber-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcolformatnumber">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setColFormatFloat(This, Col) -&gt; ok</name>
+<fsummary>Equivalent to setColFormatFloat(This, Col, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Col = integer()</v></type>
+<desc><marker id="setColFormatFloat-2"/>
+<p>Equivalent to <seealso marker="#setColFormatFloat-3">setColFormatFloat(This, Col, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setColFormatFloat(This, Col, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Col = integer()</v><v>Option = {width, integer()} | {precision, integer()}</v></type>
+<desc><marker id="setColFormatFloat-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcolformatfloat">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setColFormatCustom(This, Col, TypeName) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Col = integer()</v><v>TypeName = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setColFormatCustom-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcolformatcustom">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setColLabelAlignment(This, Horiz, Vert) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Horiz = integer()</v><v>Vert = integer()</v></type>
+<desc><marker id="setColLabelAlignment-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcollabelalignment">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setColLabelSize(This, Height) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Height = integer()</v></type>
+<desc><marker id="setColLabelSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcollabelsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setColLabelValue(This, Col, Val) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Col = integer()</v><v>Val = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setColLabelValue-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcollabelvalue">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setColMinimalWidth(This, Col, Width) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Col = integer()</v><v>Width = integer()</v></type>
+<desc><marker id="setColMinimalWidth-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcolminimalwidth">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setColMinimalAcceptableWidth(This, Width) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Width = integer()</v></type>
+<desc><marker id="setColMinimalAcceptableWidth-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcolminimalacceptablewidth">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setColSize(This, Col, Width) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Col = integer()</v><v>Width = integer()</v></type>
+<desc><marker id="setColSize-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetcolsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setDefaultCellAlignment(This, Horiz, Vert) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Horiz = integer()</v><v>Vert = integer()</v></type>
+<desc><marker id="setDefaultCellAlignment-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetdefaultcellalignment">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setDefaultCellBackgroundColour(This, Val) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Val = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setDefaultCellBackgroundColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetdefaultcellbackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setDefaultCellFont(This, Val) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Val = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v></type>
+<desc><marker id="setDefaultCellFont-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetdefaultcellfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setDefaultCellTextColour(This, Val) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Val = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setDefaultCellTextColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetdefaultcelltextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setDefaultEditor(This, Editor) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Editor = <seealso marker="wxGridCellEditor#type-wxGridCellEditor">wxGridCellEditor:wxGridCellEditor()</seealso></v></type>
+<desc><marker id="setDefaultEditor-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetdefaulteditor">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setDefaultRenderer(This, Renderer) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Renderer = <seealso marker="wxGridCellRenderer#type-wxGridCellRenderer">wxGridCellRenderer:wxGridCellRenderer()</seealso></v></type>
+<desc><marker id="setDefaultRenderer-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetdefaultrenderer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setDefaultColSize(This, Width) -&gt; ok</name>
+<fsummary>Equivalent to setDefaultColSize(This, Width, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Width = integer()</v></type>
+<desc><marker id="setDefaultColSize-2"/>
+<p>Equivalent to <seealso marker="#setDefaultColSize-3">setDefaultColSize(This, Width, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setDefaultColSize(This, Width, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Width = integer()</v><v>Option = {resizeExistingCols, boolean()}</v></type>
+<desc><marker id="setDefaultColSize-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetdefaultcolsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setDefaultRowSize(This, Height) -&gt; ok</name>
+<fsummary>Equivalent to setDefaultRowSize(This, Height, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Height = integer()</v></type>
+<desc><marker id="setDefaultRowSize-2"/>
+<p>Equivalent to <seealso marker="#setDefaultRowSize-3">setDefaultRowSize(This, Height, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setDefaultRowSize(This, Height, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Height = integer()</v><v>Option = {resizeExistingRows, boolean()}</v></type>
+<desc><marker id="setDefaultRowSize-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetdefaultrowsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setGridCursor(This, Row, Col) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="setGridCursor-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetgridcursor">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setGridLineColour(This, Val) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Val = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setGridLineColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetgridlinecolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setLabelBackgroundColour(This, Val) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Val = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setLabelBackgroundColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetlabelbackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setLabelFont(This, Val) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Val = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v></type>
+<desc><marker id="setLabelFont-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetlabelfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setLabelTextColour(This, Val) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Val = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setLabelTextColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetlabeltextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMargins(This, ExtraWidth, ExtraHeight) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>ExtraWidth = integer()</v><v>ExtraHeight = integer()</v></type>
+<desc><marker id="setMargins-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetmargins">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setReadOnly(This, Row, Col) -&gt; ok</name>
+<fsummary>Equivalent to setReadOnly(This, Row, Col, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="setReadOnly-3"/>
+<p>Equivalent to <seealso marker="#setReadOnly-4">setReadOnly(This, Row, Col, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setReadOnly(This, Row, Col, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Col = integer()</v><v>Option = {isReadOnly, boolean()}</v></type>
+<desc><marker id="setReadOnly-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetreadonly">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setRowAttr(This, Row, Attr) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Attr = <seealso marker="wxGridCellAttr#type-wxGridCellAttr">wxGridCellAttr:wxGridCellAttr()</seealso></v></type>
+<desc><marker id="setRowAttr-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetrowattr">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setRowLabelAlignment(This, Horiz, Vert) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Horiz = integer()</v><v>Vert = integer()</v></type>
+<desc><marker id="setRowLabelAlignment-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetrowlabelalignment">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setRowLabelSize(This, Width) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Width = integer()</v></type>
+<desc><marker id="setRowLabelSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetrowlabelsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setRowLabelValue(This, Row, Val) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Val = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setRowLabelValue-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetrowlabelvalue">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setRowMinimalHeight(This, Row, Width) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Width = integer()</v></type>
+<desc><marker id="setRowMinimalHeight-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetrowminimalheight">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setRowMinimalAcceptableHeight(This, Width) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Width = integer()</v></type>
+<desc><marker id="setRowMinimalAcceptableHeight-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetrowminimalacceptableheight">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setRowSize(This, Row, Height) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Row = integer()</v><v>Height = integer()</v></type>
+<desc><marker id="setRowSize-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetrowsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setScrollLineX(This, X) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>X = integer()</v></type>
+<desc><marker id="setScrollLineX-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetscrolllinex">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setScrollLineY(This, Y) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Y = integer()</v></type>
+<desc><marker id="setScrollLineY-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetscrollliney">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSelectionBackground(This, C) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>C = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setSelectionBackground-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetselectionbackground">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSelectionForeground(This, C) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>C = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setSelectionForeground-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetselectionforeground">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSelectionMode(This, Selmode) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Selmode = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></v></type>
+<desc><marker id="setSelectionMode-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridsetselectionmode">external documentation</url>.
+ <br/> Selmode = ?wxGrid_wxGridSelectCells | ?wxGrid_wxGridSelectRows | ?wxGrid_wxGridSelectColumns</p>
+</desc></func>
+<func>
+<name>showCellEditControl(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v></type>
+<desc><marker id="showCellEditControl-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridshowcelleditcontrol">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>xToCol(This, X) -&gt; integer()</name>
+<fsummary>Equivalent to xToCol(This, X, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>X = integer()</v></type>
+<desc><marker id="xToCol-2"/>
+<p>Equivalent to <seealso marker="#xToCol-3">xToCol(This, X, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>xToCol(This, X, Options::[Option]) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>X = integer()</v><v>Option = {clipToMinMax, boolean()}</v></type>
+<desc><marker id="xToCol-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridxtocol">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>xToEdgeOfCol(This, X) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>X = integer()</v></type>
+<desc><marker id="xToEdgeOfCol-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridxtoedgeofcol">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>yToEdgeOfRow(This, Y) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Y = integer()</v></type>
+<desc><marker id="yToEdgeOfRow-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridytoedgeofrow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>yToRow(This, Y) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGrid">wxGrid()</seealso></v><v>Y = integer()</v></type>
+<desc><marker id="yToRow-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgrid.html#wxgridytorow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxGrid">wxGrid()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

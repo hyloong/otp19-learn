@@ -65,9 +65,8 @@ client_hello(Host, Port, Cookie, ConnectionStates,
     TLSVersion = dtls_v1:corresponding_tls_version(Version),
     CipherSuites = ssl_handshake:available_suites(UserSuites, TLSVersion),
 
-    Extensions = ssl_handshake:client_hello_extensions(Host, TLSVersion, CipherSuites,
-						SslOpts, ConnectionStates, Renegotiation),
-
+    Extensions = ssl_handshake:client_hello_extensions(TLSVersion, CipherSuites,
+                                                       SslOpts, ConnectionStates, Renegotiation),
     Id = ssl_session:client_id({Host, Port, SslOpts}, Cache, CacheCb, OwnCert),
 
     #client_hello{session_id = Id,
@@ -252,7 +251,7 @@ enc_handshake(#server_hello{} = HandshakeMsg, Version) ->
     {Type,  <<?BYTE(DTLSMajor), ?BYTE(DTLSMinor), Rest/binary>>};
 
 enc_handshake(HandshakeMsg, Version) ->
-    ssl_handshake:encode_handshake(HandshakeMsg, Version).
+    ssl_handshake:encode_handshake(HandshakeMsg, dtls_v1:corresponding_tls_version(Version)).
 
 bin_fragments(Bin, Size) ->
      bin_fragments(Bin, size(Bin), Size, 0, []).
@@ -455,7 +454,7 @@ merge_fragments(#handshake_fragment{
 		   fragment_offset = PreviousOffSet,
 		   fragment_length = CurrentLen}) when CurrentLen < PreviousLen ->
     Previous;
-%% Next fragment
+%% Next fragment, might be overlapping
 merge_fragments(#handshake_fragment{
 		   fragment_offset = PreviousOffSet, 
 		   fragment_length = PreviousLen,
@@ -464,10 +463,26 @@ merge_fragments(#handshake_fragment{
 		#handshake_fragment{
 		   fragment_offset = CurrentOffSet,
 		   fragment_length = CurrentLen,
-		   fragment = CurrentData}) when PreviousOffSet + PreviousLen == CurrentOffSet->
-	    Previous#handshake_fragment{
-	      fragment_length =  PreviousLen + CurrentLen,
-	      fragment = <<PreviousData/binary, CurrentData/binary>>};
+                  fragment = CurrentData})
+  when PreviousOffSet + PreviousLen >= CurrentOffSet andalso
+       PreviousOffSet + PreviousLen < CurrentOffSet + CurrentLen ->
+    CurrentStart = PreviousOffSet + PreviousLen - CurrentOffSet,
+    <<_:CurrentStart/bytes, Data/binary>> = CurrentData,
+    Previous#handshake_fragment{
+      fragment_length =  PreviousLen + CurrentLen - CurrentStart,
+      fragment = <<PreviousData/binary, Data/binary>>};
+%% already fully contained fragment
+merge_fragments(#handshake_fragment{
+                   fragment_offset = PreviousOffSet, 
+                   fragment_length = PreviousLen
+                  } = Previous, 
+                #handshake_fragment{
+                   fragment_offset = CurrentOffSet,
+                   fragment_length = CurrentLen})
+  when PreviousOffSet + PreviousLen >= CurrentOffSet andalso
+       PreviousOffSet + PreviousLen >= CurrentOffSet + CurrentLen ->
+    Previous;
+
 %% No merge there is a gap
 merge_fragments(Previous, Current) ->
     [Previous, Current].

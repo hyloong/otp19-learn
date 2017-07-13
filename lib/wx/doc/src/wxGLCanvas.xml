@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxGLCanvas</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxGLCanvas.xml</file></header>
+<module>wxGLCanvas</module>
+<modulesummary>See external documentation: wxGLCanvas.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxglcanvas.html">wxGLCanvas</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxGLCanvas"/>wxGLCanvas()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new(Parent) -&gt; <seealso marker="#type-wxGLCanvas">wxGLCanvas()</seealso></name>
+<fsummary>Equivalent to new(Parent, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="new-1"/>
+<p>Equivalent to <seealso marker="#new-2">new(Parent, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Shared) -&gt; <seealso marker="#type-wxGLCanvas">wxGLCanvas()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Shared = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso> | <seealso marker="#type-wxGLCanvas">wxGLCanvas()</seealso></v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxglcanvas.html#wxglcanvaswxglcanvas">external documentation</url>.
+  <br/> Also:<br/>
+  new(Parent, [Option]) -&gt; wxGLCanvas() when<br/>
+  	Parent::wxWindow:wxWindow(),<br/>
+  	Option :: {'id', integer()}<br/>
+  		 | {'pos', {X::integer(), Y::integer()}}<br/>
+  		 | {'size', {W::integer(), H::integer()}}<br/>
+  		 | {'style', integer()}<br/>
+  		 | {'name', unicode:chardata()}<br/>
+  		 | {'attribList', [integer()]}<br/>
+  		 | {'palette', wxPalette:wxPalette()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>new(Parent, Shared, Options::[Option]) -&gt; <seealso marker="#type-wxGLCanvas">wxGLCanvas()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Shared = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso> | <seealso marker="#type-wxGLCanvas">wxGLCanvas()</seealso></v><v>Option = {id, integer()} | {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()} | {name, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {attribList, [integer()]} | {palette, <seealso marker="wxPalette#type-wxPalette">wxPalette:wxPalette()</seealso>}</v></type>
+<desc><marker id="new-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxglcanvas.html#wxglcanvaswxglcanvas">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getContext(This) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGLCanvas">wxGLCanvas()</seealso></v></type>
+<desc><marker id="getContext-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxglcanvas.html#wxglcanvasgetcontext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setCurrent(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGLCanvas">wxGLCanvas()</seealso></v></type>
+<desc><marker id="setCurrent-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxglcanvas.html#wxglcanvassetcurrent">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>swapBuffers(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGLCanvas">wxGLCanvas()</seealso></v></type>
+<desc><marker id="swapBuffers-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxglcanvas.html#wxglcanvasswapbuffers">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxGLCanvas">wxGLCanvas()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

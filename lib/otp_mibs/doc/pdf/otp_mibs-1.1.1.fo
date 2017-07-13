@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="cover" margin="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin="0mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="left-page" margin-top="25mm" margin-bottom="15mm" margin-left="20mm" margin-right="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="left-header" extent="10mm"/>
+      <fo:region-after region-name="left-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="right-page" margin-top="25mm" margin-bottom="15mm" margin-left="25mm" margin-right="20mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="right-header" extent="10mm"/>
+      <fo:region-after region-name="right-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:page-sequence-master master-name="document">
+      <fo:repeatable-page-master-alternatives>
+        <fo:conditional-page-master-reference master-reference="left-page" odd-or-even="even"/>
+        <fo:conditional-page-master-reference master-reference="right-page" odd-or-even="odd"/>
+      </fo:repeatable-page-master-alternatives>
+    </fo:page-sequence-master>
+  </fo:layout-master-set>
+  <fo:bookmark-tree>
+    <fo:bookmark internal-destination="cover-page" starting-state="show">
+      <fo:bookmark-title>OTP_Mibs</fo:bookmark-title>
+      <fo:bookmark internal-destination="idp866112" starting-state="hide">
+        <fo:bookmark-title>OTP_Mibs User's Guide</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp1372704" starting-state="hide">
+          <fo:bookmark-title>Introduction</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp1098752" starting-state="hide">
+            <fo:bookmark-title>Purpose</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1373344" starting-state="hide">
+            <fo:bookmark-title>Pre-requisites</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp1396480" starting-state="hide">
+          <fo:bookmark-title>Mibs</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp889760" starting-state="hide">
+            <fo:bookmark-title>Structure</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1365744" starting-state="hide">
+            <fo:bookmark-title>OTP-MIB</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1128144" starting-state="hide">
+            <fo:bookmark-title>OTP-REG</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1296608" starting-state="hide">
+            <fo:bookmark-title>OTP-TC</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+      <fo:bookmark internal-destination="idp1395776" starting-state="hide">
+        <fo:bookmark-title>Reference Manual</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp1250000" starting-state="hide">
+          <fo:bookmark-title>otp_mib</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp1190352" starting-state="hide">
+            <fo:bookmark-title>load/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp819248" starting-state="hide">
+            <fo:bookmark-title>unload/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+    </fo:bookmark>
+  </fo:bookmark-tree>
+  <fo:page-sequence font-family="sans-serif" force-page-count="even" master-reference="cover" font-size="10pt">
+    <fo:flow flow-name="xsl-region-body">
+      <fo:block space-before="130mm" space-before.conditionality="retain" text-align="end">
+        <fo:external-graphic src="/root/download/otp_src_20.0/bootstrap/lib/erl_docgen/priv/images/erlang-logo.gif"/>
+      </fo:block>
+      <fo:block id="cover-page" border-before-style="solid" border-before-width="10pt" border-color="#960003" font-size="2.3em" padding-before="0.5em" text-align="end">OTP_Mibs</fo:block>
+      <fo:block font-size="0.9em" text-align="end">Copyright © 2003-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em" text-align="end">OTP_Mibs 1.1.1</fo:block>
+      <fo:block font-size="0.9em" text-align="end">July 12, 2017</fo:block>
+      <fo:block padding-before="2.5em" font-size="1.33em" font-weight="bold" color="#C00" text-align="end"/>
+      <fo:block break-before="page" border-before-style="solid" border-before-width="1pt" border-color="#960003" font-weight="bold" padding-before="0.5em" space-before="200mm" space-before.conditionality="retain">Copyright © 2003-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em">
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+ 
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+    
+    Ericsson AB. All Rights Reserved..
+        </fo:block>
+      <fo:block font-size="0.9em" font-weight="bold" space-before="2em">July 12, 2017</fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+  <fo:page-sequence font-family="serif" master-reference="document" initial-page-number="1" font-size="10pt">
+    <fo:static-content flow-name="left-header">
+      <fo:block text-align="start" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-header">
+      <fo:block text-align="end" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="left-footer">
+      <fo:block text-align="start" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold"><fo:page-number/> | Ericsson AB. All Rights Reserved.:
+            OTP_Mibs</fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-footer">
+      <fo:block text-align="end" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">Ericsson AB. All Rights Reserved.:
+            OTP_Mibs | <fo:page-number/></fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body"><fo:block/><fo:block id="idp866112" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">1   
+      OTP_Mibs User's Guide</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-weight="bold">OTP_Mibs</fo:inline> application provides an SNMP management
+      information base for Erlang nodes.</fo:block>
+  <fo:block id="idp1372704" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.1  Introduction</fo:marker>1.1  Introduction</fo:block><fo:block id="idp1098752" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.1 
+      Purpose</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The purpose of the OTP_Mibs application is to provide an SNMP
+      management information base for Erlang nodes.</fo:block>
+  <fo:block id="idp1373344" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.2 
+      Pre-requisites</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">It is assumed that the reader is familiar with the Erlang
+      programming language, concepts of OTP and has a basic knowledge
+      of SNMP.</fo:block>
+  <fo:block id="idp1396480" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.2  Mibs</fo:marker>1.2  Mibs</fo:block><fo:block id="idp889760" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.2.1 
+      Structure</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The OTP mibs are stored in the
+      <fo:inline font-family="monospace">$OTP_ROOT/lib/otp_mibs/mibs/</fo:inline> directory. They
+      are defined in SNMPv2 SMI syntax. An SNMPv1 version of the mib is
+      delivered in the <fo:inline font-family="monospace">mibs/v1</fo:inline> directory. The compiled MIB is
+      located under <fo:inline font-family="monospace">priv/mibs</fo:inline>, and the generated <fo:inline font-family="monospace">.hrl</fo:inline>
+      file under the <fo:inline font-family="monospace">include</fo:inline> directory. To compile a MIB that
+      IMPORTS a MIB in the OTP_Mibs application, give the option
+      <fo:inline font-family="monospace">{il, ["otp_mibs/priv/mibs"]}</fo:inline> to the MIB compiler.</fo:block>
+  <fo:block id="idp1365744" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.2.2 
+      OTP-MIB</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The OTP-MIB mib represents information about Erlang nodes such as
+      node name, number of running processes, virtual machine version
+      etc. If the MIB should be used in a system, it should be
+      loaded into an SNMP agent by using the API function
+      <fo:inline font-family="monospace">otp_mib:load/1</fo:inline>.</fo:block>
+  <fo:block id="idp1128144" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.2.3 
+      OTP-REG</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The OTP-REG mib defines the unique OTP subtree of object
+      identifiers under the Ericsson subtree. Under the OTP subtree
+      several object identifiers are defined. This module is typically
+      included by OTP applications defining their own mibs, or ASN.1
+      modules in general, that require unique object identifiers under
+      the OTP subtree.</fo:block>
+  <fo:block id="idp1296608" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.2.4 
+      OTP-TC</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The OTP-TC mib provides the textual convention datatype
+      <fo:inline font-family="monospace">OwnerString</fo:inline>.</fo:block>
+  <fo:block id="idp1395776" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">2   
+      Reference Manual</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-weight="bold">OTP_Mibs</fo:inline> application provides an SNMP management
+      information base for Erlang nodes.</fo:block>
+  <fo:block page-break-before="always" id="idp1250000" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">otp_mib</fo:marker>otp_mib</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  otp_mib
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The SNMP application should be used to start an SNMP agent. Then
+      the API functions below can be used to load/unload the OTP-MIB
+      into/from the agent. The instrumentation of the OTP-MIB uses
+      Mnesia, hence Mnesia must be started prior to loading the OTP-MIB.</fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1190352">load(Agent) -&gt; ok | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Agent = pid() | atom()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = term()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Loads the OTP-MIB.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp819248">unload(Agent) -&gt; ok | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Agent = pid() | atom()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = term()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Unloads the OTP-MIB.</fo:block>
+      </fo:block>
+  
+
+  <fo:block id="idp1214000" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">See Also</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">snmp(3)</fo:block>
+  
+</fo:flow>
+  </fo:page-sequence>
+</fo:root>

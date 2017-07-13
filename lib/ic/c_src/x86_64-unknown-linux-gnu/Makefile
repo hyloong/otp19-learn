@@ -73,7 +73,7 @@ AR_OUT = rc
 else
 AR_OUT = rcv
 endif
-CC_FLAGS = -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -fPIC
+CC_FLAGS = -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -fPIC
 LIBRARY = $(LIBDIR)/libic.a
 SKIP_BUILDING_BINARIES := false
 endif
@@ -108,7 +108,7 @@ H_FILES = $(INCDIR)/ic.h
 
 OBJ_FILES= $(C_FILES:%.c=$(OBJDIR)/%.o) 
 
-ALL_CFLAGS = -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -DHAVE_CONFIG_H -I$(INCDIR) $(ERL_INTERFACE_FLAGS) $(CFLAGS) 
+ALL_CFLAGS = -Werror=undef -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -DHAVE_CONFIG_H -I$(INCDIR) $(ERL_INTERFACE_FLAGS) $(CFLAGS) 
 
 # ----------------------------------------------------
 # Targets

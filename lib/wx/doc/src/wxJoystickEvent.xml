@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxJoystickEvent</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxJoystickEvent.xml</file></header>
+<module>wxJoystickEvent</module>
+<modulesummary>See external documentation: wxJoystickEvent.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxjoystickevent.html">wxJoystickEvent</url>.
+  </p><taglist><tag>Use <seealso marker="wxEvtHandler#connect-3">wxEvtHandler:connect/3</seealso> with EventType:</tag>
+  <item><p><em>joy_button_down</em>, <em>joy_button_up</em>, <em>joy_move</em>, <em>joy_zmove</em></p></item></taglist><p>
+  See also the message variant <seealso marker="wxEvtHandler#type-wxJoystick">#wxJoystick{</seealso>} event record type.</p>
+ 
+  <p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxEvent">wxEvent</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxJoystickEvent"/>wxJoystickEvent()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>buttonDown(This) -&gt; boolean()</name>
+<fsummary>Equivalent to buttonDown(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxJoystickEvent">wxJoystickEvent()</seealso></v></type>
+<desc><marker id="buttonDown-1"/>
+<p>Equivalent to <seealso marker="#buttonDown-2">buttonDown(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>buttonDown(This, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxJoystickEvent">wxJoystickEvent()</seealso></v><v>Option = {but, integer()}</v></type>
+<desc><marker id="buttonDown-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxjoystickevent.html#wxjoystickeventbuttondown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>buttonIsDown(This) -&gt; boolean()</name>
+<fsummary>Equivalent to buttonIsDown(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxJoystickEvent">wxJoystickEvent()</seealso></v></type>
+<desc><marker id="buttonIsDown-1"/>
+<p>Equivalent to <seealso marker="#buttonIsDown-2">buttonIsDown(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>buttonIsDown(This, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxJoystickEvent">wxJoystickEvent()</seealso></v><v>Option = {but, integer()}</v></type>
+<desc><marker id="buttonIsDown-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxjoystickevent.html#wxjoystickeventbuttonisdown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>buttonUp(This) -&gt; boolean()</name>
+<fsummary>Equivalent to buttonUp(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxJoystickEvent">wxJoystickEvent()</seealso></v></type>
+<desc><marker id="buttonUp-1"/>
+<p>Equivalent to <seealso marker="#buttonUp-2">buttonUp(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>buttonUp(This, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxJoystickEvent">wxJoystickEvent()</seealso></v><v>Option = {but, integer()}</v></type>
+<desc><marker id="buttonUp-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxjoystickevent.html#wxjoystickeventbuttonup">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getButtonChange(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxJoystickEvent">wxJoystickEvent()</seealso></v></type>
+<desc><marker id="getButtonChange-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxjoystickevent.html#wxjoystickeventgetbuttonchange">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getButtonState(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxJoystickEvent">wxJoystickEvent()</seealso></v></type>
+<desc><marker id="getButtonState-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxjoystickevent.html#wxjoystickeventgetbuttonstate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getJoystick(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxJoystickEvent">wxJoystickEvent()</seealso></v></type>
+<desc><marker id="getJoystick-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxjoystickevent.html#wxjoystickeventgetjoystick">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPosition(This) -&gt; {X::integer(), Y::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxJoystickEvent">wxJoystickEvent()</seealso></v></type>
+<desc><marker id="getPosition-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxjoystickevent.html#wxjoystickeventgetposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getZPosition(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxJoystickEvent">wxJoystickEvent()</seealso></v></type>
+<desc><marker id="getZPosition-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxjoystickevent.html#wxjoystickeventgetzposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isButton(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxJoystickEvent">wxJoystickEvent()</seealso></v></type>
+<desc><marker id="isButton-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxjoystickevent.html#wxjoystickeventisbutton">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isMove(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxJoystickEvent">wxJoystickEvent()</seealso></v></type>
+<desc><marker id="isMove-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxjoystickevent.html#wxjoystickeventismove">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isZMove(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxJoystickEvent">wxJoystickEvent()</seealso></v></type>
+<desc><marker id="isZMove-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxjoystickevent.html#wxjoystickeventiszmove">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

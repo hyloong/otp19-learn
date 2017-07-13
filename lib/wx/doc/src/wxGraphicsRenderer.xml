@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxGraphicsRenderer</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxGraphicsRenderer.xml</file></header>
+<module>wxGraphicsRenderer</module>
+<modulesummary>See external documentation: wxGraphicsRenderer.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsrenderer.html">wxGraphicsRenderer</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxGraphicsRenderer"/>wxGraphicsRenderer()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>getDefaultRenderer() -&gt; <seealso marker="#type-wxGraphicsRenderer">wxGraphicsRenderer()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="getDefaultRenderer-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsrenderer.html#wxgraphicsrenderergetdefaultrenderer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createContext(This, Dc) -&gt; <seealso marker="wxGraphicsContext#type-wxGraphicsContext">wxGraphicsContext:wxGraphicsContext()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsRenderer">wxGraphicsRenderer()</seealso></v><v>Dc = <seealso marker="wxWindowDC#type-wxWindowDC">wxWindowDC:wxWindowDC()</seealso> | <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="createContext-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsrenderer.html#wxgraphicsrenderercreatecontext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createPen(This, Pen) -&gt; <seealso marker="wxGraphicsPen#type-wxGraphicsPen">wxGraphicsPen:wxGraphicsPen()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsRenderer">wxGraphicsRenderer()</seealso></v><v>Pen = <seealso marker="wxPen#type-wxPen">wxPen:wxPen()</seealso></v></type>
+<desc><marker id="createPen-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsrenderer.html#wxgraphicsrenderercreatepen">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createBrush(This, Brush) -&gt; <seealso marker="wxGraphicsBrush#type-wxGraphicsBrush">wxGraphicsBrush:wxGraphicsBrush()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsRenderer">wxGraphicsRenderer()</seealso></v><v>Brush = <seealso marker="wxBrush#type-wxBrush">wxBrush:wxBrush()</seealso></v></type>
+<desc><marker id="createBrush-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsrenderer.html#wxgraphicsrenderercreatebrush">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createLinearGradientBrush(This, X1, Y1, X2, Y2, C1, C2) -&gt; <seealso marker="wxGraphicsBrush#type-wxGraphicsBrush">wxGraphicsBrush:wxGraphicsBrush()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsRenderer">wxGraphicsRenderer()</seealso></v><v>X1 = number()</v><v>Y1 = number()</v><v>X2 = number()</v><v>Y2 = number()</v><v>C1 = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v><v>C2 = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="createLinearGradientBrush-7"/>
+<p><em>This function is deprecated: </em>deprecated function not available in wxWidgets-2.9 and later</p>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsrenderer.html#wxgraphicsrenderercreatelineargradientbrush">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createRadialGradientBrush(This, Xo, Yo, Xc, Yc, Radius, OColor, CColor) -&gt; <seealso marker="wxGraphicsBrush#type-wxGraphicsBrush">wxGraphicsBrush:wxGraphicsBrush()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsRenderer">wxGraphicsRenderer()</seealso></v><v>Xo = number()</v><v>Yo = number()</v><v>Xc = number()</v><v>Yc = number()</v><v>Radius = number()</v><v>OColor = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v><v>CColor = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="createRadialGradientBrush-8"/>
+<p><em>This function is deprecated: </em>deprecated function not available in wxWidgets-2.9 and later</p>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsrenderer.html#wxgraphicsrenderercreateradialgradientbrush">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createFont(This, Font) -&gt; <seealso marker="wxGraphicsFont#type-wxGraphicsFont">wxGraphicsFont:wxGraphicsFont()</seealso></name>
+<fsummary>Equivalent to createFont(This, Font, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsRenderer">wxGraphicsRenderer()</seealso></v><v>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v></type>
+<desc><marker id="createFont-2"/>
+<p>Equivalent to <seealso marker="#createFont-3">createFont(This, Font, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>createFont(This, Font, Options::[Option]) -&gt; <seealso marker="wxGraphicsFont#type-wxGraphicsFont">wxGraphicsFont:wxGraphicsFont()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsRenderer">wxGraphicsRenderer()</seealso></v><v>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v><v>Option = {col, <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso>}</v></type>
+<desc><marker id="createFont-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsrenderer.html#wxgraphicsrenderercreatefont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createMatrix(This) -&gt; <seealso marker="wxGraphicsMatrix#type-wxGraphicsMatrix">wxGraphicsMatrix:wxGraphicsMatrix()</seealso></name>
+<fsummary>Equivalent to createMatrix(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsRenderer">wxGraphicsRenderer()</seealso></v></type>
+<desc><marker id="createMatrix-1"/>
+<p>Equivalent to <seealso marker="#createMatrix-2">createMatrix(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>createMatrix(This, Options::[Option]) -&gt; <seealso marker="wxGraphicsMatrix#type-wxGraphicsMatrix">wxGraphicsMatrix:wxGraphicsMatrix()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsRenderer">wxGraphicsRenderer()</seealso></v><v>Option = {a, number()} | {b, number()} | {c, number()} | {d, number()} | {tx, number()} | {ty, number()}</v></type>
+<desc><marker id="createMatrix-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsrenderer.html#wxgraphicsrenderercreatematrix">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createPath(This) -&gt; <seealso marker="wxGraphicsPath#type-wxGraphicsPath">wxGraphicsPath:wxGraphicsPath()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsRenderer">wxGraphicsRenderer()</seealso></v></type>
+<desc><marker id="createPath-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicsrenderer.html#wxgraphicsrenderercreatepath">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxCaret</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxCaret.xml</file></header>
+<module>wxCaret</module>
+<modulesummary>See external documentation: wxCaret.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcaret.html">wxCaret</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxCaret"/>wxCaret()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new(Window, Size) -&gt; <seealso marker="#type-wxCaret">wxCaret()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Size = {W::integer(), H::integer()}</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcaret.html#wxcaretwxcaret">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Window, Width, Height) -&gt; <seealso marker="#type-wxCaret">wxCaret()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Width = integer()</v><v>Height = integer()</v></type>
+<desc><marker id="new-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcaret.html#wxcaretwxcaret">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(This, Window, Size) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCaret">wxCaret()</seealso></v><v>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Size = {W::integer(), H::integer()}</v></type>
+<desc><marker id="create-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcaret.html#wxcaretcreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(This, Window, Width, Height) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCaret">wxCaret()</seealso></v><v>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Width = integer()</v><v>Height = integer()</v></type>
+<desc><marker id="create-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcaret.html#wxcaretcreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getBlinkTime() -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="getBlinkTime-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcaret.html#wxcaretgetblinktime">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPosition(This) -&gt; {X::integer(), Y::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCaret">wxCaret()</seealso></v></type>
+<desc><marker id="getPosition-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcaret.html#wxcaretgetposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSize(This) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCaret">wxCaret()</seealso></v></type>
+<desc><marker id="getSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcaret.html#wxcaretgetsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getWindow(This) -&gt; <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCaret">wxCaret()</seealso></v></type>
+<desc><marker id="getWindow-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcaret.html#wxcaretgetwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hide(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCaret">wxCaret()</seealso></v></type>
+<desc><marker id="hide-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcaret.html#wxcarethide">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isOk(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCaret">wxCaret()</seealso></v></type>
+<desc><marker id="isOk-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcaret.html#wxcaretisok">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isVisible(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCaret">wxCaret()</seealso></v></type>
+<desc><marker id="isVisible-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcaret.html#wxcaretisvisible">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>move(This, Pt) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCaret">wxCaret()</seealso></v><v>Pt = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="move-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcaret.html#wxcaretmove">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>move(This, X, Y) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCaret">wxCaret()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="move-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcaret.html#wxcaretmove">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setBlinkTime(Milliseconds) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Milliseconds = integer()</v></type>
+<desc><marker id="setBlinkTime-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcaret.html#wxcaretsetblinktime">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSize(This, Size) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCaret">wxCaret()</seealso></v><v>Size = {W::integer(), H::integer()}</v></type>
+<desc><marker id="setSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcaret.html#wxcaretsetsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSize(This, Width, Height) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCaret">wxCaret()</seealso></v><v>Width = integer()</v><v>Height = integer()</v></type>
+<desc><marker id="setSize-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcaret.html#wxcaretsetsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>show(This) -&gt; ok</name>
+<fsummary>Equivalent to show(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCaret">wxCaret()</seealso></v></type>
+<desc><marker id="show-1"/>
+<p>Equivalent to <seealso marker="#show-2">show(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>show(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCaret">wxCaret()</seealso></v><v>Option = {show, boolean()}</v></type>
+<desc><marker id="show-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcaret.html#wxcaretshow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxCaret">wxCaret()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxAuiManager</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxAuiManager.xml</file></header>
+<module>wxAuiManager</module>
+<modulesummary>See external documentation: wxAuiManager.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html">wxAuiManager</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxAuiManager"/>wxAuiManager()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></name>
+<fsummary>Equivalent to new([]).
+</fsummary>
+
+<desc><marker id="new-0"/>
+<p>Equivalent to <seealso marker="#new-1">new([])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Options::[Option]) -&gt; <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Option = {managed_wnd, <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso>} | {flags, integer()}</v></type>
+<desc><marker id="new-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanagerwxauimanager">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addPane(This, Window) -&gt; boolean()</name>
+<fsummary>Equivalent to addPane(This, Window, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v><v>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="addPane-2"/>
+<p>Equivalent to <seealso marker="#addPane-3">addPane(This, Window, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>addPane(This, Window, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v><v>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {direction, integer()} | {caption, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>}</v></type>
+<desc><marker id="addPane-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanageraddpane">external documentation</url>.
+  <br/> Also:<br/>
+  addPane(This, Window, Pane_info) -&gt; boolean() when<br/>
+  	This::wxAuiManager(), Window::wxWindow:wxWindow(), Pane_info::wxAuiPaneInfo:wxAuiPaneInfo().<br/>
+ </p>
+</desc></func>
+<func>
+<name>addPane(This, Window, Pane_info, Drop_pos) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v><v>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Pane_info = <seealso marker="wxAuiPaneInfo#type-wxAuiPaneInfo">wxAuiPaneInfo:wxAuiPaneInfo()</seealso></v><v>Drop_pos = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="addPane-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanageraddpane">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>detachPane(This, Window) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v><v>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="detachPane-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanagerdetachpane">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getAllPanes(This) -&gt; [<seealso marker="wxAuiPaneInfo#type-wxAuiPaneInfo">wxAuiPaneInfo:wxAuiPaneInfo()</seealso>]</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v></type>
+<desc><marker id="getAllPanes-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanagergetallpanes">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getArtProvider(This) -&gt; <seealso marker="wxAuiDockArt#type-wxAuiDockArt">wxAuiDockArt:wxAuiDockArt()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v></type>
+<desc><marker id="getArtProvider-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanagergetartprovider">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDockSizeConstraint(This) -&gt; {Width_pct::number(), Height_pct::number()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v></type>
+<desc><marker id="getDockSizeConstraint-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanagergetdocksizeconstraint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFlags(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v></type>
+<desc><marker id="getFlags-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanagergetflags">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getManagedWindow(This) -&gt; <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v></type>
+<desc><marker id="getManagedWindow-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanagergetmanagedwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getManager(Window) -&gt; <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="getManager-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanagergetmanager">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPane(This, Name) -&gt; <seealso marker="wxAuiPaneInfo#type-wxAuiPaneInfo">wxAuiPaneInfo:wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="getPane-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanagergetpane">external documentation</url>.
+  <br/> Also:<br/>
+  getPane(This, Window) -&gt; wxAuiPaneInfo:wxAuiPaneInfo() when<br/>
+  	This::wxAuiManager(), Window::wxWindow:wxWindow().<br/>
+ </p>
+</desc></func>
+<func>
+<name>hideHint(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v></type>
+<desc><marker id="hideHint-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanagerhidehint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>insertPane(This, Window, Insert_location) -&gt; boolean()</name>
+<fsummary>Equivalent to insertPane(This, Window, Insert_location, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v><v>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Insert_location = <seealso marker="wxAuiPaneInfo#type-wxAuiPaneInfo">wxAuiPaneInfo:wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="insertPane-3"/>
+<p>Equivalent to <seealso marker="#insertPane-4">insertPane(This, Window, Insert_location, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>insertPane(This, Window, Insert_location, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v><v>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Insert_location = <seealso marker="wxAuiPaneInfo#type-wxAuiPaneInfo">wxAuiPaneInfo:wxAuiPaneInfo()</seealso></v><v>Option = {insert_level, integer()}</v></type>
+<desc><marker id="insertPane-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanagerinsertpane">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>loadPaneInfo(This, Pane_part, Pane) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v><v>Pane_part = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Pane = <seealso marker="wxAuiPaneInfo#type-wxAuiPaneInfo">wxAuiPaneInfo:wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="loadPaneInfo-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanagerloadpaneinfo">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>loadPerspective(This, Perspective) -&gt; boolean()</name>
+<fsummary>Equivalent to loadPerspective(This, Perspective, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v><v>Perspective = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="loadPerspective-2"/>
+<p>Equivalent to <seealso marker="#loadPerspective-3">loadPerspective(This, Perspective, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>loadPerspective(This, Perspective, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v><v>Perspective = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {update, boolean()}</v></type>
+<desc><marker id="loadPerspective-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanagerloadperspective">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>savePaneInfo(This, Pane) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v><v>Pane = <seealso marker="wxAuiPaneInfo#type-wxAuiPaneInfo">wxAuiPaneInfo:wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="savePaneInfo-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanagersavepaneinfo">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>savePerspective(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v></type>
+<desc><marker id="savePerspective-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanagersaveperspective">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setArtProvider(This, Art_provider) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v><v>Art_provider = <seealso marker="wxAuiDockArt#type-wxAuiDockArt">wxAuiDockArt:wxAuiDockArt()</seealso></v></type>
+<desc><marker id="setArtProvider-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanagersetartprovider">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setDockSizeConstraint(This, Width_pct, Height_pct) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v><v>Width_pct = number()</v><v>Height_pct = number()</v></type>
+<desc><marker id="setDockSizeConstraint-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanagersetdocksizeconstraint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFlags(This, Flags) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v><v>Flags = integer()</v></type>
+<desc><marker id="setFlags-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanagersetflags">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setManagedWindow(This, Managed_wnd) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v><v>Managed_wnd = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="setManagedWindow-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanagersetmanagedwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>showHint(This, Rect) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v><v>Rect = {X::integer(), Y::integer(), W::integer(), H::integer()}</v></type>
+<desc><marker id="showHint-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanagershowhint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>unInit(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v></type>
+<desc><marker id="unInit-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanageruninit">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>update(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManager">wxAuiManager()</seealso></v></type>
+<desc><marker id="update-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanager.html#wxauimanagerupdate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxAuiManager">wxAuiManager()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

@@ -936,12 +936,11 @@ Optional Features:
   --disable-FEATURE       do not include FEATURE (same as --enable-FEATURE=no)
   --enable-FEATURE[=ARG]  include FEATURE [ARG=yes]
   --enable-bootstrap-only enable bootstrap only configuration
-  --enable-threads        enable async thread support
-  --disable-threads       disable async thread support
   --enable-dirty-schedulers
                           enable dirty scheduler support
-  --enable-smp-support    enable smp support
-  --disable-smp-support   disable smp support
+  --enable-plain-emulator enable threaded non-smp emulator
+  --disable-plain-emulator
+                          disable threaded non-smp emulator
   --enable-kernel-poll    enable kernel poll support
   --disable-kernel-poll   disable kernel poll support
   --enable-sctp           enable sctp support (default) to on demand load the
@@ -960,6 +959,8 @@ Optional Features:
                           disable reentrant megaco flex scanner
   --disable-dynamic-ssl-lib
                           disable using dynamic openssl libraries
+  --enable-fips           enable OpenSSL FIPS mode support
+  --disable-fips          disable OpenSSL FIPS mode support (default)
   --enable-builtin-zlib   force use of our own built-in zlib
   --enable-sharing-preserving
                           enable copying of terms without destroying sharing
@@ -3397,21 +3398,15 @@ echo "$as_me:$LINENO: result: $OTP_VSN" >&5
 echo "${ECHO_T}$OTP_VSN" >&6
 
 
-# Check whether --enable-threads or --disable-threads was given.
-if test "${enable_threads+set}" = set; then
-  enableval="$enable_threads"
-
-fi;
-
 # Check whether --enable-dirty-schedulers or --disable-dirty-schedulers was given.
 if test "${enable_dirty_schedulers+set}" = set; then
   enableval="$enable_dirty_schedulers"
 
 fi;
 
-# Check whether --enable-smp-support or --disable-smp-support was given.
-if test "${enable_smp_support+set}" = set; then
-  enableval="$enable_smp_support"
+# Check whether --enable-plain-emulator or --disable-plain-emulator was given.
+if test "${enable_plain_emulator+set}" = set; then
+  enableval="$enable_plain_emulator"
 
 fi;
 
@@ -3503,6 +3498,12 @@ if test "${enable_dynamic_ssl_lib+set}" = set; then
 
 fi;
 
+# Check whether --enable-fips or --disable-fips was given.
+if test "${enable_fips+set}" = set; then
+  enableval="$enable_fips"
+
+fi;
+
 # Check whether --enable-builtin-zlib or --disable-builtin-zlib was given.
 if test "${enable_builtin_zlib+set}" = set; then
   enableval="$enable_builtin_zlib"
@@ -3567,14 +3568,12 @@ fi
 
 
 if test X${enable_m64_build} = Xyes; then
-	enable_hipe=no
 	CFLAGS="-m64 $CFLAGS"
 	export CFLAGS
 	LDFLAGS="-m64 $LDFLAGS"
 	export LDFLAGS
 fi
 if test X${enable_m32_build} = Xyes; then
-	enable_hipe=no
 	CFLAGS="-m32 $CFLAGS"
 	export CFLAGS
 	LDFLAGS="-m32 $LDFLAGS"

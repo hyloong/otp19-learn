@@ -1,7 +1,7 @@
 %%
 %% %CopyrightBegin%
 %% 
-%% Copyright Ericsson AB 2002-2016. All Rights Reserved.
+%% Copyright Ericsson AB 2002-2017. All Rights Reserved.
 %% 
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -708,7 +708,7 @@ alloc(I) ->
 
 %% Time to call bif's
 %% Lot's of element stuff which reflects the record code which
-%% is becomming more and more common
+%% is becoming more and more common
 bif_dispatch(0) ->
     0;
 bif_dispatch(I) ->

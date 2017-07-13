@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxHtmlEasyPrinting</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxHtmlEasyPrinting.xml</file></header>
+<module>wxHtmlEasyPrinting</module>
+<modulesummary>See external documentation: wxHtmlEasyPrinting.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmleasyprinting.html">wxHtmlEasyPrinting</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxHtmlEasyPrinting"/>wxHtmlEasyPrinting()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></name>
+<fsummary>Equivalent to new([]).
+</fsummary>
+
+<desc><marker id="new-0"/>
+<p>Equivalent to <seealso marker="#new-1">new([])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Options::[Option]) -&gt; <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Option = {name, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {parentWindow, <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso>}</v></type>
+<desc><marker id="new-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmleasyprinting.html#wxhtmleasyprintingwxhtmleasyprinting">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPrintData(This) -&gt; <seealso marker="wxPrintData#type-wxPrintData">wxPrintData:wxPrintData()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></v></type>
+<desc><marker id="getPrintData-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmleasyprinting.html#wxhtmleasyprintinggetprintdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPageSetupData(This) -&gt; <seealso marker="wxPageSetupDialogData#type-wxPageSetupDialogData">wxPageSetupDialogData:wxPageSetupDialogData()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></v></type>
+<desc><marker id="getPageSetupData-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmleasyprinting.html#wxhtmleasyprintinggetpagesetupdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>previewFile(This, Htmlfile) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></v><v>Htmlfile = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="previewFile-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmleasyprinting.html#wxhtmleasyprintingpreviewfile">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>previewText(This, Htmltext) -&gt; boolean()</name>
+<fsummary>Equivalent to previewText(This, Htmltext, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></v><v>Htmltext = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="previewText-2"/>
+<p>Equivalent to <seealso marker="#previewText-3">previewText(This, Htmltext, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>previewText(This, Htmltext, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></v><v>Htmltext = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {basepath, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>}</v></type>
+<desc><marker id="previewText-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmleasyprinting.html#wxhtmleasyprintingpreviewtext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>printFile(This, Htmlfile) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></v><v>Htmlfile = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="printFile-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmleasyprinting.html#wxhtmleasyprintingprintfile">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>printText(This, Htmltext) -&gt; boolean()</name>
+<fsummary>Equivalent to printText(This, Htmltext, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></v><v>Htmltext = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="printText-2"/>
+<p>Equivalent to <seealso marker="#printText-3">printText(This, Htmltext, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>printText(This, Htmltext, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></v><v>Htmltext = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {basepath, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>}</v></type>
+<desc><marker id="printText-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmleasyprinting.html#wxhtmleasyprintingprinttext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>pageSetup(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></v></type>
+<desc><marker id="pageSetup-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmleasyprinting.html#wxhtmleasyprintingpagesetup">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFonts(This, Normal_face, Fixed_face) -&gt; ok</name>
+<fsummary>Equivalent to setFonts(This, Normal_face, Fixed_face, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></v><v>Normal_face = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Fixed_face = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setFonts-3"/>
+<p>Equivalent to <seealso marker="#setFonts-4">setFonts(This, Normal_face, Fixed_face, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setFonts(This, Normal_face, Fixed_face, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></v><v>Normal_face = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Fixed_face = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {sizes, [integer()]}</v></type>
+<desc><marker id="setFonts-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmleasyprinting.html#wxhtmleasyprintingsetfonts">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setHeader(This, Header) -&gt; ok</name>
+<fsummary>Equivalent to setHeader(This, Header, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></v><v>Header = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setHeader-2"/>
+<p>Equivalent to <seealso marker="#setHeader-3">setHeader(This, Header, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setHeader(This, Header, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></v><v>Header = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {pg, integer()}</v></type>
+<desc><marker id="setHeader-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmleasyprinting.html#wxhtmleasyprintingsetheader">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFooter(This, Footer) -&gt; ok</name>
+<fsummary>Equivalent to setFooter(This, Footer, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></v><v>Footer = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setFooter-2"/>
+<p>Equivalent to <seealso marker="#setFooter-3">setFooter(This, Footer, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setFooter(This, Footer, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso></v><v>Footer = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {pg, integer()}</v></type>
+<desc><marker id="setFooter-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmleasyprinting.html#wxhtmleasyprintingsetfooter">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxHtmlEasyPrinting">wxHtmlEasyPrinting()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

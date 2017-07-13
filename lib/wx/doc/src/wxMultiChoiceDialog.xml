@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxMultiChoiceDialog</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxMultiChoiceDialog.xml</file></header>
+<module>wxMultiChoiceDialog</module>
+<modulesummary>See external documentation: wxMultiChoiceDialog.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmultichoicedialog.html">wxMultiChoiceDialog</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxDialog">wxDialog</seealso>
+  <br/><seealso marker="wxTopLevelWindow">wxTopLevelWindow</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxMultiChoiceDialog"/>wxMultiChoiceDialog()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxMultiChoiceDialog">wxMultiChoiceDialog()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmultichoicedialog.html#wxmultichoicedialogwxmultichoicedialog">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Message, Caption, Choices) -&gt; <seealso marker="#type-wxMultiChoiceDialog">wxMultiChoiceDialog()</seealso></name>
+<fsummary>Equivalent to new(Parent, Message, Caption, Choices, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Message = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Caption = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Choices = [<seealso marker="unicode#type-chardata">unicode:chardata()</seealso>]</v></type>
+<desc><marker id="new-4"/>
+<p>Equivalent to <seealso marker="#new-5">new(Parent, Message, Caption, Choices, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Message, Caption, Choices, Options::[Option]) -&gt; <seealso marker="#type-wxMultiChoiceDialog">wxMultiChoiceDialog()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Message = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Caption = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Choices = [<seealso marker="unicode#type-chardata">unicode:chardata()</seealso>]</v><v>Option = {style, integer()} | {pos, {X::integer(), Y::integer()}}</v></type>
+<desc><marker id="new-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmultichoicedialog.html#wxmultichoicedialogwxmultichoicedialog">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSelections(This) -&gt; [integer()]</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMultiChoiceDialog">wxMultiChoiceDialog()</seealso></v></type>
+<desc><marker id="getSelections-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmultichoicedialog.html#wxmultichoicedialoggetselections">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSelections(This, Selections) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMultiChoiceDialog">wxMultiChoiceDialog()</seealso></v><v>Selections = [integer()]</v></type>
+<desc><marker id="setSelections-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmultichoicedialog.html#wxmultichoicedialogsetselections">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxMultiChoiceDialog">wxMultiChoiceDialog()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

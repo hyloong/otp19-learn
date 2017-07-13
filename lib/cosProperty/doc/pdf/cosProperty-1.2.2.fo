@@ -1,0 +1,875 @@
+<?xml version="1.0"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="cover" margin="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin="0mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="left-page" margin-top="25mm" margin-bottom="15mm" margin-left="20mm" margin-right="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="left-header" extent="10mm"/>
+      <fo:region-after region-name="left-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="right-page" margin-top="25mm" margin-bottom="15mm" margin-left="25mm" margin-right="20mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="right-header" extent="10mm"/>
+      <fo:region-after region-name="right-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:page-sequence-master master-name="document">
+      <fo:repeatable-page-master-alternatives>
+        <fo:conditional-page-master-reference master-reference="left-page" odd-or-even="even"/>
+        <fo:conditional-page-master-reference master-reference="right-page" odd-or-even="odd"/>
+      </fo:repeatable-page-master-alternatives>
+    </fo:page-sequence-master>
+  </fo:layout-master-set>
+  <fo:bookmark-tree>
+    <fo:bookmark internal-destination="cover-page" starting-state="show">
+      <fo:bookmark-title>cosProperty</fo:bookmark-title>
+      <fo:bookmark internal-destination="idp549760" starting-state="hide">
+        <fo:bookmark-title>cosProperty User's Guide</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp444512" starting-state="hide">
+          <fo:bookmark-title>The cosProperty Application</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp304064" starting-state="hide">
+            <fo:bookmark-title>Content Overview</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp511568" starting-state="hide">
+            <fo:bookmark-title>Brief description of the User's Guide</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp570336" starting-state="hide">
+          <fo:bookmark-title>Introduction to cosProperty</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp95664" starting-state="hide">
+            <fo:bookmark-title>Overview</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp97504" starting-state="hide">
+              <fo:bookmark-title>Purpose and Dependencies</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp499728" starting-state="hide">
+              <fo:bookmark-title>Prerequisites</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp536848" starting-state="hide">
+          <fo:bookmark-title>Installing cosProperty</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp441184" starting-state="hide">
+            <fo:bookmark-title>Installation Process</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp442960" starting-state="hide">
+              <fo:bookmark-title>Preparation</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp542240" starting-state="hide">
+              <fo:bookmark-title>Configuration</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp471936" starting-state="hide">
+          <fo:bookmark-title>cosProperty Examples</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp437088" starting-state="hide">
+            <fo:bookmark-title>A tutorial on how to create a simple service</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp437792" starting-state="hide">
+              <fo:bookmark-title>Initiate the application</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp15248" starting-state="hide">
+              <fo:bookmark-title>How to run everything</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+      <fo:bookmark internal-destination="idp13920" starting-state="hide">
+        <fo:bookmark-title>Reference Manual</fo:bookmark-title>
+        <fo:bookmark internal-destination="idm7968" starting-state="hide">
+          <fo:bookmark-title>cosProperty</fo:bookmark-title>
+          <fo:bookmark internal-destination="idm10848" starting-state="hide">
+            <fo:bookmark-title>install/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp850288" starting-state="hide">
+            <fo:bookmark-title>install_db/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idm22896" starting-state="hide">
+            <fo:bookmark-title>uninstall/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp336544" starting-state="hide">
+            <fo:bookmark-title>uninstall_db/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idm15360" starting-state="hide">
+            <fo:bookmark-title>start/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idm14944" starting-state="hide">
+            <fo:bookmark-title>start_SetDefFactory/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp668160" starting-state="hide">
+            <fo:bookmark-title>start_SetFactory/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp666000" starting-state="hide">
+            <fo:bookmark-title>stop_SetDefFactory/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp650288" starting-state="hide">
+            <fo:bookmark-title>stop_SetFactory/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp326496" starting-state="hide">
+            <fo:bookmark-title>stop/0</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp264864" starting-state="hide">
+          <fo:bookmark-title>CosPropertyService_PropertySetFactory</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp601968" starting-state="hide">
+            <fo:bookmark-title>create_propertyset/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp332000" starting-state="hide">
+            <fo:bookmark-title>create_constrained_propertyset/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp426464" starting-state="hide">
+            <fo:bookmark-title>create_initial_propertyset/2</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp643728" starting-state="hide">
+          <fo:bookmark-title>CosPropertyService_PropertySetDefFactory</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp323776" starting-state="hide">
+            <fo:bookmark-title>create_propertysetdef/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp392848" starting-state="hide">
+            <fo:bookmark-title>create_constrained_propertysetdef/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp394432" starting-state="hide">
+            <fo:bookmark-title>create_initial_propertysetdef/2</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp694080" starting-state="hide">
+          <fo:bookmark-title>CosPropertyService_PropertySet</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp605824" starting-state="hide">
+            <fo:bookmark-title>define_property/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp809888" starting-state="hide">
+            <fo:bookmark-title>define_properties/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp816240" starting-state="hide">
+            <fo:bookmark-title>get_number_of_properties/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp819456" starting-state="hide">
+            <fo:bookmark-title>get_all_property_names/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp699392" starting-state="hide">
+            <fo:bookmark-title>get_property_value/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp703760" starting-state="hide">
+            <fo:bookmark-title>get_properties/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp709024" starting-state="hide">
+            <fo:bookmark-title>get_all_properties/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp716112" starting-state="hide">
+            <fo:bookmark-title>delete_property/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp720480" starting-state="hide">
+            <fo:bookmark-title>delete_properties/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp725872" starting-state="hide">
+            <fo:bookmark-title>delete_all_properties/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp729216" starting-state="hide">
+            <fo:bookmark-title>is_property_defined/2</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp739888" starting-state="hide">
+          <fo:bookmark-title>CosPropertyService_PropertySetDef</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp744208" starting-state="hide">
+            <fo:bookmark-title>get_allowed_property_types/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp748432" starting-state="hide">
+            <fo:bookmark-title>get_allowed_properties/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp754080" starting-state="hide">
+            <fo:bookmark-title>define_property_with_mode/4</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp759632" starting-state="hide">
+            <fo:bookmark-title>define_properties_with_modes/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp766672" starting-state="hide">
+            <fo:bookmark-title>get_property_mode/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp862112" starting-state="hide">
+            <fo:bookmark-title>get_property_modes/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp868304" starting-state="hide">
+            <fo:bookmark-title>set_property_mode/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp873168" starting-state="hide">
+            <fo:bookmark-title>set_property_modes/2</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp886128" starting-state="hide">
+          <fo:bookmark-title>CosPropertyService_PropertiesIterator</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp889248" starting-state="hide">
+            <fo:bookmark-title>reset/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp892464" starting-state="hide">
+            <fo:bookmark-title>next_one/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp897264" starting-state="hide">
+            <fo:bookmark-title>next_n/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp904032" starting-state="hide">
+            <fo:bookmark-title>destroy/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp914528" starting-state="hide">
+          <fo:bookmark-title>CosPropertyService_PropertyNamesIterator</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp917664" starting-state="hide">
+            <fo:bookmark-title>reset/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp920880" starting-state="hide">
+            <fo:bookmark-title>next_one/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp925296" starting-state="hide">
+            <fo:bookmark-title>next_n/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp931024" starting-state="hide">
+            <fo:bookmark-title>destroy/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+    </fo:bookmark>
+  </fo:bookmark-tree>
+  <fo:page-sequence font-family="sans-serif" force-page-count="even" master-reference="cover" font-size="10pt">
+    <fo:flow flow-name="xsl-region-body">
+      <fo:block space-before="130mm" space-before.conditionality="retain" text-align="end">
+        <fo:external-graphic src="/root/download/otp_src_20.0/bootstrap/lib/erl_docgen/priv/images/erlang-logo.gif"/>
+      </fo:block>
+      <fo:block id="cover-page" border-before-style="solid" border-before-width="10pt" border-color="#960003" font-size="2.3em" padding-before="0.5em" text-align="end">cosProperty</fo:block>
+      <fo:block font-size="0.9em" text-align="end">Copyright © 2000-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em" text-align="end">cosProperty 1.2.2</fo:block>
+      <fo:block font-size="0.9em" text-align="end">July 12, 2017</fo:block>
+      <fo:block padding-before="2.5em" font-size="1.33em" font-weight="bold" color="#C00" text-align="end"/>
+      <fo:block break-before="page" border-before-style="solid" border-before-width="1pt" border-color="#960003" font-weight="bold" padding-before="0.5em" space-before="200mm" space-before.conditionality="retain">Copyright © 2000-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em">
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+ 
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+    
+    Ericsson AB. All Rights Reserved..
+        </fo:block>
+      <fo:block font-size="0.9em" font-weight="bold" space-before="2em">July 12, 2017</fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+  <fo:page-sequence font-family="serif" master-reference="document" initial-page-number="1" font-size="10pt">
+    <fo:static-content flow-name="left-header">
+      <fo:block text-align="start" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-header">
+      <fo:block text-align="end" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="left-footer">
+      <fo:block text-align="start" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold"><fo:page-number/> | Ericsson AB. All Rights Reserved.:
+            cosProperty</fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-footer">
+      <fo:block text-align="end" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">Ericsson AB. All Rights Reserved.:
+            cosProperty | <fo:page-number/></fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body"><fo:block/><fo:block id="idp549760" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">1   
+      cosProperty User's Guide</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The cosProperty Application is an Erlang implementation of the OMG
+      CORBA Property Service.</fo:block>
+  <fo:block id="idp444512" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.1  The cosProperty Application</fo:marker>1.1  The cosProperty Application</fo:block><fo:block id="idp304064" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.1 
+      Content Overview</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The cosProperty documentation is divided into three sections:
+      </fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">PART ONE - The User's Guide  
+                    <fo:block/>
+Description of the cosProperty Application including 
+          services and a small tutorial demonstrating 
+          the development of a simple service.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">PART TWO - Release Notes
+                    <fo:block/>
+A concise history of cosProperty.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">PART THREE - The Reference Manual
+                    <fo:block/>
+ A quick reference guide, including a
+          brief description, to all the functions available in cosProperty.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+  <fo:block id="idp511568" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.2 
+      Brief description of the User's Guide</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The User's Guide  contains the following parts:</fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">cosProperty overview</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">cosProperty installation</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A tutorial example</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+  <fo:block id="idp570336" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.2  Introduction to cosProperty</fo:marker>1.2  Introduction to cosProperty</fo:block><fo:block id="idp95664" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.2.1 
+      Overview</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The cosProperty application is compliant with the <fo:inline font-weight="bold"><fo:basic-link external-destination="href">OMG</fo:basic-link></fo:inline> 
+      Service CosProperty Service.
+      </fo:block>
+
+    <fo:block id="idp97504" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Purpose and Dependencies</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">cosProperty</fo:inline> is dependent on  <fo:inline font-weight="bold">Orber</fo:inline>, which provides CORBA functionality in an Erlang environment.</fo:block>
+    
+
+    <fo:block id="idp499728" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Prerequisites</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To fully understand the concepts presented in the
+        documentation, it is recommended that the user is familiar
+        with distributed programming, CORBA and the Orber application.
+        </fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Recommended reading includes <fo:inline font-weight="bold">CORBA, Fundamentals and Programming - Jon Siegel</fo:inline> and <fo:inline font-weight="bold">Open Telecom Platform Documentation Set</fo:inline>. It is also helpful to  have read <fo:inline font-weight="bold">Concurrent Programming in Erlang</fo:inline>.</fo:block>
+    
+  <fo:block id="idp536848" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.3  Installing cosProperty</fo:marker>1.3  Installing cosProperty</fo:block><fo:block id="idp441184" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.3.1 
+      Installation Process</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This chapter describes how to install 
+      <fo:inline font-style="italic">cosProperty</fo:inline> in an Erlang Environment.
+      </fo:block>
+
+    <fo:block id="idp442960" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Preparation</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Before starting the installation process for cosProperty,
+        the application Orber must be running.</fo:block>
+    
+
+    <fo:block id="idp542240" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Configuration</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">First the cosProperty application must be installed by using
+        <fo:inline font-family="monospace">cosProperty:install()</fo:inline> and, if requested, <fo:inline font-family="monospace">cosProperty:install_db()</fo:inline>, 
+        followed by <fo:inline font-family="monospace">cosProperty:start()</fo:inline>.
+        Now we can start the desired Factory type by using either 
+        <fo:inline font-family="monospace">cosProperty:start_SetFactory()</fo:inline> or 
+        <fo:inline font-family="monospace">cosProperty:start_SetDefFactory()</fo:inline>.</fo:block>
+    
+  <fo:block id="idp471936" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.4  cosProperty Examples</fo:marker>1.4  cosProperty Examples</fo:block><fo:block id="idp437088" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.4.1 
+      A tutorial on how to create a simple service</fo:block>
+    
+
+    <fo:block id="idp437792" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Initiate the application</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To use the cosProperty application Orber must be running.</fo:block>
+    
+
+    <fo:block id="idp15248" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">How to run everything</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Below is a short transcript on how to run cosProperty. </fo:block>
+      <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 
+%% Start Mnesia and Orber
+mnesia:delete_schema([node()]),
+mnesia:create_schema([node()]),
+orber:install([node()]),
+mnesia:start(),
+orber:start(),
+ 
+%% Install Property Service in the IFR.
+cosProperty:install(),     
+ 
+%% Install Property Service in mnesia.
+cosProperty:install_db(),     
+ 
+%% Now start the application.
+cosProperty:start(),
+
+%% To be able to create Property objects we must first a Factory
+%% of our preferred type.
+Fac = cosProperty:start_SetDefFactory(),
+
+%% Now we can create a Property object.
+'CosPropertyService_PropertySetDefFactory':
+      create_propertysetdef(Fac),
+
+%% Now we can create any allowed properties. There are many
+%% options which are all described further in the documentation.
+      </fo:block>
+    
+  <fo:block id="idp13920" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">2   
+      Reference Manual</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The cosProperty Application is an Erlang implementation of the OMG
+      CORBA Property Service.</fo:block>
+  <fo:block page-break-before="always" id="idm7968" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">cosProperty</fo:marker>cosProperty</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  cosProperty
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosProperty/include/*.hrl").</fo:inline></fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This module contains the functions for starting and stopping the application.</fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idm10848">install() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {'EXIT', Reason}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation installs the cosProperty application in the IFR.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp850288">install_db() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {'EXIT', Reason}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation installs data in mnesia necessary for running the 
+          cosProperty application.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idm22896">uninstall() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {'EXIT', Reason}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation removes all data in the IFR related to the cosProperty 
+          application.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp336544">uninstall_db() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {'EXIT', Reason}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation removes all data from mnesia related to the cosProperty
+          application.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idm15360">start() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {error, Reason}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation starts the cosProperty application.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idm14944">start_SetDefFactory() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = Factory | {'EXCEPTION', E}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Factory = CosPropertyService::PropertySetDefFactory reference.</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation starts a PropertySetDef Factory.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp668160">start_SetFactory() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = Factory | {'EXCEPTION', E}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Factory = CosPropertyService::PropertySetDefFactory reference.</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation starts a PropertySet Factory.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp666000">stop_SetDefFactory(Factory) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Factory = CosPropertyService::PropertySetDefFactory reference.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {'EXCEPTION', E}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation stops the supplied PropertySetDef Factory.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp650288">stop_SetFactory(Factory) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Factory = CosPropertyService::PropertySetFactory reference.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {'EXCEPTION', E}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation stops the supplied PropertySet Factory.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp326496">stop() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {error, Reason}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation stops the cosProperty application.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp264864" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosPropertyService_PropertySetFactory</fo:marker>CosPropertyService_PropertySetFactory</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosPropertyService_PropertySetFactory
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosProperty/include/CosPropertyService.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp601968">create_propertyset(Factory) -&gt; PropertySet</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Factory = PropertySet = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation creates a new <fo:inline font-family="monospace">PropertySe</fo:inline>t with no predefined 
+          properties.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp332000">create_constrained_propertyset(Factory, PropertyTypes, Properties) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Factory = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertyTypes = [CORBA::TypeCode]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Properties = [#'CosPropertyService_Property'{property_name = Name, property_value = Value}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Value = #any</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = {'EXCEPTION', #CosPropertyService_ConstraintNotSupported{}} | PropertySet</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySet = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation creates a new <fo:inline font-family="monospace">PropertySet</fo:inline> with specific constraints.
+          PropertyTypes states allowed TypeCode's and Properties valid 
+          <fo:inline font-family="monospace">CosPropertyService::Property</fo:inline> data.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp426464">create_initial_propertyset(Factory, Properties) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Factory = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Properties = [#'CosPropertyService_Property'{property_name = Name, property_value = Value}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Value = #any</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = {'EXCEPTION', #CosPropertyService_MultipleExceptions{exceptions = Excs}} | PropertySet</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Excs = [#'CosPropertyService_PropertyException{reason = Reason, failing_property_name = Name}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = invalid_property_name | conflicting_property | property_not_found | unsupported_type_code | unsupported_property | unsupported_mode | fixed_property | read_only_property</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySet = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation creates a new <fo:inline font-family="monospace">PropertySet</fo:inline> with specific 
+          initial properties.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp643728" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosPropertyService_PropertySetDefFactory</fo:marker>CosPropertyService_PropertySetDefFactory</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosPropertyService_PropertySetDefFactory
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosProperty/include/CosPropertyService.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp323776">create_propertysetdef(Factory) -&gt; </fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Factory = PropertySetDef = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation creates a new <fo:inline font-family="monospace">PropertySetDef</fo:inline> with no predefined 
+          settings.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp392848">create_constrained_propertysetdef(Factory, PropertyTypes, PropertyDefs) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Factory = PropertySetDef = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertyTypes = [CORBA::TypeCode]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertyDefs = [#'CosPropertyService_PropertyDef'{property_name = Name, property_value = Value, property_mode = Mode}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Value = #any</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Mode = normal | read_only | fixed_normal | fixed_readonly | undefined</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = {'EXCEPTION', #CosPropertyService_ConstraintNotSupported{}} | PropertySetDef</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySetDef = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation creates a new <fo:inline font-family="monospace">PropertySetDef</fo:inline> with specific 
+          constraints. PropertyTypes states allowed TypeCode's and PropertyDefs valid 
+          <fo:inline font-family="monospace">CosPropertyService::PropertyDef</fo:inline> data.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp394432">create_initial_propertysetdef(Factory, PropertyDefs) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Factory = PropertySetDef = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertyDefs = [#'CosPropertyService_PropertyDef'{property_name = Name, property_value = Value, property_mode = Mode}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Value = #any</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Mode = normal | read_only | fixed_normal | fixed_readonly | undefined</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = {'EXCEPTION', #CosPropertyService_MultipleExceptions{exceptions = Excs}} | PropertySetDef</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Excs = [#'CosPropertyService_PropertyException{reason = Reason, failing_property_name = Name}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = invalid_property_name | conflicting_property | property_not_found | unsupported_type_code | unsupported_property | unsupported_mode | fixed_property | read_only_property</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySetDef = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation creates a new <fo:inline font-family="monospace">PropertySetDef</fo:inline> with specific 
+          initial properties.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp694080" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosPropertyService_PropertySet</fo:marker>CosPropertyService_PropertySet</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosPropertyService_PropertySet
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosProperty/include/CosPropertyService.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp605824">define_property(PropertySet, Name, Value) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySet = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = non-empty string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Value = #any</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = ok | {'EXCEPTION', #CosPropertyService_InvalidPropertyName{}} | {'EXCEPTION', #CosPropertyService_ConflictingProperty{}} | {'EXCEPTION', #CosPropertyService_UnsupportedTypeCode{}} | {'EXCEPTION', #CosPropertyService_UnsupportedProperty{}} | {'EXCEPTION', #CosPropertyService_ReadOnlyProperty{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation adds a new property to the given object. Depending on
+          which initial arguments was supplied when starting the object several
+          exceptions may be raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp809888">define_properties(PropertySet, Properties) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySet = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Properties = [#'CosPropertyService_Property'{property_name = Name, property_value = Value}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Value = #any</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = ok | {'EXCEPTION', #CosPropertyService_MultipleExceptions{exceptions = Excs}}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Excs = [#'CosPropertyService_PropertyException{reason = Reason, failing_property_name = Name}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = invalid_property_name | conflicting_property | property_not_found | unsupported_type_code | unsupported_property | unsupported_mode | fixed_property | read_only_property</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation adds several new properties to the given object. Depending on
+          which initial arguments was supplied when starting the object an 
+          exceptions may be raised listing the properties failing.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp816240">get_number_of_properties(PropertySet) -&gt; ulong()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySet = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns the number of properties associated with the target
+          object.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp819456">get_all_property_names(PropertySet, Max) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySet = NamesIterator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Max = ulong()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = {ok, Names, NamesIterator}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Names = [string()]</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns up to <fo:inline font-family="monospace">Max</fo:inline> property names. If the target
+          object have additional associated properties they will be put in the
+          returned Iterator, otherwise the Iterator will be a <fo:inline font-family="monospace">NIL</fo:inline> object.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp699392">get_property_value(PropertySet, Name) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySet = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = #any | {'EXCEPTION', #CosPropertyService_PropertyNotFound{}} | {'EXCEPTION', #CosPropertyService_InvalidPropertyName{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns the property value associated with given name. If no such property
+          exists or the given name is an empty string an exception will be raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp703760">get_properties(PropertySet, Names) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySet = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Names = [string()]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = {boolean(), Properties}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Properties = [#'CosPropertyService_Property'{property_name = Name, property_value = Value}]</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns all properties associated with given names. If the
+          boolean flag is true all properties where retrieved correctly, otherwise,
+          all properties with the type <fo:inline font-family="monospace">tk_void</fo:inline> was not found.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp709024">get_all_properties(PropertySet, Max) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySet = PropertiesIterator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = {ok, Properties, PropertiesIterator}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Properties = [#'CosPropertyService_Property'{property_name = Name, property_value = Value}]</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation return a list <fo:inline font-family="monospace">Max</fo:inline> properties or less. If more 
+          properties are associated with the target object they will be put in the
+          <fo:inline font-family="monospace">PropertiesIterator</fo:inline>. If the object had less than <fo:inline font-family="monospace">Max</fo:inline> 
+          associated properties the Iterator will be a <fo:inline font-family="monospace">NIL</fo:inline> object.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp716112">delete_property(PropertySet, Name) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySet = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = ok | {'EXCEPTION', #CosPropertyService_FixedProperty{}} | {'EXCEPTION', #CosPropertyService_PropertyNotFound{}} | {'EXCEPTION', #CosPropertyService_InvalidPropertyName{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation tries to delete the property with given Name. An exception
+          which indicates why it failed is raised if so needed.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp720480">delete_properties(PropertySet, Names) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySet = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Names = [string()]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = ok | {'EXCEPTION', #CosPropertyService_MultipleExceptions{exceptions = Excs}}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Excs = [#'CosPropertyService_PropertyException{reason = Reason, failing_property_name = Name}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = invalid_property_name | conflicting_property | property_not_found | unsupported_type_code | unsupported_property | unsupported_mode | fixed_property | read_only_property</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation tries to delete all given Properties. If one or more removal
+          fails an exception is raised which describe why.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp725872">delete_all_properties(PropertySet) -&gt; boolean()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySet = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation deletes all properties. The boolean flag, if set to false,
+          indicates that it was not possible to remove one or more properties, e.g.,
+          may be read only.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp729216">is_property_defined(PropertySet, Name) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySet = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = non-empty string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = boolean() | {'EXCEPTION', #CosPropertyService_InvalidPropertyName{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns true if the target have an associated property with
+          given name.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp739888" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosPropertyService_PropertySetDef</fo:marker>CosPropertyService_PropertySetDef</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosPropertyService_PropertySetDef
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosProperty/include/CosPropertyService.hrl").</fo:inline></fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This module also exports the functions described in</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">CosPropertyService_PropertySet</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp744208">get_allowed_property_types(PropertySetDef) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySetDef = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = {ok, PropertyTypes}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertyTypes = [CORBA::TypeCode]</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation return the TypeCodes which we are allowed to use when adding
+          new properties.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp748432">get_allowed_properties(PropertySetDef) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySetDef = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = {ok, PropertyDefs}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertyDefs = [#'CosPropertyService_PropertyDef'{property_name = Name, property_value = Value, property_mode = Mode}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Value = #any</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Mode = normal | read_only | fixed_normal | fixed_readonly | undefined</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation a sequence of the allowed properties we may alter; depends on
+          which mode associated with a certain property.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp754080">define_property_with_mode(PropertySetDef, Name, Value, Mode) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySetDef = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = non-empty string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Value = #any</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Mode =  normal | read_only | fixed_normal | fixed_readonly | undefined</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = ok | {'EXCEPTION', #CosPropertyService_InvalidPropertyName{}} | {'EXCEPTION', #CosPropertyService_ConflictingProperty{}} | {'EXCEPTION', #CosPropertyService_UnsupportedTypeCode{}} | {'EXCEPTION', #CosPropertyService_UnsupportedProperty{}} | {'EXCEPTION', #CosPropertyService_UnsupportedMode{}} | {'EXCEPTION', #CosPropertyService_ReadOnlyProperty{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation attempts to associate a new property with the target object.
+          If we fail to do so the appropriate exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp759632">define_properties_with_modes(PropertySetDef, PropertyDefs) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySetDef = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertyDefs = [#'CosPropertyService_PropertyDef'{property_name = Name, property_value = Value, property_mode = Mode}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Value = #any</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Mode = normal | read_only | fixed_normal | fixed_readonly | undefined</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = ok | {'EXCEPTION', #CosPropertyService_MultipleExceptions{exceptions = Excs}}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Excs = [#'CosPropertyService_PropertyException{reason = Reason, failing_property_name = Name}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = invalid_property_name | conflicting_property | property_not_found | unsupported_type_code | unsupported_property | unsupported_mode | fixed_property | read_only_property</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation attempts to associate the given Property Definitions with the
+          target object. If one or more attempts fail an exception is raised 
+          describing which properties we where not able to create.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp766672">get_property_mode(PropertySetDef, Name) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySetDef = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = Mode | {'EXCEPTION', #CosPropertyService_InvalidPropertyName{}} | {'EXCEPTION', #CosPropertyService_PropertyNotFound{}}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Mode = normal | read_only | fixed_normal | fixed_readonly | undefined</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns the type of the given property.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp862112">get_property_modes(PropertySetDef, Names) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySetDef = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Names = [string()]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = {boolean(), PropertyModes}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertyModes = [#'CosPropertyService_PropertyMode'{property_name = Name, property_mode = Mode}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Mode = normal | read_only | fixed_normal | fixed_readonly | undefined</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns the modes of the listed properties. If the boolean
+          flag is false, all properties with mode <fo:inline font-family="monospace">undefined</fo:inline> this operation
+          failed to comply.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp868304">set_property_mode(PropertySetDef, Name, Mode) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySetDef = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Mode = normal | read_only | fixed_normal | fixed_readonly | undefined</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = ok | {'EXCEPTION', #CosPropertyService_InvalidPropertyName{}} | {'EXCEPTION', #CosPropertyService_UnsupportedMode{}} | {'EXCEPTION', #CosPropertyService_PropertyNotFound{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation changes the given property's mode. Return the appropriate
+          exception if not able to fulfill the request.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp873168">set_property_modes(PropertySetDef, PropertyModes) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertySetDef = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PropertyModes = [#'CosPropertyService_PropertyMode'{property_name = Name, property_mode = Mode}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Mode = normal | read_only | fixed_normal | fixed_readonly | undefined</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = ok | {'EXCEPTION', #CosPropertyService_MultipleExceptions{exceptions = Excs}}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Excs = [#'CosPropertyService_PropertyException{reason = Reason, failing_property_name = Name}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = invalid_property_name | conflicting_property | property_not_found | unsupported_type_code | unsupported_property | unsupported_mode | fixed_property | read_only_property</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation attempts to update the listed properties mode's. Raises an 
+          exception which describe which and why an operation failed.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp886128" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosPropertyService_PropertiesIterator</fo:marker>CosPropertyService_PropertiesIterator</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosPropertyService_PropertiesIterator
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosProperty/include/CosPropertyService.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp889248">reset(Iterator) -&gt; ok</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Iterator = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation resets the position to the first property. </fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp892464">next_one(Iterator) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Iterator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = {boolean(), #'CosPropertyService_Property'{property_name = Name, property_value = Value}}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Value = #any</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns true . If false is returned the out 
+          parameter is a non-valid Property.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp897264">next_n(Iterator, HowMany) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Iterator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">HowMany = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = {boolean(), Properties}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Properties = [#'CosPropertyService_Property'{property_name = Name, property_value = Value}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Value = #any</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns true if the requested number of properties can be
+          delivered and there are additional properties. If false is returned and a 
+          sequence of max <fo:inline font-family="monospace">HowMany</fo:inline> properties will be returned and no more 
+          properties can be delivered. </fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp904032">destroy(Iterator) -&gt; ok</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Iterator = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation will terminate the Iterator and all subsequent calls
+          will fail. </fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp914528" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosPropertyService_PropertyNamesIterator</fo:marker>CosPropertyService_PropertyNamesIterator</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosPropertyService_PropertyNamesIterator
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosProperty/include/CosPropertyService.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp917664">reset(Iterator) -&gt; ok</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Iterator = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation resets the position to the first property name. </fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp920880">next_one(Iterator) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Iterator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = {boolean(), Name}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = string()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns true if a Property Name exists at the current 
+          position and the out parameter is a valid Property Name. 
+          If false is returned the out parameter is a non-valid Property Name.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp925296">next_n(Iterator, HowMany) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Iterator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">HowMany = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = {boolean(), [Name]}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = string()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns true if the requested number of Property Names can be
+          delivered and there are additional property names. If false is returned a 
+          sequence of max <fo:inline font-family="monospace">HowMany</fo:inline> property names will be returned and no 
+          more Property Names can be delivered. </fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp931024">destroy(Iterator) -&gt; ok</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Iterator = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation will terminate the Iterator and all subsequent calls
+          will fail. </fo:block>
+      </fo:block>
+  
+  
+</fo:flow>
+  </fo:page-sequence>
+</fo:root>

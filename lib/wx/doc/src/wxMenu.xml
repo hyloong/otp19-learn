@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxMenu</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxMenu.xml</file></header>
+<module>wxMenu</module>
+<modulesummary>See external documentation: wxMenu.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html">wxMenu</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxMenu"/>wxMenu()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxMenu">wxMenu()</seealso></name>
+<fsummary>Equivalent to new([]).
+</fsummary>
+
+<desc><marker id="new-0"/>
+<p>Equivalent to <seealso marker="#new-1">new([])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Options::[Option]) -&gt; <seealso marker="#type-wxMenu">wxMenu()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Option = {style, integer()}</v></type>
+<desc><marker id="new-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuwxmenu">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Title, Options::[Option]) -&gt; <seealso marker="#type-wxMenu">wxMenu()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {style, integer()}</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuwxmenu">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>append(This, Item) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Item = <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></v></type>
+<desc><marker id="append-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuappend">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>append(This, Itemid, Text) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>Equivalent to append(This, Itemid, Text, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="append-3"/>
+<p>Equivalent to <seealso marker="#append-4">append(This, Itemid, Text, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>append(This, Itemid, Text, Submenu) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Submenu = <seealso marker="#type-wxMenu">wxMenu()</seealso></v></type>
+<desc><marker id="append-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuappend">external documentation</url>.
+  <br/> Also:<br/>
+  append(This, Itemid, Text, [Option]) -&gt; wxMenuItem:wxMenuItem() when<br/>
+  	This::wxMenu(), Itemid::integer(), Text::unicode:chardata(),<br/>
+  	Option :: {'help', unicode:chardata()}<br/>
+  		 | {'kind', wx:wx_enum()}.<br/></p>
+ 
+ <p><br/> Kind = ?wxITEM_SEPARATOR | ?wxITEM_NORMAL | ?wxITEM_CHECK | ?wxITEM_RADIO | ?wxITEM_MAX</p>
+</desc></func>
+<func>
+<name>append(This, Itemid, Text, Help, IsCheckable) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Help = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>IsCheckable = boolean()</v></type>
+<desc><marker id="append-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuappend">external documentation</url>.
+  <br/> Also:<br/>
+  append(This, Itemid, Text, Submenu, [Option]) -&gt; wxMenuItem:wxMenuItem() when<br/>
+  	This::wxMenu(), Itemid::integer(), Text::unicode:chardata(), Submenu::wxMenu(),<br/>
+  	Option :: {'help', unicode:chardata()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>appendCheckItem(This, Itemid, Text) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>Equivalent to appendCheckItem(This, Itemid, Text, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="appendCheckItem-3"/>
+<p>Equivalent to <seealso marker="#appendCheckItem-4">appendCheckItem(This, Itemid, Text, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>appendCheckItem(This, Itemid, Text, Options::[Option]) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {help, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>}</v></type>
+<desc><marker id="appendCheckItem-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuappendcheckitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>appendRadioItem(This, Itemid, Text) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>Equivalent to appendRadioItem(This, Itemid, Text, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="appendRadioItem-3"/>
+<p>Equivalent to <seealso marker="#appendRadioItem-4">appendRadioItem(This, Itemid, Text, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>appendRadioItem(This, Itemid, Text, Options::[Option]) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {help, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>}</v></type>
+<desc><marker id="appendRadioItem-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuappendradioitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>appendSeparator(This) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v></type>
+<desc><marker id="appendSeparator-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuappendseparator">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>break(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v></type>
+<desc><marker id="break-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenubreak">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>check(This, Itemid, Check) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v><v>Check = boolean()</v></type>
+<desc><marker id="check-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenucheck">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>delete(This, Itemid) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v></type>
+<desc><marker id="delete-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenudelete">external documentation</url>.
+  <br/> Also:<br/>
+  delete(This, Item) -&gt; boolean() when<br/>
+  	This::wxMenu(), Item::wxMenuItem:wxMenuItem().<br/>
+ </p>
+</desc></func>
+<func>
+<name>Destroy(This, Itemid) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v></type>
+<desc><marker id="Destroy-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenudestroy">external documentation</url>.
+  <br/> Also:<br/>
+  'Destroy'(This, Item) -&gt; boolean() when<br/>
+  	This::wxMenu(), Item::wxMenuItem:wxMenuItem().<br/>
+ </p>
+</desc></func>
+<func>
+<name>enable(This, Itemid, Enable) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v><v>Enable = boolean()</v></type>
+<desc><marker id="enable-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuenable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>findItem(This, Itemid) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v></type>
+<desc><marker id="findItem-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenufinditem">external documentation</url>.
+  <br/> Also:<br/>
+  findItem(This, Item) -&gt; integer() when<br/>
+  	This::wxMenu(), Item::unicode:chardata().<br/>
+ </p>
+</desc></func>
+<func>
+<name>findItemByPosition(This, Position) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Position = integer()</v></type>
+<desc><marker id="findItemByPosition-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenufinditembyposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getHelpString(This, Itemid) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v></type>
+<desc><marker id="getHelpString-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenugethelpstring">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getLabel(This, Itemid) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v></type>
+<desc><marker id="getLabel-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenugetlabel">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMenuItemCount(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v></type>
+<desc><marker id="getMenuItemCount-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenugetmenuitemcount">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMenuItems(This) -&gt; [<seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso>]</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v></type>
+<desc><marker id="getMenuItems-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenugetmenuitems">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getTitle(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v></type>
+<desc><marker id="getTitle-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenugettitle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>insert(This, Pos, Itemid) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Pos = integer()</v><v>Itemid = integer()</v></type>
+<desc><marker id="insert-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuinsert">external documentation</url>.
+  <br/> Also:<br/>
+  insert(This, Pos, Item) -&gt; wxMenuItem:wxMenuItem() when<br/>
+  	This::wxMenu(), Pos::integer(), Item::wxMenuItem:wxMenuItem().<br/></p>
+ 
+ <p><br/> Kind = ?wxITEM_SEPARATOR | ?wxITEM_NORMAL | ?wxITEM_CHECK | ?wxITEM_RADIO | ?wxITEM_MAX</p>
+</desc></func>
+<func>
+<name>insert(This, Pos, Itemid, Options::[Option]) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Pos = integer()</v><v>Itemid = integer()</v><v>Option = {text, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {help, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {kind, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</v></type>
+<desc><marker id="insert-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuinsert">external documentation</url>.
+ <br/> Kind = ?wxITEM_SEPARATOR | ?wxITEM_NORMAL | ?wxITEM_CHECK | ?wxITEM_RADIO | ?wxITEM_MAX</p>
+</desc></func>
+<func>
+<name>insert(This, Pos, Itemid, Text, Submenu) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>Equivalent to insert(This, Pos, Itemid, Text, Submenu, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Pos = integer()</v><v>Itemid = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Submenu = <seealso marker="#type-wxMenu">wxMenu()</seealso></v></type>
+<desc><marker id="insert-5"/>
+<p>Equivalent to <seealso marker="#insert-6">insert(This, Pos, Itemid, Text, Submenu, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>insert(This, Pos, Itemid, Text, Help, IsCheckable) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Pos = integer()</v><v>Itemid = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Help = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>IsCheckable = boolean()</v></type>
+<desc><marker id="insert-6"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuinsert">external documentation</url>.
+  <br/> Also:<br/>
+  insert(This, Pos, Itemid, Text, Submenu, [Option]) -&gt; wxMenuItem:wxMenuItem() when<br/>
+  	This::wxMenu(), Pos::integer(), Itemid::integer(), Text::unicode:chardata(), Submenu::wxMenu(),<br/>
+  	Option :: {'help', unicode:chardata()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>insertCheckItem(This, Pos, Itemid, Text) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>Equivalent to insertCheckItem(This, Pos, Itemid, Text, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Pos = integer()</v><v>Itemid = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="insertCheckItem-4"/>
+<p>Equivalent to <seealso marker="#insertCheckItem-5">insertCheckItem(This, Pos, Itemid, Text, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>insertCheckItem(This, Pos, Itemid, Text, Options::[Option]) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Pos = integer()</v><v>Itemid = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {help, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>}</v></type>
+<desc><marker id="insertCheckItem-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuinsertcheckitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>insertRadioItem(This, Pos, Itemid, Text) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>Equivalent to insertRadioItem(This, Pos, Itemid, Text, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Pos = integer()</v><v>Itemid = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="insertRadioItem-4"/>
+<p>Equivalent to <seealso marker="#insertRadioItem-5">insertRadioItem(This, Pos, Itemid, Text, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>insertRadioItem(This, Pos, Itemid, Text, Options::[Option]) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Pos = integer()</v><v>Itemid = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {help, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>}</v></type>
+<desc><marker id="insertRadioItem-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuinsertradioitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>insertSeparator(This, Pos) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Pos = integer()</v></type>
+<desc><marker id="insertSeparator-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuinsertseparator">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isChecked(This, Itemid) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v></type>
+<desc><marker id="isChecked-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuischecked">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isEnabled(This, Itemid) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v></type>
+<desc><marker id="isEnabled-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuisenabled">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>prepend(This, Itemid) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v></type>
+<desc><marker id="prepend-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuprepend">external documentation</url>.
+  <br/> Also:<br/>
+  prepend(This, Item) -&gt; wxMenuItem:wxMenuItem() when<br/>
+  	This::wxMenu(), Item::wxMenuItem:wxMenuItem().<br/></p>
+ 
+ <p><br/> Kind = ?wxITEM_SEPARATOR | ?wxITEM_NORMAL | ?wxITEM_CHECK | ?wxITEM_RADIO | ?wxITEM_MAX</p>
+</desc></func>
+<func>
+<name>prepend(This, Itemid, Options::[Option]) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v><v>Option = {text, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {help, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {kind, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</v></type>
+<desc><marker id="prepend-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuprepend">external documentation</url>.
+ <br/> Kind = ?wxITEM_SEPARATOR | ?wxITEM_NORMAL | ?wxITEM_CHECK | ?wxITEM_RADIO | ?wxITEM_MAX</p>
+</desc></func>
+<func>
+<name>prepend(This, Itemid, Text, Submenu) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>Equivalent to prepend(This, Itemid, Text, Submenu, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Submenu = <seealso marker="#type-wxMenu">wxMenu()</seealso></v></type>
+<desc><marker id="prepend-4"/>
+<p>Equivalent to <seealso marker="#prepend-5">prepend(This, Itemid, Text, Submenu, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>prepend(This, Itemid, Text, Help, IsCheckable) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Help = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>IsCheckable = boolean()</v></type>
+<desc><marker id="prepend-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuprepend">external documentation</url>.
+  <br/> Also:<br/>
+  prepend(This, Itemid, Text, Submenu, [Option]) -&gt; wxMenuItem:wxMenuItem() when<br/>
+  	This::wxMenu(), Itemid::integer(), Text::unicode:chardata(), Submenu::wxMenu(),<br/>
+  	Option :: {'help', unicode:chardata()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>prependCheckItem(This, Itemid, Text) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>Equivalent to prependCheckItem(This, Itemid, Text, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="prependCheckItem-3"/>
+<p>Equivalent to <seealso marker="#prependCheckItem-4">prependCheckItem(This, Itemid, Text, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>prependCheckItem(This, Itemid, Text, Options::[Option]) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {help, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>}</v></type>
+<desc><marker id="prependCheckItem-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuprependcheckitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>prependRadioItem(This, Itemid, Text) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>Equivalent to prependRadioItem(This, Itemid, Text, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="prependRadioItem-3"/>
+<p>Equivalent to <seealso marker="#prependRadioItem-4">prependRadioItem(This, Itemid, Text, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>prependRadioItem(This, Itemid, Text, Options::[Option]) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {help, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>}</v></type>
+<desc><marker id="prependRadioItem-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuprependradioitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>prependSeparator(This) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v></type>
+<desc><marker id="prependSeparator-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuprependseparator">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>remove(This, Itemid) -&gt; <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v></type>
+<desc><marker id="remove-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenuremove">external documentation</url>.
+  <br/> Also:<br/>
+  remove(This, Item) -&gt; wxMenuItem:wxMenuItem() when<br/>
+  	This::wxMenu(), Item::wxMenuItem:wxMenuItem().<br/>
+ </p>
+</desc></func>
+<func>
+<name>setHelpString(This, Itemid, HelpString) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v><v>HelpString = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setHelpString-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenusethelpstring">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setLabel(This, Itemid, Label) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Itemid = integer()</v><v>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setLabel-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenusetlabel">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setTitle(This, Title) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMenu">wxMenu()</seealso></v><v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setTitle-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmenu.html#wxmenusettitle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxMenu">wxMenu()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

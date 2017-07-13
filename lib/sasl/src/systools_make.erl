@@ -647,6 +647,8 @@ get_items([], _Dict) ->
 
 check_item({_,{mod,{M,A}}},_) when is_atom(M) ->
     {M,A};
+check_item({_,{mod,[]}},_) -> % default mod is [], so accept as entry
+    [];
 check_item({_,{vsn,Vsn}},I) ->
     case string_p(Vsn) of
 	true -> Vsn;
@@ -682,6 +684,8 @@ check_item({_,{modules,Mods}},I) ->
 	true -> Mods;
 	_ -> throw({bad_param, I})
     end;
+check_item({_,{start_phases,undefined}},_) -> % default start_phase is undefined,
+    undefined;                                % so accept as entry
 check_item({_,{start_phases,Phase}},I) ->
     case t_list_p(Phase) of
 	true -> Phase;
@@ -1904,8 +1908,10 @@ del_tar(Tar, TarName) ->
     file:delete(TarName).
 
 add_to_tar(Tar, FromFile, ToFile) ->
-    case erl_tar:add(Tar, FromFile, ToFile, [compressed, dereference]) of
+    case catch erl_tar:add(Tar, FromFile, ToFile, [compressed, dereference]) of
 	ok -> ok;
+        {'EXIT', Reason} ->
+            throw({error, {tar_error, {add, FromFile, Reason}}});
 	{error, Error} ->
 	    throw({error, {tar_error, {add, FromFile, Error}}})
     end.
@@ -2228,9 +2234,9 @@ check_apps(_) ->
 format_error(badly_formatted_release) ->
     io_lib:format("Syntax error in the release file~n",[]);
 format_error({illegal_name, Name}) ->
-    io_lib:format("Illegal name (~p) in the release file~n",[Name]);
+    io_lib:format("Illegal name (~tp) in the release file~n",[Name]);
 format_error({illegal_form, Form}) ->
-    io_lib:format("Illegal tag in the release file: ~p~n",[Form]);
+    io_lib:format("Illegal tag in the release file: ~tp~n",[Form]);
 format_error({missing_parameter,Par}) ->
     io_lib:format("Missing parameter (~p) in the release file~n",[Par]);
 format_error({illegal_applications,Names}) ->
@@ -2245,7 +2251,7 @@ format_error({mandatory_app,Name,Type}) ->
 format_error({duplicate_register,Dups}) ->
     io_lib:format("Duplicated register names: ~n~ts",
 		  [map(fun({{Reg,App1,_,_},{Reg,App2,_,_}}) ->
-			       io_lib:format("\t~w registered in ~w and ~w~n",
+			       io_lib:format("\t~tw registered in ~w and ~w~n",
 					     [Reg,App1,App2])
 		       end, Dups)]);
 format_error({undefined_applications,Apps}) ->
@@ -2269,20 +2275,20 @@ format_error({modules,ModErrs}) ->
 format_error({circular_dependencies,Apps}) ->
     io_lib:format("Circular dependencies among applications: ~p~n",[Apps]);
 format_error({not_found,File}) ->
-    io_lib:format("File not found: ~p~n",[File]);
+    io_lib:format("File not found: ~tp~n",[File]);
 format_error({parse,File,{Line,Mod,What}}) ->
     Str = Mod:format_error(What),
     io_lib:format("~ts:~w: ~ts\n",[File, Line, Str]);
 format_error({read,File}) ->
-    io_lib:format("Cannot read ~p~n",[File]);
+    io_lib:format("Cannot read ~tp~n",[File]);
 format_error({open,File,Error}) ->
-    io_lib:format("Cannot open ~p - ~ts~n",
+    io_lib:format("Cannot open ~tp - ~ts~n",
 		  [File,file:format_error(Error)]);
 format_error({close,File,Error}) ->
-    io_lib:format("Cannot close ~p - ~ts~n",
+    io_lib:format("Cannot close ~tp - ~ts~n",
 		  [File,file:format_error(Error)]);
 format_error({delete,File,Error}) ->
-    io_lib:format("Cannot delete ~p - ~ts~n",
+    io_lib:format("Cannot delete ~tp - ~ts~n",
 		  [File,file:format_error(Error)]);
 format_error({tar_error,What}) ->
     form_tar_err(What);
@@ -2291,7 +2297,7 @@ format_error({warnings_treated_as_errors,Warnings}) ->
                   [map(fun(W) -> form_warn("",W) end, Warnings)]);
 format_error(ListOfErrors) when is_list(ListOfErrors) ->
     format_errors(ListOfErrors);
-format_error(E) -> io_lib:format("~p~n",[E]).
+format_error(E) -> io_lib:format("~tp~n",[E]).
 
 format_errors(ListOfErrors) ->
     map(fun({error,E}) -> form_err(E);
@@ -2307,19 +2313,19 @@ form_err({module_not_found,App,Mod}) ->
 form_err({error_add_appl, {Name, {tar_error, What}}}) ->
     io_lib:format("~p: ~ts~n",[Name,form_tar_err(What)]);
 form_err(E) ->
-    io_lib:format("~p~n",[E]).
+    io_lib:format("~tp~n",[E]).
 
 form_reading({not_found,File}) ->
-    io_lib:format("File not found: ~p~n",[File]);
+    io_lib:format("File not found: ~tp~n",[File]);
 form_reading({application_vsn, {Name,Vsn}}) ->
-    io_lib:format("Application ~ts with version ~p not found~n",[Name, Vsn]);
+    io_lib:format("Application ~ts with version ~tp not found~n",[Name, Vsn]);
 form_reading({parse,File,{Line,Mod,What}}) ->
     Str = Mod:format_error(What),
     io_lib:format("~ts:~w: ~ts\n",[File, Line, Str]);
 form_reading({read,File}) ->
-    io_lib:format("Cannot read ~p~n",[File]);
+    io_lib:format("Cannot read ~tp~n",[File]);
 form_reading({{bad_param, P},_}) ->
-    io_lib:format("Bad parameter in .app file: ~p~n",[P]);
+    io_lib:format("Bad parameter in .app file: ~tp~n",[P]);
 form_reading({{missing_param,P},_}) ->
     io_lib:format("Missing parameter in .app file: ~p~n",[P]);
 form_reading({badly_formatted_application,_}) ->
@@ -2328,12 +2334,12 @@ form_reading({override_include,Apps}) ->
     io_lib:format("Tried to include not (in .app file) specified applications: ~p~n",
 		  [Apps]);
 form_reading({no_valid_version, {{_, SVsn}, {_, File, FVsn}}}) ->
-    io_lib:format("No valid version (~p) of .app file found. Found file ~p with version ~p~n", 
+    io_lib:format("No valid version (~tp) of .app file found. Found file ~tp with version ~tp~n", 
 		  [SVsn, File, FVsn]);
 form_reading({parse_error, {File, Line, Error}}) ->
-    io_lib:format("Parse error in file: ~p.  Line: ~w  Error: ~p; ~n", [File, Line, Error]);
+    io_lib:format("Parse error in file: ~tp.  Line: ~w  Error: ~tp; ~n", [File, Line, Error]);
 form_reading(W) ->
-    io_lib:format("~p~n",[W]).
+    io_lib:format("~tp~n",[W]).
 
 form_tar_err({open, File, Error}) ->
     io_lib:format("Cannot open tar file ~ts - ~ts~n",
@@ -2351,14 +2357,14 @@ form_warn(Prefix, {source_not_found,{Mod,App,_}}) ->
     io_lib:format("~ts~w: Source code not found: ~w.erl~n",
 		  [Prefix,App,Mod]);
 form_warn(Prefix, {{parse_error, File},{_,_,App,_,_}}) ->
-    io_lib:format("~ts~w: Parse error: ~p~n",
+    io_lib:format("~ts~w: Parse error: ~tp~n",
 		  [Prefix,App,File]);
 form_warn(Prefix, {obj_out_of_date,{Mod,App,_}}) ->
     io_lib:format("~ts~w: Object code (~w) out of date~n",
 		  [Prefix,App,Mod]);
 form_warn(Prefix, {exref_undef, Undef}) ->
     F = fun({M,F,A}) ->
-		io_lib:format("~tsUndefined function ~w:~w/~w~n",
+		io_lib:format("~tsUndefined function ~w:~tw/~w~n",
 			      [Prefix,M,F,A])
 	end,
     map(F, Undef);
@@ -2367,4 +2373,4 @@ form_warn(Prefix, missing_sasl) ->
 		  "Can not upgrade with this release~n",
 		  [Prefix]);
 form_warn(Prefix, What) ->
-    io_lib:format("~ts~p~n", [Prefix,What]).
+    io_lib:format("~ts~tp~n", [Prefix,What]).

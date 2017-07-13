@@ -850,14 +850,15 @@ static Eterm AM_timer;
 static Eterm AM_delayed_delete_timer;
 
 static void setup_reference_table(void);
-static Eterm reference_table_term(Uint **hpp, Uint *szp);
+static Eterm reference_table_term(Uint **hpp, ErlOffHeap *ohp, Uint *szp);
 static void delete_reference_table(void);
 
-#if BIG_UINT_HEAP_SIZE > 3 /* 2-tuple */
-#define ID_HEAP_SIZE BIG_UINT_HEAP_SIZE
-#else
-#define ID_HEAP_SIZE 3 /* 2-tuple */
-#endif
+#undef ERTS_MAX__
+#define ERTS_MAX__(A, B) ((A) > (B) ? (A) : (B))
+
+#define ID_HEAP_SIZE \
+    ERTS_MAX__(ERTS_MAGIC_REF_THING_SIZE, \
+               ERTS_MAX__(BIG_UINT_HEAP_SIZE, 3))
 
 typedef struct node_referrer_ {
     struct node_referrer_ *next;
@@ -870,6 +871,7 @@ typedef struct node_referrer_ {
     int system_ref;
     Eterm id;
     Uint id_heap[ID_HEAP_SIZE];
+    ErlOffHeap off_heap;
 } NodeReferrer;
 
 typedef struct {
@@ -942,7 +944,7 @@ erts_get_node_and_dist_references(struct process *proc)
 
     /* Get term size */
     size = 0;
-    (void) reference_table_term(NULL, &size);
+    (void) reference_table_term(NULL, NULL, &size);
 
     hp = HAlloc(proc, size);
 #ifdef DEBUG
@@ -951,7 +953,7 @@ erts_get_node_and_dist_references(struct process *proc)
 #endif
 
     /* Write term */
-    res = reference_table_term(&hp, NULL);
+    res = reference_table_term(&hp, &proc->off_heap, NULL);
 
     ASSERT(endp == hp);
 
@@ -1048,13 +1050,14 @@ insert_node_referrer(ReferredNode *referred_node, int type, Eterm id)
 	nrp = (NodeReferrer *) erts_alloc(ERTS_ALC_T_NC_TMP,
 					  sizeof(NodeReferrer));
 	nrp->next = referred_node->referrers;
+        ERTS_INIT_OFF_HEAP(&nrp->off_heap);
 	referred_node->referrers = nrp;
 	if(IS_CONST(id))
 	    nrp->id = id;
 	else {
 	    Uint *hp = &nrp->id_heap[0];
-	    ASSERT(is_big(id) || is_tuple(id));
-	    nrp->id = copy_struct(id, size_object(id), &hp, NULL);
+	    ASSERT(is_big(id) || is_tuple(id) || is_internal_magic_ref(id));
+	    nrp->id = copy_struct(id, size_object(id), &hp, &nrp->off_heap);
 	}
 	nrp->heap_ref = 0;
 	nrp->link_ref = 0;
@@ -1126,12 +1129,12 @@ insert_offheap(ErlOffHeap *oh, int type, Eterm id)
 
     for (u.hdr = oh->first; u.hdr; u.hdr = u.hdr->next) {
 	switch (thing_subtag(u.hdr->thing_word)) {
-	case REFC_BINARY_SUBTAG:
-	    if(IsMatchProgBinary(u.pb->val)) {
+	case REF_SUBTAG:
+	    if(IsMatchProgBinary(u.mref->mb)) {
 		InsertedBin *ib;
 		int insert_bin = 1;
 		for (ib = inserted_bins; ib; ib = ib->next)
-		    if(ib->bin_val == u.pb->val) {
+		    if(ib->bin_val == (Binary *) u.mref->mb) {
 			insert_bin = 0;
 			break;
 		    }
@@ -1140,18 +1143,19 @@ insert_offheap(ErlOffHeap *oh, int type, Eterm id)
 		    Uint *hp = &id_heap[0];
 		    InsertedBin *nib;
 		    UseTmpHeapNoproc(BIG_UINT_HEAP_SIZE);
-		    a.id = erts_bld_uint(&hp, NULL, (Uint) u.pb->val);
-		    erts_match_prog_foreach_offheap(u.pb->val,
+		    a.id = erts_bld_uint(&hp, NULL, (Uint) u.mref->mb);
+		    erts_match_prog_foreach_offheap((Binary *) u.mref->mb,
 						    insert_offheap2,
 						    (void *) &a);
 		    nib = erts_alloc(ERTS_ALC_T_NC_TMP, sizeof(InsertedBin));
-		    nib->bin_val = u.pb->val;
+		    nib->bin_val = (Binary *) u.mref->mb;
 		    nib->next = inserted_bins;
 		    inserted_bins = nib;
 		    UnUseTmpHeapNoproc(BIG_UINT_HEAP_SIZE);
 		}
 	    }		
 	    break;
+	case REFC_BINARY_SUBTAG:
 	case FUN_SUBTAG:
 	    break; /* No need to */
 	default:
@@ -1165,8 +1169,8 @@ insert_offheap(ErlOffHeap *oh, int type, Eterm id)
 static void doit_insert_monitor(ErtsMonitor *monitor, void *p)
 {
     Eterm *idp = p;
-    if(is_external(monitor->pid))
-	insert_node(external_thing_ptr(monitor->pid)->node, MONITOR_REF, *idp);
+    if(monitor->type != MON_NIF_TARGET && is_external(monitor->u.pid))
+	insert_node(external_thing_ptr(monitor->u.pid)->node, MONITOR_REF, *idp);
     if(is_external(monitor->ref))
 	insert_node(external_thing_ptr(monitor->ref)->node, MONITOR_REF, *idp);
 }
@@ -1210,10 +1214,20 @@ insert_links2(ErtsLink *lnk, Eterm id)
 static void
 insert_ets_table(DbTable *tab, void *unused)
 {
+    ErlOffHeap off_heap;
+    Eterm heap[ERTS_MAGIC_REF_THING_SIZE];
     struct insert_offheap2_arg a;
     a.type = ETS_REF;
-    a.id = tab->common.id;
+    if (tab->common.status & DB_NAMED_TABLE)
+        a.id = tab->common.the_name;
+    else {
+        Eterm *hp = &heap[0];
+        ERTS_INIT_OFF_HEAP(&off_heap);
+        a.id = erts_mk_magic_ref(&hp, &off_heap, tab->common.btid);
+    }
     erts_db_foreach_offheap(tab, insert_offheap2, (void *) &a);
+    if (is_not_atom(a.id))
+        erts_cleanup_offheap(&off_heap);
 }
 
 static void
@@ -1517,7 +1531,7 @@ setup_reference_table(void)
  */
 
 static Eterm
-reference_table_term(Uint **hpp, Uint *szp)
+reference_table_term(Uint **hpp, ErlOffHeap *ohp, Uint *szp)
 {
 #undef  MK_2TUP
 #undef  MK_3TUP
@@ -1572,12 +1586,11 @@ reference_table_term(Uint **hpp, Uint *szp)
 
 	    nrid = nrp->id;
 	    if (!IS_CONST(nrp->id)) {
-
 		Uint nrid_sz = size_object(nrp->id);
 		if (szp)
 		    *szp += nrid_sz;
 		if (hpp)
-		    nrid = copy_struct(nrp->id, nrid_sz, hpp, NULL);
+		    nrid = copy_struct(nrp->id, nrid_sz, hpp, ohp);
 	    }
 
 	    if (is_internal_pid(nrid) || nrid == am_error_logger) {
@@ -1712,6 +1725,7 @@ delete_reference_table(void)
 	NodeReferrer *tnrp;
 	nrp = referred_nodes[i].referrers;
 	while(nrp) {
+            erts_cleanup_offheap(&nrp->off_heap);
 	    tnrp = nrp;
 	    nrp = nrp->next;
 	    erts_free(ERTS_ALC_T_NC_TMP, (void *) tnrp);

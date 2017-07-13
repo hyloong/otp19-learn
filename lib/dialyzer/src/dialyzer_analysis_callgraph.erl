@@ -1,8 +1,4 @@
 %% -*- erlang-indent-level: 2 -*-
-%%--------------------------------------------------------------------
-%% %CopyrightBegin%
-%%
-%% Copyright Ericsson AB 2006-2017. All Rights Reserved.
 %%
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -15,9 +11,6 @@
 %% WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 %% See the License for the specific language governing permissions and
 %% limitations under the License.
-%%
-%% %CopyrightEnd%
-%%
 
 %%%-------------------------------------------------------------------
 %%% File    : dialyzer_analysis_callgraph.erl
@@ -99,11 +92,12 @@ loop(#server_state{parent = Parent} = State,
       send_warnings(Parent, Warnings),
       loop(State, Analysis, ExtCalls);
     {AnalPid, cserver, CServer, Plt} ->
+      skip_ets_transfer(AnalPid),
       send_codeserver_plt(Parent, CServer, Plt),
       loop(State, Analysis, ExtCalls);
-    {AnalPid, done, MiniPlt, DocPlt} ->
+    {AnalPid, done, Plt, DocPlt} ->
       send_ext_calls(Parent, ExtCalls),
-      send_analysis_done(Parent, MiniPlt, DocPlt);
+      send_analysis_done(Parent, Plt, DocPlt);
     {AnalPid, ext_calls, NewExtCalls} ->
       loop(State, Analysis, NewExtCalls);
     {AnalPid, ext_types, ExtTypes} ->
@@ -121,7 +115,6 @@ loop(#server_state{parent = Parent} = State,
 %% The Analysis
 %%--------------------------------------------------------------------
 
-%% Calls to erlang:garbage_collect() help to reduce the heap size.
 analysis_start(Parent, Analysis, LegalWarnings) ->
   CServer = dialyzer_codeserver:new(),
   Plt = Analysis#analysis.plt,
@@ -141,39 +134,14 @@ analysis_start(Parent, Analysis, LegalWarnings) ->
   Files = ordsets:from_list(Analysis#analysis.files),
   {Callgraph, TmpCServer0} = compile_and_store(Files, State),
   %% Remote type postprocessing
-  NewCServer =
-    try
-      NewRecords = dialyzer_codeserver:get_temp_records(TmpCServer0),
-      NewExpTypes = dialyzer_codeserver:get_temp_exported_types(TmpCServer0),
-      OldRecords = dialyzer_plt:get_types(Plt),
-      OldExpTypes0 = dialyzer_plt:get_exported_types(Plt),
-      MergedRecords = dialyzer_utils:merge_records(NewRecords, OldRecords),
-      RemMods =
-        [case Analysis#analysis.start_from of
-           byte_code -> list_to_atom(filename:basename(F, ".beam"));
-           src_code -> list_to_atom(filename:basename(F, ".erl"))
-         end || F <- Files],
-      OldExpTypes1 = dialyzer_utils:sets_filter(RemMods, OldExpTypes0),
-      MergedExpTypes = sets:union(NewExpTypes, OldExpTypes1),
-      TmpCServer1 = dialyzer_codeserver:set_temp_records(MergedRecords, TmpCServer0),
-      TmpCServer2 =
-        dialyzer_codeserver:finalize_exported_types(MergedExpTypes, TmpCServer1),
-      erlang:garbage_collect(),
-      ?timing(State#analysis_state.timing_server, "remote",
-              contracts_and_records(TmpCServer2))
-    catch
-      throw:{error, _ErrorMsg} = Error -> exit(Error)
-    end,
-  NewPlt0 = dialyzer_plt:insert_types(Plt, dialyzer_codeserver:get_records(NewCServer)),
-  ExpTypes = dialyzer_codeserver:get_exported_types(NewCServer),
-  NewPlt1 = dialyzer_plt:insert_exported_types(NewPlt0, ExpTypes),
-  State0 = State#analysis_state{plt = NewPlt1},
-  dump_callgraph(Callgraph, State0, Analysis),
+  Args = {Plt, Analysis, Parent},
+  NewCServer = remote_type_postprocessing(TmpCServer0, Args),
+  dump_callgraph(Callgraph, State, Analysis),
   %% Remove all old versions of the files being analyzed
   AllNodes = dialyzer_callgraph:all_nodes(Callgraph),
-  Plt1_a = dialyzer_plt:delete_list(NewPlt1, AllNodes),
+  Plt1_a = dialyzer_plt:delete_list(Plt, AllNodes),
   Plt1 = dialyzer_plt:insert_callbacks(Plt1_a, NewCServer),
-  State1 = State0#analysis_state{codeserver = NewCServer, plt = Plt1},
+  State1 = State#analysis_state{codeserver = NewCServer, plt = Plt1},
   Exports = dialyzer_codeserver:get_exports(NewCServer),
   NonExports = sets:subtract(sets:from_list(AllNodes), Exports),
   NonExportsList = sets:to_list(NonExports),
@@ -183,38 +151,80 @@ analysis_start(Parent, Analysis, LegalWarnings) ->
       false -> Callgraph
     end,
   State2 = analyze_callgraph(NewCallgraph, State1),
-  #analysis_state{plt = MiniPlt2, doc_plt = DocPlt} = State2,
+  #analysis_state{plt = Plt2,
+                  doc_plt = DocPlt,
+                  codeserver = Codeserver0} = State2,
+  {Codeserver, Plt3} = move_data(Codeserver0, Plt2),
   dialyzer_callgraph:dispose_race_server(NewCallgraph),
-  rcv_and_send_ext_types(Parent),
   %% Since the PLT is never used, a dummy is sent:
   DummyPlt = dialyzer_plt:new(),
-  send_codeserver_plt(Parent, CServer, DummyPlt),
-  MiniPlt3 = dialyzer_plt:delete_list(MiniPlt2, NonExportsList),
-  send_analysis_done(Parent, MiniPlt3, DocPlt).
+  send_codeserver_plt(Parent, Codeserver, DummyPlt),
+  dialyzer_plt:delete(DummyPlt),
+  Plt4 = dialyzer_plt:delete_list(Plt3, NonExportsList),
+  send_analysis_done(Parent, Plt4, DocPlt).
 
-contracts_and_records(CodeServer) ->
-  Fun = contrs_and_recs(CodeServer),
+remote_type_postprocessing(TmpCServer, Args) ->
+  Fun = fun() ->
+            exit(remote_type_postproc(TmpCServer, Args))
+        end,
   {Pid, Ref} = erlang:spawn_monitor(Fun),
-  dialyzer_codeserver:give_away(CodeServer, Pid),
+  dialyzer_codeserver:give_away(TmpCServer, Pid),
   Pid ! {self(), go},
   receive {'DOWN', Ref, process, Pid, Return} ->
-      Return
+      skip_ets_transfer(Pid),
+      case Return of
+        {error, _ErrorMsg} = Error -> exit(Error);
+        _ -> Return
+      end
   end.
 
--spec contrs_and_recs(dialyzer_codeserver:codeserver()) ->
-                         fun(() -> no_return()).
-
-contrs_and_recs(TmpCServer2) ->
+remote_type_postproc(TmpCServer0, Args) ->
+  {Plt, Analysis, Parent} = Args,
   fun() ->
-      Parent = receive {Pid, go} -> Pid end,
-      {TmpCServer3, RecordDict} =
-        dialyzer_utils:process_record_remote_types(TmpCServer2),
+      Caller = receive {Pid, go} -> Pid end,
+      TmpCServer1 = dialyzer_utils:merge_types(TmpCServer0, Plt),
+      NewExpTypes = dialyzer_codeserver:get_temp_exported_types(TmpCServer0),
+      OldExpTypes0 = dialyzer_plt:get_exported_types(Plt),
+      #analysis{start_from = StartFrom,
+                timing_server = TimingServer} = Analysis,
+      Files = ordsets:from_list(Analysis#analysis.files),
+      RemMods =
+        [case StartFrom of
+           byte_code -> list_to_atom(filename:basename(F, ".beam"));
+           src_code -> list_to_atom(filename:basename(F, ".erl"))
+         end || F <- Files],
+      OldExpTypes1 = dialyzer_utils:sets_filter(RemMods, OldExpTypes0),
+      MergedExpTypes = sets:union(NewExpTypes, OldExpTypes1),
+      TmpCServer2 =
+        dialyzer_codeserver:finalize_exported_types(MergedExpTypes,
+                                                    TmpCServer1),
       TmpServer4 =
-        dialyzer_contracts:process_contract_remote_types(TmpCServer3,
-                                                         RecordDict),
-      dialyzer_codeserver:give_away(TmpServer4, Parent),
-      exit(TmpServer4)
+        ?timing
+           (TimingServer, "remote",
+            begin
+              TmpCServer3 =
+                dialyzer_utils:process_record_remote_types(TmpCServer2),
+              dialyzer_contracts:process_contract_remote_types(TmpCServer3)
+          end),
+      rcv_and_send_ext_types(Caller, Parent),
+      dialyzer_codeserver:give_away(TmpServer4, Caller),
+      TmpServer4
+  end().
+
+skip_ets_transfer(Pid) ->
+  receive
+    {'ETS-TRANSFER', _Tid, Pid, _HeriData} ->
+      skip_ets_transfer(Pid)
+  after 0 ->
+      ok
   end.
+
+move_data(CServer, Plt) ->
+  {CServer1, Records} = dialyzer_codeserver:extract_records(CServer),
+  Plt1 = dialyzer_plt:insert_types(Plt, Records),
+  {NewCServer, ExpTypes} = dialyzer_codeserver:extract_exported_types(CServer1),
+  NewPlt = dialyzer_plt:insert_exported_types(Plt1, ExpTypes),
+  {NewCServer, NewPlt}.
 
 analyze_callgraph(Callgraph, #analysis_state{codeserver = Codeserver,
 					     doc_plt = DocPlt,
@@ -224,19 +234,19 @@ analyze_callgraph(Callgraph, #analysis_state{codeserver = Codeserver,
                                              solvers = Solvers} = State) ->
   case State#analysis_state.analysis_type of
     plt_build ->
-      NewMiniPlt =
+      NewPlt =
         dialyzer_succ_typings:analyze_callgraph(Callgraph, Plt, Codeserver,
                                                 TimingServer, Solvers, Parent),
       dialyzer_callgraph:delete(Callgraph),
-      State#analysis_state{plt = NewMiniPlt, doc_plt = DocPlt};
+      State#analysis_state{plt = NewPlt, doc_plt = DocPlt};
     succ_typings ->
-      {Warnings, NewMiniPlt, NewDocPlt} =
+      {Warnings, NewPlt, NewDocPlt} =
         dialyzer_succ_typings:get_warnings(Callgraph, Plt, DocPlt, Codeserver,
                                            TimingServer, Solvers, Parent),
       dialyzer_callgraph:delete(Callgraph),
       Warnings1 = filter_warnings(Warnings, Codeserver),
       send_warnings(State#analysis_state.parent, Warnings1),
-      State#analysis_state{plt = NewMiniPlt, doc_plt = NewDocPlt}
+      State#analysis_state{plt = NewPlt, doc_plt = NewDocPlt}
     end.
 
 %%--------------------------------------------------------------------
@@ -294,7 +304,7 @@ compile_and_store(Files, #analysis_state{codeserver = CServer,
                     dict:new(), Files),
       check_for_duplicate_modules(ModDict);
     false ->
-      Msg = io_lib:format("Could not scan the following file(s):~n~s",
+      Msg = io_lib:format("Could not scan the following file(s):~n~ts",
       			  [[Reason || {_Filename, Reason} <- Failed]]),
       exit({error, Msg})
   end,
@@ -392,68 +402,46 @@ compile_src(File, Includes, Defines, Callgraph, CServer, UseContracts,
   DefaultIncludes = default_includes(filename:dirname(File)),
   SrcCompOpts = dialyzer_utils:src_compiler_opts(),
   CompOpts = SrcCompOpts ++ Includes ++ Defines ++ DefaultIncludes,
-  case dialyzer_utils:get_abstract_code_from_src(File, CompOpts) of
+  case dialyzer_utils:get_core_from_src(File, CompOpts) of
     {error, _Msg} = Error -> Error;
-    {ok, AbstrCode} ->
-      compile_common(File, AbstrCode, CompOpts, Callgraph, CServer,
-                     UseContracts, LegalWarnings)
+    {ok, Core} ->
+      compile_common(Core, Callgraph, CServer, UseContracts, LegalWarnings)
   end.
 
 compile_byte(File, Callgraph, CServer, UseContracts, LegalWarnings) ->
-  case dialyzer_utils:get_abstract_code_from_beam(File) of
-    error ->
-      {error, "  Could not get abstract code for: " ++ File ++ "\n" ++
-	 "  Recompile with +debug_info or analyze starting from source code"};
-    {ok, AbstrCode} ->
-      compile_byte(File, AbstrCode, Callgraph, CServer, UseContracts,
-                   LegalWarnings)
-  end.
-
-compile_byte(File, AbstrCode, Callgraph, CServer, UseContracts,
-             LegalWarnings) ->
-  case dialyzer_utils:get_compile_options_from_beam(File) of
-    error ->
-      {error, "  Could not get compile options for: " ++ File ++ "\n" ++
-	 "  Recompile or analyze starting from source code"};
-    {ok, CompOpts} ->
-      compile_common(File, AbstrCode, CompOpts, Callgraph, CServer,
-                     UseContracts, LegalWarnings)
-  end.
-
-compile_common(File, AbstrCode, CompOpts, Callgraph, CServer,
-               UseContracts, LegalWarnings) ->
-  case dialyzer_utils:get_core_from_abstract_code(AbstrCode, CompOpts) of
-    error -> {error, "  Could not get core Erlang code for: " ++ File};
+  case dialyzer_utils:get_core_from_beam(File) of
+    {error, _} = Error -> Error;
     {ok, Core} ->
-      Mod = cerl:concrete(cerl:module_name(Core)),
-      case dialyzer_utils:get_record_and_type_info(AbstrCode) of
+      compile_common(Core, Callgraph, CServer, UseContracts, LegalWarnings)
+  end.
+
+compile_common(Core, Callgraph, CServer, UseContracts, LegalWarnings) ->
+  Mod = cerl:concrete(cerl:module_name(Core)),
+  case dialyzer_utils:get_record_and_type_info(Core) of
+    {error, _} = Error -> Error;
+    {ok, RecInfo} ->
+      CServer1 =
+	dialyzer_codeserver:store_temp_records(Mod, RecInfo, CServer),
+      case dialyzer_utils:get_fun_meta_info(Mod, Core, LegalWarnings) of
 	{error, _} = Error -> Error;
-	{ok, RecInfo} ->
-	  CServer1 =
-	    dialyzer_codeserver:store_temp_records(Mod, RecInfo, CServer),
-          case
-            dialyzer_utils:get_fun_meta_info(Mod, AbstrCode, LegalWarnings)
-          of
-            {error, _} = Error -> Error;
-            MetaFunInfo ->
-              CServer2 =
-                dialyzer_codeserver:insert_fun_meta_info(MetaFunInfo, CServer1),
-              case UseContracts of
-                true ->
-                  case dialyzer_utils:get_spec_info(Mod, AbstrCode, RecInfo) of
-                    {error, _} = Error -> Error;
-                    {ok, SpecInfo, CallbackInfo} ->
-                      CServer3 =
-                        dialyzer_codeserver:store_temp_contracts(Mod, SpecInfo,
-                                                                 CallbackInfo,
-                                                                 CServer2),
-                      store_core(Mod, Core, Callgraph, CServer3)
-                  end;
-                false ->
-                  store_core(Mod, Core, Callgraph, CServer2)
-              end
-          end
+	MetaFunInfo ->
+	  CServer2 =
+	    dialyzer_codeserver:insert_fun_meta_info(MetaFunInfo, CServer1),
+	  case UseContracts of
+	    true ->
+	      case dialyzer_utils:get_spec_info(Mod, Core, RecInfo) of
+	        {error, _} = Error -> Error;
+	        {ok, SpecInfo, CallbackInfo} ->
+	          CServer3 =
+	            dialyzer_codeserver:store_temp_contracts(Mod, SpecInfo,
+	                                                     CallbackInfo,
+	                                                     CServer2),
+	          store_core(Mod, Core, Callgraph, CServer3)
+	      end;
+	    false ->
+	      store_core(Mod, Core, Callgraph, CServer2)
       end
+    end
   end.
 
 store_core(Mod, Core, Callgraph, CServer) ->
@@ -554,13 +542,13 @@ default_includes(Dir) ->
 %% Handle Messages
 %%-------------------------------------------------------------------
 
-rcv_and_send_ext_types(Parent) ->
+rcv_and_send_ext_types(SendTo, Parent) ->
   Self = self(),
   Self ! {Self, done},
   case rcv_ext_types(Self, []) of
     [] -> ok;
     ExtTypes ->
-      Parent ! {Self, ext_types, ExtTypes},
+      Parent ! {SendTo, ext_types, ExtTypes},
       ok
   end.
 
@@ -594,9 +582,8 @@ is_ok_fun({_Filename, _Line, {_M, _F, _A} = MFA}, Codeserver) ->
 is_ok_tag(Tag, {_F, _L, MorMFA}, Codeserver) ->
   not dialyzer_utils:is_suppressed_tag(MorMFA, Tag, Codeserver).
   
-send_analysis_done(Parent, MiniPlt, DocPlt) ->
-  ok = dialyzer_plt:give_away(MiniPlt, Parent),
-  Parent ! {self(), done, MiniPlt, DocPlt},
+send_analysis_done(Parent, Plt, DocPlt) ->
+  Parent ! {self(), done, Plt, DocPlt},
   ok.
 
 send_ext_calls(_Parent, none) ->
@@ -610,6 +597,7 @@ send_ext_types(Parent, ExtTypes) ->
   ok.
 
 send_codeserver_plt(Parent, CServer, Plt) ->
+  ok = dialyzer_codeserver:give_away(CServer, Parent),
   Parent ! {self(), cserver, CServer, Plt},
   ok.
 
@@ -711,12 +699,13 @@ dump_callgraph(CallGraph, _State, #analysis{callgraph_file = File}, ".ps") ->
   Args = "-Gratio=compress -Gsize=\"100,100\"",
   dialyzer_callgraph:to_ps(CallGraph, File, Args);
 dump_callgraph(CallGraph, State, #analysis{callgraph_file = File}, _Ext) ->
+  %% TODO: write the graph, not the ETS table identifiers.
   case file:open(File, [write]) of
     {ok, Fd} ->
       io:format(Fd, "~p", [CallGraph]),
       ok = file:close(Fd);
     {error, Reason} ->
-      Msg = io_lib:format("Could not open output file ~p, Reason: ~p\n",
+      Msg = io_lib:format("Could not open output file ~tp, Reason: ~p\n",
 			  [File, Reason]),
       send_log(State#analysis_state.parent, Msg)
   end.

@@ -1,7 +1,7 @@
 %%
 %% %CopyrightBegin%
 %%
-%% Copyright Ericsson AB 1996-2016. All Rights Reserved.
+%% Copyright Ericsson AB 1996-2017. All Rights Reserved.
 %%
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -1888,7 +1888,7 @@ info_format(Tab, Size, Mem, Media) ->
     StrT = mnesia_lib:pad_name(atom_to_list(Tab), 15, []),
     StrS = mnesia_lib:pad_name(integer_to_list(Size), 8, []),
     StrM = mnesia_lib:pad_name(integer_to_list(Mem), 8, []),
-    io:format("~s: with ~s records occupying ~s ~s~n",
+    io:format("~ts: with ~s records occupying ~s ~s~n",
 	      [StrT, StrS, StrM, Media]).
 
 %% Handle early arrived messages

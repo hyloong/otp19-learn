@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxPickerBase</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxPickerBase.xml</file></header>
+<module>wxPickerBase</module>
+<modulesummary>See external documentation: wxPickerBase.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpickerbase.html">wxPickerBase</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxControl">wxControl</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxPickerBase"/>wxPickerBase()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>setInternalMargin(This, Newmargin) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPickerBase">wxPickerBase()</seealso></v><v>Newmargin = integer()</v></type>
+<desc><marker id="setInternalMargin-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpickerbase.html#wxpickerbasesetinternalmargin">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getInternalMargin(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPickerBase">wxPickerBase()</seealso></v></type>
+<desc><marker id="getInternalMargin-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpickerbase.html#wxpickerbasegetinternalmargin">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setTextCtrlProportion(This, Prop) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPickerBase">wxPickerBase()</seealso></v><v>Prop = integer()</v></type>
+<desc><marker id="setTextCtrlProportion-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpickerbase.html#wxpickerbasesettextctrlproportion">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setPickerCtrlProportion(This, Prop) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPickerBase">wxPickerBase()</seealso></v><v>Prop = integer()</v></type>
+<desc><marker id="setPickerCtrlProportion-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpickerbase.html#wxpickerbasesetpickerctrlproportion">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getTextCtrlProportion(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPickerBase">wxPickerBase()</seealso></v></type>
+<desc><marker id="getTextCtrlProportion-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpickerbase.html#wxpickerbasegettextctrlproportion">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPickerCtrlProportion(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPickerBase">wxPickerBase()</seealso></v></type>
+<desc><marker id="getPickerCtrlProportion-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpickerbase.html#wxpickerbasegetpickerctrlproportion">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasTextCtrl(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPickerBase">wxPickerBase()</seealso></v></type>
+<desc><marker id="hasTextCtrl-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpickerbase.html#wxpickerbasehastextctrl">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getTextCtrl(This) -&gt; <seealso marker="wxTextCtrl#type-wxTextCtrl">wxTextCtrl:wxTextCtrl()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPickerBase">wxPickerBase()</seealso></v></type>
+<desc><marker id="getTextCtrl-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpickerbase.html#wxpickerbasegettextctrl">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isTextCtrlGrowable(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPickerBase">wxPickerBase()</seealso></v></type>
+<desc><marker id="isTextCtrlGrowable-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpickerbase.html#wxpickerbaseistextctrlgrowable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setPickerCtrlGrowable(This) -&gt; ok</name>
+<fsummary>Equivalent to setPickerCtrlGrowable(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPickerBase">wxPickerBase()</seealso></v></type>
+<desc><marker id="setPickerCtrlGrowable-1"/>
+<p>Equivalent to <seealso marker="#setPickerCtrlGrowable-2">setPickerCtrlGrowable(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setPickerCtrlGrowable(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPickerBase">wxPickerBase()</seealso></v><v>Option = {grow, boolean()}</v></type>
+<desc><marker id="setPickerCtrlGrowable-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpickerbase.html#wxpickerbasesetpickerctrlgrowable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setTextCtrlGrowable(This) -&gt; ok</name>
+<fsummary>Equivalent to setTextCtrlGrowable(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPickerBase">wxPickerBase()</seealso></v></type>
+<desc><marker id="setTextCtrlGrowable-1"/>
+<p>Equivalent to <seealso marker="#setTextCtrlGrowable-2">setTextCtrlGrowable(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setTextCtrlGrowable(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPickerBase">wxPickerBase()</seealso></v><v>Option = {grow, boolean()}</v></type>
+<desc><marker id="setTextCtrlGrowable-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpickerbase.html#wxpickerbasesettextctrlgrowable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isPickerCtrlGrowable(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPickerBase">wxPickerBase()</seealso></v></type>
+<desc><marker id="isPickerCtrlGrowable-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpickerbase.html#wxpickerbaseispickerctrlgrowable">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

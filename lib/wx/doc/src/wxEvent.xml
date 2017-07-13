@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxEvent</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxEvent.xml</file></header>
+<module>wxEvent</module>
+<modulesummary>See external documentation: wxEvent.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxevent.html">wxEvent</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxEvent"/>wxEvent()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>getId(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxEvent">wxEvent()</seealso></v></type>
+<desc><marker id="getId-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxevent.html#wxeventgetid">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSkipped(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxEvent">wxEvent()</seealso></v></type>
+<desc><marker id="getSkipped-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxevent.html#wxeventgetskipped">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getTimestamp(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxEvent">wxEvent()</seealso></v></type>
+<desc><marker id="getTimestamp-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxevent.html#wxeventgettimestamp">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isCommandEvent(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxEvent">wxEvent()</seealso></v></type>
+<desc><marker id="isCommandEvent-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxevent.html#wxeventiscommandevent">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>resumePropagation(This, PropagationLevel) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxEvent">wxEvent()</seealso></v><v>PropagationLevel = integer()</v></type>
+<desc><marker id="resumePropagation-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxevent.html#wxeventresumepropagation">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>shouldPropagate(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxEvent">wxEvent()</seealso></v></type>
+<desc><marker id="shouldPropagate-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxevent.html#wxeventshouldpropagate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>skip(This) -&gt; ok</name>
+<fsummary>Equivalent to skip(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxEvent">wxEvent()</seealso></v></type>
+<desc><marker id="skip-1"/>
+<p>Equivalent to <seealso marker="#skip-2">skip(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>skip(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxEvent">wxEvent()</seealso></v><v>Option = {skip, boolean()}</v></type>
+<desc><marker id="skip-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxevent.html#wxeventskip">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>stopPropagation(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxEvent">wxEvent()</seealso></v></type>
+<desc><marker id="stopPropagation-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxevent.html#wxeventstoppropagation">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

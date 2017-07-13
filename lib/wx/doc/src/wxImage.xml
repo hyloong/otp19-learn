@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxImage</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxImage.xml</file></header>
+<module>wxImage</module>
+<modulesummary>See external documentation: wxImage.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html">wxImage</url>.</p>
+ 
+  <p>All (default) image handlers are initialized.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxImage"/>wxImage()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagewximage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Name) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>Equivalent to new(Name, []).
+</fsummary>
+<type>
+<v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="new-1"/>
+<p>Equivalent to <seealso marker="#new-2">new(Name, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Width, Height) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Width = integer()</v><v>Height = integer()</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagewximage">external documentation</url>.
+  <br/> Also:<br/>
+  new(Name, [Option]) -&gt; wxImage() when<br/>
+  	Name::unicode:chardata(),<br/>
+  	Option :: {'type', integer()}<br/>
+  		 | {'index', integer()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>new(Width, Height, Data) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Width = integer()</v><v>Height = integer()</v><v>Data = binary()</v></type>
+<desc><marker id="new-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagewximage">external documentation</url>.
+  <br/> Also:<br/>
+  new(Width, Height, [Option]) -&gt; wxImage() when<br/>
+  	Width::integer(), Height::integer(),<br/>
+  	Option :: {'clear', boolean()};<br/>
+        (Name, Mimetype, [Option]) -&gt; wxImage() when<br/>
+  	Name::unicode:chardata(), Mimetype::unicode:chardata(),<br/>
+  	Option :: {'index', integer()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>new(Width, Height, Data, Alpha) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Width = integer()</v><v>Height = integer()</v><v>Data = binary()</v><v>Alpha = binary()</v></type>
+<desc><marker id="new-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagewximage">external documentation</url>.
+  <br/> Also:<br/>
+  new(Width, Height, Data, [Option]) -&gt; wxImage() when<br/>
+  	Width::integer(), Height::integer(), Data::binary(),<br/>
+  	Option :: {'static_data', boolean()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>new(Width, Height, Data, Alpha, Options::[Option]) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Width = integer()</v><v>Height = integer()</v><v>Data = binary()</v><v>Alpha = binary()</v><v>Option = {static_data, boolean()}</v></type>
+<desc><marker id="new-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagewximage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>blur(This, Radius) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Radius = integer()</v></type>
+<desc><marker id="blur-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximageblur">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>blurHorizontal(This, Radius) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Radius = integer()</v></type>
+<desc><marker id="blurHorizontal-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximageblurhorizontal">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>blurVertical(This, Radius) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Radius = integer()</v></type>
+<desc><marker id="blurVertical-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximageblurvertical">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>convertAlphaToMask(This) -&gt; boolean()</name>
+<fsummary>Equivalent to convertAlphaToMask(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v></type>
+<desc><marker id="convertAlphaToMask-1"/>
+<p>Equivalent to <seealso marker="#convertAlphaToMask-2">convertAlphaToMask(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>convertAlphaToMask(This, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Option = {threshold, integer()}</v></type>
+<desc><marker id="convertAlphaToMask-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximageconvertalphatomask">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>convertToGreyscale(This) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>Equivalent to convertToGreyscale(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v></type>
+<desc><marker id="convertToGreyscale-1"/>
+<p>Equivalent to <seealso marker="#convertToGreyscale-2">convertToGreyscale(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>convertToGreyscale(This, Options::[Option]) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Option = {lr, number()} | {lg, number()} | {lb, number()}</v></type>
+<desc><marker id="convertToGreyscale-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximageconverttogreyscale">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>convertToMono(This, R, G, B) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>R = integer()</v><v>G = integer()</v><v>B = integer()</v></type>
+<desc><marker id="convertToMono-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximageconverttomono">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>copy(This) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v></type>
+<desc><marker id="copy-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagecopy">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(This, Width, Height) -&gt; boolean()</name>
+<fsummary>Equivalent to create(This, Width, Height, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Width = integer()</v><v>Height = integer()</v></type>
+<desc><marker id="create-3"/>
+<p>Equivalent to <seealso marker="#create-4">create(This, Width, Height, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>create(This, Width, Height, Data) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Width = integer()</v><v>Height = integer()</v><v>Data = binary()</v></type>
+<desc><marker id="create-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagecreate">external documentation</url>.
+  <br/> Also:<br/>
+  create(This, Width, Height, [Option]) -&gt; boolean() when<br/>
+  	This::wxImage(), Width::integer(), Height::integer(),<br/>
+  	Option :: {'clear', boolean()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>create(This, Width, Height, Data, Alpha) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Width = integer()</v><v>Height = integer()</v><v>Data = binary()</v><v>Alpha = binary()</v></type>
+<desc><marker id="create-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagecreate">external documentation</url>.
+  <br/> Also:<br/>
+  create(This, Width, Height, Data, [Option]) -&gt; boolean() when<br/>
+  	This::wxImage(), Width::integer(), Height::integer(), Data::binary(),<br/>
+  	Option :: {'static_data', boolean()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>create(This, Width, Height, Data, Alpha, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Width = integer()</v><v>Height = integer()</v><v>Data = binary()</v><v>Alpha = binary()</v><v>Option = {static_data, boolean()}</v></type>
+<desc><marker id="create-6"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagecreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>Destroy(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v></type>
+<desc><marker id="Destroy-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagedestroy">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>findFirstUnusedColour(This) -&gt; Result</name>
+<fsummary>Equivalent to findFirstUnusedColour(This, []).
+</fsummary>
+<type>
+<v>Result = {Res::boolean(), R::integer(), G::integer(), B::integer()}</v><v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v></type>
+<desc><marker id="findFirstUnusedColour-1"/>
+<p>Equivalent to <seealso marker="#findFirstUnusedColour-2">findFirstUnusedColour(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>findFirstUnusedColour(This, Options::[Option]) -&gt; Result</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Result = {Res::boolean(), R::integer(), G::integer(), B::integer()}</v><v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Option = {startR, integer()} | {startG, integer()} | {startB, integer()}</v></type>
+<desc><marker id="findFirstUnusedColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagefindfirstunusedcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getImageExtWildcard() -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="getImageExtWildcard-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagegetimageextwildcard">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getAlpha(This) -&gt; binary()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v></type>
+<desc><marker id="getAlpha-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagegetalpha">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getAlpha(This, X, Y) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="getAlpha-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagegetalpha">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getBlue(This, X, Y) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="getBlue-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagegetblue">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getData(This) -&gt; binary()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v></type>
+<desc><marker id="getData-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagegetdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getGreen(This, X, Y) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="getGreen-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagegetgreen">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getImageCount(Name) -&gt; integer()</name>
+<fsummary>Equivalent to getImageCount(Name, []).
+</fsummary>
+<type>
+<v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="getImageCount-1"/>
+<p>Equivalent to <seealso marker="#getImageCount-2">getImageCount(Name, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>getImageCount(Name, Options::[Option]) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {type, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</v></type>
+<desc><marker id="getImageCount-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagegetimagecount">external documentation</url>.
+ <br/> Type = ?wxBITMAP_TYPE_INVALID | ?wxBITMAP_TYPE_BMP | ?wxBITMAP_TYPE_BMP_RESOURCE | ?wxBITMAP_TYPE_RESOURCE | ?wxBITMAP_TYPE_ICO | ?wxBITMAP_TYPE_ICO_RESOURCE | ?wxBITMAP_TYPE_CUR | ?wxBITMAP_TYPE_CUR_RESOURCE | ?wxBITMAP_TYPE_XBM | ?wxBITMAP_TYPE_XBM_DATA | ?wxBITMAP_TYPE_XPM | ?wxBITMAP_TYPE_XPM_DATA | ?wxBITMAP_TYPE_TIF | ?wxBITMAP_TYPE_TIF_RESOURCE | ?wxBITMAP_TYPE_GIF | ?wxBITMAP_TYPE_GIF_RESOURCE | ?wxBITMAP_TYPE_PNG | ?wxBITMAP_TYPE_PNG_RESOURCE | ?wxBITMAP_TYPE_JPEG | ?wxBITMAP_TYPE_JPEG_RESOURCE | ?wxBITMAP_TYPE_PNM | ?wxBITMAP_TYPE_PNM_RESOURCE | ?wxBITMAP_TYPE_PCX | ?wxBITMAP_TYPE_PCX_RESOURCE | ?wxBITMAP_TYPE_PICT | ?wxBITMAP_TYPE_PICT_RESOURCE | ?wxBITMAP_TYPE_ICON | ?wxBITMAP_TYPE_ICON_RESOURCE | ?wxBITMAP_TYPE_ANI | ?wxBITMAP_TYPE_IFF | ?wxBITMAP_TYPE_TGA | ?wxBITMAP_TYPE_MACCURSOR | ?wxBITMAP_TYPE_MACCURSOR_RESOURCE | ?wxBITMAP_TYPE_ANY</p>
+</desc></func>
+<func>
+<name>getHeight(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v></type>
+<desc><marker id="getHeight-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagegetheight">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMaskBlue(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v></type>
+<desc><marker id="getMaskBlue-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagegetmaskblue">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMaskGreen(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v></type>
+<desc><marker id="getMaskGreen-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagegetmaskgreen">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMaskRed(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v></type>
+<desc><marker id="getMaskRed-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagegetmaskred">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getOrFindMaskColour(This) -&gt; Result</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Result = {Res::boolean(), R::integer(), G::integer(), B::integer()}</v><v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v></type>
+<desc><marker id="getOrFindMaskColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagegetorfindmaskcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPalette(This) -&gt; <seealso marker="wxPalette#type-wxPalette">wxPalette:wxPalette()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v></type>
+<desc><marker id="getPalette-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagegetpalette">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getRed(This, X, Y) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="getRed-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagegetred">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSubImage(This, Rect) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Rect = {X::integer(), Y::integer(), W::integer(), H::integer()}</v></type>
+<desc><marker id="getSubImage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagegetsubimage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getWidth(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v></type>
+<desc><marker id="getWidth-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagegetwidth">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasAlpha(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v></type>
+<desc><marker id="hasAlpha-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagehasalpha">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasMask(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v></type>
+<desc><marker id="hasMask-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagehasmask">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getOption(This, Name) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="getOption-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagegetoption">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getOptionInt(This, Name) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="getOptionInt-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagegetoptionint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasOption(This, Name) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="hasOption-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagehasoption">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>initAlpha(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v></type>
+<desc><marker id="initAlpha-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximageinitalpha">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>initStandardHandlers() -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="initStandardHandlers-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximageinitstandardhandlers">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isTransparent(This, X, Y) -&gt; boolean()</name>
+<fsummary>Equivalent to isTransparent(This, X, Y, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="isTransparent-3"/>
+<p>Equivalent to <seealso marker="#isTransparent-4">isTransparent(This, X, Y, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>isTransparent(This, X, Y, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>X = integer()</v><v>Y = integer()</v><v>Option = {threshold, integer()}</v></type>
+<desc><marker id="isTransparent-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximageistransparent">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>loadFile(This, Name) -&gt; boolean()</name>
+<fsummary>Equivalent to loadFile(This, Name, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="loadFile-2"/>
+<p>Equivalent to <seealso marker="#loadFile-3">loadFile(This, Name, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>loadFile(This, Name, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {type, integer()} | {index, integer()}</v></type>
+<desc><marker id="loadFile-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximageloadfile">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>loadFile(This, Name, Mimetype, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Mimetype = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {index, integer()}</v></type>
+<desc><marker id="loadFile-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximageloadfile">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>ok(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v></type>
+<desc><marker id="ok-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximageok">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>removeHandler(Name) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="removeHandler-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximageremovehandler">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>mirror(This) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>Equivalent to mirror(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v></type>
+<desc><marker id="mirror-1"/>
+<p>Equivalent to <seealso marker="#mirror-2">mirror(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>mirror(This, Options::[Option]) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Option = {horizontally, boolean()}</v></type>
+<desc><marker id="mirror-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagemirror">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>replace(This, R1, G1, B1, R2, G2, B2) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>R1 = integer()</v><v>G1 = integer()</v><v>B1 = integer()</v><v>R2 = integer()</v><v>G2 = integer()</v><v>B2 = integer()</v></type>
+<desc><marker id="replace-7"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagereplace">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>rescale(This, Width, Height) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>Equivalent to rescale(This, Width, Height, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Width = integer()</v><v>Height = integer()</v></type>
+<desc><marker id="rescale-3"/>
+<p>Equivalent to <seealso marker="#rescale-4">rescale(This, Width, Height, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>rescale(This, Width, Height, Options::[Option]) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Width = integer()</v><v>Height = integer()</v><v>Option = {quality, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</v></type>
+<desc><marker id="rescale-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagerescale">external documentation</url>.
+ <br/> Quality = integer</p>
+</desc></func>
+<func>
+<name>resize(This, Size, Pos) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>Equivalent to resize(This, Size, Pos, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Size = {W::integer(), H::integer()}</v><v>Pos = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="resize-3"/>
+<p>Equivalent to <seealso marker="#resize-4">resize(This, Size, Pos, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>resize(This, Size, Pos, Options::[Option]) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Size = {W::integer(), H::integer()}</v><v>Pos = {X::integer(), Y::integer()}</v><v>Option = {r, integer()} | {g, integer()} | {b, integer()}</v></type>
+<desc><marker id="resize-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximageresize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>rotate(This, Angle, Centre_of_rotation) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>Equivalent to rotate(This, Angle, Centre_of_rotation, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Angle = number()</v><v>Centre_of_rotation = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="rotate-3"/>
+<p>Equivalent to <seealso marker="#rotate-4">rotate(This, Angle, Centre_of_rotation, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>rotate(This, Angle, Centre_of_rotation, Options::[Option]) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Angle = number()</v><v>Centre_of_rotation = {X::integer(), Y::integer()}</v><v>Option = {interpolating, boolean()} | {offset_after_rotation, {X::integer(), Y::integer()}}</v></type>
+<desc><marker id="rotate-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagerotate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>rotateHue(This, Angle) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Angle = number()</v></type>
+<desc><marker id="rotateHue-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagerotatehue">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>rotate90(This) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>Equivalent to rotate90(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v></type>
+<desc><marker id="rotate90-1"/>
+<p>Equivalent to <seealso marker="#rotate90-2">rotate90(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>rotate90(This, Options::[Option]) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Option = {clockwise, boolean()}</v></type>
+<desc><marker id="rotate90-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagerotate90">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>saveFile(This, Name) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="saveFile-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagesavefile">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>saveFile(This, Name, Type) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Type = integer()</v></type>
+<desc><marker id="saveFile-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagesavefile">external documentation</url>.
+  <br/> Also:<br/>
+  saveFile(This, Name, Mimetype) -&gt; boolean() when<br/>
+  	This::wxImage(), Name::unicode:chardata(), Mimetype::unicode:chardata().<br/>
+ </p>
+</desc></func>
+<func>
+<name>scale(This, Width, Height) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>Equivalent to scale(This, Width, Height, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Width = integer()</v><v>Height = integer()</v></type>
+<desc><marker id="scale-3"/>
+<p>Equivalent to <seealso marker="#scale-4">scale(This, Width, Height, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>scale(This, Width, Height, Options::[Option]) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Width = integer()</v><v>Height = integer()</v><v>Option = {quality, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</v></type>
+<desc><marker id="scale-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagescale">external documentation</url>.
+ <br/> Quality = integer</p>
+</desc></func>
+<func>
+<name>size(This, Size, Pos) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>Equivalent to size(This, Size, Pos, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Size = {W::integer(), H::integer()}</v><v>Pos = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="size-3"/>
+<p>Equivalent to <seealso marker="#size-4">size(This, Size, Pos, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>size(This, Size, Pos, Options::[Option]) -&gt; <seealso marker="#type-wxImage">wxImage()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Size = {W::integer(), H::integer()}</v><v>Pos = {X::integer(), Y::integer()}</v><v>Option = {r, integer()} | {g, integer()} | {b, integer()}</v></type>
+<desc><marker id="size-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagesize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setAlpha(This, Alpha) -&gt; ok</name>
+<fsummary>Equivalent to setAlpha(This, Alpha, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Alpha = binary()</v></type>
+<desc><marker id="setAlpha-2"/>
+<p>Equivalent to <seealso marker="#setAlpha-3">setAlpha(This, Alpha, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setAlpha(This, Alpha, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Alpha = binary()</v><v>Option = {static_data, boolean()}</v></type>
+<desc><marker id="setAlpha-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagesetalpha">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setAlpha(This, X, Y, Alpha) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>X = integer()</v><v>Y = integer()</v><v>Alpha = integer()</v></type>
+<desc><marker id="setAlpha-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagesetalpha">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setData(This, Data) -&gt; ok</name>
+<fsummary>Equivalent to setData(This, Data, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Data = binary()</v></type>
+<desc><marker id="setData-2"/>
+<p>Equivalent to <seealso marker="#setData-3">setData(This, Data, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setData(This, Data, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Data = binary()</v><v>Option = {static_data, boolean()}</v></type>
+<desc><marker id="setData-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagesetdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setData(This, Data, New_width, New_height) -&gt; ok</name>
+<fsummary>Equivalent to setData(This, Data, New_width, New_height, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Data = binary()</v><v>New_width = integer()</v><v>New_height = integer()</v></type>
+<desc><marker id="setData-4"/>
+<p>Equivalent to <seealso marker="#setData-5">setData(This, Data, New_width, New_height, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setData(This, Data, New_width, New_height, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Data = binary()</v><v>New_width = integer()</v><v>New_height = integer()</v><v>Option = {static_data, boolean()}</v></type>
+<desc><marker id="setData-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagesetdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMask(This) -&gt; ok</name>
+<fsummary>Equivalent to setMask(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v></type>
+<desc><marker id="setMask-1"/>
+<p>Equivalent to <seealso marker="#setMask-2">setMask(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setMask(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Option = {mask, boolean()}</v></type>
+<desc><marker id="setMask-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagesetmask">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMaskColour(This, R, G, B) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>R = integer()</v><v>G = integer()</v><v>B = integer()</v></type>
+<desc><marker id="setMaskColour-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagesetmaskcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMaskFromImage(This, Mask, Mr, Mg, Mb) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Mask = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Mr = integer()</v><v>Mg = integer()</v><v>Mb = integer()</v></type>
+<desc><marker id="setMaskFromImage-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagesetmaskfromimage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setOption(This, Name, Value) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Value = integer()</v></type>
+<desc><marker id="setOption-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagesetoption">external documentation</url>.
+  <br/> Also:<br/>
+  setOption(This, Name, Value) -&gt; 'ok' when<br/>
+  	This::wxImage(), Name::unicode:chardata(), Value::unicode:chardata().<br/>
+ </p>
+</desc></func>
+<func>
+<name>setPalette(This, Palette) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Palette = <seealso marker="wxPalette#type-wxPalette">wxPalette:wxPalette()</seealso></v></type>
+<desc><marker id="setPalette-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagesetpalette">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setRGB(This, Rect, R, G, B) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>Rect = {X::integer(), Y::integer(), W::integer(), H::integer()}</v><v>R = integer()</v><v>G = integer()</v><v>B = integer()</v></type>
+<desc><marker id="setRGB-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagesetrgb">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setRGB(This, X, Y, R, G, B) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxImage">wxImage()</seealso></v><v>X = integer()</v><v>Y = integer()</v><v>R = integer()</v><v>G = integer()</v><v>B = integer()</v></type>
+<desc><marker id="setRGB-6"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wximage.html#wximagesetrgb">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxImage">wxImage()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

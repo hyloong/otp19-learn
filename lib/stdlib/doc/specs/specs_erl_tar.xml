@@ -1,0 +1,238 @@
+<module name="erl_tar">
+<type>
+  <name>add_opt</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-add_opt">add_opt()</marker> = dereference | verbose | {chunks, integer() &gt;= 1}</typehead></typedecl>
+</type>
+<type>
+  <name>add_type</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-add_type">add_type()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>string() | {string(), string()} | {string(), binary()}</typehead></typedecl>
+</type>
+<type>
+  <name>create_opt</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-create_opt">create_opt()</marker> = compressed | cooked | dereference | verbose</typehead></typedecl>
+</type>
+<type>
+  <name>extract_opt</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-extract_opt">extract_opt()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{cwd, string()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{files, [string()]} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>compressed |<br/><nbsp/><nbsp/><nbsp/><nbsp/>cooked |<br/><nbsp/><nbsp/><nbsp/><nbsp/>memory |<br/><nbsp/><nbsp/><nbsp/><nbsp/>keep_old_files |<br/><nbsp/><nbsp/><nbsp/><nbsp/>verbose</typehead></typedecl>
+</type>
+<type>
+  <name>file_op</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-file_op">file_op()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>fun((write | close | read2 | position,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{<seealso marker="#type-handle">handle()</seealso>, iodata()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-handle">handle()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{<seealso marker="#type-handle">handle()</seealso>, integer() &gt;= 0} |<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{<seealso marker="#type-handle">handle()</seealso>, integer() &gt;= 0}) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ok |<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>eof |<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, string() | binary()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, integer() &gt;= 0} |<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{error, term()})</typehead></typedecl>
+</type>
+<type>
+  <name>filelist</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-filelist">filelist()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>[<seealso marker="file#type-filename">file:filename()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{string(), binary()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{string(), <seealso marker="file#type-filename">file:filename()</seealso>}]</typehead></typedecl>
+</type>
+<type>
+  <name>filename</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-filename">filename()</marker> = string()</typehead></typedecl>
+</type>
+<type>
+  <name>gid</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-gid">gid()</marker> = integer() &gt;= 0</typehead></typedecl>
+</type>
+<type>
+  <name>handle</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-handle">handle()</marker> = <seealso marker="file#type-io_device">file:io_device()</seealso> | term()</typehead></typedecl>
+</type>
+<type>
+  <name>mode</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-mode">mode()</marker> = integer() &gt;= 0</typehead></typedecl>
+</type>
+<type>
+  <name>open_handle</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-open_handle">open_handle()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="file#type-filename">file:filename()</seealso> | {binary, binary()} | {file, term()}</typehead></typedecl>
+</type>
+<type>
+  <name>reader</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-reader">reader()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#reader{handle = <seealso marker="file#type-io_device">file:io_device()</seealso> | term(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>access = read | write | ram,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>pos = integer() &gt;= 0,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>func = <seealso marker="#type-file_op">file_op()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>tar_entry</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-tar_entry">tar_entry()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{<seealso marker="#type-filename">filename()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-typeflag">typeflag()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>integer() &gt;= 0,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-tar_time">tar_time()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-mode">mode()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-uid">uid()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-gid">gid()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>tar_time</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-tar_time">tar_time()</marker> = integer() &gt;= 0</typehead></typedecl>
+</type>
+<type>
+  <name>typeflag</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-typeflag">typeflag()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>regular |<br/><nbsp/><nbsp/><nbsp/><nbsp/>link |<br/><nbsp/><nbsp/><nbsp/><nbsp/>symlink |<br/><nbsp/><nbsp/><nbsp/><nbsp/>char |<br/><nbsp/><nbsp/><nbsp/><nbsp/>block |<br/><nbsp/><nbsp/><nbsp/><nbsp/>directory |<br/><nbsp/><nbsp/><nbsp/><nbsp/>fifo |<br/><nbsp/><nbsp/><nbsp/><nbsp/>reserved |<br/><nbsp/><nbsp/><nbsp/><nbsp/>unknown</typehead></typedecl>
+</type>
+<type>
+  <name>uid</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-uid">uid()</marker> = integer() &gt;= 0</typehead></typedecl>
+</type>
+<spec>
+  <name>add</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>add(Reader :: <seealso marker="#type-reader">reader()</seealso>, Name :: <seealso marker="#type-add_type">add_type()</seealso>, Opts :: [<seealso marker="#type-add_opt">add_opt()</seealso>]) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ok | {error, term()}</head></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>Opts</anno>
+  <anno>Reader</anno>
+</spec>
+<spec>
+  <name>add</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>add(Reader :: <seealso marker="#type-reader">reader()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/>NameOrBin :: string() | binary(),<br/><nbsp/><nbsp/><nbsp/><nbsp/>NameInArchive :: string(),<br/><nbsp/><nbsp/><nbsp/><nbsp/>Options :: [<seealso marker="#type-add_opt">add_opt()</seealso>]) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ok | {error, term()}</head></clause>
+  </contract>
+  <anno>NameInArchive</anno>
+  <anno>NameOrBin</anno>
+  <anno>Options</anno>
+  <anno>Reader</anno>
+</spec>
+<spec>
+  <name>close</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>close(Reader :: <seealso marker="#type-reader">reader()</seealso>) -&gt; ok | {error, term()}</head></clause>
+  </contract>
+  <anno>Reader</anno>
+</spec>
+<spec>
+  <name>create</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>create(Name :: <seealso marker="file#type-filename">file:filename()</seealso>, FileList :: <seealso marker="#type-filelist">filelist()</seealso>) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ok | {error, {string(), term()}}</head></clause>
+  </contract>
+  <anno>FileList</anno>
+  <anno>Name</anno>
+</spec>
+<spec>
+  <name>create</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>create(Name :: <seealso marker="file#type-filename">file:filename()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>FileList :: <seealso marker="#type-filelist">filelist()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Options :: [<seealso marker="#type-create_opt">create_opt()</seealso>]) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ok | {error, term()} | {error, {string(), term()}}</head></clause>
+  </contract>
+  <anno>FileList</anno>
+  <anno>Name</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>extract</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>extract(Name :: <seealso marker="#type-open_handle">open_handle()</seealso>) -&gt; ok | {error, term()}</head></clause>
+  </contract>
+  <anno>Name</anno>
+</spec>
+<spec>
+  <name>extract</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>extract(Reader :: <seealso marker="#type-open_handle">open_handle()</seealso>, Opts :: [<seealso marker="#type-extract_opt">extract_opt()</seealso>]) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ok | {ok, [{string(), binary()}]} | {error, term()}</head></clause>
+  </contract>
+  <anno>Opts</anno>
+  <anno>Reader</anno>
+</spec>
+<spec>
+  <name>format_error</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>format_error(Atom :: term()) -&gt; string()</head></clause>
+  </contract>
+  <anno>Atom</anno>
+</spec>
+<spec>
+  <name>init</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>init(Handle :: <seealso marker="#type-handle">handle()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>AccessMode :: write | read,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Fun :: <seealso marker="#type-file_op">file_op()</seealso>) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, <seealso marker="#type-reader">reader()</seealso>} | {error, badarg}</head></clause>
+  </contract>
+  <anno>AccessMode</anno>
+  <anno>Fun</anno>
+  <anno>Handle</anno>
+</spec>
+<spec>
+  <name>open</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>open(Name :: <seealso marker="#type-open_handle">open_handle()</seealso>, Mode :: [write | compressed | cooked]) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, <seealso marker="#type-reader">reader()</seealso>} | {error, term()}</head></clause>
+  </contract>
+  <anno>Mode</anno>
+  <anno>Name</anno>
+</spec>
+<spec>
+  <name>t</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>t(Name :: <seealso marker="file#type-filename">file:filename()</seealso>) -&gt; ok | {error, term()}</head></clause>
+  </contract>
+  <anno>Name</anno>
+</spec>
+<spec>
+  <name>table</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>table(Name :: <seealso marker="#type-open_handle">open_handle()</seealso>) -&gt; {ok, [string()]} | {error, term()}</head></clause>
+  </contract>
+  <anno>Name</anno>
+</spec>
+<spec>
+  <name>table</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>table(Name :: <seealso marker="#type-open_handle">open_handle()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Opts :: [compressed | verbose | cooked]) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, [<seealso marker="#type-tar_entry">tar_entry()</seealso>]} | {error, term()}</head></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>Opts</anno>
+</spec>
+<spec>
+  <name>tt</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>tt(Name :: <seealso marker="#type-open_handle">open_handle()</seealso>) -&gt; ok | {error, term()}</head></clause>
+  </contract>
+  <anno>Name</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:27:17.</timestamp>
+</module>

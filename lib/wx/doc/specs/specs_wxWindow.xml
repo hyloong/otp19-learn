@@ -1,0 +1,2921 @@
+<module name="wxWindow">
+<type>
+  <name>wxWindow</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxWindow">wxWindow()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>'Destroy'</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>'Destroy'(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>cacheBestSize</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>cacheBestSize(This, Size) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Size</typename><string>Size = {W :: integer(), H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Size</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>canSetTransparent</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>canSetTransparent(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>captureMouse</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>captureMouse(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>center</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>center(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>center</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>center(This, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {dir, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>centerOnParent</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>centerOnParent(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>centerOnParent</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>centerOnParent(This, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {dir, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>centre</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>centre(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>centre</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>centre(This, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {dir, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>centreOnParent</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>centreOnParent(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>centreOnParent</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>centreOnParent(This, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {dir, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>clearBackground</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>clearBackground(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>clientToScreen</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>clientToScreen(This, Pt) -&gt; {X :: integer(), Y :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Pt</typename><string>Pt = {X :: integer(), Y :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Pt</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>clientToScreen</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>clientToScreen(This, X, Y) -&gt; {X :: integer(), Y :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>close</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>close(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>close</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>close(This, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {force, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>connect</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>connect</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>convertDialogToPixels</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>convertDialogToPixels(This, Sz) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{W :: integer(), H :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Sz</typename><string>Sz = {W :: integer(), H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Sz</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>convertPixelsToDialog</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>convertPixelsToDialog(This, Sz) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{W :: integer(), H :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Sz</typename><string>Sz = {W :: integer(), H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Sz</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxWindow">wxWindow()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>destroyChildren</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroyChildren(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>disable</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>disable(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>disconnect</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>disconnect</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>disconnect</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>dragAcceptFiles</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>dragAcceptFiles(This, Accept) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Accept</typename><string>Accept = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Accept</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>enable</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>enable(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>enable</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>enable(This, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {enable, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>findFocus</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>findFocus() -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>findWindow</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>findWindow(This, Winid) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Winid</typename><string>Winid = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>Winid</anno>
+</spec>
+<spec>
+  <name>findWindow</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>findWindow(This, Name) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>findWindowById</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>findWindowById(Winid) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></head>
+      <guard>
+        <subtype><typename>Winid</typename><string>Winid = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Winid</anno>
+</spec>
+<spec>
+  <name>findWindowById</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>findWindowById(Winid, Options :: [Option]) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></head>
+      <guard>
+        <subtype><typename>Winid</typename><string>Winid = integer()</string></subtype>
+        <subtype><typename>Option</typename><string>Option = {parent, <seealso marker="#type-wxWindow">wxWindow()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Winid</anno>
+</spec>
+<spec>
+  <name>findWindowByLabel</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>findWindowByLabel(Label) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></head>
+      <guard>
+        <subtype><typename>Label</typename><string>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Label</anno>
+</spec>
+<spec>
+  <name>findWindowByLabel</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>findWindowByLabel(Label, Options :: [Option]) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></head>
+      <guard>
+        <subtype><typename>Label</typename><string>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {parent, <seealso marker="#type-wxWindow">wxWindow()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Label</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>findWindowByName</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>findWindowByName(Name) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></head>
+      <guard>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+</spec>
+<spec>
+  <name>findWindowByName</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>findWindowByName(Name, Options :: [Option]) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></head>
+      <guard>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {parent, <seealso marker="#type-wxWindow">wxWindow()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>fit</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>fit(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>fitInside</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>fitInside(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>freeze</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>freeze(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getAcceleratorTable</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getAcceleratorTable(This) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="wxAcceleratorTable#type-wxAcceleratorTable">wxAcceleratorTable:wxAcceleratorTable()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getBackgroundColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getBackgroundColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getBackgroundStyle</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getBackgroundStyle(This) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getBestSize</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getBestSize(This) -&gt; {W :: integer(), H :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>getCapture</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>getCapture() -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>getCaret</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getCaret(This) -&gt; <seealso marker="wxCaret#type-wxCaret">wxCaret:wxCaret()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getCharHeight</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getCharHeight(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getCharWidth</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getCharWidth(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getChildren</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getChildren(This) -&gt; [<seealso marker="#type-wxWindow">wxWindow()</seealso>]</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getClientSize</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getClientSize(This) -&gt; {W :: integer(), H :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>getContainingSizer</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getContainingSizer(This) -&gt; <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getContentScaleFactor</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getContentScaleFactor(This) -&gt; number()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getCursor</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getCursor(This) -&gt; <seealso marker="wxCursor#type-wxCursor">wxCursor:wxCursor()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getDropTarget</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getDropTarget(This) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getEventHandler</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getEventHandler(This) -&gt; <seealso marker="wxEvtHandler#type-wxEvtHandler">wxEvtHandler:wxEvtHandler()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getExtraStyle</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getExtraStyle(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getFont</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getFont(This) -&gt; <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getForegroundColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getForegroundColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getGrandParent</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getGrandParent(This) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getHandle</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getHandle(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getHelpText</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getHelpText(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getId</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getId(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getLabel</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getLabel(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getMaxSize</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getMaxSize(This) -&gt; {W :: integer(), H :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>getMinSize</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getMinSize(This) -&gt; {W :: integer(), H :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>getName</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getName(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getParent</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getParent(This) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getPosition</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getPosition(This) -&gt; {X :: integer(), Y :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getRect</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getRect(This) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getScreenPosition</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getScreenPosition(This) -&gt; {X :: integer(), Y :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getScreenRect</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getScreenRect(This) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getScrollPos</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getScrollPos(This, Orient) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Orient</typename><string>Orient = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Orient</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getScrollRange</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getScrollRange(This, Orient) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Orient</typename><string>Orient = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Orient</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getScrollThumb</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getScrollThumb(This, Orient) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Orient</typename><string>Orient = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Orient</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getSize</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getSize(This) -&gt; {W :: integer(), H :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>getSizer</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getSizer(This) -&gt; <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getTextExtent</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getTextExtent(This, String) -&gt; Result</head>
+      <guard>
+        <subtype><typename>Result</typename><string>Result = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Descent :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ExternalLeading :: integer()}</string></subtype>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>String</typename><string>String = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Descent</anno>
+  <anno>ExternalLeading</anno>
+  <anno>Result</anno>
+  <anno>String</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getTextExtent</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>getTextExtent(This, String, Options :: [Option]) -&gt; Result</head>
+      <guard>
+        <subtype><typename>Result</typename><string>Result = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Descent :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ExternalLeading :: integer()}</string></subtype>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>String</typename><string>String = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {theFont, <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Descent</anno>
+  <anno>ExternalLeading</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Result</anno>
+  <anno>String</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getToolTip</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getToolTip(This) -&gt; <seealso marker="wxToolTip#type-wxToolTip">wxToolTip:wxToolTip()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getUpdateRegion</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getUpdateRegion(This) -&gt; <seealso marker="wxRegion#type-wxRegion">wxRegion:wxRegion()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getVirtualSize</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getVirtualSize(This) -&gt; {W :: integer(), H :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>getWindowStyleFlag</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getWindowStyleFlag(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getWindowVariant</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getWindowVariant(This) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasCapture</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasCapture(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasScrollbar</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>hasScrollbar(This, Orient) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Orient</typename><string>Orient = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Orient</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasTransparentBackground</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasTransparentBackground(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hide</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hide(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>inheritAttributes</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>inheritAttributes(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>initDialog</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>initDialog(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>invalidateBestSize</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>invalidateBestSize(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isDoubleBuffered</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isDoubleBuffered(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isEnabled</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isEnabled(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isExposed</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>isExposed(This, Pt) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Pt</typename><string>Pt = {X :: integer(), Y :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Pt</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>isExposed</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>isExposed(This, Rect) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Rect</typename><string>Rect = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Rect</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>isExposed</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>isExposed(This, X, Y) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>isExposed</name>
+  <arity>5</arity>
+  <contract>
+    <clause>
+      <head>isExposed(This, X, Y, W, H) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = W = H = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+        <subtype><typename>W</typename><string></string></subtype>
+        <subtype><typename>H</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>isRetained</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isRetained(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isShown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isShown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isTopLevel</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isTopLevel(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>layout</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>layout(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>lineDown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>lineDown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>lineUp</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>lineUp(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>lower</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>lower(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>makeModal</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>makeModal(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>makeModal</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>makeModal(This, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {modal, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>move</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>move(This, Pt) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Pt</typename><string>Pt = {X :: integer(), Y :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Pt</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>move</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>move(This, X, Y) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>move</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>move(This, Pt, Y :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Pt</typename><string>Pt = {X :: integer(), Y :: integer()}</string></subtype>
+        <subtype><typename>Option</typename><string>Option = {flags, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Pt</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>move</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>move(This, X, Y, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {flags, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>moveAfterInTabOrder</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>moveAfterInTabOrder(This, Win) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = Win = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Win</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>Win</anno>
+</spec>
+<spec>
+  <name>moveBeforeInTabOrder</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>moveBeforeInTabOrder(This, Win) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = Win = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Win</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>Win</anno>
+</spec>
+<spec>
+  <name>navigate</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>navigate(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>navigate</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>navigate(This, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {flags, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>new() -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>new(Parent, Id) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></head>
+      <guard>
+        <subtype><typename>Parent</typename><string>Parent = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Id</typename><string>Id = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Id</anno>
+  <anno>Parent</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>new(Parent, Id, Options :: [Option]) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></head>
+      <guard>
+        <subtype><typename>Parent</typename><string>Parent = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Id</typename><string>Id = integer()</string></subtype>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{pos, {X :: integer(), Y :: integer()}} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{size, {W :: integer(), H :: integer()}} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{style, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Id</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Parent</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>pageDown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>pageDown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>pageUp</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>pageUp(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>popEventHandler</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>popEventHandler(This) -&gt; <seealso marker="wxEvtHandler#type-wxEvtHandler">wxEvtHandler:wxEvtHandler()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>popEventHandler</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>popEventHandler(This, Options :: [Option]) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="wxEvtHandler#type-wxEvtHandler">wxEvtHandler:wxEvtHandler()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {deleteHandler, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>popupMenu</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>popupMenu(This, Menu) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Menu</typename><string>Menu = <seealso marker="wxMenu#type-wxMenu">wxMenu:wxMenu()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Menu</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>popupMenu</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>popupMenu(This, Menu, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Menu</typename><string>Menu = <seealso marker="wxMenu#type-wxMenu">wxMenu:wxMenu()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {pos, {X :: integer(), Y :: integer()}}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Menu</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>popupMenu</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>popupMenu(This, Menu, X, Y) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Menu</typename><string>Menu = <seealso marker="wxMenu#type-wxMenu">wxMenu:wxMenu()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Menu</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>raise</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>raise(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>refresh</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>refresh(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>refresh</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>refresh(This, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{eraseBackground, boolean()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{rect,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>refreshRect</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>refreshRect(This, Rect) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Rect</typename><string>Rect = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Rect</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>refreshRect</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>refreshRect(This, Rect, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Rect</typename><string>Rect = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}</string></subtype>
+        <subtype><typename>Option</typename><string>Option = {eraseBackground, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Rect</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>releaseMouse</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>releaseMouse(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>removeChild</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>removeChild(This, Child) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = Child = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Child</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Child</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>reparent</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>reparent(This, NewParent) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = NewParent = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>NewParent</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>NewParent</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>screenToClient</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>screenToClient(This) -&gt; {X :: integer(), Y :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>screenToClient</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>screenToClient(This, Pt) -&gt; {X :: integer(), Y :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Pt</typename><string>Pt = {X :: integer(), Y :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Pt</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>scrollLines</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>scrollLines(This, Lines) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Lines</typename><string>Lines = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Lines</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>scrollPages</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>scrollPages(This, Pages) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Pages</typename><string>Pages = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Pages</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>scrollWindow</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>scrollWindow(This, Dx, Dy) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Dx</typename><string>Dx = Dy = integer()</string></subtype>
+        <subtype><typename>Dy</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Dx</anno>
+  <anno>Dy</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>scrollWindow</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>scrollWindow(This, Dx, Dy, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Dx</typename><string>Dx = Dy = integer()</string></subtype>
+        <subtype><typename>Dy</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{rect,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Dx</anno>
+  <anno>Dy</anno>
+  <anno>H</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>setAcceleratorTable</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setAcceleratorTable(This, Accel) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Accel</typename><string>Accel = <seealso marker="wxAcceleratorTable#type-wxAcceleratorTable">wxAcceleratorTable:wxAcceleratorTable()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Accel</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setAutoLayout</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setAutoLayout(This, AutoLayout) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>AutoLayout</typename><string>AutoLayout = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>AutoLayout</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setBackgroundColour</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setBackgroundColour(This, Colour) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Colour</typename><string>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Colour</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setBackgroundStyle</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setBackgroundStyle(This, Style) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Style</typename><string>Style = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Style</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setCaret</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setCaret(This, Caret) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Caret</typename><string>Caret = <seealso marker="wxCaret#type-wxCaret">wxCaret:wxCaret()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Caret</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setClientSize</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setClientSize(This, Size) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Size</typename><string>Size = {W :: integer(), H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Size</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>setClientSize</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setClientSize(This, Rect) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Rect</typename><string>Rect = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Rect</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>setClientSize</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setClientSize(This, Width, Height) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>setContainingSizer</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setContainingSizer(This, Sizer) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Sizer</typename><string>Sizer = <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Sizer</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setCursor</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setCursor(This, Cursor) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Cursor</typename><string>Cursor = <seealso marker="wxCursor#type-wxCursor">wxCursor:wxCursor()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Cursor</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setDoubleBuffered</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setDoubleBuffered(This, On) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>On</typename><string>On = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>On</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setDropTarget</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setDropTarget(This, DropTarget) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>DropTarget</typename><string>DropTarget = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>DropTarget</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setExtraStyle</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setExtraStyle(This, ExStyle) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>ExStyle</typename><string>ExStyle = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ExStyle</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setFocus</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>setFocus(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setFocusFromKbd</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>setFocusFromKbd(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setFont</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setFont(This, Font) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Font</typename><string>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Font</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setForegroundColour</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setForegroundColour(This, Colour) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Colour</typename><string>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Colour</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setHelpText</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setHelpText(This, Text) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Text</typename><string>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Text</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setId</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setId(This, Winid) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Winid</typename><string>Winid = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>Winid</anno>
+</spec>
+<spec>
+  <name>setLabel</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setLabel(This, Label) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Label</typename><string>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Label</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setMaxSize</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setMaxSize(This, MaxSize) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>MaxSize</typename><string>MaxSize = {W :: integer(), H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>MaxSize</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>setMinSize</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setMinSize(This, MinSize) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>MinSize</typename><string>MinSize = {W :: integer(), H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>MinSize</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>setName</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setName(This, Name) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setOwnBackgroundColour</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setOwnBackgroundColour(This, Colour) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Colour</typename><string>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Colour</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setOwnFont</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setOwnFont(This, Font) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Font</typename><string>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Font</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setOwnForegroundColour</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setOwnForegroundColour(This, Colour) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Colour</typename><string>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Colour</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setPalette</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setPalette(This, Pal) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Pal</typename><string>Pal = <seealso marker="wxPalette#type-wxPalette">wxPalette:wxPalette()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Pal</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setScrollPos</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setScrollPos(This, Orient, Pos) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Orient</typename><string>Orient = Pos = integer()</string></subtype>
+        <subtype><typename>Pos</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Orient</anno>
+  <anno>Pos</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setScrollPos</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>setScrollPos(This, Orient, Pos, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Orient</typename><string>Orient = Pos = integer()</string></subtype>
+        <subtype><typename>Pos</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {refresh, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Orient</anno>
+  <anno>Pos</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setScrollbar</name>
+  <arity>5</arity>
+  <contract>
+    <clause>
+      <head>setScrollbar(This, Orient, Pos, ThumbVisible, Range) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Orient</typename><string>Orient = Pos = ThumbVisible = Range = integer()</string></subtype>
+        <subtype><typename>Pos</typename><string></string></subtype>
+        <subtype><typename>ThumbVisible</typename><string></string></subtype>
+        <subtype><typename>Range</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Orient</anno>
+  <anno>Pos</anno>
+  <anno>Range</anno>
+  <anno>This</anno>
+  <anno>ThumbVisible</anno>
+</spec>
+<spec>
+  <name>setScrollbar</name>
+  <arity>6</arity>
+  <contract>
+    <clause>
+      <head>setScrollbar(This,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Orient,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Pos,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ThumbVisible,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Range,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Options :: [Option]) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Orient</typename><string>Orient = Pos = ThumbVisible = Range = integer()</string></subtype>
+        <subtype><typename>Pos</typename><string/></subtype>
+        <subtype><typename>ThumbVisible</typename><string/></subtype>
+        <subtype><typename>Range</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {refresh, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Orient</anno>
+  <anno>Pos</anno>
+  <anno>Range</anno>
+  <anno>This</anno>
+  <anno>ThumbVisible</anno>
+</spec>
+<spec>
+  <name>setSize</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setSize(This, Rect) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Rect</typename><string>Rect = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Rect</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>setSize</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setSize(This, Size) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Size</typename><string>Size = {W :: integer(), H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Size</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>setSize</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setSize(This, Width, Height) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>setSize</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setSize(This, Rect, Height :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Rect</typename><string>Rect = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}</string></subtype>
+        <subtype><typename>Option</typename><string>Option = {sizeFlags, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Height</anno>
+  <anno>Option</anno>
+  <anno>Rect</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>setSize</name>
+  <arity>5</arity>
+  <contract>
+    <clause>
+      <head>setSize(This, X, Y, Width, Height) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = Width = Height = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+        <subtype><typename>Width</typename><string></string></subtype>
+        <subtype><typename>Height</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>setSize</name>
+  <arity>6</arity>
+  <contract>
+    <clause>
+      <head>setSize(This, X, Y, Width, Height, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = Width = Height = integer()</string></subtype>
+        <subtype><typename>Y</typename><string/></subtype>
+        <subtype><typename>Width</typename><string/></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {sizeFlags, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>setSizeHints</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setSizeHints(This, MinSize) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>MinSize</typename><string>MinSize = {W :: integer(), H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>MinSize</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>setSizeHints</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setSizeHints(This, MinW, MinH) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>MinW</typename><string>MinW = MinH = integer()</string></subtype>
+        <subtype><typename>MinH</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>MinH</anno>
+  <anno>MinW</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setSizeHints</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setSizeHints(This, MinSize, MinH :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>MinSize</typename><string>MinSize = {W :: integer(), H :: integer()}</string></subtype>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{maxSize, {W :: integer(), H :: integer()}} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{incSize, {W :: integer(), H :: integer()}}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>MinH</anno>
+  <anno>MinSize</anno>
+  <anno>Option</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>setSizeHints</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>setSizeHints(This, MinW, MinH, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>MinW</typename><string>MinW = MinH = integer()</string></subtype>
+        <subtype><typename>MinH</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{maxW, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{maxH, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{incW, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{incH, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>MinH</anno>
+  <anno>MinW</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setSizer</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setSizer(This, Sizer) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Sizer</typename><string>Sizer = <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Sizer</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setSizer</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setSizer(This, Sizer, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Sizer</typename><string>Sizer = <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {deleteOld, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Sizer</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setSizerAndFit</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setSizerAndFit(This, Sizer) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Sizer</typename><string>Sizer = <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Sizer</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setSizerAndFit</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setSizerAndFit(This, Sizer, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Sizer</typename><string>Sizer = <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {deleteOld, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Sizer</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setThemeEnabled</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setThemeEnabled(This, EnableTheme) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>EnableTheme</typename><string>EnableTheme = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>EnableTheme</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setToolTip</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setToolTip(This, Tip) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Tip</typename><string>Tip = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>Tip</anno>
+</spec>
+<spec>
+  <name>setToolTip</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setToolTip(This, Tip) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Tip</typename><string>Tip = <seealso marker="wxToolTip#type-wxToolTip">wxToolTip:wxToolTip()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>Tip</anno>
+</spec>
+<spec>
+  <name>setTransparent</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setTransparent(This, Alpha) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Alpha</typename><string>Alpha = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Alpha</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setVirtualSize</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setVirtualSize(This, Size) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Size</typename><string>Size = {W :: integer(), H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Size</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>setVirtualSize</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setVirtualSize(This, X, Y) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>setVirtualSizeHints</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setVirtualSizeHints(This, MinSize) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>MinSize</typename><string>MinSize = {W :: integer(), H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>MinSize</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>setVirtualSizeHints</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setVirtualSizeHints(This, MinW, MinH) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>MinW</typename><string>MinW = MinH = integer()</string></subtype>
+        <subtype><typename>MinH</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>MinH</anno>
+  <anno>MinW</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setVirtualSizeHints</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setVirtualSizeHints(This, MinSize, MinH :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>MinSize</typename><string>MinSize = {W :: integer(), H :: integer()}</string></subtype>
+        <subtype><typename>Option</typename><string>Option = {maxSize, {W :: integer(), H :: integer()}}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>MinH</anno>
+  <anno>MinSize</anno>
+  <anno>Option</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>setVirtualSizeHints</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>setVirtualSizeHints(This, MinW, MinH, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>MinW</typename><string>MinW = MinH = integer()</string></subtype>
+        <subtype><typename>MinH</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {maxW, integer()} | {maxH, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>MinH</anno>
+  <anno>MinW</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setWindowStyle</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setWindowStyle(This, Style) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Style</typename><string>Style = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Style</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setWindowStyleFlag</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setWindowStyleFlag(This, Style) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Style</typename><string>Style = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Style</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setWindowVariant</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setWindowVariant(This, Variant) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Variant</typename><string>Variant = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>Variant</anno>
+</spec>
+<spec>
+  <name>shouldInheritColours</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>shouldInheritColours(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>show</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>show(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>show</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>show(This, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {show, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>thaw</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>thaw(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>transferDataFromWindow</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>transferDataFromWindow(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>transferDataToWindow</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>transferDataToWindow(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>update</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>update(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>updateWindowUI</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>updateWindowUI(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>updateWindowUI</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>updateWindowUI(This, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {flags, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>validate</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>validate(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>warpPointer</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>warpPointer(This, X, Y) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:59.</timestamp>
+</module>

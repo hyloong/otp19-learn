@@ -1,0 +1,1114 @@
+<?xml version="1.0"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="cover" margin="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin="0mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="left-page" margin-top="25mm" margin-bottom="15mm" margin-left="20mm" margin-right="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="left-header" extent="10mm"/>
+      <fo:region-after region-name="left-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="right-page" margin-top="25mm" margin-bottom="15mm" margin-left="25mm" margin-right="20mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="right-header" extent="10mm"/>
+      <fo:region-after region-name="right-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:page-sequence-master master-name="document">
+      <fo:repeatable-page-master-alternatives>
+        <fo:conditional-page-master-reference master-reference="left-page" odd-or-even="even"/>
+        <fo:conditional-page-master-reference master-reference="right-page" odd-or-even="odd"/>
+      </fo:repeatable-page-master-alternatives>
+    </fo:page-sequence-master>
+  </fo:layout-master-set>
+  <fo:bookmark-tree>
+    <fo:bookmark internal-destination="cover-page" starting-state="show">
+      <fo:bookmark-title>cosEventDomain</fo:bookmark-title>
+      <fo:bookmark internal-destination="idp541760" starting-state="hide">
+        <fo:bookmark-title>cosEventDomain User's Guide</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp480768" starting-state="hide">
+          <fo:bookmark-title>The cosEventDomain Application</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp539904" starting-state="hide">
+            <fo:bookmark-title>Content Overview</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp421344" starting-state="hide">
+            <fo:bookmark-title>Brief Description of the User's Guide</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp249440" starting-state="hide">
+          <fo:bookmark-title>Introduction to cosEventDomain</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp507520" starting-state="hide">
+            <fo:bookmark-title>Overview</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp502448" starting-state="hide">
+              <fo:bookmark-title>Purpose and Dependencies</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp421744" starting-state="hide">
+              <fo:bookmark-title>Prerequisites</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp567472" starting-state="hide">
+          <fo:bookmark-title>Quality Of Service and Admin Properties</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp305696" starting-state="hide">
+            <fo:bookmark-title>Quality Of Service and Admin Properties</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp306816" starting-state="hide">
+              <fo:bookmark-title>Quality Of Service</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp547648" starting-state="hide">
+              <fo:bookmark-title>Setting Quality Of Service</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp298640" starting-state="hide">
+              <fo:bookmark-title>Admin Properties</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp32800" starting-state="hide">
+          <fo:bookmark-title>Event Domain Service</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp281024" starting-state="hide">
+            <fo:bookmark-title>Overview of the CosEventDomain Service</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp434400" starting-state="hide">
+              <fo:bookmark-title>Event Domain Service Components</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp263600" starting-state="hide">
+              <fo:bookmark-title>A Tutorial on How to Create a Simple Service</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp265088" starting-state="hide">
+              <fo:bookmark-title>How to Run Everything</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+      <fo:bookmark internal-destination="idp106496" starting-state="hide">
+        <fo:bookmark-title>Reference Manual</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp859808" starting-state="hide">
+          <fo:bookmark-title>cosEventDomainApp</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp856352" starting-state="hide">
+            <fo:bookmark-title>install/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp853216" starting-state="hide">
+            <fo:bookmark-title>uninstall/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp849984" starting-state="hide">
+            <fo:bookmark-title>start/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp847344" starting-state="hide">
+            <fo:bookmark-title>stop/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp843712" starting-state="hide">
+            <fo:bookmark-title>start_factory/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp840128" starting-state="hide">
+            <fo:bookmark-title>start_factory/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp835472" starting-state="hide">
+            <fo:bookmark-title>start_factory_link/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp831648" starting-state="hide">
+            <fo:bookmark-title>start_factory_link/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp826704" starting-state="hide">
+            <fo:bookmark-title>stop_factory/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp802208" starting-state="hide">
+          <fo:bookmark-title>CosEventDomainAdmin</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp800896" starting-state="hide">
+            <fo:bookmark-title>'CycleDetection'/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp798976" starting-state="hide">
+            <fo:bookmark-title>'AuthorizeCycles'/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp796432" starting-state="hide">
+            <fo:bookmark-title>'ForbidCycles'/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp794512" starting-state="hide">
+            <fo:bookmark-title>'DiamondDetection'/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp787632" starting-state="hide">
+            <fo:bookmark-title>'AuthorizeDiamonds'/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp789792" starting-state="hide">
+            <fo:bookmark-title>'ForbidDiamonds'/0</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp780544" starting-state="hide">
+          <fo:bookmark-title>CosEventDomainAdmin_EventDomainFactory</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp777296" starting-state="hide">
+            <fo:bookmark-title>create_event_domain/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp770448" starting-state="hide">
+            <fo:bookmark-title>get_all_domains/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp742624" starting-state="hide">
+            <fo:bookmark-title>get_event_domain/2</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp732032" starting-state="hide">
+          <fo:bookmark-title>CosEventDomainAdmin_EventDomain</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp725824" starting-state="hide">
+            <fo:bookmark-title>add_channel/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp723040" starting-state="hide">
+            <fo:bookmark-title>get_all_channels/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp719456" starting-state="hide">
+            <fo:bookmark-title>get_channel/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp714048" starting-state="hide">
+            <fo:bookmark-title>remove_channel/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp593840" starting-state="hide">
+            <fo:bookmark-title>add_connection/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp580224" starting-state="hide">
+            <fo:bookmark-title>get_all_connections/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp580608" starting-state="hide">
+            <fo:bookmark-title>get_connection/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp574368" starting-state="hide">
+            <fo:bookmark-title>remove_connection/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp622816" starting-state="hide">
+            <fo:bookmark-title>get_offer_channels/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp609232" starting-state="hide">
+            <fo:bookmark-title>get_subscription_channels/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp614992" starting-state="hide">
+            <fo:bookmark-title>destroy/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp611792" starting-state="hide">
+            <fo:bookmark-title>get_cycles/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp607968" starting-state="hide">
+            <fo:bookmark-title>get_diamonds/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp322224" starting-state="hide">
+            <fo:bookmark-title>set_default_consumer_channel/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp318320" starting-state="hide">
+            <fo:bookmark-title>set_default_supplier_channel/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp683856" starting-state="hide">
+            <fo:bookmark-title>connect_push_consumer/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp678496" starting-state="hide">
+            <fo:bookmark-title>connect_pull_consumer/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp703152" starting-state="hide">
+            <fo:bookmark-title>connect_push_supplier/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp703792" starting-state="hide">
+            <fo:bookmark-title>connect_pull_supplier/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp702960" starting-state="hide">
+            <fo:bookmark-title>connect_structured_push_consumer/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp91712" starting-state="hide">
+            <fo:bookmark-title>connect_structured_pull_consumer/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp450000" starting-state="hide">
+            <fo:bookmark-title>connect_structured_push_supplier/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp641488" starting-state="hide">
+            <fo:bookmark-title>connect_structured_pull_supplier/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp601264" starting-state="hide">
+            <fo:bookmark-title>connect_sequence_push_consumer/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp639408" starting-state="hide">
+            <fo:bookmark-title>connect_sequence_pull_consumer/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp686320" starting-state="hide">
+            <fo:bookmark-title>connect_sequence_push_supplier/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp812960" starting-state="hide">
+            <fo:bookmark-title>connect_sequence_pull_supplier/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp817536" starting-state="hide">
+            <fo:bookmark-title>connect_push_consumer_with_id/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp822560" starting-state="hide">
+            <fo:bookmark-title>connect_pull_consumer_with_id/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp328976" starting-state="hide">
+            <fo:bookmark-title>connect_push_supplier_with_id/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp334000" starting-state="hide">
+            <fo:bookmark-title>connect_pull_supplier_with_id/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp744752" starting-state="hide">
+            <fo:bookmark-title>connect_structured_push_consumer_with_id/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp749840" starting-state="hide">
+            <fo:bookmark-title>connect_structured_pull_consumer_with_id/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp754928" starting-state="hide">
+            <fo:bookmark-title>connect_structured_push_supplier_with_id/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp760016" starting-state="hide">
+            <fo:bookmark-title>connect_structured_pull_supplier_with_id/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp765104" starting-state="hide">
+            <fo:bookmark-title>connect_sequence_push_consumer_with_id/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1043904" starting-state="hide">
+            <fo:bookmark-title>connect_sequence_pull_consumer_with_id/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1048896" starting-state="hide">
+            <fo:bookmark-title>connect_sequence_push_supplier_with_id/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp1053984" starting-state="hide">
+            <fo:bookmark-title>connect_sequence_pull_supplier_with_id/3</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+    </fo:bookmark>
+  </fo:bookmark-tree>
+  <fo:page-sequence font-family="sans-serif" force-page-count="even" master-reference="cover" font-size="10pt">
+    <fo:flow flow-name="xsl-region-body">
+      <fo:block space-before="130mm" space-before.conditionality="retain" text-align="end">
+        <fo:external-graphic src="/root/download/otp_src_20.0/bootstrap/lib/erl_docgen/priv/images/erlang-logo.gif"/>
+      </fo:block>
+      <fo:block id="cover-page" border-before-style="solid" border-before-width="10pt" border-color="#960003" font-size="2.3em" padding-before="0.5em" text-align="end">cosEventDomain</fo:block>
+      <fo:block font-size="0.9em" text-align="end">Copyright © 2001-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em" text-align="end">cosEventDomain 1.2.1</fo:block>
+      <fo:block font-size="0.9em" text-align="end">July 12, 2017</fo:block>
+      <fo:block padding-before="2.5em" font-size="1.33em" font-weight="bold" color="#C00" text-align="end"/>
+      <fo:block break-before="page" border-before-style="solid" border-before-width="1pt" border-color="#960003" font-weight="bold" padding-before="0.5em" space-before="200mm" space-before.conditionality="retain">Copyright © 2001-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em">
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+ 
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+    
+    Ericsson AB. All Rights Reserved..
+        </fo:block>
+      <fo:block font-size="0.9em" font-weight="bold" space-before="2em">July 12, 2017</fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+  <fo:page-sequence font-family="serif" master-reference="document" initial-page-number="1" font-size="10pt">
+    <fo:static-content flow-name="left-header">
+      <fo:block text-align="start" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-header">
+      <fo:block text-align="end" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="left-footer">
+      <fo:block text-align="start" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold"><fo:page-number/> | Ericsson AB. All Rights Reserved.:
+            cosEventDomain</fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-footer">
+      <fo:block text-align="end" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">Ericsson AB. All Rights Reserved.:
+            cosEventDomain | <fo:page-number/></fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body"><fo:block/><fo:block id="idp541760" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">1   
+      cosEventDomain User's Guide</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-weight="bold">cosEventDomain</fo:inline> application is an Erlang implementation of a
+      CORBA Service CosEventDomainAdmin.</fo:block>
+  <fo:block id="idp480768" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.1  The cosEventDomain Application</fo:marker>1.1  The cosEventDomain Application</fo:block><fo:block id="idp539904" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.1 
+      Content Overview</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The cosEventDomain documentation is divided into three sections:
+      </fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">PART ONE - The User's Guide  
+          <fo:block/>Description of the cosEventDomain Application including 
+          services and a small tutorial demonstrating 
+          the development of a simple service.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">PART TWO - Release Notes
+          <fo:block/>A concise history of cosEventDomain.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">PART THREE - The Reference Manual
+          <fo:block/> A quick reference guide, including a
+          brief description, to all the functions available in cosEventDomain.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+  <fo:block id="idp421344" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.2 
+      Brief Description of the User's Guide</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The User's Guide contains the following parts:</fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">CosEventDomain overview</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">CosEventDomain installation and examples</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+  <fo:block id="idp249440" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.2  Introduction to cosEventDomain</fo:marker>1.2  Introduction to cosEventDomain</fo:block><fo:block id="idp507520" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.2.1 
+      Overview</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The cosEventDomain application is a Event Domain Service compliant with the <fo:inline font-weight="bold"><fo:basic-link external-destination="href">OMG</fo:basic-link></fo:inline> 
+      Service CosEventDomainAdmin.
+      </fo:block>
+
+    <fo:block id="idp502448" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Purpose and Dependencies</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">CosEventDomain is dependent on  <fo:inline font-weight="bold">Orber</fo:inline>, which provides CORBA functionality in an Erlang environment.</fo:block>
+    
+
+    <fo:block id="idp421744" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Prerequisites</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To fully understand the concepts presented in the
+        documentation, it is recommended that the user is familiar
+        with distributed programming and CORBA.  
+        </fo:block>
+    
+  <fo:block id="idp567472" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.3  Quality Of Service and Admin Properties</fo:marker>1.3  Quality Of Service and Admin Properties</fo:block><fo:block id="idp305696" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.3.1 
+      Quality Of Service and Admin Properties</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This chapter explains the allowed properties it is possible to set for this
+      application. </fo:block>
+
+    <fo:block id="idp306816" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Quality Of Service</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The cosEventDomain application supports the following QoS settings:</fo:block>
+      <fo:table border-collapse="separate" space-after="1em" space-before="1em" table-layout="fixed" inline-progression-dimension="100%"><fo:table-body><fo:table-row>
+          <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="center"><fo:inline font-weight="bold">QoS</fo:inline></fo:block></fo:table-cell>
+          <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="center"><fo:inline font-weight="bold">Range</fo:inline></fo:block></fo:table-cell>
+          <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="center"><fo:inline font-weight="bold">Default</fo:inline></fo:block></fo:table-cell>
+        </fo:table-row><fo:table-row>
+          <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">CycleDetection</fo:block></fo:table-cell>
+          <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">AuthorizeCycles/ForbidCycles</fo:block></fo:table-cell>
+          <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">ForbidCycles</fo:block></fo:table-cell>
+        </fo:table-row><fo:table-row>
+          <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">DiamondDetection</fo:block></fo:table-cell>
+          <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">AuthorizeDiamonds/ForbidDiamonds</fo:block></fo:table-cell>
+          <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">ForbidDiamonds</fo:block></fo:table-cell>
+        </fo:table-row></fo:table-body></fo:table><fo:block font-family="DejaVuSans, sans-serif" font-size="0.8em" font-weight="bold" keep-with-previous.within-page="always" space-after="2.5em" space-before="0em">
+        Table
+        3.1:
+         
+        Supported QoS settings</fo:block>
+<fo:block/><fo:block/><fo:block/><fo:block/>      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">Comments on the table 'Supported QoS Settings':</fo:inline></fo:block>
+      <fo:block space-after="0.25em" space-before="0.25em">
+        <fo:block keep-with-next.within-page="always"><fo:inline font-weight="bold">CycleDetection</fo:inline></fo:block>
+        <fo:block-container><fo:block start-indent="2em">If a cycle is created, the user <fo:inline font-weight="bold">must</fo:inline> be aware of the fact
+         that unless they set timeout on events, events that are not filtered
+         will loop endlessly through the topology.</fo:block></fo:block-container>
+        <fo:block keep-with-next.within-page="always"><fo:inline font-weight="bold">DiamondDetection</fo:inline></fo:block>
+        <fo:block-container><fo:block start-indent="2em">A Diamond in this context, means that the same
+         event may reach a point in the graph by more than one route 
+         (i.e. transitive). Hence, it is possible that multiple copies
+         are delivered.</fo:block></fo:block-container>
+      </fo:block>
+    
+
+    <fo:block id="idp547648" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Setting Quality Of Service</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Assume we have a Consumer Admin object which we want to change
+        the current Quality of Service. Typical usage:</fo:block>
+      <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+QoS = 
+   [#'CosNotification_Property'
+    {name='CosEventDomainAdmin':'DiamondDetection'(), 
+     value=any:create(orber_tc:short(),
+     'CosEventDomainAdmin':'AuthorizeDiamonds'())},
+    #'CosNotification_Property'
+    {name='CosEventDomainAdmin':'CycleDetection'(), 
+     value=any:create(orber_tc:short(),
+     'CosEventDomainAdmin':'ForbidCycles'())}],
+'CosEventDomainAdmin_EventDomain':set_qos(ED, QoS),
+      </fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If it is not possible to set the requested QoS the <fo:inline font-family="monospace">UnsupportedQoS</fo:inline>
+        exception is raised, which includes a sequence of <fo:inline font-family="monospace">PropertyError</fo:inline>'s
+        describing which QoS, possible range and why is not allowed. The error
+        codes are:</fo:block>
+      <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>UNSUPPORTED_PROPERTY - QoS not supported for this type of target object.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>UNAVAILABLE_PROPERTY - due to current QoS settings the given property
+         is not allowed.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>UNSUPPORTED_VALUE - property value out of range; valid range is returned.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>UNAVAILABLE_VALUE - due to current QoS settings the given value is
+         not allowed; valid range is returned.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>BAD_PROPERTY - unrecognized property.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>BAD_TYPE - type of supplied property is incorrect.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>BAD_VALUE - illegal value.</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The CosEventDomainAdmin_EventDomain interface also supports an operation
+        called <fo:inline font-family="monospace">validate_qos/2</fo:inline>. The purpose of this operations is to check
+        if a QoS setting is supported by the target object and if so, the operation
+        returns additional properties which could be optionally added as well.</fo:block>
+    
+
+    <fo:block id="idp298640" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Admin Properties</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The OMG specification do not contain any definitions of Admin Properties.
+        Hence, the cosEventDomain application currently does not support any Admin
+        Properties.</fo:block>
+    
+  <fo:block id="idp32800" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.4  Event Domain Service</fo:marker>1.4  Event Domain Service</fo:block><fo:block id="idp281024" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.4.1 
+      Overview of the CosEventDomain Service</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Event Domain service allows programmers to manage a cluster
+      of information channels.</fo:block>
+
+    <fo:block id="idp434400" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Event Domain Service Components</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">There are two components in the OMG CosEventDomainAdmin service architecture:</fo:block>
+      <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-weight="bold">EventDomainFactory:</fo:inline> a factory for creating EventDomains.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-weight="bold">EventDomain:</fo:inline> supplies a tool, which makes it easy to create
+         topologies of interconnected channels (i.e. a directed graph).</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+    
+
+    <fo:block id="idp263600" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">A Tutorial on How to Create a Simple Service</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To be able to use the cosEventDomain application, the cosNotification
+        and, possibly, the cosTime application must be installed.</fo:block>
+    
+
+    <fo:block id="idp265088" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">How to Run Everything</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Below is a short transcript on how to run cosEventDomain. </fo:block>
+      <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 
+%% Start Mnesia and Orber
+mnesia:delete_schema([node()]),
+mnesia:create_schema([node()]),
+orber:install([node()]),
+mnesia:start(),
+orber:start(),
+ 
+%% Install and start cosNotification.
+cosNotificationApp:install(),
+cosNotificationApp:start(),
+
+%% Install and start cosEventDomain.
+cosEventDomainApp:install(),
+cosEventDomainApp:start(),
+
+%% Start a CosEventDomainAdmin factory.
+AdminFac = cosEventDomainApp:start_factory(),
+
+%% Define the desired QoS settings:
+QoS = 
+   [#'CosNotification_Property'
+    {name='CosEventDomainAdmin':'DiamondDetection'(), 
+     value=any:create(orber_tc:short(),
+     'CosEventDomainAdmin':'AuthorizeDiamonds'())},
+    #'CosNotification_Property'
+    {name='CosEventDomainAdmin':'CycleDetection'(), 
+     value=any:create(orber_tc:short(),
+     'CosEventDomainAdmin':'ForbidCycles'())}],
+
+%% Create a new EventDomain:
+{ED, EDId} = 'CosEventDomainAdmin_EventDomainFactory':
+                        create_event_domain(Fac, QoS, []),
+
+%% Now we can add Notification Channels to the Domain. How this
+%% is done, see the cosNotification documentation. Let us assume
+%% that we have gained access to two Channel Objects; add them to the
+%% domain:
+ID1 = 'CosEventDomainAdmin_EventDomain':add_channel(ED, Ch1),
+ID2 = 'CosEventDomainAdmin_EventDomain':add_channel(ED, Ch2),
+
+%% To connect them, we must first define a connection struct:
+C1 = #'CosEventDomainAdmin_Connection'{supplier_id=ID1, 
+                                       consumer_id=ID2,
+                                       ctype='STRUCTURED_EVENT',
+                                       notification_style='Pull'},
+
+%% Connect them:
+'CosEventDomainAdmin_EventDomain':add_connection(ED, C1),
+      </fo:block>
+    
+  <fo:block id="idp106496" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">2   
+      Reference Manual</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-weight="bold">cosEventDomain</fo:inline> application is an Erlang implementation of
+      a CORBA Service CosEventDomainAdmin.</fo:block>
+  <fo:block page-break-before="always" id="idp859808" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">cosEventDomainApp</fo:marker>cosEventDomainApp</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  cosEventDomainApp
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:<fo:block/><fo:inline font-family="monospace">-include_lib("cosEventDomain/include/*.hrl").</fo:inline></fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This module contains the functions for starting and stopping the application.</fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp856352">install() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {'EXCEPTION', E} | {'EXIT', R}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation installs the cosEventDomain application.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp853216">uninstall() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {'EXCEPTION', E} | {'EXIT', R}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation uninstalls the cosEventDomain application.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp849984">start() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {error, Reason}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation starts the cosEventDomain application.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp847344">stop() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {error, Reason}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation stops the cosEventDomain application.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp843712">start_factory() -&gt; Factory</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Factory = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation creates a new instance of a
+          <fo:inline font-style="italic">Event Domain Factory</fo:inline>
+          using the default settings.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp840128">start_factory(Options) -&gt; Factory</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Options = [Option]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Option = currently no options defined.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Factory = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation creates a new instance of a
+          <fo:inline font-style="italic">Event Domain Factory</fo:inline></fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp835472">start_factory_link() -&gt; Factory</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Factory = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation creates a new instance of a
+          <fo:inline font-style="italic">Event Domain Factory</fo:inline>,
+          which is linked to the invoking process, using the default settings.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp831648">start_factory_link(Options) -&gt; Factory</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Options = [Option]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Option = currently no options defined.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Factory = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation creates a new instance of a
+          <fo:inline font-style="italic">Event Domain Factory</fo:inline>,
+          which is linked to the invoking process, with settings defined by the
+          given options. Allowed options are the same as for 
+          <fo:inline font-family="monospace">cosEventDomainApp:start_factory/1</fo:inline>.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp826704">stop_factory(Factory) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Factory = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = ok | {'EXCEPTION', E}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation stop the target factory.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp802208" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosEventDomainAdmin</fo:marker>CosEventDomainAdmin</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosEventDomainAdmin
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to all definitions include necessary <fo:inline font-family="monospace">hrl</fo:inline> files by using:<fo:block/><fo:inline font-family="monospace">-include_lib("cosEventDomain/include/*.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp800896">'CycleDetection'() -&gt; string()</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This function returns the CycleDetection identifier; required when 
+          defining QoS Properties.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp798976">'AuthorizeCycles'() -&gt; short()</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This function returns the AuthorizeCycles value; required when 
+          defining QoS Properties.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp796432">'ForbidCycles'() -&gt; short()</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This function returns the ForbidCycles value; required when 
+          defining QoS Properties.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp794512">'DiamondDetection'() -&gt; string()</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This function returns the DiamondDetection identifier; required when 
+          defining QoS Properties.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp787632">'AuthorizeDiamonds'() -&gt; short()</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This function returns the AuthorizeDiamonds value; required when 
+          defining QoS Properties.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp789792">'ForbidDiamonds'() -&gt; short()</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This function returns the ForbidDiamonds value; required when 
+          defining QoS Properties.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp780544" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosEventDomainAdmin_EventDomainFactory</fo:marker>CosEventDomainAdmin_EventDomainFactory</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosEventDomainAdmin_EventDomainFactory
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to all definitions include necessary <fo:inline font-family="monospace">hrl</fo:inline> files by using:<fo:block/><fo:inline font-family="monospace">-include_lib("cosEventDomain/include/*.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp777296">create_event_domain(Factory, QoS, Admin) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Factory     = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">QoS         = CosNotification::QoSProperties</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Admin       = CosNotification::AdminProperties</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = {EventDomain, DomainID} |  {'EXCEPTION', #'CosNotification_UnsupportedQoS'{}} | {'EXCEPTION', #'CosNotification_UnsupportedAdmin'{}}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To create a new EventDomain this operation is used. If it is not
+          possible to support the given <fo:inline font-family="monospace">QoSProperties</fo:inline> or <fo:inline font-family="monospace">AdminProperties</fo:inline>
+          an exception is raised, which list the properties not supported. For more
+          information see the <fo:inline font-family="monospace">cosNotification</fo:inline> user's guide.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp770448">get_all_domains(Factory) -&gt; DomainIDSeq</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Factory     = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">DomainIDSeq = [long()]</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This function returns a DomainID sequence of all domains associated with the
+          target object.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp742624">get_event_domain(Factory, DomainID) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Factory     = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">DomainID    = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = EventDomain | {'EXCEPTION', #'CosEventDomainAdmin_DomainNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns the EventDomain object associated with the
+          given DomainID. If no such binding exists an exception is raised.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp732032" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosEventDomainAdmin_EventDomain</fo:marker>CosEventDomainAdmin_EventDomain</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosEventDomainAdmin_EventDomain
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to all definitions include necessary <fo:inline font-family="monospace">hrl</fo:inline> files by using:<fo:block/><fo:inline font-family="monospace">-include_lib("cosEventDomain/include/*.hrl").</fo:inline></fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This module also exports the functions described in:</fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-weight="bold">CosNotification_QoSAdmin</fo:inline></fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-weight="bold">CosNotification_AdminPropertiesAdmin</fo:inline></fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp725824">add_channel(EventDomain, Channel) -&gt; MemberID</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = Channel = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberID    = long()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Adds the given channel to the target domain. The channel
+          must be a <fo:inline font-family="monospace">CosNotifyChannelAdmin::EventChannel</fo:inline>.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp723040">get_all_channels(EventDomain) -&gt; MemberIDSeq</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberIDSeq = [long()]</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns a a sequence of all channels associated with
+          the target object.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp719456">get_channel(EventDomain, MemberID) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberID    = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = Channel | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Channel     = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the target domain have a <fo:inline font-family="monospace">CosNotifyChannelAdmin::EventChannel</fo:inline>
+          represented by the given id this channel is returned. Otherwise,
+          an exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp714048">remove_channel(EventDomain, MemberID) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberID    = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = ok | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a  <fo:inline font-family="monospace">CosNotifyChannelAdmin::EventChannel</fo:inline> with the 
+          <fo:inline font-family="monospace">MemberID</fo:inline> exists it will removed and all its <fo:inline font-family="monospace">Connections</fo:inline>
+          terminated. Otherwise an exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp593840">add_connection(EventDomain, Connection) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain  = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Connection   = 'CosEventDomainAdmin_Connection'{supplier_id=MemberID, consumer_id=MemberID, ctype=Type, notification_style=Style}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberID     = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type         = 'ANY_EVENT' | 'STRUCTURED_EVENT' | 'SEQUENCE_EVENT'</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Style        = 'Pull' | 'Push'</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply        = ConnectionID | {'EXCEPTION', Exc}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ConnectionID = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Exc          = #'CosNotifyChannelAdmin_ChannelNotFound'{} | #'CosNotifyChannelAdmin_TypeError'{} | #'CosEventDomainAdmin_AlreadyExists'{} | #'CosEventDomainAdmin_DiamondCreationForbidden'{diam=RouteSeq} | #'CosEventDomainAdmin_CycleCreationForbidden'{cyc=MemberIDSeq}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">RouteSeq  = [MemberIDSeq]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberIDSeq  = [long()]</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Connection parameter must contain valid data to enable
+          the target domain to setup a connection between two channels.
+          The struct members <fo:inline font-family="monospace">supplier_id</fo:inline> and <fo:inline font-family="monospace">consumer_id</fo:inline>
+          determines which channel should produce and consume events.
+          which type of events and if the supplier should push or the
+          consumer pull events is determined by <fo:inline font-family="monospace">ctype</fo:inline> and
+          <fo:inline font-family="monospace">notification_style</fo:inline> respectively.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the target domain is not able to setup the connection
+          the appropriate exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp580224">get_all_connections(EventDomain) -&gt; ConnectionIDSeq</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain     = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ConnectionIDSeq = [long()]</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns a sequence of all connections within
+          the target domain.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp580608">get_connection(EventDomain, ConnectionID) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain  = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ConnectionID = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply        = Connection | {'EXCEPTION', #'CosEventDomainAdmin_ConnectionNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Connection   = 'CosEventDomainAdmin_Connection'{supplier_id=MemberID, consumer_id=MemberID, ctype=Type, notification_style=Style}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberID     = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type         = 'ANY_EVENT' | 'STRUCTURED_EVENT' | 'SEQUENCE_EVENT'</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Style        = 'Pull' | 'Push'</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a connection identified by the given id exists within the
+          target domain, a <fo:inline font-family="monospace">#'CosEventDomainAdmin_Connection'{}</fo:inline> which
+          describe the connection is returned. Otherwise, an exception
+          is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp574368">remove_connection(EventDomain, ConnectionID) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain  = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ConnectionID = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply        = ok | {'EXCEPTION', #'CosEventDomainAdmin_ConnectionNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the supplied connection id exists, the connection the
+          id represents is terminated. Otherwise, an exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp622816">get_offer_channels(EventDomain, MemberID) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberID    = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = MemberIDSeq | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns a sequence, containing the member id's
+          of all channels within the target domain which will supply events
+          to the channel identified by the given id. But, if no such
+          id exists in this domain, an exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp609232">get_subscription_channels(EventDomain, MemberID) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = MemberIDSeq | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operations behaves like <fo:inline font-family="monospace">get_subscription_channels</fo:inline>;
+          the difference is that the id's returned identifies channels
+          which will consume events supplied by the channel associated
+          with the given id.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp614992">destroy(EventDomain) -&gt; ok</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Calling this operation will terminate all connections
+          within the target domain. The domain will terminate but
+          all channels will not be affected.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp611792">get_cycles(EventDomain) -&gt; RouteSeq</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">RouteSeq    = [MemberIDSeq]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberIDSeq = [long()]</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns a list of all cycles within the target domain.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp607968">get_diamonds(EventDomain) -&gt; DiamondSeq</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">DiamondSeq  = [RouteSeq]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">RouteSeq    = [MemberIDSeq]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberIDSeq = [long()]</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns a list of all diamonds within the target domain</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp322224">set_default_consumer_channel(EventDomain, MemberID) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = MemberID | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberID    = long()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the given id represents a channel within the target domain,
+          this channel will be used when connection a supplier client
+          without specifying a certain channel. If no such channel exists
+          an exceptions is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp318320">set_default_supplier_channel(EventDomain, MemberID) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = MemberID | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberID    = long()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the given id represents a channel within the target domain,
+          this channel will be used when connection a consumer client
+          without specifying a certain channel. If no such channel exists
+          an exceptions is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp683856">connect_push_consumer(EventDomain, Consumer) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Consumer    = CosEventComm::PushConsumer</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::ProxyPushSupplier | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a default Channel have been set, this operation connects the given
+          PushConsumer to it. Otherwise, the
+          <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline> exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp678496">connect_pull_consumer(EventDomain, Consumer) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Consumer    = CosEventComm::PullConsumer</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::ProxyPullSupplier | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a default Channel have been set, this operation connects the given
+          PullConsumer to it. Otherwise, the
+          <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline> exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp703152">connect_push_supplier(EventDomain, Supplier) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Supplier    = CosEventComm::PushSupplier</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::ProxyPushConsumer | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a default Channel have been set, this operation connects the given
+          PushSupplier to it. Otherwise, the
+          <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline> exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp703792">connect_pull_supplier(EventDomain, Supplier) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Supplier    = CosEventComm::PullSupplier</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::ProxyPushConsumer | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a default Channel have been set, this operation connects the given
+          PullSupplier to it. Otherwise, the
+          <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline> exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp702960">connect_structured_push_consumer(EventDomain, Consumer) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Consumer    = CosNotifyComm::StructuredPushConsumer</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::StructuredProxyPushSupplier | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a default Channel have been set, this operation connects the given
+          StructuredPushConsumer to it. Otherwise, the
+          <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline> exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp91712">connect_structured_pull_consumer(EventDomain, Consumer) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Consumer    = CosNotifyComm::StructuredPullConsumer</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::StructuredProxyPullSupplier | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a default Channel have been set, this operation connects the given
+          StructuredPullConsumer to it. Otherwise, the
+          <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline> exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp450000">connect_structured_push_supplier(EventDomain, Supplier) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Supplier    = CosNotifyComm::StructuredPushSupplier</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::StructuredProxyPushConsumer | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a default Channel have been set, this operation connects the given
+          StructuredPushSupplier to it. Otherwise, the
+          <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline> exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp641488">connect_structured_pull_supplier(EventDomain, Supplier) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Supplier    = CosNotifyComm::StructuredPullSupplier</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::StructuredProxyPullConsume | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a default Channel have been set, this operation connects the given
+          StructuredPullSupplier to it. Otherwise, the
+          <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline> exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp601264">connect_sequence_push_consumer(EventDomain, Consumer) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Consumer    = CosNotifyComm::SequencePushConsumer</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::SequenceProxyPushSupplier | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a default Channel have been set, this operation connects the given
+          SequencePushConsumer to it. Otherwise, the
+          <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline> exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp639408">connect_sequence_pull_consumer(EventDomain, Consumer) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Consumer    = CosNotifyComm::SequencePullConsumer</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::SequenceProxyPullSupplier | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a default Channel have been set, this operation connects the given
+          SequencePullConsumer to it. Otherwise, the
+          <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline> exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp686320">connect_sequence_push_supplier(EventDomain, Supplier) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Supplier    = CosNotifyComm::SequencePushSupplier</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::SequenceProxyPushConsumer | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a default Channel have been set, this operation connects the given
+          SequencePushSupplier to it. Otherwise, the
+          <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline> exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp812960">connect_sequence_pull_supplier(EventDomain, Supplier) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Supplier    = CosNotifyComm::SequencePullSupplier</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::SequenceProxyPullConsumer | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a default Channel have been set, this operation connects the given
+          SequencePullSupplier to it. Otherwise, the 
+          <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline> exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp817536">connect_push_consumer_with_id(EventDomain, Consumer, MemberID) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Consumer    = CosEventComm::PushConsumer</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberID    = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::ProxyPushSupplier | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a Channel associated with the given MemberID exists within the
+          target Domain, this operation connects the given PushConsumer 
+          to it. Otherwise, the <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline>
+          exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp822560">connect_pull_consumer_with_id(EventDomain, Consumer, MemberID) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Consumer    = CosEventComm::PullConsumer</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberID    = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::ProxyPullSupplier | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a Channel associated with the given MemberID exists within the
+          target Domain, this operation connects the given PullConsumer 
+          to it. Otherwise, the <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline>
+          exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp328976">connect_push_supplier_with_id(EventDomain, Supplier, MemberID) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Supplier    = CosEventComm::PushSupplier</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberID    = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::ProxyPushConsumer | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a Channel associated with the given MemberID exists within the
+          target Domain, this operation connects the given PushSupplier 
+          to it. Otherwise, the <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline>
+          exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp334000">connect_pull_supplier_with_id(EventDomain, Supplier, MemberID) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Supplier    = CosEventComm::PullSupplier</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberID    = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::ProxyPushConsumer | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a Channel associated with the given MemberID exists within the
+          target Domain, this operation connects the given PullSupplier 
+          to it. Otherwise, the <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline>
+          exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp744752">connect_structured_push_consumer_with_id(EventDomain, Consumer, MemberID) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Consumer    = CosNotifyComm::StructuredPushConsumer</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberID    = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::StructuredProxyPushSupplier | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a Channel associated with the given MemberID exists within the
+          target Domain, this operation connects the given StructuredPushConsumer 
+          to it. Otherwise, the <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline>
+          exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp749840">connect_structured_pull_consumer_with_id(EventDomain, Consumer, MemberID) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Consumer    = CosNotifyComm::StructuredPullConsumer</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberID    = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::StructuredProxyPullSupplier | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a Channel associated with the given MemberID exists within the
+          target Domain, this operation connects the given StructuredPullConsumer 
+          to it. Otherwise, the <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline>
+          exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp754928">connect_structured_push_supplier_with_id(EventDomain, Supplier, MemberID) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Supplier    = CosNotifyComm::StructuredPushSupplier</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberID    = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::StructuredProxyPushConsumer | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a Channel associated with the given MemberID exists within the
+          target Domain, this operation connects the given StructuredPushSupplier 
+          to it. Otherwise, the <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline>
+          exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp760016">connect_structured_pull_supplier_with_id(EventDomain, Supplier, MemberID) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Supplier    = CosNotifyComm::StructuredPullSupplier</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberID    = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::StructuredProxyPullConsumer | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a Channel associated with the given MemberID exists within the
+          target Domain, this operation connects the given StructuredPullSupplier 
+          to it. Otherwise, the <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline>
+          exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp765104">connect_sequence_push_consumer_with_id(EventDomain, Consumer, MemberID) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Consumer    = CosNotifyComm::SequencePushConsumer</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberID    = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::SequenceProxyPushSupplier | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a Channel associated with the given MemberID exists within the
+          target Domain, this operation connects the given SequencePushConsumer
+          to it. Otherwise, the <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline>
+          exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1043904">connect_sequence_pull_consumer_with_id(EventDomain, Consumer, MemberID) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Consumer    = CosNotifyComm::SequencePullConsumer</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberID    = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::SequenceProxyPullSupplier | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a Channel associated with the given MemberID exists within the
+          target Domain, this operation connects the given SequencePullConsumer
+          to it. Otherwise, the <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline>
+          exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1048896">connect_sequence_push_supplier_with_id(EventDomain, Supplier, MemberID) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Supplier    = CosNotifyComm::SequencePushSupplier</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberID    = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::SequenceProxyPushConsumer | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a Channel associated with the given MemberID exists within the
+          target Domain, this operation connects the given SequencePushSupplier
+          to it. Otherwise, the <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline>
+          exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp1053984">connect_sequence_pull_supplier_with_id(EventDomain, Supplier, MemberID) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventDomain = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Supplier    = CosNotifyComm::SequencePullSupplier</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MemberID    = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply       = CosNotifyChannelAdmin::SequenceProxyPullConsumer | {'EXCEPTION', #'CosNotifyChannelAdmin_ChannelNotFound'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a Channel associated with the given MemberID exists within the
+          target Domain, this operation connects the given SequencePullSupplier
+          to it. Otherwise, the <fo:inline font-family="monospace">#'CosNotifyChannelAdmin_ChannelNotFound'{}</fo:inline>
+          exception is raised.</fo:block>
+      </fo:block>
+  
+  
+</fo:flow>
+  </fo:page-sequence>
+</fo:root>

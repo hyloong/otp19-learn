@@ -1,5 +1,5 @@
 -module(icparse).
--file("/net/isildur/ldisk/daily_build/19_prebuild_opu_o.2017-03-14_21/otp_src_19/lib/ic/src/icyeccpre.hrl", 0).
+-file("/net/isildur/ldisk/daily_build/20_prebuild_master-opu_o.2017-06-20_20/otp_src_20/lib/ic/src/icyeccpre.hrl", 0).
 %%
 %% %CopyrightBegin%
 %% 
@@ -1215,10 +1215,10 @@ yeccpars2_59(_S, Cat, Ss, Stack, T, Ts, Tzr) ->
  yeccpars2_65(65, Cat, [59 | Ss], NewStack, T, Ts, Tzr).
 
 yeccpars2_60(_S, '#', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_60_#'(Stack),
+ NewStack = 'yeccpars2_60_\'#\''(Stack),
  yeccpars2_59(59, '#', [60 | Ss], NewStack, T, Ts, Tzr);
 yeccpars2_60(_S, 'case', Ss, Stack, T, Ts, Tzr) ->
- NewStack = yeccpars2_60_case(Stack),
+ NewStack = 'yeccpars2_60_\'case\''(Stack),
  yeccpars2_59(59, 'case', [60 | Ss], NewStack, T, Ts, Tzr);
 yeccpars2_60(_S, default, Ss, Stack, T, Ts, Tzr) ->
  NewStack = yeccpars2_60_default(Stack),
@@ -1811,16 +1811,16 @@ yeccpars2_168(S, Cat, Ss, Stack, T, Ts, Tzr) ->
  yeccpars2_cont_19(S, Cat, Ss, Stack, T, Ts, Tzr).
 
 yeccpars2_169(_S, '#', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_169_#'(Stack),
+ NewStack = 'yeccpars2_169_\'#\''(Stack),
  yeccpars2_168(168, '#', [169 | Ss], NewStack, T, Ts, Tzr);
 yeccpars2_169(_S, '::', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_169_::'(Stack),
+ NewStack = 'yeccpars2_169_\'::\''(Stack),
  yeccpars2_168(168, '::', [169 | Ss], NewStack, T, Ts, Tzr);
 yeccpars2_169(_S, '<identifier>', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_169_<identifier>'(Stack),
+ NewStack = 'yeccpars2_169_\'<identifier>\''(Stack),
  yeccpars2_168(168, '<identifier>', [169 | Ss], NewStack, T, Ts, Tzr);
 yeccpars2_169(_S, 'Object', Ss, Stack, T, Ts, Tzr) ->
- NewStack = yeccpars2_169_Object(Stack),
+ NewStack = 'yeccpars2_169_\'Object\''(Stack),
  yeccpars2_168(168, 'Object', [169 | Ss], NewStack, T, Ts, Tzr);
 yeccpars2_169(_S, any, Ss, Stack, T, Ts, Tzr) ->
  NewStack = yeccpars2_169_any(Stack),
@@ -2173,7 +2173,7 @@ yeccpars2_226(S, ':', Ss, Stack, T, Ts, Tzr) ->
  yeccpars1(Ts, Tzr, 229, [S | Ss], [T | Stack]);
 yeccpars2_226(_S, ';', Ss, Stack, T, Ts, Tzr) ->
  [_|Nss] = Ss,
- NewStack = 'yeccpars2_226_;'(Stack),
+ NewStack = 'yeccpars2_226_\';\''(Stack),
  'yeccgoto_\'<forward_dcl>\''(hd(Nss), ';', Nss, NewStack, T, Ts, Tzr);
 yeccpars2_226(_S, Cat, Ss, Stack, T, Ts, Tzr) ->
  NewStack = yeccpars2_226_(Stack),
@@ -2437,13 +2437,13 @@ yeccpars2_276(S, typedef, Ss, Stack, T, Ts, Tzr) ->
 yeccpars2_276(S, union, Ss, Stack, T, Ts, Tzr) ->
  yeccpars1(Ts, Tzr, 26, [S | Ss], [T | Stack]);
 yeccpars2_276(_S, '::', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_276_::'(Stack),
+ NewStack = 'yeccpars2_276_\'::\''(Stack),
  yeccpars2_280(280, '::', [276 | Ss], NewStack, T, Ts, Tzr);
 yeccpars2_276(_S, '<identifier>', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_276_<identifier>'(Stack),
+ NewStack = 'yeccpars2_276_\'<identifier>\''(Stack),
  yeccpars2_280(280, '<identifier>', [276 | Ss], NewStack, T, Ts, Tzr);
 yeccpars2_276(_S, 'Object', Ss, Stack, T, Ts, Tzr) ->
- NewStack = yeccpars2_276_Object(Stack),
+ NewStack = 'yeccpars2_276_\'Object\''(Stack),
  yeccpars2_280(280, 'Object', [276 | Ss], NewStack, T, Ts, Tzr);
 yeccpars2_276(_S, any, Ss, Stack, T, Ts, Tzr) ->
  NewStack = yeccpars2_276_any(Stack),
@@ -4498,16 +4498,16 @@ yeccpars2_59_(__Stack0) ->
    [ ]
   end | __Stack0].
 
--compile({inline,'yeccpars2_60_#'/1}).
+-compile({inline,'yeccpars2_60_\'#\''/1}).
 -file("icparse.yrl", 262).
-'yeccpars2_60_#'(__Stack0) ->
+'yeccpars2_60_\'#\''(__Stack0) ->
  [begin
    [ ]
   end | __Stack0].
 
--compile({inline,yeccpars2_60_case/1}).
+-compile({inline,'yeccpars2_60_\'case\''/1}).
 -file("icparse.yrl", 262).
-yeccpars2_60_case(__Stack0) ->
+'yeccpars2_60_\'case\''(__Stack0) ->
  [begin
    [ ]
   end | __Stack0].
@@ -4731,30 +4731,30 @@ yeccpars2_167_(__Stack0) ->
    [ ]
   end | __Stack0].
 
--compile({inline,'yeccpars2_169_#'/1}).
+-compile({inline,'yeccpars2_169_\'#\''/1}).
 -file("icparse.yrl", 262).
-'yeccpars2_169_#'(__Stack0) ->
+'yeccpars2_169_\'#\''(__Stack0) ->
  [begin
    [ ]
   end | __Stack0].
 
--compile({inline,'yeccpars2_169_::'/1}).
+-compile({inline,'yeccpars2_169_\'::\''/1}).
 -file("icparse.yrl", 262).
-'yeccpars2_169_::'(__Stack0) ->
+'yeccpars2_169_\'::\''(__Stack0) ->
  [begin
    [ ]
   end | __Stack0].
 
--compile({inline,'yeccpars2_169_<identifier>'/1}).
+-compile({inline,'yeccpars2_169_\'<identifier>\''/1}).
 -file("icparse.yrl", 262).
-'yeccpars2_169_<identifier>'(__Stack0) ->
+'yeccpars2_169_\'<identifier>\''(__Stack0) ->
  [begin
    [ ]
   end | __Stack0].
 
--compile({inline,yeccpars2_169_Object/1}).
+-compile({inline,'yeccpars2_169_\'Object\''/1}).
 -file("icparse.yrl", 262).
-yeccpars2_169_Object(__Stack0) ->
+'yeccpars2_169_\'Object\''(__Stack0) ->
  [begin
    [ ]
   end | __Stack0].
@@ -5113,9 +5113,9 @@ yeccpars2_225_(__Stack0) ->
    # module { id = __2 , body = reverse ( __4 ) }
   end | __Stack].
 
--compile({inline,'yeccpars2_226_;'/1}).
+-compile({inline,'yeccpars2_226_\';\''/1}).
 -file("icparse.yrl", 328).
-'yeccpars2_226_;'(__Stack0) ->
+'yeccpars2_226_\';\''(__Stack0) ->
  [__2,__1 | __Stack] = __Stack0,
  [begin
    # forward { id = __2 }
@@ -5335,23 +5335,23 @@ yeccpars2_275_(__Stack0) ->
    [ ]
   end | __Stack0].
 
--compile({inline,'yeccpars2_276_::'/1}).
+-compile({inline,'yeccpars2_276_\'::\''/1}).
 -file("icparse.yrl", 762).
-'yeccpars2_276_::'(__Stack0) ->
+'yeccpars2_276_\'::\''(__Stack0) ->
  [begin
    nil
   end | __Stack0].
 
--compile({inline,'yeccpars2_276_<identifier>'/1}).
+-compile({inline,'yeccpars2_276_\'<identifier>\''/1}).
 -file("icparse.yrl", 762).
-'yeccpars2_276_<identifier>'(__Stack0) ->
+'yeccpars2_276_\'<identifier>\''(__Stack0) ->
  [begin
    nil
   end | __Stack0].
 
--compile({inline,yeccpars2_276_Object/1}).
+-compile({inline,'yeccpars2_276_\'Object\''/1}).
 -file("icparse.yrl", 762).
-yeccpars2_276_Object(__Stack0) ->
+'yeccpars2_276_\'Object\''(__Stack0) ->
  [begin
    nil
   end | __Stack0].

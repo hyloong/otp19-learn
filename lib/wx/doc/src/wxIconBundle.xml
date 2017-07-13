@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxIconBundle</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxIconBundle.xml</file></header>
+<module>wxIconBundle</module>
+<modulesummary>See external documentation: wxIconBundle.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxiconbundle.html">wxIconBundle</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxIconBundle"/>wxIconBundle()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxIconBundle">wxIconBundle()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxiconbundle.html#wxiconbundlewxiconbundle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Ic) -&gt; <seealso marker="#type-wxIconBundle">wxIconBundle()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Ic = <seealso marker="#type-wxIconBundle">wxIconBundle()</seealso> | <seealso marker="wxIcon#type-wxIcon">wxIcon:wxIcon()</seealso></v></type>
+<desc><marker id="new-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxiconbundle.html#wxiconbundlewxiconbundle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(File, Type) -&gt; <seealso marker="#type-wxIconBundle">wxIconBundle()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>File = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Type = integer()</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxiconbundle.html#wxiconbundlewxiconbundle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addIcon(This, Icon) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxIconBundle">wxIconBundle()</seealso></v><v>Icon = <seealso marker="wxIcon#type-wxIcon">wxIcon:wxIcon()</seealso></v></type>
+<desc><marker id="addIcon-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxiconbundle.html#wxiconbundleaddicon">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addIcon(This, File, Type) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxIconBundle">wxIconBundle()</seealso></v><v>File = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Type = integer()</v></type>
+<desc><marker id="addIcon-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxiconbundle.html#wxiconbundleaddicon">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getIcon(This) -&gt; <seealso marker="wxIcon#type-wxIcon">wxIcon:wxIcon()</seealso></name>
+<fsummary>Equivalent to getIcon(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxIconBundle">wxIconBundle()</seealso></v></type>
+<desc><marker id="getIcon-1"/>
+<p>Equivalent to <seealso marker="#getIcon-2">getIcon(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>getIcon(This, Options::[Option]) -&gt; <seealso marker="wxIcon#type-wxIcon">wxIcon:wxIcon()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxIconBundle">wxIconBundle()</seealso></v><v>Option = {size, integer()}</v></type>
+<desc><marker id="getIcon-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxiconbundle.html#wxiconbundlegeticon">external documentation</url>.
+  <br/> Also:<br/>
+  getIcon(This, Size) -&gt; wxIcon:wxIcon() when<br/>
+  	This::wxIconBundle(), Size::{W::integer(), H::integer()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxIconBundle">wxIconBundle()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

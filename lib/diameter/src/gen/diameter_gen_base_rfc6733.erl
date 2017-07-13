@@ -148,10 +148,10 @@
 	 'Acct-Application-Id' = []}).
 
 -export([name/0, id/0, vendor_id/0, vendor_name/0,
-	 decode_avps/2, encode_avps/2, msg_name/2, msg_header/1,
-	 rec2msg/1, msg2rec/1, name2rec/1, avp_name/2,
-	 avp_arity/2, avp_header/1, avp/3, grouped_avp/3,
-	 enumerated_avp/3, empty_value/1, dict/0]).
+	 decode_avps/3, encode_avps/3, grouped_avp/4, msg_name/2,
+	 msg_header/1, rec2msg/1, msg2rec/1, name2rec/1,
+	 avp_name/2, avp_arity/1, avp_arity/2, avp_header/1,
+	 avp/4, enumerated_avp/3, empty_value/2, dict/0]).
 
 -include_lib("diameter/include/diameter.hrl").
 
@@ -335,6 +335,149 @@ avp_name(266, undefined) -> {'Vendor-Id', 'Unsigned32'};
 avp_name(260, undefined) ->
     {'Vendor-Specific-Application-Id', 'Grouped'};
 avp_name(_, _) -> 'AVP'.
+
+avp_arity('CER') ->
+    [{'Origin-Host', 1}, {'Origin-Realm', 1},
+     {'Host-IP-Address', {1, '*'}}, {'Vendor-Id', 1},
+     {'Product-Name', 1}, {'Origin-State-Id', {0, 1}},
+     {'Supported-Vendor-Id', {0, '*'}},
+     {'Auth-Application-Id', {0, '*'}},
+     {'Inband-Security-Id', {0, '*'}},
+     {'Acct-Application-Id', {0, '*'}},
+     {'Vendor-Specific-Application-Id', {0, '*'}},
+     {'Firmware-Revision', {0, 1}}, {'AVP', {0, '*'}}];
+avp_arity('CEA') ->
+    [{'Result-Code', 1}, {'Origin-Host', 1},
+     {'Origin-Realm', 1}, {'Host-IP-Address', {1, '*'}},
+     {'Vendor-Id', 1}, {'Product-Name', 1},
+     {'Origin-State-Id', {0, 1}}, {'Error-Message', {0, 1}},
+     {'Failed-AVP', {0, 1}},
+     {'Supported-Vendor-Id', {0, '*'}},
+     {'Auth-Application-Id', {0, '*'}},
+     {'Inband-Security-Id', {0, '*'}},
+     {'Acct-Application-Id', {0, '*'}},
+     {'Vendor-Specific-Application-Id', {0, '*'}},
+     {'Firmware-Revision', {0, 1}}, {'AVP', {0, '*'}}];
+avp_arity('DPR') ->
+    [{'Origin-Host', 1}, {'Origin-Realm', 1},
+     {'Disconnect-Cause', 1}, {'AVP', {0, '*'}}];
+avp_arity('DPA') ->
+    [{'Result-Code', 1}, {'Origin-Host', 1},
+     {'Origin-Realm', 1}, {'Error-Message', {0, 1}},
+     {'Failed-AVP', {0, 1}}, {'AVP', {0, '*'}}];
+avp_arity('DWR') ->
+    [{'Origin-Host', 1}, {'Origin-Realm', 1},
+     {'Origin-State-Id', {0, 1}}, {'AVP', {0, '*'}}];
+avp_arity('DWA') ->
+    [{'Result-Code', 1}, {'Origin-Host', 1},
+     {'Origin-Realm', 1}, {'Error-Message', {0, 1}},
+     {'Failed-AVP', {0, 1}}, {'Origin-State-Id', {0, 1}},
+     {'AVP', {0, '*'}}];
+avp_arity('answer-message') ->
+    [{'Session-Id', {0, 1}}, {'Origin-Host', 1},
+     {'Origin-Realm', 1}, {'Result-Code', 1},
+     {'Origin-State-Id', {0, 1}}, {'Error-Message', {0, 1}},
+     {'Error-Reporting-Host', {0, 1}},
+     {'Failed-AVP', {0, 1}}, {'Experimental-Result', {0, 1}},
+     {'Proxy-Info', {0, '*'}}, {'AVP', {0, '*'}}];
+avp_arity('RAR') ->
+    [{'Session-Id', 1}, {'Origin-Host', 1},
+     {'Origin-Realm', 1}, {'Destination-Realm', 1},
+     {'Destination-Host', 1}, {'Auth-Application-Id', 1},
+     {'Re-Auth-Request-Type', 1}, {'User-Name', {0, 1}},
+     {'Origin-State-Id', {0, 1}}, {'Proxy-Info', {0, '*'}},
+     {'Route-Record', {0, '*'}}, {'AVP', {0, '*'}}];
+avp_arity('RAA') ->
+    [{'Session-Id', 1}, {'Result-Code', 1},
+     {'Origin-Host', 1}, {'Origin-Realm', 1},
+     {'User-Name', {0, 1}}, {'Origin-State-Id', {0, 1}},
+     {'Error-Message', {0, 1}},
+     {'Error-Reporting-Host', {0, 1}},
+     {'Failed-AVP', {0, 1}}, {'Redirect-Host', {0, '*'}},
+     {'Redirect-Host-Usage', {0, 1}},
+     {'Redirect-Max-Cache-Time', {0, 1}},
+     {'Proxy-Info', {0, '*'}}, {'AVP', {0, '*'}}];
+avp_arity('STR') ->
+    [{'Session-Id', 1}, {'Origin-Host', 1},
+     {'Origin-Realm', 1}, {'Destination-Realm', 1},
+     {'Auth-Application-Id', 1}, {'Termination-Cause', 1},
+     {'User-Name', {0, 1}}, {'Destination-Host', {0, 1}},
+     {'Class', {0, '*'}}, {'Origin-State-Id', {0, 1}},
+     {'Proxy-Info', {0, '*'}}, {'Route-Record', {0, '*'}},
+     {'AVP', {0, '*'}}];
+avp_arity('STA') ->
+    [{'Session-Id', 1}, {'Result-Code', 1},
+     {'Origin-Host', 1}, {'Origin-Realm', 1},
+     {'User-Name', {0, 1}}, {'Class', {0, '*'}},
+     {'Error-Message', {0, 1}},
+     {'Error-Reporting-Host', {0, 1}},
+     {'Failed-AVP', {0, 1}}, {'Origin-State-Id', {0, 1}},
+     {'Redirect-Host', {0, '*'}},
+     {'Redirect-Host-Usage', {0, 1}},
+     {'Redirect-Max-Cache-Time', {0, 1}},
+     {'Proxy-Info', {0, '*'}}, {'AVP', {0, '*'}}];
+avp_arity('ASR') ->
+    [{'Session-Id', 1}, {'Origin-Host', 1},
+     {'Origin-Realm', 1}, {'Destination-Realm', 1},
+     {'Destination-Host', 1}, {'Auth-Application-Id', 1},
+     {'User-Name', {0, 1}}, {'Origin-State-Id', {0, 1}},
+     {'Proxy-Info', {0, '*'}}, {'Route-Record', {0, '*'}},
+     {'AVP', {0, '*'}}];
+avp_arity('ASA') ->
+    [{'Session-Id', 1}, {'Result-Code', 1},
+     {'Origin-Host', 1}, {'Origin-Realm', 1},
+     {'User-Name', {0, 1}}, {'Origin-State-Id', {0, 1}},
+     {'Error-Message', {0, 1}},
+     {'Error-Reporting-Host', {0, 1}},
+     {'Failed-AVP', {0, 1}}, {'Redirect-Host', {0, '*'}},
+     {'Redirect-Host-Usage', {0, 1}},
+     {'Redirect-Max-Cache-Time', {0, 1}},
+     {'Proxy-Info', {0, '*'}}, {'AVP', {0, '*'}}];
+avp_arity('ACR') ->
+    [{'Session-Id', 1}, {'Origin-Host', 1},
+     {'Origin-Realm', 1}, {'Destination-Realm', 1},
+     {'Accounting-Record-Type', 1},
+     {'Accounting-Record-Number', 1},
+     {'Acct-Application-Id', {0, 1}},
+     {'Vendor-Specific-Application-Id', {0, 1}},
+     {'User-Name', {0, 1}}, {'Destination-Host', {0, 1}},
+     {'Accounting-Sub-Session-Id', {0, 1}},
+     {'Acct-Session-Id', {0, 1}},
+     {'Acct-Multi-Session-Id', {0, 1}},
+     {'Acct-Interim-Interval', {0, 1}},
+     {'Accounting-Realtime-Required', {0, 1}},
+     {'Origin-State-Id', {0, 1}},
+     {'Event-Timestamp', {0, 1}}, {'Proxy-Info', {0, '*'}},
+     {'Route-Record', {0, '*'}}, {'AVP', {0, '*'}}];
+avp_arity('ACA') ->
+    [{'Session-Id', 1}, {'Result-Code', 1},
+     {'Origin-Host', 1}, {'Origin-Realm', 1},
+     {'Accounting-Record-Type', 1},
+     {'Accounting-Record-Number', 1},
+     {'Acct-Application-Id', {0, 1}},
+     {'Vendor-Specific-Application-Id', {0, 1}},
+     {'User-Name', {0, 1}},
+     {'Accounting-Sub-Session-Id', {0, 1}},
+     {'Acct-Session-Id', {0, 1}},
+     {'Acct-Multi-Session-Id', {0, 1}},
+     {'Error-Message', {0, 1}},
+     {'Error-Reporting-Host', {0, 1}},
+     {'Failed-AVP', {0, 1}},
+     {'Acct-Interim-Interval', {0, 1}},
+     {'Accounting-Realtime-Required', {0, 1}},
+     {'Origin-State-Id', {0, 1}},
+     {'Event-Timestamp', {0, 1}}, {'Proxy-Info', {0, '*'}},
+     {'AVP', {0, '*'}}];
+avp_arity('Proxy-Info') ->
+    [{'Proxy-Host', 1}, {'Proxy-State', 1},
+     {'AVP', {0, '*'}}];
+avp_arity('Failed-AVP') -> [{'AVP', {1, '*'}}];
+avp_arity('Experimental-Result') ->
+    [{'Vendor-Id', 1}, {'Experimental-Result-Code', 1}];
+avp_arity('Vendor-Specific-Application-Id') ->
+    [{'Vendor-Id', 1}, {'Auth-Application-Id', {0, 1}},
+     {'Acct-Application-Id', {0, 1}}];
+avp_arity(_) -> erlang:error(badarg).
 
 avp_arity('CER', 'Origin-Host') -> 1;
 avp_arity('CER', 'Origin-Realm') -> 1;
@@ -617,105 +760,106 @@ avp_header('Vendor-Specific-Application-Id') ->
     {260, 64, undefined};
 avp_header(_) -> erlang:error(badarg).
 
-avp(T, Data, 'Accounting-Realtime-Required') ->
+avp(T, Data, 'Accounting-Realtime-Required', _) ->
     enumerated_avp(T, 'Accounting-Realtime-Required', Data);
-avp(T, Data, 'Accounting-Record-Number') ->
-    diameter_types:'Unsigned32'(T, Data);
-avp(T, Data, 'Accounting-Record-Type') ->
+avp(T, Data, 'Accounting-Record-Number', Opts) ->
+    diameter_types:'Unsigned32'(T, Data, Opts);
+avp(T, Data, 'Accounting-Record-Type', _) ->
     enumerated_avp(T, 'Accounting-Record-Type', Data);
-avp(T, Data, 'Accounting-Sub-Session-Id') ->
-    diameter_types:'Unsigned64'(T, Data);
-avp(T, Data, 'Acct-Application-Id') ->
-    diameter_types:'Unsigned32'(T, Data);
-avp(T, Data, 'Acct-Interim-Interval') ->
-    diameter_types:'Unsigned32'(T, Data);
-avp(T, Data, 'Acct-Multi-Session-Id') ->
-    diameter_types:'UTF8String'(T, Data);
-avp(T, Data, 'Acct-Session-Id') ->
-    diameter_types:'OctetString'(T, Data);
-avp(T, Data, 'Auth-Application-Id') ->
-    diameter_types:'Unsigned32'(T, Data);
-avp(T, Data, 'Auth-Grace-Period') ->
-    diameter_types:'Unsigned32'(T, Data);
-avp(T, Data, 'Auth-Request-Type') ->
+avp(T, Data, 'Accounting-Sub-Session-Id', Opts) ->
+    diameter_types:'Unsigned64'(T, Data, Opts);
+avp(T, Data, 'Acct-Application-Id', Opts) ->
+    diameter_types:'Unsigned32'(T, Data, Opts);
+avp(T, Data, 'Acct-Interim-Interval', Opts) ->
+    diameter_types:'Unsigned32'(T, Data, Opts);
+avp(T, Data, 'Acct-Multi-Session-Id', Opts) ->
+    diameter_types:'UTF8String'(T, Data, Opts);
+avp(T, Data, 'Acct-Session-Id', Opts) ->
+    diameter_types:'OctetString'(T, Data, Opts);
+avp(T, Data, 'Auth-Application-Id', Opts) ->
+    diameter_types:'Unsigned32'(T, Data, Opts);
+avp(T, Data, 'Auth-Grace-Period', Opts) ->
+    diameter_types:'Unsigned32'(T, Data, Opts);
+avp(T, Data, 'Auth-Request-Type', _) ->
     enumerated_avp(T, 'Auth-Request-Type', Data);
-avp(T, Data, 'Auth-Session-State') ->
+avp(T, Data, 'Auth-Session-State', _) ->
     enumerated_avp(T, 'Auth-Session-State', Data);
-avp(T, Data, 'Authorization-Lifetime') ->
-    diameter_types:'Unsigned32'(T, Data);
-avp(T, Data, 'Class') ->
-    diameter_types:'OctetString'(T, Data);
-avp(T, Data, 'Destination-Host') ->
-    diameter_types:'DiameterIdentity'(T, Data);
-avp(T, Data, 'Destination-Realm') ->
-    diameter_types:'DiameterIdentity'(T, Data);
-avp(T, Data, 'Disconnect-Cause') ->
+avp(T, Data, 'Authorization-Lifetime', Opts) ->
+    diameter_types:'Unsigned32'(T, Data, Opts);
+avp(T, Data, 'Class', Opts) ->
+    diameter_types:'OctetString'(T, Data, Opts);
+avp(T, Data, 'Destination-Host', Opts) ->
+    diameter_types:'DiameterIdentity'(T, Data, Opts);
+avp(T, Data, 'Destination-Realm', Opts) ->
+    diameter_types:'DiameterIdentity'(T, Data, Opts);
+avp(T, Data, 'Disconnect-Cause', _) ->
     enumerated_avp(T, 'Disconnect-Cause', Data);
-avp(T, Data, 'Error-Message') ->
-    diameter_types:'UTF8String'(T, Data);
-avp(T, Data, 'Error-Reporting-Host') ->
-    diameter_types:'DiameterIdentity'(T, Data);
-avp(T, Data, 'Event-Timestamp') ->
-    diameter_types:'Time'(T, Data);
-avp(T, Data, 'Experimental-Result') ->
-    grouped_avp(T, 'Experimental-Result', Data);
-avp(T, Data, 'Experimental-Result-Code') ->
-    diameter_types:'Unsigned32'(T, Data);
-avp(T, Data, 'Failed-AVP') ->
-    grouped_avp(T, 'Failed-AVP', Data);
-avp(T, Data, 'Firmware-Revision') ->
-    diameter_types:'Unsigned32'(T, Data);
-avp(T, Data, 'Host-IP-Address') ->
-    diameter_types:'Address'(T, Data);
-avp(T, Data, 'Inband-Security-Id') ->
-    diameter_types:'Unsigned32'(T, Data);
-avp(T, Data, 'Multi-Round-Time-Out') ->
-    diameter_types:'Unsigned32'(T, Data);
-avp(T, Data, 'Origin-Host') ->
-    diameter_types:'DiameterIdentity'(T, Data);
-avp(T, Data, 'Origin-Realm') ->
-    diameter_types:'DiameterIdentity'(T, Data);
-avp(T, Data, 'Origin-State-Id') ->
-    diameter_types:'Unsigned32'(T, Data);
-avp(T, Data, 'Product-Name') ->
-    diameter_types:'UTF8String'(T, Data);
-avp(T, Data, 'Proxy-Host') ->
-    diameter_types:'DiameterIdentity'(T, Data);
-avp(T, Data, 'Proxy-Info') ->
-    grouped_avp(T, 'Proxy-Info', Data);
-avp(T, Data, 'Proxy-State') ->
-    diameter_types:'OctetString'(T, Data);
-avp(T, Data, 'Re-Auth-Request-Type') ->
+avp(T, Data, 'Error-Message', Opts) ->
+    diameter_types:'UTF8String'(T, Data, Opts);
+avp(T, Data, 'Error-Reporting-Host', Opts) ->
+    diameter_types:'DiameterIdentity'(T, Data, Opts);
+avp(T, Data, 'Event-Timestamp', Opts) ->
+    diameter_types:'Time'(T, Data, Opts);
+avp(T, Data, 'Experimental-Result', Opts) ->
+    grouped_avp(T, 'Experimental-Result', Data, Opts);
+avp(T, Data, 'Experimental-Result-Code', Opts) ->
+    diameter_types:'Unsigned32'(T, Data, Opts);
+avp(T, Data, 'Failed-AVP', Opts) ->
+    grouped_avp(T, 'Failed-AVP', Data, Opts);
+avp(T, Data, 'Firmware-Revision', Opts) ->
+    diameter_types:'Unsigned32'(T, Data, Opts);
+avp(T, Data, 'Host-IP-Address', Opts) ->
+    diameter_types:'Address'(T, Data, Opts);
+avp(T, Data, 'Inband-Security-Id', Opts) ->
+    diameter_types:'Unsigned32'(T, Data, Opts);
+avp(T, Data, 'Multi-Round-Time-Out', Opts) ->
+    diameter_types:'Unsigned32'(T, Data, Opts);
+avp(T, Data, 'Origin-Host', Opts) ->
+    diameter_types:'DiameterIdentity'(T, Data, Opts);
+avp(T, Data, 'Origin-Realm', Opts) ->
+    diameter_types:'DiameterIdentity'(T, Data, Opts);
+avp(T, Data, 'Origin-State-Id', Opts) ->
+    diameter_types:'Unsigned32'(T, Data, Opts);
+avp(T, Data, 'Product-Name', Opts) ->
+    diameter_types:'UTF8String'(T, Data, Opts);
+avp(T, Data, 'Proxy-Host', Opts) ->
+    diameter_types:'DiameterIdentity'(T, Data, Opts);
+avp(T, Data, 'Proxy-Info', Opts) ->
+    grouped_avp(T, 'Proxy-Info', Data, Opts);
+avp(T, Data, 'Proxy-State', Opts) ->
+    diameter_types:'OctetString'(T, Data, Opts);
+avp(T, Data, 'Re-Auth-Request-Type', _) ->
     enumerated_avp(T, 'Re-Auth-Request-Type', Data);
-avp(T, Data, 'Redirect-Host') ->
-    diameter_types:'DiameterURI'(T, Data);
-avp(T, Data, 'Redirect-Host-Usage') ->
+avp(T, Data, 'Redirect-Host', Opts) ->
+    diameter_types:'DiameterURI'(T, Data, Opts);
+avp(T, Data, 'Redirect-Host-Usage', _) ->
     enumerated_avp(T, 'Redirect-Host-Usage', Data);
-avp(T, Data, 'Redirect-Max-Cache-Time') ->
-    diameter_types:'Unsigned32'(T, Data);
-avp(T, Data, 'Result-Code') ->
-    diameter_types:'Unsigned32'(T, Data);
-avp(T, Data, 'Route-Record') ->
-    diameter_types:'DiameterIdentity'(T, Data);
-avp(T, Data, 'Session-Binding') ->
-    diameter_types:'Unsigned32'(T, Data);
-avp(T, Data, 'Session-Id') ->
-    diameter_types:'UTF8String'(T, Data);
-avp(T, Data, 'Session-Server-Failover') ->
+avp(T, Data, 'Redirect-Max-Cache-Time', Opts) ->
+    diameter_types:'Unsigned32'(T, Data, Opts);
+avp(T, Data, 'Result-Code', Opts) ->
+    diameter_types:'Unsigned32'(T, Data, Opts);
+avp(T, Data, 'Route-Record', Opts) ->
+    diameter_types:'DiameterIdentity'(T, Data, Opts);
+avp(T, Data, 'Session-Binding', Opts) ->
+    diameter_types:'Unsigned32'(T, Data, Opts);
+avp(T, Data, 'Session-Id', Opts) ->
+    diameter_types:'UTF8String'(T, Data, Opts);
+avp(T, Data, 'Session-Server-Failover', _) ->
     enumerated_avp(T, 'Session-Server-Failover', Data);
-avp(T, Data, 'Session-Timeout') ->
-    diameter_types:'Unsigned32'(T, Data);
-avp(T, Data, 'Supported-Vendor-Id') ->
-    diameter_types:'Unsigned32'(T, Data);
-avp(T, Data, 'Termination-Cause') ->
+avp(T, Data, 'Session-Timeout', Opts) ->
+    diameter_types:'Unsigned32'(T, Data, Opts);
+avp(T, Data, 'Supported-Vendor-Id', Opts) ->
+    diameter_types:'Unsigned32'(T, Data, Opts);
+avp(T, Data, 'Termination-Cause', _) ->
     enumerated_avp(T, 'Termination-Cause', Data);
-avp(T, Data, 'User-Name') ->
-    diameter_types:'UTF8String'(T, Data);
-avp(T, Data, 'Vendor-Id') ->
-    diameter_types:'Unsigned32'(T, Data);
-avp(T, Data, 'Vendor-Specific-Application-Id') ->
-    grouped_avp(T, 'Vendor-Specific-Application-Id', Data);
-avp(_, _, _) -> erlang:error(badarg).
+avp(T, Data, 'User-Name', Opts) ->
+    diameter_types:'UTF8String'(T, Data, Opts);
+avp(T, Data, 'Vendor-Id', Opts) ->
+    diameter_types:'Unsigned32'(T, Data, Opts);
+avp(T, Data, 'Vendor-Specific-Application-Id', Opts) ->
+    grouped_avp(T, 'Vendor-Specific-Application-Id', Data,
+		Opts);
+avp(_, _, _, _) -> erlang:error(badarg).
 
 enumerated_avp(decode, 'Disconnect-Cause',
 	       <<0, 0, 0, 0>>) ->
@@ -902,24 +1046,28 @@ enumerated_avp(encode, 'Accounting-Realtime-Required',
     <<0, 0, 0, 3>>;
 enumerated_avp(_, _, _) -> erlang:error(badarg).
 
-empty_value('Proxy-Info') -> empty_group('Proxy-Info');
-empty_value('Failed-AVP') -> empty_group('Failed-AVP');
-empty_value('Experimental-Result') ->
-    empty_group('Experimental-Result');
-empty_value('Vendor-Specific-Application-Id') ->
-    empty_group('Vendor-Specific-Application-Id');
-empty_value('Disconnect-Cause') -> <<0, 0, 0, 0>>;
-empty_value('Redirect-Host-Usage') -> <<0, 0, 0, 0>>;
-empty_value('Auth-Request-Type') -> <<0, 0, 0, 0>>;
-empty_value('Auth-Session-State') -> <<0, 0, 0, 0>>;
-empty_value('Re-Auth-Request-Type') -> <<0, 0, 0, 0>>;
-empty_value('Termination-Cause') -> <<0, 0, 0, 0>>;
-empty_value('Session-Server-Failover') ->
+empty_value('Proxy-Info', Opts) ->
+    empty_group('Proxy-Info', Opts);
+empty_value('Failed-AVP', Opts) ->
+    empty_group('Failed-AVP', Opts);
+empty_value('Experimental-Result', Opts) ->
+    empty_group('Experimental-Result', Opts);
+empty_value('Vendor-Specific-Application-Id', Opts) ->
+    empty_group('Vendor-Specific-Application-Id', Opts);
+empty_value('Disconnect-Cause', _) -> <<0, 0, 0, 0>>;
+empty_value('Redirect-Host-Usage', _) -> <<0, 0, 0, 0>>;
+empty_value('Auth-Request-Type', _) -> <<0, 0, 0, 0>>;
+empty_value('Auth-Session-State', _) -> <<0, 0, 0, 0>>;
+empty_value('Re-Auth-Request-Type', _) ->
     <<0, 0, 0, 0>>;
-empty_value('Accounting-Record-Type') -> <<0, 0, 0, 0>>;
-empty_value('Accounting-Realtime-Required') ->
+empty_value('Termination-Cause', _) -> <<0, 0, 0, 0>>;
+empty_value('Session-Server-Failover', _) ->
     <<0, 0, 0, 0>>;
-empty_value(Name) -> empty(Name).
+empty_value('Accounting-Record-Type', _) ->
+    <<0, 0, 0, 0>>;
+empty_value('Accounting-Realtime-Required', _) ->
+    <<0, 0, 0, 0>>;
+empty_value(Name, Opts) -> empty(Name, Opts).
 
 dict() ->
     [1,

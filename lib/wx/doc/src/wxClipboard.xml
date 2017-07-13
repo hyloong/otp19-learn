@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxClipboard</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxClipboard.xml</file></header>
+<module>wxClipboard</module>
+<modulesummary>See external documentation: wxClipboard.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxclipboard.html">wxClipboard</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxClipboard"/>wxClipboard()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxClipboard">wxClipboard()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxclipboard.html#wxclipboardwxclipboard">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addData(This, Data) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxClipboard">wxClipboard()</seealso></v><v>Data = <seealso marker="wxDataObject#type-wxDataObject">wxDataObject:wxDataObject()</seealso></v></type>
+<desc><marker id="addData-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxclipboard.html#wxclipboardadddata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>clear(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxClipboard">wxClipboard()</seealso></v></type>
+<desc><marker id="clear-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxclipboard.html#wxclipboardclear">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>close(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxClipboard">wxClipboard()</seealso></v></type>
+<desc><marker id="close-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxclipboard.html#wxclipboardclose">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>flush(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxClipboard">wxClipboard()</seealso></v></type>
+<desc><marker id="flush-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxclipboard.html#wxclipboardflush">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getData(This, Data) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxClipboard">wxClipboard()</seealso></v><v>Data = <seealso marker="wxDataObject#type-wxDataObject">wxDataObject:wxDataObject()</seealso></v></type>
+<desc><marker id="getData-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxclipboard.html#wxclipboardgetdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isOpened(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxClipboard">wxClipboard()</seealso></v></type>
+<desc><marker id="isOpened-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxclipboard.html#wxclipboardisopened">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>open(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxClipboard">wxClipboard()</seealso></v></type>
+<desc><marker id="open-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxclipboard.html#wxclipboardopen">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setData(This, Data) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxClipboard">wxClipboard()</seealso></v><v>Data = <seealso marker="wxDataObject#type-wxDataObject">wxDataObject:wxDataObject()</seealso></v></type>
+<desc><marker id="setData-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxclipboard.html#wxclipboardsetdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>usePrimarySelection(This) -&gt; ok</name>
+<fsummary>Equivalent to usePrimarySelection(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxClipboard">wxClipboard()</seealso></v></type>
+<desc><marker id="usePrimarySelection-1"/>
+<p>Equivalent to <seealso marker="#usePrimarySelection-2">usePrimarySelection(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>usePrimarySelection(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxClipboard">wxClipboard()</seealso></v><v>Option = {primary, boolean()}</v></type>
+<desc><marker id="usePrimarySelection-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxclipboard.html#wxclipboarduseprimaryselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isSupported(This, Format) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxClipboard">wxClipboard()</seealso></v><v>Format = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></v></type>
+<desc><marker id="isSupported-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxclipboard.html#wxclipboardissupported">external documentation</url>.
+ <br/> Format = ?wxDF_INVALID | ?wxDF_TEXT | ?wxDF_BITMAP | ?wxDF_METAFILE | ?wxDF_SYLK | ?wxDF_DIF | ?wxDF_TIFF | ?wxDF_OEMTEXT | ?wxDF_DIB | ?wxDF_PALETTE | ?wxDF_PENDATA | ?wxDF_RIFF | ?wxDF_WAVE | ?wxDF_UNICODETEXT | ?wxDF_ENHMETAFILE | ?wxDF_FILENAME | ?wxDF_LOCALE | ?wxDF_PRIVATE | ?wxDF_HTML | ?wxDF_MAX</p>
+</desc></func>
+<func>
+<name>get() -&gt; <seealso marker="#type-wxClipboard">wxClipboard()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="get-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxclipboard.html#wxclipboardget">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxClipboard">wxClipboard()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

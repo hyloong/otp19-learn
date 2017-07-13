@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxPostScriptDC</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxPostScriptDC.xml</file></header>
+<module>wxPostScriptDC</module>
+<modulesummary>See external documentation: wxPostScriptDC.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpostscriptdc.html">wxPostScriptDC</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxDC">wxDC</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxPostScriptDC"/>wxPostScriptDC()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxPostScriptDC">wxPostScriptDC()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpostscriptdc.html#wxpostscriptdcwxpostscriptdc">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(PrintData) -&gt; <seealso marker="#type-wxPostScriptDC">wxPostScriptDC()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>PrintData = <seealso marker="wxPrintData#type-wxPrintData">wxPrintData:wxPrintData()</seealso></v></type>
+<desc><marker id="new-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpostscriptdc.html#wxpostscriptdcwxpostscriptdc">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setResolution(Ppi) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Ppi = integer()</v></type>
+<desc><marker id="setResolution-1"/>
+<p><em>This function is deprecated: </em>deprecated function not available in wxWidgets-2.9 and later</p>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpostscriptdc.html#wxpostscriptdcsetresolution">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getResolution() -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="getResolution-0"/>
+<p><em>This function is deprecated: </em>deprecated function not available in wxWidgets-2.9 and later</p>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpostscriptdc.html#wxpostscriptdcgetresolution">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxPostScriptDC">wxPostScriptDC()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

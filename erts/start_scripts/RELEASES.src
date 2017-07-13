@@ -1,5 +1,5 @@
-[{release,"Erlang/OTP","19","8.3",
-          [{kernel,"5.2","%ERL_ROOT%/lib/kernel-5.2"},
-           {stdlib,"3.3","%ERL_ROOT%/lib/stdlib-3.3"},
-           {sasl,"3.0.3","%ERL_ROOT%/lib/sasl-3.0.3"}],
+[{release,"Erlang/OTP","20","9.0",
+          [{kernel,"5.3","%ERL_ROOT%/lib/kernel-5.3"},
+           {stdlib,"3.4","%ERL_ROOT%/lib/stdlib-3.4"},
+           {sasl,"3.0.4","%ERL_ROOT%/lib/sasl-3.0.4"}],
           permanent}].

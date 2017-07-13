@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxFontData</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxFontData.xml</file></header>
+<module>wxFontData</module>
+<modulesummary>See external documentation: wxFontData.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfontdata.html">wxFontData</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxFontData"/>wxFontData()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxFontData">wxFontData()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfontdata.html#wxfontdatawxfontdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Data) -&gt; <seealso marker="#type-wxFontData">wxFontData()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Data = <seealso marker="#type-wxFontData">wxFontData()</seealso></v></type>
+<desc><marker id="new-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfontdata.html#wxfontdatawxfontdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>enableEffects(This, Flag) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFontData">wxFontData()</seealso></v><v>Flag = boolean()</v></type>
+<desc><marker id="enableEffects-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfontdata.html#wxfontdataenableeffects">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getAllowSymbols(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFontData">wxFontData()</seealso></v></type>
+<desc><marker id="getAllowSymbols-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfontdata.html#wxfontdatagetallowsymbols">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFontData">wxFontData()</seealso></v></type>
+<desc><marker id="getColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfontdata.html#wxfontdatagetcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getChosenFont(This) -&gt; <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFontData">wxFontData()</seealso></v></type>
+<desc><marker id="getChosenFont-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfontdata.html#wxfontdatagetchosenfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getEnableEffects(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFontData">wxFontData()</seealso></v></type>
+<desc><marker id="getEnableEffects-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfontdata.html#wxfontdatagetenableeffects">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getInitialFont(This) -&gt; <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFontData">wxFontData()</seealso></v></type>
+<desc><marker id="getInitialFont-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfontdata.html#wxfontdatagetinitialfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getShowHelp(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFontData">wxFontData()</seealso></v></type>
+<desc><marker id="getShowHelp-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfontdata.html#wxfontdatagetshowhelp">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setAllowSymbols(This, Flag) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFontData">wxFontData()</seealso></v><v>Flag = boolean()</v></type>
+<desc><marker id="setAllowSymbols-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfontdata.html#wxfontdatasetallowsymbols">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setChosenFont(This, Font) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFontData">wxFontData()</seealso></v><v>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v></type>
+<desc><marker id="setChosenFont-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfontdata.html#wxfontdatasetchosenfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setColour(This, Colour) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFontData">wxFontData()</seealso></v><v>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfontdata.html#wxfontdatasetcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setInitialFont(This, Font) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFontData">wxFontData()</seealso></v><v>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v></type>
+<desc><marker id="setInitialFont-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfontdata.html#wxfontdatasetinitialfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setRange(This, MinRange, MaxRange) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFontData">wxFontData()</seealso></v><v>MinRange = integer()</v><v>MaxRange = integer()</v></type>
+<desc><marker id="setRange-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfontdata.html#wxfontdatasetrange">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setShowHelp(This, Flag) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFontData">wxFontData()</seealso></v><v>Flag = boolean()</v></type>
+<desc><marker id="setShowHelp-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfontdata.html#wxfontdatasetshowhelp">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxFontData">wxFontData()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

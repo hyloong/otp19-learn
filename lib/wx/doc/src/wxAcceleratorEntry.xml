@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxAcceleratorEntry</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxAcceleratorEntry.xml</file></header>
+<module>wxAcceleratorEntry</module>
+<modulesummary>See external documentation: wxAcceleratorEntry.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxacceleratorentry.html">wxAcceleratorEntry</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxAcceleratorEntry"/>wxAcceleratorEntry()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxAcceleratorEntry">wxAcceleratorEntry()</seealso></name>
+<fsummary>Equivalent to new([]).
+</fsummary>
+
+<desc><marker id="new-0"/>
+<p>Equivalent to <seealso marker="#new-1">new([])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Options::[Option]) -&gt; <seealso marker="#type-wxAcceleratorEntry">wxAcceleratorEntry()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Option = {flags, integer()} | {keyCode, integer()} | {cmd, integer()} | {item, <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso>}</v></type>
+<desc><marker id="new-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxacceleratorentry.html#wxacceleratorentrywxacceleratorentry">external documentation</url>.
+  <br/> Also:<br/>
+  new(Entry) -&gt; wxAcceleratorEntry() when<br/>
+  	Entry::wxAcceleratorEntry().<br/>
+ </p>
+</desc></func>
+<func>
+<name>getCommand(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAcceleratorEntry">wxAcceleratorEntry()</seealso></v></type>
+<desc><marker id="getCommand-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxacceleratorentry.html#wxacceleratorentrygetcommand">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFlags(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAcceleratorEntry">wxAcceleratorEntry()</seealso></v></type>
+<desc><marker id="getFlags-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxacceleratorentry.html#wxacceleratorentrygetflags">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getKeyCode(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAcceleratorEntry">wxAcceleratorEntry()</seealso></v></type>
+<desc><marker id="getKeyCode-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxacceleratorentry.html#wxacceleratorentrygetkeycode">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>set(This, Flags, KeyCode, Cmd) -&gt; ok</name>
+<fsummary>Equivalent to set(This, Flags, KeyCode, Cmd, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAcceleratorEntry">wxAcceleratorEntry()</seealso></v><v>Flags = integer()</v><v>KeyCode = integer()</v><v>Cmd = integer()</v></type>
+<desc><marker id="set-4"/>
+<p>Equivalent to <seealso marker="#set-5">set(This, Flags, KeyCode, Cmd, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>set(This, Flags, KeyCode, Cmd, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAcceleratorEntry">wxAcceleratorEntry()</seealso></v><v>Flags = integer()</v><v>KeyCode = integer()</v><v>Cmd = integer()</v><v>Option = {item, <seealso marker="wxMenuItem#type-wxMenuItem">wxMenuItem:wxMenuItem()</seealso>}</v></type>
+<desc><marker id="set-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxacceleratorentry.html#wxacceleratorentryset">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxAcceleratorEntry">wxAcceleratorEntry()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

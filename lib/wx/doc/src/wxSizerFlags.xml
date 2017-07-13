@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxSizerFlags</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxSizerFlags.xml</file></header>
+<module>wxSizerFlags</module>
+<modulesummary>See external documentation: wxSizerFlags.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizerflags.html">wxSizerFlags</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxSizerFlags"/>wxSizerFlags()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></name>
+<fsummary>Equivalent to new([]).
+</fsummary>
+
+<desc><marker id="new-0"/>
+<p>Equivalent to <seealso marker="#new-1">new([])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Options::[Option]) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Option = {proportion, integer()}</v></type>
+<desc><marker id="new-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizerflags.html#wxsizerflagswxsizerflags">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>align(This, Alignment) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></v><v>Alignment = integer()</v></type>
+<desc><marker id="align-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizerflags.html#wxsizerflagsalign">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>border(This) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></name>
+<fsummary>Equivalent to border(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></v></type>
+<desc><marker id="border-1"/>
+<p>Equivalent to <seealso marker="#border-2">border(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>border(This, Options::[Option]) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></v><v>Option = {direction, integer()}</v></type>
+<desc><marker id="border-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizerflags.html#wxsizerflagsborder">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>border(This, Direction, BorderInPixels) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></v><v>Direction = integer()</v><v>BorderInPixels = integer()</v></type>
+<desc><marker id="border-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizerflags.html#wxsizerflagsborder">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>center(This) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></v></type>
+<desc><marker id="center-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizerflags.html#wxsizerflagscenter">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>centre(This) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></v></type>
+<desc><marker id="centre-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizerflags.html#wxsizerflagscentre">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>expand(This) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></v></type>
+<desc><marker id="expand-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizerflags.html#wxsizerflagsexpand">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>left(This) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></v></type>
+<desc><marker id="left-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizerflags.html#wxsizerflagsleft">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>proportion(This, Proportion) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></v><v>Proportion = integer()</v></type>
+<desc><marker id="proportion-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizerflags.html#wxsizerflagsproportion">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>right(This) -&gt; <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso></v></type>
+<desc><marker id="right-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizerflags.html#wxsizerflagsright">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxSizerFlags">wxSizerFlags()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

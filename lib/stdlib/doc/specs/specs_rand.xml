@@ -1,0 +1,219 @@
+<module name="rand">
+<type>
+  <name>alg</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-alg">alg()</marker> = <seealso marker="#type-builtin_alg">builtin_alg()</seealso> | atom()</typehead></typedecl>
+</type>
+<type>
+  <name>alg_handler</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-alg_handler">alg_handler()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#{type := <seealso marker="#type-alg">alg()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>bits =&gt; integer() &gt;= 0,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>weak_low_bits =&gt; integer() &gt;= 0,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>max =&gt; integer() &gt;= 0,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>next :=<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>fun((<seealso marker="#type-alg_state">alg_state()</seealso>) -&gt; {integer() &gt;= 0, <seealso marker="#type-alg_state">alg_state()</seealso>}),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>uniform =&gt; fun((<seealso marker="#type-state">state()</seealso>) -&gt; {float(), <seealso marker="#type-state">state()</seealso>}),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>uniform_n =&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>fun((integer() &gt;= 1, <seealso marker="#type-state">state()</seealso>) -&gt; {integer() &gt;= 1, <seealso marker="#type-state">state()</seealso>}),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>jump =&gt; fun((<seealso marker="#type-state">state()</seealso>) -&gt; <seealso marker="#type-state">state()</seealso>)}</typehead></typedecl>
+</type>
+<type>
+  <name>alg_state</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-alg_state">alg_state()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-exs64_state">exs64_state()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-exsplus_state">exsplus_state()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-exs1024_state">exs1024_state()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-exrop_state">exrop_state()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/>term()</typehead></typedecl>
+</type>
+<type>
+  <name>builtin_alg</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-builtin_alg">builtin_alg()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>exs64 | exsplus | exsp | exs1024 | exs1024s | exrop</typehead></typedecl>
+</type>
+<type>
+  <name>export_state</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-export_state">export_state()</marker> = {<seealso marker="#type-alg">alg()</seealso>, <seealso marker="#type-alg_state">alg_state()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>exrop_state</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-exrop_state">exrop_state()</marker></typehead></typedecl>
+</type>
+<type>
+  <name>exs1024_state</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-exs1024_state">exs1024_state()</marker></typehead></typedecl>
+</type>
+<type>
+  <name>exs64_state</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-exs64_state">exs64_state()</marker></typehead></typedecl>
+</type>
+<type>
+  <name>exsplus_state</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-exsplus_state">exsplus_state()</marker></typehead></typedecl>
+</type>
+<type>
+  <name>state</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-state">state()</marker> = {<seealso marker="#type-alg_handler">alg_handler()</seealso>, <seealso marker="#type-alg_state">alg_state()</seealso>}</typehead></typedecl>
+</type>
+<spec>
+  <name>export_seed</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>export_seed() -&gt; undefined | <seealso marker="#type-export_state">export_state()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>export_seed_s</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>export_seed_s(State :: <seealso marker="#type-state">state()</seealso>) -&gt; <seealso marker="#type-export_state">export_state()</seealso></head></clause>
+  </contract>
+  <anno>State</anno>
+</spec>
+<spec>
+  <name>jump</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>jump() -&gt; NewState :: <seealso marker="#type-state">state()</seealso></head></clause>
+  </contract>
+  <anno>NewState</anno>
+</spec>
+<spec>
+  <name>jump</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>jump(State :: <seealso marker="#type-state">state()</seealso>) -&gt; NewState :: <seealso marker="#type-state">state()</seealso></head></clause>
+  </contract>
+  <anno>NewState</anno>
+  <anno>State</anno>
+</spec>
+<spec>
+  <name>normal</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>normal() -&gt; float()</head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>normal</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>normal(Mean :: number(), Variance :: number()) -&gt; float()</head></clause>
+  </contract>
+  <anno>Mean</anno>
+  <anno>Variance</anno>
+</spec>
+<spec>
+  <name>normal_s</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>normal_s(State :: <seealso marker="#type-state">state()</seealso>) -&gt; {float(), NewState :: <seealso marker="#type-state">state()</seealso>}</head></clause>
+  </contract>
+  <anno>NewState</anno>
+  <anno>State</anno>
+</spec>
+<spec>
+  <name>normal_s</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>normal_s(Mean :: number(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Variance :: number(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>State0 :: <seealso marker="#type-state">state()</seealso>) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{float(), NewS :: <seealso marker="#type-state">state()</seealso>}</head></clause>
+  </contract>
+  <anno>Mean</anno>
+  <anno>NewS</anno>
+  <anno>State0</anno>
+  <anno>Variance</anno>
+</spec>
+<spec>
+  <name>seed</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>seed(AlgOrStateOrExpState ::<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-builtin_alg">builtin_alg()</seealso> | <seealso marker="#type-state">state()</seealso> | <seealso marker="#type-export_state">export_state()</seealso>) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-state">state()</seealso></head></clause>
+  </contract>
+  <anno>AlgOrStateOrExpState</anno>
+</spec>
+<spec>
+  <name>seed</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>seed(Alg :: <seealso marker="#type-builtin_alg">builtin_alg()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Seed :: {integer(), integer(), integer()}) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-state">state()</seealso></head></clause>
+  </contract>
+  <anno>Alg</anno>
+  <anno>Seed</anno>
+</spec>
+<spec>
+  <name>seed_s</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>seed_s(AlgOrStateOrExpState ::<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-builtin_alg">builtin_alg()</seealso> | <seealso marker="#type-state">state()</seealso> | <seealso marker="#type-export_state">export_state()</seealso>) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-state">state()</seealso></head></clause>
+  </contract>
+  <anno>AlgOrStateOrExpState</anno>
+</spec>
+<spec>
+  <name>seed_s</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>seed_s(Alg :: <seealso marker="#type-builtin_alg">builtin_alg()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Seed :: {integer(), integer(), integer()}) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-state">state()</seealso></head></clause>
+  </contract>
+  <anno>Alg</anno>
+  <anno>Seed</anno>
+</spec>
+<spec>
+  <name>uniform</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>uniform() -&gt; X :: float()</head></clause>
+  </contract>
+  <anno>X</anno>
+</spec>
+<spec>
+  <name>uniform</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>uniform(N :: integer() &gt;= 1) -&gt; X :: integer() &gt;= 1</head></clause>
+  </contract>
+  <anno>N</anno>
+  <anno>X</anno>
+</spec>
+<spec>
+  <name>uniform_s</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>uniform_s(State :: <seealso marker="#type-state">state()</seealso>) -&gt; {X :: float(), NewState :: <seealso marker="#type-state">state()</seealso>}</head></clause>
+  </contract>
+  <anno>NewState</anno>
+  <anno>State</anno>
+  <anno>X</anno>
+</spec>
+<spec>
+  <name>uniform_s</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>uniform_s(N :: integer() &gt;= 1, State :: <seealso marker="#type-state">state()</seealso>) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer() &gt;= 1, NewState :: <seealso marker="#type-state">state()</seealso>}</head></clause>
+  </contract>
+  <anno>N</anno>
+  <anno>NewState</anno>
+  <anno>State</anno>
+  <anno>X</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:27:25.</timestamp>
+</module>

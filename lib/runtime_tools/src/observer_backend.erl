@@ -1,7 +1,7 @@
 %%
 %% %CopyrightBegin%
 %% 
-%% Copyright Ericsson AB 2002-2016. All Rights Reserved.
+%% Copyright Ericsson AB 2002-2017. All Rights Reserved.
 %% 
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@
 -export([vsn/0]).
 
 %% observer stuff
--export([sys_info/0, get_port_list/0,
+-export([sys_info/0, get_port_list/0, procs_info/1,
 	 get_table/3, get_table_list/2, fetch_stats/2]).
 
 %% etop stuff
@@ -179,8 +179,8 @@ inet_port_extra({_,Type},Port) when Type =:= "udp_inet";
             {error, _} -> []
         end ++
         case inet:getopts(Port,
-                          [active, broadcast, buffer, delay_send,
-                           deliver, dontroute, exit_on_close,
+                          [active, broadcast, buffer, bind_to_device,
+                           delay_send, deliver, dontroute, exit_on_close,
                            header, high_msgq_watermark, high_watermark,
                            ipv6_v6only, keepalive, linger, low_msgq_watermark,
                            low_watermark, mode, netns, nodelay, packet,
@@ -293,6 +293,23 @@ fetch_stats_loop(Parent, Time) ->
 			   try erlang:memory() catch _:_ -> [] end},
 	    fetch_stats_loop(Parent, Time)
     end.
+
+%%
+%% Chunk sending process info to etop/observer
+%%
+procs_info(Collector) ->
+    All = processes(),
+    Send = fun Send (Pids) ->
+                   try lists:split(10000, Pids) of
+                       {First, Rest} ->
+                           Collector ! {procs_info, self(), etop_collect(First, [])},
+                           Send(Rest)
+                   catch _:_ ->
+                           Collector ! {procs_info, self(), etop_collect(Pids, [])}
+                   end
+           end,
+    Send(All).
+
 %%
 %% etop backend
 %%

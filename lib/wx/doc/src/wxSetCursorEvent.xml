@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxSetCursorEvent</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxSetCursorEvent.xml</file></header>
+<module>wxSetCursorEvent</module>
+<modulesummary>See external documentation: wxSetCursorEvent.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsetcursorevent.html">wxSetCursorEvent</url>.
+  </p><taglist><tag>Use <seealso marker="wxEvtHandler#connect-3">wxEvtHandler:connect/3</seealso> with EventType:</tag>
+  <item><p><em>set_cursor</em></p></item></taglist><p>
+  See also the message variant <seealso marker="wxEvtHandler#type-wxSetCursor">#wxSetCursor{</seealso>} event record type.</p>
+ 
+  <p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxEvent">wxEvent</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxSetCursorEvent"/>wxSetCursorEvent()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>getCursor(This) -&gt; <seealso marker="wxCursor#type-wxCursor">wxCursor:wxCursor()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSetCursorEvent">wxSetCursorEvent()</seealso></v></type>
+<desc><marker id="getCursor-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsetcursorevent.html#wxsetcursoreventgetcursor">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getX(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSetCursorEvent">wxSetCursorEvent()</seealso></v></type>
+<desc><marker id="getX-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsetcursorevent.html#wxsetcursoreventgetx">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getY(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSetCursorEvent">wxSetCursorEvent()</seealso></v></type>
+<desc><marker id="getY-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsetcursorevent.html#wxsetcursoreventgety">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasCursor(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSetCursorEvent">wxSetCursorEvent()</seealso></v></type>
+<desc><marker id="hasCursor-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsetcursorevent.html#wxsetcursoreventhascursor">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setCursor(This, Cursor) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSetCursorEvent">wxSetCursorEvent()</seealso></v><v>Cursor = <seealso marker="wxCursor#type-wxCursor">wxCursor:wxCursor()</seealso></v></type>
+<desc><marker id="setCursor-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsetcursorevent.html#wxsetcursoreventsetcursor">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

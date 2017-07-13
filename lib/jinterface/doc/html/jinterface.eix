@@ -1,0 +1,9 @@
+%% 
+%% Search data file for jinterface 1.8
+%% generated July 12, 2017
+%% 
+{"jinterface.html", {function, {"jinterface", "jinterface"}},
+[
+]}.
+{"jinterface.html", {module, "jinterface"}, ["jinterface"]}.
+{notused, application, ["jinterface"]}.

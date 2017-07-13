@@ -1,0 +1,407 @@
+<module name="wxGridSizer">
+<type>
+  <name>wxGridSizer</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxGridSizer">wxGridSizer()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>add</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>add</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>add</name>
+  <arity>4</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>addSpacer</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>addStretchSpacer</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>addStretchSpacer</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>calcMin</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>clear</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>clear</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxGridSizer">wxGridSizer()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>detach</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>fit</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>fitInside</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getChildren</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getCols</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getCols(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridSizer">wxGridSizer()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getHGap</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getHGap(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridSizer">wxGridSizer()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getItem</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getItem</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getMinSize</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getPosition</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getRows</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getRows(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridSizer">wxGridSizer()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getSize</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getVGap</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getVGap(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridSizer">wxGridSizer()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hide</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>hide</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>insert</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>insert</name>
+  <arity>4</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>insert</name>
+  <arity>5</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>insertSpacer</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>insertStretchSpacer</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>insertStretchSpacer</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>isShown</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>layout</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(Cols) -&gt; <seealso marker="#type-wxGridSizer">wxGridSizer()</seealso></head>
+      <guard>
+        <subtype><typename>Cols</typename><string>Cols = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Cols</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>new(Cols, Options :: [Option]) -&gt; <seealso marker="#type-wxGridSizer">wxGridSizer()</seealso></head>
+      <guard>
+        <subtype><typename>Cols</typename><string>Cols = integer()</string></subtype>
+        <subtype><typename>Option</typename><string>Option = {vgap, integer()} | {hgap, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Cols</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>new(Rows, Cols, Vgap, Hgap) -&gt; <seealso marker="#type-wxGridSizer">wxGridSizer()</seealso></head>
+      <guard>
+        <subtype><typename>Rows</typename><string>Rows = Cols = Vgap = Hgap = integer()</string></subtype>
+        <subtype><typename>Cols</typename><string></string></subtype>
+        <subtype><typename>Vgap</typename><string></string></subtype>
+        <subtype><typename>Hgap</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Cols</anno>
+  <anno>Hgap</anno>
+  <anno>Rows</anno>
+  <anno>Vgap</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>prepend</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>prepend</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>prepend</name>
+  <arity>4</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>prependSpacer</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>prependStretchSpacer</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>prependStretchSpacer</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>recalcSizes</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>remove</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>replace</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>replace</name>
+  <arity>4</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setCols</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setCols(This, Cols) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridSizer">wxGridSizer()</seealso></string></subtype>
+        <subtype><typename>Cols</typename><string>Cols = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Cols</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setDimension</name>
+  <arity>5</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setHGap</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setHGap(This, Gap) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridSizer">wxGridSizer()</seealso></string></subtype>
+        <subtype><typename>Gap</typename><string>Gap = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Gap</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setItemMinSize</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setItemMinSize</name>
+  <arity>4</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setMinSize</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setMinSize</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setRows</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setRows(This, Rows) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridSizer">wxGridSizer()</seealso></string></subtype>
+        <subtype><typename>Rows</typename><string>Rows = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Rows</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setSizeHints</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setVGap</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setVGap(This, Gap) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridSizer">wxGridSizer()</seealso></string></subtype>
+        <subtype><typename>Gap</typename><string>Gap = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Gap</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setVirtualSizeHints</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>show</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>show</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:17.</timestamp>
+</module>

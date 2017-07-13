@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxBitmapButton</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxBitmapButton.xml</file></header>
+<module>wxBitmapButton</module>
+<modulesummary>See external documentation: wxBitmapButton.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmapbutton.html">wxBitmapButton</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxButton">wxButton</seealso>
+  <br/><seealso marker="wxControl">wxControl</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxBitmapButton"/>wxBitmapButton()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxBitmapButton">wxBitmapButton()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmapbutton.html#wxbitmapbuttonwxbitmapbutton">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id, Bitmap) -&gt; <seealso marker="#type-wxBitmapButton">wxBitmapButton()</seealso></name>
+<fsummary>Equivalent to new(Parent, Id, Bitmap, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v></type>
+<desc><marker id="new-3"/>
+<p>Equivalent to <seealso marker="#new-4">new(Parent, Id, Bitmap, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id, Bitmap, Options::[Option]) -&gt; <seealso marker="#type-wxBitmapButton">wxBitmapButton()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v><v>Option = {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()} | {validator, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</v></type>
+<desc><marker id="new-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmapbutton.html#wxbitmapbuttonwxbitmapbutton">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id, Bitmap) -&gt; boolean()</name>
+<fsummary>Equivalent to create(This, Parent, Id, Bitmap, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmapButton">wxBitmapButton()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v></type>
+<desc><marker id="create-4"/>
+<p>Equivalent to <seealso marker="#create-5">create(This, Parent, Id, Bitmap, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id, Bitmap, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmapButton">wxBitmapButton()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v><v>Option = {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()} | {validator, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</v></type>
+<desc><marker id="create-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmapbutton.html#wxbitmapbuttoncreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getBitmapDisabled(This) -&gt; <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmapButton">wxBitmapButton()</seealso></v></type>
+<desc><marker id="getBitmapDisabled-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmapbutton.html#wxbitmapbuttongetbitmapdisabled">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getBitmapFocus(This) -&gt; <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmapButton">wxBitmapButton()</seealso></v></type>
+<desc><marker id="getBitmapFocus-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmapbutton.html#wxbitmapbuttongetbitmapfocus">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getBitmapLabel(This) -&gt; <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmapButton">wxBitmapButton()</seealso></v></type>
+<desc><marker id="getBitmapLabel-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmapbutton.html#wxbitmapbuttongetbitmaplabel">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getBitmapSelected(This) -&gt; <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmapButton">wxBitmapButton()</seealso></v></type>
+<desc><marker id="getBitmapSelected-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmapbutton.html#wxbitmapbuttongetbitmapselected">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setBitmapDisabled(This, Disabled) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmapButton">wxBitmapButton()</seealso></v><v>Disabled = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v></type>
+<desc><marker id="setBitmapDisabled-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmapbutton.html#wxbitmapbuttonsetbitmapdisabled">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setBitmapFocus(This, Focus) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmapButton">wxBitmapButton()</seealso></v><v>Focus = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v></type>
+<desc><marker id="setBitmapFocus-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmapbutton.html#wxbitmapbuttonsetbitmapfocus">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setBitmapLabel(This, Bitmap) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmapButton">wxBitmapButton()</seealso></v><v>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v></type>
+<desc><marker id="setBitmapLabel-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmapbutton.html#wxbitmapbuttonsetbitmaplabel">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setBitmapSelected(This, Sel) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmapButton">wxBitmapButton()</seealso></v><v>Sel = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v></type>
+<desc><marker id="setBitmapSelected-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmapbutton.html#wxbitmapbuttonsetbitmapselected">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxBitmapButton">wxBitmapButton()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

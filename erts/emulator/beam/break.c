@@ -178,19 +178,28 @@ static void doit_print_monitor(ErtsMonitor *mon, void *vpcontext)
 	prefix = "";
     }
 
-    if (mon->type == MON_ORIGIN) {
-	if (is_atom(mon->pid)) { /* dist by name */
-	    ASSERT(is_node_name_atom(mon->pid));
+    switch (mon->type) {
+    case MON_ORIGIN:
+	if (is_atom(mon->u.pid)) { /* dist by name */
+	    ASSERT(is_node_name_atom(mon->u.pid));
 	    erts_print(to, to_arg, "%s{to,{%T,%T},%T}", prefix, mon->name,
-		       mon->pid, mon->ref);
+		       mon->u.pid, mon->ref);
 	} else if (is_atom(mon->name)){ /* local by name */
 	    erts_print(to, to_arg, "%s{to,{%T,%T},%T}", prefix, mon->name,
 		       erts_this_dist_entry->sysname, mon->ref);
 	} else { /* local and distributed by pid */
-	    erts_print(to, to_arg, "%s{to,%T,%T}", prefix, mon->pid, mon->ref);
+	    erts_print(to, to_arg, "%s{to,%T,%T}", prefix, mon->u.pid, mon->ref);
 	}
-    } else { /* MON_TARGET */
-	erts_print(to, to_arg, "%s{from,%T,%T}", prefix, mon->pid, mon->ref);
+	break;
+    case MON_TARGET:
+	erts_print(to, to_arg, "%s{from,%T,%T}", prefix, mon->u.pid, mon->ref);
+	break;
+    case MON_NIF_TARGET: {
+        ErtsResource* rsrc = mon->u.resource;
+        erts_print(to, to_arg, "%s{from,{%T,%T},%T}", prefix, rsrc->type->module,
+                   rsrc->type->name, mon->ref);
+	break;
+    }
     }
 }
 			       
@@ -230,9 +239,9 @@ print_process_info(fmtfn_t to, void *to_arg, Process *p)
      * Display the initial function name
      */
     erts_print(to, to_arg, "Spawned as: %T:%T/%bpu\n",
-	       p->u.initial[INITIAL_MOD],
-	       p->u.initial[INITIAL_FUN],
-	       p->u.initial[INITIAL_ARI]);
+	       p->u.initial.module,
+	       p->u.initial.function,
+	       p->u.initial.arity);
     
     if (p->current != NULL) {
 	if (running) {
@@ -241,9 +250,9 @@ print_process_info(fmtfn_t to, void *to_arg, Process *p)
 	    erts_print(to, to_arg, "Current call: ");
 	}
 	erts_print(to, to_arg, "%T:%T/%bpu\n",
-		   p->current[0],
-		   p->current[1],
-		   p->current[2]);
+		   p->current->module,
+		   p->current->function,
+		   p->current->arity);
     }
 
     erts_print(to, to_arg, "Spawned by: %T\n", p->parent);
@@ -290,9 +299,9 @@ print_process_info(fmtfn_t to, void *to_arg, Process *p)
 		   erts_print(to, to_arg, "timeout");
 	     else
 		 erts_print(to, to_arg, "%T:%T/%bpu\n",
-			    scb->ct[j]->code[0],
-			    scb->ct[j]->code[1],
-			    scb->ct[j]->code[2]);
+			    scb->ct[j]->info.mfa.module,
+			    scb->ct[j]->info.mfa.function,
+			    scb->ct[j]->info.mfa.arity);
        }
        erts_print(to, to_arg, "\n");
     }
@@ -503,6 +512,8 @@ do_break(void)
     erts_free_read_env(mode);
 #endif /* __WIN32__ */
 
+    ASSERT(erts_smp_thr_progress_is_blocking());
+
     erts_printf("\n"
 		"BREAK: (a)bort (c)ontinue (p)roc info (i)nfo (l)oaded\n"
 		"       (v)ersion (k)ill (D)b-tables (d)istribution\n");
@@ -579,7 +590,7 @@ do_break(void)
 #endif
 #ifdef DEBUG
 	case 't':
-	    erts_p_slpq();
+	    /* erts_p_slpq(); */
 	    return;
 	case 'b':
 	    bin_check();
@@ -649,7 +660,7 @@ bin_check(void)
 		erts_printf("%p orig_size: %bpd, norefs = %bpd\n",
 			    bp->val, 
 			    bp->val->orig_size, 
-			    erts_refc_read(&bp->val->refc, 1));
+			    erts_refc_read(&bp->val->intern.refc, 1));
 	    }
 	}
 	if (printed) {

@@ -1,0 +1,289 @@
+<module name="wxPrintData">
+<type>
+  <name>wxPrintData</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxPrintData">wxPrintData()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxPrintData">wxPrintData()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getBin</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getBin(This) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintData">wxPrintData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getCollate</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getCollate(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintData">wxPrintData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getColour(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintData">wxPrintData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getDuplex</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getDuplex(This) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintData">wxPrintData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getNoCopies</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getNoCopies(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintData">wxPrintData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getOrientation</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getOrientation(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintData">wxPrintData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getPaperId</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getPaperId(This) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintData">wxPrintData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getPrinterName</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getPrinterName(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintData">wxPrintData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getQuality</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getQuality(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintData">wxPrintData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isOk</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isOk(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintData">wxPrintData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>new() -&gt; <seealso marker="#type-wxPrintData">wxPrintData()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(PrintData) -&gt; <seealso marker="#type-wxPrintData">wxPrintData()</seealso></head>
+      <guard>
+        <subtype><typename>PrintData</typename><string>PrintData = <seealso marker="#type-wxPrintData">wxPrintData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>PrintData</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setBin</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setBin(This, Bin) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintData">wxPrintData()</seealso></string></subtype>
+        <subtype><typename>Bin</typename><string>Bin = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Bin</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setCollate</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setCollate(This, Flag) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintData">wxPrintData()</seealso></string></subtype>
+        <subtype><typename>Flag</typename><string>Flag = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Flag</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setColour</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setColour(This, Colour) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintData">wxPrintData()</seealso></string></subtype>
+        <subtype><typename>Colour</typename><string>Colour = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Colour</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setDuplex</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setDuplex(This, Duplex) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintData">wxPrintData()</seealso></string></subtype>
+        <subtype><typename>Duplex</typename><string>Duplex = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Duplex</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setNoCopies</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setNoCopies(This, V) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintData">wxPrintData()</seealso></string></subtype>
+        <subtype><typename>V</typename><string>V = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>V</anno>
+</spec>
+<spec>
+  <name>setOrientation</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setOrientation(This, Orient) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintData">wxPrintData()</seealso></string></subtype>
+        <subtype><typename>Orient</typename><string>Orient = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Orient</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setPaperId</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setPaperId(This, SizeId) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintData">wxPrintData()</seealso></string></subtype>
+        <subtype><typename>SizeId</typename><string>SizeId = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>SizeId</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setPrinterName</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setPrinterName(This, Name) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintData">wxPrintData()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setQuality</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setQuality(This, Quality) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintData">wxPrintData()</seealso></string></subtype>
+        <subtype><typename>Quality</typename><string>Quality = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Quality</anno>
+  <anno>This</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:38.</timestamp>
+</module>

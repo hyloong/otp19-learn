@@ -1,7 +1,7 @@
 %%
 %% %CopyrightBegin%
 %%
-%% Copyright Ericsson AB 2008-2016. All Rights Reserved.
+%% Copyright Ericsson AB 2008-2017. All Rights Reserved.
 %%
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -627,7 +627,7 @@ decode_arg(N,#type{name="wxArrayString"},Place,A0) ->
     w(" int * ~sLen = (int *) bp; bp += 4;~n", [N]),
     case Place of
 	arg -> w(" wxArrayString ~s;~n", [N]);
-	opt -> ignore %% Allready declared
+	opt -> ignore %% Already declared
     end,
     w(" int ~sASz = 0, * ~sTemp;~n", [N,N]),
     w(" for(int i=0; i < *~sLen; i++) {~n", [N]),

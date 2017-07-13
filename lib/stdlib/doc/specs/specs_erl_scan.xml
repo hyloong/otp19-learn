@@ -1,0 +1,299 @@
+<module name="erl_scan">
+<type>
+  <name>category</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-category">category()</marker> = atom()</typehead></typedecl>
+</type>
+<type>
+  <name>char_spec</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-char_spec">char_spec()</marker> = string() | eof</typehead></typedecl>
+</type>
+<type>
+  <name>error_description</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-error_description">error_description()</marker> = term()</typehead></typedecl>
+</type>
+<type>
+  <name>error_info</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-error_info">error_info()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{<seealso marker="erl_anno#type-location">erl_anno:location()</seealso>, module(), <seealso marker="#type-error_description">error_description()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>option</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-option">option()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>return |<br/><nbsp/><nbsp/><nbsp/><nbsp/>return_white_spaces |<br/><nbsp/><nbsp/><nbsp/><nbsp/>return_comments |<br/><nbsp/><nbsp/><nbsp/><nbsp/>text |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{reserved_word_fun, <seealso marker="#type-resword_fun">resword_fun()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>options</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-options">options()</marker> = <seealso marker="#type-option">option()</seealso> | [<seealso marker="#type-option">option()</seealso>]</typehead></typedecl>
+</type>
+<type>
+  <name>resword_fun</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-resword_fun">resword_fun()</marker> = fun((atom()) -&gt; boolean())</typehead></typedecl>
+</type>
+<type>
+  <name>return_cont</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-return_cont">return_cont()</marker></typehead></typedecl>
+</type>
+<type>
+  <name>symbol</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-symbol">symbol()</marker> = atom() | float() | integer() | string()</typehead></typedecl>
+</type>
+<type>
+  <name>token</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-token">token()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{<seealso marker="#type-category">category()</seealso>, Anno :: <seealso marker="erl_anno#type-anno">erl_anno:anno()</seealso>, <seealso marker="#type-symbol">symbol()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{<seealso marker="#type-category">category()</seealso>, Anno :: <seealso marker="erl_anno#type-anno">erl_anno:anno()</seealso>}</typehead></typedecl>
+  <anno>Anno</anno>
+</type>
+<type>
+  <name>tokens</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-tokens">tokens()</marker> = [<seealso marker="#type-token">token()</seealso>]</typehead></typedecl>
+</type>
+<type>
+  <name>tokens_result</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-tokens_result">tokens_result()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, Tokens :: <seealso marker="#type-tokens">tokens()</seealso>, EndLocation :: <seealso marker="erl_anno#type-location">erl_anno:location()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{eof, EndLocation :: <seealso marker="erl_anno#type-location">erl_anno:location()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{error,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ErrorInfo :: <seealso marker="#type-error_info">error_info()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>EndLocation :: <seealso marker="erl_anno#type-location">erl_anno:location()</seealso>}</typehead></typedecl>
+  <anno>EndLocation</anno>
+  <anno>ErrorInfo</anno>
+  <anno>Tokens</anno>
+</type>
+<spec>
+  <name>category</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>category(Token) -&gt; <seealso marker="#type-category">category()</seealso></head>
+      <guard>
+        <subtype><typename>Token</typename><string>Token = <seealso marker="#type-token">token()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Token</anno>
+</spec>
+<spec>
+  <name>column</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>column(Token) -&gt; <seealso marker="erl_anno#type-column">erl_anno:column()</seealso> | undefined</head>
+      <guard>
+        <subtype><typename>Token</typename><string>Token = <seealso marker="#type-token">token()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Token</anno>
+</spec>
+<spec>
+  <name>continuation_location</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>end_location</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>end_location(Token) -&gt; <seealso marker="erl_anno#type-location">erl_anno:location()</seealso> | undefined</head>
+      <guard>
+        <subtype><typename>Token</typename><string>Token = <seealso marker="#type-token">token()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Token</anno>
+</spec>
+<spec>
+  <name>format_error</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>format_error(ErrorDescriptor) -&gt; string()</head>
+      <guard>
+        <subtype><typename>ErrorDescriptor</typename><string>ErrorDescriptor = <seealso marker="#type-error_description">error_description()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ErrorDescriptor</anno>
+</spec>
+<spec>
+  <name>line</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>line(Token) -&gt; <seealso marker="erl_anno#type-line">erl_anno:line()</seealso></head>
+      <guard>
+        <subtype><typename>Token</typename><string>Token = <seealso marker="#type-token">token()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Token</anno>
+</spec>
+<spec>
+  <name>location</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>location(Token) -&gt; <seealso marker="erl_anno#type-location">erl_anno:location()</seealso></head>
+      <guard>
+        <subtype><typename>Token</typename><string>Token = <seealso marker="#type-token">token()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Token</anno>
+</spec>
+<spec>
+  <name>reserved_word</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>reserved_word(Atom :: atom()) -&gt; boolean()</head></clause>
+  </contract>
+  <anno>Atom</anno>
+</spec>
+<spec>
+  <name>string</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>string(String) -&gt; Return</head>
+      <guard>
+        <subtype><typename>String</typename><string>String = string()</string></subtype>
+        <subtype><typename>Return</typename><string>Return = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, Tokens :: <seealso marker="#type-tokens">tokens()</seealso>, EndLocation} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{error, ErrorInfo :: <seealso marker="#type-error_info">error_info()</seealso>, ErrorLocation}</string></subtype>
+        <subtype><typename>EndLocation</typename><string>EndLocation = ErrorLocation = <seealso marker="erl_anno#type-location">erl_anno:location()</seealso></string></subtype>
+        <subtype><typename>ErrorLocation</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>EndLocation</anno>
+  <anno>ErrorInfo</anno>
+  <anno>ErrorLocation</anno>
+  <anno>Return</anno>
+  <anno>String</anno>
+  <anno>Tokens</anno>
+</spec>
+<spec>
+  <name>string</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>string(String, StartLocation) -&gt; Return</head>
+      <guard>
+        <subtype><typename>String</typename><string>String = string()</string></subtype>
+        <subtype><typename>Return</typename><string>Return = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, Tokens :: <seealso marker="#type-tokens">tokens()</seealso>, EndLocation} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{error, ErrorInfo :: <seealso marker="#type-error_info">error_info()</seealso>, ErrorLocation}</string></subtype>
+        <subtype><typename>StartLocation</typename><string>StartLocation = EndLocation = ErrorLocation = <seealso marker="erl_anno#type-location">erl_anno:location()</seealso></string></subtype>
+        <subtype><typename>EndLocation</typename><string></string></subtype>
+        <subtype><typename>ErrorLocation</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>EndLocation</anno>
+  <anno>ErrorInfo</anno>
+  <anno>ErrorLocation</anno>
+  <anno>Return</anno>
+  <anno>StartLocation</anno>
+  <anno>String</anno>
+  <anno>Tokens</anno>
+</spec>
+<spec>
+  <name>string</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>string(String, StartLocation, Options) -&gt; Return</head>
+      <guard>
+        <subtype><typename>String</typename><string>String = string()</string></subtype>
+        <subtype><typename>Options</typename><string>Options = <seealso marker="#type-options">options()</seealso></string></subtype>
+        <subtype><typename>Return</typename><string>Return = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, Tokens :: <seealso marker="#type-tokens">tokens()</seealso>, EndLocation} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{error, ErrorInfo :: <seealso marker="#type-error_info">error_info()</seealso>, ErrorLocation}</string></subtype>
+        <subtype><typename>StartLocation</typename><string>StartLocation = EndLocation = ErrorLocation = <seealso marker="erl_anno#type-location">erl_anno:location()</seealso></string></subtype>
+        <subtype><typename>EndLocation</typename><string></string></subtype>
+        <subtype><typename>ErrorLocation</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>EndLocation</anno>
+  <anno>ErrorInfo</anno>
+  <anno>ErrorLocation</anno>
+  <anno>Options</anno>
+  <anno>Return</anno>
+  <anno>StartLocation</anno>
+  <anno>String</anno>
+  <anno>Tokens</anno>
+</spec>
+<spec>
+  <name>symbol</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>symbol(Token) -&gt; <seealso marker="#type-symbol">symbol()</seealso></head>
+      <guard>
+        <subtype><typename>Token</typename><string>Token = <seealso marker="#type-token">token()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Token</anno>
+</spec>
+<spec>
+  <name>text</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>text(Token) -&gt; <seealso marker="erl_anno#type-text">erl_anno:text()</seealso> | undefined</head>
+      <guard>
+        <subtype><typename>Token</typename><string>Token = <seealso marker="#type-token">token()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Token</anno>
+</spec>
+<spec>
+  <name>tokens</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>tokens(Continuation, CharSpec, StartLocation) -&gt; Return</head>
+      <guard>
+        <subtype><typename>Continuation</typename><string>Continuation = <seealso marker="#type-return_cont">return_cont()</seealso> | []</string></subtype>
+        <subtype><typename>CharSpec</typename><string>CharSpec = <seealso marker="#type-char_spec">char_spec()</seealso></string></subtype>
+        <subtype><typename>StartLocation</typename><string>StartLocation = <seealso marker="erl_anno#type-location">erl_anno:location()</seealso></string></subtype>
+        <subtype><typename>Return</typename><string>Return = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{done,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Result :: <seealso marker="#type-tokens_result">tokens_result()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>LeftOverChars :: <seealso marker="#type-char_spec">char_spec()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{more, Continuation1 :: <seealso marker="#type-return_cont">return_cont()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>CharSpec</anno>
+  <anno>Continuation</anno>
+  <anno>Continuation1</anno>
+  <anno>LeftOverChars</anno>
+  <anno>Result</anno>
+  <anno>Return</anno>
+  <anno>StartLocation</anno>
+</spec>
+<spec>
+  <name>tokens</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>tokens(Continuation, CharSpec, StartLocation, Options) -&gt; Return</head>
+      <guard>
+        <subtype><typename>Continuation</typename><string>Continuation = <seealso marker="#type-return_cont">return_cont()</seealso> | []</string></subtype>
+        <subtype><typename>CharSpec</typename><string>CharSpec = <seealso marker="#type-char_spec">char_spec()</seealso></string></subtype>
+        <subtype><typename>StartLocation</typename><string>StartLocation = <seealso marker="erl_anno#type-location">erl_anno:location()</seealso></string></subtype>
+        <subtype><typename>Options</typename><string>Options = <seealso marker="#type-options">options()</seealso></string></subtype>
+        <subtype><typename>Return</typename><string>Return = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{done,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Result :: <seealso marker="#type-tokens_result">tokens_result()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>LeftOverChars :: <seealso marker="#type-char_spec">char_spec()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{more, Continuation1 :: <seealso marker="#type-return_cont">return_cont()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>CharSpec</anno>
+  <anno>Continuation</anno>
+  <anno>Continuation1</anno>
+  <anno>LeftOverChars</anno>
+  <anno>Options</anno>
+  <anno>Result</anno>
+  <anno>Return</anno>
+  <anno>StartLocation</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:27:16.</timestamp>
+</module>

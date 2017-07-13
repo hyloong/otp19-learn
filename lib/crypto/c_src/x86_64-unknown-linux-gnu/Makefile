@@ -43,9 +43,11 @@ SSL_LIBDIR = /usr/lib64
 SSL_INCLUDE = -I/usr/include -I/usr/include
 SSL_CRYPTO_LIBNAME = crypto
 SSL_SSL_LIBNAME = ssl
+SSL_FLAGS = 
 
 
 INCLUDES = $(SSL_INCLUDE) $(DED_INCLUDES)
+CFLAGS += $(SSL_FLAGS)
 
 ifeq ($(TYPE),debug)
 TYPEMARKER = .debug

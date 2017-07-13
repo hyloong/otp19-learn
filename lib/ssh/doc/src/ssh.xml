@@ -243,28 +243,15 @@
 	    <p><c>Peer</c> is in the format of <c>{Host,Port}</c>.</p>
 	  </item>
 
-	  <tag><c><![CDATA[{public_key_alg, 'ssh-rsa' | 'ssh-dss'}]]></c></tag>
-	  <item>
-	    <note>
-	      <p>This option will be removed in OTP 20, but is kept for compatibility. It is ignored if
-	      the preferred <c>pref_public_key_algs</c> option is used.</p>
-	    </note>
-            <p>Sets the preferred public key algorithm to use for user
-	    authentication. If the preferred algorithm fails,
-	    the other algorithm is tried. If <c>{public_key_alg, 'ssh-rsa'}</c> is set, it is translated
-	    to <c>{pref_public_key_algs, ['ssh-rsa','ssh-dss']}</c>.  If it is 
-	    <c>{public_key_alg, 'ssh-dss'}</c>, it is translated
-	    to <c>{pref_public_key_algs, ['ssh-dss','ssh-rsa']}</c>.
-	    </p>
-	  </item>
-
 	  <tag><c><![CDATA[{pref_public_key_algs, list()}]]></c></tag>
 	  <item>
             <p>List of user (client) public key algorithms to try to use.</p>
-	    <p>The default value is 
-	    <c><![CDATA[['ssh-rsa','ssh-dss','ecdsa-sha2-nistp256','ecdsa-sha2-nistp384','ecdsa-sha2-nistp521'] ]]></c>
+	    <p>The default value is the <c>public_key</c> entry in 
+	    <seealso marker="#default_algorithms/0">ssh:default_algorithms/0</seealso>.
 	    </p>
-	    <p>If there is no public key of a specified type available, the corresponding entry is ignored.</p>
+	    <p>If there is no public key of a specified type available, the corresponding entry is ignored.
+	    Note that the available set is dependent on the underlying cryptolib and current user's public keys.
+	    </p>
 	  </item>
 
 	  <tag><c><![CDATA[{preferred_algorithms, algs_list()}]]></c></tag>
@@ -308,6 +295,15 @@
 	    connection. For <c>gen_tcp</c> the time is in milli-seconds and the default value is
 	    <c>infinity</c>.</p>
 	  </item>
+
+	  <tag><c><![CDATA[{auth_methods, string()}]]></c></tag>
+	  <item>
+	    <p>Comma-separated string that determines which
+	    authentication methods that the client shall support and
+	    in which order they are tried. Defaults to
+	    <c><![CDATA["publickey,keyboard-interactive,password"]]></c></p>
+          </item>
+
 	  <tag><c><![CDATA[{user, string()}]]></c></tag>
           <item>
 	    <p>Provides a username. If this option is not given, <c>ssh</c>
@@ -315,6 +311,7 @@
 	    <c><![CDATA[USER]]></c> on UNIX,
 	    <c><![CDATA[USERNAME]]></c> on Windows).</p>
           </item>
+
 	  <tag><c><![CDATA[{password, string()}]]></c></tag>
           <item>
 	    <p>Provides a password for password authentication.
@@ -322,6 +319,30 @@
 	    password, if the password authentication method is
 	    attempted.</p>
           </item>
+
+	  <!--tag><c><![CDATA[{send_ext_info, boolean()}]]></c></tag>
+          <item>
+	    <p>Send a list of extensions to the server if the server has asked for it.  See 
+	    <url href="https://tools.ietf.org/html/draft-ietf-curdle-ssh-ext-info">Draft-ietf-curdle-ssh-ext-info (work in progress)</url> for details.
+	    </p>
+	    <p>Currently the client do not react on any extensions.
+	    </p>
+	    <p>Default value is <c>true</c>.
+	    </p>
+          </item-->
+
+	  <tag><c><![CDATA[{recv_ext_info, boolean()}]]></c></tag>
+          <item>
+	    <p>Tell the server that the client accepts extension negotiation.  See 
+	    <url href="https://tools.ietf.org/html/draft-ietf-curdle-ssh-ext-info">Draft-ietf-curdle-ssh-ext-info (work in progress)</url> for details.
+	    </p>
+	    <p>Currently implemented extension is <c>server-sig-algs</c> which is the list of the server's preferred
+	    user's public key algorithms.
+	    </p>
+	    <p>Default value is <c>true</c>.
+	    </p>
+          </item>
+
 	  <tag><c><![CDATA[{key_cb, key_cb()}]]></c></tag>
 	  <item>
 	    <p>Module implementing the behaviour <seealso
@@ -331,6 +352,7 @@
 	    module via the options passed to it under the key 'key_cb_private'.
 	    </p>
 	  </item>
+
 	  <tag><c><![CDATA[{quiet_mode, atom() = boolean()}]]></c></tag>
 	  <item>
 	    <p>If <c>true</c>, the client does not print anything on authorization.</p>
@@ -394,7 +416,7 @@
       on the given port.</fsummary>
       <type>
         <v>Port = integer()</v>
-	<v>HostAddress = ip_address() | any</v>
+	<v>HostAddress = ip_address() | any | loopback</v>
 	<v>Options = [{Option, Value}]</v>
         <v>Option = atom()</v>
 	<v>Value = term()</v>
@@ -405,6 +427,26 @@
         <p>Starts a server listening for SSH connections on the given
         port. If the <c>Port</c> is 0, a random free port is selected. See
 	<seealso marker="#daemon_info/1">daemon_info/1</seealso> about how to find the selected port number.</p>
+
+	<p>Please note that by historical reasons both the <c>HostAddress</c> argument and the inet socket option
+	<c>ip</c> set the listening address. This is a source of possible inconsistent settings.</p>
+
+	<p>The rules for handling the two address passing options are:</p>
+	<list>
+	  <item>if <c>HostAddress</c> is an IP-address, that IP-address is the listening address.
+	  An 'ip'-option will be discarded if present.</item>
+
+	  <item>if <c>HostAddress</c> is <c>loopback</c>, the listening address
+	  is <c>loopback</c> and an loopback address will be choosen by the underlying layers.
+	  An 'ip'-option will be discarded if present.</item>
+
+	  <item>if <c>HostAddress</c> is <c>any</c> and no 'ip'-option is present, the listening address is
+	  <c>any</c> and the socket will listen to all addresses</item>
+
+	  <item>if <c>HostAddress</c> is <c>any</c> and an 'ip'-option is present, the listening address is
+	  set to the value of the 'ip'-option</item>
+	</list>
+
 	<p>Options:</p>
         <taglist>
 	  <tag><c><![CDATA[{inet, inet | inet6}]]></c></tag>
@@ -461,6 +503,7 @@
 	    authentication methods that the server is to support and
 	    in what order they are tried. Defaults to
 	    <c><![CDATA["publickey,keyboard-interactive,password"]]></c></p>
+	    <p>Note that the client is free to use any order and to exclude methods.</p>
           </item>
 
 	  <tag><c><![CDATA[{auth_method_kb_interactive_data, PromptTexts}]]></c>
@@ -665,6 +708,27 @@
 	    </p>
 	  </item>
 
+	  <tag><c><![CDATA[{send_ext_info, boolean()}]]></c></tag>
+          <item>
+	    <p>Send a list of extensions to the client if the client has asked for it. See 
+	    <url href="https://tools.ietf.org/html/draft-ietf-curdle-ssh-ext-info">Draft-ietf-curdle-ssh-ext-info (work in progress)</url> for details.
+	    </p>
+	    <p>Currently implemented extension is sending <c>server-sig-algs</c> which is the list of the server's preferred
+	    user's public key algorithms.
+	    </p>
+	    <p>Default value is <c>true</c>.
+	    </p>
+          </item>
+
+	  <!--tag><c><![CDATA[{recv_ext_info, boolean()}]]></c></tag>
+          <item>
+	    <p>Tell the client that the server accepts extension negotiation.  See 
+	    <url href="https://tools.ietf.org/html/draft-ietf-curdle-ssh-ext-info">Draft-ietf-curdle-ssh-ext-info (work in progress)</url> for details.
+	    </p>
+	    <p>Default value is <c>true</c>.
+	    </p>
+          </item-->
+
 	  <tag><c><![CDATA[{key_cb, key_cb()}]]></c></tag>
 	  <item>
 	    <p>Module implementing the behaviour <seealso
@@ -714,6 +778,12 @@
 	    <p><c>Peer</c> is in the format of <c>{Host,Port}</c>.</p>
 	  </item>
 
+	  <tag><c><![CDATA[{idle_time, integer()}]]></c></tag>
+	  <item>
+	  <p>Sets a time-out on a connection when no channels are active.
+	  Defaults to <c>infinity</c>.</p>
+	  </item>
+
 	  <tag><c><![CDATA[{ssh_msg_debug_fun, fun(ConnectionRef::ssh_connection_ref(), AlwaysDisplay::boolean(), Msg::binary(), LanguageTag::binary()) -> _}]]></c></tag>
 	  <item>
 	    <p>Provide a fun to implement your own logging of the SSH message SSH_MSG_DEBUG. The last three parameters are from the message, see RFC4253, section 11.3. The <c>ConnectionRef</c> is the reference to the connection on which the message arrived. The return value from the fun is not checked.</p>
@@ -726,9 +796,10 @@
     </func>
 
     <func>
-      <name>daemon_info(Daemon) -> {ok, [{port,Port}]} | {error,Error}</name>
+      <name>daemon_info(Daemon) -> {ok, [DaemonInfo]} | {error,Error}</name>
       <fsummary>Get info about a daemon</fsummary>
       <type>
+	<v>DaemonInfo = {port,Port::pos_integer()} | {listen_address, any|ip_address()} | {profile,atom()}</v>
         <v>Port = integer()</v>
 	<v>Error = bad_daemon_ref</v>
       </type>

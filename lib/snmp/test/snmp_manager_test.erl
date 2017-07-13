@@ -1,7 +1,7 @@
 %% 
 %% %CopyrightBegin%
 %%
-%% Copyright Ericsson AB 2003-2016. All Rights Reserved.
+%% Copyright Ericsson AB 2003-2017. All Rights Reserved.
 %%
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -1760,7 +1760,7 @@ do_simple_sync_get2(Node, TargetName, Oids, Get, PostVerify)
 	 "~n   Rem:   ~w", [Reply, _Rem]),
 
     %% verify that the operation actually worked:
-    %% The order should be the same, so no need to seach 
+    %% The order should be the same, so no need to search
     ?line ok = case Reply of
 		   {noError, 0, [#varbind{oid   = ?sysObjectID_instance,
 					  value = SysObjectID}, 
@@ -2709,7 +2709,7 @@ do_simple_set2(Node, TargetName, VAVs, Set, PostVerify) ->
 	 "~n   Rem:   ~w", [Reply, _Rem]),
 
     %% verify that the operation actually worked:
-    %% The order should be the same, so no need to seach 
+    %% The order should be the same, so no need to search
     %% The value we get should be exactly the same as we sent
     ?line ok = case Reply of
 		   {noError, 0, [#varbind{oid   = ?sysName_instance,
@@ -5118,10 +5118,10 @@ inform_swarm_collector(N) ->
 
 %% Note that we need to deal with re-transmissions!
 %% That is, the agent did not receive the ack in time,
-%% and therefor did a re-transmit. This means that we 
-%% expect to receive more inform's then we actually 
-%% sent. So for sucess we assume: 
-%% 
+%% and therefor did a re-transmit. This means that we
+%% expect to receive more inform's then we actually
+%% sent. So for success we assume:
+%%
 %%     SentAckCnt =  N
 %%     RespCnt    =  N
 %%     RecvCnt    >= N

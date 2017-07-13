@@ -34,6 +34,12 @@
 -define(NEWLINE, <<"\r\n">>).
 -define(REKEY_DATA_TMO, 65000).
 
+%%-define(DEFAULT_KEX, 'diffie-hellman-group1-sha1').
+-define(DEFAULT_KEX, 'diffie-hellman-group14-sha256').
+
+-define(CIPHERS, ['aes256-ctr','aes192-ctr','aes128-ctr','aes128-cbc','3des-cbc']).
+-define(DEFAULT_CIPHERS, [{client2server,?CIPHERS}, {server2client,?CIPHERS}]).
+
 -define(v(Key, Config), proplists:get_value(Key, Config)).
 -define(v(Key, Config, Default), proplists:get_value(Key, Config, Default)).
 
@@ -53,7 +59,8 @@ all() ->
      {group,service_requests},
      {group,authentication},
      {group,packet_size_error},
-     {group,field_size_error}
+     {group,field_size_error},
+     {group,ext_info}
     ].
 
 groups() ->
@@ -84,7 +91,12 @@ groups() ->
 			     bad_service_name_then_correct
 			    ]},
      {authentication, [], [client_handles_keyboard_interactive_0_pwds
-			  ]}
+			  ]},
+     {ext_info, [], [no_ext_info_s1,
+                     no_ext_info_s2,
+                     ext_info_s,
+                     ext_info_c
+                    ]}
     ].
 
 
@@ -97,7 +109,9 @@ end_per_suite(Config) ->
 
 
 init_per_testcase(no_common_alg_server_disconnects, Config) ->
-    start_std_daemon(Config, [{preferred_algorithms,[{public_key,['ssh-rsa']}]}]);
+    start_std_daemon(Config, [{preferred_algorithms,[{public_key,['ssh-rsa']},
+                                                     {cipher,?DEFAULT_CIPHERS}
+                                                    ]}]);
 
 init_per_testcase(TC, Config) when TC == gex_client_init_option_groups ;
 				   TC == gex_client_init_option_groups_moduli_file ;
@@ -133,7 +147,8 @@ init_per_testcase(TC, Config) when TC == gex_client_init_option_groups ;
 		   []
 	   end,
     start_std_daemon(Config,
-		     [{preferred_algorithms, ssh:default_algorithms()}
+		     [{preferred_algorithms,[{cipher,?DEFAULT_CIPHERS}
+                                            ]}
 		      | Opts]);
 init_per_testcase(_TestCase, Config) ->
     check_std_daemon_works(Config, ?LINE).
@@ -242,7 +257,10 @@ lib_works_as_server(Config) ->
 
     %% and finally connect to it with a regular Erlang SSH client:
     {ok,_} = std_connect(HostPort, Config, 
-			 [{preferred_algorithms,[{kex,['diffie-hellman-group1-sha1']}]}]
+			 [{preferred_algorithms,[{kex,[?DEFAULT_KEX]},
+                                                 {cipher,?DEFAULT_CIPHERS}
+                                                ]}
+                         ]
 			).
 
 %%--------------------------------------------------------------------
@@ -282,7 +300,9 @@ no_common_alg_server_disconnects(Config) ->
 	    [{silently_accept_hosts, true},
 	     {user_dir, user_dir(Config)},
 	     {user_interaction, false},
-	     {preferred_algorithms,[{public_key,['ssh-dss']}]}
+	     {preferred_algorithms,[{public_key,['ssh-dss']},
+                                    {cipher,?DEFAULT_CIPHERS}
+                                   ]}
 	    ]},
 	   receive_hello,
 	   {send, hello},
@@ -316,7 +336,7 @@ no_common_alg_client_disconnects(Config) ->
 			  {match, #ssh_msg_kexinit{_='_'}, receive_msg},
 			  {send,  #ssh_msg_kexinit{ % with unsupported "SOME-UNSUPPORTED"
 				     cookie = <<80,158,95,51,174,35,73,130,246,141,200,49,180,190,82,234>>,
-				     kex_algorithms = ["diffie-hellman-group1-sha1"],
+				     kex_algorithms = [atom_to_list(?DEFAULT_KEX)],
 				     server_host_key_algorithms = ["SOME-UNSUPPORTED"],  % SIC!
 				     encryption_algorithms_client_to_server = ["aes128-ctr"],
 				     encryption_algorithms_server_to_client = ["aes128-ctr"],
@@ -337,7 +357,9 @@ no_common_alg_client_disconnects(Config) ->
 
     %% and finally connect to it with a regular Erlang SSH client
     %% which of course does not support SOME-UNSUPPORTED as pub key algo:
-    Result = std_connect(HostPort, Config, [{preferred_algorithms,[{public_key,['ssh-dss']}]}]),
+    Result = std_connect(HostPort, Config, [{preferred_algorithms,[{public_key,['ssh-dss']},
+                                                                   {cipher,?DEFAULT_CIPHERS}
+                                                                  ]}]),
     ct:log("Result of connect is ~p",[Result]),
 
     receive
@@ -386,7 +408,9 @@ do_gex_client_init(Config, {Min,N,Max}, {G,P}) ->
 	    [{silently_accept_hosts, true},
 	     {user_dir, user_dir(Config)},
 	     {user_interaction, false},
-	     {preferred_algorithms,[{kex,['diffie-hellman-group-exchange-sha1']}]}
+	     {preferred_algorithms,[{kex,['diffie-hellman-group-exchange-sha1']},
+                                    {cipher,?DEFAULT_CIPHERS}
+                                   ]}
 	    ]},
 	   receive_hello,
 	   {send, hello},
@@ -419,7 +443,9 @@ do_gex_client_init_old(Config, N, {G,P}) ->
 	    [{silently_accept_hosts, true},
 	     {user_dir, user_dir(Config)},
 	     {user_interaction, false},
-	     {preferred_algorithms,[{kex,['diffie-hellman-group-exchange-sha1']}]}
+	     {preferred_algorithms,[{kex,['diffie-hellman-group-exchange-sha1']},
+                                    {cipher,?DEFAULT_CIPHERS}
+                                   ]}
 	    ]},
 	   receive_hello,
 	   {send, hello},
@@ -440,7 +466,7 @@ bad_long_service_name(Config) ->
 
 bad_very_long_service_name(Config) -> 
     bad_service_name(Config,
-		     lists:duplicate(4*?SSH_MAX_PACKET_SIZE, $a)).
+		     lists:duplicate(?SSH_MAX_PACKET_SIZE+5, $a)).
 
 empty_service_name(Config) ->
     bad_service_name(Config, "").
@@ -589,7 +615,9 @@ client_handles_keyboard_interactive_0_pwds(Config) ->
 
     %% and finally connect to it with a regular Erlang SSH client:
     {ok,_} = std_connect(HostPort, Config, 
-			 [{preferred_algorithms,[{kex,['diffie-hellman-group1-sha1']}]}]
+			 [{preferred_algorithms,[{kex,[?DEFAULT_KEX]},
+                                                 {cipher,?DEFAULT_CIPHERS}
+                                                ]}]
 			).
 
 
@@ -622,7 +650,113 @@ client_info_line(_Config) ->
 	    ok
     end.
 	
+%%%--------------------------------------------------------------------
+%%% The server does not send the extension because
+%%% the client does not tell the server to send it
+no_ext_info_s1(Config) ->
+    %% Start the dameon
+    Server = {Pid,_,_} = ssh_test_lib:daemon([{send_ext_info,true},
+                                              {system_dir, system_dir(Config)}]),
+    {ok,AfterKexState} = connect_and_kex([{server,Server}|Config]),
+    {ok,_} = 
+        ssh_trpt_test_lib:exec(
+          [{send, #ssh_msg_service_request{name = "ssh-userauth"}},
+	   {match, #ssh_msg_service_accept{name = "ssh-userauth"}, receive_msg}
+          ], AfterKexState),
+    ssh:stop_daemon(Pid).
+
+%%%--------------------------------------------------------------------
+%%% The server does not send the extension because
+%%% the server is not configured to send it
+no_ext_info_s2(Config) ->    
+    %% Start the dameon
+    Server = {Pid,_,_} = ssh_test_lib:daemon([{send_ext_info,false},
+                                              {system_dir, system_dir(Config)}]),
+    {ok,AfterKexState} = connect_and_kex([{extra_options,[{recv_ext_info,true}]},
+                                          {server,Server}
+                                          | Config]),
+    {ok,_} =
+        ssh_trpt_test_lib:exec(
+          [{send, #ssh_msg_service_request{name = "ssh-userauth"}},
+	   {match, #ssh_msg_service_accept{name = "ssh-userauth"}, receive_msg}
+          ], AfterKexState),
+    ssh:stop_daemon(Pid).
+
+%%%--------------------------------------------------------------------
+%%% The server sends the extension
+ext_info_s(Config) ->    
+    %% Start the dameon
+    Server = {Pid,_,_} = ssh_test_lib:daemon([{send_ext_info,true},
+                                              {system_dir, system_dir(Config)}]),
+    {ok,AfterKexState} = connect_and_kex([{extra_options,[{recv_ext_info,true}]},
+                                          {server,Server}
+                                          | Config]),
+    {ok,_} =
+        ssh_trpt_test_lib:exec(
+          [{match, #ssh_msg_ext_info{_='_'}, receive_msg}
+          ],
+          AfterKexState),
+    ssh:stop_daemon(Pid).
+
+%%%--------------------------------------------------------------------
+%%% The client sends the extension
+ext_info_c(Config) ->    
+    {User,_Pwd} = server_user_password(Config),
+
+    %% Create a listening socket as server socket:
+    {ok,InitialState} = ssh_trpt_test_lib:exec(listen),
+    HostPort = ssh_trpt_test_lib:server_host_port(InitialState),
+
+    Parent = self(),
+    %% Start a process handling one connection on the server side:
+    Pid =
+        spawn_link(
+          fun() ->
+                  Result =
+                      ssh_trpt_test_lib:exec(
+                        [{set_options, [print_ops, print_messages]},
+                         {accept, [{system_dir, system_dir(Config)},
+                                   {user_dir, user_dir(Config)},
+                                   {recv_ext_info, true}
+                                  ]},
+                         receive_hello,
+                         {send, hello},
+                         
+                         {send, ssh_msg_kexinit},
+                         {match, #ssh_msg_kexinit{_='_'}, receive_msg},
+                         
+                         {match, #ssh_msg_kexdh_init{_='_'}, receive_msg},
+                         {send, ssh_msg_kexdh_reply},
+
+                         {send, #ssh_msg_newkeys{}},
+                         {match,  #ssh_msg_newkeys{_='_'}, receive_msg},
+
+                         {match, #ssh_msg_ext_info{_='_'}, receive_msg},
+
+                         close_socket,
+                         print_state
+                        ],
+                        InitialState),
+                  Parent ! {result,self(),Result}
+          end),
+
+    %% connect to it with a regular Erlang SSH client
+    %% (expect error due to the close_socket in daemon):
+    {error,_} = std_connect(HostPort, Config, 
+                            [{preferred_algorithms,[{kex,[?DEFAULT_KEX]},
+                                                    {cipher,?DEFAULT_CIPHERS}
+                                                   ]},
+                             {tstflg, [{ext_info_client,true}]},
+                             {send_ext_info, true}
+                            ]
+                           ),
     
+    %% Check that the daemon got expected result:
+    receive
+        {result, Pid, {ok,_}} -> ok;
+        {result, Pid, Error} -> ct:fail("Error: ~p",[Error])
+    end.
+
 %%%================================================================
 %%%==== Internal functions ========================================
 %%%================================================================
@@ -640,6 +774,7 @@ stop_apps(_Config) ->
 setup_dirs(Config) ->
     DataDir = proplists:get_value(data_dir, Config),
     PrivDir = proplists:get_value(priv_dir, Config),
+    ssh_test_lib:setup_dsa(DataDir, PrivDir),
     ssh_test_lib:setup_rsa(DataDir, PrivDir),
     Config.
 
@@ -725,10 +860,15 @@ connect_and_kex(Config, InitialState) ->
     ssh_trpt_test_lib:exec(
       [{connect,
 	server_host(Config),server_port(Config),
-	[{preferred_algorithms,[{kex,['diffie-hellman-group1-sha1']}]},
-	 {silently_accept_hosts, true},
+	[{preferred_algorithms,[{kex,[?DEFAULT_KEX]},
+                                {cipher,?DEFAULT_CIPHERS}
+                               ]},
+         {silently_accept_hosts, true},
+         {recv_ext_info, false},
 	 {user_dir, user_dir(Config)},
-	 {user_interaction, false}]},
+	 {user_interaction, false}
+         | proplists:get_value(extra_options,Config,[])
+        ]},
        receive_hello,
        {send, hello},
        {send, ssh_msg_kexinit},

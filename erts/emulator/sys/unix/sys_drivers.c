@@ -1,7 +1,7 @@
 /*
  * %CopyrightBegin%
  *
- * Copyright Ericsson AB 1996-2016. All Rights Reserved.
+ * Copyright Ericsson AB 1996-2017. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -204,6 +204,7 @@ erl_sys_late_init(void)
 #ifdef ERTS_SMP
     erts_mtx_unlock(port->lock);
 #endif
+    erts_sys_unix_later_init(); /* Need to be called after forker has been started */
 }
 
 /* II. Prototypes */

@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxToolBar</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxToolBar.xml</file></header>
+<module>wxToolBar</module>
+<modulesummary>See external documentation: wxToolBar.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html">wxToolBar</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxControl">wxControl</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxToolBar"/>wxToolBar()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>addControl(This, Control) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Control = <seealso marker="wxControl#type-wxControl">wxControl:wxControl()</seealso></v></type>
+<desc><marker id="addControl-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbaraddcontrol">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addSeparator(This) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v></type>
+<desc><marker id="addSeparator-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbaraddseparator">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addTool(This, Tool) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Tool = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></v></type>
+<desc><marker id="addTool-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbaraddtool">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addTool(This, Toolid, Bitmap) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>Equivalent to addTool(This, Toolid, Bitmap, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Toolid = integer()</v><v>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v></type>
+<desc><marker id="addTool-3"/>
+<p>Equivalent to <seealso marker="#addTool-4">addTool(This, Toolid, Bitmap, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>addTool(This, Toolid, Label, Bitmap) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Toolid = integer()</v><v>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v></type>
+<desc><marker id="addTool-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbaraddtool">external documentation</url>.
+  <br/> Also:<br/>
+  addTool(This, Toolid, Bitmap, BmpDisabled) -&gt; wx:wx_object() when<br/>
+  	This::wxToolBar(), Toolid::integer(), Bitmap::wxBitmap:wxBitmap(), BmpDisabled::wxBitmap:wxBitmap();<br/>
+        (This, Toolid, Bitmap, [Option]) -&gt; wx:wx_object() when<br/>
+  	This::wxToolBar(), Toolid::integer(), Bitmap::wxBitmap:wxBitmap(),<br/>
+  	Option :: {'shortHelpString', unicode:chardata()}<br/>
+  		 | {'longHelpString', unicode:chardata()}.<br/></p>
+ 
+ <p><br/> Kind = ?wxITEM_SEPARATOR | ?wxITEM_NORMAL | ?wxITEM_CHECK | ?wxITEM_RADIO | ?wxITEM_MAX</p>
+</desc></func>
+<func>
+<name>addTool(This, Toolid, Label, Bitmap, BmpDisabled) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Toolid = integer()</v><v>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v><v>BmpDisabled = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v></type>
+<desc><marker id="addTool-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbaraddtool">external documentation</url>.
+  <br/> Also:<br/>
+  addTool(This, Toolid, Label, Bitmap, [Option]) -&gt; wx:wx_object() when<br/>
+  	This::wxToolBar(), Toolid::integer(), Label::unicode:chardata(), Bitmap::wxBitmap:wxBitmap(),<br/>
+  	Option :: {'shortHelp', unicode:chardata()}<br/>
+  		 | {'kind', wx:wx_enum()};<br/>
+        (This, Toolid, Bitmap, BmpDisabled, [Option]) -&gt; wx:wx_object() when<br/>
+  	This::wxToolBar(), Toolid::integer(), Bitmap::wxBitmap:wxBitmap(), BmpDisabled::wxBitmap:wxBitmap(),<br/>
+  	Option :: {'toggle', boolean()}<br/>
+  		 | {'clientData', wx:wx_object()}<br/>
+  		 | {'shortHelpString', unicode:chardata()}<br/>
+  		 | {'longHelpString', unicode:chardata()}.<br/></p>
+ 
+ <p><br/> Kind = ?wxITEM_SEPARATOR | ?wxITEM_NORMAL | ?wxITEM_CHECK | ?wxITEM_RADIO | ?wxITEM_MAX</p>
+</desc></func>
+<func>
+<name>addTool(This, Toolid, Bitmap, BmpDisabled, Toggle, XPos) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Toolid = integer()</v><v>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v><v>BmpDisabled = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v><v>Toggle = boolean()</v><v>XPos = integer()</v></type>
+<desc><marker id="addTool-6"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbaraddtool">external documentation</url>.
+  <br/> Also:<br/>
+  addTool(This, Toolid, Label, Bitmap, BmpDisabled, [Option]) -&gt; wx:wx_object() when<br/>
+  	This::wxToolBar(), Toolid::integer(), Label::unicode:chardata(), Bitmap::wxBitmap:wxBitmap(), BmpDisabled::wxBitmap:wxBitmap(),<br/>
+  	Option :: {'kind', wx:wx_enum()}<br/>
+  		 | {'shortHelp', unicode:chardata()}<br/>
+  		 | {'longHelp', unicode:chardata()}<br/>
+  		 | {'data', wx:wx_object()}.<br/></p>
+ 
+ <p><br/> Kind = ?wxITEM_SEPARATOR | ?wxITEM_NORMAL | ?wxITEM_CHECK | ?wxITEM_RADIO | ?wxITEM_MAX</p>
+</desc></func>
+<func>
+<name>addTool(This, Toolid, Bitmap, BmpDisabled, Toggle, XPos, Options::[Option]) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Toolid = integer()</v><v>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v><v>BmpDisabled = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v><v>Toggle = boolean()</v><v>XPos = integer()</v><v>Option = {yPos, integer()} | {clientData, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>} | {shortHelp, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {longHelp, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>}</v></type>
+<desc><marker id="addTool-7"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbaraddtool">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addCheckTool(This, Toolid, Label, Bitmap) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>Equivalent to addCheckTool(This, Toolid, Label, Bitmap, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Toolid = integer()</v><v>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v></type>
+<desc><marker id="addCheckTool-4"/>
+<p>Equivalent to <seealso marker="#addCheckTool-5">addCheckTool(This, Toolid, Label, Bitmap, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>addCheckTool(This, Toolid, Label, Bitmap, Options::[Option]) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Toolid = integer()</v><v>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v><v>Option = {bmpDisabled, <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso>} | {shortHelp, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {longHelp, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {data, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</v></type>
+<desc><marker id="addCheckTool-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbaraddchecktool">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addRadioTool(This, Toolid, Label, Bitmap) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>Equivalent to addRadioTool(This, Toolid, Label, Bitmap, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Toolid = integer()</v><v>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v></type>
+<desc><marker id="addRadioTool-4"/>
+<p>Equivalent to <seealso marker="#addRadioTool-5">addRadioTool(This, Toolid, Label, Bitmap, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>addRadioTool(This, Toolid, Label, Bitmap, Options::[Option]) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Toolid = integer()</v><v>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v><v>Option = {bmpDisabled, <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso>} | {shortHelp, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {longHelp, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {data, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</v></type>
+<desc><marker id="addRadioTool-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbaraddradiotool">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addStretchableSpace(This) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v></type>
+<desc><marker id="addStretchableSpace-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbaraddstretchablespace">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>insertStretchableSpace(This, Pos) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Pos = integer()</v></type>
+<desc><marker id="insertStretchableSpace-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbarinsertstretchablespace">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>deleteTool(This, Toolid) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Toolid = integer()</v></type>
+<desc><marker id="deleteTool-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbardeletetool">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>deleteToolByPos(This, Pos) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Pos = integer()</v></type>
+<desc><marker id="deleteToolByPos-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbardeletetoolbypos">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>enableTool(This, Toolid, Enable) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Toolid = integer()</v><v>Enable = boolean()</v></type>
+<desc><marker id="enableTool-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbarenabletool">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>findById(This, Toolid) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Toolid = integer()</v></type>
+<desc><marker id="findById-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbarfindbyid">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>findControl(This, Toolid) -&gt; <seealso marker="wxControl#type-wxControl">wxControl:wxControl()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Toolid = integer()</v></type>
+<desc><marker id="findControl-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbarfindcontrol">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>findToolForPosition(This, X, Y) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="findToolForPosition-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbarfindtoolforposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getToolSize(This) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v></type>
+<desc><marker id="getToolSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbargettoolsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getToolBitmapSize(This) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v></type>
+<desc><marker id="getToolBitmapSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbargettoolbitmapsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMargins(This) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v></type>
+<desc><marker id="getMargins-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbargetmargins">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getToolEnabled(This, Toolid) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Toolid = integer()</v></type>
+<desc><marker id="getToolEnabled-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbargettoolenabled">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getToolLongHelp(This, Toolid) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Toolid = integer()</v></type>
+<desc><marker id="getToolLongHelp-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbargettoollonghelp">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getToolPacking(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v></type>
+<desc><marker id="getToolPacking-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbargettoolpacking">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getToolPos(This, Id) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Id = integer()</v></type>
+<desc><marker id="getToolPos-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbargettoolpos">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getToolSeparation(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v></type>
+<desc><marker id="getToolSeparation-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbargettoolseparation">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getToolShortHelp(This, Toolid) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Toolid = integer()</v></type>
+<desc><marker id="getToolShortHelp-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbargettoolshorthelp">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getToolState(This, Toolid) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Toolid = integer()</v></type>
+<desc><marker id="getToolState-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbargettoolstate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>insertControl(This, Pos, Control) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Pos = integer()</v><v>Control = <seealso marker="wxControl#type-wxControl">wxControl:wxControl()</seealso></v></type>
+<desc><marker id="insertControl-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbarinsertcontrol">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>insertSeparator(This, Pos) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Pos = integer()</v></type>
+<desc><marker id="insertSeparator-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbarinsertseparator">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>insertTool(This, Pos, Tool) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Pos = integer()</v><v>Tool = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></v></type>
+<desc><marker id="insertTool-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbarinserttool">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>insertTool(This, Pos, Toolid, Bitmap) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>Equivalent to insertTool(This, Pos, Toolid, Bitmap, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Pos = integer()</v><v>Toolid = integer()</v><v>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v></type>
+<desc><marker id="insertTool-4"/>
+<p>Equivalent to <seealso marker="#insertTool-5">insertTool(This, Pos, Toolid, Bitmap, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>insertTool(This, Pos, Toolid, Label, Bitmap) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Pos = integer()</v><v>Toolid = integer()</v><v>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v></type>
+<desc><marker id="insertTool-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbarinserttool">external documentation</url>.
+  <br/> Also:<br/>
+  insertTool(This, Pos, Toolid, Bitmap, [Option]) -&gt; wx:wx_object() when<br/>
+  	This::wxToolBar(), Pos::integer(), Toolid::integer(), Bitmap::wxBitmap:wxBitmap(),<br/>
+  	Option :: {'bmpDisabled', wxBitmap:wxBitmap()}<br/>
+  		 | {'toggle', boolean()}<br/>
+  		 | {'clientData', wx:wx_object()}<br/>
+  		 | {'shortHelp', unicode:chardata()}<br/>
+  		 | {'longHelp', unicode:chardata()}.<br/></p>
+ 
+ <p><br/> Kind = ?wxITEM_SEPARATOR | ?wxITEM_NORMAL | ?wxITEM_CHECK | ?wxITEM_RADIO | ?wxITEM_MAX</p>
+</desc></func>
+<func>
+<name>insertTool(This, Pos, Toolid, Label, Bitmap, Options::[Option]) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Pos = integer()</v><v>Toolid = integer()</v><v>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v><v>Option = {bmpDisabled, <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso>} | {kind, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>} | {shortHelp, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {longHelp, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {clientData, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</v></type>
+<desc><marker id="insertTool-6"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbarinserttool">external documentation</url>.
+ <br/> Kind = ?wxITEM_SEPARATOR | ?wxITEM_NORMAL | ?wxITEM_CHECK | ?wxITEM_RADIO | ?wxITEM_MAX</p>
+</desc></func>
+<func>
+<name>realize(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v></type>
+<desc><marker id="realize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbarrealize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>removeTool(This, Toolid) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Toolid = integer()</v></type>
+<desc><marker id="removeTool-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbarremovetool">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMargins(This, X, Y) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="setMargins-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbarsetmargins">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setToolBitmapSize(This, Size) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Size = {W::integer(), H::integer()}</v></type>
+<desc><marker id="setToolBitmapSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbarsettoolbitmapsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setToolLongHelp(This, Toolid, HelpString) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Toolid = integer()</v><v>HelpString = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setToolLongHelp-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbarsettoollonghelp">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setToolPacking(This, Packing) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Packing = integer()</v></type>
+<desc><marker id="setToolPacking-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbarsettoolpacking">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setToolShortHelp(This, Id, HelpString) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Id = integer()</v><v>HelpString = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setToolShortHelp-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbarsettoolshorthelp">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setToolSeparation(This, Separation) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Separation = integer()</v></type>
+<desc><marker id="setToolSeparation-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbarsettoolseparation">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>toggleTool(This, Toolid, Toggle) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxToolBar">wxToolBar()</seealso></v><v>Toolid = integer()</v><v>Toggle = boolean()</v></type>
+<desc><marker id="toggleTool-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtoolbar.html#wxtoolbartoggletool">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

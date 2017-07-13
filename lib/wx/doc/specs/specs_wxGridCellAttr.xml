@@ -1,0 +1,311 @@
+<module name="wxGridCellAttr">
+<type>
+  <name>wxGridCellAttr</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxGridCellAttr">wxGridCellAttr()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>getAlignment</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getAlignment(This) -&gt; {HAlign :: integer(), VAlign :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>HAlign</anno>
+  <anno>This</anno>
+  <anno>VAlign</anno>
+</spec>
+<spec>
+  <name>getBackgroundColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getBackgroundColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getEditor</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>getEditor(This, Grid, Row, Col) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="wxGridCellEditor#type-wxGridCellEditor">wxGridCellEditor:wxGridCellEditor()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+        <subtype><typename>Grid</typename><string>Grid = <seealso marker="wxGrid#type-wxGrid">wxGrid:wxGrid()</seealso></string></subtype>
+        <subtype><typename>Row</typename><string>Row = Col = integer()</string></subtype>
+        <subtype><typename>Col</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Col</anno>
+  <anno>Grid</anno>
+  <anno>Row</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getFont</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getFont(This) -&gt; <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getRenderer</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>getRenderer(This, Grid, Row, Col) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="wxGridCellRenderer#type-wxGridCellRenderer">wxGridCellRenderer:wxGridCellRenderer()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+        <subtype><typename>Grid</typename><string>Grid = <seealso marker="wxGrid#type-wxGrid">wxGrid:wxGrid()</seealso></string></subtype>
+        <subtype><typename>Row</typename><string>Row = Col = integer()</string></subtype>
+        <subtype><typename>Col</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Col</anno>
+  <anno>Grid</anno>
+  <anno>Row</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getTextColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getTextColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasAlignment</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasAlignment(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasBackgroundColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasBackgroundColour(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasEditor</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasEditor(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasFont</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasFont(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasRenderer</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasRenderer(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasTextColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasTextColour(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isReadOnly</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isReadOnly(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setAlignment</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setAlignment(This, HAlign, VAlign) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+        <subtype><typename>HAlign</typename><string>HAlign = VAlign = integer()</string></subtype>
+        <subtype><typename>VAlign</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>HAlign</anno>
+  <anno>This</anno>
+  <anno>VAlign</anno>
+</spec>
+<spec>
+  <name>setBackgroundColour</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setBackgroundColour(This, ColBack) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+        <subtype><typename>ColBack</typename><string>ColBack = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ColBack</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setDefAttr</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setDefAttr(This, DefAttr) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = DefAttr = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+        <subtype><typename>DefAttr</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>DefAttr</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setEditor</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setEditor(This, Editor) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+        <subtype><typename>Editor</typename><string>Editor = <seealso marker="wxGridCellEditor#type-wxGridCellEditor">wxGridCellEditor:wxGridCellEditor()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Editor</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setFont</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setFont(This, Font) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+        <subtype><typename>Font</typename><string>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Font</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setReadOnly</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>setReadOnly(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setReadOnly</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setReadOnly(This, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {isReadOnly, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setRenderer</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setRenderer(This, Renderer) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+        <subtype><typename>Renderer</typename><string>Renderer = <seealso marker="wxGridCellRenderer#type-wxGridCellRenderer">wxGridCellRenderer:wxGridCellRenderer()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Renderer</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setTextColour</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setTextColour(This, ColText) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellAttr">wxGridCellAttr()</seealso></string></subtype>
+        <subtype><typename>ColText</typename><string>ColText = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ColText</anno>
+  <anno>This</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:13.</timestamp>
+</module>

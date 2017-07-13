@@ -1,0 +1,588 @@
+<?xml version="1.0"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="cover" margin="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin="0mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="left-page" margin-top="25mm" margin-bottom="15mm" margin-left="20mm" margin-right="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="left-header" extent="10mm"/>
+      <fo:region-after region-name="left-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="right-page" margin-top="25mm" margin-bottom="15mm" margin-left="25mm" margin-right="20mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="right-header" extent="10mm"/>
+      <fo:region-after region-name="right-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:page-sequence-master master-name="document">
+      <fo:repeatable-page-master-alternatives>
+        <fo:conditional-page-master-reference master-reference="left-page" odd-or-even="even"/>
+        <fo:conditional-page-master-reference master-reference="right-page" odd-or-even="odd"/>
+      </fo:repeatable-page-master-alternatives>
+    </fo:page-sequence-master>
+  </fo:layout-master-set>
+  <fo:bookmark-tree>
+    <fo:bookmark internal-destination="cover-page" starting-state="show">
+      <fo:bookmark-title>jinterface</fo:bookmark-title>
+      <fo:bookmark internal-destination="idp845056" starting-state="hide">
+        <fo:bookmark-title>Jinterface User Guide</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp838176" starting-state="hide">
+          <fo:bookmark-title>The Jinterface Package</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp821312" starting-state="hide">
+            <fo:bookmark-title>Mapping of Basic Erlang Types to Java</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp491424" starting-state="hide">
+            <fo:bookmark-title>Special Mapping Issues</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp188240" starting-state="hide">
+            <fo:bookmark-title>Nodes</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp185312" starting-state="hide">
+            <fo:bookmark-title>Mailboxes</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp682704" starting-state="hide">
+            <fo:bookmark-title>Connections</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp676752" starting-state="hide">
+            <fo:bookmark-title>Transport Factory</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp672832" starting-state="hide">
+            <fo:bookmark-title>Sending and Receiving Messages</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp530768" starting-state="hide">
+            <fo:bookmark-title>Sending Arbitrary Data</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp524912" starting-state="hide">
+            <fo:bookmark-title>Linking to Remote Processes</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp517152" starting-state="hide">
+            <fo:bookmark-title>Using EPMD</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp238464" starting-state="hide">
+            <fo:bookmark-title>Remote Procedure Calls</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp234976" starting-state="hide">
+            <fo:bookmark-title>Compiling and Loading Your Code</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp650864" starting-state="hide">
+            <fo:bookmark-title>Tracing</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+      <fo:bookmark internal-destination="idp661072" starting-state="hide">
+        <fo:bookmark-title>Reference Manual</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp244848" starting-state="hide">
+          <fo:bookmark-title>jinterface</fo:bookmark-title>
+        </fo:bookmark>
+      </fo:bookmark>
+    </fo:bookmark>
+  </fo:bookmark-tree>
+  <fo:page-sequence font-family="sans-serif" force-page-count="even" master-reference="cover" font-size="10pt">
+    <fo:flow flow-name="xsl-region-body">
+      <fo:block space-before="130mm" space-before.conditionality="retain" text-align="end">
+        <fo:external-graphic src="/root/download/otp_src_20.0/bootstrap/lib/erl_docgen/priv/images/erlang-logo.gif"/>
+      </fo:block>
+      <fo:block id="cover-page" border-before-style="solid" border-before-width="10pt" border-color="#960003" font-size="2.3em" padding-before="0.5em" text-align="end">jinterface</fo:block>
+      <fo:block font-size="0.9em" text-align="end">Copyright © 2000-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em" text-align="end">jinterface 1.8</fo:block>
+      <fo:block font-size="0.9em" text-align="end">July 12, 2017</fo:block>
+      <fo:block padding-before="2.5em" font-size="1.33em" font-weight="bold" color="#C00" text-align="end"/>
+      <fo:block break-before="page" border-before-style="solid" border-before-width="1pt" border-color="#960003" font-weight="bold" padding-before="0.5em" space-before="200mm" space-before.conditionality="retain">Copyright © 2000-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em">
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+ 
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+    
+    Ericsson AB. All Rights Reserved..
+        </fo:block>
+      <fo:block font-size="0.9em" font-weight="bold" space-before="2em">July 12, 2017</fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+  <fo:page-sequence font-family="serif" master-reference="document" initial-page-number="1" font-size="10pt">
+    <fo:static-content flow-name="left-header">
+      <fo:block text-align="start" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-header">
+      <fo:block text-align="end" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="left-footer">
+      <fo:block text-align="start" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold"><fo:page-number/> | Ericsson AB. All Rights Reserved.:
+            jinterface</fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-footer">
+      <fo:block text-align="end" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">Ericsson AB. All Rights Reserved.:
+            jinterface | <fo:page-number/></fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body"><fo:block/><fo:block id="idp845056" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">1   
+      Jinterface User Guide</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Jinterface Application is a java communication tool package to erlang.</fo:block>
+  <fo:block id="idp838176" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.1  The Jinterface Package</fo:marker>1.1  The Jinterface Package</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-style="italic">Jinterface</fo:inline> package provides 
+    a set of tools for communication with Erlang processes. It can also be used for communication with 
+    other Java processes using the same package, as well as C processes using the Erl_Interface library.  </fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The set of classes in the package can be divided into two categories:
+    those that provide the actual communication, and those that provide a
+    Java representation of the Erlang data types. The latter are all
+    subclasses of OtpErlangObject, and they are identified by the
+    OtpErlang prefix.</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Since this package provides a mechanism for communicating with Erlang,
+    message recipients can be Erlang processes or instances of
+    com.ericsson.otp.erlang.OtpMbox, both of which are identified with
+    pids and possibly registered names. When pids or mailboxes are
+    mentioned as message senders or recipients in this section, it should
+    assumed that even Erlang processes are included, unless specified
+    otherwise.
+    The classes in
+    <fo:inline font-style="italic">Jinterface</fo:inline> support the following:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+    <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>manipulation of data represented as Erlang data types</fo:block></fo:list-item-body></fo:list-item>
+    <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>conversion of data between Java and Erlang formats</fo:block></fo:list-item-body></fo:list-item>
+    <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>encoding and decoding of Erlang data types for transmission or storage</fo:block></fo:list-item-body></fo:list-item>
+    <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>communication between Java nodes and Erlang processes</fo:block></fo:list-item-body></fo:list-item>
+  </fo:list-block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">In the following sections, these topics are described:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+    <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>mapping of Erlang types to Java</fo:block></fo:list-item-body></fo:list-item>
+    <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>encoding, decoding, and sending Erlang terms</fo:block></fo:list-item-body></fo:list-item>
+    <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>connecting to a distributed Erlang node</fo:block></fo:list-item-body></fo:list-item>
+    <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>using nodes, mailboxes and EPMD</fo:block></fo:list-item-body></fo:list-item>
+    <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>sending and receiving Erlang messages and data</fo:block></fo:list-item-body></fo:list-item>
+    <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>remote procedure calls</fo:block></fo:list-item-body></fo:list-item>
+    <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>linking to remote processes</fo:block></fo:list-item-body></fo:list-item>
+    <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>compiling your code for use with Jinterface</fo:block></fo:list-item-body></fo:list-item>
+    <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>tracing message flow</fo:block></fo:list-item-body></fo:list-item>
+  </fo:list-block><fo:block id="idp821312" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.1 
+      Mapping of Basic Erlang Types to Java</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This section describes the mapping of Erlang basic types to Java. </fo:block>
+    <fo:table border-collapse="separate" space-after="1em" space-before="1em" table-layout="fixed" inline-progression-dimension="100%"><fo:table-body><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">Erlang type</fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">Java type</fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">atom</fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-style="italic">OtpErlangAtom</fo:inline></fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">binary</fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-style="italic">OtpErlangBinary</fo:inline></fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">floating point types</fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-style="italic">OtpErlangFloat</fo:inline>or <fo:inline font-style="italic">OtpErlangDouble</fo:inline>, depending on the floating point value size</fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">integral types</fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">One of <fo:inline font-style="italic">OtpErlangByte</fo:inline>,<fo:inline font-style="italic">OtpErlangChar</fo:inline>,<fo:inline font-style="italic">OtpErlangShort</fo:inline>,<fo:inline font-style="italic">OtpErlangUShort</fo:inline>,<fo:inline font-style="italic">OtpErlangInt</fo:inline>,<fo:inline font-style="italic">OtpErlangUInt</fo:inline>or<fo:inline font-style="italic">OtpErlangLong</fo:inline>, depending on the integral value size and sign</fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">list</fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-style="italic">OtpErlangList</fo:inline></fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">pid</fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-style="italic">OtpErlangPid</fo:inline></fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">port</fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-style="italic">OtpErlangPort</fo:inline></fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">ref</fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-style="italic">OtpErlangRef</fo:inline></fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">tuple</fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-style="italic">OtpErlangTuple</fo:inline></fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">map</fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-style="italic">OtpErlangMap</fo:inline></fo:block></fo:table-cell>
+      </fo:table-row><fo:table-row>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start">term</fo:block></fo:table-cell>
+        <fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-style="italic">OtpErlangObject</fo:inline></fo:block></fo:table-cell>
+      </fo:table-row></fo:table-body></fo:table><fo:block font-family="DejaVuSans, sans-serif" font-size="0.8em" font-weight="bold" keep-with-previous.within-page="always" space-after="2.5em" space-before="0em">
+        Table
+        1.1:
+         
+        Mapping of Erlang basic types to Java</fo:block>
+  <fo:block id="idp491424" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.2 
+      Special Mapping Issues</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The atoms <fo:inline font-family="monospace">true</fo:inline> and <fo:inline font-family="monospace">false</fo:inline> are special atoms, used as boolean values. 
+      The class <fo:inline font-style="italic">OtpErlangBoolean</fo:inline> can be used to represent these.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Lists in Erlang are also used to describe sequences of printable characters (strings).
+      A convenience class <fo:inline font-style="italic">OtpErlangString</fo:inline>
+      is provided to represent Erlang strings.</fo:block>
+  <fo:block id="idp188240" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.3 
+      Nodes</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A node as defined by Erlang/OTP is an instance of the Erlang Runtime
+      System, a virtual machine roughly equivalent to a JVM. Each node has a
+      unique name in the form of an identifier composed partly of the
+      hostname on which the node is running, e.g "gurka@sallad.com". Several
+      such nodes can run on the same host as long as their names are unique.
+      The class <fo:inline font-style="italic">OtpNode</fo:inline> 
+      represents an Erlang node. It is created with a name
+      and optionally a port number on which it listens for incoming
+      connections. Before creating an instance of 
+      <fo:inline font-style="italic">OtpNode</fo:inline>, 
+      ensure that Epmd is running on the host machine. See the Erlang documentation 
+      for more information about Epmd. In this example, the host name is appended
+      automatically to the identifier, and the port number is chosen by the
+      underlying system:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+OtpNode node = new OtpNode("gurka");    </fo:block>
+  <fo:block id="idp185312" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.4 
+      Mailboxes</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Erlang processes running on an Erlang node are identified by process
+      identifiers (pids) and, optionally, by registered names unique within
+      the node. Each Erlang process has an implicit mailbox that is used to
+      receive messages; the mailbox is identified with the pid of the
+      process.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Jinterface provides a similar mechanism with the class 
+      <fo:inline font-style="italic">OtpMbox</fo:inline>, a
+      mailbox that can be used to send and receive messages asynchronously.
+      Each OtpMbox is identified with a unique pid and , optionally, a registered 
+      name unique within the 
+      <fo:inline font-style="italic">OtpNode</fo:inline>. </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Applications are free to create mailboxes as necessary. This is done
+      as follows:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+        OtpMbox mbox = node.createMbox();    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The mailbox created in the above example has no registered name,
+      although it does have a pid. The pid can be obtained from the mailbox
+      and included in messages sent from the mailbox, so that remote
+      processes are able to respond. </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">An application can register a name for a mailbox, either when the
+      mailbox is initially created:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+        OtpMbox mbox = node.createMbox("server");    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">or later on, as necessary:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+        OtpMbox mbox = node.createMbox();
+        mbox.registerName("server");    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Registered names are usually necessary in order to start
+      communication, since it is impossible to know in advance the pid of a
+      remote process. If a well-known name for one of the processes is
+      chosen in advance and known by all communicating parties within an
+      application, each mailbox can send an initial message to the named
+      mailbox, which then can identify the sender pid.</fo:block>
+  <fo:block id="idp682704" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.5 
+      Connections</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">It is not necessary to explicitly set up communication with a remote
+      node. Simply sending a message to a mailbox on that node will cause
+      the OtpNode to create a connection if one does not already exist. Once
+      the connection is established, subsequent messages to the same node
+      will reuse the same connection.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">It is possible to check for the existence of a remote node before
+      attempting to communicate with it. Here we send a ping message to the
+      remote node to see if it is alive and accepting connections:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+        if (node.ping("remote",2000)) {
+          System.out.println("remote is up");
+        }
+        else {
+          System.out.println("remote is not up");
+       }    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the call to ping() succeeds, a connection to the remote node has
+      been established. Note that it is not necessary to ping remote nodes
+      before communicating with them, but by using ping you can determine if
+      the remote exists before attempting to communicate with it.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Connections are only permitted by nodes using the same security
+      cookie. The cookie is a short string provided either as an argument
+      when creating OtpNode objects, or found in the user's home directory
+      in the file <fo:inline font-family="monospace">.erlang.cookie</fo:inline>. When a connection attempt is made, the
+      string is used as part of the authentication process. If you are
+      having trouble getting communication to work, use the trace facility
+      (described later in this document) to show the connection
+      establishment. A likely problem is that the cookies are different.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Connections are never broken explicitly. If a node fails or is closed,
+      a connection may be broken however.</fo:block>
+  <fo:block id="idp676752" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.6 
+      Transport Factory</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">All necessary connections are made using methods of
+    <fo:inline font-style="italic">OtpTransportFactory</fo:inline>
+    interface. Default OtpTransportFactory implementation is based on standard Socket class.
+    User may provide custom transport factory as needed. See java doc for details.</fo:block>
+  <fo:block id="idp672832" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.7 
+      Sending and Receiving Messages</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Messages sent with this package must be instances of 
+      <fo:inline font-style="italic">OtpErlangObject</fo:inline>
+      or one of its subclasses. Message can be sent to processes or pids,
+      either by specifying the pid of the remote, or its registered name and
+      node.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">In this example, we create a message containing our own pid so the
+      echo process can reply:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+        OtpErlangObject[] msg = new OtpErlangObject[2];
+        msg[0] = mbox.self();
+        msg[1] = new OtpErlangAtom("hello, world");
+        OtpErlangTuple tuple = new OtpErlangTuple(msg);    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When we send the message, a connection will be created:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+        mbox.send("echo", "gurka@sallad.com", tuple);    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">And here we receive the reply:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+        OtpErlangObject reply = mbox.receive();    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Messages are sent asynchronously, so the call to <fo:inline font-family="monospace">send()</fo:inline> returns as
+      soon as the message has been dispatched to the underlying
+      communication layer. This means that you receive no indication whether
+      the operation completed successfully or the remote even existed. If
+      you need this kind of confirmation, you should wait for a response
+      from the remote process.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The echo server itself might look like this:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+    OtpNode self = new OtpNode("gurka");
+    OtpMbox mbox = self.createMbox("echo");
+    OtpErlangObject o;
+    OtpErlangTuple msg;
+    OtpErlangPid from;
+    
+    while (true) {
+      try {
+        o = mbox.receive();
+        if (o instanceof OtpErlangTuple) {
+          msg = (OtpErlangTuple)o;
+          from = (OtpErlangPid)(msg.elementAt(0));
+          mbox.send(from,msg.elementAt(1));
+      }
+      catch (Exception e) {
+        System.out.println("" + e);
+      }
+    }    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">In the examples above, only one mailbox was created on each node.
+      however you are free to create as many mailboxes on each node as you
+      like. You are also free to create as many nodes as you like on each
+      JVM, however because each node uses some limited system resources such
+      as file descriptors, it is recommended that you create only a small
+      number of nodes (such as one) on each JVM.</fo:block>
+  <fo:block id="idp530768" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.8 
+      Sending Arbitrary Data</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This package was originally intended to be used for communicating
+      between Java and Erlang, and for that reason the send and receive
+      methods all use Java representations of Erlang data types. </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">However it is possible to use the package to communicate with remote
+      processes written in Java as well, and in these cases it may be
+      desirable to send other data types.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The simplest way to do this is to encapsulate arbitrary data in
+      messages of type 
+      <fo:inline font-style="italic">OtpErlangBinary</fo:inline>. 
+      The OtpErlangBinary class can be created from arbitrary Java objects that implement the 
+      Serializable or Externalizable interface:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+        o = new MyClass(foo);
+        mbox.send(remote,new OtpErlangBinary(o));    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The example above will cause the object to be serialized and
+      encapsulated in an OtpErlangBinary before being sent. The recipient
+      will receive an OtpErlangBinary but can extract the original object
+      from it:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+        msg = mbox.receive();
+        if (msg instanceof OtpErlangBinary) {
+           OtpErlangBinary b = (OtpErlangBinary)msg;
+           MyClass o = (MyClass)(b.getObject());
+        }    </fo:block>
+  <fo:block id="idp524912" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.9 
+      Linking to Remote Processes</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Erlang defines a concept known as linked processes. A link is an
+      implicit connection between two processes that causes an exception to
+      be raised in one of the processes if the other process terminates for
+      any reason. Links are bidirectional: it does not matter which of the
+      two processes created the link or which of the linked processes
+      eventually terminates; an exception will be raised in the remaining
+      process. Links are also idempotent: at most one link can exist between
+      two given processes, only one operation is necessary to remove the
+      link.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Jinterface provides a similar mechanism. Also here, no distinction is
+      made between mailboxes and Erlang processes. A link can be created to
+      a remote mailbox or process when its pid is known:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+        mbox.link(remote);    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The link can be removed by either of the processes in a similar manner:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+        mbox.unlink(remote);    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the remote process terminates while the link is still in place, an
+      exception will be raised on a subsequent call to receive():</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+        try {
+          msg = mbox.receive();
+        }
+        catch (OtpErlangExit e) {
+          System.out.println("Remote pid " + e.pid() + " has terminated");
+        }
+        catch (OtpErlangDecodeException f) {
+          System.out.println("Received message could not be decoded: " + f);
+        }    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When a mailbox is explicitly closed, exit messages will be sent in
+      order to break any outstanding links. If a mailbox is never closed but
+      instead goes out of scope, the objects <fo:inline font-family="monospace">finalize()</fo:inline> method will call
+      <fo:inline font-family="monospace">close()</fo:inline>. However since Java provides no guarantees about when or even
+      if finalize() will be called, it is important that your application
+      explicitly closes mailboxes when they are no longer needed if you
+      want links to work in a timely manner. 
+      </fo:block>
+  <fo:block id="idp517152" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.10 
+      Using EPMD</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Epmd is the Erlang Port Mapper Daemon. Distributed Erlang nodes
+      register with epmd on the localhost to indicate to other nodes that
+      they exist and can accept connections. Epmd maintains a register of
+      node and port number information, and when a node wishes to connect to
+      another node, it first contacts epmd in order to find out the correct
+      port number to connect to.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The basic interaction with EPMD is done through instances of 
+      <fo:inline font-style="italic">OtpEpmd</fo:inline> class.
+      Nodes wishing to contact other nodes must first request information 
+      from Epmd before a connection can be set up, however this is done automatically 
+      by <fo:inline font-style="italic">OtpSelf.connect()</fo:inline> when necessary. </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When you use <fo:inline font-style="italic">OtpSelf.connect()</fo:inline> to connect to an Erlang node, 
+      a connection is first made to epmd and, if the node is known, a
+      connection is then made to the Erlang node.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Java nodes can also register themselves with epmd if they want other
+      nodes in the system to be able to find and connect to them.
+      This is done by call to method <fo:inline font-style="italic">OtpEpmd.publishPort()</fo:inline>.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Be aware that on some systems (such as VxWorks), a failed node will
+      not be detected by this mechanism since the operating system does not
+      automatically close descriptors that were left open when the node
+      failed. If a node has failed in this way, epmd will prevent you from
+      registering a new node with the old name, since it thinks that the old
+      name is still in use. In this case, you must unregister the name
+      explicitly, by using <fo:inline font-style="italic">OtpEpmd.unPublishPort()</fo:inline></fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This will cause epmd to close the connection from the far end. Note
+      that if the name was in fact still in use by a node, the results of
+      this operation are unpredictable. Also, doing this does not cause the
+      local end of the connection to close, so resources may be consumed.</fo:block>
+  <fo:block id="idp238464" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.11 
+      Remote Procedure Calls</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">An Erlang node acting as a client to another Erlang node
+      typically sends a request and waits for a reply. Such a request is
+      included in a function call at a remote node and is called a remote
+      procedure call. Remote procedure calls are supported through the class
+      <fo:inline font-style="italic">OtpConnection</fo:inline>.
+      The following example shows how the
+      <fo:inline font-style="italic">OtpConnection</fo:inline> 
+      class is used for remote procedure calls:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+
+OtpSelf self = new OtpSelf("client", "hejsan" ); 
+OtpPeer other  = new OtpPeer("server@balin"); 
+OtpConnection connection = self.connect(other); 
+
+connection.sendRPC("erlang","date",new OtpErlangList());
+OtpErlangObject received = connection.receiveRPC(); 
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">erlang:date/0</fo:inline> is just called to get the date tuple
+      from a remote host. </fo:block>
+  <fo:block id="idp234976" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.12 
+      Compiling and Loading Your Code</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">In order to use any of the <fo:inline font-style="italic">Jinterface</fo:inline> 
+      classes, include the following line in your code:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+import com.ericsson.otp.erlang.*;    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Determine where the top directory of your OTP installation is. You
+      can find this out by starting Erlang and entering the following
+      command at the Eshell prompt:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+Eshell V4.9.1.2  (abort with ^G)
+1&gt; code:root_dir().
+/usr/local/otp    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To compile your code, make sure that your Java compiler knows where
+      to find the file <fo:inline font-family="monospace">OtpErlang.jar</fo:inline> which contains the package.
+      This is done by specifying an appropriate <fo:inline font-family="monospace">-classpath</fo:inline>
+      argument on the command line, or by adding it to the <fo:inline font-family="monospace">CLASSPATH</fo:inline>
+      definition in your <fo:inline font-family="monospace">Makefile</fo:inline>. The correct value for this path is
+      <fo:inline font-family="monospace">$OTPROOT/lib/jinterface</fo:inline><fo:inline font-weight="bold">Vsn</fo:inline><fo:inline font-family="monospace">/priv/OtpErlang.jar</fo:inline>, where <fo:inline font-family="monospace">$OTPROOT</fo:inline> 
+      is the path reported by <fo:inline font-family="monospace">code:root_dir/0</fo:inline> in the above example and <fo:inline font-weight="bold">Vsn</fo:inline> is the version of Jinterface, for example <fo:inline font-family="monospace">jinterface-1.2</fo:inline></fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+$ javac -classpath ".:/usr/local/otp/lib/jinterface-1.2/priv/OtpErlang.jar" 
+                    myclass.java    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When running your program, you will also need to specify the path to
+      <fo:inline font-family="monospace">OtpErlang.jar</fo:inline> in a similar way.</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+$ java ".:/usr/local/otp/lib/jinterface-1.2/priv/OtpErlang.jar" myclass    </fo:block>
+  <fo:block id="idp650864" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.13 
+      Tracing</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Communication between nodes can be traced by setting a system property
+      before the communication classes in this package are initialized. 
+      The value system property "OtpConnection.trace" is the default trace
+      level for all connections. Normally the default trace level is zero,
+      i.e. no tracing is performed. By setting 
+      <fo:inline font-style="italic">OtpConnection.trace</fo:inline> 
+      to some non-zero value, the communication protocol can be shown in more or
+      less detail. The valid values are:</fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>0: no tracing is performed</fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>1: only ordinary send and reg-send messages are shown</fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>2: control messages such as link, unlink and exit are shown</fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>3: connection setup (handshake) is shown</fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>4: epmd requests are shown</fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Each level also includes the information shown by all lower levels.</fo:block>
+  <fo:block id="idp661072" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">2   
+      Reference Manual</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Jinterface is a Java communication tool package to Erlang.</fo:block>
+  <fo:block page-break-before="always" id="idp244848" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">jinterface</fo:marker>jinterface</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  jinterface
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Jinterface Java package contains java classes, which help you
+      integrate programs written in Java with Erlang. The reference 
+      documentation is available only on the web in Javadoc format.</fo:block>
+    <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">By default, the <fo:inline font-family="monospace">jinterface</fo:inline> library is only guaranteed
+        to be compatible with other Erlang/OTP components from the same
+        release as the <fo:inline font-family="monospace">jinterface</fo:inline> library itself. See the documentation
+        of the <fo:inline font-family="monospace">OtpCompatRel</fo:inline> property in the Java API documentation.</fo:block>
+    </fo:block>
+  
+
+  <fo:block id="idp893856" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">See Also</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Jinterface User's Guide</fo:block>
+  
+</fo:flow>
+  </fo:page-sequence>
+</fo:root>

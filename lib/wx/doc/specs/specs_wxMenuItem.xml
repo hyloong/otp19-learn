@@ -1,0 +1,336 @@
+<module name="wxMenuItem">
+<type>
+  <name>wxMenuItem</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxMenuItem">wxMenuItem()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>check</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>check(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>check</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>check(This, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {check, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>enable</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>enable(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>enable</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>enable(This, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {enable, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getBitmap</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getBitmap(This) -&gt; <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getHelp</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getHelp(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getId</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getId(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getKind</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getKind(This) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getLabel</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getLabel(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getLabelFromText</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getLabelFromText(Text) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></head>
+      <guard>
+        <subtype><typename>Text</typename><string>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Text</anno>
+</spec>
+<spec>
+  <name>getMenu</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getMenu(This) -&gt; <seealso marker="wxMenu#type-wxMenu">wxMenu:wxMenu()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getSubMenu</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getSubMenu(This) -&gt; <seealso marker="wxMenu#type-wxMenu">wxMenu:wxMenu()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getText</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getText(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isCheckable</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isCheckable(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isChecked</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isChecked(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isEnabled</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isEnabled(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isSeparator</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isSeparator(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isSubMenu</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isSubMenu(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>new() -&gt; <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(Options :: [Option]) -&gt; <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></head>
+      <guard>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{parentMenu, <seealso marker="wxMenu#type-wxMenu">wxMenu:wxMenu()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{id, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{text, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{help, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{kind, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{subMenu, <seealso marker="wxMenu#type-wxMenu">wxMenu:wxMenu()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setBitmap</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setBitmap(This, Bitmap) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+        <subtype><typename>Bitmap</typename><string>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Bitmap</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setHelp</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setHelp(This, Str) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+        <subtype><typename>Str</typename><string>Str = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Str</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setMenu</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setMenu(This, Menu) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+        <subtype><typename>Menu</typename><string>Menu = <seealso marker="wxMenu#type-wxMenu">wxMenu:wxMenu()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Menu</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setSubMenu</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setSubMenu(This, Menu) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+        <subtype><typename>Menu</typename><string>Menu = <seealso marker="wxMenu#type-wxMenu">wxMenu:wxMenu()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Menu</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setText</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setText(This, Str) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxMenuItem">wxMenuItem()</seealso></string></subtype>
+        <subtype><typename>Str</typename><string>Str = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Str</anno>
+  <anno>This</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:28.</timestamp>
+</module>

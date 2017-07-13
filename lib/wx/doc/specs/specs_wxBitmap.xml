@@ -1,0 +1,437 @@
+<module name="wxBitmap">
+<type>
+  <name>wxBitmap</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxBitmap">wxBitmap()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>convertToImage</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>convertToImage(This) -&gt; <seealso marker="wxImage#type-wxImage">wxImage:wxImage()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>copyFromIcon</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>copyFromIcon(This, Icon) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></string></subtype>
+        <subtype><typename>Icon</typename><string>Icon = <seealso marker="wxIcon#type-wxIcon">wxIcon:wxIcon()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Icon</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>create</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>create(This, Width, Height) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>create</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>create(This, Width, Height, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {depth, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxBitmap">wxBitmap()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getDepth</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getDepth(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getHeight</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getHeight(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getMask</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getMask(This) -&gt; <seealso marker="wxMask#type-wxMask">wxMask:wxMask()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getPalette</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getPalette(This) -&gt; <seealso marker="wxPalette#type-wxPalette">wxPalette:wxPalette()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getSubBitmap</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getSubBitmap(This, Rect) -&gt; <seealso marker="#type-wxBitmap">wxBitmap()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></string></subtype>
+        <subtype><typename>Rect</typename><string>Rect = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Rect</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getWidth</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getWidth(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>loadFile</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>loadFile(This, Name) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>loadFile</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>loadFile(This, Name, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {type, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>new() -&gt; <seealso marker="#type-wxBitmap">wxBitmap()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(Filename) -&gt; <seealso marker="#type-wxBitmap">wxBitmap()</seealso></head>
+      <guard>
+        <subtype><typename>Filename</typename><string>Filename = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Filename</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(Image) -&gt; <seealso marker="#type-wxBitmap">wxBitmap()</seealso></head>
+      <guard>
+        <subtype><typename>Image</typename><string>Image = <seealso marker="wxImage#type-wxImage">wxImage:wxImage()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Image</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>new(Width, Height) -&gt; <seealso marker="#type-wxBitmap">wxBitmap()</seealso></head>
+      <guard>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>new(Filename, Height :: [Option]) -&gt; <seealso marker="#type-wxBitmap">wxBitmap()</seealso></head>
+      <guard>
+        <subtype><typename>Filename</typename><string>Filename = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {type, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Filename</anno>
+  <anno>Height</anno>
+  <anno>Option</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>new(Image, Height :: [Option]) -&gt; <seealso marker="#type-wxBitmap">wxBitmap()</seealso></head>
+      <guard>
+        <subtype><typename>Image</typename><string>Image = <seealso marker="wxImage#type-wxImage">wxImage:wxImage()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {depth, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>Image</anno>
+  <anno>Option</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>new(Bits, Width, Height) -&gt; <seealso marker="#type-wxBitmap">wxBitmap()</seealso></head>
+      <guard>
+        <subtype><typename>Bits</typename><string>Bits = binary()</string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Bits</anno>
+  <anno>Height</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>new(Width, Height, Height :: [Option]) -&gt; <seealso marker="#type-wxBitmap">wxBitmap()</seealso></head>
+      <guard>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {depth, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>Option</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>new(Bits, Width, Height, Options :: [Option]) -&gt; <seealso marker="#type-wxBitmap">wxBitmap()</seealso></head>
+      <guard>
+        <subtype><typename>Bits</typename><string>Bits = binary()</string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {depth, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Bits</anno>
+  <anno>Height</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>ok</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>ok(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>saveFile</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>saveFile(This, Name, Type) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Type</typename><string>Type = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>This</anno>
+  <anno>Type</anno>
+</spec>
+<spec>
+  <name>saveFile</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>saveFile(This, Name, Type, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Type</typename><string>Type = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {palette, <seealso marker="wxPalette#type-wxPalette">wxPalette:wxPalette()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+  <anno>Type</anno>
+</spec>
+<spec>
+  <name>setDepth</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setDepth(This, Depth) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></string></subtype>
+        <subtype><typename>Depth</typename><string>Depth = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Depth</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setHeight</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setHeight(This, Height) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></string></subtype>
+        <subtype><typename>Height</typename><string>Height = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setMask</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setMask(This, Mask) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></string></subtype>
+        <subtype><typename>Mask</typename><string>Mask = <seealso marker="wxMask#type-wxMask">wxMask:wxMask()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Mask</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setPalette</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setPalette(This, Palette) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></string></subtype>
+        <subtype><typename>Palette</typename><string>Palette = <seealso marker="wxPalette#type-wxPalette">wxPalette:wxPalette()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Palette</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setWidth</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setWidth(This, Width) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:29:48.</timestamp>
+</module>

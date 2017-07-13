@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxProgressDialog</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxProgressDialog.xml</file></header>
+<module>wxProgressDialog</module>
+<modulesummary>See external documentation: wxProgressDialog.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprogressdialog.html">wxProgressDialog</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxDialog">wxDialog</seealso>
+  <br/><seealso marker="wxTopLevelWindow">wxTopLevelWindow</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxProgressDialog"/>wxProgressDialog()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new(Title, Message) -&gt; <seealso marker="#type-wxProgressDialog">wxProgressDialog()</seealso></name>
+<fsummary>Equivalent to new(Title, Message, []).
+</fsummary>
+<type>
+<v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Message = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="new-2"/>
+<p>Equivalent to <seealso marker="#new-3">new(Title, Message, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Title, Message, Options::[Option]) -&gt; <seealso marker="#type-wxProgressDialog">wxProgressDialog()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Message = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {maximum, integer()} | {parent, <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso>} | {style, integer()}</v></type>
+<desc><marker id="new-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprogressdialog.html#wxprogressdialogwxprogressdialog">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>resume(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxProgressDialog">wxProgressDialog()</seealso></v></type>
+<desc><marker id="resume-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprogressdialog.html#wxprogressdialogresume">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>update(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxProgressDialog">wxProgressDialog()</seealso></v></type>
+<desc><marker id="update-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprogressdialog.html#wxprogressdialogupdate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>update(This, Value) -&gt; boolean()</name>
+<fsummary>Equivalent to update(This, Value, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxProgressDialog">wxProgressDialog()</seealso></v><v>Value = integer()</v></type>
+<desc><marker id="update-2"/>
+<p>Equivalent to <seealso marker="#update-3">update(This, Value, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>update(This, Value, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxProgressDialog">wxProgressDialog()</seealso></v><v>Value = integer()</v><v>Option = {newmsg, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>}</v></type>
+<desc><marker id="update-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprogressdialog.html#wxprogressdialogupdate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxProgressDialog">wxProgressDialog()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

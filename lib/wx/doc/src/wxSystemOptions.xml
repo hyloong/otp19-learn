@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxSystemOptions</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxSystemOptions.xml</file></header>
+<module>wxSystemOptions</module>
+<modulesummary>See external documentation: wxSystemOptions.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsystemoptions.html">wxSystemOptions</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxSystemOptions"/>wxSystemOptions()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>getOption(Name) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="getOption-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsystemoptions.html#wxsystemoptionsgetoption">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getOptionInt(Name) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="getOptionInt-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsystemoptions.html#wxsystemoptionsgetoptionint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasOption(Name) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="hasOption-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsystemoptions.html#wxsystemoptionshasoption">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isFalse(Name) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="isFalse-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsystemoptions.html#wxsystemoptionsisfalse">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setOption(Name, Value) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Value = integer()</v></type>
+<desc><marker id="setOption-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsystemoptions.html#wxsystemoptionssetoption">external documentation</url>.
+  <br/> Also:<br/>
+  setOption(Name, Value) -&gt; 'ok' when<br/>
+  	Name::unicode:chardata(), Value::unicode:chardata().<br/>
+ </p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

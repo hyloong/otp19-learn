@@ -309,7 +309,7 @@ ac_includes_default="\
 # include <unistd.h>
 #endif"
 
-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS ERL_TOP CC CFLAGS STATIC_CFLAGS CFLAG_RUNTIME_LIBRARY_PATH CPP CPPFLAGS CXX CXXFLAGS LD LDFLAGS DED_LD DED_LDFLAGS DED_LD_FLAG_RUNTIME_LIBRARY_PATH LFS_CFLAGS LFS_LDFLAGS LFS_LIBS RANLIB AR GETCONF erl_xcomp_sysroot erl_xcomp_isysroot erl_xcomp_bigendian erl_xcomp_double_middle_endian erl_xcomp_linux_nptl erl_xcomp_linux_usable_sigusrx erl_xcomp_linux_usable_sigaltstack erl_xcomp_poll erl_xcomp_kqueue erl_xcomp_putenv_copy erl_xcomp_reliable_fpe erl_xcomp_getaddrinfo erl_xcomp_gethrvtime_procfs_ioctl erl_xcomp_clock_gettime_cpu_time erl_xcomp_after_morecore_hook erl_xcomp_dlsym_brk_wrappers build build_cpu build_vendor build_os host host_cpu host_vendor host_os CROSS_COMPILING ac_ct_CC EXEEXT OBJEXT ENABLE_ALLOC_TYPE_VARS USE_VM_PROBES OTP_RELEASE SYSTEM_VSN OTP_VERSION STATIC_NIFS STATIC_DRIVERS GCC MIXED_CYGWIN_VC MIXED_MSYS_VC MIXED_VC MIXED_CYGWIN_MINGW MIXED_CYGWIN MIXED_MSYS ac_pt_GETCONF DEBUG_FLAGS DEBUG_CFLAGS WFLAGS WERRORFLAGS EGREP EXTERNAL_WORD_SIZE OPSYS ARCH LIBCARBON RM MKDIR CP ac_ct_RANLIB YACC PERL LN_S ac_ct_AR XSLTPROC FOP XMLLINT INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA INSTALL_DIR HCC HCFLAGS vxworks_reclaim LDFLAG_RUNTIME_LIBRARY_PATH ERLANG_OSTYPE DEXPORT ERTS_INTERNAL_X_LIBS ETHR_X_LIBS ETHR_LIBS ETHR_LIB_NAME ETHR_DEFS ETHR_THR_LIB_BASE ETHR_THR_LIB_BASE_DIR ETHR_X86_SSE2_ASM DIRTY_SCHEDULER_SUPPORT NEW_PURGE_STRATEGY ERTS_BUILD_SMP_EMU EMU_THR_LIB_NAME EMU_THR_X_LIBS EMU_THR_LIBS EMU_THR_DEFS EMU_LOCK_CHECKING THR_LIBS THR_DEFS TERMCAP_LIB Z_LIB SOCKET_LIBS SYSTEMD_DAEMON_LIBS LIBSCTP HAVE_VALGRIND BITS64 LIBRT M4 HIPE_HELPERS HIPE_ENABLED NATIVE_LIBS_ENABLED ERTS_ENABLE_KERNEL_POLL ac_ct_DED_LD DED_EXT DED_SYS_INCLUDE DED_CFLAGS DED_STATIC_CFLAGS DED_THR_DEFS DED_EMU_THR_DEFS EMU_CC DTRACE ac_ct_DTRACE DTRACE_CPP DTRACE_ENABLED DTRACE_ENABLED_2STEP SSL_INCLUDE SSL_INCDIR SSL_LIBDIR SSL_CRYPTO_LIBNAME SSL_SSL_LIBNAME SSL_CC_RUNTIME_LIBRARY_PATH SSL_LD_RUNTIME_LIBRARY_PATH SSL_DED_LD_RUNTIME_LIBRARY_PATH SSL_DYNAMIC_ONLY SSL_LINK_WITH_KERBEROS STATIC_KERBEROS_LIBS SSL_LINK_WITH_ZLIB STATIC_ZLIB_LIBS REGTOOL os_mon_programs CPU_SUP_LIBS JAVAC ac_ct_CXX CC32 CFLAGS32 LIBOBJS LTLIBOBJS'
+ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS ERL_TOP CC CFLAGS STATIC_CFLAGS CFLAG_RUNTIME_LIBRARY_PATH CPP CPPFLAGS CXX CXXFLAGS LD LDFLAGS DED_LD DED_LDFLAGS DED_LD_FLAG_RUNTIME_LIBRARY_PATH LFS_CFLAGS LFS_LDFLAGS LFS_LIBS RANLIB AR GETCONF erl_xcomp_sysroot erl_xcomp_isysroot erl_xcomp_bigendian erl_xcomp_double_middle_endian erl_xcomp_linux_nptl erl_xcomp_linux_usable_sigusrx erl_xcomp_linux_usable_sigaltstack erl_xcomp_poll erl_xcomp_kqueue erl_xcomp_putenv_copy erl_xcomp_reliable_fpe erl_xcomp_getaddrinfo erl_xcomp_gethrvtime_procfs_ioctl erl_xcomp_clock_gettime_cpu_time erl_xcomp_after_morecore_hook erl_xcomp_dlsym_brk_wrappers build build_cpu build_vendor build_os host host_cpu host_vendor host_os CROSS_COMPILING ac_ct_CC EXEEXT OBJEXT ENABLE_ALLOC_TYPE_VARS USE_VM_PROBES OTP_RELEASE SYSTEM_VSN OTP_VERSION STATIC_NIFS STATIC_DRIVERS GCC MIXED_CYGWIN_VC MIXED_MSYS_VC MIXED_VC MIXED_CYGWIN_MINGW MIXED_CYGWIN MIXED_MSYS ac_pt_GETCONF DEBUG_FLAGS DEBUG_CFLAGS WFLAGS WERRORFLAGS EGREP EXTERNAL_WORD_SIZE OPSYS ARCH LIBCARBON RM MKDIR CP ac_ct_RANLIB YACC PERL LN_S ac_ct_AR XSLTPROC FOP XMLLINT INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA INSTALL_DIR HCC HCFLAGS vxworks_reclaim LDFLAG_RUNTIME_LIBRARY_PATH ERLANG_OSTYPE DEXPORT ERTS_INTERNAL_X_LIBS ETHR_X_LIBS ETHR_LIBS ETHR_LIB_NAME ETHR_DEFS ETHR_THR_LIB_BASE ETHR_THR_LIB_BASE_DIR ETHR_X86_SSE2_ASM DIRTY_SCHEDULER_SUPPORT DIRTY_SCHEDULER_TEST ERTS_BUILD_SMP_EMU ERTS_BUILD_PLAIN_EMU FLAVORS TYPES DEFAULT_FLAVOR EMU_THR_LIB_NAME EMU_THR_X_LIBS EMU_THR_LIBS EMU_THR_DEFS EMU_LOCK_CHECKING THR_LIBS THR_DEFS TERMCAP_LIB Z_LIB SOCKET_LIBS SYSTEMD_DAEMON_LIBS LIBSCTP HAVE_VALGRIND BITS64 LIBRT M4 HIPE_HELPERS HIPE_ENABLED NATIVE_LIBS_ENABLED ERTS_ENABLE_KERNEL_POLL ac_ct_DED_LD DED_EXT DED_SYS_INCLUDE DED_CFLAGS DED_STATIC_CFLAGS DED_THR_DEFS DED_EMU_THR_DEFS EMU_CC DTRACE ac_ct_DTRACE DTRACE_CPP DTRACE_ENABLED DTRACE_ENABLED_2STEP SSL_INCLUDE SSL_INCDIR SSL_LIBDIR SSL_FLAGS SSL_CRYPTO_LIBNAME SSL_SSL_LIBNAME SSL_CC_RUNTIME_LIBRARY_PATH SSL_LD_RUNTIME_LIBRARY_PATH SSL_DED_LD_RUNTIME_LIBRARY_PATH SSL_DYNAMIC_ONLY SSL_LINK_WITH_KERBEROS STATIC_KERBEROS_LIBS SSL_LINK_WITH_ZLIB STATIC_ZLIB_LIBS REGTOOL os_mon_programs CPU_SUP_LIBS JAVAC ac_ct_CXX CC32 CFLAGS32 LIBOBJS LTLIBOBJS'
 ac_subst_files=''
 
 # Initialize some variables set by options.
@@ -977,10 +977,13 @@ Optional Features:
   --disable-threads       disable async thread support
   --enable-dirty-schedulers
                           enable dirty scheduler support
-  --enable-new-purge-strategy
-                          enable new code purge strategy
+  --enable-dirty-schedulers-test
+                          enable dirty scheduler test (for debugging purposes)
   --enable-smp-support    enable smp support
   --disable-smp-support   disable smp support
+  --enable-plain-emulator enable plain emulator
+  --disable-plain-emulator
+                          disable plain emulator
   --disable-smp-require-native-atomics
                           disable the SMP requirement of a native atomic
                           implementation
@@ -1042,6 +1045,8 @@ Optional Features:
                           Force usage of gettimeofday() for OS system time
   --disable-dynamic-ssl-lib
                           disable using dynamic openssl libraries
+  --enable-fips           enable OpenSSL FIPS mode support
+  --disable-fips          disable OpenSSL FIPS mode support (default)
   --enable-sanitizers[=comma-separated list of sanitizers]
                           Default=address,undefined
 
@@ -2896,7 +2901,6 @@ if test "${enable_bootstrap_only+set}" = set; then
 	enable_hipe=no
 	enable_sctp=no
         enable_dirty_schedulers=no
-        enable_new_purge=no
   fi
 
 fi;
@@ -2923,15 +2927,15 @@ else
   enable_dirty_schedulers=default
 fi;
 
-# Check whether --enable-new-purge-strategy or --disable-new-purge-strategy was given.
-if test "${enable_new_purge_strategy+set}" = set; then
-  enableval="$enable_new_purge_strategy"
+# Check whether --enable-dirty-schedulers-test or --disable-dirty-schedulers-test was given.
+if test "${enable_dirty_schedulers_test+set}" = set; then
+  enableval="$enable_dirty_schedulers_test"
    case "$enableval" in
-    no) enable_new_purge=no ;;
-    *)  enable_new_purge=yes ;;
+    yes)  enable_dirty_schedulers_test=yes ;;
+    *) enable_dirty_schedulers_test=no ;;
   esac
 else
-  enable_new_purge=default
+  enable_dirty_schedulers_test=no
 fi;
 
 # Check whether --enable-smp-support or --disable-smp-support was given.
@@ -2943,6 +2947,17 @@ if test "${enable_smp_support+set}" = set; then
   esac
 else
   enable_smp_support=unknown
+fi;
+
+# Check whether --enable-plain-emulator or --disable-plain-emulator was given.
+if test "${enable_plain_emulator+set}" = set; then
+  enableval="$enable_plain_emulator"
+   case "$enableval" in
+    no) enable_plain_emulator=no ;;
+    *)  enable_plain_emulator=yes ;;
+  esac
+else
+  enable_plain_emulator=unknown
 fi;
 
 # Check whether --enable-smp-require-native-atomics or --disable-smp-require-native-atomics was given.
@@ -3251,7 +3266,6 @@ if test X${enable_m64_build} = Xyes; then
 else
 	if test X${enable_m32_build} = Xyes;
 	then
-		enable_hipe=no;
 		case $CFLAGS in
 		    *-m32*)
 			    ;;
@@ -4523,6 +4537,66 @@ echo "${ECHO_T}no" >&6
     fi
 
 
+    echo "$as_me:$LINENO: checking if we can add -Werror=undef to WERRORFLAGS (via CFLAGS)" >&5
+echo $ECHO_N "checking if we can add -Werror=undef to WERRORFLAGS (via CFLAGS)... $ECHO_C" >&6
+    saved_CFLAGS=$CFLAGS;
+    CFLAGS="-Werror=undef $WERRORFLAGS";
+    cat >conftest.$ac_ext <<_ACEOF
+/* confdefs.h.  */
+_ACEOF
+cat confdefs.h >>conftest.$ac_ext
+cat >>conftest.$ac_ext <<_ACEOF
+/* end confdefs.h.  */
+
+int
+main ()
+{
+return 0;
+  ;
+  return 0;
+}
+_ACEOF
+rm -f conftest.$ac_objext
+if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
+  (eval $ac_compile) 2>conftest.er1
+  ac_status=$?
+  grep -v '^ *+' conftest.er1 >conftest.err
+  rm -f conftest.er1
+  cat conftest.err >&5
+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+  (exit $ac_status); } &&
+	 { ac_try='test -z "$ac_c_werror_flag"
+			 || test ! -s conftest.err'
+  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+  (eval $ac_try) 2>&5
+  ac_status=$?
+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+  (exit $ac_status); }; } &&
+	 { ac_try='test -s conftest.$ac_objext'
+  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+  (eval $ac_try) 2>&5
+  ac_status=$?
+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+  (exit $ac_status); }; }; then
+  can_enable_flag=true
+else
+  echo "$as_me: failed program was:" >&5
+sed 's/^/| /' conftest.$ac_ext >&5
+
+can_enable_flag=false
+fi
+rm -f conftest.err conftest.$ac_objext conftest.$ac_ext
+    CFLAGS=$saved_CFLAGS;
+    if test "X$can_enable_flag" = "Xtrue"; then
+        echo "$as_me:$LINENO: result: yes" >&5
+echo "${ECHO_T}yes" >&6
+        WERRORFLAGS="-Werror=undef $WERRORFLAGS"
+    else
+        echo "$as_me:$LINENO: result: no" >&5
+echo "${ECHO_T}no" >&6
+    fi
+
+
   # until the emulator can handle this, I suggest we turn it off!
   #WFLAGS="-Wall -Wshadow -Wcast-qual -Wmissing-declarations"
   WFLAGS="-Wall -Wstrict-prototypes"
@@ -5546,7 +5620,7 @@ case $chk_arch_ in
     powerpc)	ARCH=ppc;;
     ppc)	ARCH=ppc;;
     ppc64)	ARCH=ppc64;;
-    ppc64le)	ARCH=ppc64;;
+    ppc64le)	ARCH=ppc64le;;
     "Power Macintosh")	ARCH=ppc;;
     armv5b)	ARCH=arm;;
     armv5teb)	ARCH=arm;;
@@ -5563,11 +5637,6 @@ esac
 echo "$as_me:$LINENO: checking whether compilation mode forces ARCH adjustment" >&5
 echo $ECHO_N "checking whether compilation mode forces ARCH adjustment... $ECHO_C" >&6
 case "$ARCH-$ac_cv_sizeof_void_p" in
-i386-8)
-	echo "$as_me:$LINENO: result: yes: adjusting ARCH=x86 to ARCH=amd64" >&5
-echo "${ECHO_T}yes: adjusting ARCH=x86 to ARCH=amd64" >&6
-	ARCH=amd64
-	;;
 x86-8)
 	echo "$as_me:$LINENO: result: yes: adjusting ARCH=x86 to ARCH=amd64" >&5
 echo "${ECHO_T}yes: adjusting ARCH=x86 to ARCH=amd64" >&6
@@ -5592,6 +5661,16 @@ ppc64-4)
 	echo "$as_me:$LINENO: result: yes: adjusting ARCH=ppc64 to ARCH=ppc" >&5
 echo "${ECHO_T}yes: adjusting ARCH=ppc64 to ARCH=ppc" >&6
 	ARCH=ppc
+	;;
+ppc-8)
+	echo "$as_me:$LINENO: result: yes: adjusting ARCH=ppc to ARCH=ppc64" >&5
+echo "${ECHO_T}yes: adjusting ARCH=ppc to ARCH=ppc64" >&6
+	ARCH=ppc64
+	;;
+arm-8)
+	echo "$as_me:$LINENO: result: yes: adjusting ARCH=arm to ARCH=noarch" >&5
+echo "${ECHO_T}yes: adjusting ARCH=arm to ARCH=noarch" >&6
+	ARCH=noarch
 	;;
 *)
 	echo "$as_me:$LINENO: result: no" >&5
@@ -21661,7 +21740,8 @@ else
     found_threads=yes
 fi
 
-
+FLAVORS=
+TYPES=opt
 ERTS_BUILD_SMP_EMU=$enable_smp_support
 echo "$as_me:$LINENO: checking whether an emulator with smp support should be built" >&5
 echo $ECHO_N "checking whether an emulator with smp support should be built... $ECHO_C" >&6
@@ -21768,8 +21848,7 @@ case $ERTS_BUILD_SMP_EMU-$enable_dirty_schedulers in
      yes-yes)
 	DIRTY_SCHEDULER_SUPPORT=yes;;
      yes-default)
-	## Maybe yes for OTP 19...
-	DIRTY_SCHEDULER_SUPPORT=no;;
+	DIRTY_SCHEDULER_SUPPORT=yes;;
      no-default)
 	DIRTY_SCHEDULER_SUPPORT=no;;
      no-yes)
@@ -21783,38 +21862,26 @@ echo "$as_me:$LINENO: result: $DIRTY_SCHEDULER_SUPPORT" >&5
 echo "${ECHO_T}$DIRTY_SCHEDULER_SUPPORT" >&6
 
 
-echo "$as_me:$LINENO: checking whether the new code purge strategy should be enabled" >&5
-echo $ECHO_N "checking whether the new code purge strategy should be enabled... $ECHO_C" >&6
-case $enable_new_purge-$enable_dirty_schedulers in
-     yes-*)
-	echo "$as_me:$LINENO: result: yes" >&5
-echo "${ECHO_T}yes" >&6
-	enable_new_purge=yes;;
-     default-yes)
-	echo "$as_me:$LINENO: result: yes; forced by dirty scheduler support" >&5
-echo "${ECHO_T}yes; forced by dirty scheduler support" >&6
-	enable_new_purge=yes;;
-     no-yes)
-	{ { echo "$as_me:$LINENO: error: Dirty schedulers enabled, but new code purge strategy disabled" >&5
-echo "$as_me: error: Dirty schedulers enabled, but new code purge strategy disabled" >&2;}
-   { (exit 1); exit 1; }; };;
-     *)
-	echo "$as_me:$LINENO: result: no" >&5
-echo "${ECHO_T}no" >&6
-	enable_new_purge=no;;
-esac
+DIRTY_SCHEDULER_TEST=$enable_dirty_schedulers_test
+test $DIRTY_SCHEDULER_SUPPORT = yes || DIRTY_SCHEDULER_TEST=no
 
-if test $enable_new_purge = yes; then
+test $DIRTY_SCHEDULER_TEST != yes || {
+    test -f "$ERL_TOP/erts/CONF_INFO" || echo "" > "$ERL_TOP/erts/CONF_INFO"
+    cat >> $ERL_TOP/erts/CONF_INFO <<EOF
 
-cat >>confdefs.h <<\_ACEOF
-#define ERTS_NEW_PURGE_STRATEGY 1
-_ACEOF
+                 WARNING:
+                   Dirty Scheduler Test has been enabled. This
+                   feature is for debugging purposes only.
+                   Poor performance as well as strange system
+                   characteristics is expected!
 
-fi
-NEW_PURGE_STRATEGY=$enable_new_purge
-
+EOF
+}
 
 if test $ERTS_BUILD_SMP_EMU = yes; then
+
+        DEFAULT_FLAVOR=smp
+        FLAVORS="$FLAVORS smp"
 
 	if test $found_threads = no; then
 	    { { echo "$as_me:$LINENO: error: cannot build smp enabled emulator since no thread library was found" >&5
@@ -21900,6 +21967,79 @@ EOF
 
 	enable_threads=force
 fi
+
+
+
+ERTS_BUILD_PLAIN_EMU=$enable_plain_emulator
+echo "$as_me:$LINENO: checking whether an emulator without smp support should be built" >&5
+echo $ECHO_N "checking whether an emulator without smp support should be built... $ECHO_C" >&6
+case $ERTS_BUILD_PLAIN_EMU in
+    yes)
+	echo "$as_me:$LINENO: result: yes; enabled by user" >&5
+echo "${ECHO_T}yes; enabled by user" >&6
+	;;
+    no)
+	echo "$as_me:$LINENO: result: no; disabled by user" >&5
+echo "${ECHO_T}no; disabled by user" >&6
+	;;
+    unknown)
+        case "$enable_threads-$ERTS_BUILD_SMP_EMU" in
+            no-*)
+                ERTS_BUILD_PLAIN_EMU=yes
+                echo "$as_me:$LINENO: result: yes" >&5
+echo "${ECHO_T}yes" >&6
+                ;;
+            *-no)
+                ERTS_BUILD_PLAIN_EMU=yes
+                echo "$as_me:$LINENO: result: yes; enabled as smp emulator was disabled" >&5
+echo "${ECHO_T}yes; enabled as smp emulator was disabled" >&6
+                ;;
+            *)
+                ERTS_BUILD_PLAIN_EMU=no
+                echo "$as_me:$LINENO: result: no" >&5
+echo "${ECHO_T}no" >&6
+                ;;
+        esac
+        ;;
+esac
+
+case $ERTS_BUILD_PLAIN_EMU in
+     yes)
+
+cat >>confdefs.h <<\_ACEOF
+#define ERTS_HAVE_PLAIN_EMU 1
+_ACEOF
+
+        FLAVORS="$FLAVORS plain"
+        test -f "$ERL_TOP/erts/CONF_INFO" || echo "" > "$ERL_TOP/erts/CONF_INFO"
+        cat >> $ERL_TOP/erts/CONF_INFO <<EOF
+
+            The PLAIN aka NON-SMP emulator has been enabled.
+            This is a DEPRECATED feature scheduled for removal
+            in a future major release.
+
+EOF
+        ;;
+     no)
+        ;;
+esac
+
+
+
+
+
+case "$ERTS_BUILD_PLAIN_EMU-$ERTS_BUILD_SMP_EMU" in
+     no-no)
+          { { echo "$as_me:$LINENO: error: both smp and non-smp emulators have been disabled, one of them has to be enabled" >&5
+echo "$as_me: error: both smp and non-smp emulators have been disabled, one of them has to be enabled" >&2;}
+   { (exit 1); exit 1; }; }
+          ;;
+     *-no)
+          DEFAULT_FLAVOR=plain
+          ;;
+        *)
+          ;;
+esac
 
 
 
@@ -22411,7 +22551,7 @@ echo $ECHO_N "checking whether lock counters should be enabled... $ECHO_C" >&6
 	echo "$as_me:$LINENO: result: $enable_lock_count" >&5
 echo "${ECHO_T}$enable_lock_count" >&6
 	if test "x$enable_lock_count" != "xno"; then
-	    EMU_THR_DEFS="$EMU_THR_DEFS -DERTS_ENABLE_LOCK_COUNT"
+	    TYPES="$TYPES lcnt"
 	fi
 
 	case $host_os in
@@ -22728,6 +22868,11 @@ fi;
 Z_LIB=
 
 if test "x$enable_builtin_zlib" = "xyes"; then
+
+cat >>confdefs.h <<\_ACEOF
+#define HAVE_ZLIB_INFLATEGETDICTIONARY 1
+_ACEOF
+
   { echo "$as_me:$LINENO: Using our own built-in zlib source" >&5
 echo "$as_me: Using our own built-in zlib source" >&6;}
 else
@@ -22805,6 +22950,139 @@ fi
 rm -f conftest.err conftest.$ac_objext \
       conftest$ac_exeext conftest.$ac_ext
 LIBS=$zlib_save_LIBS
+
+echo "$as_me:$LINENO: checking for zlib inflateGetDictionary presence" >&5
+echo $ECHO_N "checking for zlib inflateGetDictionary presence... $ECHO_C" >&6
+echo "$as_me:$LINENO: checking for library containing inflateGetDictionary" >&5
+echo $ECHO_N "checking for library containing inflateGetDictionary... $ECHO_C" >&6
+if test "${ac_cv_search_inflateGetDictionary+set}" = set; then
+  echo $ECHO_N "(cached) $ECHO_C" >&6
+else
+  ac_func_search_save_LIBS=$LIBS
+ac_cv_search_inflateGetDictionary=no
+cat >conftest.$ac_ext <<_ACEOF
+/* confdefs.h.  */
+_ACEOF
+cat confdefs.h >>conftest.$ac_ext
+cat >>conftest.$ac_ext <<_ACEOF
+/* end confdefs.h.  */
+
+/* Override any gcc2 internal prototype to avoid an error.  */
+#ifdef __cplusplus
+extern "C"
+#endif
+/* We use char because int might match the return type of a gcc2
+   builtin and then its argument prototype would still apply.  */
+char inflateGetDictionary ();
+int
+main ()
+{
+inflateGetDictionary ();
+  ;
+  return 0;
+}
+_ACEOF
+rm -f conftest.$ac_objext conftest$ac_exeext
+if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
+  (eval $ac_link) 2>conftest.er1
+  ac_status=$?
+  grep -v '^ *+' conftest.er1 >conftest.err
+  rm -f conftest.er1
+  cat conftest.err >&5
+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+  (exit $ac_status); } &&
+	 { ac_try='test -z "$ac_c_werror_flag"
+			 || test ! -s conftest.err'
+  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+  (eval $ac_try) 2>&5
+  ac_status=$?
+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+  (exit $ac_status); }; } &&
+	 { ac_try='test -s conftest$ac_exeext'
+  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+  (eval $ac_try) 2>&5
+  ac_status=$?
+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+  (exit $ac_status); }; }; then
+  ac_cv_search_inflateGetDictionary="none required"
+else
+  echo "$as_me: failed program was:" >&5
+sed 's/^/| /' conftest.$ac_ext >&5
+
+fi
+rm -f conftest.err conftest.$ac_objext \
+      conftest$ac_exeext conftest.$ac_ext
+if test "$ac_cv_search_inflateGetDictionary" = no; then
+  for ac_lib in z; do
+    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
+    cat >conftest.$ac_ext <<_ACEOF
+/* confdefs.h.  */
+_ACEOF
+cat confdefs.h >>conftest.$ac_ext
+cat >>conftest.$ac_ext <<_ACEOF
+/* end confdefs.h.  */
+
+/* Override any gcc2 internal prototype to avoid an error.  */
+#ifdef __cplusplus
+extern "C"
+#endif
+/* We use char because int might match the return type of a gcc2
+   builtin and then its argument prototype would still apply.  */
+char inflateGetDictionary ();
+int
+main ()
+{
+inflateGetDictionary ();
+  ;
+  return 0;
+}
+_ACEOF
+rm -f conftest.$ac_objext conftest$ac_exeext
+if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
+  (eval $ac_link) 2>conftest.er1
+  ac_status=$?
+  grep -v '^ *+' conftest.er1 >conftest.err
+  rm -f conftest.er1
+  cat conftest.err >&5
+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+  (exit $ac_status); } &&
+	 { ac_try='test -z "$ac_c_werror_flag"
+			 || test ! -s conftest.err'
+  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+  (eval $ac_try) 2>&5
+  ac_status=$?
+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+  (exit $ac_status); }; } &&
+	 { ac_try='test -s conftest$ac_exeext'
+  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+  (eval $ac_try) 2>&5
+  ac_status=$?
+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+  (exit $ac_status); }; }; then
+  ac_cv_search_inflateGetDictionary="-l$ac_lib"
+break
+else
+  echo "$as_me: failed program was:" >&5
+sed 's/^/| /' conftest.$ac_ext >&5
+
+fi
+rm -f conftest.err conftest.$ac_objext \
+      conftest$ac_exeext conftest.$ac_ext
+  done
+fi
+LIBS=$ac_func_search_save_LIBS
+fi
+echo "$as_me:$LINENO: result: $ac_cv_search_inflateGetDictionary" >&5
+echo "${ECHO_T}$ac_cv_search_inflateGetDictionary" >&6
+if test "$ac_cv_search_inflateGetDictionary" != no; then
+  test "$ac_cv_search_inflateGetDictionary" = "none required" || LIBS="$ac_cv_search_inflateGetDictionary $LIBS"
+
+cat >>confdefs.h <<\_ACEOF
+#define HAVE_ZLIB_INFLATEGETDICTIONARY 1
+_ACEOF
+
+fi
+
 fi
 
 
@@ -34833,19 +35111,50 @@ echo "${ECHO_T}$ac_cv_c_bigendian" >&6
 case $ac_cv_c_bigendian in
   yes)
 
+
 cat >>confdefs.h <<\_ACEOF
 #define WORDS_BIGENDIAN 1
 _ACEOF
- ;;
+
+
+cat >>confdefs.h <<\_ACEOF
+#define ERTS_ENDIANNESS 1
+_ACEOF
+
+	 ;;
   no)
-     ;;
+
+
+cat >>confdefs.h <<\_ACEOF
+#define ERTS_ENDIANNESS -1
+_ACEOF
+
+	 ;;
   *)
-    { { echo "$as_me:$LINENO: error: unknown endianness
-presetting ac_cv_c_bigendian=no (or yes) will help" >&5
-echo "$as_me: error: unknown endianness
-presetting ac_cv_c_bigendian=no (or yes) will help" >&2;}
-   { (exit 1); exit 1; }; } ;;
+
+	  case "$erl_xcomp_bigendian" in
+	    yes)
+
+cat >>confdefs.h <<\_ACEOF
+#define ERTS_ENDIANNESS 1
+_ACEOF
+;;
+	    no)
+
+cat >>confdefs.h <<\_ACEOF
+#define ERTS_ENDIANNESS -1
+_ACEOF
+;;
+	    *)
+
+cat >>confdefs.h <<\_ACEOF
+#define ERTS_ENDIANNESS 0
+_ACEOF
+;;
+	  esac
+	 ;;
 esac
+
 
 echo "$as_me:$LINENO: checking whether double word ordering is middle-endian" >&5
 echo $ECHO_N "checking whether double word ordering is middle-endian... $ECHO_C" >&6
@@ -36203,9 +36512,10 @@ done
 
 
 
+
 for ac_func in ieee_handler fpsetmask finite isnan isinf res_gethostbyname dlopen \
 		pread pwrite memmove strerror strerror_r strncasecmp \
-		gethrtime localtime_r gmtime_r inet_pton \
+		gethrtime localtime_r gmtime_r inet_pton mprotect \
 		mmap mremap memcpy mallopt sbrk _sbrk __sbrk brk _brk __brk \
 		flockfile fstat strlcpy strlcat setsid posix2time time2posix \
 		setlocale nl_langinfo poll mlockall ppoll
@@ -44257,8 +44567,9 @@ fi
 
 
 
-if test X${enable_hipe} != Xno && test X$ac_cv_sizeof_void_p != X4; then
-   echo "$as_me:$LINENO: checking whether MAP_FIXED is declared" >&5
+if test X${enable_hipe} != Xno; then
+    if test X$ac_cv_sizeof_void_p != X4 && test X$ARCH = Xamd64; then
+        	echo "$as_me:$LINENO: checking whether MAP_FIXED is declared" >&5
 echo $ECHO_N "checking whether MAP_FIXED is declared... $ECHO_C" >&6
 if test "${ac_cv_have_decl_MAP_FIXED+set}" = set; then
   echo $ECHO_N "(cached) $ECHO_C" >&6
@@ -44402,17 +44713,30 @@ _ACEOF
 fi
 
 
-   if test X$ac_cv_have_decl_MAP_FIXED != Xyes || test X$ac_cv_have_decl_MAP_NORESERVE != Xyes; then
-      if test X${enable_hipe} = Xyes; then
-	 { { echo "$as_me:$LINENO: error: HiPE on 64-bit needs MAP_FIXED and MAP_NORESERVE flags for mmap()" >&5
-echo "$as_me: error: HiPE on 64-bit needs MAP_FIXED and MAP_NORESERVE flags for mmap()" >&2;}
+	if test X$ac_cv_have_decl_MAP_FIXED != Xyes || test X$ac_cv_have_decl_MAP_NORESERVE != Xyes; then
+	    if test X${enable_hipe} = Xyes; then
+	        { { echo "$as_me:$LINENO: error: HiPE on x86_64 needs MAP_FIXED and MAP_NORESERVE flags for mmap()" >&5
+echo "$as_me: error: HiPE on x86_64 needs MAP_FIXED and MAP_NORESERVE flags for mmap()" >&2;}
    { (exit 1); exit 1; }; }
-      else
-	 enable_hipe=no
-	 { echo "$as_me:$LINENO: WARNING: Disable HiPE due to lack of MAP_FIXED and MAP_NORESERVE flags for mmap()" >&5
+	    else
+	        enable_hipe=no
+	        { echo "$as_me:$LINENO: WARNING: Disable HiPE due to lack of MAP_FIXED and MAP_NORESERVE flags for mmap()" >&5
 echo "$as_me: WARNING: Disable HiPE due to lack of MAP_FIXED and MAP_NORESERVE flags for mmap()" >&2;}
-      fi
-   fi
+	    fi
+        fi
+    else
+                if test X$ac_cv_func_mprotect != Xyes; then
+            if test X${enable_hipe} = Xyes; then
+	        { { echo "$as_me:$LINENO: error: HiPE needs mprotect() on $ARCH" >&5
+echo "$as_me: error: HiPE needs mprotect() on $ARCH" >&2;}
+   { (exit 1); exit 1; }; }
+            else
+	        enable_hipe=no
+	        { echo "$as_me:$LINENO: WARNING: Disable HiPE due to lack of mprotect()" >&5
+echo "$as_me: WARNING: Disable HiPE due to lack of mprotect()" >&2;}
+            fi
+        fi
+    fi
 fi
 
 if test "$cross_compiling" != "yes" && test X${enable_hipe} != Xno; then
@@ -44522,15 +44846,60 @@ else
   echo "$as_me: failed program was:" >&5
 sed 's/^/| /' conftest.$ac_ext >&5
 
-{ echo "$as_me:$LINENO: WARNING: Linked does not accept option -no-pie" >&5
-echo "$as_me: WARNING: Linked does not accept option -no-pie" >&2;}
-			 LDFLAGS=$saved_LDFLAGS
+LDFLAGS="-fno-PIE $saved_LDFLAGS"
+			 cat >conftest.$ac_ext <<_ACEOF
+/* confdefs.h.  */
+_ACEOF
+cat confdefs.h >>conftest.$ac_ext
+cat >>conftest.$ac_ext <<_ACEOF
+/* end confdefs.h.  */
+
+int
+main ()
+{
+
+  ;
+  return 0;
+}
+_ACEOF
+rm -f conftest.$ac_objext conftest$ac_exeext
+if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
+  (eval $ac_link) 2>conftest.er1
+  ac_status=$?
+  grep -v '^ *+' conftest.er1 >conftest.err
+  rm -f conftest.er1
+  cat conftest.err >&5
+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+  (exit $ac_status); } &&
+	 { ac_try='test -z "$ac_c_werror_flag"
+			 || test ! -s conftest.err'
+  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+  (eval $ac_try) 2>&5
+  ac_status=$?
+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+  (exit $ac_status); }; } &&
+	 { ac_try='test -s conftest$ac_exeext'
+  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+  (eval $ac_try) 2>&5
+  ac_status=$?
+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+  (exit $ac_status); }; }; then
+  :
+else
+  echo "$as_me: failed program was:" >&5
+sed 's/^/| /' conftest.$ac_ext >&5
+
+{ echo "$as_me:$LINENO: WARNING: Linked does not accept option -no-pie nor -fno-PIE" >&5
+echo "$as_me: WARNING: Linked does not accept option -no-pie nor -fno-PIE" >&2;}
+			     LDFLAGS=$saved_LDFLAGS
+fi
+rm -f conftest.err conftest.$ac_objext \
+      conftest$ac_exeext conftest.$ac_ext
 fi
 rm -f conftest.err conftest.$ac_objext \
       conftest$ac_exeext conftest.$ac_ext
 fi
 rm -f conftest.err conftest.$ac_objext conftest.$ac_ext
-
 fi
 
 
@@ -45191,14 +45560,9 @@ _ACEOF
 
      HIPE_HELPERS="xmerl syntax_tools edoc"
      ENABLE_ALLOC_TYPE_VARS="$ENABLE_ALLOC_TYPE_VARS hipe"
-     case "$ARCH" in
-	  amd64)
-		# For now exec_alloc is only used for hipe on amd64
-		{ echo "$as_me:$LINENO: Enable exec_alloc for hipe code allocation" >&5
+     { echo "$as_me:$LINENO: Enable exec_alloc for hipe code allocation" >&5
 echo "$as_me: Enable exec_alloc for hipe code allocation" >&6;}
-		ENABLE_ALLOC_TYPE_VARS="$ENABLE_ALLOC_TYPE_VARS exec_alloc"
-		;;
-     esac
+     ENABLE_ALLOC_TYPE_VARS="$ENABLE_ALLOC_TYPE_VARS exec_alloc"
   fi
 fi
 
@@ -46801,6 +47165,7 @@ fi
 
 
 
+
 std_ssl_locations="/usr/local /usr/sfw /usr /opt/local /usr/pkg /usr/local/openssl /usr/lib/openssl /usr/openssl /usr/local/ssl /usr/lib/ssl /usr/ssl /"
 
 
@@ -47102,8 +47467,8 @@ fi
     fi
 
 
-    echo "$as_me:$LINENO: checking for OpenSSL >= 0.9.7 in standard locations" >&5
-echo $ECHO_N "checking for OpenSSL >= 0.9.7 in standard locations... $ECHO_C" >&6
+    echo "$as_me:$LINENO: checking for OpenSSL >= 0.9.8c in standard locations" >&5
+echo $ECHO_N "checking for OpenSSL >= 0.9.8c in standard locations... $ECHO_C" >&6
     for rdir in $extra_dir $std_win_ssl_locations $std_ssl_locations; do
 	dir="$erl_xcomp_sysroot$rdir"
 	if test -f "$erl_xcomp_isysroot$rdir/include/openssl/opensslv.h"; then
@@ -47185,7 +47550,7 @@ cat >>conftest.$ac_ext <<_ACEOF
 /* end confdefs.h.  */
 
 #include <openssl/opensslv.h>
-#if OPENSSL_VERSION_NUMBER >= 0x0090700fL
+#if OPENSSL_VERSION_NUMBER >= 0x0090803fL
 yes
 #endif
 
@@ -47234,8 +47599,7 @@ int
 main ()
 {
 
- 					HMAC_CTX hc;
- 					HMAC_CTX_init(&hc);
+					HMAC(0, 0, 0, 0, 0, 0, 0);
 
   ;
   return 0;
@@ -47326,8 +47690,7 @@ int
 main ()
 {
 
- 			HMAC_CTX hc;
- 			HMAC_CTX_init(&hc);
+			HMAC(0, 0, 0, 0, 0, 0, 0);
 
   ;
   return 0;
@@ -47472,7 +47835,7 @@ echo "$as_me: error: Invalid path to option --with-ssl-incl=PATH" >&2;}
 esac
 
 if test "x$SSL_APP" != "x" ; then
-        echo "$as_me:$LINENO: checking for OpenSSL kerberos 5 support" >&5
+            echo "$as_me:$LINENO: checking for OpenSSL kerberos 5 support" >&5
 echo $ECHO_N "checking for OpenSSL kerberos 5 support... $ECHO_C" >&6
     old_CPPFLAGS=$CPPFLAGS
     CPPFLAGS=$SSL_INCLUDE
@@ -47483,8 +47846,9 @@ cat confdefs.h >>conftest.$ac_ext
 cat >>conftest.$ac_ext <<_ACEOF
 /* end confdefs.h.  */
 
+#include <openssl/opensslv.h>
 #include <openssl/opensslconf.h>
-#ifndef OPENSSL_NO_KRB5
+#if OPENSSL_VERSION_NUMBER < 0x1010000fL && !defined(OPENSSL_NO_KRB5)
 yes
 #endif
 
@@ -47662,8 +48026,7 @@ int
 main ()
 {
 
-                         HMAC_CTX hc;
-                         HMAC_CTX_init(&hc);
+			 HMAC(0, 0, 0, 0, 0, 0, 0);
 
   ;
   return 0;
@@ -47736,6 +48099,127 @@ no)   # Use no ssl runtime library path
 
 esac
 
+
+# Check whether --enable-fips or --disable-fips was given.
+if test "${enable_fips+set}" = set; then
+  enableval="$enable_fips"
+   case "$enableval" in
+    yes) enable_fips_support=yes ;;
+    *)   enable_fips_support=no ;;
+  esac
+else
+  enable_fips_support=no
+fi;
+
+if test "x$enable_fips_support" = "xyes" && test "$CRYPTO_APP" != ""; then
+   saveCFLAGS="$CFLAGS"
+   saveLDFLAGS="$LDFLAGS"
+   saveLIBS="$LIBS"
+   CFLAGS="$CFLAGS $SSL_INCLUDE"
+   LDFLAGS="$LDFLAGS $SSL_LD_RUNTIME_LIBRARY_PATH -L$SSL_LIBDIR"
+   LIBS="-lcrypto"
+   echo "$as_me:$LINENO: checking for FIPS_mode_set" >&5
+echo $ECHO_N "checking for FIPS_mode_set... $ECHO_C" >&6
+if test "${ac_cv_func_FIPS_mode_set+set}" = set; then
+  echo $ECHO_N "(cached) $ECHO_C" >&6
+else
+  cat >conftest.$ac_ext <<_ACEOF
+/* confdefs.h.  */
+_ACEOF
+cat confdefs.h >>conftest.$ac_ext
+cat >>conftest.$ac_ext <<_ACEOF
+/* end confdefs.h.  */
+/* Define FIPS_mode_set to an innocuous variant, in case <limits.h> declares FIPS_mode_set.
+   For example, HP-UX 11i <limits.h> declares gettimeofday.  */
+#define FIPS_mode_set innocuous_FIPS_mode_set
+
+/* System header to define __stub macros and hopefully few prototypes,
+    which can conflict with char FIPS_mode_set (); below.
+    Prefer <limits.h> to <assert.h> if __STDC__ is defined, since
+    <limits.h> exists even on freestanding compilers.  */
+
+#ifdef __STDC__
+# include <limits.h>
+#else
+# include <assert.h>
+#endif
+
+#undef FIPS_mode_set
+
+/* Override any gcc2 internal prototype to avoid an error.  */
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+/* We use char because int might match the return type of a gcc2
+   builtin and then its argument prototype would still apply.  */
+char FIPS_mode_set ();
+/* The GNU C library defines this for functions which it implements
+    to always fail with ENOSYS.  Some functions are actually named
+    something starting with __ and the normal name is an alias.  */
+#if defined (__stub_FIPS_mode_set) || defined (__stub___FIPS_mode_set)
+choke me
+#else
+char (*f) () = FIPS_mode_set;
+#endif
+#ifdef __cplusplus
+}
+#endif
+
+int
+main ()
+{
+return f != FIPS_mode_set;
+  ;
+  return 0;
+}
+_ACEOF
+rm -f conftest.$ac_objext conftest$ac_exeext
+if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
+  (eval $ac_link) 2>conftest.er1
+  ac_status=$?
+  grep -v '^ *+' conftest.er1 >conftest.err
+  rm -f conftest.er1
+  cat conftest.err >&5
+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+  (exit $ac_status); } &&
+	 { ac_try='test -z "$ac_c_werror_flag"
+			 || test ! -s conftest.err'
+  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+  (eval $ac_try) 2>&5
+  ac_status=$?
+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+  (exit $ac_status); }; } &&
+	 { ac_try='test -s conftest$ac_exeext'
+  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+  (eval $ac_try) 2>&5
+  ac_status=$?
+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+  (exit $ac_status); }; }; then
+  ac_cv_func_FIPS_mode_set=yes
+else
+  echo "$as_me: failed program was:" >&5
+sed 's/^/| /' conftest.$ac_ext >&5
+
+ac_cv_func_FIPS_mode_set=no
+fi
+rm -f conftest.err conftest.$ac_objext \
+      conftest$ac_exeext conftest.$ac_ext
+fi
+echo "$as_me:$LINENO: result: $ac_cv_func_FIPS_mode_set" >&5
+echo "${ECHO_T}$ac_cv_func_FIPS_mode_set" >&6
+if test $ac_cv_func_FIPS_mode_set = yes; then
+  SSL_FLAGS="-DFIPS_SUPPORT"
+else
+  SSL_FLAGS=
+fi
+
+   CFLAGS="$saveCFLAGS"
+   LDFLAGS="$saveLDFLAGS"
+   LIBS="$saveLIBS"
+else
+   SSL_FLAGS=
+fi
 
 #--------------------------------------------------------------------
 # Os mon stuff.
@@ -48298,7 +48782,7 @@ done
 
 
 
-                                                                                          ac_config_files="$ac_config_files emulator/$host/Makefile:emulator/Makefile.in epmd/src/$host/Makefile:epmd/src/Makefile.in etc/common/$host/Makefile:etc/common/Makefile.in include/internal/$host/ethread.mk:include/internal/ethread.mk.in include/internal/$host/erts_internal.mk:include/internal/erts_internal.mk.in lib_src/$host/Makefile:lib_src/Makefile.in Makefile:Makefile.in ../make/$host/otp.mk:../make/otp.mk.in ../make/$host/otp_ded.mk:../make/otp_ded.mk.in"
+                                                                                ac_config_files="$ac_config_files emulator/$host/Makefile:emulator/Makefile.in epmd/src/$host/Makefile:epmd/src/Makefile.in etc/common/$host/Makefile:etc/common/Makefile.in include/internal/$host/ethread.mk:include/internal/ethread.mk.in include/internal/$host/erts_internal.mk:include/internal/erts_internal.mk.in lib_src/$host/Makefile:lib_src/Makefile.in ../make/$host/otp.mk:../make/otp.mk.in ../make/$host/otp_ded.mk:../make/otp_ded.mk.in"
 
 
           ac_config_files="$ac_config_files ../make/make_emakefile:../make/make_emakefile.in"
@@ -48838,7 +49322,6 @@ do
   "include/internal/$host/ethread.mk" ) CONFIG_FILES="$CONFIG_FILES include/internal/$host/ethread.mk:include/internal/ethread.mk.in" ;;
   "include/internal/$host/erts_internal.mk" ) CONFIG_FILES="$CONFIG_FILES include/internal/$host/erts_internal.mk:include/internal/erts_internal.mk.in" ;;
   "lib_src/$host/Makefile" ) CONFIG_FILES="$CONFIG_FILES lib_src/$host/Makefile:lib_src/Makefile.in" ;;
-  "Makefile" ) CONFIG_FILES="$CONFIG_FILES Makefile:Makefile.in" ;;
   "../make/$host/otp.mk" ) CONFIG_FILES="$CONFIG_FILES ../make/$host/otp.mk:../make/otp.mk.in" ;;
   "../make/$host/otp_ded.mk" ) CONFIG_FILES="$CONFIG_FILES ../make/$host/otp_ded.mk:../make/otp_ded.mk.in" ;;
   "../make/make_emakefile" ) CONFIG_FILES="$CONFIG_FILES ../make/make_emakefile:../make/make_emakefile.in" ;;
@@ -49037,8 +49520,12 @@ s,@ETHR_THR_LIB_BASE@,$ETHR_THR_LIB_BASE,;t t
 s,@ETHR_THR_LIB_BASE_DIR@,$ETHR_THR_LIB_BASE_DIR,;t t
 s,@ETHR_X86_SSE2_ASM@,$ETHR_X86_SSE2_ASM,;t t
 s,@DIRTY_SCHEDULER_SUPPORT@,$DIRTY_SCHEDULER_SUPPORT,;t t
-s,@NEW_PURGE_STRATEGY@,$NEW_PURGE_STRATEGY,;t t
+s,@DIRTY_SCHEDULER_TEST@,$DIRTY_SCHEDULER_TEST,;t t
 s,@ERTS_BUILD_SMP_EMU@,$ERTS_BUILD_SMP_EMU,;t t
+s,@ERTS_BUILD_PLAIN_EMU@,$ERTS_BUILD_PLAIN_EMU,;t t
+s,@FLAVORS@,$FLAVORS,;t t
+s,@TYPES@,$TYPES,;t t
+s,@DEFAULT_FLAVOR@,$DEFAULT_FLAVOR,;t t
 s,@EMU_THR_LIB_NAME@,$EMU_THR_LIB_NAME,;t t
 s,@EMU_THR_X_LIBS@,$EMU_THR_X_LIBS,;t t
 s,@EMU_THR_LIBS@,$EMU_THR_LIBS,;t t
@@ -49075,6 +49562,7 @@ s,@DTRACE_ENABLED_2STEP@,$DTRACE_ENABLED_2STEP,;t t
 s,@SSL_INCLUDE@,$SSL_INCLUDE,;t t
 s,@SSL_INCDIR@,$SSL_INCDIR,;t t
 s,@SSL_LIBDIR@,$SSL_LIBDIR,;t t
+s,@SSL_FLAGS@,$SSL_FLAGS,;t t
 s,@SSL_CRYPTO_LIBNAME@,$SSL_CRYPTO_LIBNAME,;t t
 s,@SSL_SSL_LIBNAME@,$SSL_SSL_LIBNAME,;t t
 s,@SSL_CC_RUNTIME_LIBRARY_PATH@,$SSL_CC_RUNTIME_LIBRARY_PATH,;t t

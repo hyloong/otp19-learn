@@ -1,0 +1,1415 @@
+<?xml version="1.0"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="cover" margin="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin="0mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="left-page" margin-top="25mm" margin-bottom="15mm" margin-left="20mm" margin-right="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="left-header" extent="10mm"/>
+      <fo:region-after region-name="left-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="right-page" margin-top="25mm" margin-bottom="15mm" margin-left="25mm" margin-right="20mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="right-header" extent="10mm"/>
+      <fo:region-after region-name="right-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:page-sequence-master master-name="document">
+      <fo:repeatable-page-master-alternatives>
+        <fo:conditional-page-master-reference master-reference="left-page" odd-or-even="even"/>
+        <fo:conditional-page-master-reference master-reference="right-page" odd-or-even="odd"/>
+      </fo:repeatable-page-master-alternatives>
+    </fo:page-sequence-master>
+  </fo:layout-master-set>
+  <fo:bookmark-tree>
+    <fo:bookmark internal-destination="cover-page" starting-state="show">
+      <fo:bookmark-title>crypto</fo:bookmark-title>
+      <fo:bookmark internal-destination="idp120000" starting-state="hide">
+        <fo:bookmark-title>Crypto User's Guide</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp498208" starting-state="hide">
+          <fo:bookmark-title>Licenses</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp494688" starting-state="hide">
+            <fo:bookmark-title>OpenSSL License</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp118096" starting-state="hide">
+            <fo:bookmark-title>SSLeay License</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp122032" starting-state="hide">
+          <fo:bookmark-title>FIPS mode</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp434352" starting-state="hide">
+            <fo:bookmark-title>Background</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp419120" starting-state="hide">
+            <fo:bookmark-title>Enabling FIPS mode</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp477296" starting-state="hide">
+            <fo:bookmark-title>Incompatibilities with regular builds</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp417584" starting-state="hide">
+            <fo:bookmark-title>Common caveats</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp554896" starting-state="hide">
+              <fo:bookmark-title>Restrictions on key sizes</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp553312" starting-state="hide">
+              <fo:bookmark-title>Restrictions on elliptic curves</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp548768" starting-state="hide">
+              <fo:bookmark-title>Avoid md5 for hashing</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp95744" starting-state="hide">
+              <fo:bookmark-title>Certificates and encrypted keys</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp445536" starting-state="hide">
+              <fo:bookmark-title>SNMP v3 limitations</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp485248" starting-state="hide">
+              <fo:bookmark-title>TLS 1.2 is required</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+      <fo:bookmark internal-destination="idp481408" starting-state="hide">
+        <fo:bookmark-title>Reference Manual</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp916448" starting-state="hide">
+          <fo:bookmark-title>crypto</fo:bookmark-title>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp900272" starting-state="hide">
+          <fo:bookmark-title>crypto</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp851200" starting-state="hide">
+            <fo:bookmark-title>block_encrypt/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp844656" starting-state="hide">
+            <fo:bookmark-title>block_decrypt/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp837248" starting-state="hide">
+            <fo:bookmark-title>block_encrypt/4</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp836816" starting-state="hide">
+            <fo:bookmark-title>block_encrypt/4</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp836432" starting-state="hide">
+            <fo:bookmark-title>block_encrypt/4</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp825728" starting-state="hide">
+            <fo:bookmark-title>block_decrypt/4</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp825312" starting-state="hide">
+            <fo:bookmark-title>block_decrypt/4</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp813520" starting-state="hide">
+            <fo:bookmark-title>bytes_to_integer/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp810016" starting-state="hide">
+            <fo:bookmark-title>compute_key/4</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp801056" starting-state="hide">
+            <fo:bookmark-title>exor/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp799760" starting-state="hide">
+            <fo:bookmark-title>generate_key/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp797008" starting-state="hide">
+            <fo:bookmark-title>generate_key/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp787152" starting-state="hide">
+            <fo:bookmark-title>hash/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp781232" starting-state="hide">
+            <fo:bookmark-title>hash_init/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp775328" starting-state="hide">
+            <fo:bookmark-title>hash_update/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp769088" starting-state="hide">
+            <fo:bookmark-title>hash_final/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp765040" starting-state="hide">
+            <fo:bookmark-title>hmac/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp764208" starting-state="hide">
+            <fo:bookmark-title>hmac/4</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp757280" starting-state="hide">
+            <fo:bookmark-title>hmac_init/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp752336" starting-state="hide">
+            <fo:bookmark-title>hmac_update/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp744112" starting-state="hide">
+            <fo:bookmark-title>hmac_final/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp740416" starting-state="hide">
+            <fo:bookmark-title>hmac_final_n/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp735024" starting-state="hide">
+            <fo:bookmark-title>cmac/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp734608" starting-state="hide">
+            <fo:bookmark-title>cmac/4</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp726944" starting-state="hide">
+            <fo:bookmark-title>info_fips/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp721008" starting-state="hide">
+            <fo:bookmark-title>info_lib/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp713472" starting-state="hide">
+            <fo:bookmark-title>mod_pow/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp654224" starting-state="hide">
+            <fo:bookmark-title>next_iv/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp649984" starting-state="hide">
+            <fo:bookmark-title>next_iv/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp647968" starting-state="hide">
+            <fo:bookmark-title>private_decrypt/4</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp641376" starting-state="hide">
+            <fo:bookmark-title>private_encrypt/4</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp632848" starting-state="hide">
+            <fo:bookmark-title>public_decrypt/4</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp579280" starting-state="hide">
+            <fo:bookmark-title>public_encrypt/4</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp570032" starting-state="hide">
+            <fo:bookmark-title>rand_seed/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp565776" starting-state="hide">
+            <fo:bookmark-title>rand_uniform/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp342720" starting-state="hide">
+            <fo:bookmark-title>sign/4</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp335600" starting-state="hide">
+            <fo:bookmark-title>start/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp333424" starting-state="hide">
+            <fo:bookmark-title>stop/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp330800" starting-state="hide">
+            <fo:bookmark-title>strong_rand_bytes/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp260144" starting-state="hide">
+            <fo:bookmark-title>rand_seed/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp254560" starting-state="hide">
+            <fo:bookmark-title>rand_seed_s/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp249344" starting-state="hide">
+            <fo:bookmark-title>stream_init/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp667744" starting-state="hide">
+            <fo:bookmark-title>stream_init/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp289648" starting-state="hide">
+            <fo:bookmark-title>stream_encrypt/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp602320" starting-state="hide">
+            <fo:bookmark-title>stream_decrypt/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp595920" starting-state="hide">
+            <fo:bookmark-title>supports/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp383120" starting-state="hide">
+            <fo:bookmark-title>ec_curves/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp380928" starting-state="hide">
+            <fo:bookmark-title>ec_curve/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp396560" starting-state="hide">
+            <fo:bookmark-title>verify/5</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+    </fo:bookmark>
+  </fo:bookmark-tree>
+  <fo:page-sequence font-family="sans-serif" force-page-count="even" master-reference="cover" font-size="10pt">
+    <fo:flow flow-name="xsl-region-body">
+      <fo:block space-before="130mm" space-before.conditionality="retain" text-align="end">
+        <fo:external-graphic src="/root/download/otp_src_20.0/bootstrap/lib/erl_docgen/priv/images/erlang-logo.gif"/>
+      </fo:block>
+      <fo:block id="cover-page" border-before-style="solid" border-before-width="10pt" border-color="#960003" font-size="2.3em" padding-before="0.5em" text-align="end">crypto</fo:block>
+      <fo:block font-size="0.9em" text-align="end">Copyright © 1999-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em" text-align="end">crypto 4.0</fo:block>
+      <fo:block font-size="0.9em" text-align="end">July 12, 2017</fo:block>
+      <fo:block padding-before="2.5em" font-size="1.33em" font-weight="bold" color="#C00" text-align="end"/>
+      <fo:block break-before="page" border-before-style="solid" border-before-width="1pt" border-color="#960003" font-weight="bold" padding-before="0.5em" space-before="200mm" space-before.conditionality="retain">Copyright © 1999-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em">
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+ 
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+    
+    Ericsson AB. All Rights Reserved..
+        </fo:block>
+      <fo:block font-size="0.9em" font-weight="bold" space-before="2em">July 12, 2017</fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+  <fo:page-sequence font-family="serif" master-reference="document" initial-page-number="1" font-size="10pt">
+    <fo:static-content flow-name="left-header">
+      <fo:block text-align="start" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-header">
+      <fo:block text-align="end" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="left-footer">
+      <fo:block text-align="start" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold"><fo:page-number/> | Ericsson AB. All Rights Reserved.:
+            crypto</fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-footer">
+      <fo:block text-align="end" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">Ericsson AB. All Rights Reserved.:
+            crypto | <fo:page-number/></fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body"><fo:block/><fo:block id="idp120000" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">1   
+      Crypto User's Guide</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-weight="bold">Crypto</fo:inline> application provides functions for
+      computation of message digests, and functions for encryption and
+      decryption.
+      </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This product includes software developed by the OpenSSL Project
+      for use in the OpenSSL Toolkit (http://www.openssl.org/).
+      </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This product includes cryptographic software written by Eric
+      Young (eay@cryptsoft.com).
+      </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This product includes software written by Tim Hudson
+      (tjh@cryptsoft.com).
+      </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">For full OpenSSL and SSLeay license texts, see <fo:inline font-style="italic">Licenses</fo:inline>.
+      </fo:block>
+  <fo:block id="idp498208" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.1  Licenses</fo:marker>1.1  Licenses</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">    
+This chapter contains in extenso versions
+    of the OpenSSL and SSLeay licenses.
+    </fo:block><fo:block id="idp494688" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.1 
+      OpenSSL License</fo:block>
+    
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+/* ====================================================================
+ * Copyright (c) 1998-2011 The OpenSSL Project.  All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer. 
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in
+ *    the documentation and/or other materials provided with the
+ *    distribution.
+ *
+ * 3. All advertising materials mentioning features or use of this
+ *    software must display the following acknowledgment:
+ *    "This product includes software developed by the OpenSSL Project
+ *    for use in the OpenSSL Toolkit. (http://www.openssl.org/)"
+ *
+ * 4. The names "OpenSSL Toolkit" and "OpenSSL Project" must not be used to
+ *    endorse or promote products derived from this software without
+ *    prior written permission. For written permission, please contact
+ *    openssl-core@openssl.org.
+ *
+ * 5. Products derived from this software may not be called "OpenSSL"
+ *    nor may "OpenSSL" appear in their names without prior written
+ *    permission of the OpenSSL Project.
+ *
+ * 6. Redistributions of any form whatsoever must retain the following
+ *    acknowledgment:
+ *    "This product includes software developed by the OpenSSL Project
+ *    for use in the OpenSSL Toolkit (http://www.openssl.org/)"
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY
+ * EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE OpenSSL PROJECT OR
+ * ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+ * OF THE POSSIBILITY OF SUCH DAMAGE.
+ * ====================================================================
+ *
+ * This product includes cryptographic software written by Eric Young
+ * (eay@cryptsoft.com).  This product includes software written by Tim
+ * Hudson (tjh@cryptsoft.com).
+ *
+ */    </fo:block>
+  <fo:block id="idp118096" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.2 
+      SSLeay License</fo:block>
+    
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+/* Copyright (C) 1995-1998 Eric Young (eay@cryptsoft.com)
+ * All rights reserved.
+ *
+ * This package is an SSL implementation written
+ * by Eric Young (eay@cryptsoft.com).
+ * The implementation was written so as to conform with Netscapes SSL.
+ * 
+ * This library is free for commercial and non-commercial use as long as
+ * the following conditions are aheared to.  The following conditions
+ * apply to all code found in this distribution, be it the RC4, RSA,
+ * lhash, DES, etc., code; not just the SSL code.  The SSL documentation
+ * included with this distribution is covered by the same copyright terms
+ * except that the holder is Tim Hudson (tjh@cryptsoft.com).
+ * 
+ * Copyright remains Eric Young's, and as such any Copyright notices in
+ * the code are not to be removed.
+ * If this package is used in a product, Eric Young should be given attribution
+ * as the author of the parts of the library used.
+ * This can be in the form of a textual message at program startup or
+ * in documentation (online or textual) provided with the package.
+ * 
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. All advertising materials mentioning features or use of this software
+ *    must display the following acknowledgement:
+ *    "This product includes cryptographic software written by
+ *     Eric Young (eay@cryptsoft.com)"
+ *    The word 'cryptographic' can be left out if the rouines from the library
+ *    being used are not cryptographic related :-).
+ * 4. If you include any Windows specific code (or a derivative thereof) from 
+ *    the apps directory (application code) you must include an acknowledgement:
+ *    "This product includes software written by Tim Hudson (tjh@cryptsoft.com)"
+ * 
+ * THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ * 
+ * The licence and distribution terms for any publically available version or
+ * derivative of this code cannot be changed.  i.e. this code cannot simply be
+ * copied and put under another distribution licence
+ * [including the GNU Public Licence.]
+ */    </fo:block>
+  <fo:block id="idp122032" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.2  FIPS mode</fo:marker>1.2  FIPS mode</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+    
+    This chapter describes FIPS mode support in the crypto application.
+  </fo:block><fo:block id="idp434352" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.2.1 
+      Background</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">OpenSSL can be built to provide FIPS 140-2 validated
+    cryptographic services. It is not the OpenSSL application that is
+    validated, but a special software component called the OpenSSL
+    FIPS Object Module. However applications do not use this Object
+    Module directly, but through the regular API of the OpenSSL
+    library.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The crypto application supports using OpenSSL in FIPS mode. In
+    this scenario only the validated algorithms provided by the Object
+    Module are accessible, other algorithms usually available in
+    OpenSSL (like md5) or implemented in the Erlang code (like SRP)
+    are disabled.</fo:block>
+  <fo:block id="idp419120" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.2.2 
+      Enabling FIPS mode</fo:block>
+    
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Build or install the FIPS Object Module and a FIPS enabled
+        OpenSSL library.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">You should read and precisely follow the instructions of
+        the <fo:inline font-weight="bold"><fo:basic-link external-destination="href">Security
+        Policy</fo:basic-link></fo:inline> and <fo:inline font-weight="bold"><fo:basic-link external-destination="href">User
+        Guide</fo:basic-link></fo:inline>.</fo:block>
+        <fo:block background-color="#ffd6d6" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Warning:</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">It is very easy to build a working OpenSSL FIPS
+        Object Module and library from the source. However it <fo:inline font-weight="bold">does
+        not</fo:inline> qualify as FIPS 140-2 validated if the numerous
+        restrictions in the Security Policy are not properly
+        followed.</fo:block></fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Configure and build Erlang/OTP with FIPS support:</fo:block>
+        <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+$ <fo:inline font-weight="bold">cd $ERL_TOP</fo:inline>
+$ <fo:inline font-weight="bold">./otp_build configure --enable-fips</fo:inline>
+...
+checking for FIPS_mode_set... yes
+...
+$ <fo:inline font-weight="bold">make</fo:inline>
+        </fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If <fo:inline font-family="monospace">FIPS_mode_set</fo:inline> returns <fo:inline font-family="monospace">no</fo:inline> the OpenSSL
+        library is not FIPS enabled and crypto won't support FIPS mode
+        either.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Set the <fo:inline font-family="monospace">fips_mode</fo:inline> configuration setting of the
+        crypto application to <fo:inline font-family="monospace">true</fo:inline> <fo:inline font-weight="bold">before loading the
+        crypto module</fo:inline>.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The best place is in the <fo:inline font-family="monospace">sys.config</fo:inline> system
+        configuration file of the release.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        Start and use the crypto application as usual. However take
+        care to avoid the non-FIPS validated algorithms, they will all
+        throw exception <fo:inline font-family="monospace">not_supported</fo:inline>.
+      </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Entering and leaving FIPS mode on a node already running crypto
+    is not supported. The reason is that OpenSSL is designed to
+    prevent an application requesting FIPS mode to end up accidentally
+    running in non-FIPS mode. If entering FIPS mode fails (e.g. the
+    Object Module is not found or is compromised) any subsequent use
+    of the OpenSSL API would terminate the emulator.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">An on-the-fly FIPS mode change would thus have to be performed
+    in a critical section protected from any concurrently running
+    crypto operations. Furthermore in case of failure all crypto calls
+    would have to be disabled from the Erlang or nif code. This would
+    be too much effort put into this not too important feature.</fo:block>
+  <fo:block id="idp477296" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.2.3 
+      Incompatibilities with regular builds</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Erlang API of the crypto application is identical
+    regardless of building with or without FIPS support. However the
+    nif code internally uses a different OpenSSL API.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This means that the context (an opaque type) returned from
+    streaming crypto functions (<fo:inline font-family="monospace">hash_(init|update|final)</fo:inline>,
+    <fo:inline font-family="monospace">hmac_(init|update|final)</fo:inline> and
+    <fo:inline font-family="monospace">stream_(init|encrypt|decrypt)</fo:inline>) is different and
+    incompatible with regular builds when compiling crypto with FIPS
+    support.</fo:block>
+  <fo:block id="idp417584" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.2.4 
+      Common caveats</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">In FIPS mode non-validated algorithms are disabled. This may
+    cause some unexpected problems in application relying on
+    crypto.</fo:block>
+    <fo:block background-color="#ffd6d6" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Warning:</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Do not try to work around these problems by using
+    alternative implementations of the missing algorithms! An
+    application can only claim to be using a FIPS 140-2 validated
+    cryptographic module if it uses it exclusively for every
+    cryptographic operation.</fo:block></fo:block>
+
+    <fo:block id="idp554896" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Restrictions on key sizes</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Although public key algorithms are supported in FIPS mode
+      they can only be used with secure key sizes. The Security Policy
+      requires the following minimum values:
+      </fo:block>
+      <fo:block space-after="0.25em" space-before="0.25em">
+        <fo:block keep-with-next.within-page="always">RSA</fo:block><fo:block-container><fo:block start-indent="2em">1024 bit</fo:block></fo:block-container>
+        <fo:block keep-with-next.within-page="always">DSS</fo:block><fo:block-container><fo:block start-indent="2em">1024 bit</fo:block></fo:block-container>
+        <fo:block keep-with-next.within-page="always">EC algorithms</fo:block><fo:block-container><fo:block start-indent="2em">160 bit</fo:block></fo:block-container>
+      </fo:block>
+    
+
+    <fo:block id="idp553312" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Restrictions on elliptic curves</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Erlang API allows using arbitrary curve parameters, but
+      in FIPS mode only those allowed by the Security Policy shall be
+      used.</fo:block>
+    
+
+    <fo:block id="idp548768" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Avoid md5 for hashing</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Md5 is a popular choice as a hash function, but it is not
+      secure enough to be validated. Try to use sha instead wherever
+      possible.</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">For exceptional, non-cryptographic use cases one may consider
+      switching to <fo:inline font-family="monospace">erlang:md5/1</fo:inline> as well.</fo:block>
+    
+
+    <fo:block id="idp95744" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Certificates and encrypted keys</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">As md5 is not available in FIPS mode it is only possible to
+      use certificates that were signed using sha hashing. When
+      validating an entire certificate chain all certificates
+      (including the root CA's) must comply with this rule.</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">For similar dependency on the md5 and des algorithms most
+      encrypted private keys in PEM format do not work
+      either. However, the PBES2 encryption scheme allows the use of
+      stronger FIPS verified algorithms which is a viable
+      alternative.</fo:block>
+    
+
+    <fo:block id="idp445536" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">SNMP v3 limitations</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">It is only possible to use <fo:inline font-family="monospace">usmHMACSHAAuthProtocol</fo:inline> and
+      <fo:inline font-family="monospace">usmAesCfb128Protocol</fo:inline> for authentication and privacy
+      respectively in FIPS mode. The snmp application however won't
+      restrict selecting disabled protocols in any way, and using them
+      would result in run time crashes.</fo:block>
+    
+
+    <fo:block id="idp485248" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">TLS 1.2 is required</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">All SSL and TLS versions prior to TLS 1.2 use a combination
+      of md5 and sha1 hashes in the handshake for various purposes:</fo:block>
+      <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>Authenticating the integrity of the handshake
+        messages.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>In the exchange of DH parameters in cipher suites
+        providing non-anonymous PFS (perfect forward secrecy).</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>In the PRF (pseud-random function) to generate keying
+        materials in cipher suites not using PFS.</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">OpenSSL handles these corner cases in FIPS mode, however the
+      Erlang crypto and ssl applications are not prepared for them and
+      therefore you are limited to TLS 1.2 in FIPS mode.</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">On the other hand it worth mentioning that at least all
+      cipher suites that would rely on non-validated algorithms are
+      automatically disabled in FIPS mode.</fo:block>
+      <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Certificates using weak (md5) digests may also cause
+      problems in TLS. Although TLS 1.2 has an extension for
+      specifying which type of signatures are accepted, and in FIPS
+      mode the ssl application will use it properly, most TLS
+      implementations ignore this extension and simply send whatever
+      certificates they were configured with.</fo:block></fo:block>
+    
+
+  <fo:block id="idp481408" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">2   
+      Reference Manual</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Crypto Application provides functions for computation of 
+      message digests, and encryption and decryption functions.
+      </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This product includes software developed by the OpenSSL Project for
+      use in the OpenSSL Toolkit (http://www.openssl.org/).
+      </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This product includes cryptographic software written by Eric Young
+      (eay@cryptsoft.com).  
+      </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This product includes software written by Tim Hudson
+      (tjh@cryptsoft.com).
+      </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">For full OpenSSL and SSLeay license texts, see <fo:inline font-style="italic">Licenses</fo:inline>.</fo:block>
+  <fo:block page-break-before="always" id="idp916448" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">crypto</fo:marker>crypto</fo:block>Application</fo:block>
+  <fo:block/>
+  crypto
+  The Crypto Application
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The purpose of the Crypto application is to provide an Erlang API
+    to cryptographic functions, see <fo:inline font-style="italic">crypto(3)</fo:inline>.
+    Note that the API is on a fairly low level and there are some
+    corresponding API functions available in <fo:inline font-style="italic">public_key(3)</fo:inline>,
+    on a higher abstraction level, that uses the crypto application in its implementation.
+    </fo:block>
+  
+
+  <fo:block id="idp912288" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">DEPENDENCIES</fo:block>
+    
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The current crypto implementation uses nifs to interface
+    OpenSSLs crypto library and may work with limited functionality
+    with as old versions as <fo:inline font-weight="bold">OpenSSL</fo:inline> 0.9.8c.
+    FIPS mode support requires at least
+    version 1.0.1 and a FIPS capable OpenSSL installation. We recommend using a
+    version that is officially supported by the OpenSSL project. API compatible backends like
+    LibreSSL should also work.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Source releases of OpenSSL can be downloaded from the <fo:inline font-weight="bold"><fo:basic-link external-destination="href">OpenSSL</fo:basic-link></fo:inline> project home page,
+    or mirror sites listed there.
+    </fo:block>
+    
+
+  <fo:block id="idp908768" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">CONFIGURATION</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The following configuration parameters are defined for the
+    crypto application. See <fo:inline font-family="monospace">app(3)</fo:inline> for more information about
+    configuration parameters.</fo:block>
+    <fo:block space-after="0.25em" space-before="0.25em">
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">fips_mode = boolean()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em">
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Specifies whether to run crypto in FIPS mode. This setting
+        will take effect when the nif module is loaded. If FIPS mode
+        is requested but not available at run time the nif module and
+        thus the crypto module will fail to load. This mechanism
+        prevents the accidental use of non-validated algorithms.</fo:block>
+      </fo:block></fo:block-container>
+    </fo:block>
+  
+
+  <fo:block id="idp905360" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">SEE ALSO</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">application(3)</fo:block>
+  
+<fo:block page-break-before="always" id="idp900272" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">crypto</fo:marker>crypto</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  crypto
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This module provides a set of cryptographic functions.
+      </fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Hash functions -
+	<fo:inline font-weight="bold"><fo:basic-link external-destination="href"> Secure Hash Standard</fo:basic-link></fo:inline>,
+	<fo:inline font-weight="bold"><fo:basic-link external-destination="href"> The MD5 Message Digest Algorithm (RFC 1321)</fo:basic-link></fo:inline> and
+	<fo:inline font-weight="bold"><fo:basic-link external-destination="href">The MD4 Message Digest Algorithm (RFC 1320)</fo:basic-link></fo:inline>
+	</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Hmac functions - <fo:inline font-weight="bold"><fo:basic-link external-destination="href"> Keyed-Hashing for Message Authentication (RFC 2104) </fo:basic-link></fo:inline></fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Cmac functions - <fo:inline font-weight="bold"><fo:basic-link external-destination="href">The AES-CMAC Algorithm (RFC 4493)</fo:basic-link></fo:inline></fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Block ciphers - <fo:inline font-weight="bold"><fo:basic-link external-destination="href"> </fo:basic-link></fo:inline> DES and AES in
+        Block Cipher Modes - <fo:inline font-weight="bold"><fo:basic-link external-destination="href"> ECB, CBC, CFB, OFB, CTR and GCM </fo:basic-link></fo:inline></fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold"><fo:basic-link external-destination="href"> RSA encryption RFC 1321 </fo:basic-link></fo:inline> </fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Digital signatures <fo:inline font-weight="bold"><fo:basic-link external-destination="href">Digital Signature Standard (DSS)</fo:basic-link></fo:inline> and<fo:inline font-weight="bold"><fo:basic-link external-destination="href"> Elliptic Curve Digital
+	Signature Algorithm (ECDSA) </fo:basic-link></fo:inline> </fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold"><fo:basic-link external-destination="href"> Secure Remote Password Protocol (SRP - RFC 2945) </fo:basic-link></fo:inline></fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">gcm: Dworkin, M., "Recommendation for Block Cipher Modes of
+        Operation: Galois/Counter Mode (GCM) and GMAC",
+        National Institute of Standards and Technology SP 800-
+        38D, November 2007.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+  
+
+ <fo:block id="idp885200" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">DATA TYPES </fo:block>
+    
+    
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">key_value()  = integer() | binary() </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Always <fo:inline font-family="monospace">binary()</fo:inline> when used as return value</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">rsa_public()  = [key_value()] = [E, N]  </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"> Where E is the public exponent and N is public modulus. </fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">rsa_private() = [key_value()] = [E, N, D] | [E, N, D, P1, P2, E1, E2, C] </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Where E is the public exponent, N is public modulus and D is
+    the private exponent. The longer key format contains redundant
+    information that will make the calculation faster. P1,P2 are first
+    and second prime factors. E1,E2 are first and second exponents. C
+    is the CRT coefficient. Terminology is taken from <fo:inline font-weight="bold"><fo:basic-link external-destination="href"> RFC 3447</fo:basic-link></fo:inline>.</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">dss_public() = [key_value()] = [P, Q, G, Y] </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Where P, Q and G are the dss parameters and Y is the public key.</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">dss_private() =  [key_value()] = [P, Q, G, X] </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Where P, Q and G are the dss parameters and X is the private key.</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">srp_public() = key_value() </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Where is <fo:inline font-family="monospace">A</fo:inline> or <fo:inline font-family="monospace">B</fo:inline> from <fo:inline font-weight="bold"><fo:basic-link external-destination="href">SRP design</fo:basic-link></fo:inline></fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">srp_private() = key_value() </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Where is  <fo:inline font-family="monospace">a</fo:inline> or <fo:inline font-family="monospace">b</fo:inline> from <fo:inline font-weight="bold"><fo:basic-link external-destination="href">SRP design</fo:basic-link></fo:inline></fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Where Verifier is <fo:inline font-family="monospace">v</fo:inline>, Generator is <fo:inline font-family="monospace">g</fo:inline> and Prime is<fo:inline font-family="monospace"> N</fo:inline>, DerivedKey is <fo:inline font-family="monospace">X</fo:inline>, and Scrambler is
+    <fo:inline font-family="monospace">u</fo:inline> (optional will be generated if not provided) from <fo:inline font-weight="bold"><fo:basic-link external-destination="href">SRP design</fo:basic-link></fo:inline>
+    Version = '3' |  '6' |  '6a'
+    </fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">dh_public() = key_value() </fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">dh_private() = key_value() </fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">dh_params() = [key_value()] = [P, G] | [P, G, PrivateKeyBitLength]</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">ecdh_public() = key_value() </fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">ecdh_private() = key_value() </fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">ecdh_params() =  ec_named_curve() | ec_explicit_curve()</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">ec_explicit_curve() =
+    {ec_field(), Prime :: key_value(), Point :: key_value(), Order :: integer(), CoFactor :: none | integer()} </fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">ec_field() = {prime_field, Prime :: integer()} |
+    {characteristic_two_field, M :: integer(), Basis :: ec_basis()}</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">ec_basis() =  {tpbasis, K :: non_neg_integer()} |
+    {ppbasis, K1 :: non_neg_integer(), K2 :: non_neg_integer(), K3 :: non_neg_integer()} |
+    onbasis</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">ec_named_curve() -&gt;
+      sect571r1| sect571k1| sect409r1| sect409k1| secp521r1| secp384r1| secp224r1| secp224k1|
+      secp192k1| secp160r2| secp128r2| secp128r1| sect233r1| sect233k1| sect193r2| sect193r1|
+      sect131r2| sect131r1| sect283r1| sect283k1| sect163r2| secp256k1| secp160k1| secp160r1|
+      secp112r2| secp112r1| sect113r2| sect113r1| sect239k1| sect163r1| sect163k1| secp256r1|
+      secp192r1|
+      brainpoolP160r1| brainpoolP160t1| brainpoolP192r1| brainpoolP192t1| brainpoolP224r1|
+      brainpoolP224t1| brainpoolP256r1| brainpoolP256t1| brainpoolP320r1| brainpoolP320t1|
+      brainpoolP384r1| brainpoolP384t1| brainpoolP512r1| brainpoolP512t1
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Note that the <fo:inline font-weight="bold">sect</fo:inline> curves are GF2m (characteristic two) curves and are only supported if the
+    underlying OpenSSL has support for them.
+    See also <fo:inline font-style="italic">crypto:supports/0</fo:inline>
+    </fo:block>
+
+     <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">stream_cipher() = rc4 | aes_ctr </fo:block>
+
+     <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">block_cipher() =  aes_cbc | aes_cfb8 | aes_cfb128 | aes_ige256 | blowfish_cbc |
+     blowfish_cfb64 | des_cbc | des_cfb | des3_cbc | des3_cfb | des_ede3 | rc2_cbc </fo:block>
+
+     <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">aead_cipher() =  aes_gcm | chacha20_poly1305 </fo:block>
+
+     <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">stream_key() =  aes_key() | rc4_key() </fo:block>
+
+     <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">block_key() =  aes_key() |  blowfish_key() | des_key()| des3_key() </fo:block>
+
+     <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">aes_key() = iodata() </fo:block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Key length is 128, 192 or 256 bits</fo:block>
+
+     <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">rc4_key() = iodata() </fo:block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Variable key length from 8 bits up to 2048 bits (usually between 40 and 256)</fo:block>
+
+     <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">blowfish_key() = iodata() </fo:block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Variable key length from 32 bits up to 448 bits</fo:block>
+
+     <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">des_key() = iodata() </fo:block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Key length is 64 bits (in CBC mode only 8 bits are used)</fo:block>
+
+     <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">des3_key() = [binary(), binary(), binary()] </fo:block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Each key part is 64 bits (in CBC mode only 8 bits are used)</fo:block>
+
+     <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">digest_type() =  md5 | sha | sha224 | sha256 | sha384 | sha512</fo:block>
+
+     <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap"> hash_algorithms() =  md5 | ripemd160 | sha | sha224 | sha256 | sha384 | sha512 </fo:block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">md4 is also supported for hash_init/1 and hash/2.
+     Note that both md4 and md5 are recommended only for compatibility with existing applications.
+     </fo:block>
+     <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap"> cipher_algorithms() = aes_cbc | aes_cfb8 | aes_cfb128 | aes_ctr | aes_gcm |
+     aes_ige256 | blowfish_cbc | blowfish_cfb64 | chacha20_poly1305 | des_cbc | des_cfb |
+     des3_cbc | des3_cfb | des_ede3 | rc2_cbc | rc4 </fo:block>
+     <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap"> public_key_algorithms() =   rsa |dss | ecdsa | dh | ecdh | ec_gf2m</fo:block>
+     <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Note that ec_gf2m is not strictly a public key algorithm, but a restriction on what curves are supported
+     with ecdsa and ecdh.
+     </fo:block>
+
+ 
+
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp851200">block_encrypt(Type, Key, PlainText) -&gt; CipherText</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = des_ecb | blowfish_ecb | aes_ecb </fo:block></fo:list-item-body></fo:list-item>
+  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Key = block_key() </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PlainText = iodata() </fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Encrypt <fo:inline font-family="monospace">PlainText</fo:inline> according to <fo:inline font-family="monospace">Type</fo:inline> block cipher.</fo:block>
+  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">May throw exception <fo:inline font-family="monospace">notsup</fo:inline> in case the chosen <fo:inline font-family="monospace">Type</fo:inline>
+  is not supported by the underlying OpenSSL implementation.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp844656">block_decrypt(Type, Key, CipherText) -&gt; PlainText</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = des_ecb | blowfish_ecb | aes_ecb </fo:block></fo:list-item-body></fo:list-item>
+  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Key = block_key() </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PlainText = iodata() </fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Decrypt <fo:inline font-family="monospace">CipherText</fo:inline> according to <fo:inline font-family="monospace">Type</fo:inline> block cipher.</fo:block>
+  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">May throw exception <fo:inline font-family="monospace">notsup</fo:inline> in case the chosen <fo:inline font-family="monospace">Type</fo:inline>
+  is not supported by the underlying OpenSSL implementation.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp837248">block_encrypt(Type, Key, Ivec, PlainText) -&gt; CipherText</fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp836816">block_encrypt(AeadType, Key, Ivec, {AAD, PlainText}) -&gt; {CipherText, CipherTag}</fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp836432">block_encrypt(aes_gcm, Key, Ivec, {AAD, PlainText, TagLength}) -&gt; {CipherText, CipherTag}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = block_cipher() </fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">AeadType = aead_cipher() </fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Key = block_key() </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PlainText = iodata() </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">AAD = IVec = CipherText = CipherTag = binary()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TagLength = 1..16</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Encrypt <fo:inline font-family="monospace">PlainText</fo:inline> according to <fo:inline font-family="monospace">Type</fo:inline> block cipher.
+	<fo:inline font-family="monospace">IVec</fo:inline> is an arbitrary initializing vector.</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">In AEAD (Authenticated Encryption with Associated Data) mode, encrypt
+	<fo:inline font-family="monospace">PlainText</fo:inline>according to <fo:inline font-family="monospace">Type</fo:inline> block cipher and calculate
+	<fo:inline font-family="monospace">CipherTag</fo:inline> that also authenticates the <fo:inline font-family="monospace">AAD</fo:inline> (Associated Authenticated Data).</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">May throw exception <fo:inline font-family="monospace">notsup</fo:inline> in case the chosen <fo:inline font-family="monospace">Type</fo:inline>
+	is not supported by the underlying OpenSSL implementation.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp825728">block_decrypt(Type, Key, Ivec, CipherText) -&gt; PlainText</fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp825312">block_decrypt(AeadType, Key, Ivec, {AAD, CipherText, CipherTag}) -&gt; PlainText | error</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = block_cipher() </fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">AeadType = aead_cipher() </fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Key = block_key() </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PlainText = iodata() </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">AAD = IVec = CipherText = CipherTag = binary()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Decrypt <fo:inline font-family="monospace">CipherText</fo:inline> according to <fo:inline font-family="monospace">Type</fo:inline> block cipher.
+	<fo:inline font-family="monospace">IVec</fo:inline> is an arbitrary initializing vector.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">In AEAD (Authenticated Encryption with Associated Data) mode, decrypt
+	<fo:inline font-family="monospace">CipherText</fo:inline>according to <fo:inline font-family="monospace">Type</fo:inline> block cipher and check the authenticity
+	the <fo:inline font-family="monospace">PlainText</fo:inline> and <fo:inline font-family="monospace">AAD</fo:inline> (Associated Authenticated Data) using the
+	<fo:inline font-family="monospace">CipherTag</fo:inline>. May return <fo:inline font-family="monospace">error</fo:inline> if the decryption or validation fail's</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">May throw exception <fo:inline font-family="monospace">notsup</fo:inline> in case the chosen <fo:inline font-family="monospace">Type</fo:inline>
+	is not supported by the underlying OpenSSL implementation.</fo:block>
+      </fo:block>
+    
+     <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp813520">bytes_to_integer(Bin) -&gt; Integer </fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Bin = binary() - as returned by crypto functions</fo:block></fo:list-item-body></fo:list-item>
+	
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Integer = integer() </fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Convert binary representation, of an integer, to an Erlang integer.
+         </fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp810016">compute_key(Type, OthersPublicKey, MyKey, Params) -&gt; SharedSecret</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace"> Type = dh | ecdh | srp </fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">OthersPublicKey =  dh_public() | ecdh_public() | srp_public() </fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MyKey = dh_private() | ecdh_private() | {srp_public(),srp_private()}</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Params = dh_params() | ecdh_params() | SrpUserParams | SrpHostParams</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">SrpUserParams = {user, [DerivedKey::binary(), Prime::binary(), Generator::binary(), Version::atom() | [Scrambler:binary()]]} </fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">SrpHostParams = {host, [Verifier::binary(), Prime::binary(), Version::atom() | [Scrambler::binary]]} </fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">SharedSecret = binary()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Computes the shared secret from the private key and the other party's public key.
+	 See also <fo:inline font-style="italic">public_key:compute_key/2</fo:inline>
+	</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp801056">exor(Data1, Data2) -&gt; Result</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Data1, Data2 = iodata()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Result = binary()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Performs bit-wise XOR (exclusive or) on the data supplied.</fo:block>
+      </fo:block>
+
+   <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp799760">generate_key(Type, Params) -&gt; {PublicKey, PrivKeyOut} </fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp797008">generate_key(Type, Params, PrivKeyIn) -&gt; {PublicKey, PrivKeyOut} </fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace"> Type = dh | ecdh | rsa | srp </fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Params = dh_params() | ecdh_params() | RsaParams | SrpUserParams | SrpHostParams </fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">RsaParams = {ModulusSizeInBits::integer(), PublicExponent::key_value()}</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">SrpUserParams = {user, [Generator::binary(), Prime::binary(), Version::atom()]}</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">SrpHostParams = {host, [Verifier::binary(), Generator::binary(), Prime::binary(), Version::atom()]}</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PublicKey =  dh_public() | ecdh_public() | rsa_public() | srp_public() </fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PrivKeyIn = undefined | dh_private() | ecdh_private() | srp_private() </fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PrivKeyOut =  dh_private() | ecdh_private() | rsa_private() | srp_private() </fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Generates a public key of type <fo:inline font-family="monospace">Type</fo:inline>.
+	See also <fo:inline font-style="italic">public_key:generate_key/1</fo:inline>.
+	May throw exception an exception of class <fo:inline font-family="monospace">error</fo:inline>:
+        </fo:block>
+        <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">badarg</fo:inline>: an argument is of wrong type or has an illegal value,</fo:block></fo:list-item-body></fo:list-item>
+	  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">low_entropy</fo:inline>: the random generator failed due to lack of secure "randomness",</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">computation_failed</fo:inline>: the computation fails of another reason than <fo:inline font-family="monospace">low_entropy</fo:inline>.</fo:block></fo:list-item-body></fo:list-item>
+        </fo:list-block>
+	<fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+	  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">RSA key generation is only available if the runtime was
+	  built with dirty scheduler support. Otherwise, attempting to
+	  generate an RSA key will throw exception <fo:inline font-family="monospace">error:notsup</fo:inline>.</fo:block>
+	</fo:block>
+      </fo:block>
+
+     <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp787152">hash(Type, Data) -&gt; Digest</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = md4 | hash_algorithms()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Data = iodata()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Digest = binary()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Computes a message digest of type <fo:inline font-family="monospace">Type</fo:inline> from <fo:inline font-family="monospace">Data</fo:inline>.</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">May throw exception <fo:inline font-family="monospace">notsup</fo:inline> in case the chosen <fo:inline font-family="monospace">Type</fo:inline>
+	is not supported by the underlying OpenSSL implementation.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp781232">hash_init(Type) -&gt; Context</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = md4 | hash_algorithms()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Initializes the context for streaming hash operations. <fo:inline font-family="monospace">Type</fo:inline> determines
+        which digest to use. The returned context should be used as argument
+	to <fo:inline font-style="italic">hash_update</fo:inline>.</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">May throw exception <fo:inline font-family="monospace">notsup</fo:inline> in case the chosen <fo:inline font-family="monospace">Type</fo:inline>
+	is not supported by the underlying OpenSSL implementation.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp775328">hash_update(Context, Data) -&gt; NewContext</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Data = iodata()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Updates the digest represented by <fo:inline font-family="monospace">Context</fo:inline> using the given <fo:inline font-family="monospace">Data</fo:inline>. <fo:inline font-family="monospace">Context</fo:inline>
+        must have been generated using <fo:inline font-style="italic">hash_init</fo:inline>
+	or a previous call to this function. <fo:inline font-family="monospace">Data</fo:inline> can be any length. <fo:inline font-family="monospace">NewContext</fo:inline>
+        must be passed into the next call to <fo:inline font-family="monospace">hash_update</fo:inline>
+	or <fo:inline font-style="italic">hash_final</fo:inline>.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp769088">hash_final(Context) -&gt; Digest</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Digest = binary()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Finalizes the hash operation referenced by <fo:inline font-family="monospace">Context</fo:inline> returned
+	from a previous call to <fo:inline font-style="italic">hash_update</fo:inline>.
+	The size of <fo:inline font-family="monospace">Digest</fo:inline> is determined by the type of hash
+	function used to generate it.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp765040">hmac(Type, Key, Data) -&gt; Mac</fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp764208">hmac(Type, Key, Data, MacLength) -&gt; Mac</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = hash_algorithms() - except ripemd160</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Key = iodata()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Data = iodata()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MacLength = integer()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Mac = binary()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Computes a HMAC of type <fo:inline font-family="monospace">Type</fo:inline> from <fo:inline font-family="monospace">Data</fo:inline> using
+        <fo:inline font-family="monospace">Key</fo:inline> as the authentication key.</fo:block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">MacLength</fo:inline>
+        will limit the size of the resultant <fo:inline font-family="monospace">Mac</fo:inline>.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp757280">hmac_init(Type, Key) -&gt; Context</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = hash_algorithms() - except ripemd160</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Key = iodata()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Context = binary()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Initializes the context for streaming HMAC operations. <fo:inline font-family="monospace">Type</fo:inline> determines
+        which hash function to use in the HMAC operation. <fo:inline font-family="monospace">Key</fo:inline> is the authentication
+        key. The key can be any length.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp752336">hmac_update(Context, Data) -&gt; NewContext</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Context = NewContext = binary()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Data = iodata()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Updates the HMAC represented by <fo:inline font-family="monospace">Context</fo:inline> using the given <fo:inline font-family="monospace">Data</fo:inline>. <fo:inline font-family="monospace">Context</fo:inline>
+        must have been generated using an HMAC init function (such as 
+        <fo:inline font-style="italic">hmac_init</fo:inline>). <fo:inline font-family="monospace">Data</fo:inline> can be any length. <fo:inline font-family="monospace">NewContext</fo:inline>
+        must be passed into the next call to <fo:inline font-family="monospace">hmac_update</fo:inline>
+	or to one of the functions <fo:inline font-style="italic">hmac_final</fo:inline> and
+	<fo:inline font-style="italic">hmac_final_n</fo:inline>
+	</fo:block>
+	<fo:block background-color="#ffd6d6" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Warning:</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Do not use a <fo:inline font-family="monospace">Context</fo:inline> as argument in more than one
+	call to	hmac_update or hmac_final. The semantics of reusing old contexts
+	in any way is undefined and could even crash the VM in earlier releases.
+	The reason for this limitation is a lack of support in the underlying
+	OpenSSL	API.</fo:block></fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp744112">hmac_final(Context) -&gt; Mac</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Context = Mac = binary()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Finalizes the HMAC operation referenced by <fo:inline font-family="monospace">Context</fo:inline>. The size of the resultant MAC is
+        determined by the type of hash function used to generate it.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp740416">hmac_final_n(Context, HashLen) -&gt; Mac</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Context = Mac = binary()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">HashLen = non_neg_integer()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Finalizes the HMAC operation referenced by <fo:inline font-family="monospace">Context</fo:inline>. <fo:inline font-family="monospace">HashLen</fo:inline> must be greater than
+        zero. <fo:inline font-family="monospace">Mac</fo:inline> will be a binary with at most <fo:inline font-family="monospace">HashLen</fo:inline> bytes. Note that if HashLen is greater than the actual number of bytes returned from the underlying hash, the returned hash will have fewer than <fo:inline font-family="monospace">HashLen</fo:inline> bytes.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp735024">cmac(Type, Key, Data) -&gt; Mac</fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp734608">cmac(Type, Key, Data, MacLength) -&gt; Mac</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = block_cipher()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Key = iodata()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Data = iodata()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MacLength = integer()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Mac = binary()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Computes a CMAC of type <fo:inline font-family="monospace">Type</fo:inline> from <fo:inline font-family="monospace">Data</fo:inline> using
+        <fo:inline font-family="monospace">Key</fo:inline> as the authentication key.</fo:block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">MacLength</fo:inline>
+        will limit the size of the resultant <fo:inline font-family="monospace">Mac</fo:inline>.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp726944">info_fips() -&gt; Status</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Status = enabled | not_enabled | not_supported</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Provides information about the FIPS operating status of
+        crypto and the underlying OpenSSL library. If crypto was built
+        with FIPS support this can be either <fo:inline font-family="monospace">enabled</fo:inline> (when
+        running in FIPS mode) or <fo:inline font-family="monospace">not_enabled</fo:inline>. For other builds
+        this value is always <fo:inline font-family="monospace">not_supported</fo:inline>.</fo:block>
+        <fo:block background-color="#ffd6d6" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Warning:</fo:block>
+          <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">In FIPS mode all non-FIPS compliant algorithms are
+          disabled and throw exception <fo:inline font-family="monospace">not_supported</fo:inline>. Check
+          <fo:inline font-style="italic">supports</fo:inline> that in
+          FIPS mode returns the restricted list of available
+          algorithms.</fo:block>
+        </fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp721008">info_lib() -&gt; [{Name,VerNum,VerStr}]</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Name = binary()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">VerNum = integer()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">VerStr = binary()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Provides the name and version of the libraries used by crypto.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">Name</fo:inline> is the name of the library. <fo:inline font-family="monospace">VerNum</fo:inline> is
+        the numeric version according to the library's own versioning
+        scheme. <fo:inline font-family="monospace">VerStr</fo:inline> contains a text variant of the version.</fo:block>
+        <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+&gt; <fo:inline font-weight="bold">info_lib().</fo:inline>
+[{&lt;&lt;"OpenSSL"&gt;&gt;,269484095,&lt;&lt;"OpenSSL 1.1.0c  10 Nov 2016""&gt;&gt;}]
+        </fo:block>
+	<fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+	  From OTP R16 the <fo:inline font-weight="bold">numeric version</fo:inline> represents the version of the OpenSSL
+	  <fo:inline font-weight="bold">header files</fo:inline> (<fo:inline font-family="monospace">openssl/opensslv.h</fo:inline>) used when crypto was compiled.
+	  The text variant represents the OpenSSL library used at runtime.
+	  In earlier OTP versions both numeric and text was taken from the library.
+	</fo:block></fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp713472">mod_pow(N, P, M) -&gt; Result</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">N, P, M = binary() | integer()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Result = binary() | error</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Computes the function <fo:inline font-family="monospace">N^P mod M</fo:inline>.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp654224">next_iv(Type, Data) -&gt; NextIVec</fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp649984">next_iv(Type, Data, IVec) -&gt; NextIVec</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+     <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = des_cbc | des3_cbc | aes_cbc | des_cfb</fo:block></fo:list-item-body></fo:list-item>
+     <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Data = iodata()</fo:block></fo:list-item-body></fo:list-item>
+     <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">IVec = NextIVec = binary()</fo:block></fo:list-item-body></fo:list-item>
+   </fo:list-block>
+     <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns the initialization vector to be used in the next
+     iteration of encrypt/decrypt of type <fo:inline font-family="monospace">Type</fo:inline>. <fo:inline font-family="monospace">Data</fo:inline> is the
+     encrypted data from the previous iteration step. The <fo:inline font-family="monospace">IVec</fo:inline>
+     argument is only needed for <fo:inline font-family="monospace">des_cfb</fo:inline> as the vector used
+     in the previous iteration step.</fo:block>
+   </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp647968">private_decrypt(Type, CipherText, PrivateKey, Padding) -&gt; PlainText</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = rsa</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">CipherText = binary()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PrivateKey = rsa_private()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Padding = rsa_pkcs1_padding | rsa_pkcs1_oaep_padding | rsa_no_padding</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PlainText = binary()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Decrypts the <fo:inline font-family="monospace">CipherText</fo:inline>, encrypted with
+	<fo:inline font-style="italic">public_encrypt/4</fo:inline> (or equivalent function)
+	  using the <fo:inline font-family="monospace">PrivateKey</fo:inline>, and returns the
+	  plaintext (message digest). This is a low level signature  verification operation
+	used for instance by older versions of the SSL protocol.
+	  See also <fo:inline font-style="italic">public_key:decrypt_private/[2,3]</fo:inline>
+	</fo:block>
+      </fo:block>
+    
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp641376">private_encrypt(Type, PlainText, PrivateKey, Padding) -&gt; CipherText</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = rsa</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PlainText = binary()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block> The size of the <fo:inline font-family="monospace">PlainText</fo:inline> must be less
+	than <fo:inline font-family="monospace">byte_size(N)-11</fo:inline> if <fo:inline font-family="monospace">rsa_pkcs1_padding</fo:inline> is
+	used, and <fo:inline font-family="monospace">byte_size(N)</fo:inline> if <fo:inline font-family="monospace">rsa_no_padding</fo:inline> is
+	used, where N is public modulus of the RSA key.</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PrivateKey = rsa_private()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Padding = rsa_pkcs1_padding | rsa_no_padding</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">CipherText = binary()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Encrypts the <fo:inline font-family="monospace">PlainText</fo:inline> using the <fo:inline font-family="monospace">PrivateKey</fo:inline>
+	and returns the ciphertext. This is a low level signature operation
+	used for instance by older versions of the SSL protocol. See
+	also <fo:inline font-style="italic">public_key:encrypt_private/[2,3]</fo:inline>
+	</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp632848">public_decrypt(Type, CipherText, PublicKey, Padding) -&gt; PlainText</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = rsa</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">CipherText = binary()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PublicKey =  rsa_public() </fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Padding = rsa_pkcs1_padding | rsa_no_padding</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PlainText = binary()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Decrypts the <fo:inline font-family="monospace">CipherText</fo:inline>, encrypted with
+	<fo:inline font-style="italic">private_encrypt/4</fo:inline>(or equivalent function)
+	  using the <fo:inline font-family="monospace">PrivateKey</fo:inline>, and returns the
+	  plaintext (message digest). This is a low level signature verification operation
+	  used for instance by older versions of the SSL protocol.
+	  See also <fo:inline font-style="italic">public_key:decrypt_public/[2,3]</fo:inline>
+	</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp579280">public_encrypt(Type, PlainText, PublicKey, Padding) -&gt; CipherText</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = rsa</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PlainText = binary()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block> The size of the <fo:inline font-family="monospace">PlainText</fo:inline> must be less
+	than <fo:inline font-family="monospace">byte_size(N)-11</fo:inline> if <fo:inline font-family="monospace">rsa_pkcs1_padding</fo:inline> is
+	used, and <fo:inline font-family="monospace">byte_size(N)</fo:inline> if <fo:inline font-family="monospace">rsa_no_padding</fo:inline> is
+	used, where N is public modulus of the RSA key.</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PublicKey = rsa_public()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Padding = rsa_pkcs1_padding | rsa_pkcs1_oaep_padding | rsa_no_padding</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">CipherText = binary()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Encrypts the <fo:inline font-family="monospace">PlainText</fo:inline> (message digest) using the <fo:inline font-family="monospace">PublicKey</fo:inline>
+	and returns the <fo:inline font-family="monospace">CipherText</fo:inline>. This is a low level signature operation
+	used for instance by older versions of the SSL protocol. See also <fo:inline font-style="italic">public_key:encrypt_public/[2,3]</fo:inline>
+	</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp570032">rand_seed(Seed) -&gt; ok</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Seed = binary()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Set the seed for PRNG to the given binary. This calls the
+        RAND_seed function from openssl. Only use this if the system
+        you are running on does not have enough "randomness" built in.
+        Normally this is when
+        <fo:inline font-style="italic">strong_rand_bytes/1</fo:inline>
+        throws <fo:inline font-family="monospace">low_entropy</fo:inline></fo:block>
+      </fo:block>
+
+     <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp565776">rand_uniform(Lo, Hi) -&gt; N</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Lo, Hi, N = integer()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Generate a random number <fo:inline font-family="monospace">N, Lo =&lt; N &lt; Hi.</fo:inline> Uses the
+	<fo:inline font-family="monospace">crypto</fo:inline> library pseudo-random number generator.
+	<fo:inline font-family="monospace">Hi</fo:inline> must be larger than <fo:inline font-family="monospace">Lo</fo:inline>.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp342720">sign(Algorithm, DigestType, Msg, Key) -&gt; binary()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Algorithm = rsa | dss | ecdsa </fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Msg = binary() | {digest,binary()}</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>The msg is either the binary "cleartext" data to be
+	signed or it is the hashed value of "cleartext" i.e. the
+	digest (plaintext).</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">DigestType = digest_type()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Key = rsa_private() | dss_private() | [ecdh_private(),ecdh_params()]</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Creates a digital signature.</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Algorithm <fo:inline font-family="monospace">dss</fo:inline> can only be used together with digest type
+	<fo:inline font-family="monospace">sha</fo:inline>.</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">See also <fo:inline font-style="italic">public_key:sign/3</fo:inline>.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp335600">start() -&gt; ok</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"> Equivalent to application:start(crypto).</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp333424">stop() -&gt; ok</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"> Equivalent to application:stop(crypto).</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp330800">strong_rand_bytes(N) -&gt; binary()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">N = integer()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Generates N bytes randomly uniform 0..255, and returns the
+        result in a binary. Uses a cryptographically secure prng seeded and
+        periodically mixed with operating system provided entropy. By default
+        this is the <fo:inline font-family="monospace">RAND_bytes</fo:inline> method from OpenSSL.</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">May throw exception <fo:inline font-family="monospace">low_entropy</fo:inline> in case the random generator
+	failed due to lack of secure "randomness".</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp260144">rand_seed() -&gt; rand:state()</fo:block></fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+          Creates state object for
+	  <fo:inline font-style="italic">random number generation</fo:inline>,
+          in order to generate cryptographically strong random numbers
+          (based on OpenSSL's <fo:inline font-family="monospace">BN_rand_range</fo:inline>),
+          and saves it on process dictionary before returning it as well.
+          See also
+	  <fo:inline font-style="italic">rand:seed/1</fo:inline>.
+	</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">Example</fo:inline></fo:block>
+        <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+_ = crypto:rand_seed(),
+_IntegerValue = rand:uniform(42), % [1; 42]
+_FloatValue = rand:uniform().     % [0.0; 1.0[</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp254560">rand_seed_s() -&gt; rand:state()</fo:block></fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+          Creates state object for
+	  <fo:inline font-style="italic">random number generation</fo:inline>,
+          in order to generate cryptographically strongly random numbers
+          (based on OpenSSL's <fo:inline font-family="monospace">BN_rand_range</fo:inline>).
+          See also
+	  <fo:inline font-style="italic">rand:seed_s/1</fo:inline>.
+	</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp249344">stream_init(Type, Key) -&gt; State</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = rc4 </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">State = opaque() </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Key = iodata()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Initializes the state for use in RC4 stream encryption
+        <fo:inline font-style="italic">stream_encrypt</fo:inline> and
+        <fo:inline font-style="italic">stream_decrypt</fo:inline></fo:block>
+      </fo:block>
+
+   <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp667744">stream_init(Type, Key, IVec) -&gt; State</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = aes_ctr </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">State = opaque() </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Key = iodata()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">IVec = binary()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Initializes the state for use in streaming AES encryption using Counter mode (CTR).
+        <fo:inline font-family="monospace">Key</fo:inline> is the AES key and must be either 128, 192, or 256 bits long. <fo:inline font-family="monospace">IVec</fo:inline> is
+        an arbitrary initializing vector of 128 bits (16 bytes). This state is for use with
+        <fo:inline font-style="italic">stream_encrypt</fo:inline> and
+        <fo:inline font-style="italic">stream_decrypt</fo:inline>.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp289648">stream_encrypt(State, PlainText) -&gt; { NewState, CipherText}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Text = iodata()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">CipherText = binary()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Encrypts <fo:inline font-family="monospace">PlainText</fo:inline> according to the stream cipher <fo:inline font-family="monospace">Type</fo:inline> specified in stream_init/3.
+	<fo:inline font-family="monospace">Text</fo:inline> can be any number of bytes. The initial <fo:inline font-family="monospace">State</fo:inline> is created using
+        <fo:inline font-style="italic">stream_init</fo:inline>.
+	<fo:inline font-family="monospace">NewState</fo:inline> must be passed into the next call to <fo:inline font-family="monospace">stream_encrypt</fo:inline>.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp602320">stream_decrypt(State, CipherText) -&gt; { NewState, PlainText }</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">CipherText = iodata()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">PlainText = binary()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Decrypts <fo:inline font-family="monospace">CipherText</fo:inline> according to the stream cipher <fo:inline font-family="monospace">Type</fo:inline> specified in stream_init/3.
+	<fo:inline font-family="monospace">PlainText</fo:inline> can be any number of bytes. The initial <fo:inline font-family="monospace">State</fo:inline> is created using
+        <fo:inline font-style="italic">stream_init</fo:inline>.
+	<fo:inline font-family="monospace">NewState</fo:inline> must be passed into the next call to <fo:inline font-family="monospace">stream_decrypt</fo:inline>.</fo:block>
+      </fo:block>
+
+   <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp595920">supports() -&gt; AlgorithmList </fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace"> AlgorithmList =  [{hashs, [hash_algorithms()]},
+                            {ciphers, [cipher_algorithms()]},
+			    {public_keys, [public_key_algorithms()]}
+      </fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"> Can be used to determine which crypto algorithms that are supported
+	by the underlying OpenSSL library</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp383120">ec_curves() -&gt; EllipticCurveList </fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EllipticCurveList = [ec_named_curve()]</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Can be used to determine which named elliptic curves are supported.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp380928">ec_curve(NamedCurve) -&gt; EllipticCurve </fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">NamedCurve = ec_named_curve()</fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EllipticCurve = ec_explicit_curve()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Return the defining parameters of a elliptic curve.</fo:block>
+      </fo:block>
+
+  <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp396560">verify(Algorithm, DigestType, Msg, Signature, Key) -&gt; boolean()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace"> Algorithm = rsa | dss | ecdsa </fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Msg = binary() | {digest,binary()}</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>The msg is either the binary "cleartext" data
+        or it is the hashed value of "cleartext" i.e. the digest (plaintext).</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">DigestType = digest_type()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Signature = binary()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Key = rsa_public() | dss_public() | [ecdh_public(),ecdh_params()]</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Verifies a digital signature</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Algorithm <fo:inline font-family="monospace">dss</fo:inline> can only be used together with digest type
+	<fo:inline font-family="monospace">sha</fo:inline>.</fo:block>
+
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">See also <fo:inline font-style="italic">public_key:verify/4</fo:inline>.</fo:block>
+      </fo:block>
+
+ 
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</fo:flow>
+  </fo:page-sequence>
+</fo:root>

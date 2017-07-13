@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxComboBox</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxComboBox.xml</file></header>
+<module>wxComboBox</module>
+<modulesummary>See external documentation: wxComboBox.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html">wxComboBox</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxControlWithItems">wxControlWithItems</seealso>
+  <br/><seealso marker="wxControl">wxControl</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxComboBox"/>wxComboBox()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxComboBox">wxComboBox()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxwxcombobox">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id) -&gt; <seealso marker="#type-wxComboBox">wxComboBox()</seealso></name>
+<fsummary>Equivalent to new(Parent, Id, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v></type>
+<desc><marker id="new-2"/>
+<p>Equivalent to <seealso marker="#new-3">new(Parent, Id, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id, Options::[Option]) -&gt; <seealso marker="#type-wxComboBox">wxComboBox()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Option = {value, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {choices, [<seealso marker="unicode#type-chardata">unicode:chardata()</seealso>]} | {style, integer()} | {validator, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</v></type>
+<desc><marker id="new-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxwxcombobox">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id, Value, Pos, Size, Choices) -&gt; boolean()</name>
+<fsummary>Equivalent to create(This, Parent, Id, Value, Pos, Size, Choices, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Value = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Pos = {X::integer(), Y::integer()}</v><v>Size = {W::integer(), H::integer()}</v><v>Choices = [<seealso marker="unicode#type-chardata">unicode:chardata()</seealso>]</v></type>
+<desc><marker id="create-7"/>
+<p>Equivalent to <seealso marker="#create-8">create(This, Parent, Id, Value, Pos, Size, Choices, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id, Value, Pos, Size, Choices, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Value = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Pos = {X::integer(), Y::integer()}</v><v>Size = {W::integer(), H::integer()}</v><v>Choices = [<seealso marker="unicode#type-chardata">unicode:chardata()</seealso>]</v><v>Option = {style, integer()} | {validator, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</v></type>
+<desc><marker id="create-8"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxcreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>canCopy(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v></type>
+<desc><marker id="canCopy-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxcancopy">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>canCut(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v></type>
+<desc><marker id="canCut-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxcancut">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>canPaste(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v></type>
+<desc><marker id="canPaste-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxcanpaste">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>canRedo(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v></type>
+<desc><marker id="canRedo-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxcanredo">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>canUndo(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v></type>
+<desc><marker id="canUndo-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxcanundo">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>copy(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v></type>
+<desc><marker id="copy-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxcopy">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>cut(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v></type>
+<desc><marker id="cut-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxcut">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getInsertionPoint(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v></type>
+<desc><marker id="getInsertionPoint-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxgetinsertionpoint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getLastPosition(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v></type>
+<desc><marker id="getLastPosition-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxgetlastposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getValue(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v></type>
+<desc><marker id="getValue-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxgetvalue">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>paste(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v></type>
+<desc><marker id="paste-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxpaste">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>redo(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v></type>
+<desc><marker id="redo-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxredo">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>replace(This, From, To, Value) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v><v>From = integer()</v><v>To = integer()</v><v>Value = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="replace-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxreplace">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>remove(This, From, To) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v><v>From = integer()</v><v>To = integer()</v></type>
+<desc><marker id="remove-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxremove">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setInsertionPoint(This, Pos) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v><v>Pos = integer()</v></type>
+<desc><marker id="setInsertionPoint-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxsetinsertionpoint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setInsertionPointEnd(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v></type>
+<desc><marker id="setInsertionPointEnd-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxsetinsertionpointend">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSelection(This, N) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v><v>N = integer()</v></type>
+<desc><marker id="setSelection-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxsetselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSelection(This, From, To) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v><v>From = integer()</v><v>To = integer()</v></type>
+<desc><marker id="setSelection-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxsetselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setValue(This, Value) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v><v>Value = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setValue-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxsetvalue">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>undo(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxComboBox">wxComboBox()</seealso></v></type>
+<desc><marker id="undo-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcombobox.html#wxcomboboxundo">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxComboBox">wxComboBox()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

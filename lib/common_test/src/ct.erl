@@ -1,7 +1,7 @@
 %%
 %% %CopyrightBegin%
 %%
-%% Copyright Ericsson AB 2003-2016. All Rights Reserved.
+%% Copyright Ericsson AB 2003-2017. All Rights Reserved.
 %%
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -88,6 +88,36 @@
 
 -export([get_target_name/1]).
 -export([parse_table/1, listenv/1]).
+
+%%----------------------------------------------------------------------
+%% Exported types
+%%----------------------------------------------------------------------
+%% For ct_gen_conn
+-export_type([config_key/0,
+	      target_name/0,
+	      key_or_name/0]).
+
+%% For cth_conn_log
+-export_type([conn_log_options/0,
+	      conn_log_type/0,
+	      conn_log_mod/0]).
+
+%%------------------------------------------------------------------
+%% Type declarations
+%% ------------------------------------------------------------------
+-type config_key() :: atom(). % Config key which exists in a config file
+-type target_name() :: atom().% Name associated to a config_key() though 'require'
+-type key_or_name() :: config_key() | target_name().
+
+%% Types used when logging connections with the 'cth_conn_log' hook
+-type conn_log_options() :: [conn_log_option()].
+-type conn_log_option() :: {log_type,conn_log_type()} |
+                           {hosts,[key_or_name()]}.
+-type conn_log_type() :: raw | pretty | html | silent.
+-type conn_log_mod() :: ct_netconfc | ct_telnet.
+%%----------------------------------------------------------------------
+
+
 
 %%%-----------------------------------------------------------------
 %%% @spec install(Opts) -> ok | {error,Reason}
@@ -887,13 +917,13 @@ comment(Comment) when is_list(Comment) ->
     Formatted =
 	case (catch io_lib:format("~ts",[Comment])) of
 	    {'EXIT',_} ->  % it's a list not a string
-		io_lib:format("~p",[Comment]);
+		io_lib:format("~tp",[Comment]);
 	    String ->
 		String
 	end,
     send_html_comment(lists:flatten(Formatted));
 comment(Comment) ->
-    Formatted = io_lib:format("~p",[Comment]),
+    Formatted = io_lib:format("~tp",[Comment]),
     send_html_comment(lists:flatten(Formatted)).
 
 %%%-----------------------------------------------------------------

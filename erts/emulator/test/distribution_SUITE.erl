@@ -1,7 +1,7 @@
 %%
 %% %CopyrightBegin%
 %%
-%% Copyright Ericsson AB 1997-2016. All Rights Reserved.
+%% Copyright Ericsson AB 1997-2017. All Rights Reserved.
 %%
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@
 %%
 
 -module(distribution_SUITE).
--compile(r15).
+-compile(r16).
 
 -define(VERSION_MAGIC,       131).
 
@@ -48,7 +48,7 @@
          dist_parallel_send/1,
          atom_roundtrip/1,
          unicode_atom_roundtrip/1,
-         atom_roundtrip_r15b/1,
+         atom_roundtrip_r16b/1,
          contended_atom_cache_entry/1,
          contended_unicode_atom_cache_entry/1,
          bad_dist_structure/1,
@@ -62,8 +62,7 @@
 -export([sender/3, receiver2/2, dummy_waiter/0, dead_process/0,
          roundtrip/1, bounce/1, do_dist_auto_connect/1, inet_rpc_server/1,
          dist_parallel_sender/3, dist_parallel_receiver/0,
-         dist_evil_parallel_receiver/0,
-         sendersender/4, sendersender2/4]).
+         dist_evil_parallel_receiver/0]).
 
 %% epmd_module exports
 -export([start_link/0, register_node/2, register_node/3, port_please/2]).
@@ -78,7 +77,8 @@ all() ->
      link_to_dead_new_node, applied_monitor_node,
      ref_port_roundtrip, nil_roundtrip, stop_dist,
      {group, trap_bif}, {group, dist_auto_connect},
-     dist_parallel_send, atom_roundtrip, unicode_atom_roundtrip, atom_roundtrip_r15b,
+     dist_parallel_send, atom_roundtrip, unicode_atom_roundtrip,
+     atom_roundtrip_r16b,
      contended_atom_cache_entry, contended_unicode_atom_cache_entry,
      bad_dist_structure, {group, bad_dist_ext},
      start_epmd_false, epmd_module].
@@ -128,76 +128,18 @@ bulk_send_small(Config) when is_list(Config) ->
 bulk_send_big(Config) when is_list(Config) ->
     bulk_send(32, 64).
 
-bulk_send_bigbig(Config) when is_list(Config) ->
-    bulk_sendsend(32*5, 4).
-
 bulk_send(Terms, BinSize) ->
     ct:timetrap({seconds, 30}),
 
     io:format("Sending ~w binaries, each of size ~w K", [Terms, BinSize]),
     {ok, Node} = start_node(bulk_receiver),
     Recv = spawn(Node, erlang, apply, [fun receiver/2, [0, 0]]),
-    Bin = list_to_binary(lists:duplicate(BinSize*1024, 253)),
+    Bin = binary:copy(<<253>>, BinSize*1024),
     Size = Terms*size(Bin),
     {Elapsed, {Terms, Size}} = test_server:timecall(?MODULE, sender,
                                                     [Recv, Bin, Terms]),
     stop_node(Node),
-    {comment, integer_to_list(trunc(Size/1024/max(1,Elapsed)+0.5)) ++ " K/s"}.
-
-bulk_sendsend(Terms, BinSize) ->
-    {Rate1, MonitorCount1} = bulk_sendsend2(Terms, BinSize,   5),
-    {Rate2, MonitorCount2} = bulk_sendsend2(Terms, BinSize, 995),
-    Ratio = if MonitorCount2 == 0 -> MonitorCount1 / 1.0;
-               true               -> MonitorCount1 / MonitorCount2
-            end,
-    Comment = integer_to_list(Rate1) ++ " K/s, " ++
-    integer_to_list(Rate2) ++ " K/s, " ++
-    integer_to_list(MonitorCount1) ++ " monitor msgs, " ++
-    integer_to_list(MonitorCount2) ++ " monitor msgs, " ++
-    float_to_list(Ratio) ++ " monitor ratio",
-    if
-        %% A somewhat arbitrary ratio, but hopefully one that will
-        %% accommodate a wide range of CPU speeds.
-        Ratio > 8.0 ->
-            {comment,Comment};
-        true ->
-            io:put_chars(Comment),
-            ct:fail(ratio_too_low)
-    end.
-
-bulk_sendsend2(Terms, BinSize, BusyBufSize) ->
-    ct:timetrap({seconds, 30}),
-
-    io:format("Sending ~w binaries, each of size ~w K",
-              [Terms, BinSize]),
-    {ok, NodeRecv} = start_node(bulk_receiver),
-    Recv = spawn(NodeRecv, erlang, apply, [fun receiver/2, [0, 0]]),
-    Bin = list_to_binary(lists:duplicate(BinSize*1024, 253)),
-    %%Size = Terms*size(Bin),
-
-    %% SLF LEFT OFF HERE.
-    %% When the caller uses small hunks, like 4k via
-    %% bulk_sendsend(32*5, 4), then (on my laptop at least), we get
-    %% zero monitor messages.  But if we use "+zdbbl 5", then we
-    %% get a lot of monitor messages.  So, if we can count up the
-    %% total number of monitor messages that we get when running both
-    %% default busy size and "+zdbbl 5", and if the 5 case gets
-    %% "many many more" monitor messages, then we know we're working.
-
-    {ok, NodeSend} = start_node(bulk_sender, "+zdbbl " ++ integer_to_list(BusyBufSize)),
-    _Send = spawn(NodeSend, erlang, apply, [fun sendersender/4, [self(), Recv, Bin, Terms]]),
-    {Elapsed, {_TermsN, SizeN}, MonitorCount} =
-    receive
-        %% On some platforms (windows), the time taken is 0 so we
-        %% simulate that some little time has passed.
-        {sendersender, {0.0,T,MC}} ->
-            {0.0015, T, MC};
-        {sendersender, BigRes} ->
-            BigRes
-    end,
-    stop_node(NodeRecv),
-    stop_node(NodeSend),
-    {trunc(SizeN/1024/Elapsed+0.5), MonitorCount}.
+    {comment, integer_to_list(round(Size/1024/max(1,Elapsed))) ++ " K/s"}.
 
 sender(To, _Bin, 0) ->
     To ! {done, self()},
@@ -209,49 +151,96 @@ sender(To, Bin, Left) ->
     To ! {term, Bin},
     sender(To, Bin, Left-1).
 
+bulk_send_bigbig(Config) when is_list(Config) ->
+    Terms = 32*5,
+    BinSize = 4,
+    {Rate1, MonitorCount1} = bulk_sendsend2(Terms, BinSize,   5),
+    {Rate2, MonitorCount2} = bulk_sendsend2(Terms, BinSize, 995),
+    Ratio = if MonitorCount2 == 0 -> MonitorCount1 / 1.0;
+               true               -> MonitorCount1 / MonitorCount2
+            end,
+    Comment0 = io_lib:format("~p K/s, ~p K/s, "
+                             "~p monitor msgs, ~p monitor msgs, "
+                             "~.1f monitor ratio",
+                             [Rate1,Rate2,MonitorCount1,
+                              MonitorCount2,Ratio]),
+    Comment = lists:flatten(Comment0),
+    {comment,Comment}.
+
+bulk_sendsend2(Terms, BinSize, BusyBufSize) ->
+    ct:timetrap({seconds, 30}),
+
+    io:format("\nSending ~w binaries, each of size ~w K",
+              [Terms, BinSize]),
+    {ok, NodeRecv} = start_node(bulk_receiver),
+    Recv = spawn(NodeRecv, erlang, apply, [fun receiver/2, [0, 0]]),
+    Bin = binary:copy(<<253>>, BinSize*1024),
+
+    %% SLF LEFT OFF HERE.
+    %% When the caller uses small hunks, like 4k via
+    %% bulk_sendsend(32*5, 4), then (on my laptop at least), we get
+    %% zero monitor messages.  But if we use "+zdbbl 5", then we
+    %% get a lot of monitor messages.  So, if we can count up the
+    %% total number of monitor messages that we get when running both
+    %% default busy size and "+zdbbl 5", and if the 5 case gets
+    %% "many many more" monitor messages, then we know we're working.
+
+    {ok, NodeSend} = start_node(bulk_sender, "+zdbbl " ++
+                                    integer_to_list(BusyBufSize)),
+    _Send = spawn(NodeSend, erlang, apply,
+                  [fun sendersender/4, [self(), Recv, Bin, Terms]]),
+    {Elapsed, {_TermsN, SizeN}, MonitorCount} =
+        receive
+            %% On some platforms (Windows), the time taken is 0 so we
+            %% simulate that some little time has passed.
+            {sendersender, {0.0,T,MC}} ->
+                {0.0015, T, MC};
+            {sendersender, BigRes} ->
+                BigRes
+        end,
+    stop_node(NodeRecv),
+    stop_node(NodeSend),
+    {round(SizeN/1024/Elapsed), MonitorCount}.
+
 %% Sender process to be run on a slave node
 
 sendersender(Parent, To, Bin, Left) ->
     erlang:system_monitor(self(), [busy_dist_port]),
-    [spawn(fun() -> sendersender2(To, Bin, Left, false) end) ||
-     _ <- lists:seq(1,1)],
+    _ = spawn(fun() ->
+                      sendersender_send(To, Bin, Left),
+                      exit(normal)
+              end),
     {USec, {Res, MonitorCount}} =
-    timer:tc(?MODULE, sendersender2, [To, Bin, Left, true]),
+        timer:tc(fun() ->
+                         sendersender_send(To, Bin, Left),
+                         To ! {done, self()},
+                         count_monitors(0)
+                 end),
     Parent ! {sendersender, {USec/1000000, Res, MonitorCount}}.
 
-sendersender2(To, Bin, Left, SendDone) ->
-    sendersender3(To, Bin, Left, SendDone, 0).
+sendersender_send(_To, _Bin, 0) ->
+    ok;
+sendersender_send(To, Bin, Left) ->
+    To ! {term, Bin},
+    sendersender_send(To, Bin, Left-1).
 
-sendersender3(To, _Bin, 0, SendDone, MonitorCount) ->
-    if SendDone ->
-           To ! {done, self()};
-       true ->
-           ok
-    end,
+count_monitors(MonitorCount) ->
     receive
         {monitor, _Pid, _Type, _Info} ->
-            sendersender3(To, _Bin, 0, SendDone, MonitorCount + 1)
+            count_monitors(MonitorCount + 1)
     after 0 ->
-              if SendDone ->
-                     receive
-                         Any when is_tuple(Any), size(Any) == 2 ->
-                             {Any, MonitorCount}
-                     end;
-                 true ->
-                     exit(normal)
-              end
-    end;
-sendersender3(To, Bin, Left, SendDone, MonitorCount) ->
-    To ! {term, Bin},
-    %%timer:sleep(50),
-    sendersender3(To, Bin, Left-1, SendDone, MonitorCount).
+            receive
+                {_,_}=Any ->
+                    {Any,MonitorCount}
+            end
+    end.
 
 %% Receiver process to be run on a slave node.
 
 receiver(Terms, Size) ->
     receive
         {term, Bin} ->
-            receiver(Terms+1, Size+size(Bin));
+            receiver(Terms+1, Size+byte_size(Bin));
         {done, ReplyTo} ->
             ReplyTo ! {Terms, Size}
     end.
@@ -1032,21 +1021,21 @@ atom_roundtrip(Config) when is_list(Config) ->
     stop_node(Node),
     ok.
 
-atom_roundtrip_r15b(Config) when is_list(Config) ->
-    case test_server:is_release_available("r15b") of
+atom_roundtrip_r16b(Config) when is_list(Config) ->
+    case test_server:is_release_available("r16b") of
         true ->
             ct:timetrap({minutes, 6}),
-            AtomData = atom_data(),
+            AtomData = unicode_atom_data(),
             verify_atom_data(AtomData),
-            case start_node(Config, [], "r15b") of
+            case start_node(Config, [], "r16b") of
                 {ok, Node} ->
                     do_atom_roundtrip(Node, AtomData),
                     stop_node(Node);
                 {error, timeout} ->
-                    {skip,"Unable to start OTP R15B release"}
+                    {skip,"Unable to start OTP R16B release"}
             end;
         false ->
-            {skip,"No OTP R15B available"}
+            {skip,"No OTP R16B available"}
     end.
 
 unicode_atom_roundtrip(Config) when is_list(Config) ->
@@ -2265,52 +2254,6 @@ string_to_utf8_list([CP|CPs]) when is_integer(CP),
      16#80 bor (16#3F band (CP bsr 6)),
      16#80 bor (16#3F band CP)
      | string_to_utf8_list(CPs)].
-
-utf8_list_to_string([]) ->
-    [];
-utf8_list_to_string([B|Bs]) when is_integer(B),
-                                 0 =< B,
-                                 B =< 16#7F ->
-    [B | utf8_list_to_string(Bs)];
-utf8_list_to_string([B0, B1 | Bs]) when is_integer(B0),
-                                        16#C0 =< B0,
-                                        B0 =< 16#DF,
-                                        is_integer(B1),
-                                        16#80 =< B1,
-                                        B1 =< 16#BF ->
-    [(((B0 band 16#1F) bsl 6)
-      bor (B1 band 16#3F))
-     | utf8_list_to_string(Bs)];
-utf8_list_to_string([B0, B1, B2 | Bs]) when is_integer(B0),
-                                            16#E0 =< B0,
-                                            B0 =< 16#EF,
-                                            is_integer(B1),
-                                            16#80 =< B1,
-                                            B1 =< 16#BF,
-                                            is_integer(B2),
-                                            16#80 =< B2,
-                                            B2 =< 16#BF ->
-    [(((B0 band 16#F) bsl 12)
-      bor ((B1 band 16#3F) bsl 6)
-      bor (B2 band 16#3F))
-     | utf8_list_to_string(Bs)];
-utf8_list_to_string([B0, B1, B2, B3 | Bs]) when is_integer(B0),
-                                                16#F0 =< B0,
-                                                B0 =< 16#F7,
-                                                is_integer(B1),
-                                                16#80 =< B1,
-                                                B1 =< 16#BF,
-                                                is_integer(B2),
-                                                16#80 =< B2,
-                                                B2 =< 16#BF,
-                                                is_integer(B3),
-                                                16#80 =< B3,
-                                                B3 =< 16#BF ->
-    [(((B0 band 16#7) bsl 18)
-      bor ((B1 band 16#3F) bsl 12)
-      bor ((B2 band 16#3F) bsl 6)
-      bor (B3 band 16#3F))
-     | utf8_list_to_string(Bs)].
 
 mk_pid({NodeName, Creation}, Number, Serial) when is_atom(NodeName) ->
     <<?VERSION_MAGIC, NodeNameExt/binary>> = term_to_binary(NodeName),

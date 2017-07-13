@@ -15,407 +15,414 @@
 #include "erl_atom_table.h"
 #include "beam_load.h"
 
-char tag_to_letter[] = {
+const char tag_to_letter[] = {
   'u', 'i', 'a', 'x', 'y', 'f', 'h', 'z', 'n', 'p', 'r', 'v', 'l', 'q', 'o', 
 };
 
-OpEntry opc[] = {
-/*   0 */  {"allocate_tt", {0x10001,0x0,0x0}, 0, 2, "i6Pp", "tt", 0},
-/*   1 */  {"allocate_heap_tIt", {0x10001,0x1,0x0}, 0, 3, "giwPpp", "tIt", 0},
-/*   2 */  {"allocate_heap_zero_tIt", {0x10001,0x1,0x0}, 0, 3, "giwPpp", "tIt", 0},
-/*   3 */  {"allocate_init_tIy", {0x10001,0x10,0x0}, 0, 3, "giwPpp", "tIy", 0},
-/*   4 */  {"allocate_zero_tt", {0x10001,0x0,0x0}, 0, 2, "i6Pp", "tt", 0},
-/*   5 */  {"apply_I", {0x1,0x0,0x0}, 0, 2, "", "I", 0},
-/*   6 */  {"apply_bif", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/*   7 */  {"apply_last_IP", {0x10001,0x0,0x0}, 0, 3, "", "IP", 0},
-/*   8 */  {"badarg_j", {0x220,0x0,0x0}, 0, 2, "", "j", 0},
-/*   9 */  {"badmatch_x", {0x8,0x0,0x0}, 0, 2, "", "x", 0},
-/*  10 */  {"bif1_fbsd", {0x10020,0x18211E,0x0}, 0, 5, "", "fbsd", 0},
-/*  11 */  {"bif1_body_bsd", {0x211E0001,0x18,0x0}, 0, 4, "", "bsd", 0},
-/*  12 */  {"bs_add_jssId", {0x211E0220,0x1211E,0x18}, 0, 6, "", "jssId", 0},
-/*  13 */  {"bs_context_to_binary_x", {0x8,0x0,0x0}, 0, 2, "", "x", 0},
-/*  14 */  {"bs_init_writable", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/*  15 */  {"bs_put_string_II", {0x10001,0x0,0x0}, 0, 3, "", "II", 0},
-/*  16 */  {"bs_put_utf16_jIs", {0x10220,0x211E,0x0}, 0, 4, "", "jIs", 0},
-/*  17 */  {"bs_test_tail_imm2_fxI", {0x80020,0x1,0x0}, 0, 4, "", "fxI", 0},
-/*  18 */  {"bs_test_unit_fxI", {0x80020,0x1,0x0}, 0, 4, "", "fxI", 0},
-/*  19 */  {"bs_test_unit8_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx", 0},
-/*  20 */  {"bs_test_zero_tail2_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx", 0},
-/*  21 */  {"call_bif_e", {0x1,0x0,0x0}, 0, 2, "", "e", 0},
-/*  22 */  {"call_error_handler", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/*  23 */  {"call_nif", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/*  24 */  {"case_end_x", {0x8,0x0,0x0}, 0, 2, "", "x", 0},
-/*  25 */  {"catch_yf", {0x200010,0x0,0x0}, 0, 3, "", "yf", 0},
-/*  26 */  {"catch_end_y", {0x10,0x0,0x0}, 0, 2, "", "y", 0},
-/*  27 */  {"continue_exit", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/*  28 */  {"deallocate_I", {0x1,0x0,0x0}, 0, 2, "", "I", 0},
-/*  29 */  {"deallocate_return_Q", {0x1,0x0,0x0}, 0, 2, "", "Q", 0},
-/*  30 */  {"error_action_code", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/*  31 */  {"fclearerror", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/*  32 */  {"fconv_dl", {0x10000018,0x0,0x0}, 0, 3, "", "dl", 0},
-/*  33 */  {"fmove_ql", {0x10002000,0x0,0x0}, 0, 3, "", "ql", 0},
-/*  34 */  {"fmove_ld", {0x181000,0x0,0x0}, 0, 3, "", "ld", 0},
-/*  35 */  {"fmove_dl", {0x10000018,0x0,0x0}, 0, 3, "", "dl", 0},
-/*  36 */  {"get_list_rry", {0x4080408,0x10,0x0}, 3, 2, "", "rry", 0},
-/*  37 */  {"get_list_rxr", {0x80408,0x408,0x0}, 5, 2, "", "rxr", 0},
-/*  38 */  {"get_list_rxx", {0x80408,0x8,0x0}, 1, 2, "i6Pp", "rxx", 0},
-/*  39 */  {"get_list_rxy", {0x80408,0x10,0x0}, 1, 2, "i6Pp", "rxy", 0},
-/*  40 */  {"get_list_ryr", {0x100408,0x408,0x0}, 5, 2, "", "ryr", 0},
-/*  41 */  {"get_list_xrx", {0x4080008,0x8,0x0}, 2, 2, "i6Pp", "xrx", 0},
-/*  42 */  {"get_list_xxx", {0x80008,0x8,0x0}, 0, 2, "i00Pp", "xxx", 0},
-/*  43 */  {"get_list_xxy", {0x80008,0x10,0x0}, 0, 2, "i00Pp", "xxy", 0},
-/*  44 */  {"get_list_xyx", {0x100008,0x8,0x0}, 0, 2, "i00Pp", "xyx", 0},
-/*  45 */  {"get_list_xyy", {0x100008,0x10,0x0}, 0, 2, "i00Pp", "xyy", 0},
-/*  46 */  {"get_list_yxx", {0x80010,0x8,0x0}, 0, 2, "i00Pp", "yxx", 0},
-/*  47 */  {"get_list_yxy", {0x80010,0x10,0x0}, 0, 2, "i00Pp", "yxy", 0},
-/*  48 */  {"get_list_yyx", {0x100010,0x8,0x0}, 0, 2, "i00Pp", "yyx", 0},
-/*  49 */  {"get_list_yyy", {0x100010,0x10,0x0}, 0, 2, "i00Pp", "yyy", 0},
-/*  50 */  {"hipe_call_count", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/*  51 */  {"hipe_trap_call", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/*  52 */  {"hipe_trap_call_closure", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/*  53 */  {"hipe_trap_resume", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/*  54 */  {"hipe_trap_return", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/*  55 */  {"hipe_trap_throw", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/*  56 */  {"i_apply", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/*  57 */  {"i_apply_fun", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/*  58 */  {"i_apply_fun_last_P", {0x1,0x0,0x0}, 0, 2, "", "P", 0},
-/*  59 */  {"i_apply_fun_only", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/*  60 */  {"i_apply_last_P", {0x1,0x0,0x0}, 0, 2, "", "P", 0},
-/*  61 */  {"i_apply_only", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/*  62 */  {"i_band_jIxcd", {0x10220,0x21060008,0x18}, 0, 6, "", "jIxcd", 0},
-/*  63 */  {"i_band_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd", 0},
-/*  64 */  {"i_bif2_fbssd", {0x10020,0x211E211E,0x18}, 0, 6, "", "fbssd", 0},
-/*  65 */  {"i_bif2_body_bssd", {0x211E0001,0x18211E,0x0}, 0, 5, "", "bssd", 0},
-/*  66 */  {"i_bor_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd", 0},
-/*  67 */  {"i_bs_append_jIIIsd", {0x10220,0x10001,0x18211E}, 0, 7, "", "jIIIsd", 0},
-/*  68 */  {"i_bs_get_binary2_fxIsId", {0x80020,0x211E0001,0x180001}, 0, 7, "", "fxIsId", 0},
-/*  69 */  {"i_bs_get_binary_all2_fxIId", {0x80020,0x10001,0x18}, 0, 6, "", "fxIId", 0},
-/*  70 */  {"i_bs_get_binary_all_reuse_xfI", {0x200008,0x1,0x0}, 0, 4, "", "xfI", 0},
-/*  71 */  {"i_bs_get_binary_imm2_fxIIId", {0x80020,0x10001,0x180001}, 0, 7, "", "fxIIId", 0},
-/*  72 */  {"i_bs_get_float2_fxIsId", {0x80020,0x211E0001,0x180001}, 0, 7, "", "fxIsId", 0},
-/*  73 */  {"i_bs_get_integer_fIIssd", {0x10020,0x211E0001,0x18211E}, 0, 7, "", "fIIssd", 0},
-/*  74 */  {"i_bs_get_integer_16_xfd", {0x200008,0x18,0x0}, 0, 4, "", "xfd", 0},
-/*  75 */  {"i_bs_get_integer_32_xfId", {0x200008,0x180001,0x0}, 0, 5, "", "xfId", 0},
-/*  76 */  {"i_bs_get_integer_8_xfd", {0x200008,0x18,0x0}, 0, 4, "", "xfd", 0},
-/*  77 */  {"i_bs_get_integer_imm_xIIfId", {0x10008,0x200001,0x180001}, 0, 7, "", "xIIfId", 0},
-/*  78 */  {"i_bs_get_integer_small_imm_xIfId", {0x10008,0x10020,0x18}, 0, 6, "", "xIfId", 0},
-/*  79 */  {"i_bs_get_utf16_xfId", {0x200008,0x180001,0x0}, 0, 5, "", "xfId", 0},
-/*  80 */  {"i_bs_get_utf8_xfd", {0x200008,0x18,0x0}, 0, 4, "", "xfd", 0},
-/*  81 */  {"i_bs_init_IId", {0x10001,0x18,0x0}, 0, 4, "", "IId", 0},
-/*  82 */  {"i_bs_init_bits_IId", {0x10001,0x18,0x0}, 0, 4, "", "IId", 0},
-/*  83 */  {"i_bs_init_bits_fail_xjId", {0x2200008,0x180001,0x0}, 0, 5, "", "xjId", 0},
-/*  84 */  {"i_bs_init_bits_fail_yjId", {0x2200010,0x180001,0x0}, 0, 5, "", "yjId", 0},
-/*  85 */  {"i_bs_init_bits_fail_heap_sIjId", {0x1211E,0x10220,0x18}, 0, 6, "", "sIjId", 0},
-/*  86 */  {"i_bs_init_bits_heap_IIId", {0x10001,0x180001,0x0}, 0, 5, "", "IIId", 0},
-/*  87 */  {"i_bs_init_fail_xjId", {0x2200008,0x180001,0x0}, 0, 5, "", "xjId", 0},
-/*  88 */  {"i_bs_init_fail_yjId", {0x2200010,0x180001,0x0}, 0, 5, "", "yjId", 0},
-/*  89 */  {"i_bs_init_fail_heap_sIjId", {0x1211E,0x10220,0x18}, 0, 6, "", "sIjId", 0},
-/*  90 */  {"i_bs_init_heap_IIId", {0x10001,0x180001,0x0}, 0, 5, "", "IIId", 0},
-/*  91 */  {"i_bs_init_heap_bin_IId", {0x10001,0x18,0x0}, 0, 4, "", "IId", 0},
-/*  92 */  {"i_bs_init_heap_bin_heap_IIId", {0x10001,0x180001,0x0}, 0, 5, "", "IIId", 0},
-/*  93 */  {"i_bs_match_string_xfII", {0x200008,0x10001,0x0}, 0, 5, "", "xfII", 0},
-/*  94 */  {"i_bs_private_append_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd", 0},
-/*  95 */  {"i_bs_put_utf8_js", {0x211E0220,0x0,0x0}, 0, 3, "", "js", 0},
-/*  96 */  {"i_bs_restore2_xI", {0x10008,0x0,0x0}, 0, 3, "", "xI", 0},
-/*  97 */  {"i_bs_save2_xI", {0x10008,0x0,0x0}, 0, 3, "", "xI", 0},
-/*  98 */  {"i_bs_skip_bits2_fxxI", {0x80020,0x10008,0x0}, 0, 5, "", "fxxI", 0},
-/*  99 */  {"i_bs_skip_bits2_fxyI", {0x80020,0x10010,0x0}, 0, 5, "", "fxyI", 0},
-/* 100 */  {"i_bs_skip_bits_all2_fxI", {0x80020,0x1,0x0}, 0, 4, "", "fxI", 0},
-/* 101 */  {"i_bs_skip_bits_imm2_fxI", {0x80020,0x1,0x0}, 0, 4, "", "fxI", 0},
-/* 102 */  {"i_bs_start_match2_xfIId", {0x200008,0x10001,0x18}, 0, 6, "", "xfIId", 0},
-/* 103 */  {"i_bs_start_match2_yfIId", {0x200010,0x10001,0x18}, 0, 6, "", "yfIId", 0},
-/* 104 */  {"i_bs_utf16_size_sd", {0x18211E,0x0,0x0}, 0, 3, "", "sd", 0},
-/* 105 */  {"i_bs_utf8_size_sd", {0x18211E,0x0,0x0}, 0, 3, "", "sd", 0},
-/* 106 */  {"i_bs_validate_unicode_js", {0x211E0220,0x0,0x0}, 0, 3, "", "js", 0},
-/* 107 */  {"i_bs_validate_unicode_retract_jss", {0x211E0220,0x211E,0x0}, 0, 4, "", "jss", 0},
-/* 108 */  {"i_bsl_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd", 0},
-/* 109 */  {"i_bsr_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd", 0},
-/* 110 */  {"i_bxor_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd", 0},
-/* 111 */  {"i_call_f", {0x20,0x0,0x0}, 0, 2, "", "f", 0},
-/* 112 */  {"i_call_ext_e", {0x1,0x0,0x0}, 0, 2, "", "e", 0},
-/* 113 */  {"i_call_ext_last_eP", {0x10001,0x0,0x0}, 0, 3, "", "eP", 0},
-/* 114 */  {"i_call_ext_only_e", {0x1,0x0,0x0}, 0, 2, "", "e", 0},
-/* 115 */  {"i_call_fun_I", {0x1,0x0,0x0}, 0, 2, "", "I", 0},
-/* 116 */  {"i_call_fun_last_IP", {0x10001,0x0,0x0}, 0, 3, "", "IP", 0},
-/* 117 */  {"i_call_last_fP", {0x10020,0x0,0x0}, 0, 3, "", "fP", 0},
-/* 118 */  {"i_call_only_f", {0x20,0x0,0x0}, 0, 2, "", "f", 0},
-/* 119 */  {"i_debug_breakpoint", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 120 */  {"i_element_jxsd", {0x80220,0x18211E,0x0}, 0, 5, "", "jxsd", 0},
-/* 121 */  {"i_element_jysd", {0x100220,0x18211E,0x0}, 0, 5, "", "jysd", 0},
-/* 122 */  {"i_fadd_lll", {0x10001000,0x1000,0x0}, 0, 4, "", "lll", 0},
-/* 123 */  {"i_fast_element_jxId", {0x80220,0x180001,0x0}, 0, 5, "", "jxId", 0},
-/* 124 */  {"i_fast_element_jyId", {0x100220,0x180001,0x0}, 0, 5, "", "jyId", 0},
-/* 125 */  {"i_fcheckerror", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 126 */  {"i_fdiv_lll", {0x10001000,0x1000,0x0}, 0, 4, "", "lll", 0},
-/* 127 */  {"i_fmul_lll", {0x10001000,0x1000,0x0}, 0, 4, "", "lll", 0},
-/* 128 */  {"i_fnegate_ll", {0x10001000,0x0,0x0}, 0, 3, "", "ll", 0},
-/* 129 */  {"i_fsub_lll", {0x10001000,0x1000,0x0}, 0, 4, "", "lll", 0},
-/* 130 */  {"i_func_info_IaaI", {0x40001,0x10004,0x0}, 0, 5, "", "IaaI", 0},
-/* 131 */  {"i_gc_bif1_jIsId", {0x10220,0x1211E,0x18}, 0, 6, "", "jIsId", 0},
-/* 132 */  {"i_gc_bif2_jIIssd", {0x10220,0x211E0001,0x18211E}, 0, 7, "", "jIIssd", 0},
-/* 133 */  {"i_gc_bif3_jIIssd", {0x10220,0x211E0001,0x18211E}, 0, 7, "", "jIIssd", 0},
-/* 134 */  {"i_generic_breakpoint", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 135 */  {"i_get_sd", {0x18211E,0x0,0x0}, 0, 3, "", "sd", 0},
-/* 136 */  {"i_get_hash_cId", {0x12106,0x18,0x0}, 0, 4, "", "cId", 0},
-/* 137 */  {"i_get_map_element_fxxx", {0x80020,0x80008,0x0}, 0, 5, "", "fxxx", 0},
-/* 138 */  {"i_get_map_element_fxxy", {0x80020,0x100008,0x0}, 0, 5, "", "fxxy", 0},
-/* 139 */  {"i_get_map_element_fyxx", {0x100020,0x80008,0x0}, 0, 5, "", "fyxx", 0},
-/* 140 */  {"i_get_map_element_fyxy", {0x100020,0x100008,0x0}, 0, 5, "", "fyxy", 0},
-/* 141 */  {"i_get_map_element_hash_fxcIx", {0x80020,0x12106,0x8}, 0, 6, "", "fxcIx", 0},
-/* 142 */  {"i_get_map_element_hash_fxcIy", {0x80020,0x12106,0x10}, 0, 6, "", "fxcIy", 0},
-/* 143 */  {"i_get_map_element_hash_fycIx", {0x100020,0x12106,0x8}, 0, 6, "", "fycIx", 0},
-/* 144 */  {"i_get_map_element_hash_fycIy", {0x100020,0x12106,0x10}, 0, 6, "", "fycIy", 0},
-/* 145 */  {"i_get_map_elements_fsI", {0x211E0020,0x1,0x0}, 0, 4, "", "fsI", 0},
-/* 146 */  {"i_get_tuple_element_xPx", {0x10008,0x8,0x0}, 0, 3, "ig6Ppp", "xPx", 0},
-/* 147 */  {"i_get_tuple_element_xPy", {0x10008,0x10,0x0}, 0, 4, "", "xPy", 0},
-/* 148 */  {"i_get_tuple_element_yPx", {0x10010,0x8,0x0}, 0, 3, "ig6Ppp", "yPx", 0},
-/* 149 */  {"i_get_tuple_element_yPy", {0x10010,0x10,0x0}, 0, 4, "", "yPy", 0},
-/* 150 */  {"i_get_tuple_element2_xPx", {0x10008,0x8,0x0}, 0, 3, "ig6Ppp", "xPx", 0},
-/* 151 */  {"i_get_tuple_element2y_xPyy", {0x10008,0x100010,0x0}, 0, 3, "i0g0Ppp", "xPyy", 0},
-/* 152 */  {"i_get_tuple_element3_xPx", {0x10008,0x8,0x0}, 0, 3, "ig6Ppp", "xPx", 0},
-/* 153 */  {"i_hibernate", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 154 */  {"i_increment_rIId", {0x10408,0x180001,0x0}, 1, 4, "", "rIId", 0},
-/* 155 */  {"i_increment_xIId", {0x10008,0x180001,0x0}, 0, 5, "", "xIId", 0},
-/* 156 */  {"i_increment_yIId", {0x10010,0x180001,0x0}, 0, 5, "", "yIId", 0},
-/* 157 */  {"i_int_bnot_jsId", {0x211E0220,0x180001,0x0}, 0, 5, "", "jsId", 0},
-/* 158 */  {"i_int_div_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd", 0},
-/* 159 */  {"i_is_eq_exact_immed_frc", {0x4080020,0x2106,0x0}, 2, 3, "", "frc", 0},
-/* 160 */  {"i_is_eq_exact_immed_fxc", {0x80020,0x2106,0x0}, 0, 4, "", "fxc", 0},
-/* 161 */  {"i_is_eq_exact_immed_fyc", {0x100020,0x2106,0x0}, 0, 4, "", "fyc", 0},
-/* 162 */  {"i_is_eq_exact_literal_fxc", {0x80020,0x2106,0x0}, 0, 4, "", "fxc", 0},
-/* 163 */  {"i_is_eq_exact_literal_fyc", {0x100020,0x2106,0x0}, 0, 4, "", "fyc", 0},
-/* 164 */  {"i_is_ne_exact_immed_fxc", {0x80020,0x2106,0x0}, 0, 4, "", "fxc", 0},
-/* 165 */  {"i_is_ne_exact_immed_fyc", {0x100020,0x2106,0x0}, 0, 4, "", "fyc", 0},
-/* 166 */  {"i_is_ne_exact_literal_fxc", {0x80020,0x2106,0x0}, 0, 4, "", "fxc", 0},
-/* 167 */  {"i_is_ne_exact_literal_fyc", {0x100020,0x2106,0x0}, 0, 4, "", "fyc", 0},
-/* 168 */  {"i_jump_on_val_xfII", {0x200008,0x10001,0x0}, 0, 5, "", "xfII", 0},
-/* 169 */  {"i_jump_on_val_yfII", {0x200010,0x10001,0x0}, 0, 5, "", "yfII", 0},
-/* 170 */  {"i_jump_on_val_zero_xfI", {0x200008,0x1,0x0}, 0, 4, "", "xfI", 0},
-/* 171 */  {"i_jump_on_val_zero_yfI", {0x200010,0x1,0x0}, 0, 4, "", "yfI", 0},
-/* 172 */  {"i_loop_rec_f", {0x20,0x0,0x0}, 0, 2, "", "f", 0},
-/* 173 */  {"i_m_div_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd", 0},
-/* 174 */  {"i_make_fun_It", {0x10001,0x0,0x0}, 0, 3, "", "It", 0},
-/* 175 */  {"i_minus_jIxxd", {0x10220,0x80008,0x18}, 0, 6, "", "jIxxd", 0},
-/* 176 */  {"i_minus_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd", 0},
-/* 177 */  {"i_move_call_cf", {0x202106,0x0,0x0}, 0, 3, "", "cf", 0},
-/* 178 */  {"i_move_call_ext_ce", {0x12106,0x0,0x0}, 0, 3, "", "ce", 0},
-/* 179 */  {"i_move_call_ext_last_ePc", {0x10001,0x2106,0x0}, 0, 4, "", "ePc", 0},
-/* 180 */  {"i_move_call_ext_only_ec", {0x21060001,0x0,0x0}, 0, 3, "", "ec", 0},
-/* 181 */  {"i_move_call_last_fPc", {0x10020,0x2106,0x0}, 0, 4, "", "fPc", 0},
-/* 182 */  {"i_move_call_only_fc", {0x21060020,0x0,0x0}, 0, 3, "", "fc", 0},
-/* 183 */  {"i_new_bs_put_binary_jsIs", {0x211E0220,0x211E0001,0x0}, 0, 5, "", "jsIs", 0},
-/* 184 */  {"i_new_bs_put_binary_all_jsI", {0x211E0220,0x1,0x0}, 0, 4, "", "jsI", 0},
-/* 185 */  {"i_new_bs_put_binary_imm_jIs", {0x10220,0x211E,0x0}, 0, 4, "", "jIs", 0},
-/* 186 */  {"i_new_bs_put_float_jsIs", {0x211E0220,0x211E0001,0x0}, 0, 5, "", "jsIs", 0},
-/* 187 */  {"i_new_bs_put_float_imm_jIIs", {0x10220,0x211E0001,0x0}, 0, 5, "", "jIIs", 0},
-/* 188 */  {"i_new_bs_put_integer_jsIs", {0x211E0220,0x211E0001,0x0}, 0, 5, "", "jsIs", 0},
-/* 189 */  {"i_new_bs_put_integer_imm_jIIs", {0x10220,0x211E0001,0x0}, 0, 5, "", "jIIs", 0},
-/* 190 */  {"i_perf_counter", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 191 */  {"i_plus_jIxxd", {0x10220,0x80008,0x18}, 0, 6, "", "jIxxd", 0},
-/* 192 */  {"i_plus_jIxyd", {0x10220,0x100008,0x18}, 0, 6, "", "jIxyd", 0},
-/* 193 */  {"i_plus_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd", 0},
-/* 194 */  {"i_put_tuple_xI", {0x10008,0x0,0x0}, 0, 2, "iwPp", "xI", 0},
-/* 195 */  {"i_put_tuple_yI", {0x10010,0x0,0x0}, 0, 2, "iwPp", "yI", 0},
-/* 196 */  {"i_raise", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 197 */  {"i_recv_set", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 198 */  {"i_rem_jIxxd", {0x10220,0x80008,0x18}, 0, 6, "", "jIxxd", 0},
-/* 199 */  {"i_rem_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd", 0},
-/* 200 */  {"i_return_time_trace", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 201 */  {"i_return_to_trace", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 202 */  {"i_select_tuple_arity_xfI", {0x200008,0x1,0x0}, 0, 4, "", "xfI", 0},
-/* 203 */  {"i_select_tuple_arity_yfI", {0x200010,0x1,0x0}, 0, 4, "", "yfI", 0},
-/* 204 */  {"i_select_tuple_arity2_xfAAff", {0x200008,0x10001,0x200020}, 0, 7, "", "xfAAff", 0},
-/* 205 */  {"i_select_tuple_arity2_yfAAff", {0x200010,0x10001,0x200020}, 0, 7, "", "yfAAff", 0},
-/* 206 */  {"i_select_val2_xfccff", {0x200008,0x21062106,0x200020}, 0, 7, "", "xfccff", 0},
-/* 207 */  {"i_select_val2_yfccff", {0x200010,0x21062106,0x200020}, 0, 7, "", "yfccff", 0},
-/* 208 */  {"i_select_val_bins_xfI", {0x200008,0x1,0x0}, 0, 4, "", "xfI", 0},
-/* 209 */  {"i_select_val_bins_yfI", {0x200010,0x1,0x0}, 0, 4, "", "yfI", 0},
-/* 210 */  {"i_select_val_lins_xfI", {0x200008,0x1,0x0}, 0, 4, "", "xfI", 0},
-/* 211 */  {"i_select_val_lins_yfI", {0x200010,0x1,0x0}, 0, 4, "", "yfI", 0},
-/* 212 */  {"i_times_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd", 0},
-/* 213 */  {"i_trim_I", {0x1,0x0,0x0}, 0, 2, "", "I", 0},
-/* 214 */  {"i_wait_error", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 215 */  {"i_wait_error_locked", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 216 */  {"i_wait_timeout_fI", {0x10020,0x0,0x0}, 0, 3, "", "fI", 0},
-/* 217 */  {"i_wait_timeout_fs", {0x211E0020,0x0,0x0}, 0, 3, "", "fs", 0},
-/* 218 */  {"i_wait_timeout_locked_fI", {0x10020,0x0,0x0}, 0, 3, "", "fI", 0},
-/* 219 */  {"i_wait_timeout_locked_fs", {0x211E0020,0x0,0x0}, 0, 3, "", "fs", 0},
-/* 220 */  {"i_yield", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 221 */  {"if_end", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 222 */  {"init_y", {0x10,0x0,0x0}, 0, 2, "", "y", 0},
-/* 223 */  {"init2_yy", {0x100010,0x0,0x0}, 0, 2, "i6Pp", "yy", 0},
-/* 224 */  {"init3_yyy", {0x100010,0x10,0x0}, 0, 2, "i00Pp", "yyy", 0},
-/* 225 */  {"int_code_end", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 226 */  {"is_atom_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx", 0},
-/* 227 */  {"is_atom_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy", 0},
-/* 228 */  {"is_binary_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx", 0},
-/* 229 */  {"is_binary_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy", 0},
-/* 230 */  {"is_bitstring_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx", 0},
-/* 231 */  {"is_bitstring_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy", 0},
-/* 232 */  {"is_boolean_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx", 0},
-/* 233 */  {"is_boolean_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy", 0},
-/* 234 */  {"is_eq_fss", {0x211E0020,0x211E,0x0}, 0, 4, "", "fss", 0},
-/* 235 */  {"is_eq_exact_fxx", {0x80020,0x8,0x0}, 0, 3, "i6Pp", "fxx", 0},
-/* 236 */  {"is_eq_exact_fxy", {0x80020,0x10,0x0}, 0, 3, "i6Pp", "fxy", 0},
-/* 237 */  {"is_eq_exact_fss", {0x211E0020,0x211E,0x0}, 0, 4, "", "fss", 0},
-/* 238 */  {"is_float_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx", 0},
-/* 239 */  {"is_float_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy", 0},
-/* 240 */  {"is_function_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx", 0},
-/* 241 */  {"is_function_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy", 0},
-/* 242 */  {"is_function2_fss", {0x211E0020,0x211E,0x0}, 0, 4, "", "fss", 0},
-/* 243 */  {"is_ge_fxx", {0x80020,0x8,0x0}, 0, 4, "", "fxx", 0},
-/* 244 */  {"is_ge_fxc", {0x80020,0x2106,0x0}, 0, 4, "", "fxc", 0},
-/* 245 */  {"is_ge_fcx", {0x21060020,0x8,0x0}, 0, 4, "", "fcx", 0},
-/* 246 */  {"is_ge_fss", {0x211E0020,0x211E,0x0}, 0, 4, "", "fss", 0},
-/* 247 */  {"is_integer_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx", 0},
-/* 248 */  {"is_integer_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy", 0},
-/* 249 */  {"is_integer_allocate_fxII", {0x80020,0x10001,0x0}, 0, 5, "", "fxII", 0},
-/* 250 */  {"is_list_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx", 0},
-/* 251 */  {"is_list_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy", 0},
-/* 252 */  {"is_lt_fxx", {0x80020,0x8,0x0}, 0, 4, "", "fxx", 0},
-/* 253 */  {"is_lt_fxc", {0x80020,0x2106,0x0}, 0, 4, "", "fxc", 0},
-/* 254 */  {"is_lt_fcx", {0x21060020,0x8,0x0}, 0, 4, "", "fcx", 0},
-/* 255 */  {"is_lt_fss", {0x211E0020,0x211E,0x0}, 0, 4, "", "fss", 0},
-/* 256 */  {"is_map_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx", 0},
-/* 257 */  {"is_map_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy", 0},
-/* 258 */  {"is_ne_fss", {0x211E0020,0x211E,0x0}, 0, 4, "", "fss", 0},
-/* 259 */  {"is_ne_exact_fss", {0x211E0020,0x211E,0x0}, 0, 4, "", "fss", 0},
-/* 260 */  {"is_nil_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx", 0},
-/* 261 */  {"is_nil_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy", 0},
-/* 262 */  {"is_non_empty_list_test_heap_fIt", {0x10020,0x1,0x0}, 0, 3, "iwPp", "fIt", 0},
-/* 263 */  {"is_nonempty_list_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx", 0},
-/* 264 */  {"is_nonempty_list_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy", 0},
-/* 265 */  {"is_nonempty_list_allocate_frIt", {0x4080020,0x10001,0x0}, 2, 3, "iwPp", "frIt", 0},
-/* 266 */  {"is_nonempty_list_allocate_fxIt", {0x80020,0x10001,0x0}, 0, 4, "giwPpp", "fxIt", 0},
-/* 267 */  {"is_nonempty_list_get_list_frxx", {0x4080020,0x80008,0x0}, 2, 3, "i6Pp", "frxx", 0},
-/* 268 */  {"is_nonempty_list_get_list_fxxx", {0x80020,0x80008,0x0}, 0, 3, "i00Pp", "fxxx", 0},
-/* 269 */  {"is_number_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx", 0},
-/* 270 */  {"is_number_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy", 0},
-/* 271 */  {"is_pid_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx", 0},
-/* 272 */  {"is_pid_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy", 0},
-/* 273 */  {"is_port_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx", 0},
-/* 274 */  {"is_port_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy", 0},
-/* 275 */  {"is_reference_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx", 0},
-/* 276 */  {"is_reference_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy", 0},
-/* 277 */  {"is_tuple_fr", {0x4080020,0x0,0x0}, 2, 2, "", "fr", 0},
-/* 278 */  {"is_tuple_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx", 0},
-/* 279 */  {"is_tuple_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy", 0},
-/* 280 */  {"is_tuple_of_arity_frA", {0x4080020,0x1,0x0}, 2, 3, "", "frA", 0},
-/* 281 */  {"is_tuple_of_arity_fxA", {0x80020,0x1,0x0}, 0, 4, "", "fxA", 0},
-/* 282 */  {"is_tuple_of_arity_fyA", {0x100020,0x1,0x0}, 0, 4, "", "fyA", 0},
-/* 283 */  {"jump_f", {0x20,0x0,0x0}, 0, 2, "", "f", 0},
-/* 284 */  {"label_L", {0x1,0x0,0x0}, 0, 1, "", "L", 0},
-/* 285 */  {"line_I", {0x1,0x0,0x0}, 0, 2, "", "I", 0},
-/* 286 */  {"loop_rec_end_f", {0x20,0x0,0x0}, 0, 2, "", "f", 0},
-/* 287 */  {"move_nx", {0x80100,0x0,0x0}, 0, 2, "", "nx", 0},
-/* 288 */  {"move_rx", {0x80408,0x0,0x0}, 1, 2, "", "rx", 0},
-/* 289 */  {"move_ry", {0x100408,0x0,0x0}, 1, 2, "", "ry", 0},
-/* 290 */  {"move_xr", {0x4080008,0x0,0x0}, 2, 2, "", "xr", 0},
-/* 291 */  {"move_xx", {0x80008,0x0,0x0}, 0, 2, "i6Pp", "xx", 0},
-/* 292 */  {"move_xy", {0x100008,0x0,0x0}, 0, 2, "i6Pp", "xy", 0},
-/* 293 */  {"move_yr", {0x4080010,0x0,0x0}, 2, 2, "", "yr", 0},
-/* 294 */  {"move_yx", {0x80010,0x0,0x0}, 0, 2, "i6Pp", "yx", 0},
-/* 295 */  {"move_yy", {0x100010,0x0,0x0}, 0, 2, "i6Pp", "yy", 0},
-/* 296 */  {"move_cr", {0x4082106,0x0,0x0}, 2, 2, "", "cr", 0},
-/* 297 */  {"move_cx", {0x82106,0x0,0x0}, 0, 3, "", "cx", 0},
-/* 298 */  {"move2_par_xxxx", {0x80008,0x80008,0x0}, 0, 2, "i666Pp", "xxxx", 0},
-/* 299 */  {"move2_par_xxxy", {0x80008,0x100008,0x0}, 0, 2, "i666Pp", "xxxy", 0},
-/* 300 */  {"move2_par_xxyx", {0x80008,0x80010,0x0}, 0, 2, "i666Pp", "xxyx", 0},
-/* 301 */  {"move2_par_xyxy", {0x100008,0x100008,0x0}, 0, 2, "i666Pp", "xyxy", 0},
-/* 302 */  {"move2_par_yxxx", {0x80010,0x80008,0x0}, 0, 2, "i666Pp", "yxxx", 0},
-/* 303 */  {"move2_par_yxxy", {0x80010,0x100008,0x0}, 0, 2, "i666Pp", "yxxy", 0},
-/* 304 */  {"move2_par_yxyx", {0x80010,0x80010,0x0}, 0, 2, "i666Pp", "yxyx", 0},
-/* 305 */  {"move3_xxxxxx", {0x80008,0x80008,0x80008}, 0, 3, "i00Pi00Ppp", "xxxxxx", 0},
-/* 306 */  {"move3_xyxyxy", {0x100008,0x100008,0x100008}, 0, 3, "i00Pi00Ppp", "xyxyxy", 0},
-/* 307 */  {"move3_yxyxyx", {0x80010,0x80010,0x80010}, 0, 3, "i00Pi00Ppp", "yxyxyx", 0},
-/* 308 */  {"move_call_xf", {0x200008,0x0,0x0}, 0, 3, "", "xf", 0},
-/* 309 */  {"move_call_yf", {0x200010,0x0,0x0}, 0, 3, "", "yf", 0},
-/* 310 */  {"move_call_last_xfQ", {0x200008,0x1,0x0}, 0, 3, "ig6Ppp", "xfQ", 0},
-/* 311 */  {"move_call_last_yfQ", {0x200010,0x1,0x0}, 0, 3, "ig6Ppp", "yfQ", 0},
-/* 312 */  {"move_call_only_xf", {0x200008,0x0,0x0}, 0, 3, "", "xf", 0},
-/* 313 */  {"move_deallocate_return_nQ", {0x10100,0x0,0x0}, 0, 2, "", "nQ", 0},
-/* 314 */  {"move_deallocate_return_xQ", {0x10008,0x0,0x0}, 0, 2, "i6Pp", "xQ", 0},
-/* 315 */  {"move_deallocate_return_yQ", {0x10010,0x0,0x0}, 0, 2, "i6Pp", "yQ", 0},
-/* 316 */  {"move_deallocate_return_cQ", {0x12106,0x0,0x0}, 0, 3, "", "cQ", 0},
-/* 317 */  {"move_dup_xxx", {0x80008,0x8,0x0}, 0, 2, "i00Pp", "xxx", 0},
-/* 318 */  {"move_dup_xxy", {0x80008,0x10,0x0}, 0, 2, "i00Pp", "xxy", 0},
-/* 319 */  {"move_dup_yxx", {0x80010,0x8,0x0}, 0, 2, "i00Pp", "yxx", 0},
-/* 320 */  {"move_dup_yxy", {0x80010,0x10,0x0}, 0, 2, "i00Pp", "yxy", 0},
-/* 321 */  {"move_jump_fn", {0x1000020,0x0,0x0}, 0, 2, "", "fn", 0},
-/* 322 */  {"move_jump_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx", 0},
-/* 323 */  {"move_jump_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy", 0},
-/* 324 */  {"move_jump_fc", {0x21060020,0x0,0x0}, 0, 3, "", "fc", 0},
-/* 325 */  {"move_return_n", {0x100,0x0,0x0}, 0, 1, "", "n", 0},
-/* 326 */  {"move_return_x", {0x8,0x0,0x0}, 0, 2, "", "x", 0},
-/* 327 */  {"move_return_c", {0x2106,0x0,0x0}, 0, 2, "", "c", 0},
-/* 328 */  {"move_shift_xxx", {0x80008,0x8,0x0}, 0, 2, "i00Pp", "xxx", 0},
-/* 329 */  {"move_shift_xxy", {0x80008,0x10,0x0}, 0, 2, "i00Pp", "xxy", 0},
-/* 330 */  {"move_shift_xyx", {0x100008,0x8,0x0}, 0, 2, "i00Pp", "xyx", 0},
-/* 331 */  {"move_shift_yxx", {0x80010,0x8,0x0}, 0, 2, "i00Pp", "yxx", 0},
-/* 332 */  {"move_window3_xxxy", {0x80008,0x100008,0x0}, 0, 2, "i666Pp", "xxxy", 0},
-/* 333 */  {"move_window4_xxxxy", {0x80008,0x80008,0x10}, 0, 3, "00Pi00Ppp", "xxxxy", 0},
-/* 334 */  {"move_window5_xxxxxy", {0x80008,0x80008,0x100008}, 0, 3, "i00Pi00Ppp", "xxxxxy", 0},
-/* 335 */  {"move_x1_c", {0x2106,0x0,0x0}, 0, 2, "", "c", 0},
-/* 336 */  {"move_x2_c", {0x2106,0x0,0x0}, 0, 2, "", "c", 0},
-/* 337 */  {"new_map_dII", {0x10018,0x1,0x0}, 0, 4, "", "dII", 0},
-/* 338 */  {"node_x", {0x8,0x0,0x0}, 0, 2, "", "x", 0},
-/* 339 */  {"node_y", {0x10,0x0,0x0}, 0, 2, "", "y", 0},
-/* 340 */  {"normal_exit", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 341 */  {"on_load", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 342 */  {"put_list_rnr", {0x1000408,0x408,0x0}, 5, 1, "", "rnr", 0},
-/* 343 */  {"put_list_rnx", {0x1000408,0x8,0x0}, 1, 2, "", "rnx", 0},
-/* 344 */  {"put_list_rxr", {0x80408,0x408,0x0}, 5, 2, "", "rxr", 0},
-/* 345 */  {"put_list_rxx", {0x80408,0x8,0x0}, 1, 2, "i6Pp", "rxx", 0},
-/* 346 */  {"put_list_xnx", {0x1000008,0x8,0x0}, 0, 2, "i6Pp", "xnx", 0},
-/* 347 */  {"put_list_xrr", {0x4080008,0x408,0x0}, 6, 2, "", "xrr", 0},
-/* 348 */  {"put_list_xxr", {0x80008,0x408,0x0}, 4, 2, "i6Pp", "xxr", 0},
-/* 349 */  {"put_list_xxx", {0x80008,0x8,0x0}, 0, 2, "i00Pp", "xxx", 0},
-/* 350 */  {"put_list_xyx", {0x100008,0x8,0x0}, 0, 2, "i00Pp", "xyx", 0},
-/* 351 */  {"put_list_ynx", {0x1000010,0x8,0x0}, 0, 2, "i6Pp", "ynx", 0},
-/* 352 */  {"put_list_yrr", {0x4080010,0x408,0x0}, 6, 2, "", "yrr", 0},
-/* 353 */  {"put_list_yxx", {0x80010,0x8,0x0}, 0, 2, "i00Pp", "yxx", 0},
-/* 354 */  {"put_list_yyx", {0x100010,0x8,0x0}, 0, 2, "i00Pp", "yyx", 0},
-/* 355 */  {"put_list_xcx", {0x21060008,0x8,0x0}, 0, 4, "", "xcx", 0},
-/* 356 */  {"put_list_xcy", {0x21060008,0x10,0x0}, 0, 4, "", "xcy", 0},
-/* 357 */  {"put_list_ycx", {0x21060010,0x8,0x0}, 0, 4, "", "ycx", 0},
-/* 358 */  {"put_list_cxx", {0x82106,0x8,0x0}, 0, 3, "i6Pp", "cxx", 0},
-/* 359 */  {"put_list_cyx", {0x102106,0x8,0x0}, 0, 3, "i6Pp", "cyx", 0},
-/* 360 */  {"put_list_ssd", {0x211E211E,0x18,0x0}, 0, 4, "", "ssd", 0},
-/* 361 */  {"recv_mark_f", {0x20,0x0,0x0}, 0, 2, "", "f", 0},
-/* 362 */  {"remove_message", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 363 */  {"return", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 364 */  {"return_trace", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 365 */  {"self_x", {0x8,0x0,0x0}, 0, 2, "", "x", 0},
-/* 366 */  {"self_y", {0x10,0x0,0x0}, 0, 2, "", "y", 0},
-/* 367 */  {"send", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 368 */  {"set_tuple_element_sdP", {0x18211E,0x1,0x0}, 0, 4, "", "sdP", 0},
-/* 369 */  {"swap_xx", {0x80008,0x0,0x0}, 0, 2, "i6Pp", "xx", 0},
-/* 370 */  {"swap_xy", {0x100008,0x0,0x0}, 0, 2, "i6Pp", "xy", 0},
-/* 371 */  {"swap_temp_xxx", {0x80008,0x8,0x0}, 0, 2, "i00Pp", "xxx", 0},
-/* 372 */  {"swap_temp_xyx", {0x100008,0x8,0x0}, 0, 2, "i00Pp", "xyx", 0},
-/* 373 */  {"system_limit_j", {0x220,0x0,0x0}, 0, 2, "", "j", 0},
-/* 374 */  {"test_arity_fxA", {0x80020,0x1,0x0}, 0, 4, "", "fxA", 0},
-/* 375 */  {"test_arity_fyA", {0x100020,0x1,0x0}, 0, 4, "", "fyA", 0},
-/* 376 */  {"test_heap_It", {0x10001,0x0,0x0}, 0, 2, "iwPp", "It", 0},
-/* 377 */  {"test_heap_1_put_list_Iy", {0x100001,0x0,0x0}, 0, 2, "iwPp", "Iy", 0},
-/* 378 */  {"timeout", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 379 */  {"timeout_locked", {0x0,0x0,0x0}, 0, 1, "", "", 0},
-/* 380 */  {"try_case_end_s", {0x211E,0x0,0x0}, 0, 2, "", "s", 0},
-/* 381 */  {"try_end_y", {0x10,0x0,0x0}, 0, 2, "", "y", 0},
-/* 382 */  {"update_map_assoc_jsdII", {0x211E0220,0x10018,0x1}, 0, 6, "", "jsdII", 0},
-/* 383 */  {"update_map_exact_jsdII", {0x211E0220,0x10018,0x1}, 0, 6, "", "jsdII", 0},
-/* 384 */  {"wait_f", {0x20,0x0,0x0}, 0, 2, "", "f", 0},
-/* 385 */  {"wait_locked_f", {0x20,0x0,0x0}, 0, 2, "", "f", 0},
-/* 386 */  {"wait_unlocked_f", {0x20,0x0,0x0}, 0, 2, "", "f", 0},
+const OpEntry opc[] = {
+/*   0 */  {"allocate_tt", {0x10001,0x0,0x0}, 0, 2, "i6Pp", "tt"},
+/*   1 */  {"allocate_heap_tIt", {0x10001,0x1,0x0}, 0, 3, "giwPpp", "tIt"},
+/*   2 */  {"allocate_heap_zero_tIt", {0x10001,0x1,0x0}, 0, 3, "giwPpp", "tIt"},
+/*   3 */  {"allocate_init_tIy", {0x10001,0x10,0x0}, 0, 3, "giwPpp", "tIy"},
+/*   4 */  {"allocate_zero_tt", {0x10001,0x0,0x0}, 0, 2, "i6Pp", "tt"},
+/*   5 */  {"apply_I", {0x1,0x0,0x0}, 0, 2, "", "I"},
+/*   6 */  {"apply_bif", {0x0,0x0,0x0}, 0, 1, "", ""},
+/*   7 */  {"apply_last_IP", {0x10001,0x0,0x0}, 0, 3, "", "IP"},
+/*   8 */  {"badarg_j", {0x220,0x0,0x0}, 0, 2, "", "j"},
+/*   9 */  {"badmatch_x", {0x8,0x0,0x0}, 0, 2, "", "x"},
+/*  10 */  {"bif1_fbsd", {0x10020,0x18211E,0x0}, 0, 5, "", "fbsd"},
+/*  11 */  {"bif1_body_bsd", {0x211E0001,0x18,0x0}, 0, 4, "", "bsd"},
+/*  12 */  {"bs_add_jssId", {0x211E0220,0x1211E,0x18}, 0, 6, "", "jssId"},
+/*  13 */  {"bs_context_to_binary_x", {0x8,0x0,0x0}, 0, 2, "", "x"},
+/*  14 */  {"bs_init_writable", {0x0,0x0,0x0}, 0, 1, "", ""},
+/*  15 */  {"bs_put_string_II", {0x10001,0x0,0x0}, 0, 3, "", "II"},
+/*  16 */  {"bs_put_utf16_jIs", {0x10220,0x211E,0x0}, 0, 4, "", "jIs"},
+/*  17 */  {"bs_test_tail_imm2_fxI", {0x80020,0x1,0x0}, 0, 4, "", "fxI"},
+/*  18 */  {"bs_test_unit_fxI", {0x80020,0x1,0x0}, 0, 4, "", "fxI"},
+/*  19 */  {"bs_test_unit8_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx"},
+/*  20 */  {"bs_test_zero_tail2_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx"},
+/*  21 */  {"call_bif_e", {0x1,0x0,0x0}, 0, 2, "", "e"},
+/*  22 */  {"call_error_handler", {0x0,0x0,0x0}, 0, 1, "", ""},
+/*  23 */  {"call_nif", {0x0,0x0,0x0}, 0, 1, "", ""},
+/*  24 */  {"case_end_x", {0x8,0x0,0x0}, 0, 2, "", "x"},
+/*  25 */  {"catch_yf", {0x200010,0x0,0x0}, 0, 3, "", "yf"},
+/*  26 */  {"catch_end_y", {0x10,0x0,0x0}, 0, 2, "", "y"},
+/*  27 */  {"continue_exit", {0x0,0x0,0x0}, 0, 1, "", ""},
+/*  28 */  {"deallocate_I", {0x1,0x0,0x0}, 0, 2, "", "I"},
+/*  29 */  {"deallocate_return_Q", {0x1,0x0,0x0}, 0, 2, "", "Q"},
+/*  30 */  {"error_action_code", {0x0,0x0,0x0}, 0, 1, "", ""},
+/*  31 */  {"fclearerror", {0x0,0x0,0x0}, 0, 1, "", ""},
+/*  32 */  {"fconv_dl", {0x10000018,0x0,0x0}, 0, 3, "", "dl"},
+/*  33 */  {"fmove_ql", {0x10002000,0x0,0x0}, 0, 3, "", "ql"},
+/*  34 */  {"fmove_ld", {0x181000,0x0,0x0}, 0, 3, "", "ld"},
+/*  35 */  {"fmove_dl", {0x10000018,0x0,0x0}, 0, 3, "", "dl"},
+/*  36 */  {"get_list_rry", {0x4080408,0x10,0x0}, 3, 2, "", "rry"},
+/*  37 */  {"get_list_rxr", {0x80408,0x408,0x0}, 5, 2, "", "rxr"},
+/*  38 */  {"get_list_rxx", {0x80408,0x8,0x0}, 1, 2, "i6Pp", "rxx"},
+/*  39 */  {"get_list_rxy", {0x80408,0x10,0x0}, 1, 2, "i6Pp", "rxy"},
+/*  40 */  {"get_list_ryr", {0x100408,0x408,0x0}, 5, 2, "", "ryr"},
+/*  41 */  {"get_list_xrx", {0x4080008,0x8,0x0}, 2, 2, "i6Pp", "xrx"},
+/*  42 */  {"get_list_xxx", {0x80008,0x8,0x0}, 0, 2, "i00Pp", "xxx"},
+/*  43 */  {"get_list_xxy", {0x80008,0x10,0x0}, 0, 2, "i00Pp", "xxy"},
+/*  44 */  {"get_list_xyx", {0x100008,0x8,0x0}, 0, 2, "i00Pp", "xyx"},
+/*  45 */  {"get_list_xyy", {0x100008,0x10,0x0}, 0, 2, "i00Pp", "xyy"},
+/*  46 */  {"get_list_yxx", {0x80010,0x8,0x0}, 0, 2, "i00Pp", "yxx"},
+/*  47 */  {"get_list_yxy", {0x80010,0x10,0x0}, 0, 2, "i00Pp", "yxy"},
+/*  48 */  {"get_list_yyx", {0x100010,0x8,0x0}, 0, 2, "i00Pp", "yyx"},
+/*  49 */  {"get_list_yyy", {0x100010,0x10,0x0}, 0, 2, "i00Pp", "yyy"},
+/*  50 */  {"hipe_call_count", {0x0,0x0,0x0}, 0, 1, "", ""},
+/*  51 */  {"hipe_trap_call", {0x0,0x0,0x0}, 0, 1, "", ""},
+/*  52 */  {"hipe_trap_call_closure", {0x0,0x0,0x0}, 0, 1, "", ""},
+/*  53 */  {"hipe_trap_resume", {0x0,0x0,0x0}, 0, 1, "", ""},
+/*  54 */  {"hipe_trap_return", {0x0,0x0,0x0}, 0, 1, "", ""},
+/*  55 */  {"hipe_trap_throw", {0x0,0x0,0x0}, 0, 1, "", ""},
+/*  56 */  {"i_apply", {0x0,0x0,0x0}, 0, 1, "", ""},
+/*  57 */  {"i_apply_fun", {0x0,0x0,0x0}, 0, 1, "", ""},
+/*  58 */  {"i_apply_fun_last_P", {0x1,0x0,0x0}, 0, 2, "", "P"},
+/*  59 */  {"i_apply_fun_only", {0x0,0x0,0x0}, 0, 1, "", ""},
+/*  60 */  {"i_apply_last_P", {0x1,0x0,0x0}, 0, 2, "", "P"},
+/*  61 */  {"i_apply_only", {0x0,0x0,0x0}, 0, 1, "", ""},
+/*  62 */  {"i_band_jIxcd", {0x10220,0x21060008,0x18}, 0, 6, "", "jIxcd"},
+/*  63 */  {"i_band_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd"},
+/*  64 */  {"i_bif2_fbssd", {0x10020,0x211E211E,0x18}, 0, 6, "", "fbssd"},
+/*  65 */  {"i_bif2_body_bssd", {0x211E0001,0x18211E,0x0}, 0, 5, "", "bssd"},
+/*  66 */  {"i_bor_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd"},
+/*  67 */  {"i_bs_append_jIIIsd", {0x10220,0x10001,0x18211E}, 0, 7, "", "jIIIsd"},
+/*  68 */  {"i_bs_get_binary2_fxIsId", {0x80020,0x211E0001,0x180001}, 0, 7, "", "fxIsId"},
+/*  69 */  {"i_bs_get_binary_all2_fxIId", {0x80020,0x10001,0x18}, 0, 6, "", "fxIId"},
+/*  70 */  {"i_bs_get_binary_all_reuse_xfI", {0x200008,0x1,0x0}, 0, 4, "", "xfI"},
+/*  71 */  {"i_bs_get_binary_imm2_fxIIId", {0x80020,0x10001,0x180001}, 0, 7, "", "fxIIId"},
+/*  72 */  {"i_bs_get_float2_fxIsId", {0x80020,0x211E0001,0x180001}, 0, 7, "", "fxIsId"},
+/*  73 */  {"i_bs_get_integer_fIIssd", {0x10020,0x211E0001,0x18211E}, 0, 7, "", "fIIssd"},
+/*  74 */  {"i_bs_get_integer_16_xfd", {0x200008,0x18,0x0}, 0, 4, "", "xfd"},
+/*  75 */  {"i_bs_get_integer_32_xfId", {0x200008,0x180001,0x0}, 0, 5, "", "xfId"},
+/*  76 */  {"i_bs_get_integer_8_xfd", {0x200008,0x18,0x0}, 0, 4, "", "xfd"},
+/*  77 */  {"i_bs_get_integer_imm_xIIfId", {0x10008,0x200001,0x180001}, 0, 7, "", "xIIfId"},
+/*  78 */  {"i_bs_get_integer_small_imm_xIfId", {0x10008,0x10020,0x18}, 0, 6, "", "xIfId"},
+/*  79 */  {"i_bs_get_utf16_xfId", {0x200008,0x180001,0x0}, 0, 5, "", "xfId"},
+/*  80 */  {"i_bs_get_utf8_xfd", {0x200008,0x18,0x0}, 0, 4, "", "xfd"},
+/*  81 */  {"i_bs_init_IId", {0x10001,0x18,0x0}, 0, 4, "", "IId"},
+/*  82 */  {"i_bs_init_bits_IId", {0x10001,0x18,0x0}, 0, 4, "", "IId"},
+/*  83 */  {"i_bs_init_bits_fail_xjId", {0x2200008,0x180001,0x0}, 0, 5, "", "xjId"},
+/*  84 */  {"i_bs_init_bits_fail_yjId", {0x2200010,0x180001,0x0}, 0, 5, "", "yjId"},
+/*  85 */  {"i_bs_init_bits_fail_heap_sIjId", {0x1211E,0x10220,0x18}, 0, 6, "", "sIjId"},
+/*  86 */  {"i_bs_init_bits_heap_IIId", {0x10001,0x180001,0x0}, 0, 5, "", "IIId"},
+/*  87 */  {"i_bs_init_fail_xjId", {0x2200008,0x180001,0x0}, 0, 5, "", "xjId"},
+/*  88 */  {"i_bs_init_fail_yjId", {0x2200010,0x180001,0x0}, 0, 5, "", "yjId"},
+/*  89 */  {"i_bs_init_fail_heap_sIjId", {0x1211E,0x10220,0x18}, 0, 6, "", "sIjId"},
+/*  90 */  {"i_bs_init_heap_IIId", {0x10001,0x180001,0x0}, 0, 5, "", "IIId"},
+/*  91 */  {"i_bs_init_heap_bin_IId", {0x10001,0x18,0x0}, 0, 4, "", "IId"},
+/*  92 */  {"i_bs_init_heap_bin_heap_IIId", {0x10001,0x180001,0x0}, 0, 5, "", "IIId"},
+/*  93 */  {"i_bs_match_string_xfII", {0x200008,0x10001,0x0}, 0, 5, "", "xfII"},
+/*  94 */  {"i_bs_private_append_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd"},
+/*  95 */  {"i_bs_put_utf8_js", {0x211E0220,0x0,0x0}, 0, 3, "", "js"},
+/*  96 */  {"i_bs_restore2_xI", {0x10008,0x0,0x0}, 0, 3, "", "xI"},
+/*  97 */  {"i_bs_save2_xI", {0x10008,0x0,0x0}, 0, 3, "", "xI"},
+/*  98 */  {"i_bs_skip_bits2_fxxI", {0x80020,0x10008,0x0}, 0, 5, "", "fxxI"},
+/*  99 */  {"i_bs_skip_bits2_fxyI", {0x80020,0x10010,0x0}, 0, 5, "", "fxyI"},
+/* 100 */  {"i_bs_skip_bits_all2_fxI", {0x80020,0x1,0x0}, 0, 4, "", "fxI"},
+/* 101 */  {"i_bs_skip_bits_imm2_fxI", {0x80020,0x1,0x0}, 0, 4, "", "fxI"},
+/* 102 */  {"i_bs_start_match2_xfIId", {0x200008,0x10001,0x18}, 0, 6, "", "xfIId"},
+/* 103 */  {"i_bs_start_match2_yfIId", {0x200010,0x10001,0x18}, 0, 6, "", "yfIId"},
+/* 104 */  {"i_bs_utf16_size_sd", {0x18211E,0x0,0x0}, 0, 3, "", "sd"},
+/* 105 */  {"i_bs_utf8_size_sd", {0x18211E,0x0,0x0}, 0, 3, "", "sd"},
+/* 106 */  {"i_bs_validate_unicode_js", {0x211E0220,0x0,0x0}, 0, 3, "", "js"},
+/* 107 */  {"i_bs_validate_unicode_retract_jss", {0x211E0220,0x211E,0x0}, 0, 4, "", "jss"},
+/* 108 */  {"i_bsl_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd"},
+/* 109 */  {"i_bsr_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd"},
+/* 110 */  {"i_bxor_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd"},
+/* 111 */  {"i_call_f", {0x20,0x0,0x0}, 0, 2, "", "f"},
+/* 112 */  {"i_call_ext_e", {0x1,0x0,0x0}, 0, 2, "", "e"},
+/* 113 */  {"i_call_ext_last_eP", {0x10001,0x0,0x0}, 0, 3, "", "eP"},
+/* 114 */  {"i_call_ext_only_e", {0x1,0x0,0x0}, 0, 2, "", "e"},
+/* 115 */  {"i_call_fun_I", {0x1,0x0,0x0}, 0, 2, "", "I"},
+/* 116 */  {"i_call_fun_last_IP", {0x10001,0x0,0x0}, 0, 3, "", "IP"},
+/* 117 */  {"i_call_last_fP", {0x10020,0x0,0x0}, 0, 3, "", "fP"},
+/* 118 */  {"i_call_only_f", {0x20,0x0,0x0}, 0, 2, "", "f"},
+/* 119 */  {"i_debug_breakpoint", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 120 */  {"i_element_jxsd", {0x80220,0x18211E,0x0}, 0, 5, "", "jxsd"},
+/* 121 */  {"i_element_jysd", {0x100220,0x18211E,0x0}, 0, 5, "", "jysd"},
+/* 122 */  {"i_fadd_lll", {0x10001000,0x1000,0x0}, 0, 4, "", "lll"},
+/* 123 */  {"i_fast_element_jxId", {0x80220,0x180001,0x0}, 0, 5, "", "jxId"},
+/* 124 */  {"i_fast_element_jyId", {0x100220,0x180001,0x0}, 0, 5, "", "jyId"},
+/* 125 */  {"i_fcheckerror", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 126 */  {"i_fdiv_lll", {0x10001000,0x1000,0x0}, 0, 4, "", "lll"},
+/* 127 */  {"i_fmul_lll", {0x10001000,0x1000,0x0}, 0, 4, "", "lll"},
+/* 128 */  {"i_fnegate_ll", {0x10001000,0x0,0x0}, 0, 3, "", "ll"},
+/* 129 */  {"i_fsub_lll", {0x10001000,0x1000,0x0}, 0, 4, "", "lll"},
+/* 130 */  {"i_func_info_IaaI", {0x40001,0x10004,0x0}, 0, 5, "", "IaaI"},
+/* 131 */  {"i_gc_bif1_jIsId", {0x10220,0x1211E,0x18}, 0, 6, "", "jIsId"},
+/* 132 */  {"i_gc_bif2_jIIssd", {0x10220,0x211E0001,0x18211E}, 0, 7, "", "jIIssd"},
+/* 133 */  {"i_gc_bif3_jIIssd", {0x10220,0x211E0001,0x18211E}, 0, 7, "", "jIIssd"},
+/* 134 */  {"i_generic_breakpoint", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 135 */  {"i_get_sd", {0x18211E,0x0,0x0}, 0, 3, "", "sd"},
+/* 136 */  {"i_get_hash_cId", {0x12106,0x18,0x0}, 0, 4, "", "cId"},
+/* 137 */  {"i_get_map_element_fxxx", {0x80020,0x80008,0x0}, 0, 5, "", "fxxx"},
+/* 138 */  {"i_get_map_element_fxxy", {0x80020,0x100008,0x0}, 0, 5, "", "fxxy"},
+/* 139 */  {"i_get_map_element_fyxx", {0x100020,0x80008,0x0}, 0, 5, "", "fyxx"},
+/* 140 */  {"i_get_map_element_fyxy", {0x100020,0x100008,0x0}, 0, 5, "", "fyxy"},
+/* 141 */  {"i_get_map_element_hash_fxcIx", {0x80020,0x12106,0x8}, 0, 6, "", "fxcIx"},
+/* 142 */  {"i_get_map_element_hash_fxcIy", {0x80020,0x12106,0x10}, 0, 6, "", "fxcIy"},
+/* 143 */  {"i_get_map_element_hash_fycIx", {0x100020,0x12106,0x8}, 0, 6, "", "fycIx"},
+/* 144 */  {"i_get_map_element_hash_fycIy", {0x100020,0x12106,0x10}, 0, 6, "", "fycIy"},
+/* 145 */  {"i_get_map_elements_fsI", {0x211E0020,0x1,0x0}, 0, 4, "", "fsI"},
+/* 146 */  {"i_get_tuple_element_xPx", {0x10008,0x8,0x0}, 0, 3, "ig6Ppp", "xPx"},
+/* 147 */  {"i_get_tuple_element_xPy", {0x10008,0x10,0x0}, 0, 4, "", "xPy"},
+/* 148 */  {"i_get_tuple_element_yPx", {0x10010,0x8,0x0}, 0, 3, "ig6Ppp", "yPx"},
+/* 149 */  {"i_get_tuple_element_yPy", {0x10010,0x10,0x0}, 0, 4, "", "yPy"},
+/* 150 */  {"i_get_tuple_element2_xPx", {0x10008,0x8,0x0}, 0, 3, "ig6Ppp", "xPx"},
+/* 151 */  {"i_get_tuple_element2y_xPyy", {0x10008,0x100010,0x0}, 0, 3, "i0g0Ppp", "xPyy"},
+/* 152 */  {"i_get_tuple_element3_xPx", {0x10008,0x8,0x0}, 0, 3, "ig6Ppp", "xPx"},
+/* 153 */  {"i_hibernate", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 154 */  {"i_increment_rIId", {0x10408,0x180001,0x0}, 1, 4, "", "rIId"},
+/* 155 */  {"i_increment_xIId", {0x10008,0x180001,0x0}, 0, 5, "", "xIId"},
+/* 156 */  {"i_increment_yIId", {0x10010,0x180001,0x0}, 0, 5, "", "yIId"},
+/* 157 */  {"i_int_bnot_jsId", {0x211E0220,0x180001,0x0}, 0, 5, "", "jsId"},
+/* 158 */  {"i_int_div_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd"},
+/* 159 */  {"i_is_eq_exact_immed_frc", {0x4080020,0x2106,0x0}, 2, 3, "", "frc"},
+/* 160 */  {"i_is_eq_exact_immed_fxc", {0x80020,0x2106,0x0}, 0, 4, "", "fxc"},
+/* 161 */  {"i_is_eq_exact_immed_fyc", {0x100020,0x2106,0x0}, 0, 4, "", "fyc"},
+/* 162 */  {"i_is_eq_exact_literal_fxc", {0x80020,0x2106,0x0}, 0, 4, "", "fxc"},
+/* 163 */  {"i_is_eq_exact_literal_fyc", {0x100020,0x2106,0x0}, 0, 4, "", "fyc"},
+/* 164 */  {"i_is_ne_exact_immed_fxc", {0x80020,0x2106,0x0}, 0, 4, "", "fxc"},
+/* 165 */  {"i_is_ne_exact_immed_fyc", {0x100020,0x2106,0x0}, 0, 4, "", "fyc"},
+/* 166 */  {"i_is_ne_exact_literal_fxc", {0x80020,0x2106,0x0}, 0, 4, "", "fxc"},
+/* 167 */  {"i_is_ne_exact_literal_fyc", {0x100020,0x2106,0x0}, 0, 4, "", "fyc"},
+/* 168 */  {"i_jump_on_val_xfII", {0x200008,0x10001,0x0}, 0, 5, "", "xfII"},
+/* 169 */  {"i_jump_on_val_yfII", {0x200010,0x10001,0x0}, 0, 5, "", "yfII"},
+/* 170 */  {"i_jump_on_val_zero_xfI", {0x200008,0x1,0x0}, 0, 4, "", "xfI"},
+/* 171 */  {"i_jump_on_val_zero_yfI", {0x200010,0x1,0x0}, 0, 4, "", "yfI"},
+/* 172 */  {"i_loop_rec_f", {0x20,0x0,0x0}, 0, 2, "", "f"},
+/* 173 */  {"i_m_div_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd"},
+/* 174 */  {"i_make_fun_It", {0x10001,0x0,0x0}, 0, 3, "", "It"},
+/* 175 */  {"i_minus_jIxxd", {0x10220,0x80008,0x18}, 0, 6, "", "jIxxd"},
+/* 176 */  {"i_minus_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd"},
+/* 177 */  {"i_move_call_cf", {0x202106,0x0,0x0}, 0, 3, "", "cf"},
+/* 178 */  {"i_move_call_ext_ce", {0x12106,0x0,0x0}, 0, 3, "", "ce"},
+/* 179 */  {"i_move_call_ext_last_ePc", {0x10001,0x2106,0x0}, 0, 4, "", "ePc"},
+/* 180 */  {"i_move_call_ext_only_ec", {0x21060001,0x0,0x0}, 0, 3, "", "ec"},
+/* 181 */  {"i_move_call_last_fPc", {0x10020,0x2106,0x0}, 0, 4, "", "fPc"},
+/* 182 */  {"i_move_call_only_fc", {0x21060020,0x0,0x0}, 0, 3, "", "fc"},
+/* 183 */  {"i_new_bs_put_binary_jsIs", {0x211E0220,0x211E0001,0x0}, 0, 5, "", "jsIs"},
+/* 184 */  {"i_new_bs_put_binary_all_jsI", {0x211E0220,0x1,0x0}, 0, 4, "", "jsI"},
+/* 185 */  {"i_new_bs_put_binary_imm_jIs", {0x10220,0x211E,0x0}, 0, 4, "", "jIs"},
+/* 186 */  {"i_new_bs_put_float_jsIs", {0x211E0220,0x211E0001,0x0}, 0, 5, "", "jsIs"},
+/* 187 */  {"i_new_bs_put_float_imm_jIIs", {0x10220,0x211E0001,0x0}, 0, 5, "", "jIIs"},
+/* 188 */  {"i_new_bs_put_integer_jsIs", {0x211E0220,0x211E0001,0x0}, 0, 5, "", "jsIs"},
+/* 189 */  {"i_new_bs_put_integer_imm_jIIs", {0x10220,0x211E0001,0x0}, 0, 5, "", "jIIs"},
+/* 190 */  {"i_perf_counter", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 191 */  {"i_plus_jIxxd", {0x10220,0x80008,0x18}, 0, 6, "", "jIxxd"},
+/* 192 */  {"i_plus_jIxyd", {0x10220,0x100008,0x18}, 0, 6, "", "jIxyd"},
+/* 193 */  {"i_plus_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd"},
+/* 194 */  {"i_put_tuple_xI", {0x10008,0x0,0x0}, 0, 2, "iwPp", "xI"},
+/* 195 */  {"i_put_tuple_yI", {0x10010,0x0,0x0}, 0, 2, "iwPp", "yI"},
+/* 196 */  {"i_raise", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 197 */  {"i_recv_set", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 198 */  {"i_rem_jIxxd", {0x10220,0x80008,0x18}, 0, 6, "", "jIxxd"},
+/* 199 */  {"i_rem_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd"},
+/* 200 */  {"i_return_time_trace", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 201 */  {"i_return_to_trace", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 202 */  {"i_select_tuple_arity_xfI", {0x200008,0x1,0x0}, 0, 4, "", "xfI"},
+/* 203 */  {"i_select_tuple_arity_yfI", {0x200010,0x1,0x0}, 0, 4, "", "yfI"},
+/* 204 */  {"i_select_tuple_arity2_xfAAff", {0x200008,0x10001,0x200020}, 0, 7, "", "xfAAff"},
+/* 205 */  {"i_select_tuple_arity2_yfAAff", {0x200010,0x10001,0x200020}, 0, 7, "", "yfAAff"},
+/* 206 */  {"i_select_val2_xfccff", {0x200008,0x21062106,0x200020}, 0, 7, "", "xfccff"},
+/* 207 */  {"i_select_val2_yfccff", {0x200010,0x21062106,0x200020}, 0, 7, "", "yfccff"},
+/* 208 */  {"i_select_val_bins_xfI", {0x200008,0x1,0x0}, 0, 4, "", "xfI"},
+/* 209 */  {"i_select_val_bins_yfI", {0x200010,0x1,0x0}, 0, 4, "", "yfI"},
+/* 210 */  {"i_select_val_lins_xfI", {0x200008,0x1,0x0}, 0, 4, "", "xfI"},
+/* 211 */  {"i_select_val_lins_yfI", {0x200010,0x1,0x0}, 0, 4, "", "yfI"},
+/* 212 */  {"i_times_jIssd", {0x10220,0x211E211E,0x18}, 0, 6, "", "jIssd"},
+/* 213 */  {"i_trim_I", {0x1,0x0,0x0}, 0, 2, "", "I"},
+/* 214 */  {"i_wait_error", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 215 */  {"i_wait_error_locked", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 216 */  {"i_wait_timeout_fI", {0x10020,0x0,0x0}, 0, 3, "", "fI"},
+/* 217 */  {"i_wait_timeout_fs", {0x211E0020,0x0,0x0}, 0, 3, "", "fs"},
+/* 218 */  {"i_wait_timeout_locked_fI", {0x10020,0x0,0x0}, 0, 3, "", "fI"},
+/* 219 */  {"i_wait_timeout_locked_fs", {0x211E0020,0x0,0x0}, 0, 3, "", "fs"},
+/* 220 */  {"i_yield", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 221 */  {"if_end", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 222 */  {"init_y", {0x10,0x0,0x0}, 0, 2, "", "y"},
+/* 223 */  {"init2_yy", {0x100010,0x0,0x0}, 0, 2, "i6Pp", "yy"},
+/* 224 */  {"init3_yyy", {0x100010,0x10,0x0}, 0, 2, "i00Pp", "yyy"},
+/* 225 */  {"int_code_end", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 226 */  {"is_atom_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx"},
+/* 227 */  {"is_atom_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy"},
+/* 228 */  {"is_binary_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx"},
+/* 229 */  {"is_binary_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy"},
+/* 230 */  {"is_bitstring_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx"},
+/* 231 */  {"is_bitstring_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy"},
+/* 232 */  {"is_boolean_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx"},
+/* 233 */  {"is_boolean_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy"},
+/* 234 */  {"is_eq_fss", {0x211E0020,0x211E,0x0}, 0, 4, "", "fss"},
+/* 235 */  {"is_eq_exact_fxx", {0x80020,0x8,0x0}, 0, 3, "i6Pp", "fxx"},
+/* 236 */  {"is_eq_exact_fxy", {0x80020,0x10,0x0}, 0, 3, "i6Pp", "fxy"},
+/* 237 */  {"is_eq_exact_fss", {0x211E0020,0x211E,0x0}, 0, 4, "", "fss"},
+/* 238 */  {"is_float_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx"},
+/* 239 */  {"is_float_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy"},
+/* 240 */  {"is_function_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx"},
+/* 241 */  {"is_function_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy"},
+/* 242 */  {"is_function2_fss", {0x211E0020,0x211E,0x0}, 0, 4, "", "fss"},
+/* 243 */  {"is_ge_fxx", {0x80020,0x8,0x0}, 0, 4, "", "fxx"},
+/* 244 */  {"is_ge_fxc", {0x80020,0x2106,0x0}, 0, 4, "", "fxc"},
+/* 245 */  {"is_ge_fcx", {0x21060020,0x8,0x0}, 0, 4, "", "fcx"},
+/* 246 */  {"is_ge_fss", {0x211E0020,0x211E,0x0}, 0, 4, "", "fss"},
+/* 247 */  {"is_integer_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx"},
+/* 248 */  {"is_integer_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy"},
+/* 249 */  {"is_integer_allocate_fxII", {0x80020,0x10001,0x0}, 0, 5, "", "fxII"},
+/* 250 */  {"is_list_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx"},
+/* 251 */  {"is_list_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy"},
+/* 252 */  {"is_lt_fxx", {0x80020,0x8,0x0}, 0, 4, "", "fxx"},
+/* 253 */  {"is_lt_fxc", {0x80020,0x2106,0x0}, 0, 4, "", "fxc"},
+/* 254 */  {"is_lt_fcx", {0x21060020,0x8,0x0}, 0, 4, "", "fcx"},
+/* 255 */  {"is_lt_fss", {0x211E0020,0x211E,0x0}, 0, 4, "", "fss"},
+/* 256 */  {"is_map_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx"},
+/* 257 */  {"is_map_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy"},
+/* 258 */  {"is_ne_fss", {0x211E0020,0x211E,0x0}, 0, 4, "", "fss"},
+/* 259 */  {"is_ne_exact_fss", {0x211E0020,0x211E,0x0}, 0, 4, "", "fss"},
+/* 260 */  {"is_nil_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx"},
+/* 261 */  {"is_nil_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy"},
+/* 262 */  {"is_non_empty_list_test_heap_fIt", {0x10020,0x1,0x0}, 0, 3, "iwPp", "fIt"},
+/* 263 */  {"is_nonempty_list_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx"},
+/* 264 */  {"is_nonempty_list_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy"},
+/* 265 */  {"is_nonempty_list_allocate_frIt", {0x4080020,0x10001,0x0}, 2, 3, "iwPp", "frIt"},
+/* 266 */  {"is_nonempty_list_allocate_fxIt", {0x80020,0x10001,0x0}, 0, 4, "giwPpp", "fxIt"},
+/* 267 */  {"is_nonempty_list_get_list_frxx", {0x4080020,0x80008,0x0}, 2, 3, "i6Pp", "frxx"},
+/* 268 */  {"is_nonempty_list_get_list_fxxx", {0x80020,0x80008,0x0}, 0, 3, "i00Pp", "fxxx"},
+/* 269 */  {"is_number_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx"},
+/* 270 */  {"is_number_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy"},
+/* 271 */  {"is_pid_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx"},
+/* 272 */  {"is_pid_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy"},
+/* 273 */  {"is_port_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx"},
+/* 274 */  {"is_port_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy"},
+/* 275 */  {"is_reference_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx"},
+/* 276 */  {"is_reference_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy"},
+/* 277 */  {"is_tagged_tuple_frAa", {0x4080020,0x40001,0x0}, 2, 4, "", "frAa"},
+/* 278 */  {"is_tagged_tuple_fxAa", {0x80020,0x40001,0x0}, 0, 5, "", "fxAa"},
+/* 279 */  {"is_tagged_tuple_fyAa", {0x100020,0x40001,0x0}, 0, 5, "", "fyAa"},
+/* 280 */  {"is_tuple_fr", {0x4080020,0x0,0x0}, 2, 2, "", "fr"},
+/* 281 */  {"is_tuple_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx"},
+/* 282 */  {"is_tuple_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy"},
+/* 283 */  {"is_tuple_of_arity_frA", {0x4080020,0x1,0x0}, 2, 3, "", "frA"},
+/* 284 */  {"is_tuple_of_arity_fxA", {0x80020,0x1,0x0}, 0, 4, "", "fxA"},
+/* 285 */  {"is_tuple_of_arity_fyA", {0x100020,0x1,0x0}, 0, 4, "", "fyA"},
+/* 286 */  {"jump_f", {0x20,0x0,0x0}, 0, 2, "", "f"},
+/* 287 */  {"label_L", {0x1,0x0,0x0}, 0, 1, "", "L"},
+/* 288 */  {"line_I", {0x1,0x0,0x0}, 0, 2, "", "I"},
+/* 289 */  {"loop_rec_end_f", {0x20,0x0,0x0}, 0, 2, "", "f"},
+/* 290 */  {"move_nx", {0x80100,0x0,0x0}, 0, 2, "", "nx"},
+/* 291 */  {"move_rx", {0x80408,0x0,0x0}, 1, 2, "", "rx"},
+/* 292 */  {"move_ry", {0x100408,0x0,0x0}, 1, 2, "", "ry"},
+/* 293 */  {"move_xr", {0x4080008,0x0,0x0}, 2, 2, "", "xr"},
+/* 294 */  {"move_xx", {0x80008,0x0,0x0}, 0, 2, "i6Pp", "xx"},
+/* 295 */  {"move_xy", {0x100008,0x0,0x0}, 0, 2, "i6Pp", "xy"},
+/* 296 */  {"move_yr", {0x4080010,0x0,0x0}, 2, 2, "", "yr"},
+/* 297 */  {"move_yx", {0x80010,0x0,0x0}, 0, 2, "i6Pp", "yx"},
+/* 298 */  {"move_yy", {0x100010,0x0,0x0}, 0, 2, "i6Pp", "yy"},
+/* 299 */  {"move_cr", {0x4082106,0x0,0x0}, 2, 2, "", "cr"},
+/* 300 */  {"move_cx", {0x82106,0x0,0x0}, 0, 3, "", "cx"},
+/* 301 */  {"move2_par_xxxx", {0x80008,0x80008,0x0}, 0, 2, "i666Pp", "xxxx"},
+/* 302 */  {"move2_par_xxxy", {0x80008,0x100008,0x0}, 0, 2, "i666Pp", "xxxy"},
+/* 303 */  {"move2_par_xxyx", {0x80008,0x80010,0x0}, 0, 2, "i666Pp", "xxyx"},
+/* 304 */  {"move2_par_xyxy", {0x100008,0x100008,0x0}, 0, 2, "i666Pp", "xyxy"},
+/* 305 */  {"move2_par_yxxx", {0x80010,0x80008,0x0}, 0, 2, "i666Pp", "yxxx"},
+/* 306 */  {"move2_par_yxxy", {0x80010,0x100008,0x0}, 0, 2, "i666Pp", "yxxy"},
+/* 307 */  {"move2_par_yxyx", {0x80010,0x80010,0x0}, 0, 2, "i666Pp", "yxyx"},
+/* 308 */  {"move3_xxxxxx", {0x80008,0x80008,0x80008}, 0, 3, "i00Pi00Ppp", "xxxxxx"},
+/* 309 */  {"move3_xyxyxy", {0x100008,0x100008,0x100008}, 0, 3, "i00Pi00Ppp", "xyxyxy"},
+/* 310 */  {"move3_yxyxyx", {0x80010,0x80010,0x80010}, 0, 3, "i00Pi00Ppp", "yxyxyx"},
+/* 311 */  {"move_call_xf", {0x200008,0x0,0x0}, 0, 3, "", "xf"},
+/* 312 */  {"move_call_yf", {0x200010,0x0,0x0}, 0, 3, "", "yf"},
+/* 313 */  {"move_call_last_xfQ", {0x200008,0x1,0x0}, 0, 3, "ig6Ppp", "xfQ"},
+/* 314 */  {"move_call_last_yfQ", {0x200010,0x1,0x0}, 0, 3, "ig6Ppp", "yfQ"},
+/* 315 */  {"move_call_only_xf", {0x200008,0x0,0x0}, 0, 3, "", "xf"},
+/* 316 */  {"move_deallocate_return_nQ", {0x10100,0x0,0x0}, 0, 2, "", "nQ"},
+/* 317 */  {"move_deallocate_return_xQ", {0x10008,0x0,0x0}, 0, 2, "i6Pp", "xQ"},
+/* 318 */  {"move_deallocate_return_yQ", {0x10010,0x0,0x0}, 0, 2, "i6Pp", "yQ"},
+/* 319 */  {"move_deallocate_return_cQ", {0x12106,0x0,0x0}, 0, 3, "", "cQ"},
+/* 320 */  {"move_dup_xxx", {0x80008,0x8,0x0}, 0, 2, "i00Pp", "xxx"},
+/* 321 */  {"move_dup_xxy", {0x80008,0x10,0x0}, 0, 2, "i00Pp", "xxy"},
+/* 322 */  {"move_dup_yxx", {0x80010,0x8,0x0}, 0, 2, "i00Pp", "yxx"},
+/* 323 */  {"move_dup_yxy", {0x80010,0x10,0x0}, 0, 2, "i00Pp", "yxy"},
+/* 324 */  {"move_jump_fn", {0x1000020,0x0,0x0}, 0, 2, "", "fn"},
+/* 325 */  {"move_jump_fx", {0x80020,0x0,0x0}, 0, 3, "", "fx"},
+/* 326 */  {"move_jump_fy", {0x100020,0x0,0x0}, 0, 3, "", "fy"},
+/* 327 */  {"move_jump_fc", {0x21060020,0x0,0x0}, 0, 3, "", "fc"},
+/* 328 */  {"move_return_n", {0x100,0x0,0x0}, 0, 1, "", "n"},
+/* 329 */  {"move_return_x", {0x8,0x0,0x0}, 0, 2, "", "x"},
+/* 330 */  {"move_return_c", {0x2106,0x0,0x0}, 0, 2, "", "c"},
+/* 331 */  {"move_shift_xxx", {0x80008,0x8,0x0}, 0, 2, "i00Pp", "xxx"},
+/* 332 */  {"move_shift_xxy", {0x80008,0x10,0x0}, 0, 2, "i00Pp", "xxy"},
+/* 333 */  {"move_shift_xyx", {0x100008,0x8,0x0}, 0, 2, "i00Pp", "xyx"},
+/* 334 */  {"move_shift_yxx", {0x80010,0x8,0x0}, 0, 2, "i00Pp", "yxx"},
+/* 335 */  {"move_window3_xxxy", {0x80008,0x100008,0x0}, 0, 2, "i666Pp", "xxxy"},
+/* 336 */  {"move_window4_xxxxy", {0x80008,0x80008,0x10}, 0, 3, "00Pi00Ppp", "xxxxy"},
+/* 337 */  {"move_window5_xxxxxy", {0x80008,0x80008,0x100008}, 0, 3, "i00Pi00Ppp", "xxxxxy"},
+/* 338 */  {"move_x1_c", {0x2106,0x0,0x0}, 0, 2, "", "c"},
+/* 339 */  {"move_x2_c", {0x2106,0x0,0x0}, 0, 2, "", "c"},
+/* 340 */  {"new_map_dII", {0x10018,0x1,0x0}, 0, 4, "", "dII"},
+/* 341 */  {"node_x", {0x8,0x0,0x0}, 0, 2, "", "x"},
+/* 342 */  {"node_y", {0x10,0x0,0x0}, 0, 2, "", "y"},
+/* 343 */  {"normal_exit", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 344 */  {"on_load", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 345 */  {"put_list_rnr", {0x1000408,0x408,0x0}, 5, 1, "", "rnr"},
+/* 346 */  {"put_list_rnx", {0x1000408,0x8,0x0}, 1, 2, "", "rnx"},
+/* 347 */  {"put_list_rxr", {0x80408,0x408,0x0}, 5, 2, "", "rxr"},
+/* 348 */  {"put_list_rxx", {0x80408,0x8,0x0}, 1, 2, "i6Pp", "rxx"},
+/* 349 */  {"put_list_xnx", {0x1000008,0x8,0x0}, 0, 2, "i6Pp", "xnx"},
+/* 350 */  {"put_list_xrr", {0x4080008,0x408,0x0}, 6, 2, "", "xrr"},
+/* 351 */  {"put_list_xxr", {0x80008,0x408,0x0}, 4, 2, "i6Pp", "xxr"},
+/* 352 */  {"put_list_xxx", {0x80008,0x8,0x0}, 0, 2, "i00Pp", "xxx"},
+/* 353 */  {"put_list_xyx", {0x100008,0x8,0x0}, 0, 2, "i00Pp", "xyx"},
+/* 354 */  {"put_list_ynx", {0x1000010,0x8,0x0}, 0, 2, "i6Pp", "ynx"},
+/* 355 */  {"put_list_yrr", {0x4080010,0x408,0x0}, 6, 2, "", "yrr"},
+/* 356 */  {"put_list_yxx", {0x80010,0x8,0x0}, 0, 2, "i00Pp", "yxx"},
+/* 357 */  {"put_list_yyx", {0x100010,0x8,0x0}, 0, 2, "i00Pp", "yyx"},
+/* 358 */  {"put_list_xcx", {0x21060008,0x8,0x0}, 0, 4, "", "xcx"},
+/* 359 */  {"put_list_xcy", {0x21060008,0x10,0x0}, 0, 4, "", "xcy"},
+/* 360 */  {"put_list_ycx", {0x21060010,0x8,0x0}, 0, 4, "", "ycx"},
+/* 361 */  {"put_list_cxx", {0x82106,0x8,0x0}, 0, 3, "i6Pp", "cxx"},
+/* 362 */  {"put_list_cyx", {0x102106,0x8,0x0}, 0, 3, "i6Pp", "cyx"},
+/* 363 */  {"put_list_ssd", {0x211E211E,0x18,0x0}, 0, 4, "", "ssd"},
+/* 364 */  {"recv_mark_f", {0x20,0x0,0x0}, 0, 2, "", "f"},
+/* 365 */  {"remove_message", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 366 */  {"return", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 367 */  {"return_trace", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 368 */  {"self_x", {0x8,0x0,0x0}, 0, 2, "", "x"},
+/* 369 */  {"self_y", {0x10,0x0,0x0}, 0, 2, "", "y"},
+/* 370 */  {"send", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 371 */  {"set_tuple_element_sdP", {0x18211E,0x1,0x0}, 0, 4, "", "sdP"},
+/* 372 */  {"swap_xx", {0x80008,0x0,0x0}, 0, 2, "i6Pp", "xx"},
+/* 373 */  {"swap_xy", {0x100008,0x0,0x0}, 0, 2, "i6Pp", "xy"},
+/* 374 */  {"swap_temp_xxx", {0x80008,0x8,0x0}, 0, 2, "i00Pp", "xxx"},
+/* 375 */  {"swap_temp_xyx", {0x100008,0x8,0x0}, 0, 2, "i00Pp", "xyx"},
+/* 376 */  {"system_limit_j", {0x220,0x0,0x0}, 0, 2, "", "j"},
+/* 377 */  {"test_arity_fxA", {0x80020,0x1,0x0}, 0, 4, "", "fxA"},
+/* 378 */  {"test_arity_fyA", {0x100020,0x1,0x0}, 0, 4, "", "fyA"},
+/* 379 */  {"test_heap_It", {0x10001,0x0,0x0}, 0, 2, "iwPp", "It"},
+/* 380 */  {"test_heap_1_put_list_Iy", {0x100001,0x0,0x0}, 0, 2, "iwPp", "Iy"},
+/* 381 */  {"timeout", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 382 */  {"timeout_locked", {0x0,0x0,0x0}, 0, 1, "", ""},
+/* 383 */  {"try_case_end_s", {0x211E,0x0,0x0}, 0, 2, "", "s"},
+/* 384 */  {"try_end_y", {0x10,0x0,0x0}, 0, 2, "", "y"},
+/* 385 */  {"update_map_assoc_jsdII", {0x211E0220,0x10018,0x1}, 0, 6, "", "jsdII"},
+/* 386 */  {"update_map_exact_jsdII", {0x211E0220,0x10018,0x1}, 0, 6, "", "jsdII"},
+/* 387 */  {"wait_f", {0x20,0x0,0x0}, 0, 2, "", "f"},
+/* 388 */  {"wait_locked_f", {0x20,0x0,0x0}, 0, 2, "", "f"},
+/* 389 */  {"wait_unlocked_f", {0x20,0x0,0x0}, 0, 2, "", "f"},
 };
 
-int num_instructions = 387;
+const int num_instructions = 390;
 
-Uint op_transform[] = {
+#ifdef ERTS_OPCODE_COUNTER_SUPPORT
+Uint erts_instr_count[390];
+#endif
+
+const Uint op_transform[] = {
     
 
     /*
-     * Line 784:
+     * Line 765:
      *   allocate Need Regs | init Y => allocate_init Need Regs Y
      */
 
@@ -425,7 +432,7 @@ Uint op_transform[] = {
     TOP_next_instr, 17,      /* init/1 */
     TOP_set_var_next_arg, 2, /* Y */
     TOP_commit,
-    TOP_new_instr, 227,      /* allocate_init/3 */
+    TOP_new_instr, 228,      /* allocate_init/3 */
     TOP_store_var_next_arg, 0, /* Need */
     TOP_store_var_next_arg, 1, /* Regs */
     TOP_store_var_next_arg, 2, /* Y */
@@ -470,7 +477,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 250:
+     * Line 240:
      *   badmatch NotInX=cy => move NotInX x | badmatch x
      */
 
@@ -490,7 +497,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1053:
+     * Line 1033:
      *   bif0 u$bif:erlang:self/0 Dst=d => self Dst
      */
 
@@ -500,13 +507,13 @@ Uint op_transform[] = {
     TOP_is_type, 24,         /* d  */
     TOP_set_var_next_arg, 0, /* Dst */
     TOP_commit,
-    TOP_new_instr, 239,      /* self/1 */
+    TOP_new_instr, 240,      /* self/1 */
     TOP_store_var_next_arg, 0, /* Dst */
     TOP_end,
     
 
     /*
-     * Line 1054:
+     * Line 1034:
      *   bif0 u$bif:erlang:node/0 Dst=d => node Dst
      */
 
@@ -516,7 +523,7 @@ Uint op_transform[] = {
     TOP_is_type, 24,         /* d  */
     TOP_set_var_next_arg, 0, /* Dst */
     TOP_commit,
-    TOP_new_instr, 240,      /* node/1 */
+    TOP_new_instr, 241,      /* node/1 */
     TOP_store_var_next_arg, 0, /* Dst */
     TOP_end,
 
@@ -530,11 +537,11 @@ Uint op_transform[] = {
     TOP_try_me_else, 7,
     TOP_next_arg,            /* Fail (ignored) */
     TOP_is_func, am_erlang, am_is_constant, 1,
-    TOP_rename, 159,         /* too_old_compiler/0 */
+    TOP_rename, 160,         /* too_old_compiler/0 */
     
 
     /*
-     * Line 1056:
+     * Line 1036:
      *   bif1 Fail Bif=u$bif:erlang:get/1 Src=s Dst=d => gen_get(Src, Dst)
      */
 
@@ -550,7 +557,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1060:
+     * Line 1040:
      *   bif1 p Bif S1 Dst => bif1_body Bif S1 Dst
      */
 
@@ -561,7 +568,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 1, /* S1 */
     TOP_set_var_next_arg, 2, /* Dst */
     TOP_commit,
-    TOP_new_instr, 243,      /* bif1_body/3 */
+    TOP_new_instr, 244,      /* bif1_body/3 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_store_var_next_arg, 1, /* S1 */
     TOP_store_var_next_arg, 2, /* Dst */
@@ -569,7 +576,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1612:
+     * Line 1573:
      *   bif1 Fail u$bif:erlang:length/1 s d => too_old_compiler
      */
 
@@ -580,11 +587,11 @@ Uint op_transform[] = {
     TOP_is_type, 8478,       /* s  */
     TOP_next_arg,
     TOP_is_type, 24,         /* d  */
-    TOP_rename, 159,         /* too_old_compiler/0 */
+    TOP_rename, 160,         /* too_old_compiler/0 */
     
 
     /*
-     * Line 1613:
+     * Line 1574:
      *   bif1 Fail u$bif:erlang:size/1 s d => too_old_compiler
      */
 
@@ -595,11 +602,11 @@ Uint op_transform[] = {
     TOP_is_type, 8478,       /* s  */
     TOP_next_arg,
     TOP_is_type, 24,         /* d  */
-    TOP_rename, 159,         /* too_old_compiler/0 */
+    TOP_rename, 160,         /* too_old_compiler/0 */
     
 
     /*
-     * Line 1614:
+     * Line 1575:
      *   bif1 Fail u$bif:erlang:abs/1 s d => too_old_compiler
      */
 
@@ -610,11 +617,11 @@ Uint op_transform[] = {
     TOP_is_type, 8478,       /* s  */
     TOP_next_arg,
     TOP_is_type, 24,         /* d  */
-    TOP_rename, 159,         /* too_old_compiler/0 */
+    TOP_rename, 160,         /* too_old_compiler/0 */
     
 
     /*
-     * Line 1615:
+     * Line 1576:
      *   bif1 Fail u$bif:erlang:float/1 s d => too_old_compiler
      */
 
@@ -625,11 +632,11 @@ Uint op_transform[] = {
     TOP_is_type, 8478,       /* s  */
     TOP_next_arg,
     TOP_is_type, 24,         /* d  */
-    TOP_rename, 159,         /* too_old_compiler/0 */
+    TOP_rename, 160,         /* too_old_compiler/0 */
     
 
     /*
-     * Line 1616:
+     * Line 1577:
      *   bif1 Fail u$bif:erlang:round/1 s d => too_old_compiler
      */
 
@@ -640,11 +647,11 @@ Uint op_transform[] = {
     TOP_is_type, 8478,       /* s  */
     TOP_next_arg,
     TOP_is_type, 24,         /* d  */
-    TOP_rename, 159,         /* too_old_compiler/0 */
+    TOP_rename, 160,         /* too_old_compiler/0 */
     
 
     /*
-     * Line 1617:
+     * Line 1578:
      *   bif1 Fail u$bif:erlang:trunc/1 s d => too_old_compiler
      */
 
@@ -655,12 +662,12 @@ Uint op_transform[] = {
     TOP_is_type, 8478,       /* s  */
     TOP_next_arg,
     TOP_is_type, 24,         /* d  */
-    TOP_rename, 159,         /* too_old_compiler/0 */
+    TOP_rename, 160,         /* too_old_compiler/0 */
 
     
 
     /*
-     * Line 1058:
+     * Line 1038:
      *   bif2 Jump=j u$bif:erlang:element/2 S1=s S2=xy Dst=d => gen_element(Jump, S1, S2, Dst)
      */
 
@@ -679,7 +686,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1062:
+     * Line 1042:
      *   bif2 p Bif S1 S2 Dst => i_bif2_body Bif S1 S2 Dst
      */
 
@@ -691,7 +698,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 2, /* S2 */
     TOP_set_var_next_arg, 3, /* Dst */
     TOP_commit,
-    TOP_new_instr, 245,      /* i_bif2_body/4 */
+    TOP_new_instr, 246,      /* i_bif2_body/4 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_store_var_next_arg, 1, /* S1 */
     TOP_store_var_next_arg, 2, /* S2 */
@@ -700,16 +707,16 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1063:
+     * Line 1043:
      *   bif2 Fail Bif S1 S2 Dst => i_bif2 Fail Bif S1 S2 Dst
      */
 
-    TOP_rename, 244,         /* i_bif2/5 */
+    TOP_rename, 245,         /* i_bif2/5 */
 
     
 
     /*
-     * Line 1322:
+     * Line 1293:
      *   bs_add Fail S1=i==0 S2 Unit=u==1 D => move S2 D
      */
 
@@ -730,7 +737,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1327:
+     * Line 1298:
      *   bs_append Fail Size Extra Live Unit Bin Flags Dst =>   move Bin x | i_bs_append Fail Extra Live Unit Size Dst
      */
 
@@ -743,7 +750,7 @@ Uint op_transform[] = {
     TOP_next_arg,            /* Flags (ignored) */
     TOP_set_var_next_arg, 7, /* Dst */
     TOP_commit,              /* always reached */
-    TOP_new_instr, 298,      /* i_bs_append/6 */
+    TOP_new_instr, 299,      /* i_bs_append/6 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 2, /* Extra */
     TOP_store_var_next_arg, 3, /* Live */
@@ -759,7 +766,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1244:
+     * Line 1217:
      *   bs_context_to_binary Y=y => move Y x | bs_context_to_binary x
      */
 
@@ -779,7 +786,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1197:
+     * Line 1171:
      *   bs_get_binary2 Fail=f Ms=x Live=u Sz=sq Unit=u Flags=u Dst=d => 			gen_get_binary2(Fail, Ms, Live, Sz, Unit, Flags, Dst)
      */
 
@@ -803,7 +810,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1210:
+     * Line 1184:
      *   bs_get_float2 Fail=f Ms=x Live=u Sz=s Unit=u Flags=u Dst=d => 		gen_get_float2(Fail, Ms, Live, Sz, Unit, Flags, Dst)
      */
 
@@ -826,7 +833,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1212:
+     * Line 1186:
      *   bs_get_float2 Fail=f Ms=x Live=u Sz=q Unit=u Flags=u Dst=d => jump Fail
      */
 
@@ -849,7 +856,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1186:
+     * Line 1160:
      *   bs_get_integer2 Fail=f Ms=x Live=u Sz=sq Unit=u Flags=u Dst=d => 			gen_get_integer2(Fail, Ms, Live, Sz, Unit, Flags, Dst)
      */
 
@@ -873,7 +880,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1256:
+     * Line 1229:
      *   bs_get_utf16 Fail=f Ms=x u Flags=u Dst=d => i_bs_get_utf16 Ms Fail Flags Dst
      */
 
@@ -889,7 +896,7 @@ Uint op_transform[] = {
     TOP_is_type, 24,         /* d  */
     TOP_set_var_next_arg, 3, /* Dst */
     TOP_commit,
-    TOP_new_instr, 286,      /* i_bs_get_utf16/4 */
+    TOP_new_instr, 287,      /* i_bs_get_utf16/4 */
     TOP_store_var_next_arg, 1, /* Ms */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 2, /* Flags */
@@ -899,7 +906,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1263:
+     * Line 1236:
      *   bs_get_utf32 Fail=f Ms=x Live=u Flags=u Dst=d => 	bs_get_integer2 Fail Ms Live i=32 u=1 Flags Dst | 	i_bs_validate_unicode_retract Fail Dst Ms
      */
 
@@ -915,7 +922,7 @@ Uint op_transform[] = {
     TOP_is_type, 24,         /* d  */
     TOP_set_var_next_arg, 4, /* Dst */
     TOP_commit,
-    TOP_new_instr, 287,      /* i_bs_validate_unicode_retract/3 */
+    TOP_new_instr, 288,      /* i_bs_validate_unicode_retract/3 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 4, /* Dst */
     TOP_store_var_next_arg, 1, /* Ms */
@@ -936,7 +943,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1251:
+     * Line 1224:
      *   bs_get_utf8 Fail=f Ms=x u u Dst=d => i_bs_get_utf8 Ms Fail Dst
      */
 
@@ -952,7 +959,7 @@ Uint op_transform[] = {
     TOP_is_type, 24,         /* d  */
     TOP_set_var_next_arg, 2, /* Dst */
     TOP_commit,
-    TOP_new_instr, 285,      /* i_bs_get_utf8/3 */
+    TOP_new_instr, 286,      /* i_bs_get_utf8/3 */
     TOP_store_var_next_arg, 1, /* Ms */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 2, /* Dst */
@@ -961,7 +968,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1276:
+     * Line 1249:
      *   bs_init2 Fail Sz Words Regs Flags Dst | binary_too_big(Sz) => system_limit Fail
      */
 
@@ -969,11 +976,11 @@ Uint op_transform[] = {
     TOP_next_arg,            /* Fail (ignored) */
     TOP_set_var_next_arg, 1, /* Sz */
     TOP_pred, 17,            /* binary_too_big() */
-    TOP_rename, 182,         /* system_limit/1 */
+    TOP_rename, 183,         /* system_limit/1 */
     
 
     /*
-     * Line 1279:
+     * Line 1252:
      *   bs_init2 Fail Sz=u Words=u==0 Regs Flags Dst | should_gen_heap_bin(Sz) => 	i_bs_init_heap_bin Sz Regs Dst
      */
 
@@ -988,7 +995,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 5, /* Dst */
     TOP_pred, 18,            /* should_gen_heap_bin() */
     TOP_commit,
-    TOP_new_instr, 291,      /* i_bs_init_heap_bin/3 */
+    TOP_new_instr, 292,      /* i_bs_init_heap_bin/3 */
     TOP_store_var_next_arg, 1, /* Sz */
     TOP_store_var_next_arg, 3, /* Regs */
     TOP_store_var_next_arg, 5, /* Dst */
@@ -996,7 +1003,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1280:
+     * Line 1253:
      *   bs_init2 Fail Sz=u Words=u==0 Regs Flags Dst => i_bs_init Sz Regs Dst
      */
 
@@ -1010,7 +1017,7 @@ Uint op_transform[] = {
     TOP_next_arg,            /* Flags (ignored) */
     TOP_set_var_next_arg, 5, /* Dst */
     TOP_commit,
-    TOP_new_instr, 290,      /* i_bs_init/3 */
+    TOP_new_instr, 291,      /* i_bs_init/3 */
     TOP_store_var_next_arg, 1, /* Sz */
     TOP_store_var_next_arg, 3, /* Regs */
     TOP_store_var_next_arg, 5, /* Dst */
@@ -1018,7 +1025,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1283:
+     * Line 1256:
      *   bs_init2 Fail Sz=u Words Regs Flags Dst | should_gen_heap_bin(Sz) => 	i_bs_init_heap_bin_heap Sz Words Regs Dst
      */
 
@@ -1032,7 +1039,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 5, /* Dst */
     TOP_pred, 18,            /* should_gen_heap_bin() */
     TOP_commit,
-    TOP_new_instr, 293,      /* i_bs_init_heap_bin_heap/4 */
+    TOP_new_instr, 294,      /* i_bs_init_heap_bin_heap/4 */
     TOP_store_var_next_arg, 1, /* Sz */
     TOP_store_var_next_arg, 2, /* Words */
     TOP_store_var_next_arg, 3, /* Regs */
@@ -1041,7 +1048,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1285:
+     * Line 1258:
      *   bs_init2 Fail Sz=u Words Regs Flags Dst =>    i_bs_init_heap Sz Words Regs Dst
      */
 
@@ -1054,7 +1061,7 @@ Uint op_transform[] = {
     TOP_next_arg,            /* Flags (ignored) */
     TOP_set_var_next_arg, 5, /* Dst */
     TOP_commit,
-    TOP_new_instr, 292,      /* i_bs_init_heap/4 */
+    TOP_new_instr, 293,      /* i_bs_init_heap/4 */
     TOP_store_var_next_arg, 1, /* Sz */
     TOP_store_var_next_arg, 2, /* Words */
     TOP_store_var_next_arg, 3, /* Regs */
@@ -1063,7 +1070,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1288:
+     * Line 1261:
      *   bs_init2 Fail Sz Words=u==0 Regs Flags Dst =>   i_bs_init_fail Sz Fail Regs Dst
      */
 
@@ -1076,7 +1083,7 @@ Uint op_transform[] = {
     TOP_next_arg,            /* Flags (ignored) */
     TOP_set_var_next_arg, 5, /* Dst */
     TOP_commit,
-    TOP_new_instr, 288,      /* i_bs_init_fail/4 */
+    TOP_new_instr, 289,      /* i_bs_init_fail/4 */
     TOP_store_var_next_arg, 1, /* Sz */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 3, /* Regs */
@@ -1085,7 +1092,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1290:
+     * Line 1263:
      *   bs_init2 Fail Sz Words Regs Flags Dst =>   i_bs_init_fail_heap Sz Words Fail Regs Dst
      */
 
@@ -1096,7 +1103,7 @@ Uint op_transform[] = {
     TOP_next_arg,            /* Flags (ignored) */
     TOP_set_var_next_arg, 5, /* Dst */
     TOP_commit,              /* always reached */
-    TOP_new_instr, 289,      /* i_bs_init_fail_heap/5 */
+    TOP_new_instr, 290,      /* i_bs_init_fail_heap/5 */
     TOP_store_var_next_arg, 1, /* Sz */
     TOP_store_var_next_arg, 2, /* Words */
     TOP_store_var_next_arg, 0, /* Fail */
@@ -1107,18 +1114,18 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1304:
+     * Line 1276:
      *   bs_init_bits Fail Sz=o Words Regs Flags Dst => system_limit Fail
      */
 
     TOP_try_me_else, 5,
     TOP_next_arg,            /* Fail (ignored) */
     TOP_is_type, 16384,      /* o  */
-    TOP_rename, 182,         /* system_limit/1 */
+    TOP_rename, 183,         /* system_limit/1 */
     
 
     /*
-     * Line 1306:
+     * Line 1278:
      *   bs_init_bits Fail Sz=u Words=u==0 Regs Flags Dst => i_bs_init_bits Sz Regs Dst
      */
 
@@ -1132,7 +1139,7 @@ Uint op_transform[] = {
     TOP_next_arg,            /* Flags (ignored) */
     TOP_set_var_next_arg, 5, /* Dst */
     TOP_commit,
-    TOP_new_instr, 296,      /* i_bs_init_bits/3 */
+    TOP_new_instr, 297,      /* i_bs_init_bits/3 */
     TOP_store_var_next_arg, 1, /* Sz */
     TOP_store_var_next_arg, 3, /* Regs */
     TOP_store_var_next_arg, 5, /* Dst */
@@ -1140,7 +1147,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1307:
+     * Line 1279:
      *   bs_init_bits Fail Sz=u Words Regs Flags Dst =>  i_bs_init_bits_heap Sz Words Regs Dst
      */
 
@@ -1153,7 +1160,7 @@ Uint op_transform[] = {
     TOP_next_arg,            /* Flags (ignored) */
     TOP_set_var_next_arg, 5, /* Dst */
     TOP_commit,
-    TOP_new_instr, 297,      /* i_bs_init_bits_heap/4 */
+    TOP_new_instr, 298,      /* i_bs_init_bits_heap/4 */
     TOP_store_var_next_arg, 1, /* Sz */
     TOP_store_var_next_arg, 2, /* Words */
     TOP_store_var_next_arg, 3, /* Regs */
@@ -1162,7 +1169,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1310:
+     * Line 1282:
      *   bs_init_bits Fail Sz Words=u==0 Regs Flags Dst =>   i_bs_init_bits_fail Sz Fail Regs Dst
      */
 
@@ -1175,7 +1182,7 @@ Uint op_transform[] = {
     TOP_next_arg,            /* Flags (ignored) */
     TOP_set_var_next_arg, 5, /* Dst */
     TOP_commit,
-    TOP_new_instr, 294,      /* i_bs_init_bits_fail/4 */
+    TOP_new_instr, 295,      /* i_bs_init_bits_fail/4 */
     TOP_store_var_next_arg, 1, /* Sz */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 3, /* Regs */
@@ -1184,7 +1191,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1312:
+     * Line 1284:
      *   bs_init_bits Fail Sz Words Regs Flags Dst =>   i_bs_init_bits_fail_heap Sz Words Fail Regs Dst
      */
 
@@ -1195,7 +1202,7 @@ Uint op_transform[] = {
     TOP_next_arg,            /* Flags (ignored) */
     TOP_set_var_next_arg, 5, /* Dst */
     TOP_commit,              /* always reached */
-    TOP_new_instr, 295,      /* i_bs_init_bits_fail_heap/5 */
+    TOP_new_instr, 296,      /* i_bs_init_bits_fail_heap/5 */
     TOP_store_var_next_arg, 1, /* Sz */
     TOP_store_var_next_arg, 2, /* Words */
     TOP_store_var_next_arg, 0, /* Fail */
@@ -1206,7 +1213,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1180:
+     * Line 1154:
      *   bs_match_string Fail Ms Bits Val => i_bs_match_string Ms Fail Bits Val
      */
 
@@ -1215,7 +1222,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 2, /* Bits */
     TOP_set_var_next_arg, 3, /* Val */
     TOP_commit,              /* always reached */
-    TOP_new_instr, 267,      /* i_bs_match_string/4 */
+    TOP_new_instr, 268,      /* i_bs_match_string/4 */
     TOP_store_var_next_arg, 1, /* Ms */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 2, /* Bits */
@@ -1225,7 +1232,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1330:
+     * Line 1301:
      *   bs_private_append Fail Size Unit Bin Flags Dst =>   i_bs_private_append Fail Unit Size Bin Dst
      */
 
@@ -1236,7 +1243,7 @@ Uint op_transform[] = {
     TOP_next_arg,            /* Flags (ignored) */
     TOP_set_var_next_arg, 5, /* Dst */
     TOP_commit,              /* always reached */
-    TOP_new_instr, 299,      /* i_bs_private_append/5 */
+    TOP_new_instr, 300,      /* i_bs_private_append/5 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 2, /* Unit */
     TOP_store_var_next_arg, 1, /* Size */
@@ -1247,7 +1254,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1392:
+     * Line 1363:
      *   bs_put_binary Fail=j Sz=s Unit=u Flags=u Src=s => 			gen_put_binary(Fail, Sz, Unit, Flags, Src)
      */
 
@@ -1267,18 +1274,18 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1376:
+     * Line 1347:
      *   bs_put_float Fail Sz=q Unit Flags Val => badarg Fail
      */
 
     TOP_try_me_else, 5,
     TOP_next_arg,            /* Fail (ignored) */
     TOP_is_type, 8192,       /* q  */
-    TOP_rename, 181,         /* badarg/1 */
+    TOP_rename, 182,         /* badarg/1 */
     
 
     /*
-     * Line 1379:
+     * Line 1350:
      *   bs_put_float Fail=j Sz=s Unit=u Flags=u Src=s => 			gen_put_float(Fail, Sz, Unit, Flags, Src)
      */
 
@@ -1298,7 +1305,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1342:
+     * Line 1313:
      *   bs_put_integer Fail=j Sz=sq Unit=u Flags=u Src=s => 			gen_put_integer(Fail, Sz, Unit, Flags, Src)
      */
 
@@ -1318,7 +1325,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1369:
+     * Line 1340:
      *   bs_put_utf32 Fail=j Flags=u Src=s =>    i_bs_validate_unicode Fail Src | bs_put_integer Fail i=32 u=1 Flags Src
      */
 
@@ -1340,7 +1347,7 @@ Uint op_transform[] = {
     TOP_next_arg,
     TOP_store_var_next_arg, 1, /* Flags */
     TOP_store_var_next_arg, 2, /* Src */
-    TOP_new_instr, 305,      /* i_bs_validate_unicode/2 */
+    TOP_new_instr, 306,      /* i_bs_validate_unicode/2 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 2, /* Src */
     TOP_end,
@@ -1348,7 +1355,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1362:
+     * Line 1333:
      *   bs_put_utf8 Fail u Src=s => i_bs_put_utf8 Fail Src
      */
 
@@ -1359,7 +1366,7 @@ Uint op_transform[] = {
     TOP_is_type, 8478,       /* s  */
     TOP_set_var_next_arg, 1, /* Src */
     TOP_commit,
-    TOP_new_instr, 304,      /* i_bs_put_utf8/2 */
+    TOP_new_instr, 305,      /* i_bs_put_utf8/2 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 1, /* Src */
     TOP_end,
@@ -1367,7 +1374,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1176:
+     * Line 1150:
      *   bs_restore2 Reg Index => gen_bs_restore(Reg, Index)
      */
 
@@ -1378,7 +1385,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1173:
+     * Line 1147:
      *   bs_save2 Reg Index => gen_bs_save(Reg, Index)
      */
 
@@ -1389,7 +1396,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1220:
+     * Line 1194:
      *   bs_skip_bits2 Fail=f Ms=x Sz=sq Unit=u Flags=u => 			gen_skip_bits2(Fail, Ms, Sz, Unit, Flags)
      */
 
@@ -1409,7 +1416,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1257:
+     * Line 1230:
      *   bs_skip_utf16 Fail=f Ms=x u Flags=u => i_bs_get_utf16 Ms Fail Flags x
      */
 
@@ -1423,7 +1430,7 @@ Uint op_transform[] = {
     TOP_is_type, 1,          /* u  */
     TOP_set_var_next_arg, 2, /* Flags */
     TOP_commit,
-    TOP_new_instr, 286,      /* i_bs_get_utf16/4 */
+    TOP_new_instr, 287,      /* i_bs_get_utf16/4 */
     TOP_store_var_next_arg, 1, /* Ms */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 2, /* Flags */
@@ -1434,7 +1441,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1266:
+     * Line 1239:
      *   bs_skip_utf32 Fail=f Ms=x Live=u Flags=u => 	bs_get_integer2 Fail Ms Live i=32 u=1 Flags x | 	i_bs_validate_unicode_retract Fail x Ms
      */
 
@@ -1448,7 +1455,7 @@ Uint op_transform[] = {
     TOP_is_type, 1,          /* u  */
     TOP_set_var_next_arg, 3, /* Flags */
     TOP_commit,
-    TOP_new_instr, 287,      /* i_bs_validate_unicode_retract/3 */
+    TOP_new_instr, 288,      /* i_bs_validate_unicode_retract/3 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_type, TAG_x,
     TOP_store_val, 1023,
@@ -1472,7 +1479,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1254:
+     * Line 1227:
      *   bs_skip_utf8 Fail=f Ms=x u u => i_bs_get_utf8 Ms Fail x
      */
 
@@ -1485,7 +1492,7 @@ Uint op_transform[] = {
     TOP_next_arg,
     TOP_is_type, 1,          /* u  */
     TOP_commit,
-    TOP_new_instr, 285,      /* i_bs_get_utf8/3 */
+    TOP_new_instr, 286,      /* i_bs_get_utf8/3 */
     TOP_store_var_next_arg, 1, /* Ms */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_type, TAG_x,
@@ -1495,7 +1502,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1168:
+     * Line 1143:
      *   bs_start_match2 Fail=f ica X Y D => jump Fail
      */
 
@@ -1507,7 +1514,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1169:
+     * Line 1144:
      *   bs_start_match2 Fail Bin X Y D => i_bs_start_match2 Bin Fail X Y D
      */
 
@@ -1517,7 +1524,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 3, /* Y */
     TOP_set_var_next_arg, 4, /* D */
     TOP_commit,              /* always reached */
-    TOP_new_instr, 264,      /* i_bs_start_match2/5 */
+    TOP_new_instr, 265,      /* i_bs_start_match2/5 */
     TOP_store_var_next_arg, 1, /* Bin */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 2, /* X */
@@ -1528,7 +1535,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1232:
+     * Line 1205:
      *   bs_test_tail2 Fail=f Ms=x Bits=u==0 => bs_test_zero_tail2 Fail Ms
      */
 
@@ -1538,11 +1545,11 @@ Uint op_transform[] = {
     TOP_is_type, 8,          /* x  */
     TOP_next_arg,            /* Ms (ignored) */
     TOP_is_type_eq, 1, 0,    /* u == 0 */
-    TOP_rename, 282,         /* bs_test_zero_tail2/2 */
+    TOP_rename, 283,         /* bs_test_zero_tail2/2 */
     
 
     /*
-     * Line 1233:
+     * Line 1206:
      *   bs_test_tail2 Fail=f Ms=x Bits=u => bs_test_tail_imm2 Fail Ms Bits
      */
 
@@ -1552,12 +1559,12 @@ Uint op_transform[] = {
     TOP_is_type, 8,          /* x  */
     TOP_next_arg,            /* Ms (ignored) */
     TOP_is_type, 1,          /* u  */
-    TOP_rename, 283,         /* bs_test_tail_imm2/3 */
+    TOP_rename, 284,         /* bs_test_tail_imm2/3 */
 
     
 
     /*
-     * Line 1237:
+     * Line 1210:
      *   bs_test_unit F Ms Unit=u==8 => bs_test_unit8 F Ms
      */
 
@@ -1565,12 +1572,12 @@ Uint op_transform[] = {
     TOP_next_arg,            /* F (ignored) */
     TOP_next_arg,            /* Ms (ignored) */
     TOP_is_type_eq, 1, 8,    /* u == 8 */
-    TOP_rename, 284,         /* bs_test_unit8/2 */
+    TOP_rename, 285,         /* bs_test_unit8/2 */
 
     
 
     /*
-     * Line 1358:
+     * Line 1329:
      *   bs_utf16_size j Src=s Dst=d => i_bs_utf16_size Src Dst
      */
 
@@ -1582,7 +1589,7 @@ Uint op_transform[] = {
     TOP_is_type, 24,         /* d  */
     TOP_set_var_next_arg, 1, /* Dst */
     TOP_commit,
-    TOP_new_instr, 303,      /* i_bs_utf16_size/2 */
+    TOP_new_instr, 304,      /* i_bs_utf16_size/2 */
     TOP_store_var_next_arg, 0, /* Src */
     TOP_store_var_next_arg, 1, /* Dst */
     TOP_end,
@@ -1590,7 +1597,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1354:
+     * Line 1325:
      *   bs_utf8_size j Src=s Dst=d => i_bs_utf8_size Src Dst
      */
 
@@ -1602,7 +1609,7 @@ Uint op_transform[] = {
     TOP_is_type, 24,         /* d  */
     TOP_set_var_next_arg, 1, /* Dst */
     TOP_commit,
-    TOP_new_instr, 302,      /* i_bs_utf8_size/2 */
+    TOP_new_instr, 303,      /* i_bs_utf8_size/2 */
     TOP_store_var_next_arg, 0, /* Src */
     TOP_store_var_next_arg, 1, /* Dst */
     TOP_end,
@@ -1610,53 +1617,53 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1125:
+     * Line 1101:
      *   call Ar Func        => i_call Func
      */
 
     TOP_next_arg,            /* Ar (ignored) */
     TOP_set_var_next_arg, 1, /* Func */
     TOP_commit,              /* always reached */
-    TOP_new_instr, 252,      /* i_call/1 */
+    TOP_new_instr, 253,      /* i_call/1 */
     TOP_store_var_next_arg, 1, /* Func */
     TOP_end,
 
     
 
     /*
-     * Line 800:
-     *   call_ext u==2 Bif=u$bif:erts_internal:check_process_code/2 => i_call_ext Bif
+     * Line 781:
+     *   call_ext u==1 Bif=u$bif:erts_internal:check_process_code/1 => i_call_ext Bif
      */
 
     TOP_try_me_else, 14,
-    TOP_is_type_eq, 1, 2,    /* u == 2 */
+    TOP_is_type_eq, 1, 1,    /* u == 1 */
     TOP_next_arg,
-    TOP_is_bif, BIF_erts_internal_check_process_code_2,
+    TOP_is_bif, BIF_erts_internal_check_process_code_1,
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_commit,
-    TOP_new_instr, 255,      /* i_call_ext/1 */
+    TOP_new_instr, 256,      /* i_call_ext/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 810:
-     *   call_ext u==0 Bif=u$bif:erlang:garbage_collect/0 => i_call_ext Bif
+     * Line 790:
+     *   call_ext u==1 Bif=u$bif:erts_internal:garbage_collect/1 => i_call_ext Bif
      */
 
     TOP_try_me_else, 14,
-    TOP_is_type_eq, 1, 0,    /* u == 0 */
+    TOP_is_type_eq, 1, 1,    /* u == 1 */
     TOP_next_arg,
-    TOP_is_bif, BIF_garbage_collect_0,
+    TOP_is_bif, BIF_erts_internal_garbage_collect_1,
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_commit,
-    TOP_new_instr, 255,      /* i_call_ext/1 */
+    TOP_new_instr, 256,      /* i_call_ext/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 819:
+     * Line 799:
      *   call_ext u==2 Bif=u$bif:erlang:put/2 => i_call_ext Bif
      */
 
@@ -1666,13 +1673,13 @@ Uint op_transform[] = {
     TOP_is_bif, BIF_put_2,
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_commit,
-    TOP_new_instr, 255,      /* i_call_ext/1 */
+    TOP_new_instr, 256,      /* i_call_ext/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 823:
+     * Line 803:
      *   call_ext u==1 Bif=u$bif:erlang:erase/1 => i_call_ext Bif
      */
 
@@ -1682,13 +1689,13 @@ Uint op_transform[] = {
     TOP_is_bif, BIF_erase_1,
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_commit,
-    TOP_new_instr, 255,      /* i_call_ext/1 */
+    TOP_new_instr, 256,      /* i_call_ext/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 836:
+     * Line 816:
      *   call_ext u==1 Bif=u$bif:erlang:process_info/1 => i_call_ext Bif
      */
 
@@ -1698,13 +1705,13 @@ Uint op_transform[] = {
     TOP_is_bif, BIF_process_info_1,
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_commit,
-    TOP_new_instr, 255,      /* i_call_ext/1 */
+    TOP_new_instr, 256,      /* i_call_ext/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 840:
+     * Line 820:
      *   call_ext u==2 Bif=u$bif:erlang:process_info/2 => i_call_ext Bif
      */
 
@@ -1714,13 +1721,13 @@ Uint op_transform[] = {
     TOP_is_bif, BIF_process_info_2,
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_commit,
-    TOP_new_instr, 255,      /* i_call_ext/1 */
+    TOP_new_instr, 256,      /* i_call_ext/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 847:
+     * Line 827:
      *   call_ext u==2 Bif=u$bif:erlang:load_nif/2 => i_call_ext Bif
      */
 
@@ -1730,13 +1737,13 @@ Uint op_transform[] = {
     TOP_is_bif, BIF_load_nif_2,
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_commit,
-    TOP_new_instr, 255,      /* i_call_ext/1 */
+    TOP_new_instr, 256,      /* i_call_ext/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 856:
+     * Line 836:
      *   call_ext u==2 u$func:erlang:apply/2 => i_apply_fun
      */
 
@@ -1744,11 +1751,11 @@ Uint op_transform[] = {
     TOP_is_type_eq, 1, 2,    /* u == 2 */
     TOP_next_arg,
     TOP_is_func, am_erlang, am_apply, 2,
-    TOP_rename, 231,         /* i_apply_fun/0 */
+    TOP_rename, 232,         /* i_apply_fun/0 */
     
 
     /*
-     * Line 864:
+     * Line 844:
      *   call_ext u==3 u$bif:erlang:apply/3 => i_apply
      */
 
@@ -1756,11 +1763,11 @@ Uint op_transform[] = {
     TOP_is_type_eq, 1, 3,    /* u == 3 */
     TOP_next_arg,
     TOP_is_bif, BIF_apply_3,
-    TOP_rename, 228,         /* i_apply/0 */
+    TOP_rename, 229,         /* i_apply/0 */
     
 
     /*
-     * Line 899:
+     * Line 879:
      *   call_ext u==0 u$func:erlang:yield/0 => i_yield
      */
 
@@ -1768,11 +1775,11 @@ Uint op_transform[] = {
     TOP_is_type_eq, 1, 0,    /* u == 0 */
     TOP_next_arg,
     TOP_is_func, am_erlang, am_yield, 0,
-    TOP_rename, 165,         /* i_yield/0 */
+    TOP_rename, 166,         /* i_yield/0 */
     
 
     /*
-     * Line 906:
+     * Line 886:
      *   call_ext u==3 u$func:erlang:hibernate/3 => i_hibernate
      */
 
@@ -1780,11 +1787,11 @@ Uint op_transform[] = {
     TOP_is_type_eq, 1, 3,    /* u == 3 */
     TOP_next_arg,
     TOP_is_func, am_erlang, am_hibernate, 3,
-    TOP_rename, 234,         /* i_hibernate/0 */
+    TOP_rename, 235,         /* i_hibernate/0 */
     
 
     /*
-     * Line 918:
+     * Line 898:
      *   call_ext Arity u$func:erlang:dt_get_tag/0 =>     move a=am_undefined x=0
      */
 
@@ -1801,7 +1808,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 931:
+     * Line 911:
      *   call_ext Arity u$func:erlang:dt_put_tag/1 =>     move a=am_undefined x=0
      */
 
@@ -1818,7 +1825,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 938:
+     * Line 918:
      *   call_ext Arity u$func:erlang:dt_get_tag_data/0 =>     move a=am_undefined x=0
      */
 
@@ -1835,7 +1842,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 951:
+     * Line 931:
      *   call_ext Arity u$func:erlang:dt_spread_tag/1 =>     move a=am_true x=0
      */
 
@@ -1852,7 +1859,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 964:
+     * Line 944:
      *   call_ext Arity u$func:erlang:dt_restore_tag/1 =>     move a=am_true x=0
      */
 
@@ -1869,7 +1876,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 976:
+     * Line 956:
      *   call_ext Arity u$func:erlang:dt_prepend_vm_tag_data/1 =>
      */
 
@@ -1881,7 +1888,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 988:
+     * Line 968:
      *   call_ext Arity u$func:erlang:dt_append_vm_tag_data/1 =>
      */
 
@@ -1893,7 +1900,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1000:
+     * Line 980:
      *   call_ext u==0 u$func:os:perf_counter/0 =>     i_perf_counter
      */
 
@@ -1901,11 +1908,11 @@ Uint op_transform[] = {
     TOP_is_type_eq, 1, 0,    /* u == 0 */
     TOP_next_arg,
     TOP_is_func, am_os, am_perf_counter, 0,
-    TOP_rename, 235,         /* i_perf_counter/0 */
+    TOP_rename, 236,         /* i_perf_counter/0 */
     
 
     /*
-     * Line 1013:
+     * Line 993:
      *   call_ext u Bif=u$is_bif => call_bif Bif
      */
 
@@ -1915,63 +1922,63 @@ Uint op_transform[] = {
     TOP_is_bif, -1,
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_commit,
-    TOP_new_instr, 236,      /* call_bif/1 */
+    TOP_new_instr, 237,      /* call_bif/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 1031:
+     * Line 1011:
      *   call_ext Ar Func        => i_call_ext Func
      */
 
     TOP_next_arg,            /* Ar (ignored) */
     TOP_set_var_next_arg, 1, /* Func */
     TOP_commit,              /* always reached */
-    TOP_new_instr, 255,      /* i_call_ext/1 */
+    TOP_new_instr, 256,      /* i_call_ext/1 */
     TOP_store_var_next_arg, 1, /* Func */
     TOP_end,
 
     
 
     /*
-     * Line 801:
-     *   call_ext_last u==2 Bif=u$bif:erts_internal:check_process_code/2 D => i_call_ext_last Bif D
+     * Line 782:
+     *   call_ext_last u==1 Bif=u$bif:erts_internal:check_process_code/1 D => i_call_ext_last Bif D
      */
 
     TOP_try_me_else, 18,
-    TOP_is_type_eq, 1, 2,    /* u == 2 */
+    TOP_is_type_eq, 1, 1,    /* u == 1 */
     TOP_next_arg,
-    TOP_is_bif, BIF_erts_internal_check_process_code_2,
+    TOP_is_bif, BIF_erts_internal_check_process_code_1,
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_set_var_next_arg, 1, /* D */
     TOP_commit,
-    TOP_new_instr, 256,      /* i_call_ext_last/2 */
+    TOP_new_instr, 257,      /* i_call_ext_last/2 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_store_var_next_arg, 1, /* D */
     TOP_end,
     
 
     /*
-     * Line 811:
-     *   call_ext_last u==0 Bif=u$bif:erlang:garbage_collect/0 D => i_call_ext_last Bif D
+     * Line 791:
+     *   call_ext_last u==1 Bif=u$bif:erts_internal:garbage_collect/1 D => i_call_ext_last Bif D
      */
 
     TOP_try_me_else, 18,
-    TOP_is_type_eq, 1, 0,    /* u == 0 */
+    TOP_is_type_eq, 1, 1,    /* u == 1 */
     TOP_next_arg,
-    TOP_is_bif, BIF_garbage_collect_0,
+    TOP_is_bif, BIF_erts_internal_garbage_collect_1,
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_set_var_next_arg, 1, /* D */
     TOP_commit,
-    TOP_new_instr, 256,      /* i_call_ext_last/2 */
+    TOP_new_instr, 257,      /* i_call_ext_last/2 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_store_var_next_arg, 1, /* D */
     TOP_end,
     
 
     /*
-     * Line 820:
+     * Line 800:
      *   call_ext_last u==2 Bif=u$bif:erlang:put/2 D => i_call_ext_last Bif D
      */
 
@@ -1982,14 +1989,14 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_set_var_next_arg, 1, /* D */
     TOP_commit,
-    TOP_new_instr, 256,      /* i_call_ext_last/2 */
+    TOP_new_instr, 257,      /* i_call_ext_last/2 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_store_var_next_arg, 1, /* D */
     TOP_end,
     
 
     /*
-     * Line 824:
+     * Line 804:
      *   call_ext_last u==1 Bif=u$bif:erlang:erase/1 D => i_call_ext_last Bif D
      */
 
@@ -2000,14 +2007,14 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_set_var_next_arg, 1, /* D */
     TOP_commit,
-    TOP_new_instr, 256,      /* i_call_ext_last/2 */
+    TOP_new_instr, 257,      /* i_call_ext_last/2 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_store_var_next_arg, 1, /* D */
     TOP_end,
     
 
     /*
-     * Line 837:
+     * Line 817:
      *   call_ext_last u==1 Bif=u$bif:erlang:process_info/1 D => i_call_ext Bif | deallocate_return D
      */
 
@@ -2018,15 +2025,15 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_set_var_next_arg, 1, /* D */
     TOP_commit,
-    TOP_new_instr, 219,      /* deallocate_return/1 */
+    TOP_new_instr, 220,      /* deallocate_return/1 */
     TOP_store_var_next_arg, 1, /* D */
-    TOP_new_instr, 255,      /* i_call_ext/1 */
+    TOP_new_instr, 256,      /* i_call_ext/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 841:
+     * Line 821:
      *   call_ext_last u==2 Bif=u$bif:erlang:process_info/2 D => i_call_ext Bif | deallocate_return D
      */
 
@@ -2037,15 +2044,15 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_set_var_next_arg, 1, /* D */
     TOP_commit,
-    TOP_new_instr, 219,      /* deallocate_return/1 */
+    TOP_new_instr, 220,      /* deallocate_return/1 */
     TOP_store_var_next_arg, 1, /* D */
-    TOP_new_instr, 255,      /* i_call_ext/1 */
+    TOP_new_instr, 256,      /* i_call_ext/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 848:
+     * Line 828:
      *   call_ext_last u==2 Bif=u$bif:erlang:load_nif/2 D => i_call_ext Bif | deallocate_return D
      */
 
@@ -2056,15 +2063,15 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_set_var_next_arg, 1, /* D */
     TOP_commit,
-    TOP_new_instr, 219,      /* deallocate_return/1 */
+    TOP_new_instr, 220,      /* deallocate_return/1 */
     TOP_store_var_next_arg, 1, /* D */
-    TOP_new_instr, 255,      /* i_call_ext/1 */
+    TOP_new_instr, 256,      /* i_call_ext/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 857:
+     * Line 837:
      *   call_ext_last u==2 u$func:erlang:apply/2 D => i_apply_fun_last D
      */
 
@@ -2075,13 +2082,13 @@ Uint op_transform[] = {
     TOP_next_arg,
     TOP_set_var_next_arg, 0, /* D */
     TOP_commit,
-    TOP_new_instr, 232,      /* i_apply_fun_last/1 */
+    TOP_new_instr, 233,      /* i_apply_fun_last/1 */
     TOP_store_var_next_arg, 0, /* D */
     TOP_end,
     
 
     /*
-     * Line 865:
+     * Line 845:
      *   call_ext_last u==3 u$bif:erlang:apply/3 D => i_apply_last D
      */
 
@@ -2092,13 +2099,13 @@ Uint op_transform[] = {
     TOP_next_arg,
     TOP_set_var_next_arg, 0, /* D */
     TOP_commit,
-    TOP_new_instr, 229,      /* i_apply_last/1 */
+    TOP_new_instr, 230,      /* i_apply_last/1 */
     TOP_store_var_next_arg, 0, /* D */
     TOP_end,
     
 
     /*
-     * Line 873:
+     * Line 853:
      *   call_ext_last u==1 Bif=u$bif:erlang:exit/1 D => call_bif Bif
      */
 
@@ -2108,13 +2115,13 @@ Uint op_transform[] = {
     TOP_is_bif, BIF_exit_1,
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_commit,
-    TOP_new_instr, 236,      /* call_bif/1 */
+    TOP_new_instr, 237,      /* call_bif/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 874:
+     * Line 854:
      *   call_ext_last u==1 Bif=u$bif:erlang:throw/1 D => call_bif Bif
      */
 
@@ -2124,13 +2131,13 @@ Uint op_transform[] = {
     TOP_is_bif, BIF_throw_1,
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_commit,
-    TOP_new_instr, 236,      /* call_bif/1 */
+    TOP_new_instr, 237,      /* call_bif/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 887:
+     * Line 867:
      *   call_ext_last u==1 Bif=u$bif:erlang:error/1 D => call_bif Bif
      */
 
@@ -2140,13 +2147,13 @@ Uint op_transform[] = {
     TOP_is_bif, BIF_error_1,
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_commit,
-    TOP_new_instr, 236,      /* call_bif/1 */
+    TOP_new_instr, 237,      /* call_bif/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 888:
+     * Line 868:
      *   call_ext_last u==2 Bif=u$bif:erlang:error/2 D => call_bif Bif
      */
 
@@ -2156,13 +2163,13 @@ Uint op_transform[] = {
     TOP_is_bif, BIF_error_2,
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_commit,
-    TOP_new_instr, 236,      /* call_bif/1 */
+    TOP_new_instr, 237,      /* call_bif/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 900:
+     * Line 880:
      *   call_ext_last u==0 u$func:erlang:yield/0 D => i_yield | deallocate_return D
      */
 
@@ -2173,14 +2180,14 @@ Uint op_transform[] = {
     TOP_next_arg,
     TOP_set_var_next_arg, 0, /* D */
     TOP_commit,
-    TOP_new_instr, 219,      /* deallocate_return/1 */
+    TOP_new_instr, 220,      /* deallocate_return/1 */
     TOP_store_var_next_arg, 0, /* D */
-    TOP_new_instr, 165,      /* i_yield/0 */
+    TOP_new_instr, 166,      /* i_yield/0 */
     TOP_end,
     
 
     /*
-     * Line 907:
+     * Line 887:
      *   call_ext_last u==3 u$func:erlang:hibernate/3 D => i_hibernate
      */
 
@@ -2188,11 +2195,11 @@ Uint op_transform[] = {
     TOP_is_type_eq, 1, 3,    /* u == 3 */
     TOP_next_arg,
     TOP_is_func, am_erlang, am_hibernate, 3,
-    TOP_rename, 234,         /* i_hibernate/0 */
+    TOP_rename, 235,         /* i_hibernate/0 */
     
 
     /*
-     * Line 920:
+     * Line 900:
      *   call_ext_last Arity u$func:erlang:dt_get_tag/0 D =>     move a=am_undefined x=0 | deallocate D | return
      */
 
@@ -2214,7 +2221,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 933:
+     * Line 913:
      *   call_ext_last Arity u$func:erlang:dt_put_tag/1 D =>     move a=am_undefined x=0 | deallocate D | return
      */
 
@@ -2236,7 +2243,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 940:
+     * Line 920:
      *   call_ext_last Arity u$func:erlang:dt_get_tag_data/0 D =>     move a=am_undefined x=0 | deallocate D | return
      */
 
@@ -2258,7 +2265,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 953:
+     * Line 933:
      *   call_ext_last Arity u$func:erlang:dt_spread_tag/1 D =>     move a=am_true x=0 | deallocate D | return
      */
 
@@ -2280,7 +2287,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 966:
+     * Line 946:
      *   call_ext_last Arity u$func:erlang:dt_restore_tag/1 D =>     move a=am_true x=0 | deallocate D | return
      */
 
@@ -2302,7 +2309,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 978:
+     * Line 958:
      *   call_ext_last Arity u$func:erlang:dt_prepend_vm_tag_data/1 D =>     deallocate D | return
      */
 
@@ -2319,7 +2326,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 990:
+     * Line 970:
      *   call_ext_last Arity u$func:erlang:dt_append_vm_tag_data/1 D =>     deallocate D | return
      */
 
@@ -2336,7 +2343,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1002:
+     * Line 982:
      *   call_ext_last u==0 u$func:os:perf_counter/0 D =>     i_perf_counter | deallocate_return D
      */
 
@@ -2347,14 +2354,14 @@ Uint op_transform[] = {
     TOP_next_arg,
     TOP_set_var_next_arg, 0, /* D */
     TOP_commit,
-    TOP_new_instr, 219,      /* deallocate_return/1 */
+    TOP_new_instr, 220,      /* deallocate_return/1 */
     TOP_store_var_next_arg, 0, /* D */
-    TOP_new_instr, 235,      /* i_perf_counter/0 */
+    TOP_new_instr, 236,      /* i_perf_counter/0 */
     TOP_end,
     
 
     /*
-     * Line 1015:
+     * Line 995:
      *   call_ext_last u Bif=u$is_bif D => call_bif Bif | deallocate_return D
      */
 
@@ -2365,15 +2372,15 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_set_var_next_arg, 1, /* D */
     TOP_commit,
-    TOP_new_instr, 219,      /* deallocate_return/1 */
+    TOP_new_instr, 220,      /* deallocate_return/1 */
     TOP_store_var_next_arg, 1, /* D */
-    TOP_new_instr, 236,      /* call_bif/1 */
+    TOP_new_instr, 237,      /* call_bif/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 1032:
+     * Line 1012:
      *   call_ext_last Ar Func D => i_call_ext_last Func D
      */
 
@@ -2381,7 +2388,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 1, /* Func */
     TOP_set_var_next_arg, 2, /* D */
     TOP_commit,              /* always reached */
-    TOP_new_instr, 256,      /* i_call_ext_last/2 */
+    TOP_new_instr, 257,      /* i_call_ext_last/2 */
     TOP_store_var_next_arg, 1, /* Func */
     TOP_store_var_next_arg, 2, /* D */
     TOP_end,
@@ -2389,39 +2396,39 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 802:
-     *   call_ext_only u==2 Bif=u$bif:erts_internal:check_process_code/2 => i_call_ext_only Bif
+     * Line 783:
+     *   call_ext_only u==1 Bif=u$bif:erts_internal:check_process_code/1 => i_call_ext_only Bif
      */
 
     TOP_try_me_else, 14,
-    TOP_is_type_eq, 1, 2,    /* u == 2 */
+    TOP_is_type_eq, 1, 1,    /* u == 1 */
     TOP_next_arg,
-    TOP_is_bif, BIF_erts_internal_check_process_code_2,
+    TOP_is_bif, BIF_erts_internal_check_process_code_1,
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_commit,
-    TOP_new_instr, 257,      /* i_call_ext_only/1 */
+    TOP_new_instr, 258,      /* i_call_ext_only/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 812:
-     *   call_ext_only u==0 Bif=u$bif:erlang:garbage_collect/0 => i_call_ext_only Bif
+     * Line 792:
+     *   call_ext_only u==1 Bif=u$bif:erts_internal:garbage_collect/1 => i_call_ext_only Bif
      */
 
     TOP_try_me_else, 14,
-    TOP_is_type_eq, 1, 0,    /* u == 0 */
+    TOP_is_type_eq, 1, 1,    /* u == 1 */
     TOP_next_arg,
-    TOP_is_bif, BIF_garbage_collect_0,
+    TOP_is_bif, BIF_erts_internal_garbage_collect_1,
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_commit,
-    TOP_new_instr, 257,      /* i_call_ext_only/1 */
+    TOP_new_instr, 258,      /* i_call_ext_only/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 821:
+     * Line 801:
      *   call_ext_only u==2 Bif=u$bif:erlang:put/2 => i_call_ext_only Bif
      */
 
@@ -2431,13 +2438,13 @@ Uint op_transform[] = {
     TOP_is_bif, BIF_put_2,
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_commit,
-    TOP_new_instr, 257,      /* i_call_ext_only/1 */
+    TOP_new_instr, 258,      /* i_call_ext_only/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 825:
+     * Line 805:
      *   call_ext_only u==1 Bif=u$bif:erlang:erase/1 => i_call_ext_only Bif
      */
 
@@ -2447,13 +2454,13 @@ Uint op_transform[] = {
     TOP_is_bif, BIF_erase_1,
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_commit,
-    TOP_new_instr, 257,      /* i_call_ext_only/1 */
+    TOP_new_instr, 258,      /* i_call_ext_only/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 838:
+     * Line 818:
      *   call_ext_only Ar=u==1 Bif=u$bif:erlang:process_info/1 => allocate u Ar | i_call_ext Bif | deallocate_return u
      */
 
@@ -2463,9 +2470,9 @@ Uint op_transform[] = {
     TOP_is_bif, BIF_process_info_1,
     TOP_set_var_next_arg, 1, /* Bif */
     TOP_commit,
-    TOP_new_instr, 219,      /* deallocate_return/1 */
+    TOP_new_instr, 220,      /* deallocate_return/1 */
     TOP_store_type, TAG_u,
-    TOP_new_instr, 255,      /* i_call_ext/1 */
+    TOP_new_instr, 256,      /* i_call_ext/1 */
     TOP_store_var_next_arg, 1, /* Bif */
     TOP_new_instr, 12,       /* allocate/2 */
     TOP_store_type, TAG_u,
@@ -2475,7 +2482,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 842:
+     * Line 822:
      *   call_ext_only Ar=u==2 Bif=u$bif:erlang:process_info/2 => allocate u Ar | i_call_ext Bif | deallocate_return u
      */
 
@@ -2485,9 +2492,9 @@ Uint op_transform[] = {
     TOP_is_bif, BIF_process_info_2,
     TOP_set_var_next_arg, 1, /* Bif */
     TOP_commit,
-    TOP_new_instr, 219,      /* deallocate_return/1 */
+    TOP_new_instr, 220,      /* deallocate_return/1 */
     TOP_store_type, TAG_u,
-    TOP_new_instr, 255,      /* i_call_ext/1 */
+    TOP_new_instr, 256,      /* i_call_ext/1 */
     TOP_store_var_next_arg, 1, /* Bif */
     TOP_new_instr, 12,       /* allocate/2 */
     TOP_store_type, TAG_u,
@@ -2497,7 +2504,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 849:
+     * Line 829:
      *   call_ext_only Ar=u==2 Bif=u$bif:erlang:load_nif/2 => allocate u Ar | i_call_ext Bif | deallocate_return u
      */
 
@@ -2507,9 +2514,9 @@ Uint op_transform[] = {
     TOP_is_bif, BIF_load_nif_2,
     TOP_set_var_next_arg, 1, /* Bif */
     TOP_commit,
-    TOP_new_instr, 219,      /* deallocate_return/1 */
+    TOP_new_instr, 220,      /* deallocate_return/1 */
     TOP_store_type, TAG_u,
-    TOP_new_instr, 255,      /* i_call_ext/1 */
+    TOP_new_instr, 256,      /* i_call_ext/1 */
     TOP_store_var_next_arg, 1, /* Bif */
     TOP_new_instr, 12,       /* allocate/2 */
     TOP_store_type, TAG_u,
@@ -2519,7 +2526,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 858:
+     * Line 838:
      *   call_ext_only u==2 u$func:erlang:apply/2 => i_apply_fun_only
      */
 
@@ -2527,11 +2534,11 @@ Uint op_transform[] = {
     TOP_is_type_eq, 1, 2,    /* u == 2 */
     TOP_next_arg,
     TOP_is_func, am_erlang, am_apply, 2,
-    TOP_rename, 233,         /* i_apply_fun_only/0 */
+    TOP_rename, 234,         /* i_apply_fun_only/0 */
     
 
     /*
-     * Line 866:
+     * Line 846:
      *   call_ext_only u==3 u$bif:erlang:apply/3 => i_apply_only
      */
 
@@ -2539,11 +2546,11 @@ Uint op_transform[] = {
     TOP_is_type_eq, 1, 3,    /* u == 3 */
     TOP_next_arg,
     TOP_is_bif, BIF_apply_3,
-    TOP_rename, 230,         /* i_apply_only/0 */
+    TOP_rename, 231,         /* i_apply_only/0 */
     
 
     /*
-     * Line 876:
+     * Line 856:
      *   call_ext_only u==1 Bif=u$bif:erlang:exit/1 => call_bif Bif
      */
 
@@ -2553,13 +2560,13 @@ Uint op_transform[] = {
     TOP_is_bif, BIF_exit_1,
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_commit,
-    TOP_new_instr, 236,      /* call_bif/1 */
+    TOP_new_instr, 237,      /* call_bif/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 877:
+     * Line 857:
      *   call_ext_only u==1 Bif=u$bif:erlang:throw/1 => call_bif Bif
      */
 
@@ -2569,13 +2576,13 @@ Uint op_transform[] = {
     TOP_is_bif, BIF_throw_1,
     TOP_set_var_next_arg, 0, /* Bif */
     TOP_commit,
-    TOP_new_instr, 236,      /* call_bif/1 */
+    TOP_new_instr, 237,      /* call_bif/1 */
     TOP_store_var_next_arg, 0, /* Bif */
     TOP_end,
     
 
     /*
-     * Line 891:
+     * Line 871:
      *   call_ext_only Ar=u==1 Bif=u$bif:erlang:error/1 =>   allocate u Ar | call_bif Bif
      */
 
@@ -2585,7 +2592,7 @@ Uint op_transform[] = {
     TOP_is_bif, BIF_error_1,
     TOP_set_var_next_arg, 1, /* Bif */
     TOP_commit,
-    TOP_new_instr, 236,      /* call_bif/1 */
+    TOP_new_instr, 237,      /* call_bif/1 */
     TOP_store_var_next_arg, 1, /* Bif */
     TOP_new_instr, 12,       /* allocate/2 */
     TOP_store_type, TAG_u,
@@ -2595,7 +2602,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 893:
+     * Line 873:
      *   call_ext_only Ar=u==2 Bif=u$bif:erlang:error/2 =>   allocate u Ar | call_bif Bif
      */
 
@@ -2605,7 +2612,7 @@ Uint op_transform[] = {
     TOP_is_bif, BIF_error_2,
     TOP_set_var_next_arg, 1, /* Bif */
     TOP_commit,
-    TOP_new_instr, 236,      /* call_bif/1 */
+    TOP_new_instr, 237,      /* call_bif/1 */
     TOP_store_var_next_arg, 1, /* Bif */
     TOP_new_instr, 12,       /* allocate/2 */
     TOP_store_type, TAG_u,
@@ -2615,7 +2622,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 901:
+     * Line 881:
      *   call_ext_only u==0 u$func:erlang:yield/0 => i_yield | return
      */
 
@@ -2625,12 +2632,12 @@ Uint op_transform[] = {
     TOP_is_func, am_erlang, am_yield, 0,
     TOP_commit,
     TOP_new_instr, 19,       /* return/0 */
-    TOP_new_instr, 165,      /* i_yield/0 */
+    TOP_new_instr, 166,      /* i_yield/0 */
     TOP_end,
     
 
     /*
-     * Line 908:
+     * Line 888:
      *   call_ext_only u==3 u$func:erlang:hibernate/3 => i_hibernate
      */
 
@@ -2638,11 +2645,11 @@ Uint op_transform[] = {
     TOP_is_type_eq, 1, 3,    /* u == 3 */
     TOP_next_arg,
     TOP_is_func, am_erlang, am_hibernate, 3,
-    TOP_rename, 234,         /* i_hibernate/0 */
+    TOP_rename, 235,         /* i_hibernate/0 */
     
 
     /*
-     * Line 922:
+     * Line 902:
      *   call_ext_only Arity u$func:erlang:dt_get_tag/0 =>     move a=am_undefined x=0 | return
      */
 
@@ -2660,7 +2667,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 935:
+     * Line 915:
      *   call_ext_only Arity u$func:erlang:dt_put_tag/1 =>     move a=am_undefined x=0 | return
      */
 
@@ -2678,7 +2685,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 942:
+     * Line 922:
      *   call_ext_only Arity u$func:erlang:dt_get_tag_data/0 =>     move a=am_undefined x=0 | return
      */
 
@@ -2696,7 +2703,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 955:
+     * Line 935:
      *   call_ext_only Arity u$func:erlang:dt_spread_tag/1 =>     move a=am_true x=0 | return
      */
 
@@ -2714,7 +2721,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 968:
+     * Line 948:
      *   call_ext_only Arity u$func:erlang:dt_restore_tag/1 =>     move a=am_true x=0 | return
      */
 
@@ -2732,7 +2739,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 980:
+     * Line 960:
      *   call_ext_only Arity u$func:erlang:dt_prepend_vm_tag_data/1 =>     return
      */
 
@@ -2743,7 +2750,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 992:
+     * Line 972:
      *   call_ext_only Arity u$func:erlang:dt_append_vm_tag_data/1 =>     return
      */
 
@@ -2754,7 +2761,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1004:
+     * Line 984:
      *   call_ext_only u==0 u$func:os:perf_counter/0 =>     i_perf_counter | return
      */
 
@@ -2764,12 +2771,12 @@ Uint op_transform[] = {
     TOP_is_func, am_os, am_perf_counter, 0,
     TOP_commit,
     TOP_new_instr, 19,       /* return/0 */
-    TOP_new_instr, 235,      /* i_perf_counter/0 */
+    TOP_new_instr, 236,      /* i_perf_counter/0 */
     TOP_end,
     
 
     /*
-     * Line 1018:
+     * Line 998:
      *   call_ext_only Ar=u Bif=u$is_bif =>   allocate u Ar | call_bif Bif | deallocate_return u
      */
 
@@ -2779,9 +2786,9 @@ Uint op_transform[] = {
     TOP_is_bif, -1,
     TOP_set_var_next_arg, 1, /* Bif */
     TOP_commit,
-    TOP_new_instr, 219,      /* deallocate_return/1 */
+    TOP_new_instr, 220,      /* deallocate_return/1 */
     TOP_store_type, TAG_u,
-    TOP_new_instr, 236,      /* call_bif/1 */
+    TOP_new_instr, 237,      /* call_bif/1 */
     TOP_store_var_next_arg, 1, /* Bif */
     TOP_new_instr, 12,       /* allocate/2 */
     TOP_store_type, TAG_u,
@@ -2791,21 +2798,21 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1033:
+     * Line 1013:
      *   call_ext_only Ar Func   => i_call_ext_only Func
      */
 
     TOP_next_arg,            /* Ar (ignored) */
     TOP_set_var_next_arg, 1, /* Func */
     TOP_commit,              /* always reached */
-    TOP_new_instr, 257,      /* i_call_ext_only/1 */
+    TOP_new_instr, 258,      /* i_call_ext_only/1 */
     TOP_store_var_next_arg, 1, /* Func */
     TOP_end,
 
     
 
     /*
-     * Line 1143:
+     * Line 1119:
      *   call_fun Arity | deallocate D | return => i_call_fun_last Arity D
      */
 
@@ -2815,23 +2822,23 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 1, /* D */
     TOP_next_instr, 19,      /* return/0 */
     TOP_commit,
-    TOP_new_instr, 262,      /* i_call_fun_last/2 */
+    TOP_new_instr, 263,      /* i_call_fun_last/2 */
     TOP_store_var_next_arg, 0, /* Arity */
     TOP_store_var_next_arg, 1, /* D */
     TOP_end,
     
 
     /*
-     * Line 1144:
+     * Line 1120:
      *   call_fun Arity => i_call_fun Arity
      */
 
-    TOP_rename, 261,         /* i_call_fun/1 */
+    TOP_rename, 262,         /* i_call_fun/1 */
 
     
 
     /*
-     * Line 1126:
+     * Line 1102:
      *   call_last Ar Func D => i_call_last Func D
      */
 
@@ -2839,7 +2846,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 1, /* Func */
     TOP_set_var_next_arg, 2, /* D */
     TOP_commit,              /* always reached */
-    TOP_new_instr, 253,      /* i_call_last/2 */
+    TOP_new_instr, 254,      /* i_call_last/2 */
     TOP_store_var_next_arg, 1, /* Func */
     TOP_store_var_next_arg, 2, /* D */
     TOP_end,
@@ -2847,21 +2854,21 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1127:
+     * Line 1103:
      *   call_only Ar Func   => i_call_only Func
      */
 
     TOP_next_arg,            /* Ar (ignored) */
     TOP_set_var_next_arg, 1, /* Func */
     TOP_commit,              /* always reached */
-    TOP_new_instr, 254,      /* i_call_only/1 */
+    TOP_new_instr, 255,      /* i_call_only/1 */
     TOP_store_var_next_arg, 1, /* Func */
     TOP_end,
 
     
 
     /*
-     * Line 249:
+     * Line 239:
      *   case_end NotInX=cy => move NotInX x | case_end x
      */
 
@@ -2881,7 +2888,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 613:
+     * Line 593:
      *   deallocate D | return => deallocate_return D
      */
 
@@ -2889,14 +2896,14 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 0, /* D */
     TOP_next_instr, 19,      /* return/0 */
     TOP_commit,
-    TOP_new_instr, 219,      /* deallocate_return/1 */
+    TOP_new_instr, 220,      /* deallocate_return/1 */
     TOP_store_var_next_arg, 0, /* D */
     TOP_end,
 
     
 
     /*
-     * Line 1417:
+     * Line 1388:
      *   fadd p FR1 FR2 FR3 => i_fadd FR1 FR2 FR3
      */
 
@@ -2907,7 +2914,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 1, /* FR2 */
     TOP_set_var_next_arg, 2, /* FR3 */
     TOP_commit,
-    TOP_new_instr, 311,      /* i_fadd/3 */
+    TOP_new_instr, 312,      /* i_fadd/3 */
     TOP_store_var_next_arg, 0, /* FR1 */
     TOP_store_var_next_arg, 1, /* FR2 */
     TOP_store_var_next_arg, 2, /* FR3 */
@@ -2916,7 +2923,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1438:
+     * Line 1409:
      *   fcheckerror p | no_fpe_signals() =>
      */
 
@@ -2928,18 +2935,18 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1439:
+     * Line 1410:
      *   fcheckerror p => i_fcheckerror
      */
 
     TOP_try_me_else_fail,
     TOP_is_type, 512,        /* p  */
-    TOP_rename, 316,         /* i_fcheckerror/0 */
+    TOP_rename, 317,         /* i_fcheckerror/0 */
 
     
 
     /*
-     * Line 1437:
+     * Line 1408:
      *   fclearerror | no_fpe_signals() =>
      */
 
@@ -2951,7 +2958,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1423:
+     * Line 1394:
      *   fconv Arg=iqan Dst=l => move Arg x | fconv x Dst
      */
 
@@ -2975,7 +2982,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1420:
+     * Line 1391:
      *   fdiv p FR1 FR2 FR3 => i_fdiv FR1 FR2 FR3
      */
 
@@ -2986,7 +2993,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 1, /* FR2 */
     TOP_set_var_next_arg, 2, /* FR3 */
     TOP_commit,
-    TOP_new_instr, 314,      /* i_fdiv/3 */
+    TOP_new_instr, 315,      /* i_fdiv/3 */
     TOP_store_var_next_arg, 0, /* FR1 */
     TOP_store_var_next_arg, 1, /* FR2 */
     TOP_store_var_next_arg, 2, /* FR3 */
@@ -2995,7 +3002,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1419:
+     * Line 1390:
      *   fmul p FR1 FR2 FR3 => i_fmul FR1 FR2 FR3
      */
 
@@ -3006,7 +3013,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 1, /* FR2 */
     TOP_set_var_next_arg, 2, /* FR3 */
     TOP_commit,
-    TOP_new_instr, 313,      /* i_fmul/3 */
+    TOP_new_instr, 314,      /* i_fmul/3 */
     TOP_store_var_next_arg, 0, /* FR1 */
     TOP_store_var_next_arg, 1, /* FR2 */
     TOP_store_var_next_arg, 2, /* FR3 */
@@ -3015,7 +3022,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1421:
+     * Line 1392:
      *   fnegate p FR1 FR2 => i_fnegate FR1 FR2
      */
 
@@ -3025,7 +3032,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 0, /* FR1 */
     TOP_set_var_next_arg, 1, /* FR2 */
     TOP_commit,
-    TOP_new_instr, 315,      /* i_fnegate/2 */
+    TOP_new_instr, 316,      /* i_fnegate/2 */
     TOP_store_var_next_arg, 0, /* FR1 */
     TOP_store_var_next_arg, 1, /* FR2 */
     TOP_end,
@@ -3033,7 +3040,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1418:
+     * Line 1389:
      *   fsub p FR1 FR2 FR3 => i_fsub FR1 FR2 FR3
      */
 
@@ -3044,7 +3051,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 1, /* FR2 */
     TOP_set_var_next_arg, 2, /* FR3 */
     TOP_commit,
-    TOP_new_instr, 312,      /* i_fsub/3 */
+    TOP_new_instr, 313,      /* i_fsub/3 */
     TOP_store_var_next_arg, 0, /* FR1 */
     TOP_store_var_next_arg, 1, /* FR2 */
     TOP_store_var_next_arg, 2, /* FR3 */
@@ -3069,7 +3076,7 @@ Uint op_transform[] = {
     TOP_next_arg,
     TOP_is_type_eq, 8, 0,    /* x == 0 */
     TOP_commit,
-    TOP_new_instr, 159,      /* too_old_compiler/0 */
+    TOP_new_instr, 160,      /* too_old_compiler/0 */
     TOP_end,
     
 
@@ -3090,12 +3097,12 @@ Uint op_transform[] = {
     TOP_next_arg,
     TOP_is_type_eq, 8, 0,    /* x == 0 */
     TOP_commit,
-    TOP_new_instr, 159,      /* too_old_compiler/0 */
+    TOP_new_instr, 160,      /* too_old_compiler/0 */
     TOP_end,
     
 
     /*
-     * Line 1161:
+     * Line 1136:
      *   func_info M F A => i_func_info u M F A
      */
 
@@ -3103,7 +3110,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 1, /* F */
     TOP_set_var_next_arg, 2, /* A */
     TOP_commit,              /* always reached */
-    TOP_new_instr, 160,      /* i_func_info/4 */
+    TOP_new_instr, 161,      /* i_func_info/4 */
     TOP_store_type, TAG_u,
     TOP_next_arg,
     TOP_store_var_next_arg, 0, /* M */
@@ -3114,7 +3121,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1522:
+     * Line 1486:
      *   gc_bif1 Fail Live u$bif:erlang:splus/1 Src Dst =>    gen_plus Fail Live Src i Dst
      */
 
@@ -3126,7 +3133,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 2, /* Src */
     TOP_set_var_next_arg, 3, /* Dst */
     TOP_commit,
-    TOP_new_instr, 325,      /* gen_plus/5 */
+    TOP_new_instr, 326,      /* gen_plus/5 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 1, /* Live */
     TOP_store_var_next_arg, 2, /* Src */
@@ -3137,7 +3144,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1527:
+     * Line 1491:
      *   gc_bif1 Fail Live u$bif:erlang:sminus/1 Src Dst =>    gen_minus Fail Live i Src Dst
      */
 
@@ -3149,7 +3156,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 2, /* Src */
     TOP_set_var_next_arg, 3, /* Dst */
     TOP_commit,
-    TOP_new_instr, 326,      /* gen_minus/5 */
+    TOP_new_instr, 327,      /* gen_minus/5 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 1, /* Live */
     TOP_store_type, TAG_i,
@@ -3160,7 +3167,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1577:
+     * Line 1541:
      *   gc_bif1 Fail I u$bif:erlang:bnot/1 Src Dst=d => i_int_bnot Fail Src I Dst
      */
 
@@ -3173,7 +3180,7 @@ Uint op_transform[] = {
     TOP_is_type, 24,         /* d  */
     TOP_set_var_next_arg, 3, /* Dst */
     TOP_commit,
-    TOP_new_instr, 339,      /* i_int_bnot/4 */
+    TOP_new_instr, 340,      /* i_int_bnot/4 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 2, /* Src */
     TOP_store_var_next_arg, 1, /* I */
@@ -3182,7 +3189,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1623:
+     * Line 1584:
      *   gc_bif1 Fail I Bif Src Dst => 	gen_guard_bif1(Fail, I, Bif, Src, Dst)
      */
 
@@ -3196,7 +3203,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1524:
+     * Line 1488:
      *   gc_bif2 Fail Live u$bif:erlang:splus/2 S1 S2 Dst =>    gen_plus Fail Live S1 S2 Dst
      */
 
@@ -3209,7 +3216,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 3, /* S2 */
     TOP_set_var_next_arg, 4, /* Dst */
     TOP_commit,
-    TOP_new_instr, 325,      /* gen_plus/5 */
+    TOP_new_instr, 326,      /* gen_plus/5 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 1, /* Live */
     TOP_store_var_next_arg, 2, /* S1 */
@@ -3219,7 +3226,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1529:
+     * Line 1493:
      *   gc_bif2 Fail Live u$bif:erlang:sminus/2 S1 S2 Dst =>    gen_minus Fail Live S1 S2 Dst
      */
 
@@ -3232,7 +3239,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 3, /* S2 */
     TOP_set_var_next_arg, 4, /* Dst */
     TOP_commit,
-    TOP_new_instr, 326,      /* gen_minus/5 */
+    TOP_new_instr, 327,      /* gen_minus/5 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 1, /* Live */
     TOP_store_var_next_arg, 2, /* S1 */
@@ -3242,7 +3249,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1553:
+     * Line 1517:
      *   gc_bif2 Fail Live u$bif:erlang:stimes/2 S1 S2 Dst =>   i_times Fail Live S1 S2 Dst
      */
 
@@ -3255,7 +3262,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 3, /* S2 */
     TOP_set_var_next_arg, 4, /* Dst */
     TOP_commit,
-    TOP_new_instr, 330,      /* i_times/5 */
+    TOP_new_instr, 331,      /* i_times/5 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 1, /* Live */
     TOP_store_var_next_arg, 2, /* S1 */
@@ -3265,7 +3272,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1556:
+     * Line 1520:
      *   gc_bif2 Fail Live u$bif:erlang:div/2 S1 S2 Dst =>   i_m_div Fail Live S1 S2 Dst
      */
 
@@ -3278,7 +3285,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 3, /* S2 */
     TOP_set_var_next_arg, 4, /* Dst */
     TOP_commit,
-    TOP_new_instr, 331,      /* i_m_div/5 */
+    TOP_new_instr, 332,      /* i_m_div/5 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 1, /* Live */
     TOP_store_var_next_arg, 2, /* S1 */
@@ -3288,7 +3295,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1558:
+     * Line 1522:
      *   gc_bif2 Fail Live u$bif:erlang:intdiv/2 S1 S2 Dst =>   i_int_div Fail Live S1 S2 Dst
      */
 
@@ -3301,7 +3308,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 3, /* S2 */
     TOP_set_var_next_arg, 4, /* Dst */
     TOP_commit,
-    TOP_new_instr, 332,      /* i_int_div/5 */
+    TOP_new_instr, 333,      /* i_int_div/5 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 1, /* Live */
     TOP_store_var_next_arg, 2, /* S1 */
@@ -3311,7 +3318,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1561:
+     * Line 1525:
      *   gc_bif2 Fail Live u$bif:erlang:rem/2 S1 S2 Dst =>   i_rem Fail Live S1 S2 Dst
      */
 
@@ -3324,7 +3331,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 3, /* S2 */
     TOP_set_var_next_arg, 4, /* Dst */
     TOP_commit,
-    TOP_new_instr, 333,      /* i_rem/5 */
+    TOP_new_instr, 334,      /* i_rem/5 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 1, /* Live */
     TOP_store_var_next_arg, 2, /* S1 */
@@ -3334,7 +3341,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1564:
+     * Line 1528:
      *   gc_bif2 Fail Live u$bif:erlang:bsl/2 S1 S2 Dst =>   i_bsl Fail Live S1 S2 Dst
      */
 
@@ -3347,7 +3354,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 3, /* S2 */
     TOP_set_var_next_arg, 4, /* Dst */
     TOP_commit,
-    TOP_new_instr, 334,      /* i_bsl/5 */
+    TOP_new_instr, 335,      /* i_bsl/5 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 1, /* Live */
     TOP_store_var_next_arg, 2, /* S1 */
@@ -3357,7 +3364,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1566:
+     * Line 1530:
      *   gc_bif2 Fail Live u$bif:erlang:bsr/2 S1 S2 Dst =>   i_bsr Fail Live S1 S2 Dst
      */
 
@@ -3370,7 +3377,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 3, /* S2 */
     TOP_set_var_next_arg, 4, /* Dst */
     TOP_commit,
-    TOP_new_instr, 335,      /* i_bsr/5 */
+    TOP_new_instr, 336,      /* i_bsr/5 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 1, /* Live */
     TOP_store_var_next_arg, 2, /* S1 */
@@ -3380,7 +3387,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1569:
+     * Line 1533:
      *   gc_bif2 Fail Live u$bif:erlang:band/2 S1 S2 Dst =>   i_band Fail Live S1 S2 Dst
      */
 
@@ -3393,7 +3400,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 3, /* S2 */
     TOP_set_var_next_arg, 4, /* Dst */
     TOP_commit,
-    TOP_new_instr, 336,      /* i_band/5 */
+    TOP_new_instr, 337,      /* i_band/5 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 1, /* Live */
     TOP_store_var_next_arg, 2, /* S1 */
@@ -3403,7 +3410,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1572:
+     * Line 1536:
      *   gc_bif2 Fail Live u$bif:erlang:bor/2 S1 S2 Dst =>   i_bor Fail Live S1 S2 Dst
      */
 
@@ -3416,7 +3423,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 3, /* S2 */
     TOP_set_var_next_arg, 4, /* Dst */
     TOP_commit,
-    TOP_new_instr, 337,      /* i_bor/5 */
+    TOP_new_instr, 338,      /* i_bor/5 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 1, /* Live */
     TOP_store_var_next_arg, 2, /* S1 */
@@ -3426,7 +3433,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1575:
+     * Line 1539:
      *   gc_bif2 Fail Live u$bif:erlang:bxor/2 S1 S2 Dst =>   i_bxor Fail Live S1 S2 Dst
      */
 
@@ -3439,7 +3446,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 3, /* S2 */
     TOP_set_var_next_arg, 4, /* Dst */
     TOP_commit,
-    TOP_new_instr, 338,      /* i_bxor/5 */
+    TOP_new_instr, 339,      /* i_bxor/5 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 1, /* Live */
     TOP_store_var_next_arg, 2, /* S1 */
@@ -3449,7 +3456,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1626:
+     * Line 1587:
      *   gc_bif2 Fail I Bif S1 S2 Dst => 	gen_guard_bif2(Fail, I, Bif, S1, S2, Dst)
      */
 
@@ -3464,7 +3471,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1629:
+     * Line 1590:
      *   gc_bif3 Fail I Bif S1 S2 S3 Dst => 	gen_guard_bif3(Fail, I, Bif, S1, S2, S3, Dst)
      */
 
@@ -3480,7 +3487,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1542:
+     * Line 1506:
      *   gen_minus p Live Reg=d Int=i Dst | negation_is_small(Int) => 	gen_increment_from_minus(Reg, Int, Live, Dst)
      */
 
@@ -3498,16 +3505,16 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1550:
+     * Line 1514:
      *   gen_minus Fail Live S1 S2 Dst => i_minus Fail Live S1 S2 Dst
      */
 
-    TOP_rename, 329,         /* i_minus/5 */
+    TOP_rename, 330,         /* i_minus/5 */
 
     
 
     /*
-     * Line 1537:
+     * Line 1501:
      *   gen_plus p Live Int=i Reg=d Dst => 	gen_increment(Reg, Int, Live, Dst)
      */
 
@@ -3524,7 +3531,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1539:
+     * Line 1503:
      *   gen_plus p Live Reg=d Int=i Dst => 	gen_increment(Reg, Int, Live, Dst)
      */
 
@@ -3541,16 +3548,16 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1548:
+     * Line 1512:
      *   gen_plus Fail Live S1 S2 Dst => i_plus Fail Live S1 S2 Dst
      */
 
-    TOP_rename, 328,         /* i_plus/5 */
+    TOP_rename, 329,         /* i_plus/5 */
 
     
 
     /*
-     * Line 1494:
+     * Line 1464:
      *   get_map_elements Fail Src=xy Size=u==2 Rest=* =>     gen_get_map_element(Fail, Src, Size, Rest)
      */
 
@@ -3565,7 +3572,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1496:
+     * Line 1466:
      *   get_map_elements Fail Src Size Rest=* | map_key_sort(Size, Rest) =>    gen_get_map_elements(Fail, Src, Size, Rest)
      */
 
@@ -3580,7 +3587,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 650:
+     * Line 637:
      *   get_tuple_element Reg=x P1 D1=x | get_tuple_element Reg=x P2 D2=x |    get_tuple_element Reg=x P3 D3=x |    succ(P1, P2) | succ(P2, P3) |    succ(D1, D2) | succ(D2, D3) => i_get_tuple_element3 Reg P1 D1
      */
 
@@ -3609,7 +3616,7 @@ Uint op_transform[] = {
     TOP_pred, 16,            /* succ() */
     TOP_pred, 8,             /* succ() */
     TOP_commit,
-    TOP_new_instr, 179,      /* i_get_tuple_element3/3 */
+    TOP_new_instr, 180,      /* i_get_tuple_element3/3 */
     TOP_store_var_next_arg, 0, /* Reg */
     TOP_store_var_next_arg, 1, /* P1 */
     TOP_store_var_next_arg, 2, /* D1 */
@@ -3617,7 +3624,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 653:
+     * Line 640:
      *   get_tuple_element Reg=x P1 D1=x | get_tuple_element Reg=x P2 D2=x |    succ(P1, P2) | succ(D1, D2) => i_get_tuple_element2 Reg P1 D1
      */
 
@@ -3637,7 +3644,7 @@ Uint op_transform[] = {
     TOP_pred, 6,             /* succ() */
     TOP_pred, 16,            /* succ() */
     TOP_commit,
-    TOP_new_instr, 177,      /* i_get_tuple_element2/3 */
+    TOP_new_instr, 178,      /* i_get_tuple_element2/3 */
     TOP_store_var_next_arg, 0, /* Reg */
     TOP_store_var_next_arg, 1, /* P1 */
     TOP_store_var_next_arg, 2, /* D1 */
@@ -3645,7 +3652,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 656:
+     * Line 643:
      *   get_tuple_element Reg=x P1 D1=y | get_tuple_element Reg=x P2 D2=y |    succ(P1, P2) => i_get_tuple_element2y Reg P1 D1 D2
      */
 
@@ -3664,7 +3671,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 4, /* D2 */
     TOP_pred, 6,             /* succ() */
     TOP_commit,
-    TOP_new_instr, 178,      /* i_get_tuple_element2y/4 */
+    TOP_new_instr, 179,      /* i_get_tuple_element2y/4 */
     TOP_store_var_next_arg, 0, /* Reg */
     TOP_store_var_next_arg, 1, /* P1 */
     TOP_store_var_next_arg, 2, /* D1 */
@@ -3673,16 +3680,16 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 658:
+     * Line 645:
      *   get_tuple_element Reg P Dst => i_get_tuple_element Reg P Dst
      */
 
-    TOP_rename, 176,         /* i_get_tuple_element/3 */
+    TOP_rename, 177,         /* i_get_tuple_element/3 */
 
     
 
     /*
-     * Line 1489:
+     * Line 1459:
      *   has_map_fields Fail Src Size Rest=* =>    gen_has_map_fields(Fail, Src, Size, Rest)
      */
 
@@ -3695,7 +3702,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1501:
+     * Line 1471:
      *   i_get_map_element Fail Src=xy Key=y Dst =>     move Key x | i_get_map_element Fail Src x Dst
      */
 
@@ -3707,7 +3714,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 2, /* Key */
     TOP_set_var_next_arg, 3, /* Dst */
     TOP_commit,
-    TOP_new_instr, 324,      /* i_get_map_element/4 */
+    TOP_new_instr, 325,      /* i_get_map_element/4 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 1, /* Src */
     TOP_store_type, TAG_x,
@@ -3723,7 +3730,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 523:
+     * Line 503:
      *   i_put_tuple Dst Arity Puts=* | put S1 | put S2 |   put S3 | put S4 | put S5 => 	    tuple_append_put5(Arity, Dst, Puts, S1, S2, S3, S4, S5)
      */
 
@@ -3745,7 +3752,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 526:
+     * Line 506:
      *   i_put_tuple Dst Arity Puts=* | put S => 	    tuple_append_put(Arity, Dst, Puts, S)
      */
 
@@ -3760,7 +3767,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 434:
+     * Line 415:
      *   i_wait_timeout Fail Src=aiq => gen_literal_timeout(Fail, Src)
      */
 
@@ -3773,7 +3780,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 435:
+     * Line 416:
      *   i_wait_timeout_locked Fail Src=aiq => gen_literal_timeout_locked(Fail, Src)
      */
 
@@ -3786,7 +3793,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1640:
+     * Line 1601:
      *   ii_gc_bif3 Fail Bif Live S1 S2 S3 Dst =>   move S1 x | i_gc_bif3 Fail Bif Live S2 S3 Dst
      */
 
@@ -3798,7 +3805,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 5, /* S3 */
     TOP_set_var_next_arg, 6, /* Dst */
     TOP_commit,              /* always reached */
-    TOP_new_instr, 343,      /* i_gc_bif3/6 */
+    TOP_new_instr, 344,      /* i_gc_bif3/6 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 1, /* Bif */
     TOP_store_var_next_arg, 2, /* Live */
@@ -3825,7 +3832,7 @@ Uint op_transform[] = {
     TOP_next_instr, 17,      /* init/1 */
     TOP_set_var_next_arg, 2, /* Y3 */
     TOP_commit,
-    TOP_new_instr, 168,      /* init3/3 */
+    TOP_new_instr, 169,      /* init3/3 */
     TOP_store_var_next_arg, 0, /* Y1 */
     TOP_store_var_next_arg, 1, /* Y2 */
     TOP_store_var_next_arg, 2, /* Y3 */
@@ -3842,14 +3849,14 @@ Uint op_transform[] = {
     TOP_next_instr, 17,      /* init/1 */
     TOP_set_var_next_arg, 1, /* Y2 */
     TOP_commit,
-    TOP_new_instr, 167,      /* init2/2 */
+    TOP_new_instr, 168,      /* init2/2 */
     TOP_store_var_next_arg, 0, /* Y1 */
     TOP_store_var_next_arg, 1, /* Y2 */
     TOP_end,
     
 
     /*
-     * Line 785:
+     * Line 766:
      *   init Y1 | init Y2 => init2 Y1 Y2
      */
 
@@ -3858,7 +3865,7 @@ Uint op_transform[] = {
     TOP_next_instr, 17,      /* init/1 */
     TOP_set_var_next_arg, 1, /* Y2 */
     TOP_commit,
-    TOP_new_instr, 167,      /* init2/2 */
+    TOP_new_instr, 168,      /* init2/2 */
     TOP_store_var_next_arg, 0, /* Y1 */
     TOP_store_var_next_arg, 1, /* Y2 */
     TOP_end,
@@ -3889,7 +3896,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 709:
+     * Line 692:
      *   is_atom Fail=f a =>
      */
 
@@ -3902,7 +3909,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 710:
+     * Line 693:
      *   is_atom Fail=f niq => jump Fail
      */
 
@@ -3915,7 +3922,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 727:
+     * Line 709:
      *   is_binary Fail Literal=q => move Literal x | is_binary Fail x
      */
 
@@ -3936,7 +3943,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 728:
+     * Line 710:
      *   is_binary Fail=f c => jump Fail
      */
 
@@ -3949,16 +3956,16 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 736:
+     * Line 718:
      *   is_bitstr Fail Term => is_bitstring Fail Term
      */
 
-    TOP_rename, 226,         /* is_bitstring/2 */
+    TOP_rename, 227,         /* is_bitstring/2 */
 
     
 
     /*
-     * Line 738:
+     * Line 720:
      *   is_bitstring Fail Literal=q => move Literal x | is_bitstring Fail x
      */
 
@@ -3967,7 +3974,7 @@ Uint op_transform[] = {
     TOP_is_type, 8192,       /* q  */
     TOP_set_var_next_arg, 1, /* Literal */
     TOP_commit,
-    TOP_new_instr, 226,      /* is_bitstring/2 */
+    TOP_new_instr, 227,      /* is_bitstring/2 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_type, TAG_x,
     TOP_store_val, 1023,
@@ -3979,7 +3986,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 739:
+     * Line 721:
      *   is_bitstring Fail=f c => jump Fail
      */
 
@@ -3992,7 +3999,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 767:
+     * Line 749:
      *   is_boolean Fail=f a==am_true =>
      */
 
@@ -4005,7 +4012,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 768:
+     * Line 750:
      *   is_boolean Fail=f a==am_false =>
      */
 
@@ -4018,7 +4025,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 769:
+     * Line 751:
      *   is_boolean Fail=f ac => jump Fail
      */
 
@@ -4031,7 +4038,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 463:
+     * Line 444:
      *   is_eq_exact Lbl R=xy C=ian => i_is_eq_exact_immed Lbl R C
      */
 
@@ -4040,11 +4047,11 @@ Uint op_transform[] = {
     TOP_is_type, 24,         /* x y  */
     TOP_next_arg,            /* R (ignored) */
     TOP_is_type, 262,        /* i a n  */
-    TOP_rename, 205,         /* i_is_eq_exact_immed/3 */
+    TOP_rename, 206,         /* i_is_eq_exact_immed/3 */
     
 
     /*
-     * Line 464:
+     * Line 445:
      *   is_eq_exact Lbl R=xy C=q => i_is_eq_exact_literal Lbl R C
      */
 
@@ -4053,11 +4060,11 @@ Uint op_transform[] = {
     TOP_is_type, 24,         /* x y  */
     TOP_next_arg,            /* R (ignored) */
     TOP_is_type, 8192,       /* q  */
-    TOP_rename, 206,         /* i_is_eq_exact_literal/3 */
+    TOP_rename, 207,         /* i_is_eq_exact_literal/3 */
     
 
     /*
-     * Line 484:
+     * Line 465:
      *   is_eq_exact Lbl Y=y X=x => is_eq_exact Lbl X Y
      */
 
@@ -4077,7 +4084,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 717:
+     * Line 700:
      *   is_float Fail=f nai => jump Fail
      */
 
@@ -4089,7 +4096,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 718:
+     * Line 701:
      *   is_float Fail Literal=q => move Literal x | is_float Fail x
      */
 
@@ -4111,7 +4118,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1159:
+     * Line 1134:
      *   is_function Fail=f c => jump Fail
      */
 
@@ -4124,7 +4131,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 777:
+     * Line 758:
      *   is_function2 Fail=f acq Arity => jump Fail
      */
 
@@ -4136,7 +4143,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 778:
+     * Line 759:
      *   is_function2 Fail=f Fun a => jump Fail
      */
 
@@ -4218,7 +4225,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 660:
+     * Line 647:
      *   is_integer Fail=f i =>
      */
 
@@ -4231,7 +4238,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 661:
+     * Line 648:
      *   is_integer Fail=f an => jump Fail
      */
 
@@ -4243,7 +4250,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 662:
+     * Line 649:
      *   is_integer Fail Literal=q => move Literal x | is_integer Fail x
      */
 
@@ -4264,7 +4271,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 664:
+     * Line 651:
      *   is_integer Fail=f S=x | allocate Need Regs => is_integer_allocate Fail S Need Regs
      */
 
@@ -4277,7 +4284,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 2, /* Need */
     TOP_set_var_next_arg, 3, /* Regs */
     TOP_commit,
-    TOP_new_instr, 222,      /* is_integer_allocate/4 */
+    TOP_new_instr, 223,      /* is_integer_allocate/4 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 1, /* S */
     TOP_store_var_next_arg, 2, /* Need */
@@ -4287,7 +4294,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 673:
+     * Line 659:
      *   is_list Fail=f n =>
      */
 
@@ -4300,7 +4307,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 674:
+     * Line 660:
      *   is_list Fail Literal=q => move Literal x | is_list Fail x
      */
 
@@ -4321,7 +4328,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 675:
+     * Line 661:
      *   is_list Fail=f c => jump Fail
      */
 
@@ -4334,7 +4341,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1479:
+     * Line 1450:
      *   is_map Fail Lit=q | literal_is_map(Lit) =>
      */
 
@@ -4348,7 +4355,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1480:
+     * Line 1451:
      *   is_map Fail cq => jump Fail
      */
 
@@ -4360,7 +4367,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 466:
+     * Line 447:
      *   is_ne_exact Lbl R=xy C=ian => i_is_ne_exact_immed Lbl R C
      */
 
@@ -4369,11 +4376,11 @@ Uint op_transform[] = {
     TOP_is_type, 24,         /* x y  */
     TOP_next_arg,            /* R (ignored) */
     TOP_is_type, 262,        /* i a n  */
-    TOP_rename, 207,         /* i_is_ne_exact_immed/3 */
+    TOP_rename, 208,         /* i_is_ne_exact_immed/3 */
     
 
     /*
-     * Line 467:
+     * Line 448:
      *   is_ne_exact Lbl R=xy C=q => i_is_ne_exact_literal Lbl R C
      */
 
@@ -4382,12 +4389,12 @@ Uint op_transform[] = {
     TOP_is_type, 24,         /* x y  */
     TOP_next_arg,            /* R (ignored) */
     TOP_is_type, 8192,       /* q  */
-    TOP_rename, 208,         /* i_is_ne_exact_literal/3 */
+    TOP_rename, 209,         /* i_is_ne_exact_literal/3 */
 
     
 
     /*
-     * Line 720:
+     * Line 703:
      *   is_nil Fail=f n =>
      */
 
@@ -4400,7 +4407,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 721:
+     * Line 704:
      *   is_nil Fail=f qia => jump Fail
      */
 
@@ -4413,7 +4420,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 682:
+     * Line 668:
      *   is_nonempty_list Fail=f S=x | allocate Need Rs => is_nonempty_list_allocate Fail S Need Rs
      */
 
@@ -4426,7 +4433,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 2, /* Need */
     TOP_set_var_next_arg, 3, /* Rs */
     TOP_commit,
-    TOP_new_instr, 223,      /* is_nonempty_list_allocate/4 */
+    TOP_new_instr, 224,      /* is_nonempty_list_allocate/4 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 1, /* S */
     TOP_store_var_next_arg, 2, /* Need */
@@ -4435,7 +4442,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 688:
+     * Line 673:
      *   is_nonempty_list F=f x==0 | test_heap I1 I2 => is_non_empty_list_test_heap F I1 I2
      */
 
@@ -4447,7 +4454,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 1, /* I1 */
     TOP_set_var_next_arg, 2, /* I2 */
     TOP_commit,
-    TOP_new_instr, 224,      /* is_non_empty_list_test_heap/3 */
+    TOP_new_instr, 225,      /* is_non_empty_list_test_heap/3 */
     TOP_store_var_next_arg, 0, /* F */
     TOP_store_var_next_arg, 1, /* I1 */
     TOP_store_var_next_arg, 2, /* I2 */
@@ -4455,7 +4462,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 694:
+     * Line 679:
      *   is_nonempty_list Fail=f S=x | get_list S D1=x D2=x =>   is_nonempty_list_get_list Fail S D1 D2
      */
 
@@ -4472,7 +4479,7 @@ Uint op_transform[] = {
     TOP_is_type, 8,          /* x  */
     TOP_set_var_next_arg, 3, /* D2 */
     TOP_commit,
-    TOP_new_instr, 225,      /* is_nonempty_list_get_list/4 */
+    TOP_new_instr, 226,      /* is_nonempty_list_get_list/4 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 1, /* S */
     TOP_store_var_next_arg, 2, /* D1 */
@@ -4482,7 +4489,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 243:
+     * Line 233:
      *   is_number Fail=f i =>
      */
 
@@ -4495,7 +4502,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 244:
+     * Line 234:
      *   is_number Fail=f na => jump Fail
      */
 
@@ -4507,7 +4514,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 245:
+     * Line 235:
      *   is_number Fail Literal=q => move Literal x | is_number Fail x
      */
 
@@ -4529,7 +4536,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 753:
+     * Line 735:
      *   is_pid Fail=f cq => jump Fail
      */
 
@@ -4542,7 +4549,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 760:
+     * Line 742:
      *   is_port Fail=f cq => jump Fail
      */
 
@@ -4555,7 +4562,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 746:
+     * Line 728:
      *   is_reference Fail=f cq => jump Fail
      */
 
@@ -4563,6 +4570,45 @@ Uint op_transform[] = {
     TOP_is_type, 32,         /* f  */
     TOP_next_arg,            /* Fail (ignored) */
     TOP_is_type, 8454,       /* c q  */
+    TOP_rename, 61,          /* jump/1 */
+
+    
+
+    /*
+     * Line 608:
+     *   is_tagged_tuple Fail Literal=q Arity Atom =>     move Literal x | is_tagged_tuple Fail x Arity Atom
+     */
+
+    TOP_try_me_else, 33,
+    TOP_set_var_next_arg, 0, /* Fail */
+    TOP_is_type, 8192,       /* q  */
+    TOP_set_var_next_arg, 1, /* Literal */
+    TOP_set_var_next_arg, 2, /* Arity */
+    TOP_set_var_next_arg, 3, /* Atom */
+    TOP_commit,
+    TOP_new_instr, 159,      /* is_tagged_tuple/4 */
+    TOP_store_var_next_arg, 0, /* Fail */
+    TOP_store_type, TAG_x,
+    TOP_store_val, 1023,
+    TOP_next_arg,
+    TOP_store_var_next_arg, 2, /* Arity */
+    TOP_store_var_next_arg, 3, /* Atom */
+    TOP_new_instr, 64,       /* move/2 */
+    TOP_store_var_next_arg, 1, /* Literal */
+    TOP_store_type, TAG_x,
+    TOP_store_val, 1023,
+    TOP_end,
+    
+
+    /*
+     * Line 609:
+     *   is_tagged_tuple Fail=f c Arity Atom  => jump Fail
+     */
+
+    TOP_try_me_else_fail,
+    TOP_is_type, 32,         /* f  */
+    TOP_next_arg,            /* Fail (ignored) */
+    TOP_is_type, 8454,       /* c  */
     TOP_rename, 61,          /* jump/1 */
 
     
@@ -4590,7 +4636,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 625:
+     * Line 617:
      *   is_tuple Fail Literal=q => move Literal x | is_tuple Fail x
      */
 
@@ -4611,7 +4657,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 626:
+     * Line 618:
      *   is_tuple Fail=f c => jump Fail
      */
 
@@ -4623,7 +4669,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 627:
+     * Line 619:
      *   is_tuple Fail=f S=xy | test_arity Fail=f S=xy Arity => is_tuple_of_arity Fail S Arity
      */
 
@@ -4641,7 +4687,7 @@ Uint op_transform[] = {
     TOP_next_arg,
     TOP_set_var_next_arg, 2, /* Arity */
     TOP_commit,
-    TOP_new_instr, 221,      /* is_tuple_of_arity/3 */
+    TOP_new_instr, 222,      /* is_tuple_of_arity/3 */
     TOP_store_var_next_arg, 0, /* Fail */
     TOP_store_var_next_arg, 1, /* S */
     TOP_store_var_next_arg, 2, /* Arity */
@@ -4650,7 +4696,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 432:
+     * Line 413:
      *   label L | wait_timeout Fail Src | smp_already_locked(L) => label L | i_wait_timeout_locked Fail Src
      */
 
@@ -4661,7 +4707,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 2, /* Src */
     TOP_pred, 14,            /* smp_already_locked() */
     TOP_commit,
-    TOP_new_instr, 202,      /* i_wait_timeout_locked/2 */
+    TOP_new_instr, 203,      /* i_wait_timeout_locked/2 */
     TOP_store_var_next_arg, 1, /* Fail */
     TOP_store_var_next_arg, 2, /* Src */
     TOP_new_instr, 1,        /* label/1 */
@@ -4670,7 +4716,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 437:
+     * Line 418:
      *   label L | wait Fail | smp_already_locked(L) => label L | wait_locked Fail
      */
 
@@ -4680,7 +4726,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 1, /* Fail */
     TOP_pred, 14,            /* smp_already_locked() */
     TOP_commit,
-    TOP_new_instr, 199,      /* wait_locked/1 */
+    TOP_new_instr, 200,      /* wait_locked/1 */
     TOP_store_var_next_arg, 1, /* Fail */
     TOP_new_instr, 1,        /* label/1 */
     TOP_store_var_next_arg, 0, /* L */
@@ -4688,7 +4734,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 440:
+     * Line 421:
      *   label L | timeout | smp_already_locked(L) => label L | timeout_locked
      */
 
@@ -4697,7 +4743,7 @@ Uint op_transform[] = {
     TOP_next_instr, 22,      /* timeout/0 */
     TOP_pred, 14,            /* smp_already_locked() */
     TOP_commit,
-    TOP_new_instr, 197,      /* timeout_locked/0 */
+    TOP_new_instr, 198,      /* timeout_locked/0 */
     TOP_new_instr, 1,        /* label/1 */
     TOP_store_var_next_arg, 0, /* L */
     TOP_end,
@@ -4727,7 +4773,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 430:
+     * Line 411:
      *   loop_rec Fail x==0 | smp_mark_target_label(Fail) => i_loop_rec Fail
      */
 
@@ -4735,12 +4781,12 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 0, /* Fail */
     TOP_is_type_eq, 8, 0,    /* x == 0 */
     TOP_pred, 13,            /* smp_mark_target_label() */
-    TOP_rename, 198,         /* i_loop_rec/1 */
+    TOP_rename, 199,         /* i_loop_rec/1 */
 
     
 
     /*
-     * Line 1149:
+     * Line 1125:
      *   make_fun2 OldIndex=u => gen_make_fun2(OldIndex)
      */
 
@@ -4834,7 +4880,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 270:
+     * Line 260:
      *   move C=cxy x==0 | jump Lbl => move_jump Lbl C
      */
 
@@ -4845,14 +4891,14 @@ Uint op_transform[] = {
     TOP_next_instr, 61,      /* jump/1 */
     TOP_set_var_next_arg, 1, /* Lbl */
     TOP_commit,
-    TOP_new_instr, 183,      /* move_jump/2 */
+    TOP_new_instr, 184,      /* move_jump/2 */
     TOP_store_var_next_arg, 1, /* Lbl */
     TOP_store_var_next_arg, 0, /* C */
     TOP_end,
     
 
     /*
-     * Line 289:
+     * Line 275:
      *   move X1=x Y1=y | move X2=x Y2=y | move X3=x Y3=y | succ(Y1,Y2) | succ(Y2,Y3) =>     move_window X1 X2 X3 Y1 Y3
      */
 
@@ -4874,7 +4920,7 @@ Uint op_transform[] = {
     TOP_pred, 6,             /* succ() */
     TOP_pred, 7,             /* succ() */
     TOP_commit,
-    TOP_new_instr, 184,      /* move_window/5 */
+    TOP_new_instr, 185,      /* move_window/5 */
     TOP_store_var_next_arg, 0, /* X1 */
     TOP_store_var_next_arg, 2, /* X2 */
     TOP_store_var_next_arg, 4, /* X3 */
@@ -4884,7 +4930,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 309:
+     * Line 295:
      *   move R1=x Tmp=x | move R2=xy R1 | move Tmp R2 => swap_temp R1 R2 Tmp
      */
 
@@ -4902,7 +4948,7 @@ Uint op_transform[] = {
     TOP_next_arg,
     TOP_is_same_var, 2,      /* R2 */
     TOP_commit,
-    TOP_new_instr, 189,      /* swap_temp/3 */
+    TOP_new_instr, 190,      /* swap_temp/3 */
     TOP_store_var_next_arg, 0, /* R1 */
     TOP_store_var_next_arg, 2, /* R2 */
     TOP_store_var_next_arg, 1, /* Tmp */
@@ -4910,7 +4956,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 336:
+     * Line 320:
      *   move Src=x D1=x | move Src=x D2=x => move_dup Src D1 D2
      */
 
@@ -4926,7 +4972,7 @@ Uint op_transform[] = {
     TOP_is_type, 8,          /* x  */
     TOP_set_var_next_arg, 2, /* D2 */
     TOP_commit,
-    TOP_new_instr, 194,      /* move_dup/3 */
+    TOP_new_instr, 195,      /* move_dup/3 */
     TOP_store_var_next_arg, 0, /* Src */
     TOP_store_var_next_arg, 1, /* D1 */
     TOP_store_var_next_arg, 2, /* D2 */
@@ -4934,7 +4980,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 337:
+     * Line 321:
      *   move Src=x SD=x | move SD=x D=x   => move_dup Src SD D
      */
 
@@ -4950,7 +4996,7 @@ Uint op_transform[] = {
     TOP_is_type, 8,          /* x  */
     TOP_set_var_next_arg, 2, /* D */
     TOP_commit,
-    TOP_new_instr, 194,      /* move_dup/3 */
+    TOP_new_instr, 195,      /* move_dup/3 */
     TOP_store_var_next_arg, 0, /* Src */
     TOP_store_var_next_arg, 1, /* SD */
     TOP_store_var_next_arg, 2, /* D */
@@ -4958,7 +5004,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 338:
+     * Line 322:
      *   move Src=x D1=x | move Src=x D2=y => move_dup Src D1 D2
      */
 
@@ -4974,7 +5020,7 @@ Uint op_transform[] = {
     TOP_is_type, 16,         /* y  */
     TOP_set_var_next_arg, 2, /* D2 */
     TOP_commit,
-    TOP_new_instr, 194,      /* move_dup/3 */
+    TOP_new_instr, 195,      /* move_dup/3 */
     TOP_store_var_next_arg, 0, /* Src */
     TOP_store_var_next_arg, 1, /* D1 */
     TOP_store_var_next_arg, 2, /* D2 */
@@ -4982,7 +5028,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 339:
+     * Line 323:
      *   move Src=y SD=x | move SD=x D=y   => move_dup Src SD D
      */
 
@@ -4998,7 +5044,7 @@ Uint op_transform[] = {
     TOP_is_type, 16,         /* y  */
     TOP_set_var_next_arg, 2, /* D */
     TOP_commit,
-    TOP_new_instr, 194,      /* move_dup/3 */
+    TOP_new_instr, 195,      /* move_dup/3 */
     TOP_store_var_next_arg, 0, /* Src */
     TOP_store_var_next_arg, 1, /* SD */
     TOP_store_var_next_arg, 2, /* D */
@@ -5006,7 +5052,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 340:
+     * Line 324:
      *   move Src=x SD=x | move SD=x D=y   => move_dup Src SD D
      */
 
@@ -5022,7 +5068,7 @@ Uint op_transform[] = {
     TOP_is_type, 16,         /* y  */
     TOP_set_var_next_arg, 2, /* D */
     TOP_commit,
-    TOP_new_instr, 194,      /* move_dup/3 */
+    TOP_new_instr, 195,      /* move_dup/3 */
     TOP_store_var_next_arg, 0, /* Src */
     TOP_store_var_next_arg, 1, /* SD */
     TOP_store_var_next_arg, 2, /* D */
@@ -5030,7 +5076,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 341:
+     * Line 325:
      *   move Src=y SD=x | move SD=x D=x   => move_dup Src SD D
      */
 
@@ -5046,7 +5092,7 @@ Uint op_transform[] = {
     TOP_is_type, 8,          /* x  */
     TOP_set_var_next_arg, 2, /* D */
     TOP_commit,
-    TOP_new_instr, 194,      /* move_dup/3 */
+    TOP_new_instr, 195,      /* move_dup/3 */
     TOP_store_var_next_arg, 0, /* Src */
     TOP_store_var_next_arg, 1, /* SD */
     TOP_store_var_next_arg, 2, /* D */
@@ -5054,7 +5100,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 343:
+     * Line 327:
      *   move SD=x D=x | move Src=xy SD=x => move_shift Src SD D
      */
 
@@ -5069,7 +5115,7 @@ Uint op_transform[] = {
     TOP_is_type, 8,          /* x  */
     TOP_is_same_var, 0,      /* SD */
     TOP_commit,
-    TOP_new_instr, 193,      /* move_shift/3 */
+    TOP_new_instr, 194,      /* move_shift/3 */
     TOP_store_var_next_arg, 2, /* Src */
     TOP_store_var_next_arg, 0, /* SD */
     TOP_store_var_next_arg, 1, /* D */
@@ -5077,7 +5123,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 344:
+     * Line 328:
      *   move SD=y D=x | move Src=x  SD=y => move_shift Src SD D
      */
 
@@ -5092,7 +5138,7 @@ Uint op_transform[] = {
     TOP_is_type, 16,         /* y  */
     TOP_is_same_var, 0,      /* SD */
     TOP_commit,
-    TOP_new_instr, 193,      /* move_shift/3 */
+    TOP_new_instr, 194,      /* move_shift/3 */
     TOP_store_var_next_arg, 2, /* Src */
     TOP_store_var_next_arg, 0, /* SD */
     TOP_store_var_next_arg, 1, /* D */
@@ -5100,7 +5146,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 345:
+     * Line 329:
      *   move SD=x D=y | move Src=x  SD=x => move_shift Src SD D
      */
 
@@ -5115,7 +5161,7 @@ Uint op_transform[] = {
     TOP_is_type, 8,          /* x  */
     TOP_is_same_var, 0,      /* SD */
     TOP_commit,
-    TOP_new_instr, 193,      /* move_shift/3 */
+    TOP_new_instr, 194,      /* move_shift/3 */
     TOP_store_var_next_arg, 2, /* Src */
     TOP_store_var_next_arg, 0, /* SD */
     TOP_store_var_next_arg, 1, /* D */
@@ -5123,7 +5169,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 353:
+     * Line 337:
      *   move X1=x Y1=y | move X2=x Y2=y => move2_par X1 Y1 X2 Y2
      */
 
@@ -5138,7 +5184,7 @@ Uint op_transform[] = {
     TOP_is_type, 16,         /* y  */
     TOP_set_var_next_arg, 3, /* Y2 */
     TOP_commit,
-    TOP_new_instr, 195,      /* move2_par/4 */
+    TOP_new_instr, 196,      /* move2_par/4 */
     TOP_store_var_next_arg, 0, /* X1 */
     TOP_store_var_next_arg, 1, /* Y1 */
     TOP_store_var_next_arg, 2, /* X2 */
@@ -5147,7 +5193,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 354:
+     * Line 338:
      *   move Y1=y X1=x | move Y2=y X2=x => move2_par Y1 X1 Y2 X2
      */
 
@@ -5162,7 +5208,7 @@ Uint op_transform[] = {
     TOP_is_type, 8,          /* x  */
     TOP_set_var_next_arg, 3, /* X2 */
     TOP_commit,
-    TOP_new_instr, 195,      /* move2_par/4 */
+    TOP_new_instr, 196,      /* move2_par/4 */
     TOP_store_var_next_arg, 0, /* Y1 */
     TOP_store_var_next_arg, 1, /* X1 */
     TOP_store_var_next_arg, 2, /* Y2 */
@@ -5171,7 +5217,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 356:
+     * Line 340:
      *   move X1=x X2=x | move X3=x X4=x => move2_par X1 X2 X3 X4
      */
 
@@ -5186,7 +5232,7 @@ Uint op_transform[] = {
     TOP_is_type, 8,          /* x  */
     TOP_set_var_next_arg, 3, /* X4 */
     TOP_commit,
-    TOP_new_instr, 195,      /* move2_par/4 */
+    TOP_new_instr, 196,      /* move2_par/4 */
     TOP_store_var_next_arg, 0, /* X1 */
     TOP_store_var_next_arg, 1, /* X2 */
     TOP_store_var_next_arg, 2, /* X3 */
@@ -5195,7 +5241,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 358:
+     * Line 342:
      *   move X1=x X2=x | move X3=x Y1=y => move2_par X1 X2 X3 Y1
      */
 
@@ -5210,7 +5256,7 @@ Uint op_transform[] = {
     TOP_is_type, 16,         /* y  */
     TOP_set_var_next_arg, 3, /* Y1 */
     TOP_commit,
-    TOP_new_instr, 195,      /* move2_par/4 */
+    TOP_new_instr, 196,      /* move2_par/4 */
     TOP_store_var_next_arg, 0, /* X1 */
     TOP_store_var_next_arg, 1, /* X2 */
     TOP_store_var_next_arg, 2, /* X3 */
@@ -5219,7 +5265,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 360:
+     * Line 344:
      *   move S1=x S2=x | move X1=x Y1=y => move2_par S1 S2 X1 Y1
      */
 
@@ -5234,7 +5280,7 @@ Uint op_transform[] = {
     TOP_is_type, 16,         /* y  */
     TOP_set_var_next_arg, 3, /* Y1 */
     TOP_commit,
-    TOP_new_instr, 195,      /* move2_par/4 */
+    TOP_new_instr, 196,      /* move2_par/4 */
     TOP_store_var_next_arg, 0, /* S1 */
     TOP_store_var_next_arg, 1, /* S2 */
     TOP_store_var_next_arg, 2, /* X1 */
@@ -5243,7 +5289,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 362:
+     * Line 346:
      *   move S1=y S2=x | move X1=x Y1=y => move2_par S1 S2 X1 Y1
      */
 
@@ -5258,7 +5304,7 @@ Uint op_transform[] = {
     TOP_is_type, 16,         /* y  */
     TOP_set_var_next_arg, 3, /* Y1 */
     TOP_commit,
-    TOP_new_instr, 195,      /* move2_par/4 */
+    TOP_new_instr, 196,      /* move2_par/4 */
     TOP_store_var_next_arg, 0, /* S1 */
     TOP_store_var_next_arg, 1, /* S2 */
     TOP_store_var_next_arg, 2, /* X1 */
@@ -5267,7 +5313,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 364:
+     * Line 348:
      *   move Y1=y X1=x | move S1=x D1=x => move2_par Y1 X1 S1 D1
      */
 
@@ -5282,7 +5328,7 @@ Uint op_transform[] = {
     TOP_is_type, 8,          /* x  */
     TOP_set_var_next_arg, 3, /* D1 */
     TOP_commit,
-    TOP_new_instr, 195,      /* move2_par/4 */
+    TOP_new_instr, 196,      /* move2_par/4 */
     TOP_store_var_next_arg, 0, /* Y1 */
     TOP_store_var_next_arg, 1, /* X1 */
     TOP_store_var_next_arg, 2, /* S1 */
@@ -5291,7 +5337,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 365:
+     * Line 349:
      *   move S1=x D1=x | move Y1=y X1=x => move2_par S1 D1 Y1 X1
      */
 
@@ -5306,7 +5352,7 @@ Uint op_transform[] = {
     TOP_is_type, 8,          /* x  */
     TOP_set_var_next_arg, 3, /* X1 */
     TOP_commit,
-    TOP_new_instr, 195,      /* move2_par/4 */
+    TOP_new_instr, 196,      /* move2_par/4 */
     TOP_store_var_next_arg, 0, /* S1 */
     TOP_store_var_next_arg, 1, /* D1 */
     TOP_store_var_next_arg, 2, /* Y1 */
@@ -5315,7 +5361,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 371:
+     * Line 355:
      *   move C=aiq X=x==1 => move_x1 C
      */
 
@@ -5323,11 +5369,11 @@ Uint op_transform[] = {
     TOP_is_type, 8198,       /* a i q  */
     TOP_next_arg,            /* C (ignored) */
     TOP_is_type_eq, 8, 1,    /* x == 1 */
-    TOP_rename, 191,         /* move_x1/1 */
+    TOP_rename, 192,         /* move_x1/1 */
     
 
     /*
-     * Line 372:
+     * Line 356:
      *   move C=aiq X=x==2 => move_x2 C
      */
 
@@ -5335,11 +5381,11 @@ Uint op_transform[] = {
     TOP_is_type, 8198,       /* a i q  */
     TOP_next_arg,            /* C (ignored) */
     TOP_is_type_eq, 8, 2,    /* x == 2 */
-    TOP_rename, 192,         /* move_x2/1 */
+    TOP_rename, 193,         /* move_x2/1 */
     
 
     /*
-     * Line 409:
+     * Line 390:
      *   move S=n D=y => init D
      */
 
@@ -5355,7 +5401,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 410:
+     * Line 391:
      *   move S=c D=y => move S x | move x D
      */
 
@@ -5378,7 +5424,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 598:
+     * Line 578:
      *   move S x==0 | return => move_return S
      */
 
@@ -5387,13 +5433,13 @@ Uint op_transform[] = {
     TOP_is_type_eq, 8, 0,    /* x == 0 */
     TOP_next_instr, 19,      /* return/0 */
     TOP_commit,
-    TOP_new_instr, 217,      /* move_return/1 */
+    TOP_new_instr, 218,      /* move_return/1 */
     TOP_store_var_next_arg, 0, /* S */
     TOP_end,
     
 
     /*
-     * Line 605:
+     * Line 585:
      *   move S x==0 | deallocate D | return => move_deallocate_return S D
      */
 
@@ -5404,14 +5450,14 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 1, /* D */
     TOP_next_instr, 19,      /* return/0 */
     TOP_commit,
-    TOP_new_instr, 218,      /* move_deallocate_return/2 */
+    TOP_new_instr, 219,      /* move_deallocate_return/2 */
     TOP_store_var_next_arg, 0, /* S */
     TOP_store_var_next_arg, 1, /* D */
     TOP_end,
     
 
     /*
-     * Line 925:
+     * Line 905:
      *   move Any x==0 | call_ext Arity u$func:erlang:dt_put_tag/1 =>     move a=am_undefined x=0
      */
 
@@ -5431,7 +5477,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 927:
+     * Line 907:
      *   move Any x==0 | call_ext_last Arity u$func:erlang:dt_put_tag/1 D =>     move a=am_undefined x=0 | deallocate D | return
      */
 
@@ -5456,7 +5502,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 929:
+     * Line 909:
      *   move Any x==0 | call_ext_only Arity u$func:erlang:dt_put_tag/1 =>     move a=am_undefined x=0 | return
      */
 
@@ -5477,7 +5523,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 945:
+     * Line 925:
      *   move Any x==0 | call_ext Arity u$func:erlang:dt_spread_tag/1 =>     move a=am_true x=0
      */
 
@@ -5497,7 +5543,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 947:
+     * Line 927:
      *   move Any x==0 | call_ext_last Arity u$func:erlang:dt_spread_tag/1 D =>     move a=am_true x=0 | deallocate D | return
      */
 
@@ -5522,7 +5568,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 949:
+     * Line 929:
      *   move Any x==0 | call_ext_only Arity u$func:erlang:dt_spread_tag/1 =>     move a=am_true x=0 | return
      */
 
@@ -5543,7 +5589,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 958:
+     * Line 938:
      *   move Any x==0 | call_ext Arity u$func:erlang:dt_restore_tag/1 =>     move a=am_true x=0
      */
 
@@ -5563,7 +5609,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 960:
+     * Line 940:
      *   move Any x==0 | call_ext_last Arity u$func:erlang:dt_restore_tag/1 D =>     move a=am_true x=0 | deallocate D | return
      */
 
@@ -5588,7 +5634,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 962:
+     * Line 942:
      *   move Any x==0 | call_ext_only Arity u$func:erlang:dt_restore_tag/1 =>     move a=am_true x=0 | return
      */
 
@@ -5609,7 +5655,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 971:
+     * Line 951:
      *   move Any x==0 | call_ext Arity u$func:erlang:dt_prepend_vm_tag_data/1 =>     move Any x=0
      */
 
@@ -5627,7 +5673,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 973:
+     * Line 953:
      *   move Any x==0 | call_ext_last Arity u$func:erlang:dt_prepend_vm_tag_data/1 D =>     move Any x=0 | deallocate D | return
      */
 
@@ -5650,7 +5696,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 975:
+     * Line 955:
      *   move Any x==0 | call_ext_only Arity u$func:erlang:dt_prepend_vm_tag_data/1 =>     move Any x=0 | return
      */
 
@@ -5669,7 +5715,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 983:
+     * Line 963:
      *   move Any x==0 | call_ext Arity u$func:erlang:dt_append_vm_tag_data/1 =>     move Any x=0
      */
 
@@ -5687,7 +5733,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 985:
+     * Line 965:
      *   move Any x==0 | call_ext_last Arity u$func:erlang:dt_append_vm_tag_data/1 D =>     move Any x=0 | deallocate D | return
      */
 
@@ -5710,7 +5756,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 987:
+     * Line 967:
      *   move Any x==0 | call_ext_only Arity u$func:erlang:dt_append_vm_tag_data/1 =>     move Any x=0 | return
      */
 
@@ -5729,7 +5775,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 995:
+     * Line 975:
      *   move Discarded x==0 | move Something x==0 => move Something x=0
      */
 
@@ -5747,7 +5793,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1027:
+     * Line 1007:
      *   move S=c x==0 | call_ext Ar=u Func=u$is_not_bif => i_move_call_ext S Func
      */
 
@@ -5761,14 +5807,14 @@ Uint op_transform[] = {
     TOP_is_not_bif, -1,
     TOP_set_var_next_arg, 2, /* Func */
     TOP_commit,
-    TOP_new_instr, 258,      /* i_move_call_ext/2 */
+    TOP_new_instr, 259,      /* i_move_call_ext/2 */
     TOP_store_var_next_arg, 0, /* S */
     TOP_store_var_next_arg, 2, /* Func */
     TOP_end,
     
 
     /*
-     * Line 1028:
+     * Line 1008:
      *   move S=c x==0 | call_ext_last Ar=u Func=u$is_not_bif D => i_move_call_ext_last Func D S
      */
 
@@ -5783,7 +5829,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 2, /* Func */
     TOP_set_var_next_arg, 3, /* D */
     TOP_commit,
-    TOP_new_instr, 259,      /* i_move_call_ext_last/3 */
+    TOP_new_instr, 260,      /* i_move_call_ext_last/3 */
     TOP_store_var_next_arg, 2, /* Func */
     TOP_store_var_next_arg, 3, /* D */
     TOP_store_var_next_arg, 0, /* S */
@@ -5791,7 +5837,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1029:
+     * Line 1009:
      *   move S=c x==0 | call_ext_only Ar=u Func=u$is_not_bif => i_move_call_ext_only Func S
      */
 
@@ -5805,14 +5851,14 @@ Uint op_transform[] = {
     TOP_is_not_bif, -1,
     TOP_set_var_next_arg, 2, /* Func */
     TOP_commit,
-    TOP_new_instr, 260,      /* i_move_call_ext_only/2 */
+    TOP_new_instr, 261,      /* i_move_call_ext_only/2 */
     TOP_store_var_next_arg, 2, /* Func */
     TOP_store_var_next_arg, 0, /* S */
     TOP_end,
     
 
     /*
-     * Line 1093:
+     * Line 1071:
      *   move S=c x==0 | call Ar P=f => i_move_call S P
      */
 
@@ -5825,14 +5871,14 @@ Uint op_transform[] = {
     TOP_is_type, 32,         /* f  */
     TOP_set_var_next_arg, 2, /* P */
     TOP_commit,
-    TOP_new_instr, 246,      /* i_move_call/2 */
+    TOP_new_instr, 247,      /* i_move_call/2 */
     TOP_store_var_next_arg, 0, /* S */
     TOP_store_var_next_arg, 2, /* P */
     TOP_end,
     
 
     /*
-     * Line 1094:
+     * Line 1072:
      *   move S=s x==0 | call Ar P=f => move_call S P
      */
 
@@ -5845,14 +5891,14 @@ Uint op_transform[] = {
     TOP_is_type, 32,         /* f  */
     TOP_set_var_next_arg, 2, /* P */
     TOP_commit,
-    TOP_new_instr, 247,      /* move_call/2 */
+    TOP_new_instr, 248,      /* move_call/2 */
     TOP_store_var_next_arg, 0, /* S */
     TOP_store_var_next_arg, 2, /* P */
     TOP_end,
     
 
     /*
-     * Line 1104:
+     * Line 1081:
      *   move S=c x==0 | call_last Ar P=f D => i_move_call_last P D S
      */
 
@@ -5866,7 +5912,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 2, /* P */
     TOP_set_var_next_arg, 3, /* D */
     TOP_commit,
-    TOP_new_instr, 248,      /* i_move_call_last/3 */
+    TOP_new_instr, 249,      /* i_move_call_last/3 */
     TOP_store_var_next_arg, 2, /* P */
     TOP_store_var_next_arg, 3, /* D */
     TOP_store_var_next_arg, 0, /* S */
@@ -5874,7 +5920,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1105:
+     * Line 1082:
      *   move S x==0 | call_last Ar P=f D => move_call_last S P D
      */
 
@@ -5887,7 +5933,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 2, /* P */
     TOP_set_var_next_arg, 3, /* D */
     TOP_commit,
-    TOP_new_instr, 249,      /* move_call_last/3 */
+    TOP_new_instr, 250,      /* move_call_last/3 */
     TOP_store_var_next_arg, 0, /* S */
     TOP_store_var_next_arg, 2, /* P */
     TOP_store_var_next_arg, 3, /* D */
@@ -5895,7 +5941,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1115:
+     * Line 1091:
      *   move S=c x==0 | call_only Ar P=f => i_move_call_only P S
      */
 
@@ -5908,14 +5954,14 @@ Uint op_transform[] = {
     TOP_is_type, 32,         /* f  */
     TOP_set_var_next_arg, 2, /* P */
     TOP_commit,
-    TOP_new_instr, 250,      /* i_move_call_only/2 */
+    TOP_new_instr, 251,      /* i_move_call_only/2 */
     TOP_store_var_next_arg, 2, /* P */
     TOP_store_var_next_arg, 0, /* S */
     TOP_end,
     
 
     /*
-     * Line 1116:
+     * Line 1092:
      *   move S=x x==0 | call_only Ar P=f => move_call_only S P
      */
 
@@ -5928,7 +5974,7 @@ Uint op_transform[] = {
     TOP_is_type, 32,         /* f  */
     TOP_set_var_next_arg, 2, /* P */
     TOP_commit,
-    TOP_new_instr, 251,      /* move_call_only/2 */
+    TOP_new_instr, 252,      /* move_call_only/2 */
     TOP_store_var_next_arg, 0, /* S */
     TOP_store_var_next_arg, 2, /* P */
     TOP_end,
@@ -5936,7 +5982,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 367:
+     * Line 351:
      *   move2_par X1=x Y1=y X2=x Y2=y | move X3=x Y3=y => move3 X1 Y1 X2 Y2 X3 Y3
      */
 
@@ -5955,7 +6001,7 @@ Uint op_transform[] = {
     TOP_is_type, 16,         /* y  */
     TOP_set_var_next_arg, 5, /* Y3 */
     TOP_commit,
-    TOP_new_instr, 196,      /* move3/6 */
+    TOP_new_instr, 197,      /* move3/6 */
     TOP_store_var_next_arg, 0, /* X1 */
     TOP_store_var_next_arg, 1, /* Y1 */
     TOP_store_var_next_arg, 2, /* X2 */
@@ -5966,7 +6012,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 368:
+     * Line 352:
      *   move2_par Y1=y X1=x Y2=y X2=x | move Y3=y X3=x => move3 Y1 X1 Y2 X2 Y3 X3
      */
 
@@ -5985,7 +6031,7 @@ Uint op_transform[] = {
     TOP_is_type, 8,          /* x  */
     TOP_set_var_next_arg, 5, /* X3 */
     TOP_commit,
-    TOP_new_instr, 196,      /* move3/6 */
+    TOP_new_instr, 197,      /* move3/6 */
     TOP_store_var_next_arg, 0, /* Y1 */
     TOP_store_var_next_arg, 1, /* X1 */
     TOP_store_var_next_arg, 2, /* Y2 */
@@ -5996,7 +6042,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 369:
+     * Line 353:
      *   move2_par X1=x X2=x X3=x X4=x | move X5=x X6=x => move3 X1 X2 X3 X4 X5 X6
      */
 
@@ -6015,7 +6061,7 @@ Uint op_transform[] = {
     TOP_is_type, 8,          /* x  */
     TOP_set_var_next_arg, 5, /* X6 */
     TOP_commit,
-    TOP_new_instr, 196,      /* move3/6 */
+    TOP_new_instr, 197,      /* move3/6 */
     TOP_store_var_next_arg, 0, /* X1 */
     TOP_store_var_next_arg, 1, /* X2 */
     TOP_store_var_next_arg, 2, /* X3 */
@@ -6027,7 +6073,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 292:
+     * Line 278:
      *   move_window X1=x X2=x X3=x Y1=y Y3=y | move X4=x Y4=y | succ(Y3,Y4) =>     move_window X1 X2 X3 X4 Y1 Y4
      */
 
@@ -6049,7 +6095,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 6, /* Y4 */
     TOP_pred, 8,             /* succ() */
     TOP_commit,
-    TOP_new_instr, 185,      /* move_window/6 */
+    TOP_new_instr, 186,      /* move_window/6 */
     TOP_store_var_next_arg, 0, /* X1 */
     TOP_store_var_next_arg, 1, /* X2 */
     TOP_store_var_next_arg, 2, /* X3 */
@@ -6060,7 +6106,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 297:
+     * Line 283:
      *   move_window X1=x X2=x X3=x Y1=y Y3=y => move_window3 X1 X2 X3 Y1
      */
 
@@ -6074,12 +6120,12 @@ Uint op_transform[] = {
     TOP_is_type, 16,         /* y  */
     TOP_next_arg,            /* Y1 (ignored) */
     TOP_is_type, 16,         /* y  */
-    TOP_rename, 186,         /* move_window3/4 */
+    TOP_rename, 187,         /* move_window3/4 */
 
     
 
     /*
-     * Line 295:
+     * Line 281:
      *   move_window X1=x X2=x X3=x X4=x Y1=y Y4=y | move X5=x Y5=y | succ(Y4,Y5) =>     move_window5 X1 X2 X3 X4 X5 Y1
      */
 
@@ -6103,7 +6149,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 7, /* Y5 */
     TOP_pred, 9,             /* succ() */
     TOP_commit,
-    TOP_new_instr, 188,      /* move_window5/6 */
+    TOP_new_instr, 189,      /* move_window5/6 */
     TOP_store_var_next_arg, 0, /* X1 */
     TOP_store_var_next_arg, 1, /* X2 */
     TOP_store_var_next_arg, 2, /* X3 */
@@ -6114,7 +6160,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 298:
+     * Line 284:
      *   move_window X1=x X2=x X3=x X4=x Y1=y Y4=y => move_window4 X1 X2 X3 X4 Y1
      */
 
@@ -6130,12 +6176,12 @@ Uint op_transform[] = {
     TOP_is_type, 16,         /* y  */
     TOP_next_arg,            /* Y1 (ignored) */
     TOP_is_type, 16,         /* y  */
-    TOP_rename, 187,         /* move_window4/5 */
+    TOP_rename, 188,         /* move_window4/5 */
 
     
 
     /*
-     * Line 539:
+     * Line 519:
      *   put_list Const=c n Dst => move Const x | put_list x n Dst
      */
 
@@ -6162,7 +6208,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1457:
+     * Line 1428:
      *   put_map_assoc F Map Dst Live Size Rest=* | map_key_sort(Size, Rest) =>   sorted_put_map_assoc F Map Dst Live Size Rest
      */
 
@@ -6175,7 +6221,7 @@ Uint op_transform[] = {
     TOP_rest_args,           /* Rest */
     TOP_pred, 20,            /* map_key_sort() */
     TOP_commit,
-    TOP_new_instr, 317,      /* sorted_put_map_assoc/5 */
+    TOP_new_instr, 318,      /* sorted_put_map_assoc/5 */
     TOP_store_var_next_arg, 0, /* F */
     TOP_store_var_next_arg, 1, /* Map */
     TOP_store_var_next_arg, 2, /* Dst */
@@ -6187,7 +6233,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1461:
+     * Line 1432:
      *   put_map_exact F Map Dst Live Size Rest=* | map_key_sort(Size, Rest) =>   sorted_put_map_exact F Map Dst Live Size Rest
      */
 
@@ -6200,7 +6246,7 @@ Uint op_transform[] = {
     TOP_rest_args,           /* Rest */
     TOP_pred, 20,            /* map_key_sort() */
     TOP_commit,
-    TOP_new_instr, 318,      /* sorted_put_map_exact/5 */
+    TOP_new_instr, 319,      /* sorted_put_map_exact/5 */
     TOP_store_var_next_arg, 0, /* F */
     TOP_store_var_next_arg, 1, /* Map */
     TOP_store_var_next_arg, 2, /* Dst */
@@ -6220,18 +6266,18 @@ Uint op_transform[] = {
     TOP_is_type_eq, 1, 0,    /* u == 0 */
     TOP_next_arg,
     TOP_is_type, 24,         /* d  */
-    TOP_rename, 159,         /* too_old_compiler/0 */
+    TOP_rename, 160,         /* too_old_compiler/0 */
     
 
     /*
-     * Line 519:
+     * Line 499:
      *   put_tuple Arity Dst => i_put_tuple Dst u
      */
 
     TOP_next_arg,            /* Arity (ignored) */
     TOP_set_var_next_arg, 1, /* Dst */
     TOP_commit,              /* always reached */
-    TOP_new_instr, 209,      /* i_put_tuple/2 */
+    TOP_new_instr, 210,      /* i_put_tuple/2 */
     TOP_store_var_next_arg, 1, /* Dst */
     TOP_store_type, TAG_u,
     TOP_end,
@@ -6239,7 +6285,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 260:
+     * Line 250:
      *   raise x==2 x==1 => i_raise
      */
 
@@ -6247,11 +6293,11 @@ Uint op_transform[] = {
     TOP_is_type_eq, 8, 2,    /* x == 2 */
     TOP_next_arg,
     TOP_is_type_eq, 8, 1,    /* x == 1 */
-    TOP_rename, 180,         /* i_raise/0 */
+    TOP_rename, 181,         /* i_raise/0 */
     
 
     /*
-     * Line 261:
+     * Line 251:
      *   raise Trace=y Value=y => move Trace x=2 | move Value x=1 | i_raise
      */
 
@@ -6261,7 +6307,7 @@ Uint op_transform[] = {
     TOP_is_type, 16,         /* y  */
     TOP_set_var_next_arg, 1, /* Value */
     TOP_commit,
-    TOP_new_instr, 180,      /* i_raise/0 */
+    TOP_new_instr, 181,      /* i_raise/0 */
     TOP_new_instr, 64,       /* move/2 */
     TOP_store_var_next_arg, 1, /* Value */
     TOP_store_type, TAG_x,
@@ -6274,14 +6320,14 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 262:
+     * Line 252:
      *   raise Trace Value => move Trace x=3 | move Value x=1 | move x=3 x=2 | i_raise
      */
 
     TOP_set_var_next_arg, 0, /* Trace */
     TOP_set_var_next_arg, 1, /* Value */
     TOP_commit,              /* always reached */
-    TOP_new_instr, 180,      /* i_raise/0 */
+    TOP_new_instr, 181,      /* i_raise/0 */
     TOP_new_instr, 64,       /* move/2 */
     TOP_store_type, TAG_x,
     TOP_store_val, 3,
@@ -6301,7 +6347,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1663:
+     * Line 1624:
      *   recv_set Fail | label Lbl | loop_rec Lf Reg =>    i_recv_set | label Lbl | loop_rec Lf Reg
      */
 
@@ -6312,7 +6358,7 @@ Uint op_transform[] = {
     TOP_keep,                /* loop_rec/2 */
     TOP_new_instr, 1,        /* label/1 */
     TOP_store_var_next_arg, 1, /* Lbl */
-    TOP_new_instr, 345,      /* i_recv_set/0 */
+    TOP_new_instr, 346,      /* i_recv_set/0 */
     TOP_end,
 
     
@@ -6420,7 +6466,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1464:
+     * Line 1435:
      *   sorted_put_map_assoc j Map Dst Live Size Rest=* | is_empty_map(Map) =>    new_map Dst Live Size Rest
      */
 
@@ -6434,7 +6480,7 @@ Uint op_transform[] = {
     TOP_rest_args,           /* Rest */
     TOP_pred, 21,            /* is_empty_map() */
     TOP_commit,
-    TOP_new_instr, 319,      /* new_map/3 */
+    TOP_new_instr, 320,      /* new_map/3 */
     TOP_store_var_next_arg, 1, /* Dst */
     TOP_store_var_next_arg, 2, /* Live */
     TOP_store_var_next_arg, 3, /* Size */
@@ -6443,7 +6489,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1466:
+     * Line 1437:
      *   sorted_put_map_assoc F Src=s Dst Live Size Rest=* => 	       update_map_assoc F Src Dst Live Size Rest
      */
 
@@ -6456,7 +6502,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 4, /* Size */
     TOP_rest_args,           /* Rest */
     TOP_commit,
-    TOP_new_instr, 320,      /* update_map_assoc/5 */
+    TOP_new_instr, 321,      /* update_map_assoc/5 */
     TOP_store_var_next_arg, 0, /* F */
     TOP_store_var_next_arg, 1, /* Src */
     TOP_store_var_next_arg, 2, /* Dst */
@@ -6467,7 +6513,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1468:
+     * Line 1439:
      *   sorted_put_map_assoc F Src Dst Live Size Rest=* => 	       move Src x | update_map_assoc F x Dst Live Size Rest
      */
 
@@ -6478,7 +6524,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 4, /* Size */
     TOP_rest_args,           /* Rest */
     TOP_commit,              /* always reached */
-    TOP_new_instr, 320,      /* update_map_assoc/5 */
+    TOP_new_instr, 321,      /* update_map_assoc/5 */
     TOP_store_var_next_arg, 0, /* F */
     TOP_store_type, TAG_x,
     TOP_store_val, 1023,
@@ -6496,7 +6542,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1471:
+     * Line 1442:
      *   sorted_put_map_exact F Src=s Dst Live Size Rest=* => 	      update_map_exact F Src Dst Live Size Rest
      */
 
@@ -6509,7 +6555,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 4, /* Size */
     TOP_rest_args,           /* Rest */
     TOP_commit,
-    TOP_new_instr, 321,      /* update_map_exact/5 */
+    TOP_new_instr, 322,      /* update_map_exact/5 */
     TOP_store_var_next_arg, 0, /* F */
     TOP_store_var_next_arg, 1, /* Src */
     TOP_store_var_next_arg, 2, /* Dst */
@@ -6520,7 +6566,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1473:
+     * Line 1444:
      *   sorted_put_map_exact F Src Dst Live Size Rest=* => 	      move Src x | update_map_exact F x Dst Live Size Rest
      */
 
@@ -6531,7 +6577,7 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 4, /* Size */
     TOP_rest_args,           /* Rest */
     TOP_commit,              /* always reached */
-    TOP_new_instr, 321,      /* update_map_exact/5 */
+    TOP_new_instr, 322,      /* update_map_exact/5 */
     TOP_store_var_next_arg, 0, /* F */
     TOP_store_type, TAG_x,
     TOP_store_val, 1023,
@@ -6549,7 +6595,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 312:
+     * Line 298:
      *   swap_temp R1 R2 Tmp | line Loc | apply Live | is_killed_apply(Tmp, Live) =>   swap R1 R2 | line Loc | apply Live
      */
 
@@ -6565,14 +6611,14 @@ Uint op_transform[] = {
     TOP_keep,                /* apply/1 */
     TOP_new_instr, 153,      /* line/1 */
     TOP_store_var_next_arg, 3, /* Loc */
-    TOP_new_instr, 190,      /* swap/2 */
+    TOP_new_instr, 191,      /* swap/2 */
     TOP_store_var_next_arg, 0, /* R1 */
     TOP_store_var_next_arg, 1, /* R2 */
     TOP_end,
     
 
     /*
-     * Line 315:
+     * Line 301:
      *   swap_temp R1 R2 Tmp | line Loc | call Live Addr | is_killed(Tmp, Live) =>   swap R1 R2 | line Loc | call Live Addr
      */
 
@@ -6588,14 +6634,14 @@ Uint op_transform[] = {
     TOP_keep,                /* call/2 */
     TOP_new_instr, 153,      /* line/1 */
     TOP_store_var_next_arg, 3, /* Loc */
-    TOP_new_instr, 190,      /* swap/2 */
+    TOP_new_instr, 191,      /* swap/2 */
     TOP_store_var_next_arg, 0, /* R1 */
     TOP_store_var_next_arg, 1, /* R2 */
     TOP_end,
     
 
     /*
-     * Line 317:
+     * Line 303:
      *   swap_temp R1 R2 Tmp | call_only Live Addr |   is_killed(Tmp, Live) => swap R1 R2 | call_only Live Addr
      */
 
@@ -6607,14 +6653,14 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 3, /* Live */
     TOP_pred, 12,            /* is_killed() */
     TOP_keep,                /* call_only/2 */
-    TOP_new_instr, 190,      /* swap/2 */
+    TOP_new_instr, 191,      /* swap/2 */
     TOP_store_var_next_arg, 0, /* R1 */
     TOP_store_var_next_arg, 1, /* R2 */
     TOP_end,
     
 
     /*
-     * Line 319:
+     * Line 305:
      *   swap_temp R1 R2 Tmp | call_last Live Addr D |   is_killed(Tmp, Live) => swap R1 R2 | call_last Live Addr D
      */
 
@@ -6626,14 +6672,14 @@ Uint op_transform[] = {
     TOP_set_var_next_arg, 3, /* Live */
     TOP_pred, 12,            /* is_killed() */
     TOP_keep,                /* call_last/3 */
-    TOP_new_instr, 190,      /* swap/2 */
+    TOP_new_instr, 191,      /* swap/2 */
     TOP_store_var_next_arg, 0, /* R1 */
     TOP_store_var_next_arg, 1, /* R2 */
     TOP_end,
     
 
     /*
-     * Line 322:
+     * Line 308:
      *   swap_temp R1 R2 Tmp | line Loc | call_ext Live Addr | is_killed(Tmp, Live) =>   swap R1 R2 | line Loc | call_ext Live Addr
      */
 
@@ -6649,14 +6695,14 @@ Uint op_transform[] = {
     TOP_keep,                /* call_ext/2 */
     TOP_new_instr, 153,      /* line/1 */
     TOP_store_var_next_arg, 3, /* Loc */
-    TOP_new_instr, 190,      /* swap/2 */
+    TOP_new_instr, 191,      /* swap/2 */
     TOP_store_var_next_arg, 0, /* R1 */
     TOP_store_var_next_arg, 1, /* R2 */
     TOP_end,
     
 
     /*
-     * Line 324:
+     * Line 310:
      *   swap_temp R1 R2 Tmp | line Loc | call_ext_only Live Addr |   is_killed(Tmp, Live) => swap R1 R2 | line Loc | call_ext_only Live Addr
      */
 
@@ -6672,14 +6718,14 @@ Uint op_transform[] = {
     TOP_keep,                /* call_ext_only/2 */
     TOP_new_instr, 153,      /* line/1 */
     TOP_store_var_next_arg, 3, /* Loc */
-    TOP_new_instr, 190,      /* swap/2 */
+    TOP_new_instr, 191,      /* swap/2 */
     TOP_store_var_next_arg, 0, /* R1 */
     TOP_store_var_next_arg, 1, /* R2 */
     TOP_end,
     
 
     /*
-     * Line 326:
+     * Line 312:
      *   swap_temp R1 R2 Tmp | line Loc | call_ext_last Live Addr D |   is_killed(Tmp, Live) => swap R1 R2 | line Loc | call_ext_last Live Addr D
      */
 
@@ -6695,7 +6741,7 @@ Uint op_transform[] = {
     TOP_keep,                /* call_ext_last/3 */
     TOP_new_instr, 153,      /* line/1 */
     TOP_store_var_next_arg, 3, /* Loc */
-    TOP_new_instr, 190,      /* swap/2 */
+    TOP_new_instr, 191,      /* swap/2 */
     TOP_store_var_next_arg, 0, /* R1 */
     TOP_store_var_next_arg, 1, /* R2 */
     TOP_end,
@@ -6703,7 +6749,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 640:
+     * Line 628:
      *   test_arity Fail Literal=q Arity => move Literal x | test_arity Fail x Arity
      */
 
@@ -6727,7 +6773,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 641:
+     * Line 629:
      *   test_arity Fail=f c Arity => jump Fail
      */
 
@@ -6740,7 +6786,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 618:
+     * Line 598:
      *   test_heap Need u==1 | put_list Y=y x==0 x==0 => test_heap_1_put_list Need Y
      */
 
@@ -6754,7 +6800,7 @@ Uint op_transform[] = {
     TOP_next_arg,
     TOP_is_type_eq, 8, 0,    /* x == 0 */
     TOP_commit,
-    TOP_new_instr, 220,      /* test_heap_1_put_list/2 */
+    TOP_new_instr, 221,      /* test_heap_1_put_list/2 */
     TOP_store_var_next_arg, 0, /* Need */
     TOP_store_var_next_arg, 1, /* Y */
     TOP_end,
@@ -6778,12 +6824,12 @@ Uint op_transform[] = {
      *   trim N Remaining => i_trim N
      */
 
-    TOP_rename, 166,         /* i_trim/1 */
+    TOP_rename, 167,         /* i_trim/1 */
 
     
 
     /*
-     * Line 208:
+     * Line 200:
      *   try Y F => catch Y F
      */
 
@@ -6792,7 +6838,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 209:
+     * Line 201:
      *   try_case Y => try_end Y
      */
 
@@ -6801,7 +6847,7 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 1650:
+     * Line 1611:
      *   unsupported_guard_bif A B C | never() =>
      */
 
@@ -6813,31 +6859,31 @@ Uint op_transform[] = {
     
 
     /*
-     * Line 438:
+     * Line 419:
      *   wait Fail | smp() => wait_unlocked Fail
      */
 
     TOP_try_me_else_fail,
     TOP_pred, 15,            /* smp() */
-    TOP_rename, 200,         /* wait_unlocked/1 */
+    TOP_rename, 201,         /* wait_unlocked/1 */
 
     
 
     /*
-     * Line 433:
+     * Line 414:
      *   wait_timeout Fail Src => i_wait_timeout Fail Src
      */
 
-    TOP_rename, 201,         /* i_wait_timeout/2 */
+    TOP_rename, 202,         /* i_wait_timeout/2 */
 
 /*
- * Total number of words: 7080
+ * Total number of words: 7123
  */
 };
 
-GenOpEntry gen_opc[] = {
+const GenOpEntry gen_opc[] = {
 /*   0 */  {"", 0, 0, 0, -1},
-/*   1 */  {"label", 1, 284, 1, 4461},
+/*   1 */  {"label", 1, 287, 1, 4504},
 /*   2 */  {"func_info", 3, -1, 0, 2777},
 /*   3 */  {"int_code_end", 0, 225, 1, -1},
 /*   4 */  {"call", 2, -1, 0, 1297},
@@ -6852,17 +6898,17 @@ GenOpEntry gen_opc[] = {
 /*  13 */  {"allocate_heap", 3, 1, 1, 19},
 /*  14 */  {"allocate_zero", 2, 4, 1, -1},
 /*  15 */  {"allocate_heap_zero", 3, 2, 1, 36},
-/*  16 */  {"test_heap", 2, 376, 1, 7030},
+/*  16 */  {"test_heap", 2, 379, 1, 7073},
 /*  17 */  {"init", 1, 222, 1, 3661},
 /*  18 */  {"deallocate", 1, 28, 1, 2624},
-/*  19 */  {"return", 0, 363, 1, -1},
-/*  20 */  {"send", 0, 367, 1, -1},
-/*  21 */  {"remove_message", 0, 362, 1, -1},
-/*  22 */  {"timeout", 0, 378, 1, -1},
-/*  23 */  {"loop_rec", 2, -1, 0, 4545},
-/*  24 */  {"loop_rec_end", 1, 286, 1, -1},
-/*  25 */  {"wait", 1, 384, 1, 7073},
-/*  26 */  {"wait_timeout", 2, -1, 0, 7078},
+/*  19 */  {"return", 0, 366, 1, -1},
+/*  20 */  {"send", 0, 370, 1, -1},
+/*  21 */  {"remove_message", 0, 365, 1, -1},
+/*  22 */  {"timeout", 0, 381, 1, -1},
+/*  23 */  {"loop_rec", 2, -1, 0, 4588},
+/*  24 */  {"loop_rec_end", 1, 289, 1, -1},
+/*  25 */  {"wait", 1, 387, 1, 7116},
+/*  26 */  {"wait_timeout", 2, -1, 0, 7121},
 /*  27 */  {"m_plus", 4, -1, 0, -1},
 /*  28 */  {"m_minus", 4, -1, 0, -1},
 /*  29 */  {"m_times", 4, -1, 0, -1},
@@ -6893,20 +6939,20 @@ GenOpEntry gen_opc[] = {
 /*  54 */  {"is_constant", 2, -1, 0, -1},
 /*  55 */  {"is_list", 2, 250, 2, 4116},
 /*  56 */  {"is_nonempty_list", 2, 263, 2, 4212},
-/*  57 */  {"is_tuple", 2, 277, 3, 4366},
-/*  58 */  {"test_arity", 3, 374, 2, 6991},
-/*  59 */  {"select_val", 3, -1, 0, 6545},
-/*  60 */  {"select_tuple_arity", 3, -1, 0, 6529},
-/*  61 */  {"jump", 1, 283, 1, -1},
+/*  57 */  {"is_tuple", 2, 280, 3, 4409},
+/*  58 */  {"test_arity", 3, 377, 2, 7034},
+/*  59 */  {"select_val", 3, -1, 0, 6588},
+/*  60 */  {"select_tuple_arity", 3, -1, 0, 6572},
+/*  61 */  {"jump", 1, 286, 1, -1},
 /*  62 */  {"catch", 2, 25, 1, -1},
 /*  63 */  {"catch_end", 1, 26, 1, -1},
-/*  64 */  {"move", 2, 287, 11, 4562},
+/*  64 */  {"move", 2, 290, 11, 4605},
 /*  65 */  {"get_list", 3, 36, 14, -1},
 /*  66 */  {"get_tuple_element", 3, -1, 0, 3383},
-/*  67 */  {"set_tuple_element", 3, 368, 1, -1},
+/*  67 */  {"set_tuple_element", 3, 371, 1, -1},
 /*  68 */  {"put_string", 3, -1, 0, -1},
-/*  69 */  {"put_list", 3, 342, 20, 6327},
-/*  70 */  {"put_tuple", 2, -1, 0, 6417},
+/*  69 */  {"put_list", 3, 345, 20, 6370},
+/*  70 */  {"put_tuple", 2, -1, 0, 6460},
 /*  71 */  {"put", 1, -1, 0, -1},
 /*  72 */  {"badmatch", 1, 9, 1, 53},
 /*  73 */  {"if_end", 0, 221, 1, -1},
@@ -6939,12 +6985,12 @@ GenOpEntry gen_opc[] = {
 /* 100 */  {"fmul", 4, -1, 0, 2721},
 /* 101 */  {"fdiv", 4, -1, 0, 2701},
 /* 102 */  {"fnegate", 3, -1, 0, 2741},
-/* 103 */  {"make_fun2", 1, -1, 0, 4555},
-/* 104 */  {"try", 2, -1, 0, 7064},
-/* 105 */  {"try_end", 1, 381, 1, -1},
-/* 106 */  {"try_case", 1, -1, 0, 7066},
-/* 107 */  {"try_case_end", 1, 380, 1, -1},
-/* 108 */  {"raise", 2, -1, 0, 6438},
+/* 103 */  {"make_fun2", 1, -1, 0, 4598},
+/* 104 */  {"try", 2, -1, 0, 7107},
+/* 105 */  {"try_end", 1, 384, 1, -1},
+/* 106 */  {"try_case", 1, -1, 0, 7109},
+/* 107 */  {"try_case_end", 1, 383, 1, -1},
+/* 108 */  {"raise", 2, -1, 0, 6481},
 /* 109 */  {"bs_init2", 6, -1, 0, 589},
 /* 110 */  {"bs_bits_to_bytes", 3, -1, 0, -1},
 /* 111 */  {"bs_add", 5, 12, 1, 276},
@@ -6972,7 +7018,7 @@ GenOpEntry gen_opc[] = {
 /* 133 */  {"bs_init_writable", 0, 14, 1, -1},
 /* 134 */  {"bs_append", 8, -1, 0, 298},
 /* 135 */  {"bs_private_append", 6, -1, 0, 889},
-/* 136 */  {"trim", 2, -1, 0, 7062},
+/* 136 */  {"trim", 2, -1, 0, 7105},
 /* 137 */  {"bs_init_bits", 6, -1, 0, 758},
 /* 138 */  {"bs_get_utf8", 5, -1, 0, 560},
 /* 139 */  {"bs_skip_utf8", 4, -1, 0, 1166},
@@ -6985,212 +7031,213 @@ GenOpEntry gen_opc[] = {
 /* 146 */  {"bs_utf16_size", 3, -1, 0, 1257},
 /* 147 */  {"bs_put_utf16", 3, 16, 1, -1},
 /* 148 */  {"bs_put_utf32", 3, -1, 0, 990},
-/* 149 */  {"on_load", 0, 341, 1, -1},
-/* 150 */  {"recv_mark", 1, 361, 1, -1},
-/* 151 */  {"recv_set", 1, -1, 0, 6514},
+/* 149 */  {"on_load", 0, 344, 1, -1},
+/* 150 */  {"recv_mark", 1, 364, 1, -1},
+/* 151 */  {"recv_set", 1, -1, 0, 6557},
 /* 152 */  {"gc_bif3", 7, -1, 0, 3276},
-/* 153 */  {"line", 1, 285, 1, 4520},
-/* 154 */  {"put_map_assoc", 5, -1, 0, 6359},
-/* 155 */  {"put_map_exact", 5, -1, 0, 6388},
+/* 153 */  {"line", 1, 288, 1, 4563},
+/* 154 */  {"put_map_assoc", 5, -1, 0, 6402},
+/* 155 */  {"put_map_exact", 5, -1, 0, 6431},
 /* 156 */  {"is_map", 2, 256, 2, 4159},
 /* 157 */  {"has_map_fields", 3, -1, 0, 3519},
 /* 158 */  {"get_map_elements", 3, -1, 0, 3355},
+/* 159 */  {"is_tagged_tuple", 4, 277, 3, 4366},
 
 /*
  * Internal generic instructions.
  */
 
-/* 159 */  {"too_old_compiler", 0, -1, 0, 7057},
-/* 160 */  {"i_func_info", 4, 130, 1, -1},
-/* 161 */  {"i_generic_breakpoint", 0, 134, 1, -1},
-/* 162 */  {"i_debug_breakpoint", 0, 119, 1, -1},
-/* 163 */  {"i_return_time_trace", 0, 200, 1, -1},
-/* 164 */  {"i_return_to_trace", 0, 201, 1, -1},
-/* 165 */  {"i_yield", 0, 220, 1, -1},
-/* 166 */  {"i_trim", 1, 213, 1, -1},
-/* 167 */  {"init2", 2, 223, 1, -1},
-/* 168 */  {"init3", 3, 224, 1, -1},
-/* 169 */  {"i_select_val_bins", 3, 208, 2, -1},
-/* 170 */  {"i_select_val_lins", 3, 210, 2, -1},
-/* 171 */  {"i_select_val2", 6, 206, 2, -1},
-/* 172 */  {"i_select_tuple_arity", 3, 202, 2, -1},
-/* 173 */  {"i_select_tuple_arity2", 6, 204, 2, -1},
-/* 174 */  {"i_jump_on_val_zero", 3, 170, 2, -1},
-/* 175 */  {"i_jump_on_val", 4, 168, 2, -1},
-/* 176 */  {"i_get_tuple_element", 3, 146, 4, -1},
-/* 177 */  {"i_get_tuple_element2", 3, 150, 1, -1},
-/* 178 */  {"i_get_tuple_element2y", 4, 151, 1, -1},
-/* 179 */  {"i_get_tuple_element3", 3, 152, 1, -1},
-/* 180 */  {"i_raise", 0, 196, 1, -1},
-/* 181 */  {"badarg", 1, 8, 1, -1},
-/* 182 */  {"system_limit", 1, 373, 1, -1},
-/* 183 */  {"move_jump", 2, 321, 4, -1},
-/* 184 */  {"move_window", 5, -1, 0, 6186},
-/* 185 */  {"move_window", 6, -1, 0, 6253},
-/* 186 */  {"move_window3", 4, 332, 1, -1},
-/* 187 */  {"move_window4", 5, 333, 1, -1},
-/* 188 */  {"move_window5", 6, 334, 1, -1},
-/* 189 */  {"swap_temp", 3, 371, 2, 6798},
-/* 190 */  {"swap", 2, 369, 2, -1},
-/* 191 */  {"move_x1", 1, 335, 1, -1},
-/* 192 */  {"move_x2", 1, 336, 1, -1},
-/* 193 */  {"move_shift", 3, 328, 4, -1},
-/* 194 */  {"move_dup", 3, 317, 4, -1},
-/* 195 */  {"move2_par", 4, 298, 7, 6055},
-/* 196 */  {"move3", 6, 305, 3, -1},
-/* 197 */  {"timeout_locked", 0, 379, 1, -1},
-/* 198 */  {"i_loop_rec", 1, 172, 1, -1},
-/* 199 */  {"wait_locked", 1, 385, 1, -1},
-/* 200 */  {"wait_unlocked", 1, 386, 1, -1},
-/* 201 */  {"i_wait_timeout", 2, 216, 2, 3605},
-/* 202 */  {"i_wait_timeout_locked", 2, 218, 2, 3614},
-/* 203 */  {"i_wait_error", 0, 214, 1, -1},
-/* 204 */  {"i_wait_error_locked", 0, 215, 1, -1},
-/* 205 */  {"i_is_eq_exact_immed", 3, 159, 3, -1},
-/* 206 */  {"i_is_eq_exact_literal", 3, 162, 2, -1},
-/* 207 */  {"i_is_ne_exact_immed", 3, 164, 2, -1},
-/* 208 */  {"i_is_ne_exact_literal", 3, 166, 2, -1},
-/* 209 */  {"i_put_tuple", 2, 194, 2, 3564},
-/* 210 */  {"normal_exit", 0, 340, 1, -1},
-/* 211 */  {"continue_exit", 0, 27, 1, -1},
-/* 212 */  {"apply_bif", 0, 6, 1, -1},
-/* 213 */  {"call_nif", 0, 23, 1, -1},
-/* 214 */  {"call_error_handler", 0, 22, 1, -1},
-/* 215 */  {"error_action_code", 0, 30, 1, -1},
-/* 216 */  {"return_trace", 0, 364, 1, -1},
-/* 217 */  {"move_return", 1, 325, 3, -1},
-/* 218 */  {"move_deallocate_return", 2, 313, 4, -1},
-/* 219 */  {"deallocate_return", 1, 29, 1, -1},
-/* 220 */  {"test_heap_1_put_list", 2, 377, 1, -1},
-/* 221 */  {"is_tuple_of_arity", 3, 280, 3, -1},
-/* 222 */  {"is_integer_allocate", 4, 249, 1, -1},
-/* 223 */  {"is_nonempty_list_allocate", 4, 265, 2, -1},
-/* 224 */  {"is_non_empty_list_test_heap", 3, 262, 1, -1},
-/* 225 */  {"is_nonempty_list_get_list", 4, 267, 2, -1},
-/* 226 */  {"is_bitstring", 2, 230, 2, 3796},
-/* 227 */  {"allocate_init", 3, 3, 1, -1},
-/* 228 */  {"i_apply", 0, 56, 1, -1},
-/* 229 */  {"i_apply_last", 1, 60, 1, -1},
-/* 230 */  {"i_apply_only", 0, 61, 1, -1},
-/* 231 */  {"i_apply_fun", 0, 57, 1, -1},
-/* 232 */  {"i_apply_fun_last", 1, 58, 1, -1},
-/* 233 */  {"i_apply_fun_only", 0, 59, 1, -1},
-/* 234 */  {"i_hibernate", 0, 153, 1, -1},
-/* 235 */  {"i_perf_counter", 0, 190, 1, -1},
-/* 236 */  {"call_bif", 1, 21, 1, -1},
-/* 237 */  {"i_get_hash", 3, 136, 1, -1},
-/* 238 */  {"i_get", 2, 135, 1, -1},
-/* 239 */  {"self", 1, 365, 2, -1},
-/* 240 */  {"node", 1, 338, 2, -1},
-/* 241 */  {"i_fast_element", 4, 123, 2, -1},
-/* 242 */  {"i_element", 4, 120, 2, -1},
-/* 243 */  {"bif1_body", 3, 11, 1, -1},
-/* 244 */  {"i_bif2", 5, 64, 1, -1},
-/* 245 */  {"i_bif2_body", 4, 65, 1, -1},
-/* 246 */  {"i_move_call", 2, 177, 1, -1},
-/* 247 */  {"move_call", 2, 308, 2, -1},
-/* 248 */  {"i_move_call_last", 3, 181, 1, -1},
-/* 249 */  {"move_call_last", 3, 310, 2, -1},
-/* 250 */  {"i_move_call_only", 2, 182, 1, -1},
-/* 251 */  {"move_call_only", 2, 312, 1, -1},
-/* 252 */  {"i_call", 1, 111, 1, -1},
-/* 253 */  {"i_call_last", 2, 117, 1, -1},
-/* 254 */  {"i_call_only", 1, 118, 1, -1},
-/* 255 */  {"i_call_ext", 1, 112, 1, -1},
-/* 256 */  {"i_call_ext_last", 2, 113, 1, -1},
-/* 257 */  {"i_call_ext_only", 1, 114, 1, -1},
-/* 258 */  {"i_move_call_ext", 2, 178, 1, -1},
-/* 259 */  {"i_move_call_ext_last", 3, 179, 1, -1},
-/* 260 */  {"i_move_call_ext_only", 2, 180, 1, -1},
-/* 261 */  {"i_call_fun", 1, 115, 1, -1},
-/* 262 */  {"i_call_fun_last", 2, 116, 1, -1},
-/* 263 */  {"i_make_fun", 2, 174, 1, -1},
-/* 264 */  {"i_bs_start_match2", 5, 102, 2, -1},
-/* 265 */  {"i_bs_save2", 2, 97, 1, -1},
-/* 266 */  {"i_bs_restore2", 2, 96, 1, -1},
-/* 267 */  {"i_bs_match_string", 4, 93, 1, -1},
-/* 268 */  {"i_bs_get_integer_small_imm", 5, 78, 1, -1},
-/* 269 */  {"i_bs_get_integer_imm", 6, 77, 1, -1},
-/* 270 */  {"i_bs_get_integer", 6, 73, 1, -1},
-/* 271 */  {"i_bs_get_integer_8", 3, 76, 1, -1},
-/* 272 */  {"i_bs_get_integer_16", 3, 74, 1, -1},
-/* 273 */  {"i_bs_get_integer_32", 4, 75, 1, -1},
-/* 274 */  {"i_bs_get_binary_imm2", 6, 71, 1, -1},
-/* 275 */  {"i_bs_get_binary2", 6, 68, 1, -1},
-/* 276 */  {"i_bs_get_binary_all2", 5, 69, 1, -1},
-/* 277 */  {"i_bs_get_binary_all_reuse", 3, 70, 1, -1},
-/* 278 */  {"i_bs_get_float2", 6, 72, 1, -1},
-/* 279 */  {"i_bs_skip_bits_imm2", 3, 101, 1, -1},
-/* 280 */  {"i_bs_skip_bits2", 4, 98, 2, -1},
-/* 281 */  {"i_bs_skip_bits_all2", 3, 100, 1, -1},
-/* 282 */  {"bs_test_zero_tail2", 2, 20, 1, -1},
-/* 283 */  {"bs_test_tail_imm2", 3, 17, 1, -1},
-/* 284 */  {"bs_test_unit8", 2, 19, 1, -1},
-/* 285 */  {"i_bs_get_utf8", 3, 80, 1, -1},
-/* 286 */  {"i_bs_get_utf16", 4, 79, 1, -1},
-/* 287 */  {"i_bs_validate_unicode_retract", 3, 107, 1, -1},
-/* 288 */  {"i_bs_init_fail", 4, 87, 2, -1},
-/* 289 */  {"i_bs_init_fail_heap", 5, 89, 1, -1},
-/* 290 */  {"i_bs_init", 3, 81, 1, -1},
-/* 291 */  {"i_bs_init_heap_bin", 3, 91, 1, -1},
-/* 292 */  {"i_bs_init_heap", 4, 90, 1, -1},
-/* 293 */  {"i_bs_init_heap_bin_heap", 4, 92, 1, -1},
-/* 294 */  {"i_bs_init_bits_fail", 4, 83, 2, -1},
-/* 295 */  {"i_bs_init_bits_fail_heap", 5, 85, 1, -1},
-/* 296 */  {"i_bs_init_bits", 3, 82, 1, -1},
-/* 297 */  {"i_bs_init_bits_heap", 4, 86, 1, -1},
-/* 298 */  {"i_bs_append", 6, 67, 1, -1},
-/* 299 */  {"i_bs_private_append", 5, 94, 1, -1},
-/* 300 */  {"i_new_bs_put_integer", 4, 188, 1, -1},
-/* 301 */  {"i_new_bs_put_integer_imm", 4, 189, 1, -1},
-/* 302 */  {"i_bs_utf8_size", 2, 105, 1, -1},
-/* 303 */  {"i_bs_utf16_size", 2, 104, 1, -1},
-/* 304 */  {"i_bs_put_utf8", 2, 95, 1, -1},
-/* 305 */  {"i_bs_validate_unicode", 2, 106, 1, -1},
-/* 306 */  {"i_new_bs_put_float", 4, 186, 1, -1},
-/* 307 */  {"i_new_bs_put_float_imm", 4, 187, 1, -1},
-/* 308 */  {"i_new_bs_put_binary", 4, 183, 1, -1},
-/* 309 */  {"i_new_bs_put_binary_imm", 3, 185, 1, -1},
-/* 310 */  {"i_new_bs_put_binary_all", 3, 184, 1, -1},
-/* 311 */  {"i_fadd", 3, 122, 1, -1},
-/* 312 */  {"i_fsub", 3, 129, 1, -1},
-/* 313 */  {"i_fmul", 3, 127, 1, -1},
-/* 314 */  {"i_fdiv", 3, 126, 1, -1},
-/* 315 */  {"i_fnegate", 2, 128, 1, -1},
-/* 316 */  {"i_fcheckerror", 0, 125, 1, -1},
-/* 317 */  {"sorted_put_map_assoc", 5, -1, 0, 6637},
-/* 318 */  {"sorted_put_map_exact", 5, -1, 0, 6731},
-/* 319 */  {"new_map", 3, 337, 1, -1},
-/* 320 */  {"update_map_assoc", 5, 382, 1, -1},
-/* 321 */  {"update_map_exact", 5, 383, 1, -1},
-/* 322 */  {"i_get_map_elements", 3, 145, 1, -1},
-/* 323 */  {"i_get_map_element_hash", 5, 141, 4, -1},
-/* 324 */  {"i_get_map_element", 4, 137, 4, 3528},
-/* 325 */  {"gen_plus", 5, -1, 0, 3315},
-/* 326 */  {"gen_minus", 5, -1, 0, 3292},
-/* 327 */  {"i_increment", 4, 154, 3, -1},
-/* 328 */  {"i_plus", 5, 191, 3, -1},
-/* 329 */  {"i_minus", 5, 175, 2, -1},
-/* 330 */  {"i_times", 5, 212, 1, -1},
-/* 331 */  {"i_m_div", 5, 173, 1, -1},
-/* 332 */  {"i_int_div", 5, 158, 1, -1},
-/* 333 */  {"i_rem", 5, 198, 2, -1},
-/* 334 */  {"i_bsl", 5, 108, 1, -1},
-/* 335 */  {"i_bsr", 5, 109, 1, -1},
-/* 336 */  {"i_band", 5, 62, 2, -1},
-/* 337 */  {"i_bor", 5, 66, 1, -1},
-/* 338 */  {"i_bxor", 5, 110, 1, -1},
-/* 339 */  {"i_int_bnot", 4, 157, 1, -1},
-/* 340 */  {"i_gc_bif1", 5, 131, 1, -1},
-/* 341 */  {"i_gc_bif2", 6, 132, 1, -1},
-/* 342 */  {"ii_gc_bif3", 7, -1, 0, 3623},
-/* 343 */  {"i_gc_bif3", 6, 133, 1, -1},
-/* 344 */  {"unsupported_guard_bif", 3, -1, 0, 7068},
-/* 345 */  {"i_recv_set", 0, 197, 1, -1},
-/* 346 */  {"hipe_trap_call", 0, 51, 1, -1},
-/* 347 */  {"hipe_trap_call_closure", 0, 52, 1, -1},
-/* 348 */  {"hipe_trap_return", 0, 54, 1, -1},
-/* 349 */  {"hipe_trap_throw", 0, 55, 1, -1},
-/* 350 */  {"hipe_trap_resume", 0, 53, 1, -1},
-/* 351 */  {"hipe_call_count", 0, 50, 1, -1},
+/* 160 */  {"too_old_compiler", 0, -1, 0, 7100},
+/* 161 */  {"i_func_info", 4, 130, 1, -1},
+/* 162 */  {"i_generic_breakpoint", 0, 134, 1, -1},
+/* 163 */  {"i_debug_breakpoint", 0, 119, 1, -1},
+/* 164 */  {"i_return_time_trace", 0, 200, 1, -1},
+/* 165 */  {"i_return_to_trace", 0, 201, 1, -1},
+/* 166 */  {"i_yield", 0, 220, 1, -1},
+/* 167 */  {"i_trim", 1, 213, 1, -1},
+/* 168 */  {"init2", 2, 223, 1, -1},
+/* 169 */  {"init3", 3, 224, 1, -1},
+/* 170 */  {"i_select_val_bins", 3, 208, 2, -1},
+/* 171 */  {"i_select_val_lins", 3, 210, 2, -1},
+/* 172 */  {"i_select_val2", 6, 206, 2, -1},
+/* 173 */  {"i_select_tuple_arity", 3, 202, 2, -1},
+/* 174 */  {"i_select_tuple_arity2", 6, 204, 2, -1},
+/* 175 */  {"i_jump_on_val_zero", 3, 170, 2, -1},
+/* 176 */  {"i_jump_on_val", 4, 168, 2, -1},
+/* 177 */  {"i_get_tuple_element", 3, 146, 4, -1},
+/* 178 */  {"i_get_tuple_element2", 3, 150, 1, -1},
+/* 179 */  {"i_get_tuple_element2y", 4, 151, 1, -1},
+/* 180 */  {"i_get_tuple_element3", 3, 152, 1, -1},
+/* 181 */  {"i_raise", 0, 196, 1, -1},
+/* 182 */  {"badarg", 1, 8, 1, -1},
+/* 183 */  {"system_limit", 1, 376, 1, -1},
+/* 184 */  {"move_jump", 2, 324, 4, -1},
+/* 185 */  {"move_window", 5, -1, 0, 6229},
+/* 186 */  {"move_window", 6, -1, 0, 6296},
+/* 187 */  {"move_window3", 4, 335, 1, -1},
+/* 188 */  {"move_window4", 5, 336, 1, -1},
+/* 189 */  {"move_window5", 6, 337, 1, -1},
+/* 190 */  {"swap_temp", 3, 374, 2, 6841},
+/* 191 */  {"swap", 2, 372, 2, -1},
+/* 192 */  {"move_x1", 1, 338, 1, -1},
+/* 193 */  {"move_x2", 1, 339, 1, -1},
+/* 194 */  {"move_shift", 3, 331, 4, -1},
+/* 195 */  {"move_dup", 3, 320, 4, -1},
+/* 196 */  {"move2_par", 4, 301, 7, 6098},
+/* 197 */  {"move3", 6, 308, 3, -1},
+/* 198 */  {"timeout_locked", 0, 382, 1, -1},
+/* 199 */  {"i_loop_rec", 1, 172, 1, -1},
+/* 200 */  {"wait_locked", 1, 388, 1, -1},
+/* 201 */  {"wait_unlocked", 1, 389, 1, -1},
+/* 202 */  {"i_wait_timeout", 2, 216, 2, 3605},
+/* 203 */  {"i_wait_timeout_locked", 2, 218, 2, 3614},
+/* 204 */  {"i_wait_error", 0, 214, 1, -1},
+/* 205 */  {"i_wait_error_locked", 0, 215, 1, -1},
+/* 206 */  {"i_is_eq_exact_immed", 3, 159, 3, -1},
+/* 207 */  {"i_is_eq_exact_literal", 3, 162, 2, -1},
+/* 208 */  {"i_is_ne_exact_immed", 3, 164, 2, -1},
+/* 209 */  {"i_is_ne_exact_literal", 3, 166, 2, -1},
+/* 210 */  {"i_put_tuple", 2, 194, 2, 3564},
+/* 211 */  {"normal_exit", 0, 343, 1, -1},
+/* 212 */  {"continue_exit", 0, 27, 1, -1},
+/* 213 */  {"apply_bif", 0, 6, 1, -1},
+/* 214 */  {"call_nif", 0, 23, 1, -1},
+/* 215 */  {"call_error_handler", 0, 22, 1, -1},
+/* 216 */  {"error_action_code", 0, 30, 1, -1},
+/* 217 */  {"return_trace", 0, 367, 1, -1},
+/* 218 */  {"move_return", 1, 328, 3, -1},
+/* 219 */  {"move_deallocate_return", 2, 316, 4, -1},
+/* 220 */  {"deallocate_return", 1, 29, 1, -1},
+/* 221 */  {"test_heap_1_put_list", 2, 380, 1, -1},
+/* 222 */  {"is_tuple_of_arity", 3, 283, 3, -1},
+/* 223 */  {"is_integer_allocate", 4, 249, 1, -1},
+/* 224 */  {"is_nonempty_list_allocate", 4, 265, 2, -1},
+/* 225 */  {"is_non_empty_list_test_heap", 3, 262, 1, -1},
+/* 226 */  {"is_nonempty_list_get_list", 4, 267, 2, -1},
+/* 227 */  {"is_bitstring", 2, 230, 2, 3796},
+/* 228 */  {"allocate_init", 3, 3, 1, -1},
+/* 229 */  {"i_apply", 0, 56, 1, -1},
+/* 230 */  {"i_apply_last", 1, 60, 1, -1},
+/* 231 */  {"i_apply_only", 0, 61, 1, -1},
+/* 232 */  {"i_apply_fun", 0, 57, 1, -1},
+/* 233 */  {"i_apply_fun_last", 1, 58, 1, -1},
+/* 234 */  {"i_apply_fun_only", 0, 59, 1, -1},
+/* 235 */  {"i_hibernate", 0, 153, 1, -1},
+/* 236 */  {"i_perf_counter", 0, 190, 1, -1},
+/* 237 */  {"call_bif", 1, 21, 1, -1},
+/* 238 */  {"i_get_hash", 3, 136, 1, -1},
+/* 239 */  {"i_get", 2, 135, 1, -1},
+/* 240 */  {"self", 1, 368, 2, -1},
+/* 241 */  {"node", 1, 341, 2, -1},
+/* 242 */  {"i_fast_element", 4, 123, 2, -1},
+/* 243 */  {"i_element", 4, 120, 2, -1},
+/* 244 */  {"bif1_body", 3, 11, 1, -1},
+/* 245 */  {"i_bif2", 5, 64, 1, -1},
+/* 246 */  {"i_bif2_body", 4, 65, 1, -1},
+/* 247 */  {"i_move_call", 2, 177, 1, -1},
+/* 248 */  {"move_call", 2, 311, 2, -1},
+/* 249 */  {"i_move_call_last", 3, 181, 1, -1},
+/* 250 */  {"move_call_last", 3, 313, 2, -1},
+/* 251 */  {"i_move_call_only", 2, 182, 1, -1},
+/* 252 */  {"move_call_only", 2, 315, 1, -1},
+/* 253 */  {"i_call", 1, 111, 1, -1},
+/* 254 */  {"i_call_last", 2, 117, 1, -1},
+/* 255 */  {"i_call_only", 1, 118, 1, -1},
+/* 256 */  {"i_call_ext", 1, 112, 1, -1},
+/* 257 */  {"i_call_ext_last", 2, 113, 1, -1},
+/* 258 */  {"i_call_ext_only", 1, 114, 1, -1},
+/* 259 */  {"i_move_call_ext", 2, 178, 1, -1},
+/* 260 */  {"i_move_call_ext_last", 3, 179, 1, -1},
+/* 261 */  {"i_move_call_ext_only", 2, 180, 1, -1},
+/* 262 */  {"i_call_fun", 1, 115, 1, -1},
+/* 263 */  {"i_call_fun_last", 2, 116, 1, -1},
+/* 264 */  {"i_make_fun", 2, 174, 1, -1},
+/* 265 */  {"i_bs_start_match2", 5, 102, 2, -1},
+/* 266 */  {"i_bs_save2", 2, 97, 1, -1},
+/* 267 */  {"i_bs_restore2", 2, 96, 1, -1},
+/* 268 */  {"i_bs_match_string", 4, 93, 1, -1},
+/* 269 */  {"i_bs_get_integer_small_imm", 5, 78, 1, -1},
+/* 270 */  {"i_bs_get_integer_imm", 6, 77, 1, -1},
+/* 271 */  {"i_bs_get_integer", 6, 73, 1, -1},
+/* 272 */  {"i_bs_get_integer_8", 3, 76, 1, -1},
+/* 273 */  {"i_bs_get_integer_16", 3, 74, 1, -1},
+/* 274 */  {"i_bs_get_integer_32", 4, 75, 1, -1},
+/* 275 */  {"i_bs_get_binary_imm2", 6, 71, 1, -1},
+/* 276 */  {"i_bs_get_binary2", 6, 68, 1, -1},
+/* 277 */  {"i_bs_get_binary_all2", 5, 69, 1, -1},
+/* 278 */  {"i_bs_get_binary_all_reuse", 3, 70, 1, -1},
+/* 279 */  {"i_bs_get_float2", 6, 72, 1, -1},
+/* 280 */  {"i_bs_skip_bits_imm2", 3, 101, 1, -1},
+/* 281 */  {"i_bs_skip_bits2", 4, 98, 2, -1},
+/* 282 */  {"i_bs_skip_bits_all2", 3, 100, 1, -1},
+/* 283 */  {"bs_test_zero_tail2", 2, 20, 1, -1},
+/* 284 */  {"bs_test_tail_imm2", 3, 17, 1, -1},
+/* 285 */  {"bs_test_unit8", 2, 19, 1, -1},
+/* 286 */  {"i_bs_get_utf8", 3, 80, 1, -1},
+/* 287 */  {"i_bs_get_utf16", 4, 79, 1, -1},
+/* 288 */  {"i_bs_validate_unicode_retract", 3, 107, 1, -1},
+/* 289 */  {"i_bs_init_fail", 4, 87, 2, -1},
+/* 290 */  {"i_bs_init_fail_heap", 5, 89, 1, -1},
+/* 291 */  {"i_bs_init", 3, 81, 1, -1},
+/* 292 */  {"i_bs_init_heap_bin", 3, 91, 1, -1},
+/* 293 */  {"i_bs_init_heap", 4, 90, 1, -1},
+/* 294 */  {"i_bs_init_heap_bin_heap", 4, 92, 1, -1},
+/* 295 */  {"i_bs_init_bits_fail", 4, 83, 2, -1},
+/* 296 */  {"i_bs_init_bits_fail_heap", 5, 85, 1, -1},
+/* 297 */  {"i_bs_init_bits", 3, 82, 1, -1},
+/* 298 */  {"i_bs_init_bits_heap", 4, 86, 1, -1},
+/* 299 */  {"i_bs_append", 6, 67, 1, -1},
+/* 300 */  {"i_bs_private_append", 5, 94, 1, -1},
+/* 301 */  {"i_new_bs_put_integer", 4, 188, 1, -1},
+/* 302 */  {"i_new_bs_put_integer_imm", 4, 189, 1, -1},
+/* 303 */  {"i_bs_utf8_size", 2, 105, 1, -1},
+/* 304 */  {"i_bs_utf16_size", 2, 104, 1, -1},
+/* 305 */  {"i_bs_put_utf8", 2, 95, 1, -1},
+/* 306 */  {"i_bs_validate_unicode", 2, 106, 1, -1},
+/* 307 */  {"i_new_bs_put_float", 4, 186, 1, -1},
+/* 308 */  {"i_new_bs_put_float_imm", 4, 187, 1, -1},
+/* 309 */  {"i_new_bs_put_binary", 4, 183, 1, -1},
+/* 310 */  {"i_new_bs_put_binary_imm", 3, 185, 1, -1},
+/* 311 */  {"i_new_bs_put_binary_all", 3, 184, 1, -1},
+/* 312 */  {"i_fadd", 3, 122, 1, -1},
+/* 313 */  {"i_fsub", 3, 129, 1, -1},
+/* 314 */  {"i_fmul", 3, 127, 1, -1},
+/* 315 */  {"i_fdiv", 3, 126, 1, -1},
+/* 316 */  {"i_fnegate", 2, 128, 1, -1},
+/* 317 */  {"i_fcheckerror", 0, 125, 1, -1},
+/* 318 */  {"sorted_put_map_assoc", 5, -1, 0, 6680},
+/* 319 */  {"sorted_put_map_exact", 5, -1, 0, 6774},
+/* 320 */  {"new_map", 3, 340, 1, -1},
+/* 321 */  {"update_map_assoc", 5, 385, 1, -1},
+/* 322 */  {"update_map_exact", 5, 386, 1, -1},
+/* 323 */  {"i_get_map_elements", 3, 145, 1, -1},
+/* 324 */  {"i_get_map_element_hash", 5, 141, 4, -1},
+/* 325 */  {"i_get_map_element", 4, 137, 4, 3528},
+/* 326 */  {"gen_plus", 5, -1, 0, 3315},
+/* 327 */  {"gen_minus", 5, -1, 0, 3292},
+/* 328 */  {"i_increment", 4, 154, 3, -1},
+/* 329 */  {"i_plus", 5, 191, 3, -1},
+/* 330 */  {"i_minus", 5, 175, 2, -1},
+/* 331 */  {"i_times", 5, 212, 1, -1},
+/* 332 */  {"i_m_div", 5, 173, 1, -1},
+/* 333 */  {"i_int_div", 5, 158, 1, -1},
+/* 334 */  {"i_rem", 5, 198, 2, -1},
+/* 335 */  {"i_bsl", 5, 108, 1, -1},
+/* 336 */  {"i_bsr", 5, 109, 1, -1},
+/* 337 */  {"i_band", 5, 62, 2, -1},
+/* 338 */  {"i_bor", 5, 66, 1, -1},
+/* 339 */  {"i_bxor", 5, 110, 1, -1},
+/* 340 */  {"i_int_bnot", 4, 157, 1, -1},
+/* 341 */  {"i_gc_bif1", 5, 131, 1, -1},
+/* 342 */  {"i_gc_bif2", 6, 132, 1, -1},
+/* 343 */  {"ii_gc_bif3", 7, -1, 0, 3623},
+/* 344 */  {"i_gc_bif3", 6, 133, 1, -1},
+/* 345 */  {"unsupported_guard_bif", 3, -1, 0, 7111},
+/* 346 */  {"i_recv_set", 0, 197, 1, -1},
+/* 347 */  {"hipe_trap_call", 0, 51, 1, -1},
+/* 348 */  {"hipe_trap_call_closure", 0, 52, 1, -1},
+/* 349 */  {"hipe_trap_return", 0, 54, 1, -1},
+/* 350 */  {"hipe_trap_throw", 0, 55, 1, -1},
+/* 351 */  {"hipe_trap_resume", 0, 53, 1, -1},
+/* 352 */  {"hipe_call_count", 0, 50, 1, -1},
 };

@@ -24,7 +24,7 @@
 	 display_progress_dialog/2, destroy_progress_dialog/0,
 	 wait_for_progress/0, report_progress/1,
 	 user_term/3, user_term_multiline/3,
-	 interval_dialog/4, start_timer/1, stop_timer/1,
+	 interval_dialog/4, start_timer/1, start_timer/2, stop_timer/1, timer_config/1,
 	 display_info/2, display_info/3, fill_info/2, update_info/2, to_str/1,
 	 create_menus/3, create_menu_item/3,
 	 create_attrs/0,
@@ -90,6 +90,12 @@ stop_timer(Timer = {true, _}) -> Timer;
 stop_timer(Timer = {_, Intv}) ->
     setup_timer(false, Timer),
     {true, Intv}.
+
+start_timer(#{interval:=Intv}, _Def) ->
+    setup_timer(true, {false, Intv});
+start_timer(_, Def) ->
+    setup_timer(true, {false, Def}).
+
 start_timer(Intv) when is_integer(Intv) ->
     setup_timer(true, {true, Intv});
 start_timer(Timer) ->
@@ -104,6 +110,11 @@ setup_timer(true,  {false, Value}) ->
 setup_timer(Bool, {Timer, Old}) ->
     timer:cancel(Timer),
     setup_timer(Bool, {false, Old}).
+
+timer_config({_, Interval}) ->
+    #{interval=>Interval};
+timer_config(#{}=Config) ->
+    Config.
 
 display_info_dialog(Parent,Str) ->
     display_info_dialog(Parent,"",Str).
@@ -162,13 +173,13 @@ fill_info([{Str,Attrib,Key}|Rest], Data) when is_atom(Key); is_function(Key) ->
 	Value -> [{Str,Attrib,Value} | fill_info(Rest, Data)]
     end;
 fill_info([{Str, {Format, Key}}|Rest], Data)
-  when is_atom(Key); is_function(Key), is_atom(Format) ->
+  when is_atom(Key); is_function(Key) ->
     case get_value(Key, Data) of
 	undefined -> [undefined | fill_info(Rest, Data)];
 	Value -> [{Str, {Format, Value}} | fill_info(Rest, Data)]
     end;
 fill_info([{Str, Attrib, {Format, Key}}|Rest], Data)
-  when is_atom(Key); is_function(Key), is_atom(Format) ->
+  when is_atom(Key); is_function(Key) ->
     case get_value(Key, Data) of
 	undefined -> [undefined | fill_info(Rest, Data)];
 	Value -> [{Str, Attrib, {Format, Value}} | fill_info(Rest, Data)]
@@ -241,6 +252,8 @@ to_str({bytes, B}) ->
 	KB >  0 -> integer_to_list(KB) ++ " kB";
 	true -> integer_to_list(B) ++ " B"
     end;
+to_str({{words,WSz}, Sz}) ->
+    to_str({bytes, WSz*Sz});
 to_str({time_ms, MS}) ->
     S = MS div 1000,
     Min = S div 60,
@@ -623,12 +636,12 @@ user_term_multiline(Parent, Title, Default) ->
 
 parse_string(Str) ->
     try
-	Tokens = case erl_scan:string(Str) of
+	Tokens = case erl_scan:string(Str, 1, [text]) of
 		     {ok, Ts, _} -> Ts;
 		     {error, {_SLine, SMod, SError}, _} ->
 			 throw(io_lib:format("~s", [SMod:format_error(SError)]))
 		 end,
-	case erl_parse:parse_term(Tokens) of
+	case lib:extended_parse_term(Tokens) of
 	    {error, {_PLine, PMod, PError}} ->
 		throw(io_lib:format("~s", [PMod:format_error(PError)]));
 	    Res -> Res

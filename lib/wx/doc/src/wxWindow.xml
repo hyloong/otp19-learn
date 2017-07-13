@@ -1,0 +1,1822 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxWindow</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxWindow.xml</file></header>
+<module>wxWindow</module>
+<modulesummary>See external documentation: wxWindow.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html">wxWindow</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxWindow"/>wxWindow()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowwxwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></name>
+<fsummary>Equivalent to new(Parent, Id, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Id = integer()</v></type>
+<desc><marker id="new-2"/>
+<p>Equivalent to <seealso marker="#new-3">new(Parent, Id, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id, Options::[Option]) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Id = integer()</v><v>Option = {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()}</v></type>
+<desc><marker id="new-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowwxwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>cacheBestSize(This, Size) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Size = {W::integer(), H::integer()}</v></type>
+<desc><marker id="cacheBestSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowcachebestsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>captureMouse(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="captureMouse-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowcapturemouse">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>center(This) -&gt; ok</name>
+<fsummary>Equivalent to center(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="center-1"/>
+<p>Equivalent to <seealso marker="#center-2">center(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>center(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Option = {dir, integer()}</v></type>
+<desc><marker id="center-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowcenter">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>centerOnParent(This) -&gt; ok</name>
+<fsummary>Equivalent to centerOnParent(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="centerOnParent-1"/>
+<p>Equivalent to <seealso marker="#centerOnParent-2">centerOnParent(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>centerOnParent(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Option = {dir, integer()}</v></type>
+<desc><marker id="centerOnParent-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowcenteronparent">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>centre(This) -&gt; ok</name>
+<fsummary>Equivalent to centre(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="centre-1"/>
+<p>Equivalent to <seealso marker="#centre-2">centre(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>centre(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Option = {dir, integer()}</v></type>
+<desc><marker id="centre-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowcentre">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>centreOnParent(This) -&gt; ok</name>
+<fsummary>Equivalent to centreOnParent(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="centreOnParent-1"/>
+<p>Equivalent to <seealso marker="#centreOnParent-2">centreOnParent(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>centreOnParent(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Option = {dir, integer()}</v></type>
+<desc><marker id="centreOnParent-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowcentreonparent">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>clearBackground(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="clearBackground-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowclearbackground">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>clientToScreen(This, Pt) -&gt; {X::integer(), Y::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Pt = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="clientToScreen-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowclienttoscreen">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>clientToScreen(This, X, Y) -&gt; {X::integer(), Y::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="clientToScreen-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowclienttoscreen">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>close(This) -&gt; boolean()</name>
+<fsummary>Equivalent to close(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="close-1"/>
+<p>Equivalent to <seealso marker="#close-2">close(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>close(This, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Option = {force, boolean()}</v></type>
+<desc><marker id="close-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowclose">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>convertDialogToPixels(This, Sz) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Sz = {W::integer(), H::integer()}</v></type>
+<desc><marker id="convertDialogToPixels-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowconvertdialogtopixels">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>convertPixelsToDialog(This, Sz) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Sz = {W::integer(), H::integer()}</v></type>
+<desc><marker id="convertPixelsToDialog-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowconvertpixelstodialog">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>Destroy(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="Destroy-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowdestroy">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroyChildren(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="destroyChildren-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowdestroychildren">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>disable(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="disable-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowdisable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>dragAcceptFiles(This, Accept) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Accept = boolean()</v></type>
+<desc><marker id="dragAcceptFiles-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowdragacceptfiles">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>enable(This) -&gt; boolean()</name>
+<fsummary>Equivalent to enable(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="enable-1"/>
+<p>Equivalent to <seealso marker="#enable-2">enable(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>enable(This, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Option = {enable, boolean()}</v></type>
+<desc><marker id="enable-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowenable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>findFocus() -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="findFocus-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowfindfocus">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>findWindow(This, Winid) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Winid = integer()</v></type>
+<desc><marker id="findWindow-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowfindwindow">external documentation</url>.
+  <br/> Also:<br/>
+  findWindow(This, Name) -&gt; wxWindow() when<br/>
+  	This::wxWindow(), Name::unicode:chardata().<br/>
+ </p>
+</desc></func>
+<func>
+<name>findWindowById(Winid) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></name>
+<fsummary>Equivalent to findWindowById(Winid, []).
+</fsummary>
+<type>
+<v>Winid = integer()</v></type>
+<desc><marker id="findWindowById-1"/>
+<p>Equivalent to <seealso marker="#findWindowById-2">findWindowById(Winid, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>findWindowById(Winid, Options::[Option]) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Winid = integer()</v><v>Option = {parent, <seealso marker="#type-wxWindow">wxWindow()</seealso>}</v></type>
+<desc><marker id="findWindowById-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowfindwindowbyid">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>findWindowByName(Name) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></name>
+<fsummary>Equivalent to findWindowByName(Name, []).
+</fsummary>
+<type>
+<v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="findWindowByName-1"/>
+<p>Equivalent to <seealso marker="#findWindowByName-2">findWindowByName(Name, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>findWindowByName(Name, Options::[Option]) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {parent, <seealso marker="#type-wxWindow">wxWindow()</seealso>}</v></type>
+<desc><marker id="findWindowByName-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowfindwindowbyname">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>findWindowByLabel(Label) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></name>
+<fsummary>Equivalent to findWindowByLabel(Label, []).
+</fsummary>
+<type>
+<v>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="findWindowByLabel-1"/>
+<p>Equivalent to <seealso marker="#findWindowByLabel-2">findWindowByLabel(Label, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>findWindowByLabel(Label, Options::[Option]) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {parent, <seealso marker="#type-wxWindow">wxWindow()</seealso>}</v></type>
+<desc><marker id="findWindowByLabel-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowfindwindowbylabel">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>fit(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="fit-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowfit">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>fitInside(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="fitInside-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowfitinside">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>freeze(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="freeze-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowfreeze">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getAcceleratorTable(This) -&gt; <seealso marker="wxAcceleratorTable#type-wxAcceleratorTable">wxAcceleratorTable:wxAcceleratorTable()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getAcceleratorTable-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetacceleratortable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getBackgroundColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getBackgroundColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetbackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getBackgroundStyle(This) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getBackgroundStyle-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetbackgroundstyle">external documentation</url>.
+ <br/> Res = ?wxBG_STYLE_SYSTEM | ?wxBG_STYLE_COLOUR | ?wxBG_STYLE_CUSTOM</p>
+</desc></func>
+<func>
+<name>getBestSize(This) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getBestSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetbestsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCaret(This) -&gt; <seealso marker="wxCaret#type-wxCaret">wxCaret:wxCaret()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getCaret-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetcaret">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCapture() -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="getCapture-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetcapture">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCharHeight(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getCharHeight-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetcharheight">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCharWidth(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getCharWidth-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetcharwidth">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getChildren(This) -&gt; [<seealso marker="#type-wxWindow">wxWindow()</seealso>]</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getChildren-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetchildren">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getClientSize(This) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getClientSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetclientsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getContainingSizer(This) -&gt; <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getContainingSizer-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetcontainingsizer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCursor(This) -&gt; <seealso marker="wxCursor#type-wxCursor">wxCursor:wxCursor()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getCursor-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetcursor">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDropTarget(This) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getDropTarget-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetdroptarget">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getEventHandler(This) -&gt; <seealso marker="wxEvtHandler#type-wxEvtHandler">wxEvtHandler:wxEvtHandler()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getEventHandler-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgeteventhandler">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getExtraStyle(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getExtraStyle-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetextrastyle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFont(This) -&gt; <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getFont-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getForegroundColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getForegroundColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetforegroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getGrandParent(This) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getGrandParent-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetgrandparent">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getHandle(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getHandle-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgethandle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getHelpText(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getHelpText-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgethelptext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getId(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getId-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetid">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getLabel(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getLabel-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetlabel">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMaxSize(This) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getMaxSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetmaxsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMinSize(This) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getMinSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetminsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getName(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getName-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetname">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getParent(This) -&gt; <seealso marker="#type-wxWindow">wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getParent-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetparent">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPosition(This) -&gt; {X::integer(), Y::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getPosition-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getRect(This) -&gt; {X::integer(), Y::integer(), W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getRect-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetrect">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getScreenPosition(This) -&gt; {X::integer(), Y::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getScreenPosition-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetscreenposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getScreenRect(This) -&gt; {X::integer(), Y::integer(), W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getScreenRect-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetscreenrect">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getScrollPos(This, Orient) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Orient = integer()</v></type>
+<desc><marker id="getScrollPos-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetscrollpos">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getScrollRange(This, Orient) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Orient = integer()</v></type>
+<desc><marker id="getScrollRange-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetscrollrange">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getScrollThumb(This, Orient) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Orient = integer()</v></type>
+<desc><marker id="getScrollThumb-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetscrollthumb">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSize(This) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSizer(This) -&gt; <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getSizer-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetsizer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getTextExtent(This, String) -&gt; Result</name>
+<fsummary>Equivalent to getTextExtent(This, String, []).
+</fsummary>
+<type>
+<v>Result = {X::integer(), Y::integer(), Descent::integer(), ExternalLeading::integer()}</v><v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>String = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="getTextExtent-2"/>
+<p>Equivalent to <seealso marker="#getTextExtent-3">getTextExtent(This, String, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>getTextExtent(This, String, Options::[Option]) -&gt; Result</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Result = {X::integer(), Y::integer(), Descent::integer(), ExternalLeading::integer()}</v><v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>String = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {theFont, <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso>}</v></type>
+<desc><marker id="getTextExtent-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgettextextent">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getToolTip(This) -&gt; <seealso marker="wxToolTip#type-wxToolTip">wxToolTip:wxToolTip()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getToolTip-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgettooltip">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getUpdateRegion(This) -&gt; <seealso marker="wxRegion#type-wxRegion">wxRegion:wxRegion()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getUpdateRegion-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetupdateregion">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getVirtualSize(This) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getVirtualSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetvirtualsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getWindowStyleFlag(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getWindowStyleFlag-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetwindowstyleflag">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getWindowVariant(This) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getWindowVariant-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetwindowvariant">external documentation</url>.
+ <br/> Res = ?wxWINDOW_VARIANT_NORMAL | ?wxWINDOW_VARIANT_SMALL | ?wxWINDOW_VARIANT_MINI | ?wxWINDOW_VARIANT_LARGE | ?wxWINDOW_VARIANT_MAX</p>
+</desc></func>
+<func>
+<name>hasCapture(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="hasCapture-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowhascapture">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasScrollbar(This, Orient) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Orient = integer()</v></type>
+<desc><marker id="hasScrollbar-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowhasscrollbar">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasTransparentBackground(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="hasTransparentBackground-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowhastransparentbackground">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hide(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="hide-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowhide">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>inheritAttributes(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="inheritAttributes-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowinheritattributes">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>initDialog(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="initDialog-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowinitdialog">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>invalidateBestSize(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="invalidateBestSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowinvalidatebestsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isEnabled(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="isEnabled-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowisenabled">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isExposed(This, Pt) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Pt = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="isExposed-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowisexposed">external documentation</url>.
+  <br/> Also:<br/>
+  isExposed(This, Rect) -&gt; boolean() when<br/>
+  	This::wxWindow(), Rect::{X::integer(), Y::integer(), W::integer(), H::integer()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>isExposed(This, X, Y) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="isExposed-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowisexposed">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isExposed(This, X, Y, W, H) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>X = integer()</v><v>Y = integer()</v><v>W = integer()</v><v>H = integer()</v></type>
+<desc><marker id="isExposed-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowisexposed">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isRetained(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="isRetained-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowisretained">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isShown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="isShown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowisshown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isTopLevel(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="isTopLevel-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowistoplevel">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>layout(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="layout-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowlayout">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>lineDown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="lineDown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowlinedown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>lineUp(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="lineUp-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowlineup">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>lower(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="lower-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowlower">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>makeModal(This) -&gt; ok</name>
+<fsummary>Equivalent to makeModal(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="makeModal-1"/>
+<p>Equivalent to <seealso marker="#makeModal-2">makeModal(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>makeModal(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Option = {modal, boolean()}</v></type>
+<desc><marker id="makeModal-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowmakemodal">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>move(This, Pt) -&gt; ok</name>
+<fsummary>Equivalent to move(This, Pt, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Pt = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="move-2"/>
+<p>Equivalent to <seealso marker="#move-3">move(This, Pt, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>move(This, X, Y) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="move-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowmove">external documentation</url>.
+  <br/> Also:<br/>
+  move(This, Pt, [Option]) -&gt; 'ok' when<br/>
+  	This::wxWindow(), Pt::{X::integer(), Y::integer()},<br/>
+  	Option :: {'flags', integer()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>move(This, X, Y, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>X = integer()</v><v>Y = integer()</v><v>Option = {flags, integer()}</v></type>
+<desc><marker id="move-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowmove">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>moveAfterInTabOrder(This, Win) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Win = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="moveAfterInTabOrder-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowmoveafterintaborder">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>moveBeforeInTabOrder(This, Win) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Win = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="moveBeforeInTabOrder-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowmovebeforeintaborder">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>navigate(This) -&gt; boolean()</name>
+<fsummary>Equivalent to navigate(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="navigate-1"/>
+<p>Equivalent to <seealso marker="#navigate-2">navigate(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>navigate(This, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Option = {flags, integer()}</v></type>
+<desc><marker id="navigate-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindownavigate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>pageDown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="pageDown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowpagedown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>pageUp(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="pageUp-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowpageup">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>popEventHandler(This) -&gt; <seealso marker="wxEvtHandler#type-wxEvtHandler">wxEvtHandler:wxEvtHandler()</seealso></name>
+<fsummary>Equivalent to popEventHandler(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="popEventHandler-1"/>
+<p>Equivalent to <seealso marker="#popEventHandler-2">popEventHandler(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>popEventHandler(This, Options::[Option]) -&gt; <seealso marker="wxEvtHandler#type-wxEvtHandler">wxEvtHandler:wxEvtHandler()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Option = {deleteHandler, boolean()}</v></type>
+<desc><marker id="popEventHandler-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowpopeventhandler">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>popupMenu(This, Menu) -&gt; boolean()</name>
+<fsummary>Equivalent to popupMenu(This, Menu, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Menu = <seealso marker="wxMenu#type-wxMenu">wxMenu:wxMenu()</seealso></v></type>
+<desc><marker id="popupMenu-2"/>
+<p>Equivalent to <seealso marker="#popupMenu-3">popupMenu(This, Menu, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>popupMenu(This, Menu, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Menu = <seealso marker="wxMenu#type-wxMenu">wxMenu:wxMenu()</seealso></v><v>Option = {pos, {X::integer(), Y::integer()}}</v></type>
+<desc><marker id="popupMenu-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowpopupmenu">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>popupMenu(This, Menu, X, Y) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Menu = <seealso marker="wxMenu#type-wxMenu">wxMenu:wxMenu()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="popupMenu-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowpopupmenu">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>raise(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="raise-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowraise">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>refresh(This) -&gt; ok</name>
+<fsummary>Equivalent to refresh(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="refresh-1"/>
+<p>Equivalent to <seealso marker="#refresh-2">refresh(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>refresh(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Option = {eraseBackground, boolean()} | {rect, {X::integer(), Y::integer(), W::integer(), H::integer()}}</v></type>
+<desc><marker id="refresh-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowrefresh">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>refreshRect(This, Rect) -&gt; ok</name>
+<fsummary>Equivalent to refreshRect(This, Rect, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Rect = {X::integer(), Y::integer(), W::integer(), H::integer()}</v></type>
+<desc><marker id="refreshRect-2"/>
+<p>Equivalent to <seealso marker="#refreshRect-3">refreshRect(This, Rect, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>refreshRect(This, Rect, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Rect = {X::integer(), Y::integer(), W::integer(), H::integer()}</v><v>Option = {eraseBackground, boolean()}</v></type>
+<desc><marker id="refreshRect-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowrefreshrect">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>releaseMouse(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="releaseMouse-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowreleasemouse">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>removeChild(This, Child) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Child = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="removeChild-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowremovechild">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>reparent(This, NewParent) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>NewParent = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="reparent-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowreparent">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>screenToClient(This) -&gt; {X::integer(), Y::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="screenToClient-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowscreentoclient">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>screenToClient(This, Pt) -&gt; {X::integer(), Y::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Pt = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="screenToClient-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowscreentoclient">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>scrollLines(This, Lines) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Lines = integer()</v></type>
+<desc><marker id="scrollLines-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowscrolllines">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>scrollPages(This, Pages) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Pages = integer()</v></type>
+<desc><marker id="scrollPages-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowscrollpages">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>scrollWindow(This, Dx, Dy) -&gt; ok</name>
+<fsummary>Equivalent to scrollWindow(This, Dx, Dy, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Dx = integer()</v><v>Dy = integer()</v></type>
+<desc><marker id="scrollWindow-3"/>
+<p>Equivalent to <seealso marker="#scrollWindow-4">scrollWindow(This, Dx, Dy, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>scrollWindow(This, Dx, Dy, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Dx = integer()</v><v>Dy = integer()</v><v>Option = {rect, {X::integer(), Y::integer(), W::integer(), H::integer()}}</v></type>
+<desc><marker id="scrollWindow-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowscrollwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setAcceleratorTable(This, Accel) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Accel = <seealso marker="wxAcceleratorTable#type-wxAcceleratorTable">wxAcceleratorTable:wxAcceleratorTable()</seealso></v></type>
+<desc><marker id="setAcceleratorTable-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetacceleratortable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setAutoLayout(This, AutoLayout) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>AutoLayout = boolean()</v></type>
+<desc><marker id="setAutoLayout-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetautolayout">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setBackgroundColour(This, Colour) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setBackgroundColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetbackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setBackgroundStyle(This, Style) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Style = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></v></type>
+<desc><marker id="setBackgroundStyle-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetbackgroundstyle">external documentation</url>.
+ <br/> Style = ?wxBG_STYLE_SYSTEM | ?wxBG_STYLE_COLOUR | ?wxBG_STYLE_CUSTOM</p>
+</desc></func>
+<func>
+<name>setCaret(This, Caret) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Caret = <seealso marker="wxCaret#type-wxCaret">wxCaret:wxCaret()</seealso></v></type>
+<desc><marker id="setCaret-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetcaret">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setClientSize(This, Size) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Size = {W::integer(), H::integer()}</v></type>
+<desc><marker id="setClientSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetclientsize">external documentation</url>.
+  <br/> Also:<br/>
+  setClientSize(This, Rect) -&gt; 'ok' when<br/>
+  	This::wxWindow(), Rect::{X::integer(), Y::integer(), W::integer(), H::integer()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>setClientSize(This, Width, Height) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Width = integer()</v><v>Height = integer()</v></type>
+<desc><marker id="setClientSize-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetclientsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setContainingSizer(This, Sizer) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Sizer = <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></v></type>
+<desc><marker id="setContainingSizer-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetcontainingsizer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setCursor(This, Cursor) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Cursor = <seealso marker="wxCursor#type-wxCursor">wxCursor:wxCursor()</seealso></v></type>
+<desc><marker id="setCursor-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetcursor">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMaxSize(This, MaxSize) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>MaxSize = {W::integer(), H::integer()}</v></type>
+<desc><marker id="setMaxSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetmaxsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMinSize(This, MinSize) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>MinSize = {W::integer(), H::integer()}</v></type>
+<desc><marker id="setMinSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetminsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setOwnBackgroundColour(This, Colour) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setOwnBackgroundColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetownbackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setOwnFont(This, Font) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v></type>
+<desc><marker id="setOwnFont-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetownfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setOwnForegroundColour(This, Colour) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setOwnForegroundColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetownforegroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setDropTarget(This, DropTarget) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>DropTarget = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></v></type>
+<desc><marker id="setDropTarget-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetdroptarget">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setExtraStyle(This, ExStyle) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>ExStyle = integer()</v></type>
+<desc><marker id="setExtraStyle-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetextrastyle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFocus(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="setFocus-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetfocus">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFocusFromKbd(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="setFocusFromKbd-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetfocusfromkbd">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFont(This, Font) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v></type>
+<desc><marker id="setFont-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setForegroundColour(This, Colour) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setForegroundColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetforegroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setHelpText(This, Text) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setHelpText-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsethelptext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setId(This, Winid) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Winid = integer()</v></type>
+<desc><marker id="setId-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetid">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setLabel(This, Label) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setLabel-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetlabel">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setName(This, Name) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setName-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetname">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setPalette(This, Pal) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Pal = <seealso marker="wxPalette#type-wxPalette">wxPalette:wxPalette()</seealso></v></type>
+<desc><marker id="setPalette-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetpalette">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setScrollbar(This, Orient, Pos, ThumbVisible, Range) -&gt; ok</name>
+<fsummary>Equivalent to setScrollbar(This, Orient, Pos, ThumbVisible, Range, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Orient = integer()</v><v>Pos = integer()</v><v>ThumbVisible = integer()</v><v>Range = integer()</v></type>
+<desc><marker id="setScrollbar-5"/>
+<p>Equivalent to <seealso marker="#setScrollbar-6">setScrollbar(This, Orient, Pos, ThumbVisible, Range, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setScrollbar(This, Orient, Pos, ThumbVisible, Range, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Orient = integer()</v><v>Pos = integer()</v><v>ThumbVisible = integer()</v><v>Range = integer()</v><v>Option = {refresh, boolean()}</v></type>
+<desc><marker id="setScrollbar-6"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetscrollbar">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setScrollPos(This, Orient, Pos) -&gt; ok</name>
+<fsummary>Equivalent to setScrollPos(This, Orient, Pos, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Orient = integer()</v><v>Pos = integer()</v></type>
+<desc><marker id="setScrollPos-3"/>
+<p>Equivalent to <seealso marker="#setScrollPos-4">setScrollPos(This, Orient, Pos, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setScrollPos(This, Orient, Pos, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Orient = integer()</v><v>Pos = integer()</v><v>Option = {refresh, boolean()}</v></type>
+<desc><marker id="setScrollPos-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetscrollpos">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSize(This, Rect) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Rect = {X::integer(), Y::integer(), W::integer(), H::integer()}</v></type>
+<desc><marker id="setSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetsize">external documentation</url>.
+  <br/> Also:<br/>
+  setSize(This, Size) -&gt; 'ok' when<br/>
+  	This::wxWindow(), Size::{W::integer(), H::integer()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>setSize(This, Width, Height) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Width = integer()</v><v>Height = integer()</v></type>
+<desc><marker id="setSize-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetsize">external documentation</url>.
+  <br/> Also:<br/>
+  setSize(This, Rect, [Option]) -&gt; 'ok' when<br/>
+  	This::wxWindow(), Rect::{X::integer(), Y::integer(), W::integer(), H::integer()},<br/>
+  	Option :: {'sizeFlags', integer()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>setSize(This, X, Y, Width, Height) -&gt; ok</name>
+<fsummary>Equivalent to setSize(This, X, Y, Width, Height, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>X = integer()</v><v>Y = integer()</v><v>Width = integer()</v><v>Height = integer()</v></type>
+<desc><marker id="setSize-5"/>
+<p>Equivalent to <seealso marker="#setSize-6">setSize(This, X, Y, Width, Height, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setSize(This, X, Y, Width, Height, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>X = integer()</v><v>Y = integer()</v><v>Width = integer()</v><v>Height = integer()</v><v>Option = {sizeFlags, integer()}</v></type>
+<desc><marker id="setSize-6"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSizeHints(This, MinSize) -&gt; ok</name>
+<fsummary>Equivalent to setSizeHints(This, MinSize, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>MinSize = {W::integer(), H::integer()}</v></type>
+<desc><marker id="setSizeHints-2"/>
+<p>Equivalent to <seealso marker="#setSizeHints-3">setSizeHints(This, MinSize, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setSizeHints(This, MinW, MinH) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>MinW = integer()</v><v>MinH = integer()</v></type>
+<desc><marker id="setSizeHints-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetsizehints">external documentation</url>.
+  <br/> Also:<br/>
+  setSizeHints(This, MinSize, [Option]) -&gt; 'ok' when<br/>
+  	This::wxWindow(), MinSize::{W::integer(), H::integer()},<br/>
+  	Option :: {'maxSize', {W::integer(), H::integer()}}<br/>
+  		 | {'incSize', {W::integer(), H::integer()}}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>setSizeHints(This, MinW, MinH, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>MinW = integer()</v><v>MinH = integer()</v><v>Option = {maxW, integer()} | {maxH, integer()} | {incW, integer()} | {incH, integer()}</v></type>
+<desc><marker id="setSizeHints-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetsizehints">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSizer(This, Sizer) -&gt; ok</name>
+<fsummary>Equivalent to setSizer(This, Sizer, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Sizer = <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></v></type>
+<desc><marker id="setSizer-2"/>
+<p>Equivalent to <seealso marker="#setSizer-3">setSizer(This, Sizer, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setSizer(This, Sizer, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Sizer = <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></v><v>Option = {deleteOld, boolean()}</v></type>
+<desc><marker id="setSizer-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetsizer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSizerAndFit(This, Sizer) -&gt; ok</name>
+<fsummary>Equivalent to setSizerAndFit(This, Sizer, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Sizer = <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></v></type>
+<desc><marker id="setSizerAndFit-2"/>
+<p>Equivalent to <seealso marker="#setSizerAndFit-3">setSizerAndFit(This, Sizer, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setSizerAndFit(This, Sizer, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Sizer = <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></v><v>Option = {deleteOld, boolean()}</v></type>
+<desc><marker id="setSizerAndFit-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetsizerandfit">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setThemeEnabled(This, EnableTheme) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>EnableTheme = boolean()</v></type>
+<desc><marker id="setThemeEnabled-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetthemeenabled">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setToolTip(This, Tip) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Tip = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setToolTip-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsettooltip">external documentation</url>.
+  <br/> Also:<br/>
+  setToolTip(This, Tip) -&gt; 'ok' when<br/>
+  	This::wxWindow(), Tip::wxToolTip:wxToolTip().<br/>
+ </p>
+</desc></func>
+<func>
+<name>setVirtualSize(This, Size) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Size = {W::integer(), H::integer()}</v></type>
+<desc><marker id="setVirtualSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetvirtualsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setVirtualSize(This, X, Y) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="setVirtualSize-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetvirtualsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setVirtualSizeHints(This, MinSize) -&gt; ok</name>
+<fsummary>Equivalent to setVirtualSizeHints(This, MinSize, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>MinSize = {W::integer(), H::integer()}</v></type>
+<desc><marker id="setVirtualSizeHints-2"/>
+<p>Equivalent to <seealso marker="#setVirtualSizeHints-3">setVirtualSizeHints(This, MinSize, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setVirtualSizeHints(This, MinW, MinH) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>MinW = integer()</v><v>MinH = integer()</v></type>
+<desc><marker id="setVirtualSizeHints-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetvirtualsizehints">external documentation</url>.
+  <br/> Also:<br/>
+  setVirtualSizeHints(This, MinSize, [Option]) -&gt; 'ok' when<br/>
+  	This::wxWindow(), MinSize::{W::integer(), H::integer()},<br/>
+  	Option :: {'maxSize', {W::integer(), H::integer()}}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>setVirtualSizeHints(This, MinW, MinH, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>MinW = integer()</v><v>MinH = integer()</v><v>Option = {maxW, integer()} | {maxH, integer()}</v></type>
+<desc><marker id="setVirtualSizeHints-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetvirtualsizehints">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setWindowStyle(This, Style) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Style = integer()</v></type>
+<desc><marker id="setWindowStyle-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetwindowstyle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setWindowStyleFlag(This, Style) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Style = integer()</v></type>
+<desc><marker id="setWindowStyleFlag-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetwindowstyleflag">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setWindowVariant(This, Variant) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Variant = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></v></type>
+<desc><marker id="setWindowVariant-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetwindowvariant">external documentation</url>.
+ <br/> Variant = ?wxWINDOW_VARIANT_NORMAL | ?wxWINDOW_VARIANT_SMALL | ?wxWINDOW_VARIANT_MINI | ?wxWINDOW_VARIANT_LARGE | ?wxWINDOW_VARIANT_MAX</p>
+</desc></func>
+<func>
+<name>shouldInheritColours(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="shouldInheritColours-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowshouldinheritcolours">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>show(This) -&gt; boolean()</name>
+<fsummary>Equivalent to show(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="show-1"/>
+<p>Equivalent to <seealso marker="#show-2">show(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>show(This, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Option = {show, boolean()}</v></type>
+<desc><marker id="show-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowshow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>thaw(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="thaw-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowthaw">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>transferDataFromWindow(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="transferDataFromWindow-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowtransferdatafromwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>transferDataToWindow(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="transferDataToWindow-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowtransferdatatowindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>update(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="update-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowupdate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>updateWindowUI(This) -&gt; ok</name>
+<fsummary>Equivalent to updateWindowUI(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="updateWindowUI-1"/>
+<p>Equivalent to <seealso marker="#updateWindowUI-2">updateWindowUI(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>updateWindowUI(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Option = {flags, integer()}</v></type>
+<desc><marker id="updateWindowUI-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowupdatewindowui">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>validate(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="validate-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowvalidate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>warpPointer(This, X, Y) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="warpPointer-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowwarppointer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setTransparent(This, Alpha) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>Alpha = integer()</v></type>
+<desc><marker id="setTransparent-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsettransparent">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>canSetTransparent(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="canSetTransparent-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowcansettransparent">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isDoubleBuffered(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="isDoubleBuffered-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowisdoublebuffered">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setDoubleBuffered(This, On) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v><v>On = boolean()</v></type>
+<desc><marker id="setDoubleBuffered-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowsetdoublebuffered">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getContentScaleFactor(This) -&gt; number()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxWindow">wxWindow()</seealso></v></type>
+<desc><marker id="getContentScaleFactor-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxwindow.html#wxwindowgetcontentscalefactor">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxWindow">wxWindow()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

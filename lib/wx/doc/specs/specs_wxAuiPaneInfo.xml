@@ -1,0 +1,1327 @@
+<module name="wxAuiPaneInfo">
+<type>
+  <name>wxAuiPaneInfo</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxAuiPaneInfo">wxAuiPaneInfo()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>bestSize</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>bestSize(This, Size) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Size</typename><string>Size = {W :: integer(), H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Size</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>bestSize</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>bestSize(This, X, Y) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>bottom</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>bottom(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>bottomDockable</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>bottomDockable(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>bottomDockable</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>bottomDockable(This, Options :: [Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {b, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>caption</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>caption(This, C) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>C</typename><string>C = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>C</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>captionVisible</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>captionVisible(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>captionVisible</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>captionVisible(This, Options :: [Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {visible, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>centre</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>centre(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>centrePane</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>centrePane(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>closeButton</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>closeButton(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>closeButton</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>closeButton(This, Options :: [Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {visible, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>defaultPane</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>defaultPane(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>destroyOnClose</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroyOnClose(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>destroyOnClose</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>destroyOnClose(This, Options :: [Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {b, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>direction</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>direction(This, Direction) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Direction</typename><string>Direction = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Direction</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>dock</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>dock(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>dockable</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>dockable(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>dockable</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>dockable(This, Options :: [Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {b, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>fixed</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>fixed(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>float</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>float(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>floatable</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>floatable(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>floatable</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>floatable(This, Options :: [Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {b, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>floatingPosition</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>floatingPosition(This, Pos) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Pos</typename><string>Pos = {X :: integer(), Y :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Pos</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>floatingPosition</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>floatingPosition(This, X, Y) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>floatingSize</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>floatingSize(This, Size) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Size</typename><string>Size = {W :: integer(), H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Size</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>floatingSize</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>floatingSize(This, X, Y) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getDirection</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getDirection(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getFloatingPosition</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getFloatingPosition(This) -&gt; {X :: integer(), Y :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getFloatingSize</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getFloatingSize(This) -&gt; {W :: integer(), H :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>getFrame</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getFrame(This) -&gt; <seealso marker="wxFrame#type-wxFrame">wxFrame:wxFrame()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getLayer</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getLayer(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getPosition</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getPosition(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getRow</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getRow(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getWindow</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getWindow(This) -&gt; <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>gripper</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>gripper(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>gripper</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>gripper(This, Options :: [Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {visible, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>gripperTop</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>gripperTop(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>gripperTop</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>gripperTop(This, Options :: [Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {attop, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasBorder</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasBorder(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasCaption</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasCaption(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasCloseButton</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasCloseButton(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasFlag</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>hasFlag(This, Flag) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Flag</typename><string>Flag = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Flag</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasGripper</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasGripper(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasGripperTop</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasGripperTop(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasMaximizeButton</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasMaximizeButton(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasMinimizeButton</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasMinimizeButton(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasPinButton</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasPinButton(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hide</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hide(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isBottomDockable</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isBottomDockable(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isDocked</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isDocked(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isFixed</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isFixed(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isFloatable</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isFloatable(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isFloating</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isFloating(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isLeftDockable</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isLeftDockable(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isMovable</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isMovable(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isOk</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isOk(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isResizable</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isResizable(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isRightDockable</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isRightDockable(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isShown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isShown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isToolbar</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isToolbar(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isTopDockable</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isTopDockable(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>layer</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>layer(This, Layer) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Layer</typename><string>Layer = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Layer</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>left</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>left(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>leftDockable</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>leftDockable(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>leftDockable</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>leftDockable(This, Options :: [Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {b, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>maxSize</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>maxSize(This, Size) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Size</typename><string>Size = {W :: integer(), H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Size</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>maxSize</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>maxSize(This, X, Y) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>maximizeButton</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>maximizeButton(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>maximizeButton</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>maximizeButton(This, Options :: [Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {visible, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>minSize</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>minSize(This, Size) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Size</typename><string>Size = {W :: integer(), H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Size</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>minSize</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>minSize(This, X, Y) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>minimizeButton</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>minimizeButton(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>minimizeButton</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>minimizeButton(This, Options :: [Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {visible, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>movable</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>movable(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>movable</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>movable(This, Options :: [Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {b, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>name</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>name(This, N) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>N</typename><string>N = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>N</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>new() -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(C) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>C</typename><string>C = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>C</anno>
+</spec>
+<spec>
+  <name>paneBorder</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>paneBorder(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>paneBorder</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>paneBorder(This, Options :: [Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {visible, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>pinButton</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>pinButton(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>pinButton</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>pinButton(This, Options :: [Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {visible, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>position</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>position(This, Pos) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Pos</typename><string>Pos = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Pos</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>resizable</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>resizable(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>resizable</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>resizable(This, Options :: [Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {resizable, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>right</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>right(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>rightDockable</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>rightDockable(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>rightDockable</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>rightDockable(This, Options :: [Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {b, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>row</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>row(This, Row) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Row</typename><string>Row = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Row</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>safeSet</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>safeSet(This, Source) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = Source = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Source</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Source</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setFlag</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setFlag(This, Flag, Option_state) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Flag</typename><string>Flag = integer()</string></subtype>
+        <subtype><typename>Option_state</typename><string>Option_state = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Flag</anno>
+  <anno>Option_state</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>show</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>show(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>show</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>show(This, Options :: [Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {show, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>toolbarPane</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>toolbarPane(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>top</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>top(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>topDockable</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>topDockable(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>topDockable</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>topDockable(This, Options :: [Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {b, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>window</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>window(This, W) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></string></subtype>
+        <subtype><typename>W</typename><string>W = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:29:47.</timestamp>
+</module>

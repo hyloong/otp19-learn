@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxBitmap</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxBitmap.xml</file></header>
+<module>wxBitmap</module>
+<modulesummary>See external documentation: wxBitmap.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html">wxBitmap</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxBitmap"/>wxBitmap()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxBitmap">wxBitmap()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmapwxbitmap">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Filename) -&gt; <seealso marker="#type-wxBitmap">wxBitmap()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Filename = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="new-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmapwxbitmap">external documentation</url>.
+  <br/> Also:<br/>
+  new(Image) -&gt; wxBitmap() when<br/>
+  	Image::wxImage:wxImage().<br/></p>
+ 
+ <p><br/> Type = ?wxBITMAP_TYPE_INVALID | ?wxBITMAP_TYPE_BMP | ?wxBITMAP_TYPE_BMP_RESOURCE | ?wxBITMAP_TYPE_RESOURCE | ?wxBITMAP_TYPE_ICO | ?wxBITMAP_TYPE_ICO_RESOURCE | ?wxBITMAP_TYPE_CUR | ?wxBITMAP_TYPE_CUR_RESOURCE | ?wxBITMAP_TYPE_XBM | ?wxBITMAP_TYPE_XBM_DATA | ?wxBITMAP_TYPE_XPM | ?wxBITMAP_TYPE_XPM_DATA | ?wxBITMAP_TYPE_TIF | ?wxBITMAP_TYPE_TIF_RESOURCE | ?wxBITMAP_TYPE_GIF | ?wxBITMAP_TYPE_GIF_RESOURCE | ?wxBITMAP_TYPE_PNG | ?wxBITMAP_TYPE_PNG_RESOURCE | ?wxBITMAP_TYPE_JPEG | ?wxBITMAP_TYPE_JPEG_RESOURCE | ?wxBITMAP_TYPE_PNM | ?wxBITMAP_TYPE_PNM_RESOURCE | ?wxBITMAP_TYPE_PCX | ?wxBITMAP_TYPE_PCX_RESOURCE | ?wxBITMAP_TYPE_PICT | ?wxBITMAP_TYPE_PICT_RESOURCE | ?wxBITMAP_TYPE_ICON | ?wxBITMAP_TYPE_ICON_RESOURCE | ?wxBITMAP_TYPE_ANI | ?wxBITMAP_TYPE_IFF | ?wxBITMAP_TYPE_TGA | ?wxBITMAP_TYPE_MACCURSOR | ?wxBITMAP_TYPE_MACCURSOR_RESOURCE | ?wxBITMAP_TYPE_ANY</p>
+</desc></func>
+<func>
+<name>new(Width, Height) -&gt; <seealso marker="#type-wxBitmap">wxBitmap()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Width = integer()</v><v>Height = integer()</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmapwxbitmap">external documentation</url>.
+  <br/> Also:<br/>
+  new(Filename, [Option]) -&gt; wxBitmap() when<br/>
+  	Filename::unicode:chardata(),<br/>
+  	Option :: {'type', wx:wx_enum()};<br/>
+        (Image, [Option]) -&gt; wxBitmap() when<br/>
+  	Image::wxImage:wxImage(),<br/>
+  	Option :: {'depth', integer()}.<br/></p>
+ 
+ <p><br/> Type = ?wxBITMAP_TYPE_INVALID | ?wxBITMAP_TYPE_BMP | ?wxBITMAP_TYPE_BMP_RESOURCE | ?wxBITMAP_TYPE_RESOURCE | ?wxBITMAP_TYPE_ICO | ?wxBITMAP_TYPE_ICO_RESOURCE | ?wxBITMAP_TYPE_CUR | ?wxBITMAP_TYPE_CUR_RESOURCE | ?wxBITMAP_TYPE_XBM | ?wxBITMAP_TYPE_XBM_DATA | ?wxBITMAP_TYPE_XPM | ?wxBITMAP_TYPE_XPM_DATA | ?wxBITMAP_TYPE_TIF | ?wxBITMAP_TYPE_TIF_RESOURCE | ?wxBITMAP_TYPE_GIF | ?wxBITMAP_TYPE_GIF_RESOURCE | ?wxBITMAP_TYPE_PNG | ?wxBITMAP_TYPE_PNG_RESOURCE | ?wxBITMAP_TYPE_JPEG | ?wxBITMAP_TYPE_JPEG_RESOURCE | ?wxBITMAP_TYPE_PNM | ?wxBITMAP_TYPE_PNM_RESOURCE | ?wxBITMAP_TYPE_PCX | ?wxBITMAP_TYPE_PCX_RESOURCE | ?wxBITMAP_TYPE_PICT | ?wxBITMAP_TYPE_PICT_RESOURCE | ?wxBITMAP_TYPE_ICON | ?wxBITMAP_TYPE_ICON_RESOURCE | ?wxBITMAP_TYPE_ANI | ?wxBITMAP_TYPE_IFF | ?wxBITMAP_TYPE_TGA | ?wxBITMAP_TYPE_MACCURSOR | ?wxBITMAP_TYPE_MACCURSOR_RESOURCE | ?wxBITMAP_TYPE_ANY</p>
+</desc></func>
+<func>
+<name>new(Bits, Width, Height) -&gt; <seealso marker="#type-wxBitmap">wxBitmap()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Bits = binary()</v><v>Width = integer()</v><v>Height = integer()</v></type>
+<desc><marker id="new-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmapwxbitmap">external documentation</url>.
+  <br/> Also:<br/>
+  new(Width, Height, [Option]) -&gt; wxBitmap() when<br/>
+  	Width::integer(), Height::integer(),<br/>
+  	Option :: {'depth', integer()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>new(Bits, Width, Height, Options::[Option]) -&gt; <seealso marker="#type-wxBitmap">wxBitmap()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Bits = binary()</v><v>Width = integer()</v><v>Height = integer()</v><v>Option = {depth, integer()}</v></type>
+<desc><marker id="new-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmapwxbitmap">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>convertToImage(This) -&gt; <seealso marker="wxImage#type-wxImage">wxImage:wxImage()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></v></type>
+<desc><marker id="convertToImage-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmapconverttoimage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>copyFromIcon(This, Icon) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></v><v>Icon = <seealso marker="wxIcon#type-wxIcon">wxIcon:wxIcon()</seealso></v></type>
+<desc><marker id="copyFromIcon-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmapcopyfromicon">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(This, Width, Height) -&gt; boolean()</name>
+<fsummary>Equivalent to create(This, Width, Height, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></v><v>Width = integer()</v><v>Height = integer()</v></type>
+<desc><marker id="create-3"/>
+<p>Equivalent to <seealso marker="#create-4">create(This, Width, Height, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>create(This, Width, Height, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></v><v>Width = integer()</v><v>Height = integer()</v><v>Option = {depth, integer()}</v></type>
+<desc><marker id="create-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmapcreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDepth(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></v></type>
+<desc><marker id="getDepth-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmapgetdepth">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getHeight(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></v></type>
+<desc><marker id="getHeight-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmapgetheight">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPalette(This) -&gt; <seealso marker="wxPalette#type-wxPalette">wxPalette:wxPalette()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></v></type>
+<desc><marker id="getPalette-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmapgetpalette">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMask(This) -&gt; <seealso marker="wxMask#type-wxMask">wxMask:wxMask()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></v></type>
+<desc><marker id="getMask-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmapgetmask">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getWidth(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></v></type>
+<desc><marker id="getWidth-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmapgetwidth">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSubBitmap(This, Rect) -&gt; <seealso marker="#type-wxBitmap">wxBitmap()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></v><v>Rect = {X::integer(), Y::integer(), W::integer(), H::integer()}</v></type>
+<desc><marker id="getSubBitmap-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmapgetsubbitmap">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>loadFile(This, Name) -&gt; boolean()</name>
+<fsummary>Equivalent to loadFile(This, Name, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="loadFile-2"/>
+<p>Equivalent to <seealso marker="#loadFile-3">loadFile(This, Name, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>loadFile(This, Name, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {type, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</v></type>
+<desc><marker id="loadFile-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmaploadfile">external documentation</url>.
+ <br/> Type = ?wxBITMAP_TYPE_INVALID | ?wxBITMAP_TYPE_BMP | ?wxBITMAP_TYPE_BMP_RESOURCE | ?wxBITMAP_TYPE_RESOURCE | ?wxBITMAP_TYPE_ICO | ?wxBITMAP_TYPE_ICO_RESOURCE | ?wxBITMAP_TYPE_CUR | ?wxBITMAP_TYPE_CUR_RESOURCE | ?wxBITMAP_TYPE_XBM | ?wxBITMAP_TYPE_XBM_DATA | ?wxBITMAP_TYPE_XPM | ?wxBITMAP_TYPE_XPM_DATA | ?wxBITMAP_TYPE_TIF | ?wxBITMAP_TYPE_TIF_RESOURCE | ?wxBITMAP_TYPE_GIF | ?wxBITMAP_TYPE_GIF_RESOURCE | ?wxBITMAP_TYPE_PNG | ?wxBITMAP_TYPE_PNG_RESOURCE | ?wxBITMAP_TYPE_JPEG | ?wxBITMAP_TYPE_JPEG_RESOURCE | ?wxBITMAP_TYPE_PNM | ?wxBITMAP_TYPE_PNM_RESOURCE | ?wxBITMAP_TYPE_PCX | ?wxBITMAP_TYPE_PCX_RESOURCE | ?wxBITMAP_TYPE_PICT | ?wxBITMAP_TYPE_PICT_RESOURCE | ?wxBITMAP_TYPE_ICON | ?wxBITMAP_TYPE_ICON_RESOURCE | ?wxBITMAP_TYPE_ANI | ?wxBITMAP_TYPE_IFF | ?wxBITMAP_TYPE_TGA | ?wxBITMAP_TYPE_MACCURSOR | ?wxBITMAP_TYPE_MACCURSOR_RESOURCE | ?wxBITMAP_TYPE_ANY</p>
+</desc></func>
+<func>
+<name>ok(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></v></type>
+<desc><marker id="ok-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmapok">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>saveFile(This, Name, Type) -&gt; boolean()</name>
+<fsummary>Equivalent to saveFile(This, Name, Type, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Type = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></v></type>
+<desc><marker id="saveFile-3"/>
+<p>Equivalent to <seealso marker="#saveFile-4">saveFile(This, Name, Type, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>saveFile(This, Name, Type, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Type = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></v><v>Option = {palette, <seealso marker="wxPalette#type-wxPalette">wxPalette:wxPalette()</seealso>}</v></type>
+<desc><marker id="saveFile-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmapsavefile">external documentation</url>.
+ <br/> Type = ?wxBITMAP_TYPE_INVALID | ?wxBITMAP_TYPE_BMP | ?wxBITMAP_TYPE_BMP_RESOURCE | ?wxBITMAP_TYPE_RESOURCE | ?wxBITMAP_TYPE_ICO | ?wxBITMAP_TYPE_ICO_RESOURCE | ?wxBITMAP_TYPE_CUR | ?wxBITMAP_TYPE_CUR_RESOURCE | ?wxBITMAP_TYPE_XBM | ?wxBITMAP_TYPE_XBM_DATA | ?wxBITMAP_TYPE_XPM | ?wxBITMAP_TYPE_XPM_DATA | ?wxBITMAP_TYPE_TIF | ?wxBITMAP_TYPE_TIF_RESOURCE | ?wxBITMAP_TYPE_GIF | ?wxBITMAP_TYPE_GIF_RESOURCE | ?wxBITMAP_TYPE_PNG | ?wxBITMAP_TYPE_PNG_RESOURCE | ?wxBITMAP_TYPE_JPEG | ?wxBITMAP_TYPE_JPEG_RESOURCE | ?wxBITMAP_TYPE_PNM | ?wxBITMAP_TYPE_PNM_RESOURCE | ?wxBITMAP_TYPE_PCX | ?wxBITMAP_TYPE_PCX_RESOURCE | ?wxBITMAP_TYPE_PICT | ?wxBITMAP_TYPE_PICT_RESOURCE | ?wxBITMAP_TYPE_ICON | ?wxBITMAP_TYPE_ICON_RESOURCE | ?wxBITMAP_TYPE_ANI | ?wxBITMAP_TYPE_IFF | ?wxBITMAP_TYPE_TGA | ?wxBITMAP_TYPE_MACCURSOR | ?wxBITMAP_TYPE_MACCURSOR_RESOURCE | ?wxBITMAP_TYPE_ANY</p>
+</desc></func>
+<func>
+<name>setDepth(This, Depth) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></v><v>Depth = integer()</v></type>
+<desc><marker id="setDepth-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmapsetdepth">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setHeight(This, Height) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></v><v>Height = integer()</v></type>
+<desc><marker id="setHeight-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmapsetheight">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMask(This, Mask) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></v><v>Mask = <seealso marker="wxMask#type-wxMask">wxMask:wxMask()</seealso></v></type>
+<desc><marker id="setMask-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmapsetmask">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setPalette(This, Palette) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></v><v>Palette = <seealso marker="wxPalette#type-wxPalette">wxPalette:wxPalette()</seealso></v></type>
+<desc><marker id="setPalette-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmapsetpalette">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setWidth(This, Width) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmap">wxBitmap()</seealso></v><v>Width = integer()</v></type>
+<desc><marker id="setWidth-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmap.html#wxbitmapsetwidth">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxBitmap">wxBitmap()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

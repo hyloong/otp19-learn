@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxFrame</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxFrame.xml</file></header>
+<module>wxFrame</module>
+<modulesummary>See external documentation: wxFrame.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxframe.html">wxFrame</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxTopLevelWindow">wxTopLevelWindow</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxFrame"/>wxFrame()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxFrame">wxFrame()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxframe.html#wxframewxframe">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id, Title) -&gt; <seealso marker="#type-wxFrame">wxFrame()</seealso></name>
+<fsummary>Equivalent to new(Parent, Id, Title, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="new-3"/>
+<p>Equivalent to <seealso marker="#new-4">new(Parent, Id, Title, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id, Title, Options::[Option]) -&gt; <seealso marker="#type-wxFrame">wxFrame()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()}</v></type>
+<desc><marker id="new-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxframe.html#wxframewxframe">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id, Title) -&gt; boolean()</name>
+<fsummary>Equivalent to create(This, Parent, Id, Title, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFrame">wxFrame()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="create-4"/>
+<p>Equivalent to <seealso marker="#create-5">create(This, Parent, Id, Title, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id, Title, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFrame">wxFrame()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()}</v></type>
+<desc><marker id="create-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxframe.html#wxframecreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createStatusBar(This) -&gt; <seealso marker="wxStatusBar#type-wxStatusBar">wxStatusBar:wxStatusBar()</seealso></name>
+<fsummary>Equivalent to createStatusBar(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFrame">wxFrame()</seealso></v></type>
+<desc><marker id="createStatusBar-1"/>
+<p>Equivalent to <seealso marker="#createStatusBar-2">createStatusBar(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>createStatusBar(This, Options::[Option]) -&gt; <seealso marker="wxStatusBar#type-wxStatusBar">wxStatusBar:wxStatusBar()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFrame">wxFrame()</seealso></v><v>Option = {number, integer()} | {style, integer()} | {id, integer()}</v></type>
+<desc><marker id="createStatusBar-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxframe.html#wxframecreatestatusbar">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createToolBar(This) -&gt; <seealso marker="wxToolBar#type-wxToolBar">wxToolBar:wxToolBar()</seealso></name>
+<fsummary>Equivalent to createToolBar(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFrame">wxFrame()</seealso></v></type>
+<desc><marker id="createToolBar-1"/>
+<p>Equivalent to <seealso marker="#createToolBar-2">createToolBar(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>createToolBar(This, Options::[Option]) -&gt; <seealso marker="wxToolBar#type-wxToolBar">wxToolBar:wxToolBar()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFrame">wxFrame()</seealso></v><v>Option = {style, integer()} | {id, integer()}</v></type>
+<desc><marker id="createToolBar-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxframe.html#wxframecreatetoolbar">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getClientAreaOrigin(This) -&gt; {X::integer(), Y::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFrame">wxFrame()</seealso></v></type>
+<desc><marker id="getClientAreaOrigin-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxframe.html#wxframegetclientareaorigin">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMenuBar(This) -&gt; <seealso marker="wxMenuBar#type-wxMenuBar">wxMenuBar:wxMenuBar()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFrame">wxFrame()</seealso></v></type>
+<desc><marker id="getMenuBar-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxframe.html#wxframegetmenubar">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getStatusBar(This) -&gt; <seealso marker="wxStatusBar#type-wxStatusBar">wxStatusBar:wxStatusBar()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFrame">wxFrame()</seealso></v></type>
+<desc><marker id="getStatusBar-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxframe.html#wxframegetstatusbar">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getStatusBarPane(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFrame">wxFrame()</seealso></v></type>
+<desc><marker id="getStatusBarPane-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxframe.html#wxframegetstatusbarpane">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getToolBar(This) -&gt; <seealso marker="wxToolBar#type-wxToolBar">wxToolBar:wxToolBar()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFrame">wxFrame()</seealso></v></type>
+<desc><marker id="getToolBar-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxframe.html#wxframegettoolbar">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>processCommand(This, Winid) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFrame">wxFrame()</seealso></v><v>Winid = integer()</v></type>
+<desc><marker id="processCommand-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxframe.html#wxframeprocesscommand">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>sendSizeEvent(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFrame">wxFrame()</seealso></v></type>
+<desc><marker id="sendSizeEvent-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxframe.html#wxframesendsizeevent">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMenuBar(This, Menubar) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFrame">wxFrame()</seealso></v><v>Menubar = <seealso marker="wxMenuBar#type-wxMenuBar">wxMenuBar:wxMenuBar()</seealso></v></type>
+<desc><marker id="setMenuBar-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxframe.html#wxframesetmenubar">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setStatusBar(This, Statbar) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFrame">wxFrame()</seealso></v><v>Statbar = <seealso marker="wxStatusBar#type-wxStatusBar">wxStatusBar:wxStatusBar()</seealso></v></type>
+<desc><marker id="setStatusBar-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxframe.html#wxframesetstatusbar">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setStatusBarPane(This, N) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFrame">wxFrame()</seealso></v><v>N = integer()</v></type>
+<desc><marker id="setStatusBarPane-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxframe.html#wxframesetstatusbarpane">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setStatusText(This, Text) -&gt; ok</name>
+<fsummary>Equivalent to setStatusText(This, Text, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFrame">wxFrame()</seealso></v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setStatusText-2"/>
+<p>Equivalent to <seealso marker="#setStatusText-3">setStatusText(This, Text, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setStatusText(This, Text, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFrame">wxFrame()</seealso></v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {number, integer()}</v></type>
+<desc><marker id="setStatusText-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxframe.html#wxframesetstatustext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setStatusWidths(This, Widths_field) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFrame">wxFrame()</seealso></v><v>Widths_field = [integer()]</v></type>
+<desc><marker id="setStatusWidths-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxframe.html#wxframesetstatuswidths">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setToolBar(This, Toolbar) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFrame">wxFrame()</seealso></v><v>Toolbar = <seealso marker="wxToolBar#type-wxToolBar">wxToolBar:wxToolBar()</seealso></v></type>
+<desc><marker id="setToolBar-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxframe.html#wxframesettoolbar">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxFrame">wxFrame()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

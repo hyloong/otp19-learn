@@ -1,7 +1,7 @@
 %%
 %% %CopyrightBegin%
 %% 
-%% Copyright Ericsson AB 2004-2016. All Rights Reserved.
+%% Copyright Ericsson AB 2004-2017. All Rights Reserved.
 %% 
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -108,6 +108,7 @@ only_simulated() ->
      tolerate_missing_CR,
      userinfo,
      bad_response,
+     timeout_redirect,
      internal_server_error,
      invalid_http,
      invalid_chunk_size,
@@ -163,21 +164,17 @@ init_per_group(misc = Group, Config) ->
     ok = httpc:set_options([{ipfamily, Inet}]),
     Config;
 
+
 init_per_group(Group, Config0) when Group =:= sim_https; Group =:= https->
-    ct:timetrap({seconds, 30}),
-    start_apps(Group),
-    StartSsl = try ssl:start()
+    catch crypto:stop(),
+    try crypto:start() of
+        ok ->
+            ct:timetrap({seconds, 30}),
+            start_apps(Group),
+            do_init_per_group(Group, Config0)
     catch
-	Error:Reason ->
-	    {skip, lists:flatten(io_lib:format("Failed to start apps for https Error=~p Reason=~p", [Error, Reason]))}
-    end,
-    case StartSsl of
-	{error, {already_started, _}} ->
-	    do_init_per_group(Group, Config0);
-	ok ->
-	    do_init_per_group(Group, Config0);
-	_ ->
-	    StartSsl
+        _:_ ->
+            {skip, "Crypto did not start"}
     end;
 
 init_per_group(Group, Config0) ->
@@ -787,6 +784,14 @@ bad_response(Config) when is_list(Config) ->
     {error, Reason} = httpc:request(URL1),
 
     ct:print("Wrong Statusline: ~p~n", [Reason]).
+%%-------------------------------------------------------------------------
+
+timeout_redirect() ->
+    [{doc, "Test that timeout works for redirects, check ERL-420."}].
+timeout_redirect(Config) when is_list(Config) ->
+    URL = url(group_name(Config), "/redirect_to_missing_crlf.html", Config),
+    {error, timeout} = httpc:request(get, {URL, []}, [{timeout, 400}], []).
+
 %%-------------------------------------------------------------------------
 
 internal_server_error(doc) ->
@@ -1918,6 +1923,16 @@ handle_uri(_,"/missing_crlf.html",_,_,_,_) ->
     "HTTP/1.1 200 ok" ++
 	"Content-Length:32\r\n" ++
 	"<HTML><BODY>foobar</BODY></HTML>";
+
+handle_uri(_,"/redirect_to_missing_crlf.html",Port,_,Socket,_) ->
+    NewUri = url_start(Socket) ++
+	integer_to_list(Port) ++ "/missing_crlf.html",
+    Body = "<HTML><BODY><a href=" ++ NewUri ++
+	">New place</a></BODY></HTML>",
+    "HTTP/1.1 303 See Other \r\n" ++
+	"Location:" ++ NewUri ++  "\r\n" ++
+	"Content-Length:" ++ integer_to_list(length(Body))
+	++ "\r\n\r\n" ++ Body;
 
 handle_uri(_,"/wrong_statusline.html",_,_,_,_) ->
     "ok 200 HTTP/1.1\r\n\r\n" ++

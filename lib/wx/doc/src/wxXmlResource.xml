@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxXmlResource</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxXmlResource.xml</file></header>
+<module>wxXmlResource</module>
+<modulesummary>See external documentation: wxXmlResource.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html">wxXmlResource</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxXmlResource"/>wxXmlResource()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></name>
+<fsummary>Equivalent to new([]).
+</fsummary>
+
+<desc><marker id="new-0"/>
+<p>Equivalent to <seealso marker="#new-1">new([])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Options::[Option]) -&gt; <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Option = {flags, integer()} | {domain, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>}</v></type>
+<desc><marker id="new-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourcewxxmlresource">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Filemask, Options::[Option]) -&gt; <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Filemask = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {flags, integer()} | {domain, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>}</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourcewxxmlresource">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>attachUnknownControl(This, Name, Control) -&gt; boolean()</name>
+<fsummary>Equivalent to attachUnknownControl(This, Name, Control, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Control = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="attachUnknownControl-3"/>
+<p>Equivalent to <seealso marker="#attachUnknownControl-4">attachUnknownControl(This, Name, Control, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>attachUnknownControl(This, Name, Control, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Control = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {parent, <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso>}</v></type>
+<desc><marker id="attachUnknownControl-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourceattachunknowncontrol">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>clearHandlers(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v></type>
+<desc><marker id="clearHandlers-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourceclearhandlers">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>compareVersion(This, Major, Minor, Release, Revision) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v><v>Major = integer()</v><v>Minor = integer()</v><v>Release = integer()</v><v>Revision = integer()</v></type>
+<desc><marker id="compareVersion-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourcecompareversion">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>get() -&gt; <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="get-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourceget">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFlags(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v></type>
+<desc><marker id="getFlags-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourcegetflags">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getVersion(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v></type>
+<desc><marker id="getVersion-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourcegetversion">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getXRCID(Str_id) -&gt; integer()</name>
+<fsummary>Equivalent to getXRCID(Str_id, []).
+</fsummary>
+<type>
+<v>Str_id = [<seealso marker="unicode#type-chardata">unicode:chardata()</seealso>]</v></type>
+<desc><marker id="getXRCID-1"/>
+<p>Equivalent to <seealso marker="#getXRCID-2">getXRCID(Str_id, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>getXRCID(Str_id, Options::[Option]) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Str_id = [<seealso marker="unicode#type-chardata">unicode:chardata()</seealso>]</v><v>Option = {value_if_not_found, integer()}</v></type>
+<desc><marker id="getXRCID-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourcegetxrcid">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>initAllHandlers(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v></type>
+<desc><marker id="initAllHandlers-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourceinitallhandlers">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>load(This, Filemask) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v><v>Filemask = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="load-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourceload">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>loadBitmap(This, Name) -&gt; <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="loadBitmap-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourceloadbitmap">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>loadDialog(This, Parent, Name) -&gt; <seealso marker="wxDialog#type-wxDialog">wxDialog:wxDialog()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="loadDialog-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourceloaddialog">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>loadDialog(This, Dlg, Parent, Name) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v><v>Dlg = <seealso marker="wxDialog#type-wxDialog">wxDialog:wxDialog()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="loadDialog-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourceloaddialog">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>loadFrame(This, Parent, Name) -&gt; <seealso marker="wxFrame#type-wxFrame">wxFrame:wxFrame()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="loadFrame-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourceloadframe">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>loadFrame(This, Frame, Parent, Name) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v><v>Frame = <seealso marker="wxFrame#type-wxFrame">wxFrame:wxFrame()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="loadFrame-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourceloadframe">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>loadIcon(This, Name) -&gt; <seealso marker="wxIcon#type-wxIcon">wxIcon:wxIcon()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="loadIcon-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourceloadicon">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>loadMenu(This, Name) -&gt; <seealso marker="wxMenu#type-wxMenu">wxMenu:wxMenu()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="loadMenu-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourceloadmenu">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>loadMenuBar(This, Name) -&gt; <seealso marker="wxMenuBar#type-wxMenuBar">wxMenuBar:wxMenuBar()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="loadMenuBar-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourceloadmenubar">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>loadMenuBar(This, Parent, Name) -&gt; <seealso marker="wxMenuBar#type-wxMenuBar">wxMenuBar:wxMenuBar()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="loadMenuBar-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourceloadmenubar">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>loadPanel(This, Parent, Name) -&gt; <seealso marker="wxPanel#type-wxPanel">wxPanel:wxPanel()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="loadPanel-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourceloadpanel">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>loadPanel(This, Panel, Parent, Name) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v><v>Panel = <seealso marker="wxPanel#type-wxPanel">wxPanel:wxPanel()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="loadPanel-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourceloadpanel">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>loadToolBar(This, Parent, Name) -&gt; <seealso marker="wxToolBar#type-wxToolBar">wxToolBar:wxToolBar()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="loadToolBar-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourceloadtoolbar">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>set(Res) -&gt; <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Res = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v></type>
+<desc><marker id="set-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourceset">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFlags(This, Flags) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v><v>Flags = integer()</v></type>
+<desc><marker id="setFlags-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourcesetflags">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>unload(This, Filename) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></v><v>Filename = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="unload-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxxmlresource.html#wxxmlresourceunload">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>xrcctrl(Window, Name, Type) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>Looks up a control with Name in a window created with XML
+  resources.</fsummary>
+<type>
+<v>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Name = string()</v><v>Type = atom()</v></type>
+<desc><marker id="xrcctrl-3"/>
+
+<p>Looks up a control with Name in a window created with XML
+  resources. You can use it to set/get values from controls.
+  The object is type casted to <em>Type</em>.
+  Example: <br/>
+   Xrc = wxXmlResource:get(), <br/>
+   Dlg = wxDialog:new(), <br/>
+   true = wxXmlResource:loadDialog(Xrc, Dlg, Frame, "controls_dialog"), <br/>
+   LCtrl = xrcctrl(Dlg, "controls_listctrl", wxListCtrl), <br/>
+   wxListCtrl:insertColumn(LCtrl, 0, "Name", [{width, 200}]), <br/></p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxXmlResource">wxXmlResource()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

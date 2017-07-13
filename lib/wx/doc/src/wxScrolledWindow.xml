@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxScrolledWindow</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxScrolledWindow.xml</file></header>
+<module>wxScrolledWindow</module>
+<modulesummary>See external documentation: wxScrolledWindow.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxscrolledwindow.html">wxScrolledWindow</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxPanel">wxPanel</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxScrolledWindow"/>wxScrolledWindow()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxScrolledWindow">wxScrolledWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxscrolledwindow.html#wxscrolledwindowwxscrolledwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent) -&gt; <seealso marker="#type-wxScrolledWindow">wxScrolledWindow()</seealso></name>
+<fsummary>Equivalent to new(Parent, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="new-1"/>
+<p>Equivalent to <seealso marker="#new-2">new(Parent, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Options::[Option]) -&gt; <seealso marker="#type-wxScrolledWindow">wxScrolledWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {winid, integer()} | {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()}</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxscrolledwindow.html#wxscrolledwindowwxscrolledwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>calcScrolledPosition(This, Pt) -&gt; {X::integer(), Y::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxScrolledWindow">wxScrolledWindow()</seealso></v><v>Pt = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="calcScrolledPosition-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxscrolledwindow.html#wxscrolledwindowcalcscrolledposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>calcScrolledPosition(This, X, Y) -&gt; {Xx::integer(), Yy::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxScrolledWindow">wxScrolledWindow()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="calcScrolledPosition-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxscrolledwindow.html#wxscrolledwindowcalcscrolledposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>calcUnscrolledPosition(This, Pt) -&gt; {X::integer(), Y::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxScrolledWindow">wxScrolledWindow()</seealso></v><v>Pt = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="calcUnscrolledPosition-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxscrolledwindow.html#wxscrolledwindowcalcunscrolledposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>calcUnscrolledPosition(This, X, Y) -&gt; {Xx::integer(), Yy::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxScrolledWindow">wxScrolledWindow()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="calcUnscrolledPosition-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxscrolledwindow.html#wxscrolledwindowcalcunscrolledposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>enableScrolling(This, X_scrolling, Y_scrolling) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxScrolledWindow">wxScrolledWindow()</seealso></v><v>X_scrolling = boolean()</v><v>Y_scrolling = boolean()</v></type>
+<desc><marker id="enableScrolling-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxscrolledwindow.html#wxscrolledwindowenablescrolling">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getScrollPixelsPerUnit(This) -&gt; {PixelsPerUnitX::integer(), PixelsPerUnitY::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxScrolledWindow">wxScrolledWindow()</seealso></v></type>
+<desc><marker id="getScrollPixelsPerUnit-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxscrolledwindow.html#wxscrolledwindowgetscrollpixelsperunit">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getViewStart(This) -&gt; {X::integer(), Y::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxScrolledWindow">wxScrolledWindow()</seealso></v></type>
+<desc><marker id="getViewStart-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxscrolledwindow.html#wxscrolledwindowgetviewstart">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>doPrepareDC(This, Dc) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxScrolledWindow">wxScrolledWindow()</seealso></v><v>Dc = <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso></v></type>
+<desc><marker id="doPrepareDC-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxscrolledwindow.html#wxscrolledwindowdopreparedc">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>prepareDC(This, Dc) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxScrolledWindow">wxScrolledWindow()</seealso></v><v>Dc = <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso></v></type>
+<desc><marker id="prepareDC-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxscrolledwindow.html#wxscrolledwindowpreparedc">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>scroll(This, X, Y) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxScrolledWindow">wxScrolledWindow()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="scroll-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxscrolledwindow.html#wxscrolledwindowscroll">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setScrollbars(This, PixelsPerUnitX, PixelsPerUnitY, NoUnitsX, NoUnitsY) -&gt; ok</name>
+<fsummary>Equivalent to setScrollbars(This, PixelsPerUnitX, PixelsPerUnitY,
+	      NoUnitsX, NoUnitsY, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxScrolledWindow">wxScrolledWindow()</seealso></v><v>PixelsPerUnitX = integer()</v><v>PixelsPerUnitY = integer()</v><v>NoUnitsX = integer()</v><v>NoUnitsY = integer()</v></type>
+<desc><marker id="setScrollbars-5"/>
+<p>Equivalent to <seealso marker="#setScrollbars-6">setScrollbars(This, PixelsPerUnitX, PixelsPerUnitY,
+	      NoUnitsX, NoUnitsY, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setScrollbars(This, PixelsPerUnitX, PixelsPerUnitY, NoUnitsX, NoUnitsY, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxScrolledWindow">wxScrolledWindow()</seealso></v><v>PixelsPerUnitX = integer()</v><v>PixelsPerUnitY = integer()</v><v>NoUnitsX = integer()</v><v>NoUnitsY = integer()</v><v>Option = {xPos, integer()} | {yPos, integer()} | {noRefresh, boolean()}</v></type>
+<desc><marker id="setScrollbars-6"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxscrolledwindow.html#wxscrolledwindowsetscrollbars">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setScrollRate(This, Xstep, Ystep) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxScrolledWindow">wxScrolledWindow()</seealso></v><v>Xstep = integer()</v><v>Ystep = integer()</v></type>
+<desc><marker id="setScrollRate-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxscrolledwindow.html#wxscrolledwindowsetscrollrate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setTargetWindow(This, Target) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxScrolledWindow">wxScrolledWindow()</seealso></v><v>Target = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="setTargetWindow-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxscrolledwindow.html#wxscrolledwindowsettargetwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxScrolledWindow">wxScrolledWindow()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

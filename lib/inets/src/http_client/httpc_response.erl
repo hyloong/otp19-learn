@@ -1,7 +1,7 @@
 %%
 %% %CopyrightBegin%
 %%
-%% Copyright Ericsson AB 2004-2016. All Rights Reserved.
+%% Copyright Ericsson AB 2004-2017. All Rights Reserved.
 %%
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -362,8 +362,9 @@ redirect(Response = {StatusLine, Headers, Body}, Request) ->
 		    {ok, error(Request, Reason), Data};
 		%% Automatic redirection
 		{ok, {Scheme, _, Host, Port, Path,  Query}} -> 
+		    HostPort = http_request:normalize_host(Scheme, Host, Port),
 		    NewHeaders = 
-			(Request#request.headers)#http_request_h{host = Host++":"++integer_to_list(Port)},
+			(Request#request.headers)#http_request_h{host = HostPort},
 		    NewRequest = 
 			Request#request{redircount = 
 					Request#request.redircount+1,
@@ -434,7 +435,7 @@ format_response({StatusLine, Headers, Body}) ->
     Length = list_to_integer(Headers#http_response_h.'content-length'),
     {NewBody, Data} = 
 	case Length of
-	    -1 -> % When no lenght indicator is provided
+	    -1 -> % When no length indicator is provided
 		{Body, <<>>};
 	    Length when (Length =< size(Body)) ->
 		<<BodyThisReq:Length/binary, Next/binary>> = Body,

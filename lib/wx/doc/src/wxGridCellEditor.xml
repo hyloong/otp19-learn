@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxGridCellEditor</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxGridCellEditor.xml</file></header>
+<module>wxGridCellEditor</module>
+<modulesummary>See external documentation: wxGridCellEditor.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcelleditor.html">wxGridCellEditor</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxGridCellEditor"/>wxGridCellEditor()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>create(This, Parent, Id, EvtHandler) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>EvtHandler = <seealso marker="wxEvtHandler#type-wxEvtHandler">wxEvtHandler:wxEvtHandler()</seealso></v></type>
+<desc><marker id="create-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcelleditor.html#wxgridcelleditorcreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isCreated(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></v></type>
+<desc><marker id="isCreated-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcelleditor.html#wxgridcelleditoriscreated">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSize(This, Rect) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></v><v>Rect = {X::integer(), Y::integer(), W::integer(), H::integer()}</v></type>
+<desc><marker id="setSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcelleditor.html#wxgridcelleditorsetsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>show(This, Show) -&gt; ok</name>
+<fsummary>Equivalent to show(This, Show, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></v><v>Show = boolean()</v></type>
+<desc><marker id="show-2"/>
+<p>Equivalent to <seealso marker="#show-3">show(This, Show, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>show(This, Show, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></v><v>Show = boolean()</v><v>Option = {attr, <seealso marker="wxGridCellAttr#type-wxGridCellAttr">wxGridCellAttr:wxGridCellAttr()</seealso>}</v></type>
+<desc><marker id="show-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcelleditor.html#wxgridcelleditorshow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>paintBackground(This, RectCell, Attr) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></v><v>RectCell = {X::integer(), Y::integer(), W::integer(), H::integer()}</v><v>Attr = <seealso marker="wxGridCellAttr#type-wxGridCellAttr">wxGridCellAttr:wxGridCellAttr()</seealso></v></type>
+<desc><marker id="paintBackground-3"/>
+<p><em>This function is deprecated: </em>deprecated function not available in wxWidgets-2.9 and later</p>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcelleditor.html#wxgridcelleditorpaintbackground">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>beginEdit(This, Row, Col, Grid) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></v><v>Row = integer()</v><v>Col = integer()</v><v>Grid = <seealso marker="wxGrid#type-wxGrid">wxGrid:wxGrid()</seealso></v></type>
+<desc><marker id="beginEdit-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcelleditor.html#wxgridcelleditorbeginedit">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>endEdit(This, Row, Col, Grid) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></v><v>Row = integer()</v><v>Col = integer()</v><v>Grid = <seealso marker="wxGrid#type-wxGrid">wxGrid:wxGrid()</seealso></v></type>
+<desc><marker id="endEdit-4"/>
+<p><em>This function is deprecated: </em>deprecated function not available in wxWidgets-2.9 and later</p>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcelleditor.html#wxgridcelleditorendedit">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>reset(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></v></type>
+<desc><marker id="reset-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcelleditor.html#wxgridcelleditorreset">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>startingKey(This, Event) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></v><v>Event = <seealso marker="wxKeyEvent#type-wxKeyEvent">wxKeyEvent:wxKeyEvent()</seealso></v></type>
+<desc><marker id="startingKey-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcelleditor.html#wxgridcelleditorstartingkey">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>startingClick(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></v></type>
+<desc><marker id="startingClick-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcelleditor.html#wxgridcelleditorstartingclick">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>handleReturn(This, Event) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></v><v>Event = <seealso marker="wxKeyEvent#type-wxKeyEvent">wxKeyEvent:wxKeyEvent()</seealso></v></type>
+<desc><marker id="handleReturn-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcelleditor.html#wxgridcelleditorhandlereturn">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

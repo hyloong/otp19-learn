@@ -1,7 +1,7 @@
 /*
  * %CopyrightBegin%
  * 
- * Copyright Ericsson AB 1996-2016. All Rights Reserved.
+ * Copyright Ericsson AB 1996-2017. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -553,7 +553,7 @@ static void pass_on(pid_t childpid)
 		FD_ZERO(&readfds);
 		FD_ZERO(&writefds);
 	    } else {
-		/* Some error occured */
+		/* Some error occurred */
 		ERRNO_ERR0(LOG_ERR,"Error in select.");
 		exit(1);
 	    }
@@ -863,7 +863,7 @@ static int open_log(int log_num, int flags)
   if (write_all(lfd, buf, strlen(buf)) < 0)
       status("Error in writing to log.\n");
 
-#if USE_FSYNC
+#ifdef USE_FSYNC
   fsync(lfd);
 #endif
 
@@ -893,7 +893,7 @@ static void write_to_log(int* lfd, int* log_num, char* buf, int len)
     status("Error in writing to log.\n");
   }
 
-#if USE_FSYNC
+#ifdef USE_FSYNC
   fsync(*lfd);
 #endif
 }

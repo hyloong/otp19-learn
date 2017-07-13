@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wx_misc</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wx_misc.xml</file></header>
+<module>wx_misc</module>
+<modulesummary>See external documentation: Misc.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html">Misc</url>.</p></description>
+<funcs>
+<func>
+<name>getKeyState(Key) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Key = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></v></type>
+<desc><marker id="getKeyState-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxgetkeystate">external documentation</url>.
+ <br/> Key = ?WXK_BACK | ?WXK_TAB | ?WXK_RETURN | ?WXK_ESCAPE | ?WXK_SPACE | ?WXK_DELETE | ?WXK_START | ?WXK_LBUTTON | ?WXK_RBUTTON | ?WXK_CANCEL | ?WXK_MBUTTON | ?WXK_CLEAR | ?WXK_SHIFT | ?WXK_ALT | ?WXK_CONTROL | ?WXK_MENU | ?WXK_PAUSE | ?WXK_CAPITAL | ?WXK_END | ?WXK_HOME | ?WXK_LEFT | ?WXK_UP | ?WXK_RIGHT | ?WXK_DOWN | ?WXK_SELECT | ?WXK_PRINT | ?WXK_EXECUTE | ?WXK_SNAPSHOT | ?WXK_INSERT | ?WXK_HELP | ?WXK_NUMPAD0 | ?WXK_NUMPAD1 | ?WXK_NUMPAD2 | ?WXK_NUMPAD3 | ?WXK_NUMPAD4 | ?WXK_NUMPAD5 | ?WXK_NUMPAD6 | ?WXK_NUMPAD7 | ?WXK_NUMPAD8 | ?WXK_NUMPAD9 | ?WXK_MULTIPLY | ?WXK_ADD | ?WXK_SEPARATOR | ?WXK_SUBTRACT | ?WXK_DECIMAL | ?WXK_DIVIDE | ?WXK_F1 | ?WXK_F2 | ?WXK_F3 | ?WXK_F4 | ?WXK_F5 | ?WXK_F6 | ?WXK_F7 | ?WXK_F8 | ?WXK_F9 | ?WXK_F10 | ?WXK_F11 | ?WXK_F12 | ?WXK_F13 | ?WXK_F14 | ?WXK_F15 | ?WXK_F16 | ?WXK_F17 | ?WXK_F18 | ?WXK_F19 | ?WXK_F20 | ?WXK_F21 | ?WXK_F22 | ?WXK_F23 | ?WXK_F24 | ?WXK_NUMLOCK | ?WXK_SCROLL | ?WXK_PAGEUP | ?WXK_PAGEDOWN | ?WXK_NUMPAD_SPACE | ?WXK_NUMPAD_TAB | ?WXK_NUMPAD_ENTER | ?WXK_NUMPAD_F1 | ?WXK_NUMPAD_F2 | ?WXK_NUMPAD_F3 | ?WXK_NUMPAD_F4 | ?WXK_NUMPAD_HOME | ?WXK_NUMPAD_LEFT | ?WXK_NUMPAD_UP | ?WXK_NUMPAD_RIGHT | ?WXK_NUMPAD_DOWN | ?WXK_NUMPAD_PAGEUP | ?WXK_NUMPAD_PAGEDOWN | ?WXK_NUMPAD_END | ?WXK_NUMPAD_BEGIN | ?WXK_NUMPAD_INSERT | ?WXK_NUMPAD_DELETE | ?WXK_NUMPAD_EQUAL | ?WXK_NUMPAD_MULTIPLY | ?WXK_NUMPAD_ADD | ?WXK_NUMPAD_SEPARATOR | ?WXK_NUMPAD_SUBTRACT | ?WXK_NUMPAD_DECIMAL | ?WXK_NUMPAD_DIVIDE | ?WXK_WINDOWS_LEFT | ?WXK_WINDOWS_RIGHT | ?WXK_WINDOWS_MENU | ?WXK_COMMAND | ?WXK_SPECIAL1 | ?WXK_SPECIAL2 | ?WXK_SPECIAL3 | ?WXK_SPECIAL4 | ?WXK_SPECIAL5 | ?WXK_SPECIAL6 | ?WXK_SPECIAL7 | ?WXK_SPECIAL8 | ?WXK_SPECIAL9 | ?WXK_SPECIAL10 | ?WXK_SPECIAL11 | ?WXK_SPECIAL12 | ?WXK_SPECIAL13 | ?WXK_SPECIAL14 | ?WXK_SPECIAL15 | ?WXK_SPECIAL16 | ?WXK_SPECIAL17 | ?WXK_SPECIAL18 | ?WXK_SPECIAL19 | ?WXK_SPECIAL20</p>
+</desc></func>
+<func>
+<name>getMousePosition() -&gt; {X::integer(), Y::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="getMousePosition-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxgetmouseposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMouseState() -&gt; <seealso marker="wx#type-wx_wxMouseState">wx:wx_wxMouseState()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="getMouseState-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxgetmousestate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setDetectableAutoRepeat(Flag) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Flag = boolean()</v></type>
+<desc><marker id="setDetectableAutoRepeat-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxsetdetectableautorepeat">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>bell() -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="bell-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxbell">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>findMenuItemId(Frame, MenuString, ItemString) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Frame = <seealso marker="wxFrame#type-wxFrame">wxFrame:wxFrame()</seealso></v><v>MenuString = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>ItemString = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="findMenuItemId-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxfindmenuitemid">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>genericFindWindowAtPoint(Pt) -&gt; <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Pt = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="genericFindWindowAtPoint-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxgenericfindwindowatpoint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>findWindowAtPoint(Pt) -&gt; <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Pt = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="findWindowAtPoint-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxfindwindowatpoint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>beginBusyCursor() -&gt; ok</name>
+<fsummary>Equivalent to beginBusyCursor([]).
+</fsummary>
+
+<desc><marker id="beginBusyCursor-0"/>
+<p>Equivalent to <seealso marker="#beginBusyCursor-1">beginBusyCursor([])</seealso>.</p>
+</desc></func>
+<func>
+<name>beginBusyCursor(Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Option = {cursor, <seealso marker="wxCursor#type-wxCursor">wxCursor:wxCursor()</seealso>}</v></type>
+<desc><marker id="beginBusyCursor-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxbeginbusycursor">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>endBusyCursor() -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="endBusyCursor-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxendbusycursor">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isBusy() -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="isBusy-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxisbusy">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>shutdown(WFlags) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>WFlags = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></v></type>
+<desc><marker id="shutdown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxshutdown">external documentation</url>.
+ <br/> WFlags = ?wxSHUTDOWN_POWEROFF | ?wxSHUTDOWN_REBOOT</p>
+</desc></func>
+<func>
+<name>shell() -&gt; boolean()</name>
+<fsummary>Equivalent to shell([]).
+</fsummary>
+
+<desc><marker id="shell-0"/>
+<p>Equivalent to <seealso marker="#shell-1">shell([])</seealso>.</p>
+</desc></func>
+<func>
+<name>shell(Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Option = {command, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>}</v></type>
+<desc><marker id="shell-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxshell">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>launchDefaultBrowser(Url) -&gt; boolean()</name>
+<fsummary>Equivalent to launchDefaultBrowser(Url, []).
+</fsummary>
+<type>
+<v>Url = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="launchDefaultBrowser-1"/>
+<p>Equivalent to <seealso marker="#launchDefaultBrowser-2">launchDefaultBrowser(Url, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>launchDefaultBrowser(Url, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Url = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {flags, integer()}</v></type>
+<desc><marker id="launchDefaultBrowser-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxlaunchdefaultbrowser">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getEmailAddress() -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="getEmailAddress-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxgetemailaddress">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getUserId() -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="getUserId-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxgetuserid">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getHomeDir() -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="getHomeDir-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxgethomedir">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>newId() -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="newId-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxnewid">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>registerId(Id) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Id = integer()</v></type>
+<desc><marker id="registerId-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxregisterid">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCurrentId() -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="getCurrentId-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxgetcurrentid">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getOsDescription() -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="getOsDescription-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxgetosdescription">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isPlatformLittleEndian() -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="isPlatformLittleEndian-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxisplatformlittleendian">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isPlatform64Bit() -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="isPlatform64Bit-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_miscellany.html#wxisplatform64bit">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>displaySize() -&gt; {Width::integer(), Height::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="displaySize-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_gdicmn.html#gdicmnwxdisplaysize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setCursor(Cursor) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Cursor = <seealso marker="wxCursor#type-wxCursor">wxCursor:wxCursor()</seealso></v></type>
+<desc><marker id="setCursor-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_gdicmn.html#gdicmnwxsetcursor">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

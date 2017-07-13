@@ -42,9 +42,9 @@
 
 %% User Events 
 -export([send/2, recv/3, close/2, shutdown/2,
-	 new_user/2, get_opts/2, set_opts/2, session_info/1, 
+	 new_user/2, get_opts/2, set_opts/2, 
 	 peer_certificate/1, renegotiation/1, negotiated_protocol/1, prf/5,
-	 connection_information/1, handle_common_event/5
+	 connection_information/2, handle_common_event/5
 	]).
 
 %% General gen_statem state functions with extra callback argument 
@@ -185,12 +185,12 @@ recv(Pid, Length, Timeout) ->
     call(Pid, {recv, Length, Timeout}).
 
 %%--------------------------------------------------------------------
--spec connection_information(pid()) -> {ok, list()} | {error, reason()}.
+-spec connection_information(pid(), boolean()) -> {ok, list()} | {error, reason()}.
 %%
 %% Description: Get the SNI hostname
 %%--------------------------------------------------------------------
-connection_information(Pid) when is_pid(Pid) ->
-    call(Pid, connection_information).
+connection_information(Pid, IncludeSecrityInfo) when is_pid(Pid) ->
+    call(Pid, {connection_information, IncludeSecrityInfo}).
 
 %%--------------------------------------------------------------------
 -spec close(pid(), {close, Timeout::integer() | 
@@ -245,14 +245,6 @@ get_opts(ConnectionPid, OptTags) ->
 %%--------------------------------------------------------------------
 set_opts(ConnectionPid, Options) ->
     call(ConnectionPid, {set_opts, Options}).
-
-%%--------------------------------------------------------------------
--spec session_info(pid()) -> {ok, list()} | {error, reason()}. 
-%%
-%% Description:  Returns info about the ssl session
-%%--------------------------------------------------------------------
-session_info(ConnectionPid) ->
-    call(ConnectionPid, session_info). 
 
 %%--------------------------------------------------------------------
 -spec peer_certificate(pid()) -> {ok, binary()| undefined} | {error, reason()}.
@@ -509,13 +501,7 @@ certify(internal, #certificate{} = Cert,
 	       crl_db = CRLDbInfo,
 	       ssl_options = Opts} = State, Connection) ->
     case ssl_handshake:certify(Cert, CertDbHandle, CertDbRef, 
-			       Opts#ssl_options.depth,
-			       Opts#ssl_options.verify,
-			       Opts#ssl_options.verify_fun,
-			       Opts#ssl_options.partial_chain,
-			       Opts#ssl_options.crl_check,
-			       CRLDbInfo,		       
-			       Role) of
+			       Opts, CRLDbInfo, Role) of
         {PeerCert, PublicKeyInfo} ->
 	    handle_peer_cert(Role, PeerCert, PublicKeyInfo,
 			     State#state{client_certificate_requested = false}, Connection);
@@ -775,14 +761,12 @@ connection({call, From}, renegotiate, #state{protocol_cb = Connection} = State,
 connection({call, From}, peer_certificate, 
 	   #state{session = #session{peer_certificate = Cert}} = State, _) ->
     hibernate_after(connection, State, [{reply, From,  {ok, Cert}}]); 
-connection({call, From}, connection_information, State, _) ->
+connection({call, From}, {connection_information, true}, State, _) ->
+    Info = connection_info(State) ++ security_info(State),
+    hibernate_after(connection, State, [{reply, From, {ok, Info}}]);
+connection({call, From}, {connection_information, false}, State, _) ->
     Info = connection_info(State),
     hibernate_after(connection, State, [{reply, From, {ok, Info}}]);
-connection({call, From}, session_info,  #state{session = #session{session_id = Id,
-								  cipher_suite = Suite}} = State, _) ->
-    SessionInfo = [{session_id, Id}, 
-		   {cipher_suite, ssl_cipher:erl_suite_definition(Suite)}],
-    hibernate_after(connection, State, [{reply, From, SessionInfo}]);
 connection({call, From}, negotiated_protocol, 
 	   #state{negotiated_protocol = undefined} = State, _) ->
     hibernate_after(connection, State, [{reply, From, {error, protocol_not_negotiated}}]);
@@ -858,7 +842,6 @@ handle_common_event(internal, #change_cipher_spec{type = <<1>>}, StateName,
 				StateName, State);
 handle_common_event(_Type, Msg, StateName, #state{negotiated_version = Version} = State, 
 		    _) ->
-    ct:pal("Unexpected msg ~p", [Msg]),
     Alert =  ?ALERT_REC(?FATAL,?UNEXPECTED_MESSAGE),
     handle_own_alert(Alert, Version, {StateName, Msg}, State).
 
@@ -922,14 +905,14 @@ handle_call({new_user, User}, From, StateName,
 handle_call({get_opts, OptTags}, From, _,
 		  #state{socket = Socket,
 			 transport_cb = Transport,
-			 socket_options = SockOpts}, _) ->
-    OptsReply = get_socket_opts(Transport, Socket, OptTags, SockOpts, []),
+			 socket_options = SockOpts}, Connection) ->
+    OptsReply = get_socket_opts(Connection, Transport, Socket, OptTags, SockOpts, []),
     {keep_state_and_data, [{reply, From, OptsReply}]};
 handle_call({set_opts, Opts0}, From, StateName, 
 	    #state{socket_options = Opts1, 
 			 socket = Socket,
-			 transport_cb = Transport} = State0, _) ->
-    {Reply, Opts} = set_socket_opts(Transport, Socket, Opts0, Opts1, []),
+			 transport_cb = Transport} = State0, Connection) ->
+    {Reply, Opts} = set_socket_opts(Connection, Transport, Socket, Opts0, Opts1, []),
     State = State0#state{socket_options = Opts},
     handle_active_option(Opts#socket_options.active, StateName, From, Reply, State);
     
@@ -1020,7 +1003,7 @@ terminate(_, _, #state{terminated = true}) ->
     %% Happens when user closes the connection using ssl:close/1
     %% we want to guarantee that Transport:close has been called
     %% when ssl:close/1 returns unless it is a downgrade where
-    %% we want to guarantee that close alert is recived before 
+    %% we want to guarantee that close alert is received before
     %% returning. In both cases terminate has been run manually
     %% before run by gen_statem which will end up here
     ok;
@@ -1195,7 +1178,8 @@ handle_alert(#alert{level = ?WARNING} = Alert, StateName,
 %%% Internal functions
 %%--------------------------------------------------------------------
 connection_info(#state{sni_hostname = SNIHostname, 
-		       session = #session{cipher_suite = CipherSuite, ecc = ECCCurve},
+		       session = #session{session_id = SessionId,
+                                          cipher_suite = CipherSuite, ecc = ECCCurve},
 		       protocol_cb = Connection,
 		       negotiated_version =  {_,_} = Version, 
 		       ssl_options = Opts}) ->
@@ -1210,8 +1194,17 @@ connection_info(#state{sni_hostname = SNIHostname,
 			[]
 		end,
     [{protocol, RecordCB:protocol_version(Version)},
+     {session_id, SessionId},
      {cipher_suite, CipherSuiteDef},
      {sni_hostname, SNIHostname} | CurveInfo] ++ ssl_options_list(Opts).
+
+security_info(#state{connection_states = ConnectionStates}) ->
+    #{security_parameters :=
+	  #security_parameters{client_random = ClientRand, 
+                               server_random = ServerRand,
+                               master_secret = MasterSecret}} =
+	ssl_record:current_connection_state(ConnectionStates, read),
+    [{client_random, ClientRand}, {server_random, ServerRand}, {master_secret, MasterSecret}].
 
 do_server_hello(Type, #hello_extensions{next_protocol_negotiation = NextProtocols} =
 		    ServerHelloExt,
@@ -1689,7 +1682,7 @@ request_client_cert(#state{ssl_options = #ssl_options{verify = verify_peer,
 	ssl_record:pending_connection_state(ConnectionStates0, read),
     TLSVersion =  ssl:tls_version(Version),
     HashSigns = ssl_handshake:available_signature_algs(SupportedHashSigns, 
-						       TLSVersion, [TLSVersion]),
+						       TLSVersion),
     Msg = ssl_handshake:certificate_request(CipherSuite, CertDbHandle, CertDbRef, 
 					    HashSigns, TLSVersion),
     State = Connection:queue_handshake(Msg, State0),
@@ -1917,42 +1910,39 @@ call(FsmPid, Event) ->
 	    {error, closed}
     end.
 
-get_socket_opts(_,_,[], _, Acc) ->
+get_socket_opts(_, _,_,[], _, Acc) ->
     {ok, Acc};
-get_socket_opts(Transport, Socket, [mode | Tags], SockOpts, Acc) ->
-    get_socket_opts(Transport, Socket, Tags, SockOpts, 
+get_socket_opts(Connection, Transport, Socket, [mode | Tags], SockOpts, Acc) ->
+    get_socket_opts(Connection, Transport, Socket, Tags, SockOpts, 
 		    [{mode, SockOpts#socket_options.mode} | Acc]);
-get_socket_opts(Transport, Socket, [packet | Tags], SockOpts, Acc) ->
+get_socket_opts(Connection, Transport, Socket, [packet | Tags], SockOpts, Acc) ->
     case SockOpts#socket_options.packet of
 	{Type, headers} ->
-	    get_socket_opts(Transport, Socket, Tags, SockOpts, [{packet, Type} | Acc]);
+	    get_socket_opts(Connection, Transport, Socket, Tags, SockOpts, [{packet, Type} | Acc]);
 	Type ->
-	    get_socket_opts(Transport, Socket, Tags, SockOpts, [{packet, Type} | Acc])
+	    get_socket_opts(Connection, Transport, Socket, Tags, SockOpts, [{packet, Type} | Acc])
     end;
-get_socket_opts(Transport, Socket, [header | Tags], SockOpts, Acc) ->
-    get_socket_opts(Transport, Socket, Tags, SockOpts, 
+get_socket_opts(Connection, Transport, Socket, [header | Tags], SockOpts, Acc) ->
+    get_socket_opts(Connection, Transport, Socket, Tags, SockOpts, 
 		    [{header, SockOpts#socket_options.header} | Acc]);
-get_socket_opts(Transport, Socket, [active | Tags], SockOpts, Acc) ->
-    get_socket_opts(Transport, Socket, Tags, SockOpts, 
+get_socket_opts(Connection, Transport, Socket, [active | Tags], SockOpts, Acc) ->
+    get_socket_opts(Connection, Transport, Socket, Tags, SockOpts, 
 		    [{active, SockOpts#socket_options.active} | Acc]);
-get_socket_opts(Transport, Socket, [Tag | Tags], SockOpts, Acc) ->
-    try tls_socket:getopts(Transport, Socket, [Tag]) of
-	{ok, [Opt]} ->
-	    get_socket_opts(Transport, Socket, Tags, SockOpts, [Opt | Acc]);
-	{error, Error} ->
-	    {error, {options, {socket_options, Tag, Error}}}
-    catch
-	%% So that inet behavior does not crash our process
-	_:Error -> {error, {options, {socket_options, Tag, Error}}}
+get_socket_opts(Connection, Transport, Socket, [Tag | Tags], SockOpts, Acc) ->
+    case Connection:getopts(Transport, Socket, [Tag]) of
+        {ok, [Opt]} ->
+            get_socket_opts(Connection, Transport, Socket, Tags, SockOpts, [Opt | Acc]);
+        {error, Reason} ->
+            {error, {options, {socket_options, Tag, Reason}}}
     end;
-get_socket_opts(_, _,Opts, _,_) ->
+get_socket_opts(_,_, _,Opts, _,_) ->
     {error, {options, {socket_options, Opts, function_clause}}}.
 
-set_socket_opts(_,_, [], SockOpts, []) ->
+set_socket_opts(_,_,_, [], SockOpts, []) ->
     {ok, SockOpts};
-set_socket_opts(Transport, Socket, [], SockOpts, Other) ->
+set_socket_opts(ConnectionCb, Transport, Socket, [], SockOpts, Other) ->
     %% Set non emulated options 
-    try tls_socket:setopts(Transport, Socket, Other) of
+    try ConnectionCb:setopts(Transport, Socket, Other) of
 	ok ->
 	    {ok, SockOpts};
 	{error, InetError} ->
@@ -1963,13 +1953,13 @@ set_socket_opts(Transport, Socket, [], SockOpts, Other) ->
 	    {{error, {options, {socket_options, Other, Error}}}, SockOpts}
     end;
 
-set_socket_opts(Transport,Socket, [{mode, Mode}| Opts], SockOpts, Other) 
+set_socket_opts(ConnectionCb, Transport,Socket, [{mode, Mode}| Opts], SockOpts, Other) 
   when Mode == list; Mode == binary ->
-    set_socket_opts(Transport, Socket, Opts, 
+    set_socket_opts(ConnectionCb, Transport, Socket, Opts, 
 		    SockOpts#socket_options{mode = Mode}, Other);
-set_socket_opts(_, _, [{mode, _} = Opt| _], SockOpts, _) ->
+set_socket_opts(_, _, _, [{mode, _} = Opt| _], SockOpts, _) ->
     {{error, {options, {socket_options, Opt}}}, SockOpts};
-set_socket_opts(Transport,Socket, [{packet, Packet}| Opts], SockOpts, Other) 
+set_socket_opts(ConnectionCb, Transport,Socket, [{packet, Packet}| Opts], SockOpts, Other) 
   when Packet == raw;
        Packet == 0;
        Packet == 1;
@@ -1985,26 +1975,26 @@ set_socket_opts(Transport,Socket, [{packet, Packet}| Opts], SockOpts, Other)
        Packet == httph;
        Packet == http_bin;
        Packet == httph_bin ->
-    set_socket_opts(Transport, Socket, Opts, 
+    set_socket_opts(ConnectionCb, Transport, Socket, Opts, 
 		    SockOpts#socket_options{packet = Packet}, Other);
-set_socket_opts(_, _, [{packet, _} = Opt| _], SockOpts, _) ->
+set_socket_opts(_, _, _, [{packet, _} = Opt| _], SockOpts, _) ->
     {{error, {options, {socket_options, Opt}}}, SockOpts};
-set_socket_opts(Transport, Socket, [{header, Header}| Opts], SockOpts, Other) 
+set_socket_opts(ConnectionCb, Transport, Socket, [{header, Header}| Opts], SockOpts, Other) 
   when is_integer(Header) ->
-    set_socket_opts(Transport, Socket, Opts, 
+    set_socket_opts(ConnectionCb, Transport, Socket, Opts, 
 		    SockOpts#socket_options{header = Header}, Other);
-set_socket_opts(_, _, [{header, _} = Opt| _], SockOpts, _) ->
+set_socket_opts(_, _, _, [{header, _} = Opt| _], SockOpts, _) ->
     {{error,{options, {socket_options, Opt}}}, SockOpts};
-set_socket_opts(Transport, Socket, [{active, Active}| Opts], SockOpts, Other) 
+set_socket_opts(ConnectionCb, Transport, Socket, [{active, Active}| Opts], SockOpts, Other) 
   when Active == once;
        Active == true;
        Active == false ->
-    set_socket_opts(Transport, Socket, Opts, 
+    set_socket_opts(ConnectionCb, Transport, Socket, Opts, 
 		    SockOpts#socket_options{active = Active}, Other);
-set_socket_opts(_, _, [{active, _} = Opt| _], SockOpts, _) ->
+set_socket_opts(_,_, _, [{active, _} = Opt| _], SockOpts, _) ->
     {{error, {options, {socket_options, Opt}} }, SockOpts};
-set_socket_opts(Transport, Socket, [Opt | Opts], SockOpts, Other) ->
-    set_socket_opts(Transport, Socket, Opts, SockOpts, [Opt | Other]).
+set_socket_opts(ConnectionCb, Transport, Socket, [Opt | Opts], SockOpts, Other) ->
+    set_socket_opts(ConnectionCb, Transport, Socket, Opts, SockOpts, [Opt | Other]).
 
 start_or_recv_cancel_timer(infinity, _RecvFrom) ->
     undefined;

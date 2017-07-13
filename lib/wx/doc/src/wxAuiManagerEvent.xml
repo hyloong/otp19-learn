@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxAuiManagerEvent</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxAuiManagerEvent.xml</file></header>
+<module>wxAuiManagerEvent</module>
+<modulesummary>See external documentation: wxAuiManagerEvent.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanagerevent.html">wxAuiManagerEvent</url>.
+  </p><taglist><tag>Use <seealso marker="wxEvtHandler#connect-3">wxEvtHandler:connect/3</seealso> with EventType:</tag>
+  <item><p><em>aui_pane_button</em>, <em>aui_pane_close</em>, <em>aui_pane_maximize</em>, <em>aui_pane_restore</em>, <em>aui_pane_activated</em>, <em>aui_render</em>, <em>aui_find_manager</em></p></item></taglist><p>
+  See also the message variant <seealso marker="wxEvtHandler#type-wxAuiManager">#wxAuiManager{</seealso>} event record type.</p>
+ 
+  <p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxEvent">wxEvent</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxAuiManagerEvent"/>wxAuiManagerEvent()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>setManager(This, Mgr) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManagerEvent">wxAuiManagerEvent()</seealso></v><v>Mgr = <seealso marker="wxAuiManager#type-wxAuiManager">wxAuiManager:wxAuiManager()</seealso></v></type>
+<desc><marker id="setManager-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanagerevent.html#wxauimanagereventsetmanager">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getManager(This) -&gt; <seealso marker="wxAuiManager#type-wxAuiManager">wxAuiManager:wxAuiManager()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManagerEvent">wxAuiManagerEvent()</seealso></v></type>
+<desc><marker id="getManager-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanagerevent.html#wxauimanagereventgetmanager">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setPane(This, P) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManagerEvent">wxAuiManagerEvent()</seealso></v><v>P = <seealso marker="wxAuiPaneInfo#type-wxAuiPaneInfo">wxAuiPaneInfo:wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="setPane-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanagerevent.html#wxauimanagereventsetpane">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPane(This) -&gt; <seealso marker="wxAuiPaneInfo#type-wxAuiPaneInfo">wxAuiPaneInfo:wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManagerEvent">wxAuiManagerEvent()</seealso></v></type>
+<desc><marker id="getPane-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanagerevent.html#wxauimanagereventgetpane">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setButton(This, B) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManagerEvent">wxAuiManagerEvent()</seealso></v><v>B = integer()</v></type>
+<desc><marker id="setButton-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanagerevent.html#wxauimanagereventsetbutton">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getButton(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManagerEvent">wxAuiManagerEvent()</seealso></v></type>
+<desc><marker id="getButton-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanagerevent.html#wxauimanagereventgetbutton">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setDC(This, Pdc) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManagerEvent">wxAuiManagerEvent()</seealso></v><v>Pdc = <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso></v></type>
+<desc><marker id="setDC-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanagerevent.html#wxauimanagereventsetdc">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDC(This) -&gt; <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManagerEvent">wxAuiManagerEvent()</seealso></v></type>
+<desc><marker id="getDC-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanagerevent.html#wxauimanagereventgetdc">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>veto(This) -&gt; ok</name>
+<fsummary>Equivalent to veto(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManagerEvent">wxAuiManagerEvent()</seealso></v></type>
+<desc><marker id="veto-1"/>
+<p>Equivalent to <seealso marker="#veto-2">veto(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>veto(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManagerEvent">wxAuiManagerEvent()</seealso></v><v>Option = {veto, boolean()}</v></type>
+<desc><marker id="veto-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanagerevent.html#wxauimanagereventveto">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getVeto(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManagerEvent">wxAuiManagerEvent()</seealso></v></type>
+<desc><marker id="getVeto-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanagerevent.html#wxauimanagereventgetveto">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setCanVeto(This, Can_veto) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManagerEvent">wxAuiManagerEvent()</seealso></v><v>Can_veto = boolean()</v></type>
+<desc><marker id="setCanVeto-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanagerevent.html#wxauimanagereventsetcanveto">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>canVeto(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiManagerEvent">wxAuiManagerEvent()</seealso></v></type>
+<desc><marker id="canVeto-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauimanagerevent.html#wxauimanagereventcanveto">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

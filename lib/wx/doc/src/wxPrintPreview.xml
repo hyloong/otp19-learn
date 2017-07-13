@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxPrintPreview</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxPrintPreview.xml</file></header>
+<module>wxPrintPreview</module>
+<modulesummary>See external documentation: wxPrintPreview.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintpreview.html">wxPrintPreview</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxPrintPreview"/>wxPrintPreview()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new(Printout) -&gt; <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></name>
+<fsummary>Equivalent to new(Printout, []).
+</fsummary>
+<type>
+<v>Printout = <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></v></type>
+<desc><marker id="new-1"/>
+<p>Equivalent to <seealso marker="#new-2">new(Printout, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Printout, Options::[Option]) -&gt; <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Printout = <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></v><v>Option = {printoutForPrinting, <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso>} | {data, <seealso marker="wxPrintDialogData#type-wxPrintDialogData">wxPrintDialogData:wxPrintDialogData()</seealso>}</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintpreview.html#wxprintpreviewwxprintpreview">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Printout, PrintoutForPrinting, Data) -&gt; <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Printout = <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></v><v>PrintoutForPrinting = <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></v><v>Data = <seealso marker="wxPrintData#type-wxPrintData">wxPrintData:wxPrintData()</seealso></v></type>
+<desc><marker id="new-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintpreview.html#wxprintpreviewwxprintpreview">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCanvas(This) -&gt; <seealso marker="wxPreviewCanvas#type-wxPreviewCanvas">wxPreviewCanvas:wxPreviewCanvas()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></v></type>
+<desc><marker id="getCanvas-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintpreview.html#wxprintpreviewgetcanvas">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCurrentPage(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></v></type>
+<desc><marker id="getCurrentPage-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintpreview.html#wxprintpreviewgetcurrentpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFrame(This) -&gt; <seealso marker="wxFrame#type-wxFrame">wxFrame:wxFrame()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></v></type>
+<desc><marker id="getFrame-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintpreview.html#wxprintpreviewgetframe">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMaxPage(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></v></type>
+<desc><marker id="getMaxPage-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintpreview.html#wxprintpreviewgetmaxpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMinPage(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></v></type>
+<desc><marker id="getMinPage-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintpreview.html#wxprintpreviewgetminpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPrintout(This) -&gt; <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></v></type>
+<desc><marker id="getPrintout-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintpreview.html#wxprintpreviewgetprintout">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPrintoutForPrinting(This) -&gt; <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></v></type>
+<desc><marker id="getPrintoutForPrinting-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintpreview.html#wxprintpreviewgetprintoutforprinting">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isOk(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></v></type>
+<desc><marker id="isOk-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintpreview.html#wxprintpreviewisok">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>paintPage(This, Canvas, Dc) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></v><v>Canvas = <seealso marker="wxPreviewCanvas#type-wxPreviewCanvas">wxPreviewCanvas:wxPreviewCanvas()</seealso></v><v>Dc = <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso></v></type>
+<desc><marker id="paintPage-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintpreview.html#wxprintpreviewpaintpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>print(This, Interactive) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></v><v>Interactive = boolean()</v></type>
+<desc><marker id="print-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintpreview.html#wxprintpreviewprint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>renderPage(This, PageNum) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></v><v>PageNum = integer()</v></type>
+<desc><marker id="renderPage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintpreview.html#wxprintpreviewrenderpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setCanvas(This, Canvas) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></v><v>Canvas = <seealso marker="wxPreviewCanvas#type-wxPreviewCanvas">wxPreviewCanvas:wxPreviewCanvas()</seealso></v></type>
+<desc><marker id="setCanvas-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintpreview.html#wxprintpreviewsetcanvas">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setCurrentPage(This, PageNum) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></v><v>PageNum = integer()</v></type>
+<desc><marker id="setCurrentPage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintpreview.html#wxprintpreviewsetcurrentpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFrame(This, Frame) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></v><v>Frame = <seealso marker="wxFrame#type-wxFrame">wxFrame:wxFrame()</seealso></v></type>
+<desc><marker id="setFrame-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintpreview.html#wxprintpreviewsetframe">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setPrintout(This, Printout) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></v><v>Printout = <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></v></type>
+<desc><marker id="setPrintout-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintpreview.html#wxprintpreviewsetprintout">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setZoom(This, Percent) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso></v><v>Percent = integer()</v></type>
+<desc><marker id="setZoom-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintpreview.html#wxprintpreviewsetzoom">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxPrintPreview">wxPrintPreview()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

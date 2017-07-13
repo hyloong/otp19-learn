@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxAuiNotebookEvent</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxAuiNotebookEvent.xml</file></header>
+<module>wxAuiNotebookEvent</module>
+<modulesummary>See external documentation: wxAuiNotebookEvent.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebookevent.html">wxAuiNotebookEvent</url>.
+  </p><taglist><tag>Use <seealso marker="wxEvtHandler#connect-3">wxEvtHandler:connect/3</seealso> with EventType:</tag>
+  <item><p><em>command_auinotebook_page_close</em>, <em>command_auinotebook_page_changed</em>, <em>command_auinotebook_page_changing</em>, <em>command_auinotebook_button</em>, <em>command_auinotebook_begin_drag</em>, <em>command_auinotebook_end_drag</em>, <em>command_auinotebook_drag_motion</em>, <em>command_auinotebook_allow_dnd</em>, <em>command_auinotebook_tab_middle_down</em>, <em>command_auinotebook_tab_middle_up</em>, <em>command_auinotebook_tab_right_down</em>, <em>command_auinotebook_tab_right_up</em>, <em>command_auinotebook_page_closed</em>, <em>command_auinotebook_drag_done</em>, <em>command_auinotebook_bg_dclick</em></p></item></taglist><p>
+  See also the message variant <seealso marker="wxEvtHandler#type-wxAuiNotebook">#wxAuiNotebook{</seealso>} event record type.</p>
+ 
+  <p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxNotifyEvent">wxNotifyEvent</seealso>
+  <br/><seealso marker="wxCommandEvent">wxCommandEvent</seealso>
+  <br/><seealso marker="wxEvent">wxEvent</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxAuiNotebookEvent"/>wxAuiNotebookEvent()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>setSelection(This, S) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebookEvent">wxAuiNotebookEvent()</seealso></v><v>S = integer()</v></type>
+<desc><marker id="setSelection-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebookevent.html#wxauinotebookeventsetselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSelection(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebookEvent">wxAuiNotebookEvent()</seealso></v></type>
+<desc><marker id="getSelection-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebookevent.html#wxauinotebookeventgetselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setOldSelection(This, S) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebookEvent">wxAuiNotebookEvent()</seealso></v><v>S = integer()</v></type>
+<desc><marker id="setOldSelection-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebookevent.html#wxauinotebookeventsetoldselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getOldSelection(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebookEvent">wxAuiNotebookEvent()</seealso></v></type>
+<desc><marker id="getOldSelection-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebookevent.html#wxauinotebookeventgetoldselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setDragSource(This, S) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebookEvent">wxAuiNotebookEvent()</seealso></v><v>S = <seealso marker="wxAuiNotebook#type-wxAuiNotebook">wxAuiNotebook:wxAuiNotebook()</seealso></v></type>
+<desc><marker id="setDragSource-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebookevent.html#wxauinotebookeventsetdragsource">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDragSource(This) -&gt; <seealso marker="wxAuiNotebook#type-wxAuiNotebook">wxAuiNotebook:wxAuiNotebook()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebookEvent">wxAuiNotebookEvent()</seealso></v></type>
+<desc><marker id="getDragSource-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebookevent.html#wxauinotebookeventgetdragsource">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

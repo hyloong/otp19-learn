@@ -28,13 +28,13 @@
 SHELL = /bin/sh
 
 # The top directory in which Erlang is unpacked
-ERL_TOP = /root/download/otp_src_19.3
+ERL_TOP = /root/download/otp_src_20.0
 
 # OTP release
-OTP = OTP-19
+OTP = OTP-20
 
 # erts (Erlang RunTime System) version
-ERTS = erts-8.3
+ERTS = erts-9.0
 
 # Include verbose output variables
 include $(ERL_TOP)/make/output.mk
@@ -125,7 +125,7 @@ BINDIR      = $(DESTDIR)$(EXTRA_PREFIX)$(bindir)
 #
 # Erlang base public files
 #
-ERL_BASE_PUB_FILES=erl erlc epmd run_erl to_erl dialyzer typer escript ct_run
+ERL_BASE_PUB_FILES=erl erlc epmd run_erl to_erl dialyzer escript ct_run
 
 # ERLANG_INST_LIBDIR is the top directory where the Erlang installation
 # will be located when running.
@@ -398,9 +398,9 @@ endif
 	  ERL_TOP=$(ERL_TOP) PATH=$(INST_PATH_PREFIX)"$${PATH}" \
 	    $(MAKE) BUILD_ALL=1 TESTROOT="$(RELEASE_ROOT)" release
 ifeq ($(RELEASE_ROOT),)
-	$(INSTALL_DATA) "$(ERL_TOP)/OTP_VERSION" "$(OTP_DEFAULT_RELEASE_PATH)/releases/19"
+	$(INSTALL_DATA) "$(ERL_TOP)/OTP_VERSION" "$(OTP_DEFAULT_RELEASE_PATH)/releases/20"
 else
-	$(INSTALL_DATA) "$(ERL_TOP)/OTP_VERSION" "$(RELEASE_ROOT)/releases/19"
+	$(INSTALL_DATA) "$(ERL_TOP)/OTP_VERSION" "$(RELEASE_ROOT)/releases/20"
 endif
 
 # ---------------------------------------------------------------
@@ -438,7 +438,7 @@ BOOT_BINDIR=$(BOOTSTRAP_ROOT)/bootstrap/erts/bin
 BEAM_EVM=$(ERL_TOP)/bin/$(TARGET)/beam_evm
 BOOTSTRAP_COMPILER  =  $(BOOTSTRAP_TOP)/primary_compiler
 
-.PHONY: emulator libs kernel stdlib compiler hipe typer syntax_tools preloaded
+.PHONY: emulator libs kernel stdlib compiler hipe syntax_tools preloaded
 
 emulator:
 	$(make_verbose)cd erts && ERL_TOP=$(ERL_TOP) $(MAKE) NO_START_SCRIPTS=true $(TYPE) FLAVOR=$(FLAVOR)
@@ -473,11 +473,6 @@ hipe:
 	$(make_verbose)cd lib/hipe && \
 	  ERL_TOP=$(ERL_TOP) PATH=$(BOOT_PREFIX)"$${PATH}" \
 		$(MAKE) opt BUILD_ALL=true
-
-typer:
-	$(make_verbose)cd lib/typer && \
-	ERL_TOP=$(ERL_TOP) PATH=$(BOOT_PREFIX)"$${PATH}" \
-	    $(MAKE) opt BUILD_ALL=true
 
 syntax_tools:
 	$(make_verbose)cd lib/syntax_tools && \
@@ -1031,9 +1026,9 @@ install.Install:
 
 install.otp_version:
 ifeq ($(ERLANG_LIBDIR),)
-	$(INSTALL_DATA) "$(ERL_TOP)/OTP_VERSION" "$(OTP_DEFAULT_RELEASE_PATH)/releases/19"
+	$(INSTALL_DATA) "$(ERL_TOP)/OTP_VERSION" "$(OTP_DEFAULT_RELEASE_PATH)/releases/20"
 else
-	$(INSTALL_DATA) "$(ERL_TOP)/OTP_VERSION" "$(ERLANG_LIBDIR)/releases/19"
+	$(INSTALL_DATA) "$(ERL_TOP)/OTP_VERSION" "$(ERLANG_LIBDIR)/releases/20"
 endif
 
 #

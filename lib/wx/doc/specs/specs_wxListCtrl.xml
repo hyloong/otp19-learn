@@ -1,0 +1,2095 @@
+<module name="wxListCtrl">
+<type>
+  <name>wxListCtrl</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxListCtrl">wxListCtrl()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>arrange</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>arrange(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>arrange</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>arrange(This, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {flag, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>assignImageList</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>assignImageList(This, ImageList, Which) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>ImageList</typename><string>ImageList = <seealso marker="wxImageList#type-wxImageList">wxImageList:wxImageList()</seealso></string></subtype>
+        <subtype><typename>Which</typename><string>Which = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ImageList</anno>
+  <anno>This</anno>
+  <anno>Which</anno>
+</spec>
+<spec>
+  <name>cacheBestSize</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>canSetTransparent</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>captureMouse</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>center</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>center</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>centerOnParent</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>centerOnParent</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>centre</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>centre</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>centreOnParent</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>centreOnParent</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>clearAll</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>clearAll(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>clearBackground</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>clientToScreen</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>clientToScreen</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>close</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>close</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>connect</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>connect</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>convertDialogToPixels</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>convertPixelsToDialog</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>create</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>create(This, Parent) -&gt; <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+        <subtype><typename>Parent</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Parent</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>create</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>create(This, Parent, Options :: [Option]) -&gt; <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+        <subtype><typename>Parent</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{winid, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{pos, {X :: integer(), Y :: integer()}} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{size, {W :: integer(), H :: integer()}} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{style, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{validator, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{onGetItemText, function()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{onGetItemAttr, function()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{onGetItemColumnImage, function()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Parent</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>deleteAllItems</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>deleteAllItems(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>deleteColumn</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>deleteColumn(This, Col) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Col</typename><string>Col = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Col</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>deleteItem</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>deleteItem(This, Item) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Item</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>destroyChildren</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>disable</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>disconnect</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>disconnect</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>disconnect</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>dragAcceptFiles</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>editLabel</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>editLabel(This, Item) -&gt; <seealso marker="wxTextCtrl#type-wxTextCtrl">wxTextCtrl:wxTextCtrl()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Item</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>enable</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>enable</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>ensureVisible</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>ensureVisible(This, Item) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Item</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>findItem</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>findItem(This, Start, Str) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Start</typename><string>Start = integer()</string></subtype>
+        <subtype><typename>Str</typename><string>Str = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Start</anno>
+  <anno>Str</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>findItem</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>findItem(This, Start, Str, Options :: [Option]) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Start</typename><string>Start = integer()</string></subtype>
+        <subtype><typename>Str</typename><string>Str = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {partial, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Start</anno>
+  <anno>Str</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>findItem</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>findItem(This, Start, Pt, Direction) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Start</typename><string>Start = integer()</string></subtype>
+        <subtype><typename>Pt</typename><string>Pt = {X :: integer(), Y :: integer()}</string></subtype>
+        <subtype><typename>Direction</typename><string>Direction = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Direction</anno>
+  <anno>Pt</anno>
+  <anno>Start</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>findWindow</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>fit</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>fitInside</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>freeze</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getAcceleratorTable</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getBackgroundColour</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getBackgroundStyle</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getBestSize</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getCaret</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getCharHeight</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getCharWidth</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getChildren</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getClientSize</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getColumn</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>getColumn(This, Col, Item) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Col</typename><string>Col = integer()</string></subtype>
+        <subtype><typename>Item</typename><string>Item = <seealso marker="wxListItem#type-wxListItem">wxListItem:wxListItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Col</anno>
+  <anno>Item</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getColumnCount</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getColumnCount(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getColumnWidth</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getColumnWidth(This, Col) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Col</typename><string>Col = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Col</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getContainingSizer</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getContentScaleFactor</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getCountPerPage</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getCountPerPage(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getCursor</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getDropTarget</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getEditControl</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getEditControl(This) -&gt; <seealso marker="wxTextCtrl#type-wxTextCtrl">wxTextCtrl:wxTextCtrl()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getEventHandler</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getExtraStyle</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getFont</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getForegroundColour</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getGrandParent</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getHandle</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getHelpText</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getId</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getImageList</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getImageList(This, Which) -&gt; <seealso marker="wxImageList#type-wxImageList">wxImageList:wxImageList()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Which</typename><string>Which = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>Which</anno>
+</spec>
+<spec>
+  <name>getItem</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getItem(This, Info) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Info</typename><string>Info = <seealso marker="wxListItem#type-wxListItem">wxListItem:wxListItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Info</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getItemBackgroundColour</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getItemBackgroundColour(This, Item) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Item</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getItemCount</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getItemCount(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getItemData</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getItemData(This, Item) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Item</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getItemFont</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getItemFont(This, Item) -&gt; <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Item</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getItemPosition</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getItemPosition(This, Item) -&gt; Result</head>
+      <guard>
+        <subtype><typename>Result</typename><string>Result = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{Res :: boolean(), Pos :: {X :: integer(), Y :: integer()}}</string></subtype>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Item</anno>
+  <anno>Pos</anno>
+  <anno>Res</anno>
+  <anno>Result</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getItemRect</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getItemRect(This, Item) -&gt; Result</head>
+      <guard>
+        <subtype><typename>Result</typename><string>Result = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{Res :: boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Rect ::<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}}</string></subtype>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Item</anno>
+  <anno>Rect</anno>
+  <anno>Res</anno>
+  <anno>Result</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getItemRect</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>getItemRect(This, Item, Options :: [Option]) -&gt; Result</head>
+      <guard>
+        <subtype><typename>Result</typename><string>Result = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{Res :: boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Rect ::<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}}</string></subtype>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = integer()</string></subtype>
+        <subtype><typename>Option</typename><string>Option = {code, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Item</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Rect</anno>
+  <anno>Res</anno>
+  <anno>Result</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getItemSpacing</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getItemSpacing(This) -&gt; {W :: integer(), H :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>getItemState</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>getItemState(This, Item, StateMask) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = StateMask = integer()</string></subtype>
+        <subtype><typename>StateMask</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Item</anno>
+  <anno>StateMask</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getItemText</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getItemText(This, Item) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Item</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getItemTextColour</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getItemTextColour(This, Item) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Item</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getLabel</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getMaxSize</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getMinSize</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getName</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getNextItem</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getNextItem(This, Item) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Item</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getNextItem</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>getNextItem(This, Item, Options :: [Option]) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = integer()</string></subtype>
+        <subtype><typename>Option</typename><string>Option = {geometry, integer()} | {state, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Item</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getParent</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getPosition</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getRect</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getScreenPosition</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getScreenRect</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getScrollPos</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getScrollRange</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getScrollThumb</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getSelectedItemCount</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getSelectedItemCount(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getSize</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getSizer</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getTextColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getTextColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getTextExtent</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getTextExtent</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getToolTip</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getTopItem</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getTopItem(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getUpdateRegion</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getViewRect</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getViewRect(This) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getVirtualSize</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getWindowStyleFlag</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getWindowVariant</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>hasCapture</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>hasScrollbar</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>hasTransparentBackground</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>hide</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>hitTest</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>hitTest(This, Point) -&gt; Result</head>
+      <guard>
+        <subtype><typename>Result</typename><string>Result = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{Res :: integer(), Flags :: integer(), PSubItem :: integer()}</string></subtype>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Point</typename><string>Point = {X :: integer(), Y :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Flags</anno>
+  <anno>PSubItem</anno>
+  <anno>Point</anno>
+  <anno>Res</anno>
+  <anno>Result</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>inheritAttributes</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>initDialog</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>insertColumn</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>insertColumn(This, Col, Heading) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Col</typename><string>Col = integer()</string></subtype>
+        <subtype><typename>Heading</typename><string>Heading = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Col</anno>
+  <anno>Heading</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>insertColumn</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>insertColumn(This, Col, Info) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Col</typename><string>Col = integer()</string></subtype>
+        <subtype><typename>Info</typename><string>Info = <seealso marker="wxListItem#type-wxListItem">wxListItem:wxListItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Col</anno>
+  <anno>Info</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>insertColumn</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>insertColumn(This, Col, Heading, Options :: [Option]) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Col</typename><string>Col = integer()</string></subtype>
+        <subtype><typename>Heading</typename><string>Heading = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {format, integer()} | {width, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Col</anno>
+  <anno>Heading</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>insertItem</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>insertItem(This, Info) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Info</typename><string>Info = <seealso marker="wxListItem#type-wxListItem">wxListItem:wxListItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Info</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>insertItem</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>insertItem(This, Index, ImageIndex) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Index</typename><string>Index = ImageIndex = integer()</string></subtype>
+        <subtype><typename>ImageIndex</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ImageIndex</anno>
+  <anno>Index</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>insertItem</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>insertItem(This, Index, Label) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Index</typename><string>Index = integer()</string></subtype>
+        <subtype><typename>Label</typename><string>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Index</anno>
+  <anno>Label</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>insertItem</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>insertItem(This, Index, Label, ImageIndex) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Index</typename><string>Index = integer()</string></subtype>
+        <subtype><typename>Label</typename><string>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>ImageIndex</typename><string>ImageIndex = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ImageIndex</anno>
+  <anno>Index</anno>
+  <anno>Label</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>invalidateBestSize</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>isDoubleBuffered</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>isEnabled</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>isExposed</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>isExposed</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>isExposed</name>
+  <arity>5</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>isRetained</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>isShown</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>isTopLevel</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>layout</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>lineDown</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>lineUp</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>lower</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>makeModal</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>makeModal</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>move</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>move</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>move</name>
+  <arity>4</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>moveAfterInTabOrder</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>moveBeforeInTabOrder</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>navigate</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>navigate</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>new() -&gt; <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(Parent) -&gt; <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></head>
+      <guard>
+        <subtype><typename>Parent</typename><string>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Parent</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>new(Parent, Options :: [Option]) -&gt; <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></head>
+      <guard>
+        <subtype><typename>Parent</typename><string>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{winid, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{pos, {X :: integer(), Y :: integer()}} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{size, {W :: integer(), H :: integer()}} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{style, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{validator, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{onGetItemText, function()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{onGetItemAttr, function()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{onGetItemColumnImage, function()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Parent</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>pageDown</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>pageUp</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>popEventHandler</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>popEventHandler</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>popupMenu</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>popupMenu</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>popupMenu</name>
+  <arity>4</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>raise</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>refresh</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>refresh</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>refreshItem</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>refreshItem(This, Item) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Item</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>refreshItems</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>refreshItems(This, ItemFrom, ItemTo) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>ItemFrom</typename><string>ItemFrom = ItemTo = integer()</string></subtype>
+        <subtype><typename>ItemTo</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ItemFrom</anno>
+  <anno>ItemTo</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>refreshRect</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>refreshRect</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>releaseMouse</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>removeChild</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>reparent</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>screenToClient</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>screenToClient</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>scrollLines</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>scrollList</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>scrollList(This, Dx, Dy) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Dx</typename><string>Dx = Dy = integer()</string></subtype>
+        <subtype><typename>Dy</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Dx</anno>
+  <anno>Dy</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>scrollPages</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>scrollWindow</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>scrollWindow</name>
+  <arity>4</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setAcceleratorTable</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setAutoLayout</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setBackgroundColour</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setBackgroundColour(This, Colour) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Colour</typename><string>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Colour</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setBackgroundStyle</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setCaret</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setClientSize</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setClientSize</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setColumn</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setColumn(This, Col, Item) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Col</typename><string>Col = integer()</string></subtype>
+        <subtype><typename>Item</typename><string>Item = <seealso marker="wxListItem#type-wxListItem">wxListItem:wxListItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Col</anno>
+  <anno>Item</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setColumnWidth</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setColumnWidth(This, Col, Width) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Col</typename><string>Col = Width = integer()</string></subtype>
+        <subtype><typename>Width</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Col</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>setContainingSizer</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setCursor</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setDoubleBuffered</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setDropTarget</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setExtraStyle</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setFocus</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setFocusFromKbd</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setFont</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setForegroundColour</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setHelpText</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setId</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setImageList</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setImageList(This, ImageList, Which) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>ImageList</typename><string>ImageList = <seealso marker="wxImageList#type-wxImageList">wxImageList:wxImageList()</seealso></string></subtype>
+        <subtype><typename>Which</typename><string>Which = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ImageList</anno>
+  <anno>This</anno>
+  <anno>Which</anno>
+</spec>
+<spec>
+  <name>setItem</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setItem(This, Info) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Info</typename><string>Info = <seealso marker="wxListItem#type-wxListItem">wxListItem:wxListItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Info</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setItem</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>setItem(This, Index, Col, Label) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Index</typename><string>Index = Col = integer()</string></subtype>
+        <subtype><typename>Col</typename><string/></subtype>
+        <subtype><typename>Label</typename><string>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Col</anno>
+  <anno>Index</anno>
+  <anno>Label</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setItem</name>
+  <arity>5</arity>
+  <contract>
+    <clause>
+      <head>setItem(This, Index, Col, Label, Options :: [Option]) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Index</typename><string>Index = Col = integer()</string></subtype>
+        <subtype><typename>Col</typename><string/></subtype>
+        <subtype><typename>Label</typename><string>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {imageId, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Col</anno>
+  <anno>Index</anno>
+  <anno>Label</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setItemBackgroundColour</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setItemBackgroundColour(This, Item, Col) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = integer()</string></subtype>
+        <subtype><typename>Col</typename><string>Col = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Col</anno>
+  <anno>Item</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setItemColumnImage</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>setItemColumnImage(This, Item, Column, Image) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = Column = Image = integer()</string></subtype>
+        <subtype><typename>Column</typename><string></string></subtype>
+        <subtype><typename>Image</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Column</anno>
+  <anno>Image</anno>
+  <anno>Item</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setItemCount</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setItemCount(This, Count) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Count</typename><string>Count = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Count</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setItemData</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setItemData(This, Item, Data) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = Data = integer()</string></subtype>
+        <subtype><typename>Data</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Data</anno>
+  <anno>Item</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setItemFont</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setItemFont(This, Item, F) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = integer()</string></subtype>
+        <subtype><typename>F</typename><string>F = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>F</anno>
+  <anno>Item</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setItemImage</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setItemImage(This, Item, Image) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = Image = integer()</string></subtype>
+        <subtype><typename>Image</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Image</anno>
+  <anno>Item</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setItemImage</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>setItemImage(This, Item, Image, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = Image = integer()</string></subtype>
+        <subtype><typename>Image</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = {selImage, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Image</anno>
+  <anno>Item</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setItemPosition</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setItemPosition(This, Item, Pos) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = integer()</string></subtype>
+        <subtype><typename>Pos</typename><string>Pos = {X :: integer(), Y :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Item</anno>
+  <anno>Pos</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>setItemState</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>setItemState(This, Item, State, StateMask) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = State = StateMask = integer()</string></subtype>
+        <subtype><typename>State</typename><string></string></subtype>
+        <subtype><typename>StateMask</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Item</anno>
+  <anno>State</anno>
+  <anno>StateMask</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setItemText</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setItemText(This, Item, Str) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = integer()</string></subtype>
+        <subtype><typename>Str</typename><string>Str = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Item</anno>
+  <anno>Str</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setItemTextColour</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setItemTextColour(This, Item, Col) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = integer()</string></subtype>
+        <subtype><typename>Col</typename><string>Col = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Col</anno>
+  <anno>Item</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setLabel</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setMaxSize</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setMinSize</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setName</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setOwnBackgroundColour</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setOwnFont</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setOwnForegroundColour</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setPalette</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setScrollPos</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setScrollPos</name>
+  <arity>4</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setScrollbar</name>
+  <arity>5</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setScrollbar</name>
+  <arity>6</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setSingleStyle</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setSingleStyle(This, Style) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Style</typename><string>Style = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Style</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setSingleStyle</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setSingleStyle(This, Style, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Style</typename><string>Style = integer()</string></subtype>
+        <subtype><typename>Option</typename><string>Option = {add, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Style</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setSize</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setSize</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setSize</name>
+  <arity>5</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setSize</name>
+  <arity>6</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setSizeHints</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setSizeHints</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setSizeHints</name>
+  <arity>4</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setSizer</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setSizer</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setSizerAndFit</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setSizerAndFit</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setTextColour</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setTextColour(This, Col) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Col</typename><string>Col = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Col</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setThemeEnabled</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setToolTip</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setTransparent</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setVirtualSize</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setVirtualSize</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setVirtualSizeHints</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setVirtualSizeHints</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setVirtualSizeHints</name>
+  <arity>4</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setWindowStyle</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setWindowStyleFlag</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setWindowStyleFlag(This, Style) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></string></subtype>
+        <subtype><typename>Style</typename><string>Style = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Style</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setWindowVariant</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>shouldInheritColours</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>show</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>show</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>sortItems</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>thaw</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>transferDataFromWindow</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>transferDataToWindow</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>update</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>updateWindowUI</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>updateWindowUI</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>validate</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>warpPointer</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:22.</timestamp>
+</module>

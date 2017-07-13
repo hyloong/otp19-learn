@@ -1,0 +1,306 @@
+<module name="wxFont">
+<type>
+  <name>wxFont</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxFont">wxFont()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxFont">wxFont()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getDefaultEncoding</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>getDefaultEncoding() -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>getFaceName</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getFaceName(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxFont">wxFont()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getFamily</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getFamily(This) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxFont">wxFont()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getNativeFontInfoDesc</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getNativeFontInfoDesc(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxFont">wxFont()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getNativeFontInfoUserDesc</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getNativeFontInfoUserDesc(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxFont">wxFont()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getPointSize</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getPointSize(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxFont">wxFont()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getStyle</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getStyle(This) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxFont">wxFont()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getUnderlined</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getUnderlined(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxFont">wxFont()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getWeight</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getWeight(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxFont">wxFont()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isFixedWidth</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isFixedWidth(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxFont">wxFont()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>new() -&gt; <seealso marker="#type-wxFont">wxFont()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(Fontname) -&gt; <seealso marker="#type-wxFont">wxFont()</seealso></head>
+      <guard>
+        <subtype><typename>Fontname</typename><string>Fontname = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Fontname</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>new(Size, Family, Style, Weight) -&gt; <seealso marker="#type-wxFont">wxFont()</seealso></head>
+      <guard>
+        <subtype><typename>Size</typename><string>Size = integer()</string></subtype>
+        <subtype><typename>Family</typename><string>Family = Style = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+        <subtype><typename>Style</typename><string/></subtype>
+        <subtype><typename>Weight</typename><string>Weight = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Family</anno>
+  <anno>Size</anno>
+  <anno>Style</anno>
+  <anno>Weight</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>5</arity>
+  <contract>
+    <clause>
+      <head>new(Size, Family, Style, Weight, Options :: [Option]) -&gt; <seealso marker="#type-wxFont">wxFont()</seealso></head>
+      <guard>
+        <subtype><typename>Size</typename><string>Size = integer()</string></subtype>
+        <subtype><typename>Family</typename><string>Family = Style = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+        <subtype><typename>Style</typename><string/></subtype>
+        <subtype><typename>Weight</typename><string>Weight = integer()</string></subtype>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{underlined, boolean()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{face, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{encoding, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Family</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Size</anno>
+  <anno>Style</anno>
+  <anno>Weight</anno>
+</spec>
+<spec>
+  <name>ok</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>ok(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxFont">wxFont()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setDefaultEncoding</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>setDefaultEncoding(Encoding) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Encoding</typename><string>Encoding = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Encoding</anno>
+</spec>
+<spec>
+  <name>setFaceName</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setFaceName(This, FaceName) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxFont">wxFont()</seealso></string></subtype>
+        <subtype><typename>FaceName</typename><string>FaceName = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>FaceName</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setFamily</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setFamily(This, Family) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxFont">wxFont()</seealso></string></subtype>
+        <subtype><typename>Family</typename><string>Family = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Family</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setPointSize</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setPointSize(This, PointSize) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxFont">wxFont()</seealso></string></subtype>
+        <subtype><typename>PointSize</typename><string>PointSize = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>PointSize</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setStyle</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setStyle(This, Style) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxFont">wxFont()</seealso></string></subtype>
+        <subtype><typename>Style</typename><string>Style = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Style</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setUnderlined</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setUnderlined(This, Underlined) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxFont">wxFont()</seealso></string></subtype>
+        <subtype><typename>Underlined</typename><string>Underlined = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>Underlined</anno>
+</spec>
+<spec>
+  <name>setWeight</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setWeight(This, Weight) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxFont">wxFont()</seealso></string></subtype>
+        <subtype><typename>Weight</typename><string>Weight = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>Weight</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:06.</timestamp>
+</module>

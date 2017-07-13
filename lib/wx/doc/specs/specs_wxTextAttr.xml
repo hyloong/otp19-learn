@@ -1,0 +1,360 @@
+<module name="wxTextAttr">
+<type>
+  <name>wxTextAttr</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxTextAttr">wxTextAttr()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getAlignment</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getAlignment(This) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getBackgroundColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getBackgroundColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getFlags</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getFlags(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getFont</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getFont(This) -&gt; <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getLeftIndent</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getLeftIndent(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getLeftSubIndent</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getLeftSubIndent(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getRightIndent</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getRightIndent(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getTabs</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getTabs(This) -&gt; [integer()]</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getTextColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getTextColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasBackgroundColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasBackgroundColour(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasFont</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasFont(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasTextColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasTextColour(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isDefault</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isDefault(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>new() -&gt; <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(ColText) -&gt; <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></head>
+      <guard>
+        <subtype><typename>ColText</typename><string>ColText = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ColText</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>new(ColText, Options :: [Option]) -&gt; <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></head>
+      <guard>
+        <subtype><typename>ColText</typename><string>ColText = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{colBack, <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{font, <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{alignment, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ColText</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setAlignment</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setAlignment(This, Alignment) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+        <subtype><typename>Alignment</typename><string>Alignment = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Alignment</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setBackgroundColour</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setBackgroundColour(This, ColBack) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+        <subtype><typename>ColBack</typename><string>ColBack = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ColBack</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setFlags</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setFlags(This, Flags) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+        <subtype><typename>Flags</typename><string>Flags = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Flags</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setFont</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setFont(This, Font) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+        <subtype><typename>Font</typename><string>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Font</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setFont</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setFont(This, Font, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+        <subtype><typename>Font</typename><string>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {flags, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Font</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setLeftIndent</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setLeftIndent(This, Indent) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+        <subtype><typename>Indent</typename><string>Indent = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Indent</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setLeftIndent</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setLeftIndent(This, Indent, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+        <subtype><typename>Indent</typename><string>Indent = integer()</string></subtype>
+        <subtype><typename>Option</typename><string>Option = {subIndent, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Indent</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setRightIndent</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setRightIndent(This, Indent) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+        <subtype><typename>Indent</typename><string>Indent = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Indent</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setTabs</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setTabs(This, Tabs) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+        <subtype><typename>Tabs</typename><string>Tabs = [integer()]</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Tabs</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setTextColour</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setTextColour(This, ColText) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></string></subtype>
+        <subtype><typename>ColText</typename><string>ColText = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ColText</anno>
+  <anno>This</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:54.</timestamp>
+</module>

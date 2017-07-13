@@ -1,7 +1,7 @@
 %%
 %% %CopyrightBegin%
 %%
-%% Copyright Ericsson AB 1997-2016. All Rights Reserved.
+%% Copyright Ericsson AB 1997-2017. All Rights Reserved.
 %%
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -153,7 +153,7 @@
 
 suite() ->
     [{ct_hooks,[ts_install_cth]},
-     {timetrap, {seconds, 10}}].
+     {timetrap, {minutes, 1}}].
 
 all() ->
     [otp_6224, {group, stream}, basic_ping, slow_writes,
@@ -1042,7 +1042,7 @@ pipe_limit_env_do(Bytes, Cmd, CmdSize) ->
 
 %% environ format: KEY=VALUE\0
 env_of_bytes(Bytes) when Bytes > 3 ->
-    Env = [{"X",lists:duplicate(Bytes-3, $x)}];
+    [{"X",lists:duplicate(Bytes-3, $x)}];
 env_of_bytes(_) -> [].
 
 %% White box assumption about payload written to pipe
@@ -2066,13 +2066,13 @@ exit_status_msb_test(Config, SleepSecs) when is_list(Config) ->
     StartedTime = (erlang:monotonic_time(microsecond) - Start)/1000000,
     io:format("StartedTime = ~p~n", [StartedTime]),
     true = StartedTime < SleepSecs,
-    erlang:system_flag(multi_scheduling, block),
+    erlang:system_flag(multi_scheduling, block_normal),
     lists:foreach(fun (P) -> receive {P, done} -> ok end end, Procs),
     DoneTime = (erlang:monotonic_time(microsecond) - Start)/1000000,
     io:format("DoneTime = ~p~n", [DoneTime]),
     true = DoneTime > SleepSecs,
     ok = verify_multi_scheduling_blocked(),
-    erlang:system_flag(multi_scheduling, unblock),
+    erlang:system_flag(multi_scheduling, unblock_normal),
     case {length(lists:usort(lists:flatten(SIds))), NoSchedsOnln} of
         {N, N} ->
             ok;
@@ -2131,7 +2131,7 @@ ping(Config, Sizes, HSize, CmdLine, Options) ->
 %% Sizes = Size of packets to generated.
 %% HSize = Header size: 1, 2, or 4
 %% CmdLine = Additional command line options.
-%% Options = Addtional port options.
+%% Options = Additional port options.
 
 expect_input(Config, Sizes, HSize, CmdLine, Options) ->
     expect_input1(Config, Sizes, {HSize, CmdLine, Options}, [], []).

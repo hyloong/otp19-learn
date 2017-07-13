@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxMouseEvent</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxMouseEvent.xml</file></header>
+<module>wxMouseEvent</module>
+<modulesummary>See external documentation: wxMouseEvent.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html">wxMouseEvent</url>.
+  </p><taglist><tag>Use <seealso marker="wxEvtHandler#connect-3">wxEvtHandler:connect/3</seealso> with EventType:</tag>
+  <item><p><em>left_down</em>, <em>left_up</em>, <em>middle_down</em>, <em>middle_up</em>, <em>right_down</em>, <em>right_up</em>, <em>motion</em>, <em>enter_window</em>, <em>leave_window</em>, <em>left_dclick</em>, <em>middle_dclick</em>, <em>right_dclick</em>, <em>mousewheel</em></p></item></taglist><p>
+  See also the message variant <seealso marker="wxEvtHandler#type-wxMouse">#wxMouse{</seealso>} event record type.</p>
+ 
+  <p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxEvent">wxEvent</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxMouseEvent"/>wxMouseEvent()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>altDown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="altDown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventaltdown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>button(This, But) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v><v>But = integer()</v></type>
+<desc><marker id="button-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventbutton">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>buttonDClick(This) -&gt; boolean()</name>
+<fsummary>Equivalent to buttonDClick(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="buttonDClick-1"/>
+<p>Equivalent to <seealso marker="#buttonDClick-2">buttonDClick(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>buttonDClick(This, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v><v>Option = {but, integer()}</v></type>
+<desc><marker id="buttonDClick-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventbuttondclick">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>buttonDown(This) -&gt; boolean()</name>
+<fsummary>Equivalent to buttonDown(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="buttonDown-1"/>
+<p>Equivalent to <seealso marker="#buttonDown-2">buttonDown(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>buttonDown(This, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v><v>Option = {but, integer()}</v></type>
+<desc><marker id="buttonDown-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventbuttondown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>buttonUp(This) -&gt; boolean()</name>
+<fsummary>Equivalent to buttonUp(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="buttonUp-1"/>
+<p>Equivalent to <seealso marker="#buttonUp-2">buttonUp(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>buttonUp(This, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v><v>Option = {but, integer()}</v></type>
+<desc><marker id="buttonUp-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventbuttonup">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>cmdDown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="cmdDown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventcmddown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>controlDown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="controlDown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventcontroldown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>dragging(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="dragging-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventdragging">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>entering(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="entering-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseevententering">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getButton(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="getButton-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventgetbutton">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPosition(This) -&gt; {X::integer(), Y::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="getPosition-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventgetposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getLogicalPosition(This, Dc) -&gt; {X::integer(), Y::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v><v>Dc = <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso></v></type>
+<desc><marker id="getLogicalPosition-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventgetlogicalposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getLinesPerAction(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="getLinesPerAction-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventgetlinesperaction">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getWheelRotation(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="getWheelRotation-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventgetwheelrotation">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getWheelDelta(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="getWheelDelta-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventgetwheeldelta">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getX(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="getX-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventgetx">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getY(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="getY-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventgety">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isButton(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="isButton-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventisbutton">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isPageScroll(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="isPageScroll-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventispagescroll">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>leaving(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="leaving-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventleaving">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>leftDClick(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="leftDClick-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventleftdclick">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>leftDown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="leftDown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventleftdown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>leftIsDown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="leftIsDown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventleftisdown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>leftUp(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="leftUp-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventleftup">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>metaDown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="metaDown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventmetadown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>middleDClick(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="middleDClick-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventmiddledclick">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>middleDown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="middleDown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventmiddledown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>middleIsDown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="middleIsDown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventmiddleisdown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>middleUp(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="middleUp-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventmiddleup">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>moving(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="moving-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventmoving">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>rightDClick(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="rightDClick-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventrightdclick">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>rightDown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="rightDown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventrightdown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>rightIsDown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="rightIsDown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventrightisdown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>rightUp(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="rightUp-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventrightup">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>shiftDown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMouseEvent">wxMouseEvent()</seealso></v></type>
+<desc><marker id="shiftDown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmouseevent.html#wxmouseeventshiftdown">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

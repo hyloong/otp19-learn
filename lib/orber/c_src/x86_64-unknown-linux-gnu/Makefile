@@ -47,7 +47,7 @@ CC_FILES = \
 HH_FILES = \
 	InitialReference.hh
 
-ALL_CFLAGS = -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -DHAVE_CONFIG_H $(CFLAGS) 
+ALL_CFLAGS = -Werror=undef -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -DHAVE_CONFIG_H $(CFLAGS) 
 
 # ----------------------------------------------------
 # Targets

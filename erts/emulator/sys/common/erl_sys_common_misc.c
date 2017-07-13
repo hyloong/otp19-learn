@@ -99,33 +99,33 @@ void erts_init_sys_common_misc(void)
     filename_encoding = ERL_FILENAME_WIN_WCHAR;
 #else
     if (user_filename_encoding != ERL_FILENAME_UNKNOWN) {
-        filename_encoding = user_filename_encoding;
+	filename_encoding = user_filename_encoding;
     } else {
-        char *l;
-        filename_encoding = ERL_FILENAME_LATIN1;
+	char *l;
+	filename_encoding = ERL_FILENAME_LATIN1;
 #  ifdef PRIMITIVE_UTF8_CHECK
-        setlocale(LC_CTYPE, "");  /* Set international environment, 
-                                     ignore result */
-        if (((l = getenv("LC_ALL"))   && *l) ||
-            ((l = getenv("LC_CTYPE")) && *l) ||
-            ((l = getenv("LANG"))     && *l)) {
-            if (strstr(l, "UTF-8")) {
-                filename_encoding = ERL_FILENAME_UTF8;
-            } 
-        }
+	setlocale(LC_CTYPE, "");  /* Set international environment, 
+				     ignore result */
+	if (((l = getenv("LC_ALL"))   && *l) ||
+	    ((l = getenv("LC_CTYPE")) && *l) ||
+	    ((l = getenv("LANG"))     && *l)) {
+	    if (strstr(l, "UTF-8")) {
+		filename_encoding = ERL_FILENAME_UTF8;
+	    } 
+	}
 	
 #  else
-        l = setlocale(LC_CTYPE, "");  /* Set international environment */
-        if (l != NULL) {
-            if (strcmp(nl_langinfo(CODESET), "UTF-8") == 0) {
-                filename_encoding = ERL_FILENAME_UTF8;
-            }
-        }
+	l = setlocale(LC_CTYPE, "");  /* Set international environment */
+	if (l != NULL) {
+	    if (strcmp(nl_langinfo(CODESET), "UTF-8") == 0) {
+		filename_encoding = ERL_FILENAME_UTF8;
+	    }
+	}
 #  endif
     }
 #  if defined(__DARWIN__)
     if (filename_encoding == ERL_FILENAME_UTF8) {
-        filename_encoding = ERL_FILENAME_UTF8_MAC;
+	filename_encoding = ERL_FILENAME_UTF8_MAC;
     }
 #  endif
 #endif
@@ -156,19 +156,19 @@ sys_double_to_chars(double fp, char *buffer, size_t buffer_size)
  */
 int
 sys_double_to_chars_fast(double f, char *buffer, int buffer_size, int decimals,
-                         int compact)
+			 int compact)
 {
     /* Note that some C compilers don't support "static const" propagation
      * so we use a defines */
-#define SYS_DOUBLE_RND_CONST 0.55555555555555555
-#define FRAC_SIZE            52
-#define EXP_SIZE             11
-#define EXP_MASK             ((1ll << EXP_SIZE) - 1)
-#define MAX_DECIMALS         (sizeof(cs_sys_double_pow10)       \
-                              / sizeof(cs_sys_double_pow10[0]))
-#define FRAC_MASK            ((1ll << FRAC_SIZE) - 1)
-#define FRAC_MASK2           ((1ll << (FRAC_SIZE + 1)) - 1)
-#define MAX_FLOAT            (1ll << (FRAC_SIZE+1))
+    #define SYS_DOUBLE_RND_CONST 0.55555555555555555
+    #define FRAC_SIZE            52
+    #define EXP_SIZE             11
+    #define EXP_MASK             ((1ll << EXP_SIZE) - 1)
+    #define MAX_DECIMALS         (sizeof(cs_sys_double_pow10) \
+				   / sizeof(cs_sys_double_pow10[0]))
+    #define FRAC_MASK            ((1ll << FRAC_SIZE) - 1)
+    #define FRAC_MASK2           ((1ll << (FRAC_SIZE + 1)) - 1)
+    #define MAX_FLOAT            (1ll << (FRAC_SIZE+1))
 
     static const double cs_sys_double_pow10[] = {
         SYS_DOUBLE_RND_CONST / 1ll,

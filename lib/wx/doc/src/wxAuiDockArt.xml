@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxAuiDockArt</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxAuiDockArt.xml</file></header>
+<module>wxAuiDockArt</module>
+<modulesummary>See external documentation: wxAuiDockArt.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauidockart.html">wxAuiDockArt</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxAuiDockArt"/>wxAuiDockArt()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>getColour(This, Id) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiDockArt">wxAuiDockArt()</seealso></v><v>Id = integer()</v></type>
+<desc><marker id="getColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauidockart.html#wxauidockartgetcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFont(This, Id) -&gt; <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiDockArt">wxAuiDockArt()</seealso></v><v>Id = integer()</v></type>
+<desc><marker id="getFont-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauidockart.html#wxauidockartgetfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMetric(This, Id) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiDockArt">wxAuiDockArt()</seealso></v><v>Id = integer()</v></type>
+<desc><marker id="getMetric-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauidockart.html#wxauidockartgetmetric">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setColour(This, Id, Colour) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiDockArt">wxAuiDockArt()</seealso></v><v>Id = integer()</v><v>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setColour-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauidockart.html#wxauidockartsetcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFont(This, Id, Font) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiDockArt">wxAuiDockArt()</seealso></v><v>Id = integer()</v><v>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v></type>
+<desc><marker id="setFont-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauidockart.html#wxauidockartsetfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMetric(This, Id, New_val) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiDockArt">wxAuiDockArt()</seealso></v><v>Id = integer()</v><v>New_val = integer()</v></type>
+<desc><marker id="setMetric-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauidockart.html#wxauidockartsetmetric">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

@@ -1,0 +1,490 @@
+<module name="wxRegion">
+<type>
+  <name>wxRegion</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxRegion">wxRegion()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>'Xor'</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>'Xor'(This, Region) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = Region = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+        <subtype><typename>Region</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Region</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>'Xor'</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>'Xor'(This, Rect) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+        <subtype><typename>Rect</typename><string>Rect = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Rect</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>'Xor'</name>
+  <arity>5</arity>
+  <contract>
+    <clause>
+      <head>'Xor'(This, X, Y, W, H) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = W = H = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+        <subtype><typename>W</typename><string></string></subtype>
+        <subtype><typename>H</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>clear</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>clear(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>contains</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>contains(This, Pt) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+        <subtype><typename>Pt</typename><string>Pt = {X :: integer(), Y :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Pt</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>contains</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>contains(This, Rect) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+        <subtype><typename>Rect</typename><string>Rect = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Rect</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>contains</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>contains(This, X, Y) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>contains</name>
+  <arity>5</arity>
+  <contract>
+    <clause>
+      <head>contains(This, X, Y, W, H) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = W = H = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+        <subtype><typename>W</typename><string></string></subtype>
+        <subtype><typename>H</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>convertToBitmap</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>convertToBitmap(This) -&gt; <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxRegion">wxRegion()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getBox</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getBox(This) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>intersect</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>intersect(This, Region) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = Region = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+        <subtype><typename>Region</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Region</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>intersect</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>intersect(This, Rect) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+        <subtype><typename>Rect</typename><string>Rect = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Rect</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>intersect</name>
+  <arity>5</arity>
+  <contract>
+    <clause>
+      <head>intersect(This, X, Y, W, H) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = W = H = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+        <subtype><typename>W</typename><string></string></subtype>
+        <subtype><typename>H</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>isEmpty</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isEmpty(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>new() -&gt; <seealso marker="#type-wxRegion">wxRegion()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(Bmp) -&gt; <seealso marker="#type-wxRegion">wxRegion()</seealso></head>
+      <guard>
+        <subtype><typename>Bmp</typename><string>Bmp = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Bmp</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(Rect) -&gt; <seealso marker="#type-wxRegion">wxRegion()</seealso></head>
+      <guard>
+        <subtype><typename>Rect</typename><string>Rect = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Rect</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>new(TopLeft, BottomRight) -&gt; <seealso marker="#type-wxRegion">wxRegion()</seealso></head>
+      <guard>
+        <subtype><typename>TopLeft</typename><string>TopLeft = BottomRight = {X :: integer(), Y :: integer()}</string></subtype>
+        <subtype><typename>BottomRight</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>BottomRight</anno>
+  <anno>TopLeft</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>new(X, Y, W, H) -&gt; <seealso marker="#type-wxRegion">wxRegion()</seealso></head>
+      <guard>
+        <subtype><typename>X</typename><string>X = Y = W = H = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+        <subtype><typename>W</typename><string></string></subtype>
+        <subtype><typename>H</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>offset</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>offset(This, Pt) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+        <subtype><typename>Pt</typename><string>Pt = {X :: integer(), Y :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Pt</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>offset</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>offset(This, X, Y) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>subtract</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>subtract(This, Region) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = Region = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+        <subtype><typename>Region</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Region</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>subtract</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>subtract(This, Rect) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+        <subtype><typename>Rect</typename><string>Rect = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Rect</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>subtract</name>
+  <arity>5</arity>
+  <contract>
+    <clause>
+      <head>subtract(This, X, Y, W, H) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = W = H = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+        <subtype><typename>W</typename><string></string></subtype>
+        <subtype><typename>H</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>union</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>union(This, Region) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+        <subtype><typename>Region</typename><string>Region = <seealso marker="#type-wxRegion">wxRegion()</seealso> | <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Region</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>union</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>union(This, Rect) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+        <subtype><typename>Rect</typename><string>Rect = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Rect</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>union</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>union(This, Bmp, Transp) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+        <subtype><typename>Bmp</typename><string>Bmp = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></string></subtype>
+        <subtype><typename>Transp</typename><string>Transp = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Bmp</anno>
+  <anno>This</anno>
+  <anno>Transp</anno>
+</spec>
+<spec>
+  <name>union</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>union(This, Bmp, Transp, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+        <subtype><typename>Bmp</typename><string>Bmp = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></string></subtype>
+        <subtype><typename>Transp</typename><string>Transp = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {tolerance, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Bmp</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+  <anno>Transp</anno>
+</spec>
+<spec>
+  <name>union</name>
+  <arity>5</arity>
+  <contract>
+    <clause>
+      <head>union(This, X, Y, W, H) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxRegion">wxRegion()</seealso></string></subtype>
+        <subtype><typename>X</typename><string>X = Y = W = H = integer()</string></subtype>
+        <subtype><typename>Y</typename><string></string></subtype>
+        <subtype><typename>W</typename><string></string></subtype>
+        <subtype><typename>H</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:41.</timestamp>
+</module>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxHtmlWindow</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxHtmlWindow.xml</file></header>
+<module>wxHtmlWindow</module>
+<modulesummary>See external documentation: wxHtmlWindow.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html">wxHtmlWindow</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxScrolledWindow">wxScrolledWindow</seealso>
+  <br/><seealso marker="wxPanel">wxPanel</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxHtmlWindow"/>wxHtmlWindow()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowwxhtmlwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent) -&gt; <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></name>
+<fsummary>Equivalent to new(Parent, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="new-1"/>
+<p>Equivalent to <seealso marker="#new-2">new(Parent, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Options::[Option]) -&gt; <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {id, integer()} | {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()}</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowwxhtmlwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>appendToPage(This, Source) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v><v>Source = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="appendToPage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowappendtopage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getOpenedAnchor(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v></type>
+<desc><marker id="getOpenedAnchor-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowgetopenedanchor">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getOpenedPage(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v></type>
+<desc><marker id="getOpenedPage-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowgetopenedpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getOpenedPageTitle(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v></type>
+<desc><marker id="getOpenedPageTitle-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowgetopenedpagetitle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getRelatedFrame(This) -&gt; <seealso marker="wxFrame#type-wxFrame">wxFrame:wxFrame()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v></type>
+<desc><marker id="getRelatedFrame-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowgetrelatedframe">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>historyBack(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v></type>
+<desc><marker id="historyBack-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowhistoryback">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>historyCanBack(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v></type>
+<desc><marker id="historyCanBack-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowhistorycanback">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>historyCanForward(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v></type>
+<desc><marker id="historyCanForward-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowhistorycanforward">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>historyClear(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v></type>
+<desc><marker id="historyClear-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowhistoryclear">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>historyForward(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v></type>
+<desc><marker id="historyForward-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowhistoryforward">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>loadFile(This, Filename) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v><v>Filename = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="loadFile-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowloadfile">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>loadPage(This, Location) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v><v>Location = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="loadPage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowloadpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>selectAll(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v></type>
+<desc><marker id="selectAll-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowselectall">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>selectionToText(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v></type>
+<desc><marker id="selectionToText-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowselectiontotext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>selectLine(This, Pos) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v><v>Pos = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="selectLine-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowselectline">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>selectWord(This, Pos) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v><v>Pos = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="selectWord-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowselectword">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setBorders(This, B) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v><v>B = integer()</v></type>
+<desc><marker id="setBorders-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowsetborders">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFonts(This, Normal_face, Fixed_face) -&gt; ok</name>
+<fsummary>Equivalent to setFonts(This, Normal_face, Fixed_face, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v><v>Normal_face = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Fixed_face = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setFonts-3"/>
+<p>Equivalent to <seealso marker="#setFonts-4">setFonts(This, Normal_face, Fixed_face, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setFonts(This, Normal_face, Fixed_face, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v><v>Normal_face = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Fixed_face = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {sizes, integer()}</v></type>
+<desc><marker id="setFonts-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowsetfonts">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setPage(This, Source) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v><v>Source = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setPage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowsetpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setRelatedFrame(This, Frame, Format) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v><v>Frame = <seealso marker="wxFrame#type-wxFrame">wxFrame:wxFrame()</seealso></v><v>Format = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setRelatedFrame-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowsetrelatedframe">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setRelatedStatusBar(This, Bar) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v><v>Bar = integer()</v></type>
+<desc><marker id="setRelatedStatusBar-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowsetrelatedstatusbar">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>toText(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso></v></type>
+<desc><marker id="toText-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxhtmlwindow.html#wxhtmlwindowtotext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxHtmlWindow">wxHtmlWindow()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

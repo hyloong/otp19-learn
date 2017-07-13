@@ -5,7 +5,7 @@
   <header>
     <copyright>
       <year>2007</year>
-      <year>2016</year>
+      <year>2017</year>
       <holder>Ericsson AB, All Rights Reserved</holder>
     </copyright>
     <legalnotice>
@@ -69,6 +69,17 @@
     1 second).</p>
 
   <p>The integers in all multibyte fields are in big-endian order.</p>
+
+  <warning>
+    <p>
+      The Erlang Distribution protocol is not by itself secure and does not
+      aim to be so. In order to get secure distribution the distributed nodes
+      should be configured to use distribution over tls.
+      See the <seealso marker="ssl:ssl_distribution">
+      Using SSL for Erlang Distribution</seealso> User's Guide
+      for details on how to setup a secure distributed node.
+    </p>
+  </warning>
 
   <section>
     <title>EPMD Protocol</title>

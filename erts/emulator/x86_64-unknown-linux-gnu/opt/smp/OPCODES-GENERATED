@@ -1,1 +1,1 @@
-/root/download/otp_src_19.3/lib/compiler/src/genop.tab beam/ops.tab hipe/hipe_ops.tab utils/beam_makeops
+/root/download/otp_src_20.0/lib/compiler/src/genop.tab beam/ops.tab hipe/hipe_ops.tab utils/beam_makeops x86_64-unknown-linux-gnu/Makefile

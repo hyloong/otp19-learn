@@ -1,7 +1,7 @@
 /*
  * %CopyrightBegin%
  *
- * Copyright Ericsson AB 2014-2016. All Rights Reserved.
+ * Copyright Ericsson AB 2014-2017. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,7 +91,7 @@ static BIF_RETTYPE hashmap_merge(Process *p, Eterm nodeA, Eterm nodeB, int swap_
 static Export hashmap_merge_trap_export;
 static BIF_RETTYPE maps_merge_trap_1(BIF_ALIST_1);
 static Uint hashmap_subtree_size(Eterm node);
-static Eterm hashmap_to_list(Process *p, Eterm map);
+static Eterm hashmap_to_list(Process *p, Eterm map, Sint n);
 static Eterm hashmap_keys(Process *p, Eterm map);
 static Eterm hashmap_values(Process *p, Eterm map);
 static Eterm hashmap_delete(Process *p, Uint32 hx, Eterm key, Eterm node, Eterm *value);
@@ -161,12 +161,57 @@ BIF_RETTYPE maps_to_list_1(BIF_ALIST_1) {
 
 	BIF_RET(res);
     } else if (is_hashmap(BIF_ARG_1)) {
-	return hashmap_to_list(BIF_P, BIF_ARG_1);
+	return hashmap_to_list(BIF_P, BIF_ARG_1, -1);
     }
 
     BIF_P->fvalue = BIF_ARG_1;
     BIF_ERROR(BIF_P, BADMAP);
 }
+
+/* erts_internal:maps_to_list/2
+ *
+ * This function should be removed once iterators are in place.
+ * Never document it.
+ * Never encourage its usage.
+ *
+ * A negative value in ARG 2 means the entire map.
+ */
+
+BIF_RETTYPE erts_internal_maps_to_list_2(BIF_ALIST_2) {
+    Sint m;
+    if (term_to_Sint(BIF_ARG_2, &m)) {
+        if (is_flatmap(BIF_ARG_1)) {
+            Uint n;
+            Eterm* hp;
+            Eterm *ks,*vs, res, tup;
+            flatmap_t *mp = (flatmap_t*)flatmap_val(BIF_ARG_1);
+
+            ks  = flatmap_get_keys(mp);
+            vs  = flatmap_get_values(mp);
+            n   = flatmap_get_size(mp);
+
+            if (m >= 0) {
+                n = m < n ? m : n;
+            }
+
+            hp  = HAlloc(BIF_P, (2 + 3) * n);
+            res = NIL;
+
+            while(n--) {
+                tup = TUPLE2(hp, ks[n], vs[n]); hp += 3;
+                res = CONS(hp, tup, res); hp += 2;
+            }
+
+            BIF_RET(res);
+        } else if (is_hashmap(BIF_ARG_1)) {
+            return hashmap_to_list(BIF_P, BIF_ARG_1, m);
+        }
+        BIF_P->fvalue = BIF_ARG_1;
+        BIF_ERROR(BIF_P, BADMAP);
+    }
+    BIF_ERROR(BIF_P, BADARG);
+}
+
 
 /* maps:find/2
  * return value if key *matches* a key in the map
@@ -1188,16 +1233,17 @@ typedef struct HashmapMergeContext_ {
 #endif
 } HashmapMergeContext;
 
-static void hashmap_merge_ctx_destructor(Binary* ctx_bin)
+static int hashmap_merge_ctx_destructor(Binary* ctx_bin)
 {
     HashmapMergeContext* ctx = (HashmapMergeContext*) ERTS_MAGIC_BIN_DATA(ctx_bin);
     ASSERT(ERTS_MAGIC_BIN_DESTRUCTOR(ctx_bin) == hashmap_merge_ctx_destructor);
 
     PSTACK_DESTROY_SAVED(&ctx->pstack);
+    return 1;
 }
 
 BIF_RETTYPE maps_merge_trap_1(BIF_ALIST_1) {
-    Binary* ctx_bin = ((ProcBin *) binary_val(BIF_ARG_1))->val;
+    Binary* ctx_bin = erts_magic_ref2bin(BIF_ARG_1);
 
     ASSERT(ERTS_MAGIC_BIN_DESTRUCTOR(ctx_bin) == hashmap_merge_ctx_destructor);
 
@@ -1453,9 +1499,9 @@ trap:  /* Yield */
                                                  hashmap_merge_ctx_destructor);
         ctx = ERTS_MAGIC_BIN_DATA(ctx_b);
         sys_memcpy(ctx, &local_ctx, sizeof(HashmapMergeContext));
-        hp = HAlloc(p, PROC_BIN_SIZE);
+        hp = HAlloc(p, ERTS_MAGIC_REF_THING_SIZE);
         ASSERT(ctx->trap_bin == THE_NON_VALUE);
-        ctx->trap_bin = erts_mk_magic_binary_term(&hp, &MSO(p), ctx_b);
+        ctx->trap_bin = erts_mk_magic_ref(&hp, &MSO(p), ctx_b);
 
         erts_set_gc_state(p, 0);
     }
@@ -1916,15 +1962,22 @@ BIF_RETTYPE maps_values_1(BIF_ALIST_1) {
     BIF_ERROR(BIF_P, BADMAP);
 }
 
-static Eterm hashmap_to_list(Process *p, Eterm node) {
+static Eterm hashmap_to_list(Process *p, Eterm node, Sint m) {
     DECLARE_WSTACK(stack);
     Eterm *hp, *kv;
-    Eterm res = NIL;
+    Eterm tup, res = NIL;
+    Uint n = hashmap_size(node);
 
-    hp  = HAlloc(p, hashmap_size(node) * (2 + 3));
+    if (m >= 0) {
+        n = m < n ? m : n;
+    }
+
+    hp  = HAlloc(p, n * (2 + 3));
     hashmap_iterator_init(&stack, node, 0);
-    while ((kv=hashmap_iterator_next(&stack)) != NULL) {
-	Eterm tup = TUPLE2(hp, CAR(kv), CDR(kv));
+    while (n--) {
+        kv  = hashmap_iterator_next(&stack);
+        ASSERT(kv != NULL);
+	tup = TUPLE2(hp, CAR(kv), CDR(kv));
 	hp += 3;
 	res = CONS(hp, tup, res);
 	hp += 2;

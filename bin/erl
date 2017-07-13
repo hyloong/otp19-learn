@@ -18,7 +18,7 @@
 # 
 # %CopyrightEnd%
 #
-ROOTDIR="/root/download/otp_src_19.3"
+ROOTDIR="/root/download/otp_src_20.0"
 BINDIR=$ROOTDIR/bin/x86_64-unknown-linux-gnu
 EMU=beam
 PROGNAME=`echo $0 | sed 's/.*\///'`

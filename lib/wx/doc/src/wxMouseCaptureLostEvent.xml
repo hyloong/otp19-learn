@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxMouseCaptureLostEvent</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxMouseCaptureLostEvent.xml</file></header>
+<module>wxMouseCaptureLostEvent</module>
+<modulesummary>See external documentation: wxMouseCaptureLostEvent.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmousecapturelostevent.html">wxMouseCaptureLostEvent</url>.
+  </p><taglist><tag>Use <seealso marker="wxEvtHandler#connect-3">wxEvtHandler:connect/3</seealso> with EventType:</tag>
+  <item><p><em>mouse_capture_lost</em></p></item></taglist><p>
+  See also the message variant <seealso marker="wxEvtHandler#type-wxMouseCaptureLost">#wxMouseCaptureLost{</seealso>} event record type.</p>
+ 
+  <p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxEvent">wxEvent</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxMouseCaptureLostEvent"/>wxMouseCaptureLostEvent()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

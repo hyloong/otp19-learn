@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxGridCellRenderer</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxGridCellRenderer.xml</file></header>
+<module>wxGridCellRenderer</module>
+<modulesummary>See external documentation: wxGridCellRenderer.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellrenderer.html">wxGridCellRenderer</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxGridCellRenderer"/>wxGridCellRenderer()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>draw(This, Grid, Attr, Dc, Rect, Row, Col, IsSelected) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellRenderer">wxGridCellRenderer()</seealso></v><v>Grid = <seealso marker="wxGrid#type-wxGrid">wxGrid:wxGrid()</seealso></v><v>Attr = <seealso marker="wxGridCellAttr#type-wxGridCellAttr">wxGridCellAttr:wxGridCellAttr()</seealso></v><v>Dc = <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso></v><v>Rect = {X::integer(), Y::integer(), W::integer(), H::integer()}</v><v>Row = integer()</v><v>Col = integer()</v><v>IsSelected = boolean()</v></type>
+<desc><marker id="draw-8"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellrenderer.html#wxgridcellrendererdraw">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getBestSize(This, Grid, Attr, Dc, Row, Col) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellRenderer">wxGridCellRenderer()</seealso></v><v>Grid = <seealso marker="wxGrid#type-wxGrid">wxGrid:wxGrid()</seealso></v><v>Attr = <seealso marker="wxGridCellAttr#type-wxGridCellAttr">wxGridCellAttr:wxGridCellAttr()</seealso></v><v>Dc = <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso></v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="getBestSize-6"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellrenderer.html#wxgridcellrenderergetbestsize">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

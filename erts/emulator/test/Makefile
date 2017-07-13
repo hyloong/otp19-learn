@@ -53,6 +53,7 @@ MODULES= \
 	crypto_SUITE \
 	ddll_SUITE \
 	decode_packet_SUITE \
+	dirty_bif_SUITE \
 	dirty_nif_SUITE \
 	distribution_SUITE \
 	driver_SUITE \
@@ -65,7 +66,6 @@ MODULES= \
 	exception_SUITE \
 	float_SUITE \
 	fun_SUITE \
-	fun_r13_SUITE \
 	gc_SUITE \
 	guard_SUITE \
 	hash_SUITE \
@@ -85,6 +85,7 @@ MODULES= \
 	num_bif_SUITE \
 	message_queue_data_SUITE \
 	op_SUITE \
+	os_signal_SUITE \
 	port_SUITE \
 	port_bif_SUITE \
 	prim_eval_SUITE \
@@ -116,11 +117,9 @@ MODULES= \
 	tracer_SUITE \
 	tracer_test \
 	scheduler_SUITE \
-	old_scheduler_SUITE \
 	port_trace_SUITE \
 	unique_SUITE \
 	z_SUITE \
-	old_mod \
 	long_timers_test \
 	ignore_cores \
 	dgawd_handler \
@@ -155,7 +154,8 @@ EMAKEFILE=Emakefile
 TEST_SPEC_FILES= emulator.spec \
 		 emulator.spec.win \
 		 emulator_bench.spec \
-		 emulator_smoke.spec
+		 emulator_smoke.spec \
+                 emulator_node_container_SUITE.spec
 
 # ----------------------------------------------------
 # Release directory specification

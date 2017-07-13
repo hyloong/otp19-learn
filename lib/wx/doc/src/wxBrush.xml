@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxBrush</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxBrush.xml</file></header>
+<module>wxBrush</module>
+<modulesummary>See external documentation: wxBrush.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbrush.html">wxBrush</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxBrush"/>wxBrush()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxBrush">wxBrush()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbrush.html#wxbrushwxbrush">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Colour) -&gt; <seealso marker="#type-wxBrush">wxBrush()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="new-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbrush.html#wxbrushwxbrush">external documentation</url>.
+  <br/> Also:<br/>
+  new(StippleBitmap) -&gt; wxBrush() when<br/>
+  	StippleBitmap::wxBitmap:wxBitmap().<br/>
+ </p>
+</desc></func>
+<func>
+<name>new(Colour, Options::[Option]) -&gt; <seealso marker="#type-wxBrush">wxBrush()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v><v>Option = {style, integer()}</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbrush.html#wxbrushwxbrush">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBrush">wxBrush()</seealso></v></type>
+<desc><marker id="getColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbrush.html#wxbrushgetcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getStipple(This) -&gt; <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBrush">wxBrush()</seealso></v></type>
+<desc><marker id="getStipple-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbrush.html#wxbrushgetstipple">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getStyle(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBrush">wxBrush()</seealso></v></type>
+<desc><marker id="getStyle-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbrush.html#wxbrushgetstyle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isHatch(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBrush">wxBrush()</seealso></v></type>
+<desc><marker id="isHatch-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbrush.html#wxbrushishatch">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isOk(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBrush">wxBrush()</seealso></v></type>
+<desc><marker id="isOk-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbrush.html#wxbrushisok">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setColour(This, Col) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBrush">wxBrush()</seealso></v><v>Col = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbrush.html#wxbrushsetcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setColour(This, R, G, B) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBrush">wxBrush()</seealso></v><v>R = integer()</v><v>G = integer()</v><v>B = integer()</v></type>
+<desc><marker id="setColour-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbrush.html#wxbrushsetcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setStipple(This, Stipple) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBrush">wxBrush()</seealso></v><v>Stipple = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v></type>
+<desc><marker id="setStipple-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbrush.html#wxbrushsetstipple">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setStyle(This, Style) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBrush">wxBrush()</seealso></v><v>Style = integer()</v></type>
+<desc><marker id="setStyle-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbrush.html#wxbrushsetstyle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxBrush">wxBrush()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

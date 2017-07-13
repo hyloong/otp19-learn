@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxTextAttr</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxTextAttr.xml</file></header>
+<module>wxTextAttr</module>
+<modulesummary>See external documentation: wxTextAttr.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html">wxTextAttr</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxTextAttr"/>wxTextAttr()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrwxtextattr">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(ColText) -&gt; <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></name>
+<fsummary>Equivalent to new(ColText, []).
+</fsummary>
+<type>
+<v>ColText = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="new-1"/>
+<p>Equivalent to <seealso marker="#new-2">new(ColText, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(ColText, Options::[Option]) -&gt; <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>ColText = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v><v>Option = {colBack, <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso>} | {font, <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso>} | {alignment, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrwxtextattr">external documentation</url>.
+ <br/> Alignment = ?wxTEXT_ALIGNMENT_DEFAULT | ?wxTEXT_ALIGNMENT_LEFT | ?wxTEXT_ALIGNMENT_CENTRE | ?wxTEXT_ALIGNMENT_CENTER | ?wxTEXT_ALIGNMENT_RIGHT | ?wxTEXT_ALIGNMENT_JUSTIFIED</p>
+</desc></func>
+<func>
+<name>getAlignment(This) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v></type>
+<desc><marker id="getAlignment-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrgetalignment">external documentation</url>.
+ <br/> Res = ?wxTEXT_ALIGNMENT_DEFAULT | ?wxTEXT_ALIGNMENT_LEFT | ?wxTEXT_ALIGNMENT_CENTRE | ?wxTEXT_ALIGNMENT_CENTER | ?wxTEXT_ALIGNMENT_RIGHT | ?wxTEXT_ALIGNMENT_JUSTIFIED</p>
+</desc></func>
+<func>
+<name>getBackgroundColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v></type>
+<desc><marker id="getBackgroundColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrgetbackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFont(This) -&gt; <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v></type>
+<desc><marker id="getFont-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrgetfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getLeftIndent(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v></type>
+<desc><marker id="getLeftIndent-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrgetleftindent">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getLeftSubIndent(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v></type>
+<desc><marker id="getLeftSubIndent-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrgetleftsubindent">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getRightIndent(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v></type>
+<desc><marker id="getRightIndent-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrgetrightindent">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getTabs(This) -&gt; [integer()]</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v></type>
+<desc><marker id="getTabs-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrgettabs">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getTextColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v></type>
+<desc><marker id="getTextColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrgettextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasBackgroundColour(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v></type>
+<desc><marker id="hasBackgroundColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrhasbackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasFont(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v></type>
+<desc><marker id="hasFont-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrhasfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasTextColour(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v></type>
+<desc><marker id="hasTextColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrhastextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFlags(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v></type>
+<desc><marker id="getFlags-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrgetflags">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isDefault(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v></type>
+<desc><marker id="isDefault-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrisdefault">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setAlignment(This, Alignment) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v><v>Alignment = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></v></type>
+<desc><marker id="setAlignment-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrsetalignment">external documentation</url>.
+ <br/> Alignment = ?wxTEXT_ALIGNMENT_DEFAULT | ?wxTEXT_ALIGNMENT_LEFT | ?wxTEXT_ALIGNMENT_CENTRE | ?wxTEXT_ALIGNMENT_CENTER | ?wxTEXT_ALIGNMENT_RIGHT | ?wxTEXT_ALIGNMENT_JUSTIFIED</p>
+</desc></func>
+<func>
+<name>setBackgroundColour(This, ColBack) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v><v>ColBack = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setBackgroundColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrsetbackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFlags(This, Flags) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v><v>Flags = integer()</v></type>
+<desc><marker id="setFlags-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrsetflags">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFont(This, Font) -&gt; ok</name>
+<fsummary>Equivalent to setFont(This, Font, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v><v>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v></type>
+<desc><marker id="setFont-2"/>
+<p>Equivalent to <seealso marker="#setFont-3">setFont(This, Font, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setFont(This, Font, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v><v>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v><v>Option = {flags, integer()}</v></type>
+<desc><marker id="setFont-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrsetfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setLeftIndent(This, Indent) -&gt; ok</name>
+<fsummary>Equivalent to setLeftIndent(This, Indent, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v><v>Indent = integer()</v></type>
+<desc><marker id="setLeftIndent-2"/>
+<p>Equivalent to <seealso marker="#setLeftIndent-3">setLeftIndent(This, Indent, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setLeftIndent(This, Indent, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v><v>Indent = integer()</v><v>Option = {subIndent, integer()}</v></type>
+<desc><marker id="setLeftIndent-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrsetleftindent">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setRightIndent(This, Indent) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v><v>Indent = integer()</v></type>
+<desc><marker id="setRightIndent-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrsetrightindent">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setTabs(This, Tabs) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v><v>Tabs = [integer()]</v></type>
+<desc><marker id="setTabs-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrsettabs">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setTextColour(This, ColText) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTextAttr">wxTextAttr()</seealso></v><v>ColText = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setTextColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtextattr.html#wxtextattrsettextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxTextAttr">wxTextAttr()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

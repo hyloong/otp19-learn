@@ -572,6 +572,24 @@ OpCase(is_reference_fx):
     Next(2);
     }
 
+OpCase(is_tagged_tuple_frAa):
+    { 
+    IsTaggedTuple(r(0), Arg(1), Arg(2), ClauseFail());
+    Next(3);
+    }
+
+OpCase(is_tagged_tuple_fxAa):
+    { 
+    IsTaggedTuple(xb(Arg(1)), Arg(2), Arg(3), ClauseFail());
+    Next(4);
+    }
+
+OpCase(is_tagged_tuple_fyAa):
+    { 
+    IsTaggedTuple(yb(Arg(1)), Arg(2), Arg(3), ClauseFail());
+    Next(4);
+    }
+
 OpCase(is_tuple_fr):
     { 
     IsTuple(r(0), ClauseFail());
@@ -732,7 +750,7 @@ OpCase(move_cr):
     { 
     BeamInstr* next;
     PreFetch(1, next);
-    Move(Arg(0), r(0), StoreSimpleDest);
+    Move(Arg(0), r(0));
     NextPF(1, next);
     }
 
@@ -740,7 +758,7 @@ OpCase(move_cx):
     { 
     BeamInstr* next;
     PreFetch(2, next);
-    Move(Arg(0), xb(Arg(1)), StoreSimpleDest);
+    Move(Arg(0), xb(Arg(1)));
     NextPF(2, next);
     }
 
@@ -826,7 +844,7 @@ OpCase(move_nx):
     { 
     BeamInstr* next;
     PreFetch(1, next);
-    Move(NIL, xb(Arg(0)), StoreSimpleDest);
+    Move(NIL, xb(Arg(0)));
     NextPF(1, next);
     }
 
@@ -849,7 +867,7 @@ OpCase(move_rx):
     { 
     BeamInstr* next;
     PreFetch(1, next);
-    Move(r(0), xb(Arg(0)), StoreSimpleDest);
+    Move(r(0), xb(Arg(0)));
     NextPF(1, next);
     }
 
@@ -857,7 +875,7 @@ OpCase(move_ry):
     { 
     BeamInstr* next;
     PreFetch(1, next);
-    Move(r(0), yb(Arg(0)), StoreSimpleDest);
+    Move(r(0), yb(Arg(0)));
     NextPF(1, next);
     }
 
@@ -930,7 +948,7 @@ OpCase(move_xr):
     { 
     BeamInstr* next;
     PreFetch(1, next);
-    Move(xb(Arg(0)), r(0), StoreSimpleDest);
+    Move(xb(Arg(0)), r(0));
     NextPF(1, next);
     }
 
@@ -939,7 +957,7 @@ OpCase(move_xx):
     BeamInstr* next;
     PreFetch(1, next);
     tmp_packed1 = Arg(0);
-    Move(xb(tmp_packed1&BEAM_LOOSE_MASK), xb((tmp_packed1>>BEAM_LOOSE_SHIFT)), StoreSimpleDest);
+    Move(xb(tmp_packed1&BEAM_LOOSE_MASK), xb((tmp_packed1>>BEAM_LOOSE_SHIFT)));
     NextPF(1, next);
     }
 
@@ -948,7 +966,7 @@ OpCase(move_xy):
     BeamInstr* next;
     PreFetch(1, next);
     tmp_packed1 = Arg(0);
-    Move(xb(tmp_packed1&BEAM_LOOSE_MASK), yb((tmp_packed1>>BEAM_LOOSE_SHIFT)), StoreSimpleDest);
+    Move(xb(tmp_packed1&BEAM_LOOSE_MASK), yb((tmp_packed1>>BEAM_LOOSE_SHIFT)));
     NextPF(1, next);
     }
 
@@ -956,7 +974,7 @@ OpCase(move_yr):
     { 
     BeamInstr* next;
     PreFetch(1, next);
-    Move(yb(Arg(0)), r(0), StoreSimpleDest);
+    Move(yb(Arg(0)), r(0));
     NextPF(1, next);
     }
 
@@ -965,7 +983,7 @@ OpCase(move_yx):
     BeamInstr* next;
     PreFetch(1, next);
     tmp_packed1 = Arg(0);
-    Move(yb(tmp_packed1&BEAM_LOOSE_MASK), xb((tmp_packed1>>BEAM_LOOSE_SHIFT)), StoreSimpleDest);
+    Move(yb(tmp_packed1&BEAM_LOOSE_MASK), xb((tmp_packed1>>BEAM_LOOSE_SHIFT)));
     NextPF(1, next);
     }
 
@@ -974,7 +992,7 @@ OpCase(move_yy):
     BeamInstr* next;
     PreFetch(1, next);
     tmp_packed1 = Arg(0);
-    Move(yb(tmp_packed1&BEAM_LOOSE_MASK), yb((tmp_packed1>>BEAM_LOOSE_SHIFT)), StoreSimpleDest);
+    Move(yb(tmp_packed1&BEAM_LOOSE_MASK), yb((tmp_packed1>>BEAM_LOOSE_SHIFT)));
     NextPF(1, next);
     }
 
@@ -991,7 +1009,7 @@ OpCase(put_list_cxx):
     BeamInstr* next;
     PreFetch(2, next);
     tmp_packed1 = Arg(1);
-    PutList(Arg(0), xb(tmp_packed1&BEAM_LOOSE_MASK), xb((tmp_packed1>>BEAM_LOOSE_SHIFT)), StoreSimpleDest);
+    PutList(Arg(0), xb(tmp_packed1&BEAM_LOOSE_MASK), xb((tmp_packed1>>BEAM_LOOSE_SHIFT)));
     NextPF(2, next);
     }
 
@@ -1000,7 +1018,7 @@ OpCase(put_list_cyx):
     BeamInstr* next;
     PreFetch(2, next);
     tmp_packed1 = Arg(1);
-    PutList(Arg(0), yb(tmp_packed1&BEAM_LOOSE_MASK), xb((tmp_packed1>>BEAM_LOOSE_SHIFT)), StoreSimpleDest);
+    PutList(Arg(0), yb(tmp_packed1&BEAM_LOOSE_MASK), xb((tmp_packed1>>BEAM_LOOSE_SHIFT)));
     NextPF(2, next);
     }
 
@@ -1008,7 +1026,7 @@ OpCase(put_list_rnr):
     { 
     BeamInstr* next;
     PreFetch(0, next);
-    PutList(r(0), NIL, r(0), StoreSimpleDest);
+    PutList(r(0), NIL, r(0));
     NextPF(0, next);
     }
 
@@ -1016,7 +1034,7 @@ OpCase(put_list_rnx):
     { 
     BeamInstr* next;
     PreFetch(1, next);
-    PutList(r(0), NIL, xb(Arg(0)), StoreSimpleDest);
+    PutList(r(0), NIL, xb(Arg(0)));
     NextPF(1, next);
     }
 
@@ -1024,7 +1042,7 @@ OpCase(put_list_rxr):
     { 
     BeamInstr* next;
     PreFetch(1, next);
-    PutList(r(0), xb(Arg(0)), r(0), StoreSimpleDest);
+    PutList(r(0), xb(Arg(0)), r(0));
     NextPF(1, next);
     }
 
@@ -1033,7 +1051,7 @@ OpCase(put_list_rxx):
     BeamInstr* next;
     PreFetch(1, next);
     tmp_packed1 = Arg(0);
-    PutList(r(0), xb(tmp_packed1&BEAM_LOOSE_MASK), xb((tmp_packed1>>BEAM_LOOSE_SHIFT)), StoreSimpleDest);
+    PutList(r(0), xb(tmp_packed1&BEAM_LOOSE_MASK), xb((tmp_packed1>>BEAM_LOOSE_SHIFT)));
     NextPF(1, next);
     }
 
@@ -1041,7 +1059,7 @@ OpCase(put_list_xcx):
     { 
     BeamInstr* next;
     PreFetch(3, next);
-    PutList(xb(Arg(0)), Arg(1), xb(Arg(2)), StoreSimpleDest);
+    PutList(xb(Arg(0)), Arg(1), xb(Arg(2)));
     NextPF(3, next);
     }
 
@@ -1049,7 +1067,7 @@ OpCase(put_list_xcy):
     { 
     BeamInstr* next;
     PreFetch(3, next);
-    PutList(xb(Arg(0)), Arg(1), yb(Arg(2)), StoreSimpleDest);
+    PutList(xb(Arg(0)), Arg(1), yb(Arg(2)));
     NextPF(3, next);
     }
 
@@ -1058,7 +1076,7 @@ OpCase(put_list_xnx):
     BeamInstr* next;
     PreFetch(1, next);
     tmp_packed1 = Arg(0);
-    PutList(xb(tmp_packed1&BEAM_LOOSE_MASK), NIL, xb((tmp_packed1>>BEAM_LOOSE_SHIFT)), StoreSimpleDest);
+    PutList(xb(tmp_packed1&BEAM_LOOSE_MASK), NIL, xb((tmp_packed1>>BEAM_LOOSE_SHIFT)));
     NextPF(1, next);
     }
 
@@ -1066,7 +1084,7 @@ OpCase(put_list_xrr):
     { 
     BeamInstr* next;
     PreFetch(1, next);
-    PutList(xb(Arg(0)), r(0), r(0), StoreSimpleDest);
+    PutList(xb(Arg(0)), r(0), r(0));
     NextPF(1, next);
     }
 
@@ -1075,7 +1093,7 @@ OpCase(put_list_xxr):
     BeamInstr* next;
     PreFetch(1, next);
     tmp_packed1 = Arg(0);
-    PutList(xb(tmp_packed1&BEAM_LOOSE_MASK), xb((tmp_packed1>>BEAM_LOOSE_SHIFT)), r(0), StoreSimpleDest);
+    PutList(xb(tmp_packed1&BEAM_LOOSE_MASK), xb((tmp_packed1>>BEAM_LOOSE_SHIFT)), r(0));
     NextPF(1, next);
     }
 
@@ -1084,7 +1102,7 @@ OpCase(put_list_xxx):
     BeamInstr* next;
     PreFetch(1, next);
     tmp_packed1 = Arg(0);
-    PutList(xb(tmp_packed1&BEAM_TIGHT_MASK), xb((tmp_packed1>>BEAM_TIGHT_SHIFT)&BEAM_TIGHT_MASK), xb((tmp_packed1>>(2*BEAM_TIGHT_SHIFT))), StoreSimpleDest);
+    PutList(xb(tmp_packed1&BEAM_TIGHT_MASK), xb((tmp_packed1>>BEAM_TIGHT_SHIFT)&BEAM_TIGHT_MASK), xb((tmp_packed1>>(2*BEAM_TIGHT_SHIFT))));
     NextPF(1, next);
     }
 
@@ -1093,7 +1111,7 @@ OpCase(put_list_xyx):
     BeamInstr* next;
     PreFetch(1, next);
     tmp_packed1 = Arg(0);
-    PutList(xb(tmp_packed1&BEAM_TIGHT_MASK), yb((tmp_packed1>>BEAM_TIGHT_SHIFT)&BEAM_TIGHT_MASK), xb((tmp_packed1>>(2*BEAM_TIGHT_SHIFT))), StoreSimpleDest);
+    PutList(xb(tmp_packed1&BEAM_TIGHT_MASK), yb((tmp_packed1>>BEAM_TIGHT_SHIFT)&BEAM_TIGHT_MASK), xb((tmp_packed1>>(2*BEAM_TIGHT_SHIFT))));
     NextPF(1, next);
     }
 
@@ -1101,7 +1119,7 @@ OpCase(put_list_ycx):
     { 
     BeamInstr* next;
     PreFetch(3, next);
-    PutList(yb(Arg(0)), Arg(1), xb(Arg(2)), StoreSimpleDest);
+    PutList(yb(Arg(0)), Arg(1), xb(Arg(2)));
     NextPF(3, next);
     }
 
@@ -1110,7 +1128,7 @@ OpCase(put_list_ynx):
     BeamInstr* next;
     PreFetch(1, next);
     tmp_packed1 = Arg(0);
-    PutList(yb(tmp_packed1&BEAM_LOOSE_MASK), NIL, xb((tmp_packed1>>BEAM_LOOSE_SHIFT)), StoreSimpleDest);
+    PutList(yb(tmp_packed1&BEAM_LOOSE_MASK), NIL, xb((tmp_packed1>>BEAM_LOOSE_SHIFT)));
     NextPF(1, next);
     }
 
@@ -1118,7 +1136,7 @@ OpCase(put_list_yrr):
     { 
     BeamInstr* next;
     PreFetch(1, next);
-    PutList(yb(Arg(0)), r(0), r(0), StoreSimpleDest);
+    PutList(yb(Arg(0)), r(0), r(0));
     NextPF(1, next);
     }
 
@@ -1127,7 +1145,7 @@ OpCase(put_list_yxx):
     BeamInstr* next;
     PreFetch(1, next);
     tmp_packed1 = Arg(0);
-    PutList(yb(tmp_packed1&BEAM_TIGHT_MASK), xb((tmp_packed1>>BEAM_TIGHT_SHIFT)&BEAM_TIGHT_MASK), xb((tmp_packed1>>(2*BEAM_TIGHT_SHIFT))), StoreSimpleDest);
+    PutList(yb(tmp_packed1&BEAM_TIGHT_MASK), xb((tmp_packed1>>BEAM_TIGHT_SHIFT)&BEAM_TIGHT_MASK), xb((tmp_packed1>>(2*BEAM_TIGHT_SHIFT))));
     NextPF(1, next);
     }
 
@@ -1136,7 +1154,7 @@ OpCase(put_list_yyx):
     BeamInstr* next;
     PreFetch(1, next);
     tmp_packed1 = Arg(0);
-    PutList(yb(tmp_packed1&BEAM_TIGHT_MASK), yb((tmp_packed1>>BEAM_TIGHT_SHIFT)&BEAM_TIGHT_MASK), xb((tmp_packed1>>(2*BEAM_TIGHT_SHIFT))), StoreSimpleDest);
+    PutList(yb(tmp_packed1&BEAM_TIGHT_MASK), yb((tmp_packed1>>BEAM_TIGHT_SHIFT)&BEAM_TIGHT_MASK), xb((tmp_packed1>>(2*BEAM_TIGHT_SHIFT))));
     NextPF(1, next);
     }
 

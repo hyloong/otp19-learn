@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxMDIChildFrame</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxMDIChildFrame.xml</file></header>
+<module>wxMDIChildFrame</module>
+<modulesummary>See external documentation: wxMDIChildFrame.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdichildframe.html">wxMDIChildFrame</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxFrame">wxFrame</seealso>
+  <br/><seealso marker="wxTopLevelWindow">wxTopLevelWindow</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxMDIChildFrame"/>wxMDIChildFrame()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxMDIChildFrame">wxMDIChildFrame()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdichildframe.html#wxmdichildframewxmdichildframe">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id, Title) -&gt; <seealso marker="#type-wxMDIChildFrame">wxMDIChildFrame()</seealso></name>
+<fsummary>Equivalent to new(Parent, Id, Title, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxMDIParentFrame#type-wxMDIParentFrame">wxMDIParentFrame:wxMDIParentFrame()</seealso></v><v>Id = integer()</v><v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="new-3"/>
+<p>Equivalent to <seealso marker="#new-4">new(Parent, Id, Title, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id, Title, Options::[Option]) -&gt; <seealso marker="#type-wxMDIChildFrame">wxMDIChildFrame()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxMDIParentFrame#type-wxMDIParentFrame">wxMDIParentFrame:wxMDIParentFrame()</seealso></v><v>Id = integer()</v><v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()}</v></type>
+<desc><marker id="new-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdichildframe.html#wxmdichildframewxmdichildframe">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>activate(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMDIChildFrame">wxMDIChildFrame()</seealso></v></type>
+<desc><marker id="activate-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdichildframe.html#wxmdichildframeactivate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id, Title) -&gt; boolean()</name>
+<fsummary>Equivalent to create(This, Parent, Id, Title, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMDIChildFrame">wxMDIChildFrame()</seealso></v><v>Parent = <seealso marker="wxMDIParentFrame#type-wxMDIParentFrame">wxMDIParentFrame:wxMDIParentFrame()</seealso></v><v>Id = integer()</v><v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="create-4"/>
+<p>Equivalent to <seealso marker="#create-5">create(This, Parent, Id, Title, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id, Title, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMDIChildFrame">wxMDIChildFrame()</seealso></v><v>Parent = <seealso marker="wxMDIParentFrame#type-wxMDIParentFrame">wxMDIParentFrame:wxMDIParentFrame()</seealso></v><v>Id = integer()</v><v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()}</v></type>
+<desc><marker id="create-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdichildframe.html#wxmdichildframecreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>maximize(This) -&gt; ok</name>
+<fsummary>Equivalent to maximize(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMDIChildFrame">wxMDIChildFrame()</seealso></v></type>
+<desc><marker id="maximize-1"/>
+<p>Equivalent to <seealso marker="#maximize-2">maximize(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>maximize(This, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMDIChildFrame">wxMDIChildFrame()</seealso></v><v>Option = {maximize, boolean()}</v></type>
+<desc><marker id="maximize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdichildframe.html#wxmdichildframemaximize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>restore(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMDIChildFrame">wxMDIChildFrame()</seealso></v></type>
+<desc><marker id="restore-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdichildframe.html#wxmdichildframerestore">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxMDIChildFrame">wxMDIChildFrame()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

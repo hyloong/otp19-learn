@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxFileDialog</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxFileDialog.xml</file></header>
+<module>wxFileDialog</module>
+<modulesummary>See external documentation: wxFileDialog.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfiledialog.html">wxFileDialog</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxDialog">wxDialog</seealso>
+  <br/><seealso marker="wxTopLevelWindow">wxTopLevelWindow</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxFileDialog"/>wxFileDialog()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new(Parent) -&gt; <seealso marker="#type-wxFileDialog">wxFileDialog()</seealso></name>
+<fsummary>Equivalent to new(Parent, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="new-1"/>
+<p>Equivalent to <seealso marker="#new-2">new(Parent, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Options::[Option]) -&gt; <seealso marker="#type-wxFileDialog">wxFileDialog()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {message, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {defaultDir, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {defaultFile, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {wildCard, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {style, integer()} | {pos, {X::integer(), Y::integer()}} | {sz, {W::integer(), H::integer()}}</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfiledialog.html#wxfiledialogwxfiledialog">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDirectory(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFileDialog">wxFileDialog()</seealso></v></type>
+<desc><marker id="getDirectory-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfiledialog.html#wxfiledialoggetdirectory">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFilename(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFileDialog">wxFileDialog()</seealso></v></type>
+<desc><marker id="getFilename-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfiledialog.html#wxfiledialoggetfilename">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFilenames(This) -&gt; [<seealso marker="unicode#type-charlist">unicode:charlist()</seealso>]</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFileDialog">wxFileDialog()</seealso></v></type>
+<desc><marker id="getFilenames-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfiledialog.html#wxfiledialoggetfilenames">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFilterIndex(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFileDialog">wxFileDialog()</seealso></v></type>
+<desc><marker id="getFilterIndex-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfiledialog.html#wxfiledialoggetfilterindex">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMessage(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFileDialog">wxFileDialog()</seealso></v></type>
+<desc><marker id="getMessage-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfiledialog.html#wxfiledialoggetmessage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPath(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFileDialog">wxFileDialog()</seealso></v></type>
+<desc><marker id="getPath-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfiledialog.html#wxfiledialoggetpath">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPaths(This) -&gt; [<seealso marker="unicode#type-charlist">unicode:charlist()</seealso>]</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFileDialog">wxFileDialog()</seealso></v></type>
+<desc><marker id="getPaths-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfiledialog.html#wxfiledialoggetpaths">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getWildcard(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFileDialog">wxFileDialog()</seealso></v></type>
+<desc><marker id="getWildcard-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfiledialog.html#wxfiledialoggetwildcard">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setDirectory(This, Dir) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFileDialog">wxFileDialog()</seealso></v><v>Dir = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setDirectory-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfiledialog.html#wxfiledialogsetdirectory">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFilename(This, Name) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFileDialog">wxFileDialog()</seealso></v><v>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setFilename-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfiledialog.html#wxfiledialogsetfilename">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFilterIndex(This, FilterIndex) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFileDialog">wxFileDialog()</seealso></v><v>FilterIndex = integer()</v></type>
+<desc><marker id="setFilterIndex-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfiledialog.html#wxfiledialogsetfilterindex">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMessage(This, Message) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFileDialog">wxFileDialog()</seealso></v><v>Message = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setMessage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfiledialog.html#wxfiledialogsetmessage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setPath(This, Path) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFileDialog">wxFileDialog()</seealso></v><v>Path = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setPath-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfiledialog.html#wxfiledialogsetpath">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setWildcard(This, WildCard) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxFileDialog">wxFileDialog()</seealso></v><v>WildCard = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setWildcard-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxfiledialog.html#wxfiledialogsetwildcard">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxFileDialog">wxFileDialog()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

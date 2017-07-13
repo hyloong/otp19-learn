@@ -8,7 +8,7 @@
 -spec format_number() -> 0.
 format_number() -> 0.
 
--spec opcode(atom(), 0..8) -> 1..158.
+-spec opcode(atom(), 0..8) -> 1..159.
 opcode(label, 1) -> 1;
 opcode(func_info, 3) -> 2;
 opcode(int_code_end, 0) -> 3;
@@ -167,9 +167,10 @@ opcode(put_map_exact, 5) -> 155;
 opcode(is_map, 2) -> 156;
 opcode(has_map_fields, 3) -> 157;
 opcode(get_map_elements, 3) -> 158;
+opcode(is_tagged_tuple, 4) -> 159;
 opcode(Name, Arity) -> erlang:error(badarg, [Name,Arity]).
 
--spec opname(1..158) -> {atom(),0..8}.
+-spec opname(1..159) -> {atom(),0..8}.
 opname(1) -> {label,1};
 opname(2) -> {func_info,3};
 opname(3) -> {int_code_end,0};
@@ -328,4 +329,5 @@ opname(155) -> {put_map_exact,5};
 opname(156) -> {is_map,2};
 opname(157) -> {has_map_fields,3};
 opname(158) -> {get_map_elements,3};
+opname(159) -> {is_tagged_tuple,4};
 opname(Number) -> erlang:error(badarg, [Number]).

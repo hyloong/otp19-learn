@@ -1,0 +1,218 @@
+<module name="wxPen">
+<type>
+  <name>wxPen</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxPen">wxPen()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxPen">wxPen()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getCap</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getCap(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPen">wxPen()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPen">wxPen()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getJoin</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getJoin(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPen">wxPen()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getStyle</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getStyle(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPen">wxPen()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getWidth</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getWidth(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPen">wxPen()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isOk</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isOk(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPen">wxPen()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>new() -&gt; <seealso marker="#type-wxPen">wxPen()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(Colour) -&gt; <seealso marker="#type-wxPen">wxPen()</seealso></head>
+      <guard>
+        <subtype><typename>Colour</typename><string>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Colour</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>new(Colour, Options :: [Option]) -&gt; <seealso marker="#type-wxPen">wxPen()</seealso></head>
+      <guard>
+        <subtype><typename>Colour</typename><string>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {width, integer()} | {style, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Colour</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setCap</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setCap(This, CapStyle) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPen">wxPen()</seealso></string></subtype>
+        <subtype><typename>CapStyle</typename><string>CapStyle = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>CapStyle</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setColour</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setColour(This, Colour) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPen">wxPen()</seealso></string></subtype>
+        <subtype><typename>Colour</typename><string>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Colour</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setColour</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>setColour(This, Red, Green, Blue) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPen">wxPen()</seealso></string></subtype>
+        <subtype><typename>Red</typename><string>Red = Green = Blue = integer()</string></subtype>
+        <subtype><typename>Green</typename><string></string></subtype>
+        <subtype><typename>Blue</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Blue</anno>
+  <anno>Green</anno>
+  <anno>Red</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setJoin</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setJoin(This, JoinStyle) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPen">wxPen()</seealso></string></subtype>
+        <subtype><typename>JoinStyle</typename><string>JoinStyle = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>JoinStyle</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setStyle</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setStyle(This, Style) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPen">wxPen()</seealso></string></subtype>
+        <subtype><typename>Style</typename><string>Style = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Style</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setWidth</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setWidth(This, Width) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPen">wxPen()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:35.</timestamp>
+</module>

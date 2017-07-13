@@ -1,0 +1,832 @@
+<module name="wxGridBagSizer">
+<type>
+  <name>wxGridBagSizer</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxGridBagSizer">wxGridBagSizer()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>add</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>add(This, Item) -&gt; <seealso marker="wxSizerItem#type-wxSizerItem">wxSizerItem:wxSizerItem()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = <br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="wxSizerItem#type-wxSizerItem">wxSizerItem:wxSizerItem()</seealso> | <seealso marker="wxGBSizerItem#type-wxGBSizerItem">wxGBSizerItem:wxGBSizerItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Item</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>add</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>add(This, Width, Height) -&gt; <seealso marker="wxSizerItem#type-wxSizerItem">wxSizerItem:wxSizerItem()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>add</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>add(This, Window, Pos) -&gt; <seealso marker="wxSizerItem#type-wxSizerItem">wxSizerItem:wxSizerItem()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Window</typename><string>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso> | <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></string></subtype>
+        <subtype><typename>Pos</typename><string>Pos = {R :: integer(), C :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>C</anno>
+  <anno>Pos</anno>
+  <anno>R</anno>
+  <anno>This</anno>
+  <anno>Window</anno>
+</spec>
+<spec>
+  <name>add</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>add(This, Window, Height :: [Option]) -&gt; <seealso marker="wxSizerItem#type-wxSizerItem">wxSizerItem:wxSizerItem()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Window</typename><string>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso> | <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{proportion, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{flag, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{border, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{userData, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>Option</anno>
+  <anno>This</anno>
+  <anno>Window</anno>
+</spec>
+<spec>
+  <name>add</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>add(This, Width, Height, Pos) -&gt; <seealso marker="wxSizerItem#type-wxSizerItem">wxSizerItem:wxSizerItem()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Pos</typename><string>Pos = {R :: integer(), C :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>C</anno>
+  <anno>Height</anno>
+  <anno>Pos</anno>
+  <anno>R</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>add</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>add(This, Width, Height, Pos :: [Option]) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="wxSizerItem#type-wxSizerItem">wxSizerItem:wxSizerItem()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{proportion, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{flag, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{border, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{userData, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>Option</anno>
+  <anno>Pos</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>add</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>add(This, Window, Pos, Pos :: [Option]) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="wxSizerItem#type-wxSizerItem">wxSizerItem:wxSizerItem()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Window</typename><string>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso> | <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></string></subtype>
+        <subtype><typename>Pos</typename><string>Pos = {R :: integer(), C :: integer()}</string></subtype>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{span, {RS :: integer(), CS :: integer()}} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{flag, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{border, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{userData, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>C</anno>
+  <anno>CS</anno>
+  <anno>Option</anno>
+  <anno>Pos</anno>
+  <anno>R</anno>
+  <anno>RS</anno>
+  <anno>This</anno>
+  <anno>Window</anno>
+</spec>
+<spec>
+  <name>add</name>
+  <arity>5</arity>
+  <contract>
+    <clause>
+      <head>add(This, Width, Height, Pos, Options :: [Option]) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="wxSizerItem#type-wxSizerItem">wxSizerItem:wxSizerItem()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = Height = integer()</string></subtype>
+        <subtype><typename>Height</typename><string/></subtype>
+        <subtype><typename>Pos</typename><string>Pos = {R :: integer(), C :: integer()}</string></subtype>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{span, {RS :: integer(), CS :: integer()}} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{flag, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{border, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{userData, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>C</anno>
+  <anno>CS</anno>
+  <anno>Height</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Pos</anno>
+  <anno>R</anno>
+  <anno>RS</anno>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>addGrowableCol</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>addGrowableCol</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>addGrowableRow</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>addGrowableRow</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>addSpacer</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>addStretchSpacer</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>addStretchSpacer</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>calcMin</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>calcMin(This) -&gt; {W :: integer(), H :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>checkForIntersection</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>checkForIntersection(This, Item) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = <seealso marker="wxGBSizerItem#type-wxGBSizerItem">wxGBSizerItem:wxGBSizerItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Item</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>checkForIntersection</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>checkForIntersection(This, Pos, Span) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Pos</typename><string>Pos = {R :: integer(), C :: integer()}</string></subtype>
+        <subtype><typename>Span</typename><string>Span = {RS :: integer(), CS :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>C</anno>
+  <anno>CS</anno>
+  <anno>Pos</anno>
+  <anno>R</anno>
+  <anno>RS</anno>
+  <anno>Span</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>checkForIntersection</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>checkForIntersection(This, Item, Span :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Item</typename><string>Item = <seealso marker="wxGBSizerItem#type-wxGBSizerItem">wxGBSizerItem:wxGBSizerItem()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {excludeItem, <seealso marker="wxGBSizerItem#type-wxGBSizerItem">wxGBSizerItem:wxGBSizerItem()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Item</anno>
+  <anno>Option</anno>
+  <anno>Span</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>checkForIntersection</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>checkForIntersection(This, Pos, Span, Options :: [Option]) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Pos</typename><string>Pos = {R :: integer(), C :: integer()}</string></subtype>
+        <subtype><typename>Span</typename><string>Span = {RS :: integer(), CS :: integer()}</string></subtype>
+        <subtype><typename>Option</typename><string>Option = {excludeItem, <seealso marker="wxGBSizerItem#type-wxGBSizerItem">wxGBSizerItem:wxGBSizerItem()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>C</anno>
+  <anno>CS</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Pos</anno>
+  <anno>R</anno>
+  <anno>RS</anno>
+  <anno>Span</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>clear</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>clear</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>detach</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>findItem</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>findItem(This, Window) -&gt; <seealso marker="wxGBSizerItem#type-wxGBSizerItem">wxGBSizerItem:wxGBSizerItem()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Window</typename><string>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso> | <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>Window</anno>
+</spec>
+<spec>
+  <name>findItemAtPoint</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>findItemAtPoint(This, Pt) -&gt; <seealso marker="wxGBSizerItem#type-wxGBSizerItem">wxGBSizerItem:wxGBSizerItem()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Pt</typename><string>Pt = {X :: integer(), Y :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Pt</anno>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>findItemAtPosition</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>findItemAtPosition(This, Pos) -&gt; <seealso marker="wxGBSizerItem#type-wxGBSizerItem">wxGBSizerItem:wxGBSizerItem()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Pos</typename><string>Pos = {R :: integer(), C :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>C</anno>
+  <anno>Pos</anno>
+  <anno>R</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>findItemWithData</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>findItemWithData(This, UserData) -&gt; <seealso marker="wxGBSizerItem#type-wxGBSizerItem">wxGBSizerItem:wxGBSizerItem()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>UserData</typename><string>UserData = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>UserData</anno>
+</spec>
+<spec>
+  <name>fit</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>fitInside</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getCellSize</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>getCellSize(This, Row, Col) -&gt; {W :: integer(), H :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Row</typename><string>Row = Col = integer()</string></subtype>
+        <subtype><typename>Col</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Col</anno>
+  <anno>H</anno>
+  <anno>Row</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>getChildren</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getCols</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getEmptyCellSize</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getEmptyCellSize(This) -&gt; {W :: integer(), H :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>getFlexibleDirection</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getHGap</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getItem</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getItem</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getItemPosition</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getItemPosition(This, Index) -&gt; {R :: integer(), C :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Index</typename><string>Index = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>C</anno>
+  <anno>Index</anno>
+  <anno>R</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getItemPosition</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getItemPosition(This, Window) -&gt; {R :: integer(), C :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Window</typename><string>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso> | <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>C</anno>
+  <anno>R</anno>
+  <anno>This</anno>
+  <anno>Window</anno>
+</spec>
+<spec>
+  <name>getItemSpan</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getItemSpan(This, Index) -&gt; {RS :: integer(), CS :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Index</typename><string>Index = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>CS</anno>
+  <anno>Index</anno>
+  <anno>RS</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getItemSpan</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getItemSpan(This, Window) -&gt; {RS :: integer(), CS :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Window</typename><string>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso> | <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>CS</anno>
+  <anno>RS</anno>
+  <anno>This</anno>
+  <anno>Window</anno>
+</spec>
+<spec>
+  <name>getMinSize</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getNonFlexibleGrowMode</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getPosition</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getRows</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getSize</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getVGap</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>hide</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>hide</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>insert</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>insert</name>
+  <arity>4</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>insert</name>
+  <arity>5</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>insertSpacer</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>insertStretchSpacer</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>insertStretchSpacer</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>isShown</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>layout</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>new() -&gt; <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(Options :: [Option]) -&gt; <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></head>
+      <guard>
+        <subtype><typename>Option</typename><string>Option = {vgap, integer()} | {hgap, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>prepend</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>prepend</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>prepend</name>
+  <arity>4</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>prependSpacer</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>prependStretchSpacer</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>prependStretchSpacer</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>recalcSizes</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>remove</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>removeGrowableCol</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>removeGrowableRow</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>replace</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>replace</name>
+  <arity>4</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setCols</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setDimension</name>
+  <arity>5</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setEmptyCellSize</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setEmptyCellSize(This, Sz) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Sz</typename><string>Sz = {W :: integer(), H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Sz</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+</spec>
+<spec>
+  <name>setFlexibleDirection</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setHGap</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setItemMinSize</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setItemMinSize</name>
+  <arity>4</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setItemPosition</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setItemPosition(This, Index, Pos) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Index</typename><string>Index = integer()</string></subtype>
+        <subtype><typename>Pos</typename><string>Pos = {R :: integer(), C :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>C</anno>
+  <anno>Index</anno>
+  <anno>Pos</anno>
+  <anno>R</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setItemPosition</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setItemPosition(This, Window, Pos) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Window</typename><string>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso> | <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></string></subtype>
+        <subtype><typename>Pos</typename><string>Pos = {R :: integer(), C :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>C</anno>
+  <anno>Pos</anno>
+  <anno>R</anno>
+  <anno>This</anno>
+  <anno>Window</anno>
+</spec>
+<spec>
+  <name>setItemSpan</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setItemSpan(This, Index, Span) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Index</typename><string>Index = integer()</string></subtype>
+        <subtype><typename>Span</typename><string>Span = {RS :: integer(), CS :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>CS</anno>
+  <anno>Index</anno>
+  <anno>RS</anno>
+  <anno>Span</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setItemSpan</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>setItemSpan(This, Window, Span) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></string></subtype>
+        <subtype><typename>Window</typename><string>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso> | <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></string></subtype>
+        <subtype><typename>Span</typename><string>Span = {RS :: integer(), CS :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>CS</anno>
+  <anno>RS</anno>
+  <anno>Span</anno>
+  <anno>This</anno>
+  <anno>Window</anno>
+</spec>
+<spec>
+  <name>setMinSize</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setMinSize</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setNonFlexibleGrowMode</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setRows</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setSizeHints</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setVGap</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setVirtualSizeHints</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>show</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>show</name>
+  <arity>3</arity>
+  <contract/>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:13.</timestamp>
+</module>

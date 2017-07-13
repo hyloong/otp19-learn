@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxSplashScreen</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxSplashScreen.xml</file></header>
+<module>wxSplashScreen</module>
+<modulesummary>See external documentation: wxSplashScreen.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplashscreen.html">wxSplashScreen</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxFrame">wxFrame</seealso>
+  <br/><seealso marker="wxTopLevelWindow">wxTopLevelWindow</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxSplashScreen"/>wxSplashScreen()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxSplashScreen">wxSplashScreen()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplashscreen.html#wxsplashscreenwxsplashscreen">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Bitmap, SplashStyle, Milliseconds, Parent, Id) -&gt; <seealso marker="#type-wxSplashScreen">wxSplashScreen()</seealso></name>
+<fsummary>Equivalent to new(Bitmap, SplashStyle, Milliseconds, Parent, Id, []).
+</fsummary>
+<type>
+<v>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v><v>SplashStyle = integer()</v><v>Milliseconds = integer()</v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v></type>
+<desc><marker id="new-5"/>
+<p>Equivalent to <seealso marker="#new-6">new(Bitmap, SplashStyle, Milliseconds, Parent, Id, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Bitmap, SplashStyle, Milliseconds, Parent, Id, Options::[Option]) -&gt; <seealso marker="#type-wxSplashScreen">wxSplashScreen()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v><v>SplashStyle = integer()</v><v>Milliseconds = integer()</v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Option = {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()}</v></type>
+<desc><marker id="new-6"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplashscreen.html#wxsplashscreenwxsplashscreen">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSplashStyle(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplashScreen">wxSplashScreen()</seealso></v></type>
+<desc><marker id="getSplashStyle-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplashscreen.html#wxsplashscreengetsplashstyle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getTimeout(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplashScreen">wxSplashScreen()</seealso></v></type>
+<desc><marker id="getTimeout-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplashscreen.html#wxsplashscreengettimeout">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxSplashScreen">wxSplashScreen()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

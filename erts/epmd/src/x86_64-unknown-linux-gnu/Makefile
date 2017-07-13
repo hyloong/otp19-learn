@@ -64,7 +64,7 @@ ERTS_LIB = $(ERL_TOP)/erts/lib_src/obj/$(TARGET)/$(TYPE)/MADE
 
 CC      = gcc
 WFLAGS  = -Wall -Wstrict-prototypes -Wmissing-prototypes -Wdeclaration-after-statement
-CFLAGS  = -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -DHAVE_CONFIG_H $(TYPE_FLAGS) $(WFLAGS) $(ERTS_INCL)
+CFLAGS  = -Werror=undef -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -DHAVE_CONFIG_H $(TYPE_FLAGS) $(WFLAGS) $(ERTS_INCL)
 LD      = $(CC)
 LIBS    = -lutil -ldl -lm     $(ERTS_INTERNAL_LIBS)
 LDFLAGS =  

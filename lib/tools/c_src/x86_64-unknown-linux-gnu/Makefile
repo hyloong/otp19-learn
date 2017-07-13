@@ -38,7 +38,7 @@ INSTALL_PROGRAM=${INSTALL}
 LDFLAGS= 
 
 ifeq ($(TYPE),debug)
-CFLAGS = -g  -D_GNU_SOURCE -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu    -DDEBUG
+CFLAGS = -g  -D_GNU_SOURCE -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu    -DDEBUG
 TYPEMARKER=.debug
 PRE_LD =
 ifeq ($(TARGET),win32)
@@ -46,22 +46,22 @@ LDFLAGS += -g
 endif
 else
 ifeq ($(TYPE),purify)
-CFLAGS = -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -DPURIFY
+CFLAGS = -Werror=undef -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -DPURIFY
 TYPEMARKER=.purify
 PRE_LD = purify $(PURIFY_BUILD_OPTIONS)
 else
 ifeq ($(TYPE),quantify)
-CFLAGS = -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -DQUANTIFY
+CFLAGS = -Werror=undef -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -DQUANTIFY
 TYPEMARKER=.quantify
 PRE_LD = quantify $(QUANTIFY_BUILD_OPTIONS)
 else
 ifeq ($(TYPE),purecov)
-CFLAGS = -g  -D_GNU_SOURCE -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu    -DPURECOV
+CFLAGS = -g  -D_GNU_SOURCE -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu    -DPURECOV
 TYPEMARKER=.purecov
 PRE_LD = purecov $(PURECOV_BUILD_OPTIONS)
 else
 override TYPE=opt
-CFLAGS = -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE
+CFLAGS = -Werror=undef -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE
 PRE_LD =
 TYPEMARKER =
 endif

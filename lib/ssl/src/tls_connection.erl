@@ -60,7 +60,7 @@
 
 %% Data handling
 -export([passive_receive/2, next_record_if_active/1, handle_common_event/4, send/3,
-        socket/5]).
+        socket/5, setopts/3, getopts/3]).
 
 %% gen_statem state functions
 -export([init/3, error/3, downgrade/3, %% Initiation and take down states
@@ -195,6 +195,10 @@ callback_mode() ->
 socket(Pid,  Transport, Socket, Connection, Tracker) ->
     tls_socket:socket(Pid, Transport, Socket, Connection, Tracker).
 
+setopts(Transport, Socket, Other) ->
+    tls_socket:setopts(Transport, Socket, Other).
+getopts(Transport, Socket, Tag) ->
+    tls_socket:getopts(Transport, Socket, Tag).
 
 %%--------------------------------------------------------------------
 %% State functions
@@ -220,7 +224,7 @@ init({call, From}, {start, Timeout},
 				       Cache, CacheCb, Renegotiation, Cert),
     
     Version = Hello#client_hello.client_version,
-    HelloVersion = tls_record:lowest_protocol_version(SslOpts#ssl_options.versions),
+    HelloVersion = tls_record:hello_version(Version, SslOpts#ssl_options.versions),
     Handshake0 = ssl_handshake:init_handshake_history(),
     {BinMsg, ConnectionStates, Handshake} =
         encode_handshake(Hello,  HelloVersion, ConnectionStates0, Handshake0, V2HComp),
@@ -397,23 +401,36 @@ handle_info({Protocol, _, Data}, StateName,
     end;
 handle_info({CloseTag, Socket}, StateName,
             #state{socket = Socket, close_tag = CloseTag,
+                   socket_options = #socket_options{active = Active},
+                   protocol_buffers = #protocol_buffers{tls_cipher_texts = CTs},
 		   negotiated_version = Version} = State) ->
+
     %% Note that as of TLS 1.1,
     %% failure to properly close a connection no longer requires that a
     %% session not be resumed.  This is a change from TLS 1.0 to conform
     %% with widespread implementation practice.
-    case Version of
-	{1, N} when N >= 1 ->
-	    ok;
-	_ ->
-	    %% As invalidate_sessions here causes performance issues,
-	    %% we will conform to the widespread implementation
-	    %% practice and go aginst the spec
-	    %%invalidate_session(Role, Host, Port, Session)
-	    ok
-    end,
-    ssl_connection:handle_normal_shutdown(?ALERT_REC(?FATAL, ?CLOSE_NOTIFY), StateName, State),
-    {stop, {shutdown, transport_closed}};
+
+    case (Active == false) andalso (CTs =/= []) of
+        false ->
+            case Version of
+                {1, N} when N >= 1 ->
+                    ok;
+                _ ->
+                    %% As invalidate_sessions here causes performance issues,
+                    %% we will conform to the widespread implementation
+                    %% practice and go aginst the spec
+                    %%invalidate_session(Role, Host, Port, Session)
+                    ok
+            end,
+
+            ssl_connection:handle_normal_shutdown(?ALERT_REC(?FATAL, ?CLOSE_NOTIFY), StateName, State),
+            {stop, {shutdown, transport_closed}};
+        true ->
+            %% Fixes non-delivery of final TLS record in {active, once}.
+            %% Basically allows the application the opportunity to set {active, once} again
+            %% and then receive the final message.
+            next_event(StateName, no_record, State)
+    end;
 handle_info(Msg, StateName, State) ->
     ssl_connection:handle_info(Msg, StateName, State).
 
@@ -583,8 +600,12 @@ next_record(#state{protocol_buffers =
 next_record(#state{protocol_buffers = #protocol_buffers{tls_packets = [], tls_cipher_texts = []},
 		   socket = Socket,
 		   transport_cb = Transport} = State) ->
-    tls_socket:setopts(Transport, Socket, [{active,once}]),
-    {no_record, State};
+    case tls_socket:setopts(Transport, Socket, [{active,once}]) of
+	ok ->
+	    {no_record, State};
+	_ ->
+	    {socket_closed, State}
+    end;
 next_record(State) ->
     {no_record, State}.
 
@@ -609,10 +630,15 @@ passive_receive(State0 = #state{user_data_buffer = Buffer}, StateName) ->
 next_event(StateName, Record, State) ->
     next_event(StateName, Record, State, []).
 
+next_event(StateName, socket_closed, State, _) ->
+    ssl_connection:handle_normal_shutdown(?ALERT_REC(?FATAL, ?CLOSE_NOTIFY), StateName, State),
+    {stop, {shutdown, transport_closed}, State};
 next_event(connection = StateName, no_record, State0, Actions) ->
     case next_record_if_active(State0) of
 	{no_record, State} ->
 	    ssl_connection:hibernate_after(StateName, State, Actions);
+	{socket_closed, State} ->
+	    next_event(StateName, socket_closed, State, Actions);
 	{#ssl_tls{} = Record, State} ->
 	    {next_state, StateName, State, [{next_event, internal, {protocol_record, Record}} | Actions]};
 	{#alert{} = Alert, State} ->

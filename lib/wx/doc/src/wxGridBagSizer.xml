@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxGridBagSizer</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxGridBagSizer.xml</file></header>
+<module>wxGridBagSizer</module>
+<modulesummary>See external documentation: wxGridBagSizer.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridbagsizer.html">wxGridBagSizer</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxFlexGridSizer">wxFlexGridSizer</seealso>
+  <br/><seealso marker="wxGridSizer">wxGridSizer</seealso>
+  <br/><seealso marker="wxSizer">wxSizer</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxGridBagSizer"/>wxGridBagSizer()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></name>
+<fsummary>Equivalent to new([]).
+</fsummary>
+
+<desc><marker id="new-0"/>
+<p>Equivalent to <seealso marker="#new-1">new([])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Options::[Option]) -&gt; <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Option = {vgap, integer()} | {hgap, integer()}</v></type>
+<desc><marker id="new-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridbagsizer.html#wxgridbagsizerwxgridbagsizer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>add(This, Item) -&gt; <seealso marker="wxSizerItem#type-wxSizerItem">wxSizerItem:wxSizerItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></v><v>Item = <seealso marker="wxSizerItem#type-wxSizerItem">wxSizerItem:wxSizerItem()</seealso> | <seealso marker="wxGBSizerItem#type-wxGBSizerItem">wxGBSizerItem:wxGBSizerItem()</seealso></v></type>
+<desc><marker id="add-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridbagsizer.html#wxgridbagsizeradd">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>add(This, Width, Height) -&gt; <seealso marker="wxSizerItem#type-wxSizerItem">wxSizerItem:wxSizerItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></v><v>Width = integer()</v><v>Height = integer()</v></type>
+<desc><marker id="add-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridbagsizer.html#wxgridbagsizeradd">external documentation</url>.
+  <br/> Also:<br/>
+  add(This, Window, Pos) -&gt; wxSizerItem:wxSizerItem() when<br/>
+  	This::wxGridBagSizer(), Window::wxWindow:wxWindow() | wxSizer:wxSizer(), Pos::{R::integer(), C::integer()};<br/>
+        (This, Window, [Option]) -&gt; wxSizerItem:wxSizerItem() when<br/>
+  	This::wxGridBagSizer(), Window::wxWindow:wxWindow() | wxSizer:wxSizer(),<br/>
+  	Option :: {'proportion', integer()}<br/>
+  		 | {'flag', integer()}<br/>
+  		 | {'border', integer()}<br/>
+  		 | {'userData', wx:wx_object()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>add(This, Width, Height, Pos) -&gt; <seealso marker="wxSizerItem#type-wxSizerItem">wxSizerItem:wxSizerItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></v><v>Width = integer()</v><v>Height = integer()</v><v>Pos = {R::integer(), C::integer()}</v></type>
+<desc><marker id="add-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridbagsizer.html#wxgridbagsizeradd">external documentation</url>.
+  <br/> Also:<br/>
+  add(This, Width, Height, [Option]) -&gt; wxSizerItem:wxSizerItem() when<br/>
+  	This::wxGridBagSizer(), Width::integer(), Height::integer(),<br/>
+  	Option :: {'proportion', integer()}<br/>
+  		 | {'flag', integer()}<br/>
+  		 | {'border', integer()}<br/>
+  		 | {'userData', wx:wx_object()};<br/>
+        (This, Window, Pos, [Option]) -&gt; wxSizerItem:wxSizerItem() when<br/>
+  	This::wxGridBagSizer(), Window::wxWindow:wxWindow() | wxSizer:wxSizer(), Pos::{R::integer(), C::integer()},<br/>
+  	Option :: {'span', {RS::integer(), CS::integer()}}<br/>
+  		 | {'flag', integer()}<br/>
+  		 | {'border', integer()}<br/>
+  		 | {'userData', wx:wx_object()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>add(This, Width, Height, Pos, Options::[Option]) -&gt; <seealso marker="wxSizerItem#type-wxSizerItem">wxSizerItem:wxSizerItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></v><v>Width = integer()</v><v>Height = integer()</v><v>Pos = {R::integer(), C::integer()}</v><v>Option = {span, {RS::integer(), CS::integer()}} | {flag, integer()} | {border, integer()} | {userData, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</v></type>
+<desc><marker id="add-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridbagsizer.html#wxgridbagsizeradd">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>calcMin(This) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></v></type>
+<desc><marker id="calcMin-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridbagsizer.html#wxgridbagsizercalcmin">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>checkForIntersection(This, Item) -&gt; boolean()</name>
+<fsummary>Equivalent to checkForIntersection(This, Item, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></v><v>Item = <seealso marker="wxGBSizerItem#type-wxGBSizerItem">wxGBSizerItem:wxGBSizerItem()</seealso></v></type>
+<desc><marker id="checkForIntersection-2"/>
+<p>Equivalent to <seealso marker="#checkForIntersection-3">checkForIntersection(This, Item, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>checkForIntersection(This, Pos, Span) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></v><v>Pos = {R::integer(), C::integer()}</v><v>Span = {RS::integer(), CS::integer()}</v></type>
+<desc><marker id="checkForIntersection-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridbagsizer.html#wxgridbagsizercheckforintersection">external documentation</url>.
+  <br/> Also:<br/>
+  checkForIntersection(This, Item, [Option]) -&gt; boolean() when<br/>
+  	This::wxGridBagSizer(), Item::wxGBSizerItem:wxGBSizerItem(),<br/>
+  	Option :: {'excludeItem', wxGBSizerItem:wxGBSizerItem()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>checkForIntersection(This, Pos, Span, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></v><v>Pos = {R::integer(), C::integer()}</v><v>Span = {RS::integer(), CS::integer()}</v><v>Option = {excludeItem, <seealso marker="wxGBSizerItem#type-wxGBSizerItem">wxGBSizerItem:wxGBSizerItem()</seealso>}</v></type>
+<desc><marker id="checkForIntersection-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridbagsizer.html#wxgridbagsizercheckforintersection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>findItem(This, Window) -&gt; <seealso marker="wxGBSizerItem#type-wxGBSizerItem">wxGBSizerItem:wxGBSizerItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></v><v>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso> | <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></v></type>
+<desc><marker id="findItem-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridbagsizer.html#wxgridbagsizerfinditem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>findItemAtPoint(This, Pt) -&gt; <seealso marker="wxGBSizerItem#type-wxGBSizerItem">wxGBSizerItem:wxGBSizerItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></v><v>Pt = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="findItemAtPoint-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridbagsizer.html#wxgridbagsizerfinditematpoint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>findItemAtPosition(This, Pos) -&gt; <seealso marker="wxGBSizerItem#type-wxGBSizerItem">wxGBSizerItem:wxGBSizerItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></v><v>Pos = {R::integer(), C::integer()}</v></type>
+<desc><marker id="findItemAtPosition-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridbagsizer.html#wxgridbagsizerfinditematposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>findItemWithData(This, UserData) -&gt; <seealso marker="wxGBSizerItem#type-wxGBSizerItem">wxGBSizerItem:wxGBSizerItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></v><v>UserData = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></v></type>
+<desc><marker id="findItemWithData-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridbagsizer.html#wxgridbagsizerfinditemwithdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCellSize(This, Row, Col) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></v><v>Row = integer()</v><v>Col = integer()</v></type>
+<desc><marker id="getCellSize-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridbagsizer.html#wxgridbagsizergetcellsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getEmptyCellSize(This) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></v></type>
+<desc><marker id="getEmptyCellSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridbagsizer.html#wxgridbagsizergetemptycellsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItemPosition(This, Index) -&gt; {R::integer(), C::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></v><v>Index = integer()</v></type>
+<desc><marker id="getItemPosition-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridbagsizer.html#wxgridbagsizergetitemposition">external documentation</url>.
+  <br/> Also:<br/>
+  getItemPosition(This, Window) -&gt; {R::integer(), C::integer()} when<br/>
+  	This::wxGridBagSizer(), Window::wxWindow:wxWindow() | wxSizer:wxSizer().<br/>
+ </p>
+</desc></func>
+<func>
+<name>getItemSpan(This, Index) -&gt; {RS::integer(), CS::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></v><v>Index = integer()</v></type>
+<desc><marker id="getItemSpan-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridbagsizer.html#wxgridbagsizergetitemspan">external documentation</url>.
+  <br/> Also:<br/>
+  getItemSpan(This, Window) -&gt; {RS::integer(), CS::integer()} when<br/>
+  	This::wxGridBagSizer(), Window::wxWindow:wxWindow() | wxSizer:wxSizer().<br/>
+ </p>
+</desc></func>
+<func>
+<name>setEmptyCellSize(This, Sz) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></v><v>Sz = {W::integer(), H::integer()}</v></type>
+<desc><marker id="setEmptyCellSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridbagsizer.html#wxgridbagsizersetemptycellsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemPosition(This, Index, Pos) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></v><v>Index = integer()</v><v>Pos = {R::integer(), C::integer()}</v></type>
+<desc><marker id="setItemPosition-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridbagsizer.html#wxgridbagsizersetitemposition">external documentation</url>.
+  <br/> Also:<br/>
+  setItemPosition(This, Window, Pos) -&gt; boolean() when<br/>
+  	This::wxGridBagSizer(), Window::wxWindow:wxWindow() | wxSizer:wxSizer(), Pos::{R::integer(), C::integer()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>setItemSpan(This, Index, Span) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso></v><v>Index = integer()</v><v>Span = {RS::integer(), CS::integer()}</v></type>
+<desc><marker id="setItemSpan-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridbagsizer.html#wxgridbagsizersetitemspan">external documentation</url>.
+  <br/> Also:<br/>
+  setItemSpan(This, Window, Span) -&gt; boolean() when<br/>
+  	This::wxGridBagSizer(), Window::wxWindow:wxWindow() | wxSizer:wxSizer(), Span::{RS::integer(), CS::integer()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxGridBagSizer">wxGridBagSizer()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

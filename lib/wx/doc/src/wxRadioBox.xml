@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxRadioBox</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxRadioBox.xml</file></header>
+<module>wxRadioBox</module>
+<modulesummary>See external documentation: wxRadioBox.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxradiobox.html">wxRadioBox</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxControl">wxControl</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxRadioBox"/>wxRadioBox()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new(Parent, Id, Title, Pos, Size, Choices) -&gt; <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></name>
+<fsummary>Equivalent to new(Parent, Id, Title, Pos, Size, Choices, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Pos = {X::integer(), Y::integer()}</v><v>Size = {W::integer(), H::integer()}</v><v>Choices = [<seealso marker="unicode#type-chardata">unicode:chardata()</seealso>]</v></type>
+<desc><marker id="new-6"/>
+<p>Equivalent to <seealso marker="#new-7">new(Parent, Id, Title, Pos, Size, Choices, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id, Title, Pos, Size, Choices, Options::[Option]) -&gt; <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Pos = {X::integer(), Y::integer()}</v><v>Size = {W::integer(), H::integer()}</v><v>Choices = [<seealso marker="unicode#type-chardata">unicode:chardata()</seealso>]</v><v>Option = {majorDim, integer()} | {style, integer()} | {val, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</v></type>
+<desc><marker id="new-7"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxradiobox.html#wxradioboxwxradiobox">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id, Title, Pos, Size, Choices) -&gt; boolean()</name>
+<fsummary>Equivalent to create(This, Parent, Id, Title, Pos, Size, Choices, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Pos = {X::integer(), Y::integer()}</v><v>Size = {W::integer(), H::integer()}</v><v>Choices = [<seealso marker="unicode#type-chardata">unicode:chardata()</seealso>]</v></type>
+<desc><marker id="create-7"/>
+<p>Equivalent to <seealso marker="#create-8">create(This, Parent, Id, Title, Pos, Size, Choices, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id, Title, Pos, Size, Choices, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Title = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Pos = {X::integer(), Y::integer()}</v><v>Size = {W::integer(), H::integer()}</v><v>Choices = [<seealso marker="unicode#type-chardata">unicode:chardata()</seealso>]</v><v>Option = {majorDim, integer()} | {style, integer()} | {val, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</v></type>
+<desc><marker id="create-8"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxradiobox.html#wxradioboxcreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>enable(This) -&gt; boolean()</name>
+<fsummary>Equivalent to enable(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></v></type>
+<desc><marker id="enable-1"/>
+<p>Equivalent to <seealso marker="#enable-2">enable(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>enable(This, N) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></v><v>N = integer()</v></type>
+<desc><marker id="enable-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxradiobox.html#wxradioboxenable">external documentation</url>.
+  <br/> Also:<br/>
+  enable(This, [Option]) -&gt; boolean() when<br/>
+  	This::wxRadioBox(),<br/>
+  	Option :: {'enable', boolean()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>enable(This, N, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></v><v>N = integer()</v><v>Option = {enable, boolean()}</v></type>
+<desc><marker id="enable-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxradiobox.html#wxradioboxenable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSelection(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></v></type>
+<desc><marker id="getSelection-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxradiobox.html#wxradioboxgetselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getString(This, N) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></v><v>N = integer()</v></type>
+<desc><marker id="getString-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxradiobox.html#wxradioboxgetstring">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSelection(This, N) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></v><v>N = integer()</v></type>
+<desc><marker id="setSelection-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxradiobox.html#wxradioboxsetselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>show(This) -&gt; boolean()</name>
+<fsummary>Equivalent to show(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></v></type>
+<desc><marker id="show-1"/>
+<p>Equivalent to <seealso marker="#show-2">show(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>show(This, N) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></v><v>N = integer()</v></type>
+<desc><marker id="show-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxradiobox.html#wxradioboxshow">external documentation</url>.
+  <br/> Also:<br/>
+  show(This, [Option]) -&gt; boolean() when<br/>
+  	This::wxRadioBox(),<br/>
+  	Option :: {'show', boolean()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>show(This, N, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></v><v>N = integer()</v><v>Option = {show, boolean()}</v></type>
+<desc><marker id="show-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxradiobox.html#wxradioboxshow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getColumnCount(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></v></type>
+<desc><marker id="getColumnCount-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxradiobox.html#wxradioboxgetcolumncount">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItemHelpText(This, N) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></v><v>N = integer()</v></type>
+<desc><marker id="getItemHelpText-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxradiobox.html#wxradioboxgetitemhelptext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItemToolTip(This, Item) -&gt; <seealso marker="wxToolTip#type-wxToolTip">wxToolTip:wxToolTip()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getItemToolTip-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxradiobox.html#wxradioboxgetitemtooltip">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItemFromPoint(This, Pt) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></v><v>Pt = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="getItemFromPoint-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxradiobox.html#wxradioboxgetitemfrompoint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getRowCount(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></v></type>
+<desc><marker id="getRowCount-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxradiobox.html#wxradioboxgetrowcount">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isItemEnabled(This, N) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></v><v>N = integer()</v></type>
+<desc><marker id="isItemEnabled-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxradiobox.html#wxradioboxisitemenabled">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isItemShown(This, N) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></v><v>N = integer()</v></type>
+<desc><marker id="isItemShown-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxradiobox.html#wxradioboxisitemshown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemHelpText(This, N, HelpText) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></v><v>N = integer()</v><v>HelpText = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setItemHelpText-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxradiobox.html#wxradioboxsetitemhelptext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemToolTip(This, Item, Text) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxRadioBox">wxRadioBox()</seealso></v><v>Item = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setItemToolTip-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxradiobox.html#wxradioboxsetitemtooltip">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxRadioBox">wxRadioBox()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

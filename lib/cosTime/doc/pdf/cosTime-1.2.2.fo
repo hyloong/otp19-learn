@@ -1,0 +1,835 @@
+<?xml version="1.0"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="cover" margin="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin="0mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="left-page" margin-top="25mm" margin-bottom="15mm" margin-left="20mm" margin-right="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="left-header" extent="10mm"/>
+      <fo:region-after region-name="left-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="right-page" margin-top="25mm" margin-bottom="15mm" margin-left="25mm" margin-right="20mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="right-header" extent="10mm"/>
+      <fo:region-after region-name="right-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:page-sequence-master master-name="document">
+      <fo:repeatable-page-master-alternatives>
+        <fo:conditional-page-master-reference master-reference="left-page" odd-or-even="even"/>
+        <fo:conditional-page-master-reference master-reference="right-page" odd-or-even="odd"/>
+      </fo:repeatable-page-master-alternatives>
+    </fo:page-sequence-master>
+  </fo:layout-master-set>
+  <fo:bookmark-tree>
+    <fo:bookmark internal-destination="cover-page" starting-state="show">
+      <fo:bookmark-title>cosTime</fo:bookmark-title>
+      <fo:bookmark internal-destination="idp304784" starting-state="hide">
+        <fo:bookmark-title>cosTime User's Guide</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp447792" starting-state="hide">
+          <fo:bookmark-title>The cosTime Application</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp503504" starting-state="hide">
+            <fo:bookmark-title>Content Overview</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp96032" starting-state="hide">
+            <fo:bookmark-title>Brief Description of the User's Guide</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp459040" starting-state="hide">
+          <fo:bookmark-title>Introduction to cosTime</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp484880" starting-state="hide">
+            <fo:bookmark-title>Overview</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp522176" starting-state="hide">
+              <fo:bookmark-title>Purpose and Dependencies</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp528288" starting-state="hide">
+              <fo:bookmark-title>Prerequisites</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp481200" starting-state="hide">
+          <fo:bookmark-title>Installing cosTime</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp11984" starting-state="hide">
+            <fo:bookmark-title>Installation Process </fo:bookmark-title>
+            <fo:bookmark internal-destination="idp1968" starting-state="hide">
+              <fo:bookmark-title>Preparation</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp3392" starting-state="hide">
+              <fo:bookmark-title>Configuration</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp441072" starting-state="hide">
+          <fo:bookmark-title>cosTime Examples</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp460544" starting-state="hide">
+            <fo:bookmark-title>A Tutorial on How to Create a Simple Service</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp461312" starting-state="hide">
+              <fo:bookmark-title>Initiate the Application</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp511136" starting-state="hide">
+              <fo:bookmark-title>How to Run Everything</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+      <fo:bookmark internal-destination="idp84032" starting-state="hide">
+        <fo:bookmark-title>Reference Manual</fo:bookmark-title>
+        <fo:bookmark internal-destination="idm22208" starting-state="hide">
+          <fo:bookmark-title>cosTime</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp685104" starting-state="hide">
+            <fo:bookmark-title>install_time/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp364320" starting-state="hide">
+            <fo:bookmark-title>uninstall_time/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp629424" starting-state="hide">
+            <fo:bookmark-title>install_timerevent/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp124256" starting-state="hide">
+            <fo:bookmark-title>uninstall_timerevent/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp659600" starting-state="hide">
+            <fo:bookmark-title>start/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idm7824" starting-state="hide">
+            <fo:bookmark-title>stop/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp488256" starting-state="hide">
+            <fo:bookmark-title>start_time_service/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp264880" starting-state="hide">
+            <fo:bookmark-title>stop_time_service/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp339568" starting-state="hide">
+            <fo:bookmark-title>start_timerevent_service/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp548432" starting-state="hide">
+            <fo:bookmark-title>stop_timerevent_service/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idm30560" starting-state="hide">
+          <fo:bookmark-title>CosTime_TIO</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp322784" starting-state="hide">
+            <fo:bookmark-title>'_get_time_interval'/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idm34288" starting-state="hide">
+            <fo:bookmark-title>spans/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp614432" starting-state="hide">
+            <fo:bookmark-title>overlaps/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp600400" starting-state="hide">
+            <fo:bookmark-title>time/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp348944" starting-state="hide">
+          <fo:bookmark-title>CosTime_TimeService</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp713104" starting-state="hide">
+            <fo:bookmark-title>universal_time/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp651136" starting-state="hide">
+            <fo:bookmark-title>new_universal_time/4</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp644320" starting-state="hide">
+            <fo:bookmark-title>uto_from_utc/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp578464" starting-state="hide">
+            <fo:bookmark-title>new_interval/3</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp730768" starting-state="hide">
+          <fo:bookmark-title>CosTime_UTO</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp733680" starting-state="hide">
+            <fo:bookmark-title>'_get_time'/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp736912" starting-state="hide">
+            <fo:bookmark-title>'_get_inaccuracy'/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp740160" starting-state="hide">
+            <fo:bookmark-title>'_get_tdf'/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp743440" starting-state="hide">
+            <fo:bookmark-title>'_get_utc_time'/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp748992" starting-state="hide">
+            <fo:bookmark-title>absolute_time/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp753056" starting-state="hide">
+            <fo:bookmark-title>compare_time/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp760144" starting-state="hide">
+            <fo:bookmark-title>time_to_interval/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp763568" starting-state="hide">
+            <fo:bookmark-title>interval/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp775280" starting-state="hide">
+          <fo:bookmark-title>CosTimerEvent_TimerEventHandler</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp778368" starting-state="hide">
+            <fo:bookmark-title>'_get_status'/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp785328" starting-state="hide">
+            <fo:bookmark-title>time_set/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp791456" starting-state="hide">
+            <fo:bookmark-title>set_timer/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp800896" starting-state="hide">
+            <fo:bookmark-title>cancel_timer/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp806000" starting-state="hide">
+            <fo:bookmark-title>set_data/2</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp817424" starting-state="hide">
+          <fo:bookmark-title>CosTimerEvent_TimerEventService</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp820512" starting-state="hide">
+            <fo:bookmark-title>register/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp827056" starting-state="hide">
+            <fo:bookmark-title>unregister/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp830336" starting-state="hide">
+            <fo:bookmark-title>event_time/2</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+    </fo:bookmark>
+  </fo:bookmark-tree>
+  <fo:page-sequence font-family="sans-serif" force-page-count="even" master-reference="cover" font-size="10pt">
+    <fo:flow flow-name="xsl-region-body">
+      <fo:block space-before="130mm" space-before.conditionality="retain" text-align="end">
+        <fo:external-graphic src="/root/download/otp_src_20.0/bootstrap/lib/erl_docgen/priv/images/erlang-logo.gif"/>
+      </fo:block>
+      <fo:block id="cover-page" border-before-style="solid" border-before-width="10pt" border-color="#960003" font-size="2.3em" padding-before="0.5em" text-align="end">cosTime</fo:block>
+      <fo:block font-size="0.9em" text-align="end">Copyright © 2000-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em" text-align="end">cosTime 1.2.2</fo:block>
+      <fo:block font-size="0.9em" text-align="end">July 12, 2017</fo:block>
+      <fo:block padding-before="2.5em" font-size="1.33em" font-weight="bold" color="#C00" text-align="end"/>
+      <fo:block break-before="page" border-before-style="solid" border-before-width="1pt" border-color="#960003" font-weight="bold" padding-before="0.5em" space-before="200mm" space-before.conditionality="retain">Copyright © 2000-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em">
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+ 
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+    
+    Ericsson AB. All Rights Reserved..
+        </fo:block>
+      <fo:block font-size="0.9em" font-weight="bold" space-before="2em">July 12, 2017</fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+  <fo:page-sequence font-family="serif" master-reference="document" initial-page-number="1" font-size="10pt">
+    <fo:static-content flow-name="left-header">
+      <fo:block text-align="start" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-header">
+      <fo:block text-align="end" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="left-footer">
+      <fo:block text-align="start" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold"><fo:page-number/> | Ericsson AB. All Rights Reserved.:
+            cosTime</fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-footer">
+      <fo:block text-align="end" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">Ericsson AB. All Rights Reserved.:
+            cosTime | <fo:page-number/></fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body"><fo:block/><fo:block id="idp304784" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">1   
+      cosTime User's Guide</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-weight="bold">cosTime</fo:inline> application is an Erlang implementation of the OMG
+      CORBA Time and TimerEvent Services.</fo:block>
+  <fo:block id="idp447792" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.1  The cosTime Application</fo:marker>1.1  The cosTime Application</fo:block><fo:block id="idp503504" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.1 
+      Content Overview</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The cosTime documentation is divided into three sections:
+      </fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">PART ONE - The User's Guide  
+                    <fo:block/>
+Description of the cosTime Application including 
+          services and a small tutorial demonstrating 
+          the development of a simple service.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">PART TWO - Release Notes
+                    <fo:block/>
+A concise history of cosTime.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">PART THREE - The Reference Manual
+                    <fo:block/>
+ A quick reference guide, including a
+          brief description, to all the functions available in cosTime.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+  <fo:block id="idp96032" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.2 
+      Brief Description of the User's Guide</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The User's Guide  contains the following parts:</fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">cosTime overview</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">cosTime installation</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A tutorial example</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+  <fo:block id="idp459040" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.2  Introduction to cosTime</fo:marker>1.2  Introduction to cosTime</fo:block><fo:block id="idp484880" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.2.1 
+      Overview</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The cosTime application is Time and TimerEvent Services compliant with the <fo:inline font-weight="bold"><fo:basic-link external-destination="href">OMG</fo:basic-link></fo:inline> 
+      Services CosTime and CosTimerEvent.
+      </fo:block>
+
+    <fo:block id="idp522176" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Purpose and Dependencies</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This application use <fo:inline font-family="monospace">calender:now_to_universal_time(Now)</fo:inline> to create a 
+        UTC. Hence, the underlying OS must deliver a correct result when calling 
+        <fo:inline font-family="monospace">erlang:now()</fo:inline>.</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">cosTime</fo:inline> is dependent on  <fo:inline font-weight="bold">Orber</fo:inline>, which provides CORBA functionality in an Erlang environment.</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">cosTimerEvent</fo:inline> is dependent on  <fo:inline font-weight="bold">Orber</fo:inline> and <fo:inline font-weight="bold">cosNotification</fo:inline>, 
+        which provides CORBA functionality and Event handling in an Erlang environment.</fo:block>
+    
+
+    <fo:block id="idp528288" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Prerequisites</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To fully understand the concepts presented in the
+        documentation, it is recommended that the user is familiar
+        with distributed programming, CORBA, the Orber and cosNotification applications.
+        </fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Recommended reading includes <fo:inline font-weight="bold">CORBA, Fundamentals and Programming - Jon Siegel</fo:inline> and <fo:inline font-weight="bold">Open Telecom Platform Documentation Set</fo:inline>. It is also helpful to  have read <fo:inline font-weight="bold">Concurrent Programming in Erlang</fo:inline>.</fo:block>
+    
+  <fo:block id="idp481200" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.3  Installing cosTime</fo:marker>1.3  Installing cosTime</fo:block><fo:block id="idp11984" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.3.1 
+      Installation Process </fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This chapter describes how to install 
+      <fo:inline font-style="italic">cosTime</fo:inline> in an Erlang Environment.
+      </fo:block>
+
+    <fo:block id="idp1968" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Preparation</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Before starting the installation process for cosTime,
+        the application Orber must be running.</fo:block>
+    
+
+    <fo:block id="idp3392" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Configuration</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When using both the Time and TimerEvent Services the <fo:inline font-family="monospace">cosTime</fo:inline> application 
+        first must be installed using <fo:inline font-family="monospace">cosTime:install_time()</fo:inline> and
+        <fo:inline font-family="monospace">cosTime:install_timerevent()</fo:inline>, followed by <fo:inline font-family="monospace">cosTime:start()</fo:inline>.
+        Now we can choose which can start the servers by using 
+        <fo:inline font-family="monospace">cosTime:start_time_service(Tdf, Inaccuracy)</fo:inline> 
+        and <fo:inline font-family="monospace">cosTime:start_timerevent_service(TimeService)</fo:inline>.</fo:block>
+    
+  <fo:block id="idp441072" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.4  cosTime Examples</fo:marker>1.4  cosTime Examples</fo:block><fo:block id="idp460544" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.4.1 
+      A Tutorial on How to Create a Simple Service</fo:block>
+    
+
+    <fo:block id="idp461312" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Initiate the Application</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To use the complete cosTime application Time and Timer Event Services
+        must be installed. The application is then started by using 
+        <fo:inline font-family="monospace">cosTime:start()</fo:inline>. To get access to Time Service or Timer Event Service,
+        use <fo:inline font-family="monospace">start_time_service/2</fo:inline> or <fo:inline font-family="monospace">start_timerevent_service/1.</fo:inline></fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Time Service are global, i.e., there may only exist one instance per
+        Orber domain.</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Timer Event Service is locally registered, i.e., there may only exist 
+        one instance per node.</fo:block>
+      <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Time and Timer Event Service use the time base 
+          <fo:inline font-weight="bold">15 october 1582 00:00</fo:inline>. Performing operations using other time
+          bases will not yield correct result. Furthermore, time and inaccuracy
+          must be expressed in 100 nano seconds.</fo:block>
+      </fo:block>
+    
+
+    <fo:block id="idp511136" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">How to Run Everything</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Below is a short transcript on how to run cosTime. </fo:block>
+      <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 
+%% Start Mnesia and Orber
+mnesia:delete_schema([node()]),
+mnesia:create_schema([node()]),
+orber:install([node()]),
+mnesia:start(),
+orber:start(),
+ 
+%% Install Time Service in the IFR.
+cosTime:install_time(),     
+
+%% Install Timer Event Service in the IFR. Which, require
+%% the Time Service and cosEvent or cosNotification 
+%% application to be installed.
+cosNotification:install(),
+cosTime:install_timerevent(),
+
+%% Now start the application and necessary services.
+cosTime:start(),
+%% Tdf == Time displacement factor
+%% Inaccuracy measured in 100 nano seconds
+TS=cosTime:start_time_service(TDF, Inaccuracy),
+TES=cosTime:start_timerevent_service(TS),
+
+%% Access a cosNotification Proxy Push Consumer. How this is
+%% done is implementation specific.
+ProxyPushConsumer = ....
+
+%% How we construct the event is also implementation specific.
+AnyEvent = ....
+
+%% Create a new relative universal time.
+%% Time measured in 100 nano seconds.
+UTO='CosTime_TimeService':
+      new_universal_time(TS, Time, Inaccuracy, TDF),
+EH='CosTimerEvent_TimerEventService':
+      register(TES, ProxyPushConsumer, AnyEvent), 
+
+%% If we want to trigger one event Time*10^-7 seconds from now:
+'CosTimerEvent_TimerEventHandler':set_timer(EH, 'TTRelative', UTO),
+
+%% If we want to trigger an event every Time*10^-7 seconds, starting
+%% Time*10^-7 seconds from now:
+'CosTimerEvent_TimerEventHandler':set_timer(EH, 'TTPeriodic', UTO),
+
+%% If we want to use absolute time we must retrieve such an object.
+%% One way is to convert the one we got, UTO, by using:
+UTO2='CosTime_UTO':absolute_time(UTO),
+%% If any other way is used, the correct time base MUST be used, i.e.,
+%% 15 october 1582 00:00.
+'CosTimerEvent_TimerEventHandler':set_timer(EH, 'TTAbsolute', UTO2),
+      </fo:block>
+    
+  <fo:block id="idp84032" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">2   
+      Reference Manual</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-weight="bold">cosTime</fo:inline> application is an Erlang implementation of the OMG
+      CORBA Time and TimerEvent Services.</fo:block>
+  <fo:block page-break-before="always" id="idm22208" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">cosTime</fo:marker>cosTime</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  cosTime
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosTime/include/*.hrl").</fo:inline></fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This module contains the functions for starting and stopping the application.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This application use the time base <fo:inline font-weight="bold">15 october 1582 00:00</fo:inline>.
+      Performing operations using other time bases will not yield correct result.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The OMG CosTime specification defines the operation 
+      <fo:inline font-family="monospace">secure_universal_time</fo:inline>. As of today we cannot provide this functionality
+      considering the criteria demanded to fulfill the OMG specification.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When using this application, time and inaccuracy supplied by the user must
+      be given in number of <fo:inline font-weight="bold">100 nano seconds</fo:inline>. The 
+      <fo:inline font-weight="bold">Time Displacement Factor</fo:inline> is positive east of the meridian, while 
+      those to the west are negative.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This application use <fo:inline font-family="monospace">calender:now_to_universal_time(Now)</fo:inline> to create a 
+      UTC. Hence, the underlying OS must deliver a correct result when calling 
+      <fo:inline font-family="monospace">erlang:now()</fo:inline>.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When determining the inaccuracy of the system, the user should consider the
+      way the time objects will be used. Communicating with other ORB's, add a
+      substantial overhead and should be taken into consideration.</fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp685104">install_time() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {'EXIT', Reason}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation installs the cosTime Time Service part application.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp364320">uninstall_time() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {'EXIT', Reason}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation uninstalls the cosTime Time Service part application.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp629424">install_timerevent() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {'EXIT', Reason}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation installs the cosTime Timer Event Service part application.</fo:block>
+        <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+          <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Timer Event Service part requires <fo:inline font-weight="bold">Time Service</fo:inline> part and 
+            <fo:inline font-weight="bold">cosEvent</fo:inline> or the <fo:inline font-weight="bold">cosNotification</fo:inline> application to be installed 
+            first.</fo:block>
+        </fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp124256">uninstall_timerevent() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {'EXIT', Reason}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation uninstalls the cosTime Timer Event Service part application.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp659600">start() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {error, Reason}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation starts the cosTime application.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idm7824">stop() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {error, Reason}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation stops the cosTime application.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp488256">start_time_service(Tdf, Inaccuracy) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Tdf = short()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Inaccuracy = ulonglong(), eq. #100 nano seconds</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {'EXCEPTION', #'BAD_PARAM'{}}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation starts a Time Service server. Please note that there
+          may only be exactly one Time Service active at a time. The <fo:inline font-family="monospace">Inaccuracy</fo:inline>
+          parameter defines the inaccuracy the underlying OS will introduce. Remember
+          to take into account latency when passing time object between nodes.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp264880">stop_time_service(TimeService) -&gt; ok</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimeService = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation stops the Time Service object.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp339568">start_timerevent_service(TimeService) -&gt; ok</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimeService = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation starts a Timer Event Service server. Please note that there
+          may only be exactly one Timer Event Service per node active at a time. The
+          supplied TimeServcie reference will be the object Timer Event Service
+          contacts to get access to a new UTC.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp548432">stop_timerevent_service(TimerEventService) -&gt; ok</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimerEventService = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation stops the Timer Event Service object.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idm30560" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosTime_TIO</fo:marker>CosTime_TIO</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosTime_TIO
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosTime/include/*.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp322784">'_get_time_interval'(TIO) -&gt; TimeInterval</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TIO = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimeInterval = #'TimeBase_IntervalT{lower_bound, upper_bound}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">lower_bound = upper_bound = ulonglong</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns the interval associated with the target object.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idm34288">spans(TIO, UTO) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TIO = UTO = OtherTIO = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = {OverlapType, OtherTIO}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">OverlapType = 'OTContainer' | 'OTContained' | 'OTOverlap' | 'OTNoOverlap'</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns a <fo:inline font-weight="bold">OverlapType</fo:inline> depending on how the interval
+          in the target object and the timerange represented by the UTO object 
+          overlap. If the OverlapType is 'OTNoOverlap' the out parameter represents 
+          the gap between the two intervals. If OverlapType is one of the others, the
+          out parameter represents the overlap interval.
+          The definitions of the OverlapType's are:</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"/>
+        <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'OTContainer' - target objects lower and upper limits are,
+           respectively, less or equal to and greater or equal to given object's.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'OTContained' - target objects lower and upper limits are,
+           respectively, greater or equal to and less or equal to given object's.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'OTOverlap' - target objects interval overlap given object's.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'OTNoOverlap' - target objects interval do not overlap given object's.</fo:block></fo:list-item-body></fo:list-item>
+        </fo:list-block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp614432">overlaps(TIO, OtherTIO) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TIO = OtherTIO = AnotherTIO = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = {OverlapType, AnotherTIO}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">OverlapType = 'OTContainer' | 'OTContained' | 'OTOverlap' | 'OTNoOverlap'</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns a <fo:inline font-weight="bold">OverlapType</fo:inline> depending on how the interval
+          in the target object and the timerange represented by the TIO object 
+          overlap. The OverlapType's are described under spans/2.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp600400">time(TIO) -&gt; UTO</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TIO = UTO = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns a UTO in which the interval equals the time interval
+          in the target object and time value is the midpoint of the interval.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp348944" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosTime_TimeService</fo:marker>CosTime_TimeService</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosTime_TimeService
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosTime/include/*.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp713104">universal_time(TimeService) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimeService = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = UTO | {'EXCEPTION", #'TimerService_TimeUnavailable'{}}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">UTO = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns the current time and the Inaccuracy given
+          when starting this application in a UTO. The time base is 
+          <fo:inline font-weight="bold">15 october 1582 00:00</fo:inline>. Comparing two time objects which use 
+          different time base is, by obvious reasons, pointless.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp651136">new_universal_time(TimeService, Time, Inaccuracy, Tdf) -&gt; UTO</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimeService = UTO = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Time = Inaccuracy = ulonglong()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Tdf = short()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation creates a new UTO object representing the time 
+          parameters given. This is the only way to create a UTO with an
+          arbitrary time from its components. This is useful when using the 
+          Timer Event Service.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp644320">uto_from_utc(TimeService, Utc) -&gt; UTO</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimeService = UTO = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Utc = #'TimeBase_UtcT'{time, inacclo, inacchi, tdf}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">time = ulonglong()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">inacclo = ulong()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">inacchi = ushort()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">tdf = short()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation is used to create a UTO given a time in the Utc form.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp578464">new_interval(TimeService, Lower, Upper) -&gt; TIO</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimeService = TIO = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Lower = Upper = ulonglong()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation is used to create a new TIO object, representing 
+          the input parameters. If <fo:inline font-weight="bold">Lower</fo:inline> is greater than Upper 
+          BAD_PARAM is raised.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp730768" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosTime_UTO</fo:marker>CosTime_UTO</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosTime_UTO
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosTime/include/*.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp733680">'_get_time'(UTO) -&gt; ulonglong()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">UTO = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns the time associated with the target object.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp736912">'_get_inaccuracy'(UTO) -&gt; ulonglong()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">UTO = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns the inaccuracy associated with the target object.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp740160">'_get_tdf'(UTO) -&gt; short()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">UTO = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns the time displacement factor associated with 
+          the target object.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp743440">'_get_utc_time'(UTO) -&gt; UtcT</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">UTO = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Utc = #'TimeBase_UtcT'{time, inacclo, inacchi, tdf}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">time = ulonglong()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">inacclo = ulong()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">inacchi = ushort()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">tdf = short()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns the data associated with the target object in
+          Utc form.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp748992">absolute_time(UTO) -&gt; OtherUTO</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">UTO = OtherUTO = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation create a new UTO object representing the time in the target
+          object added to current time (UTC). The time base is 
+          <fo:inline font-weight="bold">15 october 1582 00:00</fo:inline>. Comparing two time objects which use 
+          different time base is, by obvious reasons, pointless.
+          Raises DATA_CONVERSION if causes an overflow. This operation is only useful
+          if the target object represents a relative time.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp753056">compare_time(UTO, ComparisonType, OtherUTO) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">UTO = OtherUTO = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ComparisonType = 'IntervalC' | 'MidC'</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = 'TCEqualTo' | 'TCLessThan' | 'TCGreaterThan' | 'TCIndeterminate'</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation compares the time associated with the target object and the
+          given UTO object. The different <fo:inline font-family="monospace">ComparisonType</fo:inline> are:</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"/>
+        <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'MidC' - only compare the time represented by each object. Furthermore,
+           the target object is always used as the first parameter in the
+           comparison, i.e., if the target object's time is larger 
+           'TCGreaterThan' will be returned.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'IntervalC' - also takes the inaccuracy into consideration, i.e.,
+           if the two objects interval overlaps 'TCIndeterminate' is returned,
+           otherwise the as for 'MidC'.</fo:block></fo:list-item-body></fo:list-item>
+        </fo:list-block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp760144">time_to_interval(UTO, OtherUTO) -&gt; TIO</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">UTO = OtherUTO = TIO = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns a TIO representing the interval between the target
+          object and the given UTO midpoint times. The inaccuracy in the objects are
+          not taken into consideration.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp763568">interval(UTO) -&gt; TIO</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">UTO = TIO = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation creates a TIO object representing the error interval
+          around the time value represented by the target object, i.e., 
+          <fo:inline font-family="monospace">TIO.upper_bound = UTO.time+UTO.inaccuracy</fo:inline> and 
+          <fo:inline font-family="monospace">TIO.lower_bound = UTO.time-UTO.inaccuracy</fo:inline>.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp775280" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosTimerEvent_TimerEventHandler</fo:marker>CosTimerEvent_TimerEventHandler</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosTimerEvent_TimerEventHandler
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosTime/include/*.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp778368">'_get_status'(TimerEventHandler) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimerEventHandler = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = 'ESTimeSet' | 'ESTimeCleared' | 'ESTriggered' | 'ESFailedTrigger'</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns the status of the target object. </fo:block>
+        <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'ESTimeSet' - timer is set to trigger event(s).</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'ESTimeCleared' - no time set or the timer have been reset.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'ESTriggered' - event has already been sent.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'ESFailedTrigger' - tried to, but failed, sending the event.</fo:block></fo:list-item-body></fo:list-item>
+        </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the target object is of type 'TTPeriodic' the status value 
+          'ESTriggered' is not valid.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp785328">time_set(TimerEventHandler) -&gt; Reply</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimerEventHandler = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reply = {boolean(), UTO}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">UTO = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns <fo:inline font-family="monospace">true</fo:inline> if the time has been set for an event that
+          is yet to be triggered, <fo:inline font-family="monospace">false</fo:inline> otherwise. The outparameter represents
+          the current time value of the target object.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp791456">set_timer(TimerEventHandler, TimeType, TriggerTime) -&gt; void()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimerEventHandler = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimeType = 'TTAbsolute' | 'TTRelative' | 'TTPeriodic'</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TriggerTime = UTO</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">UTO = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation terminates any previous set trigger, and set a new trigger
+          specified by the <fo:inline font-family="monospace">TimeType</fo:inline> and <fo:inline font-family="monospace">UTO</fo:inline> objects.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The relation between the UTO object and the TimeTypes are:</fo:block>
+        <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'TTAbsolute' - the UTO object must represent absolute time, i.e.,
+           number of 100 nanoseconds passed since 15 october 
+           1582 00:00.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'TTRelative' - the UTO object must represent the from now until when
+           the event should be triggered, e.g., within 30*10^7 nanoseconds.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>'TTPeriodic' - the same as for 'TTRelative', but this option
+           will trigger an event periodically until timer cancelled.</fo:block></fo:list-item-body></fo:list-item>
+        </fo:list-block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp800896">cancel_timer(TimerEventHandler) -&gt; boolean()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimerEventHandler = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation cancel, if possible, the triggering of event(s). Returns
+          <fo:inline font-family="monospace">true</fo:inline> if an event is actually cancelled, <fo:inline font-family="monospace">false</fo:inline> otherwise.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp806000">set_data(TimerEventHandler, EventData) -&gt; ok</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimerEventHandler = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EventData = #any</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation changes the event data sent when triggered.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp817424" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosTimerEvent_TimerEventService</fo:marker>CosTimerEvent_TimerEventService</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosTimerEvent_TimerEventService
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosTime/include/*.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp820512">register(TimerEventService, CosEventCommPushConsumer, Data) -&gt; TimerEventHandler</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimerEventService = CosEventCommPushConsumer = TimerEventHandler = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Data = #any</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation will create a new <fo:inline font-family="monospace">TimerEventHandler</fo:inline> object which
+          will push given <fo:inline font-family="monospace">Data</fo:inline> to given <fo:inline font-family="monospace">CosEventCommPushConsumer</fo:inline> after
+          the timer have been set.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp827056">unregister(TimerEventService, TimerEventHandler) -&gt; ok</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimerEventService = TimerEventHandler = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation will terminate the given TimerEventHandler.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp830336">event_time(TimerEventService, TimerEvent) -&gt; UTO</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimerEventService = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TimerEvent = #'CosTimerEvent_TimerEvent'{utc, event_data}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">utc = </fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">event_data = #any}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">UTO = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns a UTO containing the time at which the associated
+          event was triggered.</fo:block>
+      </fo:block>
+  
+  
+</fo:flow>
+  </fo:page-sequence>
+</fo:root>

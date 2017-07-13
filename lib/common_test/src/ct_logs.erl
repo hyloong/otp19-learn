@@ -1,7 +1,7 @@
 %%
 %% %CopyrightBegin%
 %%
-%% Copyright Ericsson AB 2003-2016. All Rights Reserved.
+%% Copyright Ericsson AB 2003-2017. All Rights Reserved.
 %%
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@
 -export([xhtml/2, locate_priv_file/1, make_relative/1]).
 -export([insert_javascript/1]).
 -export([uri/1]).
+-export([parse_keep_logs/1]).
 
 %% Logging stuff directly from testcase
 -export([tc_log/3, tc_log/4, tc_log/5, tc_log/6,
@@ -138,7 +139,7 @@ close(Info, StartDir) ->
     LogCacheBin = 
 	case make_last_run_index() of
 	    {error, Reason} ->  % log server not responding
-		io:format("Warning! ct_logs not responding: ~p~n", [Reason]),
+		io:format("Warning! ct_logs not responding: ~tp~n", [Reason]),
 		undefined;
 	    LCB ->
 		LCB
@@ -174,7 +175,7 @@ close(Info, StartDir) ->
 		ok ->
 		    ok;
 		Error ->
-		    io:format("Warning! Cleanup failed: ~p~n", [Error])
+		    io:format("Warning! Cleanup failed: ~tp~n", [Error])
 	    end,
 	    _ = make_all_suites_index(stop),
 	    make_all_runs_index(stop),
@@ -424,7 +425,7 @@ add_external_logs(Logs) ->
 %%% @doc Print a link to a given file stored in the priv_dir of the
 %%% calling test suite.
 add_link(Heading,File,Type) ->
-    log(Heading,"<a href=\"~ts\" type=~p>~ts</a>\n",
+    log(Heading,"<a href=\"~ts\" type=~tp>~ts</a>\n",
 	[uri(filename:join("log_private",File)),Type,File]).
 
 
@@ -566,7 +567,7 @@ get_header("default") ->
 		  [log_timestamp(?now)]);
 get_header(Heading) ->
     io_lib:format("\n-----------------------------"
-		  "-----------------------\n~s ~s\n",
+		  "-----------------------\n~ts ~s\n",
 		  [Heading,log_timestamp(?now)]).    
     
 
@@ -703,8 +704,8 @@ logger(Parent, Mode, Verbosity) ->
 	    case copy_priv_files(PrivFilesSrc, PrivFilesDestTop) of
 		{error,Src1,Dest1,Reason1} ->
 		    io:format(?def_gl, "ERROR! "++
-				  "Priv file ~p could not be copied to ~p. "++
-				  "Reason: ~p~n",
+				  "Priv file ~tp could not be copied to ~tp. "++
+				  "Reason: ~tp~n",
 			      [Src1,Dest1,Reason1]),
 		    exit({priv_file_error,Dest1});
 		ok ->
@@ -712,8 +713,8 @@ logger(Parent, Mode, Verbosity) ->
 			{error,Src2,Dest2,Reason2} ->
 			    io:format(?def_gl,
 				      "ERROR! "++
-				      "Priv file ~p could not be copied to ~p. "
-				      ++"Reason: ~p~n",
+				      "Priv file ~tp could not be copied to ~tp. "
+				      ++"Reason: ~tp~n",
 				      [Src2,Dest2,Reason2]),
 			    exit({priv_file_error,Dest2});
 			ok ->
@@ -890,7 +891,7 @@ logger_loop(State) ->
 	    logger_loop(State);
 	{set_stylesheet,TC,SSFile} ->
 	    Fd = State#logger_state.ct_log_fd,
-	    io:format(Fd, "~p loading external style sheet: ~ts~n",
+	    io:format(Fd, "~tp loading external style sheet: ~ts~n",
 		      [TC,SSFile]),
 	    logger_loop(State#logger_state{stylesheet = SSFile});
 	{clear_stylesheet,_} when State#logger_state.stylesheet == undefined ->
@@ -951,7 +952,7 @@ create_io_fun(FromPid, CtLogFd, EscChars) ->
 		    [IoList,"\n",IoStr]
 	    catch
 		_:_Reason ->
-		    io:format(CtLogFd, "Logging fails! Str: ~p, Args: ~p~n",
+		    io:format(CtLogFd, "Logging fails! Str: ~tp, Args: ~tp~n",
 			      [Str,Args]),
 		    %% stop the testcase, we need to see the fault
 		    exit(FromPid, {log_printout_error,Str,Args}),
@@ -1150,7 +1151,7 @@ open_ctlog(MiscIoName) ->
 	    Dir = filename:dirname(Cwd),
 	    Variables = ct_run:variables_file_name(Dir),
 	    io:format(Fd,
-		      "Can not read the file \'~ts\' Reason: ~w\n"
+		      "Can not read the file \'~ts\' Reason: ~tw\n"
 		      "No configuration found for test!!\n",
 		      [Variables,Reason])
     end,
@@ -1212,7 +1213,7 @@ print_style(Fd, IoFormat, StyleSheet) ->
     end.
 
 print_style_error(Fd, IoFormat, StyleSheet, Reason) ->
-    IO = io_lib:format("\n<!-- Failed to load stylesheet ~ts: ~p -->\n",
+    IO = io_lib:format("\n<!-- Failed to load stylesheet ~ts: ~tp -->\n",
 		       [StyleSheet,Reason]),
     IoFormat(Fd, IO, []),
     print_style(Fd, IoFormat, undefined).
@@ -1255,11 +1256,11 @@ make_last_run_index(StartTime) ->
 	case catch make_last_run_index1(StartTime,IndexName) of
 	    {'EXIT', Reason} ->
 		io:put_chars("CRASHED while updating " ++ AbsIndexName ++ "!\n"),
-		io:format("~p~n", [Reason]),
+		io:format("~tp~n", [Reason]),
 		{error, Reason};
 	    {error, Reason} ->
 		io:put_chars("FAILED while updating " ++ AbsIndexName ++ "\n"),
-		io:format("~p~n", [Reason]),
+		io:format("~tp~n", [Reason]),
 		{error, Reason};
 	    ok ->
 		ok;
@@ -1560,7 +1561,7 @@ get_missing_suites(_,_) ->
     [].
 
 term_to_text(Term) ->
-    lists:flatten(io_lib:format("~p.\n", [Term])).
+    lists:flatten(io_lib:format("~tp.\n", [Term])).
 
 
 %%% Headers and footers.
@@ -1828,7 +1829,7 @@ count_cases(Dir) ->
 			    Summary
 		    end;
 		{error, Reason} ->
-		    io:format("\nFailed to read ~p: ~p (skipped)\n",
+		    io:format("\nFailed to read ~tp: ~tp (skipped)\n",
 			      [LogFile,Reason]),
 		    error
 	    end
@@ -1910,10 +1911,10 @@ config_table_header() ->
 
 config_table1([{Key,Value}|Vars]) ->
     [xhtml(["<tr><td>", atom_to_list(Key), "</td>\n",
-	   "<td><pre>",io_lib:format("~p",[Value]),"</pre></td></tr>\n"],
+	   "<td><pre>",io_lib:format("~tp",[Value]),"</pre></td></tr>\n"],
 	   ["<tr class=\"", odd_or_even(), "\">\n",
 	    "<td>", atom_to_list(Key), "</td>\n",
-	    "<td>", io_lib:format("~p",[Value]), "</td>\n</tr>\n"]) |
+	    "<td>", io_lib:format("~tp",[Value]), "</td>\n</tr>\n"]) |
      config_table1(Vars)];
 config_table1([]) ->
     [xhtml("","</tbody>\n"),"</table>\n"].
@@ -1946,7 +1947,11 @@ make_all_runs_index(When) ->
 	end,	
 
     Dirs = filelib:wildcard(logdir_prefix()++"*.*"),
-    DirsSorted = (catch sort_all_runs(Dirs)),
+    DirsSorted0 = (catch sort_all_runs(Dirs)),
+    DirsSorted =
+        if When == start -> DirsSorted0;
+           true -> maybe_delete_old_dirs(DirsSorted0)
+        end,
 
     LogCacheInfo = get_cache_data(UseCache),
 	
@@ -2063,6 +2068,36 @@ sort_ct_runs(Dirs) ->
 		  lists:reverse(string:tokens(filename:dirname(Dir2),[$.])),
 	      {DateHH1,MM1,SS1} =< {DateHH2,MM2,SS2}
       end, Dirs).
+
+parse_keep_logs([Str="all"]) ->
+    parse_keep_logs(list_to_atom(Str));
+parse_keep_logs([NStr]) ->
+    parse_keep_logs(list_to_integer(NStr));
+parse_keep_logs(all) ->
+    all;
+parse_keep_logs(N) when is_integer(N), N>0 ->
+    N.
+
+maybe_delete_old_dirs(Sorted) ->
+    {Keep,Delete} =
+        case application:get_env(common_test, keep_logs) of
+            {ok,MaxN} when is_integer(MaxN), length(Sorted)>MaxN ->
+                lists:split(MaxN,Sorted);
+            _ ->
+                {Sorted,[]}
+        end,
+    delete_old_dirs(Delete),
+    Keep.
+
+delete_old_dirs([]) ->
+    ok;
+delete_old_dirs(Dirs) ->
+    io:put_chars("\n  Removing old test directories:\n"),
+    [begin
+         io:put_chars("    " ++ Dir ++ "\n"),
+         rm_dir(Dir)
+     end|| Dir <- Dirs],
+    ok.
 
 dir_diff_all_runs(Dirs, LogCache) ->
     case LogCache#log_cache.all_runs of
@@ -2439,17 +2474,17 @@ make_all_suites_index(NewTestData = {_TestName,DirName}) ->
 					   LogDirData) of
 	    {'EXIT',Reason} ->
 		io:put_chars("CRASHED while updating " ++ AbsIndexName ++ "!\n"),
-		io:format("~p~n", [Reason]),
+		io:format("~tp~n", [Reason]),
 		{error,Reason};
 	    {error,Reason} ->
 		io:put_chars("FAILED while updating " ++ AbsIndexName ++ "\n"),
-		io:format("~p~n", [Reason]),
+		io:format("~tp~n", [Reason]),
 		{error,Reason};
 	    ok ->
 		ok;
 	    Err ->
 		io:format("Unknown internal error while updating ~ts. "
-			  "Please report.\n(Err: ~p, ID: 1)",
+			  "Please report.\n(Err: ~tp, ID: 1)",
 			  [AbsIndexName,Err]),
 		{error, Err}
 	end,
@@ -2668,11 +2703,11 @@ make_all_suites_index1(When, AbsIndexName, AllTestLogDirs) ->
     case catch make_all_suites_index2(IndexName, AllTestLogDirs) of
 	{'EXIT', Reason} ->
 	    io:put_chars("CRASHED while updating " ++ AbsIndexName ++ "!\n"),
-	    io:format("~p~n", [Reason]),
+	    io:format("~tp~n", [Reason]),
 	    {error, Reason};
 	{error, Reason} ->
 	    io:put_chars("FAILED while updating " ++ AbsIndexName ++ "\n"),
-	    io:format("~p~n", [Reason]),
+	    io:format("~tp~n", [Reason]),
 	    {error, Reason};
 	{ok,TempData} ->
 	    case When of
@@ -2686,7 +2721,7 @@ make_all_suites_index1(When, AbsIndexName, AllTestLogDirs) ->
 	    end;
 	Err ->
 	    io:format("Unknown internal error while updating ~ts. "
-		      "Please report.\n(Err: ~p, ID: 1)",
+		      "Please report.\n(Err: ~tp, ID: 1)",
 		      [AbsIndexName,Err]),
 	    {error, Err}
     end.
@@ -3165,7 +3200,7 @@ get_ts_html_wrapper(TestName, Logdir, PrintLabel, Cwd, TableCols, Encoding) ->
     TestName1 = if is_list(TestName) ->
 			lists:flatten(TestName);
 		   true ->
-			lists:flatten(io_lib:format("~p", [TestName]))
+			lists:flatten(io_lib:format("~tp", [TestName]))
 		end,
     Basic = basic_html(),
     LabelStr =

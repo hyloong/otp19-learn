@@ -1,7 +1,7 @@
 /*
  * %CopyrightBegin%
  *
- * Copyright Ericsson AB 2001-2016. All Rights Reserved.
+ * Copyright Ericsson AB 2001-2017. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,14 +51,13 @@ static void free_args(char **);
 
 char *erts_default_arg0 = "default";
 
-// 
 BIF_RETTYPE erts_internal_open_port_2(BIF_ALIST_2)
 {
     Port *port;
     Eterm res;
     char *str;
     int err_type, err_num;
-    // 开启一个端口
+
     port = open_port(BIF_P, BIF_ARG_1, BIF_ARG_2, &err_type, &err_num);
     if (!port) {
 	if (err_type == -3) {
@@ -215,7 +214,7 @@ BIF_RETTYPE erts_internal_port_command_3(BIF_ALIST_3)
 	ASSERT(!(flags & ERTS_PORT_SIG_FLG_FORCE));
 	/* Fall through... */
     case ERTS_PORT_OP_SCHEDULED:
-	ASSERT(is_internal_ref(ref));
+	ASSERT(is_internal_ordinary_ref(ref));
 	ERTS_BIF_PREP_RET(res, ref);
 	break;
     case ERTS_PORT_OP_DONE:
@@ -261,7 +260,7 @@ BIF_RETTYPE erts_internal_port_call_3(BIF_ALIST_3)
 	retval = am_badarg;
 	break;
     case ERTS_PORT_OP_SCHEDULED:
-	ASSERT(is_internal_ref(retval));
+	ASSERT(is_internal_ordinary_ref(retval));
 	break;
     case ERTS_PORT_OP_DONE:
 	ASSERT(is_not_internal_ref(retval));
@@ -311,7 +310,7 @@ BIF_RETTYPE erts_internal_port_control_3(BIF_ALIST_3)
 	retval = am_badarg;
 	break;
     case ERTS_PORT_OP_SCHEDULED:
-	ASSERT(is_internal_ref(retval));
+	ASSERT(is_internal_ordinary_ref(retval));
 	break;
     case ERTS_PORT_OP_DONE:
 	ASSERT(is_not_internal_ref(retval));
@@ -357,7 +356,7 @@ BIF_RETTYPE erts_internal_port_close_1(BIF_ALIST_1)
     case ERTS_PORT_OP_DROPPED:
 	BIF_RET(am_badarg);
     case ERTS_PORT_OP_SCHEDULED:
-	ASSERT(is_internal_ref(ref));
+	ASSERT(is_internal_ordinary_ref(ref));
 	BIF_RET(ref);
     case ERTS_PORT_OP_DONE:
 	BIF_RET(am_true);
@@ -390,7 +389,7 @@ BIF_RETTYPE erts_internal_port_connect_2(BIF_ALIST_2)
     case ERTS_PORT_OP_DROPPED:
 	BIF_RET(am_badarg);
     case ERTS_PORT_OP_SCHEDULED:
-	ASSERT(is_internal_ref(ref));
+	ASSERT(is_internal_ordinary_ref(ref));
 	BIF_RET(ref);
 	break;
     case ERTS_PORT_OP_DONE:
@@ -429,7 +428,7 @@ BIF_RETTYPE erts_internal_port_info_1(BIF_ALIST_1)
     case ERTS_PORT_OP_DROPPED:
 	BIF_RET(am_undefined);
     case ERTS_PORT_OP_SCHEDULED:
-	ASSERT(is_internal_ref(retval));
+	ASSERT(is_internal_ordinary_ref(retval));
 	BIF_RET(retval);
     case ERTS_PORT_OP_DONE:
 	ASSERT(is_not_internal_ref(retval));
@@ -468,7 +467,7 @@ BIF_RETTYPE erts_internal_port_info_2(BIF_ALIST_2)
     case ERTS_PORT_OP_DROPPED:
 	BIF_RET(am_undefined);
     case ERTS_PORT_OP_SCHEDULED:
-	ASSERT(is_internal_ref(retval));
+	ASSERT(is_internal_ordinary_ref(retval));
 	BIF_RET(retval);
     case ERTS_PORT_OP_DONE:
 	ASSERT(is_not_internal_ref(retval));

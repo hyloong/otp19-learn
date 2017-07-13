@@ -1,0 +1,231 @@
+<module name="msacc">
+<type>
+  <name>msacc_data</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-msacc_data">msacc_data()</marker> = [<seealso marker="#type-msacc_data_thread">msacc_data_thread()</seealso>]</typehead></typedecl>
+</type>
+<type>
+  <name>msacc_data_counters</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-msacc_data_counters">msacc_data_counters()</marker> = #{<seealso marker="#type-msacc_state">msacc_state()</seealso> =&gt; integer() &gt;= 0}</typehead></typedecl>
+</type>
+<type>
+  <name>msacc_data_thread</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-msacc_data_thread">msacc_data_thread()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#{'$type' := msacc_data,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>type := <seealso marker="#type-msacc_type">msacc_type()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>id := <seealso marker="#type-msacc_id">msacc_id()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>counters := <seealso marker="#type-msacc_data_counters">msacc_data_counters()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>msacc_id</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-msacc_id">msacc_id()</marker> = integer() &gt;= 0</typehead></typedecl>
+</type>
+<type>
+  <name>msacc_print_options</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-msacc_print_options">msacc_print_options()</marker> = #{system =&gt; boolean()}</typehead></typedecl>
+</type>
+<type>
+  <name>msacc_state</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-msacc_state">msacc_state()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>alloc |<br/><nbsp/><nbsp/><nbsp/><nbsp/>aux |<br/><nbsp/><nbsp/><nbsp/><nbsp/>bif |<br/><nbsp/><nbsp/><nbsp/><nbsp/>busy_wait |<br/><nbsp/><nbsp/><nbsp/><nbsp/>check_io |<br/><nbsp/><nbsp/><nbsp/><nbsp/>emulator |<br/><nbsp/><nbsp/><nbsp/><nbsp/>ets |<br/><nbsp/><nbsp/><nbsp/><nbsp/>gc |<br/><nbsp/><nbsp/><nbsp/><nbsp/>gc_fullsweep |<br/><nbsp/><nbsp/><nbsp/><nbsp/>nif |<br/><nbsp/><nbsp/><nbsp/><nbsp/>other |<br/><nbsp/><nbsp/><nbsp/><nbsp/>port |<br/><nbsp/><nbsp/><nbsp/><nbsp/>send |<br/><nbsp/><nbsp/><nbsp/><nbsp/>sleep |<br/><nbsp/><nbsp/><nbsp/><nbsp/>timers</typehead></typedecl>
+</type>
+<type>
+  <name>msacc_stats</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-msacc_stats">msacc_stats()</marker> = [<seealso marker="#type-msacc_stats_thread">msacc_stats_thread()</seealso>]</typehead></typedecl>
+</type>
+<type>
+  <name>msacc_stats_counters</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-msacc_stats_counters">msacc_stats_counters()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#{<seealso marker="#type-msacc_state">msacc_state()</seealso> =&gt; #{thread := float(), system := float()}}</typehead></typedecl>
+</type>
+<type>
+  <name>msacc_stats_thread</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-msacc_stats_thread">msacc_stats_thread()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#{'$type' := msacc_stats,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>type := <seealso marker="#type-msacc_type">msacc_type()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>id := <seealso marker="#type-msacc_id">msacc_id()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>system := float(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>counters := <seealso marker="#type-msacc_stats_counters">msacc_stats_counters()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>msacc_type</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-msacc_type">msacc_type()</marker> = scheduler | aux | async</typehead></typedecl>
+</type>
+<spec>
+  <name>available</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>available() -&gt; boolean()</head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>from_file</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>from_file(Filename) -&gt; <seealso marker="#type-msacc_data">msacc_data()</seealso></head>
+      <guard>
+        <subtype><typename>Filename</typename><string>Filename = <seealso marker="file#type-name_all">file:name_all()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Filename</anno>
+</spec>
+<spec>
+  <name>print</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>print() -&gt; ok</head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>print</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>print(DataOrStats) -&gt; ok</head>
+      <guard>
+        <subtype><typename>DataOrStats</typename><string>DataOrStats = <seealso marker="#type-msacc_data">msacc_data()</seealso> | <seealso marker="#type-msacc_stats">msacc_stats()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>DataOrStats</anno>
+</spec>
+<spec>
+  <name>print</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>print(DataOrStats, Options) -&gt; ok</head>
+      <guard>
+        <subtype><typename>DataOrStats</typename><string>DataOrStats = <seealso marker="#type-msacc_data">msacc_data()</seealso> | <seealso marker="#type-msacc_stats">msacc_stats()</seealso></string></subtype>
+        <subtype><typename>Options</typename><string>Options = <seealso marker="#type-msacc_print_options">msacc_print_options()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>DataOrStats</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>print</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>print(FileOrDevice, DataOrStats, Options) -&gt; ok</head>
+      <guard>
+        <subtype><typename>FileOrDevice</typename><string>FileOrDevice = <seealso marker="file#type-filename">file:filename()</seealso> | <seealso marker="io#type-device">io:device()</seealso></string></subtype>
+        <subtype><typename>DataOrStats</typename><string>DataOrStats = <seealso marker="#type-msacc_data">msacc_data()</seealso> | <seealso marker="#type-msacc_stats">msacc_stats()</seealso></string></subtype>
+        <subtype><typename>Options</typename><string>Options = <seealso marker="#type-msacc_print_options">msacc_print_options()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>DataOrStats</anno>
+  <anno>FileOrDevice</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>reset</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>reset() -&gt; boolean()</head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>start</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>start() -&gt; boolean()</head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>start</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>start(Time) -&gt; true</head>
+      <guard>
+        <subtype><typename>Time</typename><string>Time = timeout()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Time</anno>
+</spec>
+<spec>
+  <name>stats</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>stats() -&gt; <seealso marker="#type-msacc_data">msacc_data()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>stats</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>stats(Analysis, Stats) -&gt; integer() &gt;= 0</head>
+      <guard>
+        <subtype><typename>Analysis</typename><string>Analysis = system_realtime | system_runtime</string></subtype>
+        <subtype><typename>Stats</typename><string>Stats = <seealso marker="#type-msacc_data">msacc_data()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Analysis</anno>
+  <anno>Stats</anno>
+</spec>
+<spec>
+  <name>stats</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>stats(Analysis, Stats) -&gt; <seealso marker="#type-msacc_stats">msacc_stats()</seealso></head>
+      <guard>
+        <subtype><typename>Analysis</typename><string>Analysis = realtime | runtime</string></subtype>
+        <subtype><typename>Stats</typename><string>Stats = <seealso marker="#type-msacc_data">msacc_data()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Analysis</anno>
+  <anno>Stats</anno>
+</spec>
+<spec>
+  <name>stats</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>stats(Analysis, StatsOrData) -&gt; <seealso marker="#type-msacc_data">msacc_data()</seealso> | <seealso marker="#type-msacc_stats">msacc_stats()</seealso></head>
+      <guard>
+        <subtype><typename>Analysis</typename><string>Analysis = type</string></subtype>
+        <subtype><typename>StatsOrData</typename><string>StatsOrData = <seealso marker="#type-msacc_data">msacc_data()</seealso> | <seealso marker="#type-msacc_stats">msacc_stats()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Analysis</anno>
+  <anno>StatsOrData</anno>
+</spec>
+<spec>
+  <name>stop</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>stop() -&gt; boolean()</head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>to_file</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>to_file(Filename) -&gt; ok | {error, <seealso marker="file#type-posix">file:posix()</seealso>}</head>
+      <guard>
+        <subtype><typename>Filename</typename><string>Filename = <seealso marker="file#type-name_all">file:name_all()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Filename</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:27:57.</timestamp>
+</module>

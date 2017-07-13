@@ -1,0 +1,173 @@
+<module name="wxPrinter">
+<type>
+  <name>wxPrinter</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxPrinter">wxPrinter()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>createAbortWindow</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>createAbortWindow(This, Parent, Printout) -&gt; <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrinter">wxPrinter()</seealso></string></subtype>
+        <subtype><typename>Parent</typename><string>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+        <subtype><typename>Printout</typename><string>Printout = <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Parent</anno>
+  <anno>Printout</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxPrinter">wxPrinter()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getAbort</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getAbort(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrinter">wxPrinter()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getLastError</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>getLastError() -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>getPrintDialogData</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getPrintDialogData(This) -&gt; <seealso marker="wxPrintDialogData#type-wxPrintDialogData">wxPrintDialogData:wxPrintDialogData()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrinter">wxPrinter()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>new() -&gt; <seealso marker="#type-wxPrinter">wxPrinter()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(Options :: [Option]) -&gt; <seealso marker="#type-wxPrinter">wxPrinter()</seealso></head>
+      <guard>
+        <subtype><typename>Option</typename><string>Option = {data, <seealso marker="wxPrintDialogData#type-wxPrintDialogData">wxPrintDialogData:wxPrintDialogData()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>print</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>print(This, Parent, Printout) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrinter">wxPrinter()</seealso></string></subtype>
+        <subtype><typename>Parent</typename><string>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+        <subtype><typename>Printout</typename><string>Printout = <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Parent</anno>
+  <anno>Printout</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>print</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>print(This, Parent, Printout, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrinter">wxPrinter()</seealso></string></subtype>
+        <subtype><typename>Parent</typename><string>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+        <subtype><typename>Printout</typename><string>Printout = <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {prompt, boolean()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Parent</anno>
+  <anno>Printout</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>printDialog</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>printDialog(This, Parent) -&gt; <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrinter">wxPrinter()</seealso></string></subtype>
+        <subtype><typename>Parent</typename><string>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Parent</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>reportError</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>reportError(This, Parent, Printout, Message) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrinter">wxPrinter()</seealso></string></subtype>
+        <subtype><typename>Parent</typename><string>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+        <subtype><typename>Printout</typename><string>Printout = <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></string></subtype>
+        <subtype><typename>Message</typename><string>Message = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Message</anno>
+  <anno>Parent</anno>
+  <anno>Printout</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setup</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setup(This, Parent) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrinter">wxPrinter()</seealso></string></subtype>
+        <subtype><typename>Parent</typename><string>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Parent</anno>
+  <anno>This</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:39.</timestamp>
+</module>

@@ -430,6 +430,9 @@ efile_openfile(Efile_error* errInfo,	/* Where to return error codes. */
         if ( (stat("/dev/null", &nullstatbuf) < 0)
              || (statbuf.st_ino != nullstatbuf.st_ino)
              || (statbuf.st_dev != nullstatbuf.st_dev) ) {
+#ifdef HAVE_FSTAT
+            efile_closefile(fd);
+#endif
 	    errno = EISDIR;
 	    return check_error(-1, errInfo);
         }
@@ -966,17 +969,21 @@ efile_sendfile(Efile_error* errInfo, int in_fd, int out_fd,
 	fdrec.sfv_len = SENDFILE_CHUNK_SIZE;
       else
 	fdrec.sfv_len = *nbytes;
+
       retval = sendfilev(out_fd, &fdrec, 1, &len);
 
-      /* Sometimes sendfilev can return -1 and still send data. 
-         When that happens we just pretend that no error happend. */
-      if (retval != -1 || errno == EAGAIN || errno == EINTR ||
-	  len != 0) {
+      if (retval == -1 && errno == EINVAL) {
+          /* On some solaris versions (I've seen it on SunOS 5.10),
+             using a sfv_len larger then a filesize will result in
+             a -1 && errno == EINVAL return. We translate this so
+             a successful send of the data.*/
+          retval = len;
+      }
+
+      if (retval != -1 || errno == EAGAIN || errno == EINTR) {
         *offset += len;
 	*nbytes -= len;
 	written += len;
-	if (errno != EAGAIN && errno != EINTR && len != 0)
-	  retval = len;
       }
     } while (len == SENDFILE_CHUNK_SIZE);
 #elif defined(__DARWIN__)

@@ -1,7 +1,7 @@
 %%
 %% %CopyrightBegin%
 %% 
-%% Copyright Ericsson AB 1999-2016. All Rights Reserved.
+%% Copyright Ericsson AB 1999-2017. All Rights Reserved.
 %% 
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -43,9 +43,9 @@
 
 suite() ->
     [{ct_hooks,[ts_install_cth]},
-     {timetrap, {seconds, 30}}].
+     {timetrap, {minutes, 2}}].
 
-all() -> 
+all() ->
     Common = [errors, on_load],
     NotHipe = [process_specs, basic, flags, pam, change_pam,
                upgrade,
@@ -60,7 +60,7 @@ all() ->
 init_per_testcase(Func, Config) when is_atom(Func), is_list(Config) ->
     Config.
 
-end_per_testcase(_Func, Config) ->
+end_per_testcase(_Func, _Config) ->
     %% Reloading the module will clear all trace patterns, and
     %% in a debug-compiled emulator run assertions of the counters
     %% for the number of traced exported functions in this module.
@@ -233,7 +233,7 @@ basic() ->
     trace_func({'_','_','_'}, false),
     [b,a] = lists:reverse([a,b]),
 
-    %% Read out the remaing trace messages.
+    %% Read out the remaining trace messages.
 
     ?MODULE:expect({trace,Self,call,{lists,seq,[1,10]}}),
     ?MODULE:expect({trace,Self,call,{erlang,list_to_integer,["777"]}}),

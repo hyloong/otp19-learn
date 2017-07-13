@@ -1,0 +1,1386 @@
+<?xml version="1.0"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="cover" margin="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin="0mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="left-page" margin-top="25mm" margin-bottom="15mm" margin-left="20mm" margin-right="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="left-header" extent="10mm"/>
+      <fo:region-after region-name="left-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="right-page" margin-top="25mm" margin-bottom="15mm" margin-left="25mm" margin-right="20mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="right-header" extent="10mm"/>
+      <fo:region-after region-name="right-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:page-sequence-master master-name="document">
+      <fo:repeatable-page-master-alternatives>
+        <fo:conditional-page-master-reference master-reference="left-page" odd-or-even="even"/>
+        <fo:conditional-page-master-reference master-reference="right-page" odd-or-even="odd"/>
+      </fo:repeatable-page-master-alternatives>
+    </fo:page-sequence-master>
+  </fo:layout-master-set>
+  <fo:bookmark-tree>
+    <fo:bookmark internal-destination="cover-page" starting-state="show">
+      <fo:bookmark-title>EUnit</fo:bookmark-title>
+      <fo:bookmark internal-destination="idp871584" starting-state="hide">
+        <fo:bookmark-title>EUnit User's Guide</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp867232" starting-state="hide">
+          <fo:bookmark-title>EUnit - a Lightweight Unit Testing Framework for Erlang
+</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp857680" starting-state="hide">
+            <fo:bookmark-title>Unit testing</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp856016" starting-state="hide">
+              <fo:bookmark-title>Advantages of unit testing</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp846304" starting-state="hide">
+            <fo:bookmark-title>Terminology</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp830864" starting-state="hide">
+            <fo:bookmark-title>Getting started</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp821040" starting-state="hide">
+              <fo:bookmark-title>Including the EUnit header file</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp772560" starting-state="hide">
+              <fo:bookmark-title>Writing simple test functions</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp792640" starting-state="hide">
+              <fo:bookmark-title>Running EUnit</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp778320" starting-state="hide">
+              <fo:bookmark-title>Writing test generating functions</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp764416" starting-state="hide">
+              <fo:bookmark-title>An example</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp759584" starting-state="hide">
+              <fo:bookmark-title>Disabling testing</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp751312" starting-state="hide">
+              <fo:bookmark-title>Avoiding compile-time dependency on EUnit</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp748096" starting-state="hide">
+            <fo:bookmark-title>EUnit macros</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp739232" starting-state="hide">
+              <fo:bookmark-title>Basic macros</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp736080" starting-state="hide">
+              <fo:bookmark-title>Compilation control macros</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp710048" starting-state="hide">
+              <fo:bookmark-title>Utility macros</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp699024" starting-state="hide">
+              <fo:bookmark-title>Assert macros</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp661808" starting-state="hide">
+              <fo:bookmark-title>Macros for running external commands</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp646016" starting-state="hide">
+              <fo:bookmark-title>Debugging macros</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp627360" starting-state="hide">
+            <fo:bookmark-title>EUnit test representation</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp618224" starting-state="hide">
+              <fo:bookmark-title>Simple test objects</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp603888" starting-state="hide">
+              <fo:bookmark-title>Test sets and deep lists</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp592720" starting-state="hide">
+              <fo:bookmark-title>Titles</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp588128" starting-state="hide">
+              <fo:bookmark-title>Primitives</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idm30752" starting-state="hide">
+              <fo:bookmark-title>Control</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp309600" starting-state="hide">
+              <fo:bookmark-title>Fixtures</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp266160" starting-state="hide">
+              <fo:bookmark-title>Lazy generators</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+      <fo:bookmark internal-destination="idp106576" starting-state="hide">
+        <fo:bookmark-title>Reference Manual</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp924064" starting-state="hide">
+          <fo:bookmark-title>eunit</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp9760" starting-state="hide">
+            <fo:bookmark-title>start/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp7680" starting-state="hide">
+            <fo:bookmark-title>stop/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp5200" starting-state="hide">
+            <fo:bookmark-title>test/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp2832" starting-state="hide">
+            <fo:bookmark-title>test/2</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp278496" starting-state="hide">
+          <fo:bookmark-title>eunit_surefire</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp433904" starting-state="hide">
+            <fo:bookmark-title>handle_begin/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp289056" starting-state="hide">
+            <fo:bookmark-title>handle_cancel/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp290992" starting-state="hide">
+            <fo:bookmark-title>handle_end/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp437712" starting-state="hide">
+            <fo:bookmark-title>init/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp392976" starting-state="hide">
+            <fo:bookmark-title>start/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idm15216" starting-state="hide">
+            <fo:bookmark-title>start/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idm13168" starting-state="hide">
+            <fo:bookmark-title>terminate/2</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+    </fo:bookmark>
+  </fo:bookmark-tree>
+  <fo:page-sequence font-family="sans-serif" force-page-count="even" master-reference="cover" font-size="10pt">
+    <fo:flow flow-name="xsl-region-body">
+      <fo:block space-before="130mm" space-before.conditionality="retain" text-align="end">
+        <fo:external-graphic src="/root/download/otp_src_20.0/bootstrap/lib/erl_docgen/priv/images/erlang-logo.gif"/>
+      </fo:block>
+      <fo:block id="cover-page" border-before-style="solid" border-before-width="10pt" border-color="#960003" font-size="2.3em" padding-before="0.5em" text-align="end">EUnit</fo:block>
+      <fo:block font-size="0.9em" text-align="end">Copyright © 2008-2017 Ericsson AB, All Rights Reserved</fo:block>
+      <fo:block font-size="0.9em" text-align="end">EUnit 2.3.3</fo:block>
+      <fo:block font-size="0.9em" text-align="end">July 12, 2017</fo:block>
+      <fo:block padding-before="2.5em" font-size="1.33em" font-weight="bold" color="#C00" text-align="end"/>
+      <fo:block break-before="page" border-before-style="solid" border-before-width="1pt" border-color="#960003" font-weight="bold" padding-before="0.5em" space-before="200mm" space-before.conditionality="retain">Copyright © 2008-2017 Ericsson AB, All Rights Reserved</fo:block>
+      <fo:block font-size="0.9em">
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+ 
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  The Initial Developer of the Original Code is Ericsson AB.
+    Ericsson AB, All Rights Reserved.
+        </fo:block>
+      <fo:block font-size="0.9em" font-weight="bold" space-before="2em">July 12, 2017</fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+  <fo:page-sequence font-family="serif" master-reference="document" initial-page-number="1" font-size="10pt">
+    <fo:static-content flow-name="left-header">
+      <fo:block text-align="start" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-header">
+      <fo:block text-align="end" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="left-footer">
+      <fo:block text-align="start" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold"><fo:page-number/> | Ericsson AB, All Rights Reserved:
+            EUnit</fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-footer">
+      <fo:block text-align="end" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">Ericsson AB, All Rights Reserved:
+            EUnit | <fo:page-number/></fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body"><fo:block/><fo:block id="idp871584" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">1   
+      EUnit User's Guide</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-weight="bold">EUnit</fo:inline> application
+      contains modules with support for unit testing.</fo:block>
+  <fo:block id="idp867232" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.1  EUnit - a Lightweight Unit Testing Framework for Erlang
+</fo:marker>1.1  EUnit - a Lightweight Unit Testing Framework for Erlang
+</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">EUnit is a unit testing framework for Erlang. It is very powerful
+and flexible, is easy to use, and has small syntactical overhead.</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Unit testing</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Terminology</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Getting started</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">EUnit macros</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">EUnit test representation</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+</fo:list-block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">EUnit builds on ideas from the family of unit testing frameworks for
+Object Oriented languages that originated with JUnit by Beck and Gamma
+(and Beck's previous framework SUnit for Smalltalk). However, EUnit uses
+techniques more adapted to functional and concurrent programming, and is
+typically less verbose than its relatives.</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Although EUnit uses many preprocessor macros, they have been designed to
+be as nonintrusive as possible, and should not cause conflicts with
+existing code. Adding EUnit tests to a module should thus not normally
+require changing existing code. Furthermore, tests that only exercise
+the exported functions of a module can always be placed in a completely
+separate module, avoiding any conflicts entirely.</fo:block><fo:block id="idp857680" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.1 
+      Unit testing</fo:block>
+
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Unit Testing is testing of individual program "units" in relative
+isolation. There is no particular size requirement: a unit can be a
+function, a module, a process, or even a whole application, but the most
+typical testing units are individual functions or modules. In order to
+test a unit, you specify a set of individual tests, set up the smallest
+necessary environment for being able to run those tests (often, you
+don't need to do any setup at all), you run the tests and collect the
+results, and finally you do any necessary cleanup so that the test can
+be run again later. A Unit Testing Framework tries to help you in each
+stage of this process, so that it is easy to write tests, easy to run
+them, and easy to see which tests failed (so you can fix the bugs).</fo:block>
+
+<fo:block id="idp856016" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Advantages of unit testing</fo:block>
+
+
+<fo:block space-after="0.25em" space-before="0.25em">
+  <fo:block keep-with-next.within-page="always">Reduces the risks of changing the program</fo:block>
+  <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Most programs will be modified during their lifetime: bugs will be
+  fixed, features will be added, optimizations may become necessary, or
+  the code will need to be refactored or cleaned up in other ways to
+  make it easier to work with. But every change to a working program is
+  a risk of introducing new bugs - or reintroducing bugs that had
+  previously been fixed. Having a set of unit tests that you can run
+  with very little effort makes it easy to know that the code still
+  works as it should (this use is called <fo:inline font-weight="bold">regression testing</fo:inline>;
+  see <fo:inline font-style="italic">Terminology</fo:inline>). This goes a long way to reduce the
+  resistance to changing and refactoring code.</fo:block></fo:block></fo:block-container>
+  <fo:block keep-with-next.within-page="always">Helps guide and speed up the development process</fo:block>
+  <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">By focusing on getting the code to pass the tests, the programmer
+  can become more productive, not overspecify or get lost in premature
+  optimizations, and create code that is correct from the very beginning
+  (so-called <fo:inline font-weight="bold">test-driven development</fo:inline>; see <fo:inline font-style="italic">Terminology</fo:inline>).</fo:block></fo:block></fo:block-container>
+  <fo:block keep-with-next.within-page="always">Helps separate interface from implementation</fo:block>
+  <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When writing tests, the programmer may discover dependencies
+  (in order to get the tests to run) that ought not to be there, and
+  which need to be abstracted away to get a cleaner design. This helps
+  eliminate bad dependencies before they spread throughout the
+  code.</fo:block></fo:block></fo:block-container>
+  <fo:block keep-with-next.within-page="always">Makes component integration easier</fo:block>
+  <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">By testing in a bottom-up fashion, beginning with the smallest
+  program units and creating a confidence in that they work as they
+  should, it becomes easier to test that a higher-level component,
+  consisting of several such units, also behaves according to
+  specification (known as <fo:inline font-weight="bold">integration testing</fo:inline>; see <fo:inline font-style="italic">Terminology</fo:inline>).</fo:block></fo:block></fo:block-container>
+  <fo:block keep-with-next.within-page="always">Is self-documenting</fo:block>
+  <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The tests can be read as documentation, typically showing both
+  examples of correct and incorrect usage, along with the expected
+  consequences.</fo:block></fo:block></fo:block-container>
+</fo:block><fo:block id="idp846304" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.2 
+      Terminology</fo:block>
+
+
+<fo:block space-after="0.25em" space-before="0.25em">
+  <fo:block keep-with-next.within-page="always">Unit testing</fo:block>
+  <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Testing that a program unit behaves as it is supposed to do (in
+  itself), according to its specifications. Unit tests have an important
+  function as regression tests, when the program later is modified for
+  some reason, since they check that the program still behaves according
+  to specification.</fo:block></fo:block></fo:block-container>
+  <fo:block keep-with-next.within-page="always">Regression testing</fo:block>
+  <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Running a set of tests after making changes to a program, to check
+  that the program behaves as it did before the changes (except, of
+  course, for any intentional changes in behaviour). Unit tests are
+  important as regression tests, but regression testing can involve more
+  than just unit testing, and may also test behaviour that might not be
+  part of the normal specification (such as bug-for-bug-compatibility).
+  </fo:block></fo:block></fo:block-container>
+  <fo:block keep-with-next.within-page="always">Integration testing</fo:block>
+  <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Testing that a number of individually developed program units
+  (assumed to already have been separately unit tested) work together as
+  expected. Depending on the system being developed, integration testing
+  may be as simple as "just another level of unit testing", but might
+  also involve other kinds of tests (compare <fo:inline font-weight="bold">system testing</fo:inline>).
+</fo:block></fo:block></fo:block-container>
+  <fo:block keep-with-next.within-page="always">System testing</fo:block>
+  <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Testing that a complete system behaves according to its
+  specification. Specifically, system testing should not require knowing
+  any details about the implementation. It typically involves testing
+  many different aspects of the system behaviour apart from the basic
+  functionality, such as performance, usability, and reliability.</fo:block></fo:block></fo:block-container>
+  <fo:block keep-with-next.within-page="always">Test-driven development</fo:block>
+  <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A program development technique where you continuously write tests
+  <fo:inline font-weight="bold">before</fo:inline> you implement the code that is supposed to pass those
+  tests. This can help you focus on solving the right problems, and not
+  make a more complicated implementation than necessary, by letting the
+  unit tests determine when a program is "done": if it fulfils its
+  specifications, there is no need to keep adding functionality.</fo:block></fo:block></fo:block-container>
+  <fo:block keep-with-next.within-page="always">Mock object</fo:block>
+  <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Sometimes, testing some unit <fo:inline font-family="monospace">A</fo:inline> (e.g., a function) requires that
+  it collaborates somehow with some other unit <fo:inline font-family="monospace">B</fo:inline> (perhaps being passed
+  as an argument, or by reference) - but <fo:inline font-family="monospace">B</fo:inline> has not been implemented
+  yet. A "mock object" - an object which, for the purposes of testing
+  <fo:inline font-family="monospace">A</fo:inline>, looks and behaves like a real <fo:inline font-family="monospace">B</fo:inline> - might then be used instead.
+  (This is of course only useful if it would be significantly more work
+  to implement a real <fo:inline font-family="monospace">B</fo:inline> than to create a mock object.)</fo:block></fo:block></fo:block-container>
+  <fo:block keep-with-next.within-page="always">Test case</fo:block>
+  <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A single, well-defined test, that somehow can be uniquely
+  identified. When executed, the test case either <fo:inline font-weight="bold">passes</fo:inline> or
+  <fo:inline font-weight="bold">fails</fo:inline>; the test report should identify exactly which test
+  cases failed.</fo:block></fo:block></fo:block-container>
+  <fo:block keep-with-next.within-page="always">Test suite</fo:block>
+  <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A collection of test cases, generally with a specific, common
+  target for testing, such as a single function, module, or subsystem. A
+  test suite may also be recursively composed by smaller test
+  suites.</fo:block></fo:block></fo:block-container>
+</fo:block><fo:block id="idp830864" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.3 
+      Getting started</fo:block>
+
+
+<fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Including the EUnit header file</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Writing simple test functions</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Running EUnit</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Writing test generating functions</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">An example</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Disabling testing</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Avoiding compile-time dependency on EUnit</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+</fo:list-block><fo:block id="idp821040" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Including the EUnit header file</fo:block>
+
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+
+The simplest way to use EUnit in an Erlang module is to add the
+following line at the beginning of the module (after the <fo:inline font-family="monospace">-module</fo:inline>
+declaration, but before any function definitions):
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   -include_lib("eunit/include/eunit.hrl").</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+
+This will have the following effect:
+</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Creates an exported function <fo:inline font-family="monospace">test()</fo:inline> (unless testing is turned
+  off, and the module does not already contain a test() function), that
+  can be used to run all the unit tests defined in the module</fo:block></fo:block></fo:list-item-body></fo:list-item>
+  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Causes all functions whose names match <fo:inline font-family="monospace">..._test()</fo:inline> or <fo:inline font-family="monospace">..._test_()</fo:inline>
+  to be automatically exported from the module (unless testing is
+  turned off, or the <fo:inline font-family="monospace">EUNIT_NOAUTO</fo:inline> macro is defined)</fo:block></fo:block></fo:list-item-body></fo:list-item>
+  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Makes all the preprocessor macros of EUnit available, to help
+  writing tests</fo:block></fo:block></fo:list-item-body></fo:list-item>
+</fo:list-block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+
+<fo:inline font-weight="bold">Note:</fo:inline> For <fo:inline font-family="monospace">-include_lib(...)</fo:inline> to work, the Erlang
+module search path <fo:inline font-weight="bold">must</fo:inline> contain a directory whose name ends in
+<fo:inline font-family="monospace">eunit/ebin</fo:inline> (pointing to the <fo:inline font-family="monospace">ebin</fo:inline> subdirectory of the EUnit
+installation directory). If EUnit is installed as <fo:inline font-family="monospace">lib/eunit</fo:inline> under your
+Erlang/OTP system directory, its <fo:inline font-family="monospace">ebin</fo:inline> subdirectory will be
+automatically added to the search path when Erlang starts. Otherwise,
+you need to add the directory explicitly, by passing a <fo:inline font-family="monospace">-pa</fo:inline> flag to the
+<fo:inline font-family="monospace">erl</fo:inline> or <fo:inline font-family="monospace">erlc</fo:inline> command. For example, a Makefile could contain the
+following action for compiling <fo:inline font-family="monospace">.erl</fo:inline> files:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   erlc -pa "path/to/eunit/ebin" $(ERL_COMPILE_FLAGS) -o$(EBIN) $&lt;</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+or if you want Eunit to always be available when you run Erlang
+interactively, you can add a line like the following to your
+<fo:inline font-family="monospace">$HOME/.erlang</fo:inline> file:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   code:add_path("/path/to/eunit/ebin").</fo:block><fo:block id="idp772560" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Writing simple test functions</fo:block>
+
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The EUnit framework makes it extremely easy to write unit tests in
+Erlang. There are a few different ways of writing them, though, so we
+start with the simplest:</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A function with a name ending in <fo:inline font-family="monospace">..._test()</fo:inline> is recognized by EUnit as
+a simple test function - it takes no arguments, and its execution either
+succeeds (returning some arbitrary value that EUnit will throw away), or
+fails by throwing an exception of some kind (or by not terminating, in
+which case it will be aborted after a while).</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">An example of a simple test function could be the following:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   reverse_test() -&gt; lists:reverse([1,2,3]).</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+This just tests that the function <fo:inline font-family="monospace">lists:reverse(List)</fo:inline> does not crash
+when <fo:inline font-family="monospace">List</fo:inline> is <fo:inline font-family="monospace">[1,2,3]</fo:inline>. It is not a great test, but many people write
+simple functions like this one to test the basic functionality of their
+code, and those tests can be used directly by EUnit, without changes,
+as long as their function names match.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">Use exceptions to signal failure</fo:inline>
+
+To write more interesting tests, we need to make them crash (throw an
+exception) when they don't get the result they expect. A simple way of
+doing this is to use pattern matching with <fo:inline font-family="monospace">=</fo:inline>, as in the following
+examples:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   reverse_nil_test() -&gt; [] = lists:reverse([]).
+   reverse_one_test() -&gt; [1] = lists:reverse([1]).
+   reverse_two_test() -&gt; [2,1] = lists:reverse([1,2]).</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+If there was some bug in <fo:inline font-family="monospace">lists:reverse/1</fo:inline> that made it return something
+other than <fo:inline font-family="monospace">[2,1]</fo:inline> when it got <fo:inline font-family="monospace">[1,2]</fo:inline> as input, then the last test
+above would throw a <fo:inline font-family="monospace">badmatch</fo:inline> error. The first two (we assume they do
+not get a <fo:inline font-family="monospace">badmatch</fo:inline>) would simply return <fo:inline font-family="monospace">[]</fo:inline> and <fo:inline font-family="monospace">[1]</fo:inline>, respectively,
+so both succeed. (Note that EUnit is not psychic: if you write a test
+that returns a value, even if it is the wrong value, EUnit will consider
+it a success. You must make sure that the test is written so that it
+causes a crash if the result is not what it should be.)</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">Using assert macros</fo:inline>
+
+If you want to use Boolean operators for your tests, the <fo:inline font-family="monospace">assert</fo:inline>
+macro comes in handy (see <fo:inline font-style="italic">EUnit macros</fo:inline> for details):
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   length_test() -&gt; ?assert(length([1,2,3]) =:= 3).</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+The <fo:inline font-family="monospace">?assert(Expression)</fo:inline> macro will evaluate <fo:inline font-family="monospace">Expression</fo:inline>, and if that
+does not evaluate to <fo:inline font-family="monospace">true</fo:inline>, it will throw an exception; otherwise it
+just returns <fo:inline font-family="monospace">ok</fo:inline>. In the above example, the test will thus fail if the
+call to <fo:inline font-family="monospace">length</fo:inline> does not return 3.</fo:block>
+
+<fo:block id="idp792640" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Running EUnit</fo:block>
+
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If you have added the declaration
+<fo:inline font-family="monospace">-include_lib("eunit/include/eunit.hrl")</fo:inline> to your module, as described
+above, you only need to compile the module, and run the automatically
+exported function <fo:inline font-family="monospace">test()</fo:inline>. For example, if your module was named <fo:inline font-family="monospace">m</fo:inline>,
+then calling <fo:inline font-family="monospace">m:test()</fo:inline> will run EUnit on all the tests defined in the
+module. You do not need to write <fo:inline font-family="monospace">-export</fo:inline> declarations for the test
+functions. This is all done by magic.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">You can also use the function <fo:inline font-style="italic">eunit:test/1</fo:inline> to run arbitrary
+tests, for example to try out some more advanced test descriptors (see
+<fo:inline font-style="italic">EUnit test representation</fo:inline>). For example, running
+<fo:inline font-family="monospace">eunit:test(m)</fo:inline> does the same thing as the auto-generated function
+<fo:inline font-family="monospace">m:test()</fo:inline>, while <fo:inline font-family="monospace">eunit:test({inparallel, m})</fo:inline> runs the same test
+cases but executes them all in parallel.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">Putting tests in separate modules</fo:inline>
+
+</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If you want to separate your test code from your normal code (at least
+for testing the exported functions), you can simply write the test
+functions in a module named <fo:inline font-family="monospace">m_tests</fo:inline> (note: not <fo:inline font-family="monospace">m_test</fo:inline>), if your
+module is named <fo:inline font-family="monospace">m</fo:inline>. Then, whenever you ask EUnit to test the module
+<fo:inline font-family="monospace">m</fo:inline>, it will also look for the module <fo:inline font-family="monospace">m_tests</fo:inline> and run those tests as
+well. See <fo:inline font-family="monospace">ModuleName</fo:inline> in the section <fo:inline font-style="italic">Primitives</fo:inline> for details.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">EUnit captures standard output</fo:inline>
+
+</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If your test code writes to the standard output, you may be surprised to
+see that the text does not appear on the console when the tests are
+running. This is because EUnit captures all standard output from test
+functions (this also includes setup and cleanup functions, but not
+generator functions), so that it can be included in the test report if
+errors occur. To bypass EUnit and print text directly to the console
+while testing, you can write to the <fo:inline font-family="monospace">user</fo:inline> output stream, as in
+<fo:inline font-family="monospace">io:format(user, "~w", [Term])</fo:inline>. The recommended way of doing this is to
+use the EUnit <fo:inline font-style="italic">Debugging macros</fo:inline>, which make it much simpler.</fo:block>
+
+<fo:block id="idp778320" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Writing test generating functions</fo:block>
+
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A drawback of simple test functions is that you must write a separate
+function (with a separate name) for each test case. A more compact way
+of writing tests (and much more flexible, as we shall see), is to write
+functions that <fo:inline font-weight="bold">return</fo:inline> tests, instead of <fo:inline font-weight="bold">being</fo:inline> tests.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A function with a name ending in <fo:inline font-family="monospace">..._test_()</fo:inline> (note the final
+underscore) is recognized by EUnit as a <fo:inline font-weight="bold">test generator</fo:inline>
+function. Test generators return a <fo:inline font-weight="bold">representation</fo:inline> of a <fo:inline font-weight="bold">set
+of tests</fo:inline> to be executed by EUnit.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">Representing a test as data</fo:inline>
+
+The most basic representation of a test is a single fun-expression that
+takes no arguments. For example, the following test generator:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   basic_test_() -&gt;
+       fun () -&gt; ?assert(1 + 1 =:= 2) end.</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+will have the same effect as the following simple test:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   simple_test() -&gt;
+       ?assert(1 + 1 =:= 2).</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+(in fact, EUnit will handle all simple tests just like it handles
+fun-expressions: it will put them in a list, and run them one by one).</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">Using macros to write tests</fo:inline>
+
+To make tests more compact and readable, as well as automatically add
+information about the line number in the source code where a test
+occurred (and reduce the number of characters you have to type), you can
+use the <fo:inline font-family="monospace">_test</fo:inline> macro (note the initial underscore character), like
+this:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   basic_test_() -&gt;
+       ?_test(?assert(1 + 1 =:= 2)).</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+The <fo:inline font-family="monospace">_test</fo:inline> macro takes any expression (the "body") as argument, and
+places it within a fun-expression (along with some extra information).
+The body can be any kind of test expression, just like the body of a
+simple test function.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">Underscore-prefixed macros create test objects</fo:inline>
+
+But this example can be made even shorter! Most test macros, such as the
+family of <fo:inline font-family="monospace">assert</fo:inline> macros, have a corresponding form with an initial
+underscore character, which automatically adds a <fo:inline font-family="monospace">?_test(...)</fo:inline> wrapper.
+The above example can then simply be written:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   basic_test_() -&gt;
+       ?_assert(1 + 1 =:= 2).</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+which has exactly the same meaning (note the <fo:inline font-family="monospace">_assert</fo:inline> instead of
+<fo:inline font-family="monospace">assert</fo:inline>). You can think of the initial underscore as signalling
+<fo:inline font-weight="bold">test object</fo:inline>.</fo:block>
+
+<fo:block id="idp764416" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">An example</fo:block>
+
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+
+Sometimes, an example says more than a thousand words. The following
+small Erlang module shows how EUnit can be used in practice.
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   -module(fib).
+   -export([fib/1]).
+   -include_lib("eunit/include/eunit.hrl").
+
+   fib(0) -&gt; 1;
+   fib(1) -&gt; 1;
+   fib(N) when N &gt; 1 -&gt; fib(N-1) + fib(N-2).
+
+   fib_test_() -&gt;
+       [?_assert(fib(0) =:= 1),
+	?_assert(fib(1) =:= 1),
+	?_assert(fib(2) =:= 2),
+	?_assert(fib(3) =:= 3),
+	?_assert(fib(4) =:= 5),
+	?_assert(fib(5) =:= 8),
+	?_assertException(error, function_clause, fib(-1)),
+	?_assert(fib(31) =:= 2178309)
+       ].</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">(Author's note: When I first wrote this example, I happened to write a
+<fo:inline font-family="monospace">*</fo:inline> instead of <fo:inline font-family="monospace">+</fo:inline> in the <fo:inline font-family="monospace">fib</fo:inline> function. Of course, this showed up
+immediately when I ran the tests.)</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">See <fo:inline font-style="italic">EUnit test representation</fo:inline> for a full list of all the ways
+you can specify test sets in EUnit.</fo:block>
+
+<fo:block id="idp759584" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Disabling testing</fo:block>
+
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+
+Testing can be turned off by defining the <fo:inline font-family="monospace">NOTEST</fo:inline> macro when compiling,
+for example as an option to <fo:inline font-family="monospace">erlc</fo:inline>, as in:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   erlc -DNOTEST my_module.erl</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+or by adding a macro definition to the code, <fo:inline font-weight="bold">before the EUnit header
+file is included</fo:inline>:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   -define(NOTEST, 1).</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+(the value is not important, but should typically be 1 or <fo:inline font-family="monospace">true</fo:inline>).
+Note that unless the <fo:inline font-family="monospace">EUNIT_NOAUTO</fo:inline> macro is defined, disabling testing
+will also automatically strip all test functions from the code, except
+for any that are explicitly declared as exported.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">For instance, to use EUnit in your application, but with testing turned
+off by default, put the following lines in a header file:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   -define(NOTEST, true).
+   -include_lib("eunit/include/eunit.hrl").</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+and then make sure that every module of your application includes that
+header file. This means that you have a only a single place to modify in
+order to change the default setting for testing. To override the <fo:inline font-family="monospace">NOTEST</fo:inline>
+setting without modifying the code, you can define <fo:inline font-family="monospace">TEST</fo:inline> in a compiler
+option, like this:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   erlc -DTEST my_module.erl</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">See <fo:inline font-style="italic">Compilation control macros</fo:inline> for details about these
+macros.</fo:block>
+
+<fo:block id="idp751312" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Avoiding compile-time dependency on EUnit</fo:block>
+
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+
+If you are distributing the source code for your application for other
+people to compile and run, you probably want to ensure that the code
+compiles even if EUnit is not available. Like the example in the
+previous section, you can put the following lines in a common header
+file:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   -ifdef(TEST).
+   -include_lib("eunit/include/eunit.hrl").
+   -endif.</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+and, of course, also make sure that you place all test code that uses
+EUnit macros within <fo:inline font-family="monospace">-ifdef(TEST)</fo:inline> or <fo:inline font-family="monospace">-ifdef(EUNIT)</fo:inline> sections.</fo:block>
+
+
+<fo:block id="idp748096" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.4 
+      EUnit macros</fo:block>
+
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Although all the functionality of EUnit is available even without the
+use of preprocessor macros, the EUnit header file defines a number of
+such macros in order to make it as easy as possible to write unit tests
+as compactly as possible and without getting too many details in the
+way.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Except where explicitly stated, using EUnit macros will never introduce
+run-time dependencies on the EUnit library code, regardless of whether
+your code is compiled with testing enabled or disabled.</fo:block>
+
+<fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Basic macros</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Compilation control macros</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Utility macros</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Assert macros</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Macros for running external commands</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Debugging macros</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+</fo:list-block><fo:block id="idp739232" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Basic macros</fo:block>
+
+
+<fo:block space-after="0.25em" space-before="0.25em">
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">_test(Expr)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Turns <fo:inline font-family="monospace">Expr</fo:inline> into a "test object", by wrapping it in a
+fun-expression and a source line number. Technically, this is the same
+as <fo:inline font-family="monospace">{?LINE, fun () -&gt; (Expr) end}</fo:inline>.
+</fo:block></fo:block></fo:block-container>
+</fo:block><fo:block id="idp736080" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Compilation control macros</fo:block>
+
+
+<fo:block space-after="0.25em" space-before="0.25em">
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">EUNIT</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This macro is always defined to <fo:inline font-family="monospace">true</fo:inline> whenever EUnit is enabled at
+compile time. This is typically used to place testing code within
+conditional compilation, as in:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   -ifdef(EUNIT).
+       % test code here
+       ...
+   -endif.</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+e.g., to ensure that the code can be compiled without including the
+EUnit header file, when testing is disabled. See also the macros <fo:inline font-family="monospace">TEST</fo:inline>
+and <fo:inline font-family="monospace">NOTEST</fo:inline>.
+</fo:block></fo:block></fo:block-container>
+
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">EUNIT_NOAUTO</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If this macro is defined, the automatic exporting or stripping of
+test functions will be disabled.
+</fo:block></fo:block></fo:block-container>
+
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">TEST</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This macro is always defined (to <fo:inline font-family="monospace">true</fo:inline>, unless previously defined
+by the user to have another value) whenever EUnit is enabled at compile
+time. This can be used to place testing code within conditional
+compilation; see also the macros <fo:inline font-family="monospace">NOTEST</fo:inline> and <fo:inline font-family="monospace">EUNIT</fo:inline>.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">For testing code that is strictly dependent on EUnit, it may be
+preferable to use the <fo:inline font-family="monospace">EUNIT</fo:inline> macro for this purpose, while for code
+that uses more generic testing conventions, using the <fo:inline font-family="monospace">TEST</fo:inline> macro may
+be preferred.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-family="monospace">TEST</fo:inline> macro can also be used to override the <fo:inline font-family="monospace">NOTEST</fo:inline> macro. If
+<fo:inline font-family="monospace">TEST</fo:inline> is defined <fo:inline font-weight="bold">before</fo:inline> the EUnit header file is
+included (even if <fo:inline font-family="monospace">NOTEST</fo:inline> is also defined), then the code will be
+compiled with EUnit enabled.
+</fo:block></fo:block></fo:block-container>
+
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">NOTEST</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This macro is always defined (to <fo:inline font-family="monospace">true</fo:inline>, unless previously defined
+by the user to have another value) whenever EUnit is <fo:inline font-weight="bold">disabled</fo:inline>
+at compile time. (Compare the <fo:inline font-family="monospace">TEST</fo:inline> macro.)</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This macro can also be used for conditional compilation, but is more
+typically used to disable testing: If <fo:inline font-family="monospace">NOTEST</fo:inline> is defined
+<fo:inline font-weight="bold">before</fo:inline> the EUnit header file is included, and <fo:inline font-family="monospace">TEST</fo:inline>
+is <fo:inline font-weight="bold">not</fo:inline> defined, then the code will be compiled with EUnit
+disabled. See also <fo:inline font-style="italic">Disabling testing</fo:inline>.
+</fo:block></fo:block></fo:block-container>
+
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">NOASSERT</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If this macro is defined, the assert macros will have no effect,
+when testing is also disabled. See <fo:inline font-style="italic">Assert macros</fo:inline>. When
+testing is enabled, the assert macros are always enabled automatically
+and cannot be disabled.
+</fo:block></fo:block></fo:block-container>
+
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">ASSERT</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If this macro is defined, it overrides the NOASSERT macro, forcing
+the assert macros to always be enabled regardless of other settings.
+</fo:block></fo:block></fo:block-container>
+
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">NODEBUG</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If this macro is defined, the debugging macros will have no effect.
+See <fo:inline font-style="italic">Debugging macros</fo:inline>. <fo:inline font-family="monospace">NODEBUG</fo:inline> also implies <fo:inline font-family="monospace">NOASSERT</fo:inline>,
+unless testing is enabled.
+</fo:block></fo:block></fo:block-container>
+
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">DEBUG</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If this macro is defined, it overrides the NODEBUG macro, forcing
+the debugging macros to be enabled.
+</fo:block></fo:block></fo:block-container>
+</fo:block><fo:block id="idp710048" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Utility macros</fo:block>
+
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The following macros can make tests more compact and readable:</fo:block>
+
+<fo:block space-after="0.25em" space-before="0.25em">
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">LET(Var,Arg,Expr)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Creates a local binding <fo:inline font-family="monospace">Var = Arg</fo:inline> in <fo:inline font-family="monospace">Expr</fo:inline>. (This is the same as
+<fo:inline font-family="monospace">(fun(Var)-&gt;(Expr)end)(Arg)</fo:inline>.) Note that the binding is not exported
+outside of <fo:inline font-family="monospace">Expr</fo:inline>, and that within <fo:inline font-family="monospace">Expr</fo:inline>, this binding of <fo:inline font-family="monospace">Var</fo:inline> will
+shadow any binding of <fo:inline font-family="monospace">Var</fo:inline> in the surrounding scope.
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">IF(Cond,TrueCase,FalseCase)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Evaluates <fo:inline font-family="monospace">TrueCase</fo:inline> if <fo:inline font-family="monospace">Cond</fo:inline> evaluates to <fo:inline font-family="monospace">true</fo:inline>, or otherwise
+evaluates <fo:inline font-family="monospace">FalseCase</fo:inline> if <fo:inline font-family="monospace">Cond</fo:inline> evaluates to <fo:inline font-family="monospace">false</fo:inline>. (This is the same
+as <fo:inline font-family="monospace">(case (Cond) of true-&gt;(TrueCase); false-&gt;(FalseCase) end)</fo:inline>.) Note
+that it is an error if <fo:inline font-family="monospace">Cond</fo:inline> does not yield a boolean value.
+</fo:block></fo:block></fo:block-container>
+</fo:block><fo:block id="idp699024" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Assert macros</fo:block>
+
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">(Note that these macros also have corresponding forms which start with
+an "<fo:inline font-family="monospace">_</fo:inline>" (underscore) character, as in <fo:inline font-family="monospace">?_assert(BoolExpr)</fo:inline>, that create
+a "test object" instead of performing the test immediately. This is
+equivalent to writing <fo:inline font-family="monospace">?_test(assert(BoolExpr))</fo:inline>, etc.)</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the macro <fo:inline font-family="monospace">NOASSERT</fo:inline> is defined before the EUnit header file is
+included, these macros have no effect when testing is also disabled; see
+<fo:inline font-style="italic">Compilation control macros</fo:inline> for details.</fo:block>
+
+<fo:block space-after="0.25em" space-before="0.25em">
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">assert(BoolExpr)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Evaluates the expression <fo:inline font-family="monospace">BoolExpr</fo:inline>, if testing is enabled. Unless
+the result is <fo:inline font-family="monospace">true</fo:inline>, an informative exception will be generated. If
+there is no exception, the result of the macro expression is the atom
+<fo:inline font-family="monospace">ok</fo:inline>, and the value of <fo:inline font-family="monospace">BoolExpr</fo:inline> is discarded. If testing is disabled,
+the macro will not generate any code except the atom <fo:inline font-family="monospace">ok</fo:inline>, and
+<fo:inline font-family="monospace">BoolExpr</fo:inline> will not be evaluated.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Typical usage:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   ?assert(f(X, Y) =:= [])</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+
+The <fo:inline font-family="monospace">assert</fo:inline> macro can be used anywhere in a program, not just in unit
+tests, to check pre/postconditions and invariants. For example:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   some_recursive_function(X, Y, Z) -&gt;
+       ?assert(X + Y &gt; Z),
+       ...</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">assertNot(BoolExpr)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Equivalent to <fo:inline font-family="monospace">assert(not (BoolExpr))</fo:inline>.
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">assertMatch(GuardedPattern, Expr)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Evaluates <fo:inline font-family="monospace">Expr</fo:inline> and matches the result against <fo:inline font-family="monospace">GuardedPattern</fo:inline>, if
+testing is enabled. If the match fails, an informative exception will be
+generated; see the <fo:inline font-family="monospace">assert</fo:inline> macro for further details. <fo:inline font-family="monospace">GuardedPattern</fo:inline>
+can be anything that you can write on the left hand side of the <fo:inline font-family="monospace">-&gt;</fo:inline>
+symbol in a case-clause, except that it cannot contain comma-separated
+guard tests.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The main reason for using <fo:inline font-family="monospace">assertMatch</fo:inline> also for simple matches, instead
+of matching with <fo:inline font-family="monospace">=</fo:inline>, is that it produces more detailed error messages.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Examples:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   ?assertMatch({found, {fred, _}}, lookup(bloggs, Table))</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   ?assertMatch([X|_] when X &gt; 0, binary_to_list(B))</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">assertNotMatch(GuardedPattern, Expr)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The inverse case of assertMatch, for convenience.
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">assertEqual(Expect, Expr)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Evaluates the expressions <fo:inline font-family="monospace">Expect</fo:inline> and <fo:inline font-family="monospace">Expr</fo:inline> and compares the
+results for equality, if testing is enabled. If the values are not
+equal, an informative exception will be generated; see the <fo:inline font-family="monospace">assert</fo:inline>
+macro for further details.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">assertEqual</fo:inline> is more suitable than <fo:inline font-family="monospace">assertMatch</fo:inline> when the
+left-hand side is a computed value rather than a simple pattern, and
+gives more details than <fo:inline font-family="monospace">?assert(Expect =:= Expr)</fo:inline>.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Examples:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   ?assertEqual("b" ++ "a", lists:reverse("ab"))</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   ?assertEqual(foo(X), bar(Y))</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">assertNotEqual(Unexpected, Expr)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The inverse case of assertEqual, for convenience.
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">assertException(ClassPattern, TermPattern, Expr)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"/></fo:block-container><fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">assertError(TermPattern, Expr)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"/></fo:block-container><fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">assertExit(TermPattern, Expr)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"/></fo:block-container><fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">assertThrow(TermPattern, Expr)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Evaluates <fo:inline font-family="monospace">Expr</fo:inline>, catching any exception and testing that it matches
+the expected <fo:inline font-family="monospace">ClassPattern:TermPattern</fo:inline>. If the match fails, or if no
+exception is thrown by <fo:inline font-family="monospace">Expr</fo:inline>, an informative exception will be
+generated; see the <fo:inline font-family="monospace">assert</fo:inline> macro for further details. The
+<fo:inline font-family="monospace">assertError</fo:inline>, <fo:inline font-family="monospace">assertExit</fo:inline>, and <fo:inline font-family="monospace">assertThrow</fo:inline> macros, are equivalent to
+using <fo:inline font-family="monospace">assertException</fo:inline> with a <fo:inline font-family="monospace">ClassPattern</fo:inline> of <fo:inline font-family="monospace">error</fo:inline>, <fo:inline font-family="monospace">exit</fo:inline>, or
+<fo:inline font-family="monospace">throw</fo:inline>, respectively.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Examples:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   ?assertError(badarith, X/0)</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   ?assertExit(normal, exit(normal))</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   ?assertException(throw, {not_found,_}, throw({not_found,42}))</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+</fo:block></fo:block></fo:block-container>
+</fo:block><fo:block id="idp661808" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Macros for running external commands</fo:block>
+
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Keep in mind that external commands are highly dependent on the
+operating system. You can use the standard library function <fo:inline font-family="monospace">os:type()</fo:inline>
+in test generator functions, to produce different sets of tests
+depending on the current operating system.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Note: these macros introduce a run-time dependency on the EUnit library
+code, if compiled with testing enabled.</fo:block>
+
+<fo:block space-after="0.25em" space-before="0.25em">
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">assertCmd(CommandString)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Runs <fo:inline font-family="monospace">CommandString</fo:inline> as an external command, if testing is enabled.
+Unless the returned status value is 0, an informative exception will be
+generated. If there is no exception, the result of the macro expression
+is the atom <fo:inline font-family="monospace">ok</fo:inline>. If testing is disabled, the macro will not generate
+any code except the atom <fo:inline font-family="monospace">ok</fo:inline>, and the command will not be executed.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Typical usage:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   ?assertCmd("mkdir foo")</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">assertCmdStatus(N, CommandString)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Like the <fo:inline font-family="monospace">assertCmd(CommandString)</fo:inline> macro, but generates an
+exception unless the returned status value is <fo:inline font-family="monospace">N</fo:inline>.
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">assertCmdOutput(Text, CommandString)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Runs <fo:inline font-family="monospace">CommandString</fo:inline> as an external command, if testing is enabled.
+Unless the output produced by the command exactly matches the specified
+string <fo:inline font-family="monospace">Text</fo:inline>, an informative exception will be generated. (Note that
+the output is normalized to use a single LF character as line break on
+all platforms.) If there is no exception, the result of the macro
+expression is the atom <fo:inline font-family="monospace">ok</fo:inline>. If testing is disabled, the macro will not
+generate any code except the atom <fo:inline font-family="monospace">ok</fo:inline>, and the command will not be
+executed.
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">cmd(CommandString)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Runs <fo:inline font-family="monospace">CommandString</fo:inline> as an external command. Unless the returned
+status value is 0 (indicating success), an informative exception will be
+generated; otherwise, the result of the macro expression is the output
+produced by the command, as a flat string. The output is normalized to
+use a single LF character as line break on all platforms.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This macro is useful in the setup and cleanup sections of fixtures,
+e.g., for creating and deleting files or perform similar operating
+system specific tasks, to make sure that the test system is informed of
+any failures.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A Unix-specific example:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   {setup,
+    fun () -&gt; ?cmd("mktemp") end,
+    fun (FileName) -&gt; ?cmd("rm " ++ FileName) end,
+    ...}</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+</fo:block></fo:block></fo:block-container>
+</fo:block><fo:block id="idp646016" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Debugging macros</fo:block>
+
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To help with debugging, EUnit defines several useful macros for printing
+messages directly to the console (rather than to the standard output).
+Furthermore, these macros all use the same basic format, which includes
+the file and line number where they occur, making it possible in some
+development environments (e.g., when running Erlang in an Emacs buffer)
+to simply click on the message and jump directly to the corresponding
+line in the code.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the macro <fo:inline font-family="monospace">NODEBUG</fo:inline> is defined before the EUnit header file is
+included, these macros have no effect; see
+<fo:inline font-style="italic">Compilation control macros</fo:inline> for details.</fo:block>
+
+<fo:block space-after="0.25em" space-before="0.25em">
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">debugHere</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Just prints a marker showing the current file and line number. Note
+that this is an argument-less macro. The result is always <fo:inline font-family="monospace">ok</fo:inline>.</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">debugMsg(Text)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Outputs the message <fo:inline font-family="monospace">Text</fo:inline> (which can be a plain string, an IO-list,
+or just an atom). The result is always <fo:inline font-family="monospace">ok</fo:inline>.</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">debugFmt(FmtString, Args)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This formats the text like <fo:inline font-family="monospace">io:format(FmtString, Args)</fo:inline> and outputs
+it like <fo:inline font-family="monospace">debugMsg</fo:inline>. The result is always <fo:inline font-family="monospace">ok</fo:inline>.</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">debugVal(Expr)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Prints both the source code for <fo:inline font-family="monospace">Expr</fo:inline> and its current value. E.g.,
+<fo:inline font-family="monospace">?debugVal(f(X))</fo:inline> might be displayed as "<fo:inline font-family="monospace">f(X) = 42</fo:inline>". (Large terms are
+truncated to the depth given by the macro <fo:inline font-family="monospace">EUNIT_DEBUG_VAL_DEPTH</fo:inline>, which
+defaults to 15 but can be overridden by the user.) The result is always the
+value of <fo:inline font-family="monospace">Expr</fo:inline>, so this macro can be wrapped around any expression to
+display its value when the code is compiled with debugging enabled.</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">debugVal(Expr, Depth)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Like <fo:inline font-family="monospace">debugVal(Expr)</fo:inline>, but prints terms truncated to the given depth.</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">debugTime(Text,Expr)</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Prints <fo:inline font-family="monospace">Text</fo:inline> and the wall clock time for evaluation of <fo:inline font-family="monospace">Expr</fo:inline>. The
+result is always the value of <fo:inline font-family="monospace">Expr</fo:inline>, so this macro can be wrapped
+around any expression to show its run time when the code is compiled
+with debugging enabled. For example, <fo:inline font-family="monospace">List1 = ?debugTime("sorting",
+lists:sort(List))</fo:inline> might show as "<fo:inline font-family="monospace">sorting: 0.015 s</fo:inline>".</fo:block></fo:block></fo:block-container>
+
+</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+
+
+</fo:block><fo:block id="idp627360" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.5 
+      EUnit test representation</fo:block>
+
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The way EUnit represents tests and test sets as data is flexible,
+powerful, and concise. This section describes the representation in
+detail.</fo:block>
+
+<fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Simple test objects</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Test sets and deep lists</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Titles</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Primitives</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Control</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Fixtures</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">Lazy generators</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+</fo:list-block><fo:block id="idp618224" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Simple test objects</fo:block>
+
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+
+A <fo:inline font-weight="bold">simple test object</fo:inline> is one of the following:
+</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A nullary functional value (i.e., a fun that takes zero
+      arguments). Examples:
+</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   fun () -&gt; ... end</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   fun some_function/0</fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   fun some_module:some_function/0</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+  </fo:block></fo:block></fo:list-item-body></fo:list-item>
+  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A tuple <fo:inline font-family="monospace">{test, ModuleName, FunctionName}</fo:inline>, where <fo:inline font-family="monospace">ModuleName</fo:inline> and
+      <fo:inline font-family="monospace">FunctionName</fo:inline> are atoms, referring to the function
+      <fo:inline font-family="monospace">ModuleName:FunctionName/0</fo:inline></fo:block></fo:block></fo:list-item-body></fo:list-item>
+  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">(Obsolete) A pair of atoms <fo:inline font-family="monospace">{ModuleName, FunctionName}</fo:inline>, equivalent to
+      <fo:inline font-family="monospace">{test, ModuleName, FunctionName}</fo:inline> if nothing else matches first. This
+      might be removed in a future version.</fo:block></fo:block></fo:list-item-body></fo:list-item>
+  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A pair <fo:inline font-family="monospace">{LineNumber, SimpleTest}</fo:inline>, where <fo:inline font-family="monospace">LineNumber</fo:inline> is a
+      nonnegative integer and <fo:inline font-family="monospace">SimpleTest</fo:inline> is another simple test
+      object. <fo:inline font-family="monospace">LineNumber</fo:inline> should indicate the source line of the test.
+      Pairs like this are usually only created via <fo:inline font-family="monospace">?_test(...)</fo:inline> macros;
+      see <fo:inline font-style="italic">Basic macros</fo:inline>.</fo:block></fo:block></fo:list-item-body></fo:list-item>
+</fo:list-block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+In brief, a simple test object consists of a single function that takes
+no arguments (possibly annotated with some additional metadata, i.e., a
+line number). Evaluation of the function either <fo:inline font-weight="bold">succeeds</fo:inline>, by
+returning some value (which is ignored), or <fo:inline font-weight="bold">fails</fo:inline>, by throwing
+an exception.</fo:block>
+
+<fo:block id="idp603888" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Test sets and deep lists</fo:block>
+
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A test set can be easily created by placing a sequence of test objects
+in a list. If <fo:inline font-family="monospace">T_1</fo:inline>, ..., <fo:inline font-family="monospace">T_N</fo:inline> are individual test objects, then <fo:inline font-family="monospace">[T_1,
+..., T_N]</fo:inline> is a test set consisting of those objects (in that order).</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Test sets can be joined in the same way: if <fo:inline font-family="monospace">S_1</fo:inline>, ..., <fo:inline font-family="monospace">S_K</fo:inline> are test
+sets, then <fo:inline font-family="monospace">[S_1, ..., S_K]</fo:inline> is also a test set, where the tests of
+<fo:inline font-family="monospace">S_i</fo:inline> are ordered before those of <fo:inline font-family="monospace">S_(i+1)</fo:inline>, for each subset <fo:inline font-family="monospace">S_i</fo:inline>.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Thus, the main representation of test sets is <fo:inline font-weight="bold">deep lists</fo:inline>, and
+a simple test object can be viewed as a test set containing only a
+single test; there is no difference between <fo:inline font-family="monospace">T</fo:inline> and <fo:inline font-family="monospace">[T]</fo:inline>.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A module can also be used to represent a test set; see <fo:inline font-family="monospace">ModuleName</fo:inline>
+under <fo:inline font-style="italic">Primitives</fo:inline> below.</fo:block>
+
+<fo:block id="idp592720" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Titles</fo:block>
+
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Any test or test set <fo:inline font-family="monospace">T</fo:inline> can be annotated with a title, by wrapping it
+in a pair <fo:inline font-family="monospace">{Title, T}</fo:inline>, where <fo:inline font-family="monospace">Title</fo:inline> is a string. For convenience, any
+test which is normally represented using a tuple can simply be given a
+title string as the first element, i.e., writing <fo:inline font-family="monospace">{"The Title", ...}</fo:inline>
+instead of adding an extra tuple wrapper as in <fo:inline font-family="monospace">{"The Title", {...}}</fo:inline>.</fo:block>
+
+
+<fo:block id="idp588128" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Primitives</fo:block>
+
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+
+The following are primitives, which do not contain other test sets as
+arguments:
+</fo:block><fo:block space-after="0.25em" space-before="0.25em">
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">ModuleName::atom()</fo:inline>
+</fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A single atom represents a module name, and is equivalent to
+<fo:inline font-family="monospace">{module, ModuleName}</fo:inline>. This is often used as in the call
+<fo:inline font-family="monospace">eunit:test(some_module)</fo:inline>.
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{module, ModuleName::atom()}</fo:inline>
+</fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This composes a test set from the exported test functions of the
+named module, i.e., those functions with arity zero whose names end
+with <fo:inline font-family="monospace">_test</fo:inline> or <fo:inline font-family="monospace">_test_</fo:inline>. Basically, the <fo:inline font-family="monospace">..._test()</fo:inline> functions become
+simple tests, while the <fo:inline font-family="monospace">..._test_()</fo:inline> functions become generators.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">In addition, EUnit will also look for another module whose name is
+<fo:inline font-family="monospace">ModuleName</fo:inline> plus the suffix <fo:inline font-family="monospace">_tests</fo:inline>, and if it exists, all the tests
+from that module will also be added. (If <fo:inline font-family="monospace">ModuleName</fo:inline> already contains
+the suffix <fo:inline font-family="monospace">_tests</fo:inline>, this is not done.) E.g., the specification
+<fo:inline font-family="monospace">{module, mymodule}</fo:inline> will run all tests in the modules <fo:inline font-family="monospace">mymodule</fo:inline> and
+<fo:inline font-family="monospace">mymodule_tests</fo:inline>. Typically, the <fo:inline font-family="monospace">_tests</fo:inline> module should only contain
+test cases that use the public interface of the main module (and no
+other code).
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{application, AppName::atom(), Info::list()}</fo:inline>
+</fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This is a normal Erlang/OTP application descriptor, as found in an
+ <fo:inline font-family="monospace">.app</fo:inline> file. The resulting test set consists of the modules listed in
+ the <fo:inline font-family="monospace">modules</fo:inline> entry in <fo:inline font-family="monospace">Info</fo:inline>.
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{application, AppName::atom()}</fo:inline>
+</fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This creates a test set from all the modules belonging to the
+specified application, by consulting the application's <fo:inline font-family="monospace">.app</fo:inline> file
+(see <fo:inline font-family="monospace">{file, FileName}</fo:inline>), or if no such file exists, by testing all
+object files in the application's <fo:inline font-family="monospace">ebin</fo:inline>-directory (see <fo:inline font-family="monospace">{dir,
+Path}</fo:inline>); if that does not exist, the <fo:inline font-family="monospace">code:lib_dir(AppName)</fo:inline> directory
+is used.
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">Path::string()</fo:inline>
+</fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A single string represents the path of a file or directory, and is
+equivalent to <fo:inline font-family="monospace">{file, Path}</fo:inline>, or <fo:inline font-family="monospace">{dir, Path}</fo:inline>, respectively, depending
+on what <fo:inline font-family="monospace">Path</fo:inline> refers to in the file system.
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{file, FileName::string()}</fo:inline>
+</fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If <fo:inline font-family="monospace">FileName</fo:inline> has a suffix that indicates an object file (<fo:inline font-family="monospace">.beam</fo:inline>),
+EUnit will try to reload the module from the specified file and test it.
+Otherwise, the file is assumed to be a text file containing test
+specifications, which will be read using the standard library function
+<fo:inline font-family="monospace">file:path_consult/2</fo:inline>.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Unless the file name is absolute, the file is first searched for
+relative to the current directory, and then using the normal search path
+(<fo:inline font-family="monospace">code:get_path()</fo:inline>). This means that the names of typical "app" files
+can be used directly, without a path, e.g., <fo:inline font-family="monospace">"mnesia.app"</fo:inline>.
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{dir, Path::string()}</fo:inline>
+</fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This tests all object files in the specified directory, as if they
+had been individually specified using <fo:inline font-family="monospace">{file, FileName}</fo:inline>.
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{generator, GenFun::(() -&gt; Tests)}</fo:inline>
+</fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The generator function <fo:inline font-family="monospace">GenFun</fo:inline> is called to produce a test
+set.
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{generator, ModuleName::atom(), FunctionName::atom()}</fo:inline>
+</fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The function <fo:inline font-family="monospace">ModuleName:FunctionName()</fo:inline> is called to produce a test
+set.
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{with, X::any(), [AbstractTestFun::((any()) -&gt; any())]}</fo:inline>
+</fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Distributes the value <fo:inline font-family="monospace">X</fo:inline> over the unary functions in the list,
+turning them into nullary test functions. An <fo:inline font-family="monospace">AbstractTestFun</fo:inline> is like
+an ordinary test fun, but takes one argument instead of zero - it's
+basically missing some information before it can be a proper test. In
+practice, <fo:inline font-family="monospace">{with, X, [F_1, ..., F_N]}</fo:inline> is equivalent to <fo:inline font-family="monospace">[fun () -&gt;
+F_1(X) end, ..., fun () -&gt; F_N(X) end]</fo:inline>. This is particularly useful if
+your abstract test functions are already implemented as proper
+functions: <fo:inline font-family="monospace">{with, FD, [fun filetest_a/1, fun filetest_b/1, fun
+filetest_c/1]}</fo:inline> is equivalent to <fo:inline font-family="monospace">[fun () -&gt; filetest_a(FD) end, fun ()
+-&gt; filetest_b(FD) end, fun () -&gt; filetest_c(FD) end]</fo:inline>, but much more
+compact. See also <fo:inline font-style="italic">Fixtures</fo:inline>, below.
+</fo:block></fo:block></fo:block-container>
+</fo:block><fo:block id="idm30752" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Control</fo:block>
+
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+
+The following representations control how and where tests are executed:
+</fo:block><fo:block space-after="0.25em" space-before="0.25em">
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{spawn, Tests}</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Runs the specified tests in a separate subprocess, while the current
+test process waits for it to finish. This is useful for tests that need
+a fresh, isolated process state. (Note that EUnit always starts at least
+one such a subprocess automatically; tests are never executed by the
+caller's own process.)</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{spawn, Node::atom(), Tests}</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Like <fo:inline font-family="monospace">{spawn, Tests}</fo:inline>, but runs the specified tests on the given
+Erlang node.</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{timeout, Time::number(), Tests}</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Runs the specified tests under the given timeout. Time is in
+seconds; e.g., 60 means one minute and 0.1 means 1/10th of a second. If
+the timeout is exceeded, the unfinished tests will be forced to
+terminate. Note that if a timeout is set around a fixture, it includes
+the time for setup and cleanup, and if the timeout is triggered, the
+entire fixture is abruptly terminated (without running the
+cleanup). The default timeout for an individual test is 5 seconds.</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{inorder, Tests}</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Runs the specified tests in strict order. Also see <fo:inline font-family="monospace">{inparallel,
+Tests}</fo:inline>. By default, tests are neither marked as <fo:inline font-family="monospace">inorder</fo:inline> or
+<fo:inline font-family="monospace">inparallel</fo:inline>, but may be executed as the test framework chooses.</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{inparallel, Tests}</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Runs the specified tests in parallel (if possible). Also see
+<fo:inline font-family="monospace">{inorder, Tests}</fo:inline>.</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{inparallel, N::integer(), Tests}</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Like <fo:inline font-family="monospace">{inparallel, Tests}</fo:inline>, but running no more than <fo:inline font-family="monospace">N</fo:inline> subtests
+simultaneously.</fo:block></fo:block></fo:block-container>
+</fo:block><fo:block id="idp309600" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Fixtures</fo:block>
+
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A "fixture" is some state that is necessary for a particular set of
+tests to run. EUnit's support for fixtures makes it easy to set up such
+state locally for a test set, and automatically tear it down again when
+the test set is finished, regardless of the outcome (success, failures,
+timeouts, etc.).</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To make the descriptions simpler, we first list some definitions:
+</fo:block><fo:table border-collapse="separate" space-after="1em" space-before="1em" table-layout="fixed" inline-progression-dimension="100%"><fo:table-body><fo:table-row>
+<fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-family="monospace">Setup</fo:inline></fo:block></fo:table-cell><fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-family="monospace">() -&gt; (R::any())</fo:inline></fo:block></fo:table-cell>
+</fo:table-row><fo:table-row>
+<fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-family="monospace">SetupX</fo:inline></fo:block></fo:table-cell><fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-family="monospace">(X::any()) -&gt; (R::any())</fo:inline></fo:block></fo:table-cell>
+</fo:table-row><fo:table-row>
+<fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-family="monospace">Cleanup</fo:inline></fo:block></fo:table-cell><fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-family="monospace">(R::any()) -&gt; any()</fo:inline></fo:block></fo:table-cell>
+</fo:table-row><fo:table-row>
+<fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-family="monospace">CleanupX</fo:inline></fo:block></fo:table-cell><fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-family="monospace">(X::any(), R::any()) -&gt; any()</fo:inline></fo:block></fo:table-cell>
+</fo:table-row><fo:table-row>
+<fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-family="monospace">Instantiator</fo:inline></fo:block></fo:table-cell><fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-family="monospace">((R::any()) -&gt; Tests) | {with, [AbstractTestFun::((any()) -&gt; any())]}</fo:inline></fo:block></fo:table-cell>
+</fo:table-row><fo:table-row>
+<fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-family="monospace">Where</fo:inline></fo:block></fo:table-cell><fo:table-cell border-style="solid" border-width="0.5pt" display-align="center" padding-after="0.5em" padding-before="0.5em" padding-end="0.3em" padding-start="0.3em" text-align="start"><fo:block text-align="start"><fo:inline font-family="monospace">local | spawn | {spawn, Node::atom()}</fo:inline></fo:block></fo:table-cell>
+</fo:table-row></fo:table-body></fo:table><fo:block font-family="DejaVuSans, sans-serif" font-size="0.8em" font-weight="bold" keep-with-previous.within-page="always" space-after="2.5em" space-before="0em">
+        Table
+        1.1:
+         
+        </fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+(these are explained in more detail further below.)</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The following representations specify fixture handling for test sets:
+</fo:block><fo:block space-after="0.25em" space-before="0.25em">
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{setup, Setup, Tests | Instantiator}</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"/></fo:block-container><fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{setup, Setup, Cleanup, Tests | Instantiator}</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"/></fo:block-container><fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{setup, Where, Setup, Tests | Instantiator}</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"/></fo:block-container><fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{setup, Where, Setup, Cleanup, Tests | Instantiator}</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">setup</fo:inline> sets up a single fixture for running all of the specified
+tests, with optional teardown afterwards. The arguments are described in
+detail below.
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{node, Node::atom(), Tests | Instantiator}</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"/></fo:block-container><fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{node, Node::atom(), Args::string(), Tests | Instantiator}</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">node</fo:inline> is like <fo:inline font-family="monospace">setup</fo:inline>, but with a built-in behaviour: it starts a
+slave node for the duration of the tests. The atom <fo:inline font-family="monospace">Node</fo:inline> should have
+the format <fo:inline font-family="monospace">nodename@full.machine.name</fo:inline>, and <fo:inline font-family="monospace">Args</fo:inline> are the optional
+arguments to the new node; see <fo:inline font-family="monospace">slave:start_link/3</fo:inline> for details.
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{foreach, Where, Setup, Cleanup, [Tests | Instantiator]}</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"/></fo:block-container><fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{foreach, Setup, Cleanup, [Tests | Instantiator]}</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"/></fo:block-container><fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{foreach, Where, Setup, [Tests | Instantiator]}</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"/></fo:block-container><fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{foreach, Setup, [Tests | Instantiator]}</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">foreach</fo:inline> is used to set up a fixture and optionally tear it down
+afterwards, repeated for each single one of the specified test sets.
+</fo:block></fo:block></fo:block-container>
+<fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{foreachx, Where, SetupX, CleanupX,
+      Pairs::[{X::any(), ((X::any(), R::any()) -&gt; Tests)}]}</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"/></fo:block-container><fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{foreachx, SetupX, CleanupX, Pairs}</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"/></fo:block-container><fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{foreachx, Where, SetupX, Pairs}</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"/></fo:block-container><fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{foreachx, SetupX, Pairs}</fo:inline></fo:block>
+<fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">foreachx</fo:inline> is like <fo:inline font-family="monospace">foreach</fo:inline>, but uses a list of pairs, each
+containing an extra argument <fo:inline font-family="monospace">X</fo:inline> and an extended instantiator function.
+</fo:block></fo:block></fo:block-container>
+</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A <fo:inline font-family="monospace">Setup</fo:inline> function is executed just before any of the specified tests
+are run, and a <fo:inline font-family="monospace">Cleanup</fo:inline> function is executed when no more of the
+specified tests will be run, regardless of the reason. A <fo:inline font-family="monospace">Setup</fo:inline>
+function takes no argument, and returns some value which will be passed
+as it is to the <fo:inline font-family="monospace">Cleanup</fo:inline> function. A <fo:inline font-family="monospace">Cleanup</fo:inline> function should do
+whatever necessary and return some arbitrary value, such as the atom
+<fo:inline font-family="monospace">ok</fo:inline>. (<fo:inline font-family="monospace">SetupX</fo:inline> and <fo:inline font-family="monospace">CleanupX</fo:inline> functions are similar, but receive one
+additional argument: some value <fo:inline font-family="monospace">X</fo:inline>, which depends on the context.) When
+no <fo:inline font-family="monospace">Cleanup</fo:inline> function is specified, a dummy function is used which has
+no effect.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">An <fo:inline font-family="monospace">Instantiator</fo:inline> function receives the same value as the <fo:inline font-family="monospace">Cleanup</fo:inline>
+function, i.e., the value returned by the <fo:inline font-family="monospace">Setup</fo:inline> function. It should
+then behave much like a generator (see <fo:inline font-style="italic">Primitives</fo:inline>), and
+return a test set whose tests have been <fo:inline font-weight="bold">instantiated</fo:inline> with the
+given value. A special case is the syntax <fo:inline font-family="monospace">{with, [AbstractTestFun]}</fo:inline>
+which represents an instantiator function that distributes the value
+over a list of unary functions; see <fo:inline font-style="italic">Primitives</fo:inline>: <fo:inline font-family="monospace">{with, X,
+[...]}</fo:inline> for more details.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A <fo:inline font-family="monospace">Where</fo:inline> term controls how the specified tests are executed. The
+default is <fo:inline font-family="monospace">spawn</fo:inline>, which means that the current process handles the
+setup and teardown, while the tests are executed in a subprocess.
+<fo:inline font-family="monospace">{spawn, Node}</fo:inline> is like <fo:inline font-family="monospace">spawn</fo:inline>, but runs the subprocess on the
+specified node. <fo:inline font-family="monospace">local</fo:inline> means that the current process will handle both
+setup/teardown and running the tests - the drawback is that if a test
+times out so that the process is killed, the <fo:inline font-weight="bold">cleanup will not be
+performed</fo:inline>; hence, avoid this for persistent fixtures such as file
+operations. In general, <fo:inline font-family="monospace">local</fo:inline> should only be used when:
+</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">the setup/teardown needs to be executed by the process that will
+  run the tests;</fo:block></fo:block></fo:list-item-body></fo:list-item>
+  <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">no further teardown needs to be done if the process is killed
+  (i.e., no state outside the process was affected by the setup)</fo:block></fo:block></fo:list-item-body></fo:list-item>
+</fo:list-block><fo:block id="idp266160" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Lazy generators</fo:block>
+
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Sometimes, it can be convenient not to produce the whole set of test
+descriptions before the testing begins; for example, if you want to
+generate a huge amount of tests that would take up too much space to
+keep in memory all at once.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">It is fairly easy to write a generator which, each time it is called,
+either produces an empty list if it is done, or otherwise produces a
+list containing a single test case plus a new generator which will
+produce the rest of the tests. This demonstrates the basic pattern:</fo:block>
+
+<fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">   lazy_test_() -&gt;
+       lazy_gen(10000).
+
+   lazy_gen(N) -&gt;
+       {generator,
+        fun () -&gt;
+            if N &gt; 0 -&gt;
+                   [?_test(...)
+                    | lazy_gen(N-1)];
+               true -&gt;
+                   []
+            end
+        end}.</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When EUnit traverses the test representation in order to run the tests,
+the new generator will not be called to produce the next test until the
+previous test has been executed.</fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Note that it is easiest to write this kind of recursive generator using
+a help function, like the <fo:inline font-family="monospace">lazy_gen/1</fo:inline> function above. It can also be
+written using a recursive fun, if you prefer to not clutter your
+function namespace and are comfortable with writing that kind of code.
+</fo:block><fo:block id="idp106576" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">2   
+      Reference Manual</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-weight="bold">EUnit</fo:inline> application 
+      contains modules with support for unit testing.</fo:block>
+  <fo:block page-break-before="always" id="idp924064" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">eunit</fo:marker>eunit</fo:block>Erlang module</fo:block>
+<fo:block/>
+eunit
+<fo:block/>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This module is the main EUnit user interface.</fo:block>
+<fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+<fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp9760">start() -&gt; term()
+</fo:block></fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Starts the EUnit server. Normally, you don't need to call this
+  function; it is started automatically.</fo:block>
+</fo:block>
+<fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp7680">stop() -&gt; term()
+</fo:block></fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Stops the EUnit server. Normally, you don't need to call this
+  function.</fo:block>
+</fo:block>
+<fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp5200">test(Tests) -&gt; term()
+</fo:block></fo:block>
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Equivalent to <fo:inline font-style="italic">test(Tests, [])</fo:inline>.</fo:block>
+</fo:block>
+<fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp2832">test(Tests::term(), Options::[term()]) -&gt; ok | {error, term()}</fo:block></fo:block>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Runs a set of tests. The format of <fo:inline font-family="monospace">Tests</fo:inline> is described in the
+  section <fo:inline font-style="italic">EUnit test
+  representation</fo:inline> of the overview.</fo:block>
+ 
+  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Example: </fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">  eunit:test(fred)</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"> runs all tests in the module <fo:inline font-family="monospace">fred</fo:inline>
+  and also any tests in the module <fo:inline font-family="monospace">fred_tests</fo:inline>, if that module exists.</fo:block>
+ 
+  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Options:
+  </fo:block><fo:block space-after="0.25em" space-before="0.25em">
+  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">verbose</fo:inline></fo:block>
+  <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Displays more details about the running tests.</fo:block></fo:block></fo:block-container>
+  </fo:block>
+ 
+  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Options in the environment variable EUNIT are also included last in
+  the option list, i.e., have lower precedence than those in <fo:inline font-family="monospace">Options</fo:inline>.</fo:block>
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">See also:</fo:inline> <fo:inline font-style="italic">test/1</fo:inline>.</fo:block>
+</fo:block>
+
+
+
+Mickaël Rémond
+mickael.remond@process-one.net
+Richard Carlsson
+carlsson.richard@gmail.com<fo:block page-break-before="always" id="idp278496" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">eunit_surefire</fo:marker>eunit_surefire</fo:block>Erlang module</fo:block>
+<fo:block/>
+eunit_surefire
+<fo:block/>
+
+<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Surefire reports for EUnit (Format used by Maven and Atlassian  
+Bamboo for example to integrate test results). Based on initial code  
+from Paul Guyot.</fo:block>
+ 
+  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Example: Generate XML result file in the current directory:
+  </fo:block><fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">     eunit:test([fib, eunit_examples],
+                [{report,{eunit_surefire,[{dir,"."}]}}]).</fo:block>
+<fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+<fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp433904">handle_begin(Kind, Data, St) -&gt; term()
+</fo:block></fo:block>
+ </fo:block>
+<fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp289056">handle_cancel(X1, Data, St) -&gt; term()
+</fo:block></fo:block>
+ </fo:block>
+<fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp290992">handle_end(X1, Data, St) -&gt; term()
+</fo:block></fo:block>
+ </fo:block>
+<fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp437712">init(Options) -&gt; term()
+</fo:block></fo:block>
+ </fo:block>
+<fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp392976">start() -&gt; term()
+</fo:block></fo:block>
+ </fo:block>
+<fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idm15216">start(Options) -&gt; term()
+</fo:block></fo:block>
+ </fo:block>
+<fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idm13168">terminate(X1, St) -&gt; term()
+</fo:block></fo:block>
+ </fo:block>
+<fo:block id="idp1030048" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">See also</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">eunit</fo:inline></fo:block>
+
+
+Mickaël Rémond
+mickael.remond@process-one.net</fo:flow>
+  </fo:page-sequence>
+</fo:root>

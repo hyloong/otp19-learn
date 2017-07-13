@@ -1,0 +1,229 @@
+<module name="wxKeyEvent">
+<type>
+  <name>wxKeyEvent</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxKeyEvent">wxKeyEvent()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>altDown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>altDown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>cmdDown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>cmdDown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>controlDown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>controlDown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getId</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getKeyCode</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getKeyCode(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getModifiers</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getModifiers(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getPosition</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getPosition(This) -&gt; {X :: integer(), Y :: integer()}</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getRawKeyCode</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getRawKeyCode(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getRawKeyFlags</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getRawKeyFlags(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getSkipped</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getTimestamp</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getUnicodeKey</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getUnicodeKey(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getX</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getX(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getY</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getY(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasModifiers</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasModifiers(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isCommandEvent</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>metaDown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>metaDown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>resumePropagation</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>shiftDown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>shiftDown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>shouldPropagate</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>skip</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>skip</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>stopPropagation</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:21.</timestamp>
+</module>

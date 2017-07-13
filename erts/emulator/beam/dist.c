@@ -25,6 +25,7 @@
 
 /* define this to get a lot of debug output */
 /* #define ERTS_DIST_MSG_DBG */
+/* #define ERTS_RAW_DIST_MSG_DBG */
 
 #ifdef HAVE_CONFIG_H
 #  include "config.h"
@@ -258,12 +259,12 @@ static void doit_monitor_net_exits(ErtsMonitor *mon, void *vnecp)
     DistEntry *dep = ((NetExitsContext *) vnecp)->dep;
     ErtsProcLocks rp_locks = ERTS_PROC_LOCK_LINK;
 
-    rp = erts_pid2proc(NULL, 0, mon->pid, rp_locks);
+    rp = erts_pid2proc(NULL, 0, mon->u.pid, rp_locks);
     if (!rp)
 	goto done;
 
     if (mon->type == MON_ORIGIN) {
-	/* local pid is beeing monitored */
+	/* local pid is being monitored */
 	rmon = erts_remove_monitor(&ERTS_P_MONITORS(rp), mon->ref);
 	/* ASSERT(rmon != NULL); nope, can happen during process exit */
 	if (rmon != NULL) {
@@ -277,10 +278,11 @@ static void doit_monitor_net_exits(ErtsMonitor *mon, void *vnecp)
 	rmon = erts_remove_monitor(&ERTS_P_MONITORS(rp), mon->ref);
 	/* ASSERT(rmon != NULL); can happen during process exit */
 	if (rmon != NULL) {
+            ASSERT(rmon->type == MON_ORIGIN);
 	    ASSERT(is_atom(rmon->name) || is_nil(rmon->name));
 	    watched = (is_atom(rmon->name)
 		       ? TUPLE2(lhp, rmon->name, dep->sysname)
-		       : rmon->pid);
+		       : rmon->u.pid);
 #ifdef ERTS_SMP
 	    rp_locks |= ERTS_PROC_LOCKS_MSG_SEND;
 	    erts_smp_proc_lock(rp, ERTS_PROC_LOCKS_MSG_SEND);
@@ -627,7 +629,6 @@ alloc_dist_obuf(Uint size)
     ErtsDistOutputBuf *obuf;
     Uint obuf_size = sizeof(ErtsDistOutputBuf)+sizeof(byte)*(size-1);
     Binary *bin = erts_bin_drv_alloc(obuf_size);
-    erts_refc_init(&bin->refc, 1);
     obuf = (ErtsDistOutputBuf *) &bin->orig_bytes[0];
 #ifdef DEBUG
     obuf->dbg_pattern = ERTS_DIST_OUTPUT_BUF_DBG_PATTERN;
@@ -641,8 +642,7 @@ free_dist_obuf(ErtsDistOutputBuf *obuf)
 {
     Binary *bin = ErtsDistOutputBuf2Binary(obuf);
     ASSERT(obuf->dbg_pattern == ERTS_DIST_OUTPUT_BUF_DBG_PATTERN);
-    if (erts_refc_dectest(&bin->refc, 0) == 0)
-	erts_bin_free(bin);
+    erts_bin_release(bin);
 }
 
 static ERTS_INLINE Sint
@@ -712,7 +712,7 @@ static void clear_dist_entry(DistEntry *dep)
     }
 }
 
-void erts_dsend_context_dtor(Binary* ctx_bin)
+int erts_dsend_context_dtor(Binary* ctx_bin)
 {
     ErtsSendContext* ctx = ERTS_MAGIC_BIN_DATA(ctx_bin);
     switch (ctx->dss.phase) {
@@ -729,6 +729,8 @@ void erts_dsend_context_dtor(Binary* ctx_bin)
     }
     if (ctx->dep_to_deref)
 	erts_deref_dist_entry(ctx->dep_to_deref);
+
+    return 1;
 }
 
 Eterm erts_dsend_export_trap_context(Process* p, ErtsSendContext* ctx)
@@ -740,7 +742,7 @@ Eterm erts_dsend_export_trap_context(Process* p, ErtsSendContext* ctx)
     Binary* ctx_bin = erts_create_magic_binary(sizeof(struct exported_ctx),
 					       erts_dsend_context_dtor);
     struct exported_ctx* dst = ERTS_MAGIC_BIN_DATA(ctx_bin);
-    Eterm* hp = HAlloc(p, PROC_BIN_SIZE);
+    Eterm* hp = HAlloc(p, ERTS_MAGIC_REF_THING_SIZE);
 
     sys_memcpy(&dst->ctx, ctx, sizeof(ErtsSendContext));
     ASSERT(ctx->dss.ctl == make_tuple(ctx->ctl_heap));
@@ -749,7 +751,7 @@ Eterm erts_dsend_export_trap_context(Process* p, ErtsSendContext* ctx)
 	sys_memcpy(&dst->acm, ctx->dss.acmp, sizeof(ErtsAtomCacheMap));
 	dst->ctx.dss.acmp = &dst->acm;
     }
-    return erts_mk_magic_binary_term(&hp, &MSO(p), ctx_bin);
+    return erts_mk_magic_ref(&hp, &MSO(p), ctx_bin);
 }
 
 
@@ -794,7 +796,7 @@ erts_dsig_send_unlink(ErtsDSigData *dsdp, Eterm local, Eterm remote)
 }
 
 
-/* A local process that's beeing monitored by a remote one exits. We send:
+/* A local process that's being monitored by a remote one exits. We send:
    {DOP_MONITOR_P_EXIT, Local pid or name, Remote pid, ref, reason},
    which is rather sad as only the ref is needed, no pid's... */
 int
@@ -1388,7 +1390,7 @@ int erts_net_message(Port *prt,
 	if (mon == NULL) {
 	    break;
 	}
-	watched = mon->pid;
+	watched = mon->u.pid;
 	erts_destroy_monitor(mon);
 	rp = erts_pid2proc_opt(NULL, 0,
 			       watched, ERTS_PROC_LOCK_LINK,
@@ -1546,7 +1548,7 @@ int erts_net_message(Port *prt,
 	if (mon == NULL) {
 	    break;
 	}
-	rp = erts_pid2proc(NULL, 0, mon->pid, rp_locks);
+	rp = erts_pid2proc(NULL, 0, mon->u.pid, rp_locks);
 
 	erts_destroy_monitor(mon);
 	if (rp == NULL) {
@@ -1563,7 +1565,7 @@ int erts_net_message(Port *prt,
 	
 	watched = (is_not_nil(mon->name)
 		   ? TUPLE2(&lhp[0], mon->name, sysname)
-		   : mon->pid);
+		   : mon->u.pid);
 	
 	erts_queue_monitor_message(rp, &rp_locks,
 				   ref, am_process, watched, reason);
@@ -2412,21 +2414,21 @@ static void doit_print_monitor_info(ErtsMonitor *mon, void *vptdp)
     void *arg = ((struct print_to_data *) vptdp)->arg;
     Process *rp;
     ErtsMonitor *rmon;
-    rp = erts_proc_lookup(mon->pid);
+    rp = erts_proc_lookup(mon->u.pid);
     if (!rp || (rmon = erts_lookup_monitor(ERTS_P_MONITORS(rp), mon->ref)) == NULL) {
-	erts_print(to, arg, "Warning, stray monitor for: %T\n", mon->pid);
+	erts_print(to, arg, "Warning, stray monitor for: %T\n", mon->u.pid);
     } else if (mon->type == MON_ORIGIN) {
 	/* Local pid is being monitored */
 	erts_print(to, arg, "Remotely monitored by: %T %T\n",
-		   mon->pid, rmon->pid);
+		   mon->u.pid, rmon->u.pid);
     } else {
-	erts_print(to, arg, "Remote monitoring: %T ", mon->pid);
-	if (is_not_atom(rmon->pid))
-	    erts_print(to, arg, "%T\n", rmon->pid);
+	erts_print(to, arg, "Remote monitoring: %T ", mon->u.pid);
+	if (is_not_atom(rmon->u.pid))
+	    erts_print(to, arg, "%T\n", rmon->u.pid);
 	else
 	    erts_print(to, arg, "{%T, %T}\n",
 		       rmon->name,
-		       rmon->pid); /* which in this case is the 
+		       rmon->u.pid); /* which in this case is the 
 				      remote system name... */
     }
 }    

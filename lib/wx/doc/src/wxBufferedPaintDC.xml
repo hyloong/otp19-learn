@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxBufferedPaintDC</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxBufferedPaintDC.xml</file></header>
+<module>wxBufferedPaintDC</module>
+<modulesummary>See external documentation: wxBufferedPaintDC.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbufferedpaintdc.html">wxBufferedPaintDC</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxBufferedDC">wxBufferedDC</seealso>
+  <br/><seealso marker="wxMemoryDC">wxMemoryDC</seealso>
+  <br/><seealso marker="wxDC">wxDC</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxBufferedPaintDC"/>wxBufferedPaintDC()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new(Window) -&gt; <seealso marker="#type-wxBufferedPaintDC">wxBufferedPaintDC()</seealso></name>
+<fsummary>Equivalent to new(Window, []).
+</fsummary>
+<type>
+<v>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="new-1"/>
+<p>Equivalent to <seealso marker="#new-2">new(Window, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Window, Buffer) -&gt; <seealso marker="#type-wxBufferedPaintDC">wxBufferedPaintDC()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Buffer = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbufferedpaintdc.html#wxbufferedpaintdcwxbufferedpaintdc">external documentation</url>.
+  <br/> Also:<br/>
+  new(Window, [Option]) -&gt; wxBufferedPaintDC() when<br/>
+  	Window::wxWindow:wxWindow(),<br/>
+  	Option :: {'style', integer()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>new(Window, Buffer, Options::[Option]) -&gt; <seealso marker="#type-wxBufferedPaintDC">wxBufferedPaintDC()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Buffer = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v><v>Option = {style, integer()}</v></type>
+<desc><marker id="new-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbufferedpaintdc.html#wxbufferedpaintdcwxbufferedpaintdc">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxBufferedPaintDC">wxBufferedPaintDC()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

@@ -1,0 +1,301 @@
+<module name="wxCalendarDateAttr">
+<type>
+  <name>wxCalendarDateAttr</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxCalendarDateAttr">wxCalendarDateAttr()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getBackgroundColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getBackgroundColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getBorder</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getBorder(This) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getBorderColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getBorderColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getFont</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getFont(This) -&gt; <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getTextColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getTextColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasBackgroundColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasBackgroundColour(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasBorder</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasBorder(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasBorderColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasBorderColour(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasFont</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasFont(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>hasTextColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>hasTextColour(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isHoliday</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isHoliday(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>new() -&gt; <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(Border) -&gt; <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></head>
+      <guard>
+        <subtype><typename>Border</typename><string>Border = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Border</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(ColText) -&gt; <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></head>
+      <guard>
+        <subtype><typename>ColText</typename><string>ColText = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ColText</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>new(Border, Options :: [Option]) -&gt; <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></head>
+      <guard>
+        <subtype><typename>Border</typename><string>Border = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {colBorder, <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Border</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>new(ColText, Options :: [Option]) -&gt; <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></head>
+      <guard>
+        <subtype><typename>ColText</typename><string>ColText = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{colBack, <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{colBorder, <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{font, <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{border, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ColText</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setBackgroundColour</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setBackgroundColour(This, ColBack) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></string></subtype>
+        <subtype><typename>ColBack</typename><string>ColBack = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ColBack</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setBorder</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setBorder(This, Border) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></string></subtype>
+        <subtype><typename>Border</typename><string>Border = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Border</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setBorderColour</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setBorderColour(This, Col) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></string></subtype>
+        <subtype><typename>Col</typename><string>Col = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Col</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setFont</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setFont(This, Font) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></string></subtype>
+        <subtype><typename>Font</typename><string>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Font</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setHoliday</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setHoliday(This, Holiday) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></string></subtype>
+        <subtype><typename>Holiday</typename><string>Holiday = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Holiday</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setTextColour</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setTextColour(This, ColText) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></string></subtype>
+        <subtype><typename>ColText</typename><string>ColText = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ColText</anno>
+  <anno>This</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:29:51.</timestamp>
+</module>

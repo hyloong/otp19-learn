@@ -32,19 +32,19 @@ DED_CC = gcc
 DED_GCC = yes
 DED_LD = gcc
 DED_LDFLAGS = -shared -Wl,-Bsymbolic
-DED__NOWARN_NOTHR_CFLAGS = -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -fPIC
-DED__NOTHR_CFLAGS = -Wall -Wstrict-prototypes -Wmissing-prototypes -Wdeclaration-after-statement -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -fPIC
-DED__NOWARN_CFLAGS =  -DUSE_THREADS -D_THREAD_SAFE -D_REENTRANT -DPOSIX_THREADS -D_POSIX_THREAD_SAFE_FUNCTIONS -DERTS_ENABLE_LOCK_COUNT -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -fPIC
+DED__NOWARN_NOTHR_CFLAGS = -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -fPIC
+DED__NOTHR_CFLAGS = -Wall -Wstrict-prototypes -Wmissing-prototypes -Wdeclaration-after-statement -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -fPIC
+DED__NOWARN_CFLAGS =  -DUSE_THREADS -D_THREAD_SAFE -D_REENTRANT -DPOSIX_THREADS -D_POSIX_THREAD_SAFE_FUNCTIONS -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -fPIC
 DED_THR_DEFS = -DUSE_THREADS  -D_THREAD_SAFE -D_REENTRANT -DPOSIX_THREADS -D_POSIX_THREAD_SAFE_FUNCTIONS -D_GNU_SOURCE
-DED_EMU_THR_DEFS =  -DUSE_THREADS -D_THREAD_SAFE -D_REENTRANT -DPOSIX_THREADS -D_POSIX_THREAD_SAFE_FUNCTIONS -DERTS_ENABLE_LOCK_COUNT
+DED_EMU_THR_DEFS =  -DUSE_THREADS -D_THREAD_SAFE -D_REENTRANT -DPOSIX_THREADS -D_POSIX_THREAD_SAFE_FUNCTIONS
 DED_WARN_FLAGS = -Wall -Wstrict-prototypes -Wmissing-prototypes -Wdeclaration-after-statement
-DED_CFLAGS = -Werror=implicit -Werror=return-type  -Wall -Wstrict-prototypes -Wmissing-prototypes -Wdeclaration-after-statement  -DUSE_THREADS -D_THREAD_SAFE -D_REENTRANT -DPOSIX_THREADS -D_POSIX_THREAD_SAFE_FUNCTIONS -DERTS_ENABLE_LOCK_COUNT -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -fPIC
-DED_STATIC_CFLAGS = -Werror=implicit -Werror=return-type  -Wall -Wstrict-prototypes -Wmissing-prototypes -Wdeclaration-after-statement  -DUSE_THREADS -D_THREAD_SAFE -D_REENTRANT -DPOSIX_THREADS -D_POSIX_THREAD_SAFE_FUNCTIONS -DERTS_ENABLE_LOCK_COUNT -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -DSTATIC_ERLANG_NIF -DSTATIC_ERLANG_DRIVER
+DED_CFLAGS = -Werror=undef -Werror=implicit -Werror=return-type  -Wall -Wstrict-prototypes -Wmissing-prototypes -Wdeclaration-after-statement  -DUSE_THREADS -D_THREAD_SAFE -D_REENTRANT -DPOSIX_THREADS -D_POSIX_THREAD_SAFE_FUNCTIONS -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -fPIC
+DED_STATIC_CFLAGS = -Werror=undef -Werror=implicit -Werror=return-type  -Wall -Wstrict-prototypes -Wmissing-prototypes -Wdeclaration-after-statement  -DUSE_THREADS -D_THREAD_SAFE -D_REENTRANT -DPOSIX_THREADS -D_POSIX_THREAD_SAFE_FUNCTIONS -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -DSTATIC_ERLANG_NIF -DSTATIC_ERLANG_DRIVER
 DED_LIBS = -lutil -ldl -lm   
 DED_EXT = so
 ERLANG_OSTYPE = unix
 PRIVDIR = ../priv
 OBJDIR = $(PRIVDIR)/obj/$(TARGET)
 LIBDIR = $(PRIVDIR)/lib/$(TARGET)
-DED_SYS_INCLUDE = -I/root/download/otp_src_19.3/erts/emulator/beam -I/root/download/otp_src_19.3/erts/include -I/root/download/otp_src_19.3/erts/include/x86_64-unknown-linux-gnu -I/root/download/otp_src_19.3/erts/include/internal -I/root/download/otp_src_19.3/erts/include/internal/x86_64-unknown-linux-gnu -I/root/download/otp_src_19.3/erts/emulator/sys/unix -I/root/download/otp_src_19.3/erts/emulator/sys/common
+DED_SYS_INCLUDE = -I/root/download/otp_src_20.0/erts/emulator/beam -I/root/download/otp_src_20.0/erts/include -I/root/download/otp_src_20.0/erts/include/x86_64-unknown-linux-gnu -I/root/download/otp_src_20.0/erts/include/internal -I/root/download/otp_src_20.0/erts/include/internal/x86_64-unknown-linux-gnu -I/root/download/otp_src_20.0/erts/emulator/sys/unix -I/root/download/otp_src_20.0/erts/emulator/sys/common
 DED_INCLUDES = $(DED_SYS_INCLUDE)

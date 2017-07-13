@@ -7,6 +7,7 @@ $(EBIN)/diameter_config.$(EMULATOR): $(INCDIR)/diameter.hrl
 $(EBIN)/diameter_config.$(EMULATOR): diameter_internal.hrl
 $(EBIN)/diameter_codec.$(EMULATOR): $(INCDIR)/diameter.hrl
 $(EBIN)/diameter_codec.$(EMULATOR): diameter_internal.hrl
+$(EBIN)/diameter_gen.$(EMULATOR): $(INCDIR)/diameter.hrl
 $(EBIN)/diameter_peer.$(EMULATOR): $(INCDIR)/diameter.hrl
 $(EBIN)/diameter_peer.$(EMULATOR): diameter_internal.hrl
 $(EBIN)/diameter_peer_fsm.$(EMULATOR): $(INCDIR)/diameter.hrl

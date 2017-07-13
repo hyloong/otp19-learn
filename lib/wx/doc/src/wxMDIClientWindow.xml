@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxMDIClientWindow</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxMDIClientWindow.xml</file></header>
+<module>wxMDIClientWindow</module>
+<modulesummary>See external documentation: wxMDIClientWindow.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdiclientwindow.html">wxMDIClientWindow</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxMDIClientWindow"/>wxMDIClientWindow()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxMDIClientWindow">wxMDIClientWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdiclientwindow.html#wxmdiclientwindowwxmdiclientwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent) -&gt; <seealso marker="#type-wxMDIClientWindow">wxMDIClientWindow()</seealso></name>
+<fsummary>Equivalent to new(Parent, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxMDIParentFrame#type-wxMDIParentFrame">wxMDIParentFrame:wxMDIParentFrame()</seealso></v></type>
+<desc><marker id="new-1"/>
+<p><em>This function is deprecated: </em>deprecated function not available in wxWidgets-2.9 and later</p>
+<p>Equivalent to <seealso marker="#new-2">new(Parent, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Options::[Option]) -&gt; <seealso marker="#type-wxMDIClientWindow">wxMDIClientWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxMDIParentFrame#type-wxMDIParentFrame">wxMDIParentFrame:wxMDIParentFrame()</seealso></v><v>Option = {style, integer()}</v></type>
+<desc><marker id="new-2"/>
+<p><em>This function is deprecated: </em>deprecated function not available in wxWidgets-2.9 and later</p>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdiclientwindow.html#wxmdiclientwindowwxmdiclientwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>createClient(This, Parent) -&gt; boolean()</name>
+<fsummary>Equivalent to createClient(This, Parent, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMDIClientWindow">wxMDIClientWindow()</seealso></v><v>Parent = <seealso marker="wxMDIParentFrame#type-wxMDIParentFrame">wxMDIParentFrame:wxMDIParentFrame()</seealso></v></type>
+<desc><marker id="createClient-2"/>
+<p>Equivalent to <seealso marker="#createClient-3">createClient(This, Parent, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>createClient(This, Parent, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxMDIClientWindow">wxMDIClientWindow()</seealso></v><v>Parent = <seealso marker="wxMDIParentFrame#type-wxMDIParentFrame">wxMDIParentFrame:wxMDIParentFrame()</seealso></v><v>Option = {style, integer()}</v></type>
+<desc><marker id="createClient-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxmdiclientwindow.html#wxmdiclientwindowcreateclient">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxMDIClientWindow">wxMDIClientWindow()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

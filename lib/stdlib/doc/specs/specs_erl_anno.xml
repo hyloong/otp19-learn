@@ -1,0 +1,287 @@
+<module name="erl_anno">
+<type>
+  <name>anno</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-anno">anno()</marker></typehead></typedecl>
+</type>
+<type>
+  <name>anno_term</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-anno_term">anno_term()</marker> = term()</typehead></typedecl>
+</type>
+<type>
+  <name>column</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-column">column()</marker> = integer() &gt;= 1</typehead></typedecl>
+</type>
+<type>
+  <name>filename</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-filename">filename()</marker> = <seealso marker="file#type-filename_all">file:filename_all()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>generated</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-generated">generated()</marker> = boolean()</typehead></typedecl>
+</type>
+<type>
+  <name>line</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-line">line()</marker> = integer() &gt;= 0</typehead></typedecl>
+</type>
+<type>
+  <name>location</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-location">location()</marker> = <seealso marker="#type-line">line()</seealso> | {<seealso marker="#type-line">line()</seealso>, <seealso marker="#type-column">column()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>record</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-record">record()</marker> = boolean()</typehead></typedecl>
+</type>
+<type>
+  <name>text</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-text">text()</marker> = string()</typehead></typedecl>
+</type>
+<spec>
+  <name>column</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>column(Anno) -&gt; <seealso marker="#type-column">column()</seealso> | undefined</head>
+      <guard>
+        <subtype><typename>Anno</typename><string>Anno = <seealso marker="#type-anno">anno()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Anno</anno>
+</spec>
+<spec>
+  <name>end_location</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>end_location(Anno) -&gt; <seealso marker="#type-location">location()</seealso> | undefined</head>
+      <guard>
+        <subtype><typename>Anno</typename><string>Anno = <seealso marker="#type-anno">anno()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Anno</anno>
+</spec>
+<spec>
+  <name>file</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>file(Anno) -&gt; <seealso marker="#type-filename">filename()</seealso> | undefined</head>
+      <guard>
+        <subtype><typename>Anno</typename><string>Anno = <seealso marker="#type-anno">anno()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Anno</anno>
+</spec>
+<spec>
+  <name>from_term</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>from_term(Term) -&gt; Anno</head>
+      <guard>
+        <subtype><typename>Term</typename><string>Term = <seealso marker="#type-anno_term">anno_term()</seealso></string></subtype>
+        <subtype><typename>Anno</typename><string>Anno = <seealso marker="#type-anno">anno()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Anno</anno>
+  <anno>Term</anno>
+</spec>
+<spec>
+  <name>generated</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>generated(Anno) -&gt; <seealso marker="#type-generated">generated()</seealso></head>
+      <guard>
+        <subtype><typename>Anno</typename><string>Anno = <seealso marker="#type-anno">anno()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Anno</anno>
+</spec>
+<spec>
+  <name>is_anno</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>is_anno(Term) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>Term</typename><string>Term = any()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Term</anno>
+</spec>
+<spec>
+  <name>line</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>line(Anno) -&gt; <seealso marker="#type-line">line()</seealso></head>
+      <guard>
+        <subtype><typename>Anno</typename><string>Anno = <seealso marker="#type-anno">anno()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Anno</anno>
+</spec>
+<spec>
+  <name>location</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>location(Anno) -&gt; <seealso marker="#type-location">location()</seealso></head>
+      <guard>
+        <subtype><typename>Anno</typename><string>Anno = <seealso marker="#type-anno">anno()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Anno</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(Location) -&gt; <seealso marker="#type-anno">anno()</seealso></head>
+      <guard>
+        <subtype><typename>Location</typename><string>Location = <seealso marker="#type-location">location()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Location</anno>
+</spec>
+<spec>
+  <name>record</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>record(Anno) -&gt; <seealso marker="#type-record">record()</seealso></head>
+      <guard>
+        <subtype><typename>Anno</typename><string>Anno = <seealso marker="#type-anno">anno()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Anno</anno>
+</spec>
+<spec>
+  <name>set_file</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>set_file(File, Anno) -&gt; Anno</head>
+      <guard>
+        <subtype><typename>File</typename><string>File = <seealso marker="#type-filename">filename()</seealso></string></subtype>
+        <subtype><typename>Anno</typename><string>Anno = <seealso marker="#type-anno">anno()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Anno</anno>
+  <anno>File</anno>
+</spec>
+<spec>
+  <name>set_generated</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>set_generated(Generated, Anno) -&gt; Anno</head>
+      <guard>
+        <subtype><typename>Generated</typename><string>Generated = <seealso marker="#type-generated">generated()</seealso></string></subtype>
+        <subtype><typename>Anno</typename><string>Anno = <seealso marker="#type-anno">anno()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Anno</anno>
+  <anno>Generated</anno>
+</spec>
+<spec>
+  <name>set_line</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>set_line(Line, Anno) -&gt; Anno</head>
+      <guard>
+        <subtype><typename>Line</typename><string>Line = <seealso marker="#type-line">line()</seealso></string></subtype>
+        <subtype><typename>Anno</typename><string>Anno = <seealso marker="#type-anno">anno()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Anno</anno>
+  <anno>Line</anno>
+</spec>
+<spec>
+  <name>set_location</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>set_location(Location, Anno) -&gt; Anno</head>
+      <guard>
+        <subtype><typename>Location</typename><string>Location = <seealso marker="#type-location">location()</seealso></string></subtype>
+        <subtype><typename>Anno</typename><string>Anno = <seealso marker="#type-anno">anno()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Anno</anno>
+  <anno>Location</anno>
+</spec>
+<spec>
+  <name>set_record</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>set_record(Record, Anno) -&gt; Anno</head>
+      <guard>
+        <subtype><typename>Record</typename><string>Record = <seealso marker="#type-record">record()</seealso></string></subtype>
+        <subtype><typename>Anno</typename><string>Anno = <seealso marker="#type-anno">anno()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Anno</anno>
+  <anno>Record</anno>
+</spec>
+<spec>
+  <name>set_text</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>set_text(Text, Anno) -&gt; Anno</head>
+      <guard>
+        <subtype><typename>Text</typename><string>Text = <seealso marker="#type-text">text()</seealso></string></subtype>
+        <subtype><typename>Anno</typename><string>Anno = <seealso marker="#type-anno">anno()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Anno</anno>
+  <anno>Text</anno>
+</spec>
+<spec>
+  <name>text</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>text(Anno) -&gt; <seealso marker="#type-text">text()</seealso> | undefined</head>
+      <guard>
+        <subtype><typename>Anno</typename><string>Anno = <seealso marker="#type-anno">anno()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Anno</anno>
+</spec>
+<spec>
+  <name>to_term</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>to_term(Anno) -&gt; <seealso marker="#type-anno_term">anno_term()</seealso></head>
+      <guard>
+        <subtype><typename>Anno</typename><string>Anno = <seealso marker="#type-anno">anno()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Anno</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:27:14.</timestamp>
+</module>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxSplitterWindow</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxSplitterWindow.xml</file></header>
+<module>wxSplitterWindow</module>
+<modulesummary>See external documentation: wxSplitterWindow.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html">wxSplitterWindow</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxSplitterWindow"/>wxSplitterWindow()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html#wxsplitterwindowwxsplitterwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent) -&gt; <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></name>
+<fsummary>Equivalent to new(Parent, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="new-1"/>
+<p>Equivalent to <seealso marker="#new-2">new(Parent, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Options::[Option]) -&gt; <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {id, integer()} | {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()}</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html#wxsplitterwindowwxsplitterwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent) -&gt; boolean()</name>
+<fsummary>Equivalent to create(This, Parent, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="create-2"/>
+<p>Equivalent to <seealso marker="#create-3">create(This, Parent, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {id, integer()} | {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()}</v></type>
+<desc><marker id="create-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html#wxsplitterwindowcreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMinimumPaneSize(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v></type>
+<desc><marker id="getMinimumPaneSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html#wxsplitterwindowgetminimumpanesize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSashGravity(This) -&gt; number()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v></type>
+<desc><marker id="getSashGravity-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html#wxsplitterwindowgetsashgravity">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSashPosition(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v></type>
+<desc><marker id="getSashPosition-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html#wxsplitterwindowgetsashposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSplitMode(This) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v></type>
+<desc><marker id="getSplitMode-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html#wxsplitterwindowgetsplitmode">external documentation</url>.
+ <br/> Res = ?wxSPLIT_HORIZONTAL | ?wxSPLIT_VERTICAL</p>
+</desc></func>
+<func>
+<name>getWindow1(This) -&gt; <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v></type>
+<desc><marker id="getWindow1-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html#wxsplitterwindowgetwindow1">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getWindow2(This) -&gt; <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v></type>
+<desc><marker id="getWindow2-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html#wxsplitterwindowgetwindow2">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>initialize(This, Window) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v><v>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="initialize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html#wxsplitterwindowinitialize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isSplit(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v></type>
+<desc><marker id="isSplit-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html#wxsplitterwindowissplit">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>replaceWindow(This, WinOld, WinNew) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v><v>WinOld = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>WinNew = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="replaceWindow-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html#wxsplitterwindowreplacewindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSashGravity(This, Gravity) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v><v>Gravity = number()</v></type>
+<desc><marker id="setSashGravity-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html#wxsplitterwindowsetsashgravity">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSashPosition(This, Position) -&gt; ok</name>
+<fsummary>Equivalent to setSashPosition(This, Position, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v><v>Position = integer()</v></type>
+<desc><marker id="setSashPosition-2"/>
+<p>Equivalent to <seealso marker="#setSashPosition-3">setSashPosition(This, Position, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setSashPosition(This, Position, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v><v>Position = integer()</v><v>Option = {redraw, boolean()}</v></type>
+<desc><marker id="setSashPosition-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html#wxsplitterwindowsetsashposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSashSize(This, Width) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v><v>Width = integer()</v></type>
+<desc><marker id="setSashSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html#wxsplitterwindowsetsashsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMinimumPaneSize(This, Min) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v><v>Min = integer()</v></type>
+<desc><marker id="setMinimumPaneSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html#wxsplitterwindowsetminimumpanesize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSplitMode(This, Mode) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v><v>Mode = integer()</v></type>
+<desc><marker id="setSplitMode-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html#wxsplitterwindowsetsplitmode">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>splitHorizontally(This, Window1, Window2) -&gt; boolean()</name>
+<fsummary>Equivalent to splitHorizontally(This, Window1, Window2, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v><v>Window1 = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Window2 = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="splitHorizontally-3"/>
+<p>Equivalent to <seealso marker="#splitHorizontally-4">splitHorizontally(This, Window1, Window2, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>splitHorizontally(This, Window1, Window2, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v><v>Window1 = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Window2 = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {sashPosition, integer()}</v></type>
+<desc><marker id="splitHorizontally-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html#wxsplitterwindowsplithorizontally">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>splitVertically(This, Window1, Window2) -&gt; boolean()</name>
+<fsummary>Equivalent to splitVertically(This, Window1, Window2, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v><v>Window1 = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Window2 = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="splitVertically-3"/>
+<p>Equivalent to <seealso marker="#splitVertically-4">splitVertically(This, Window1, Window2, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>splitVertically(This, Window1, Window2, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v><v>Window1 = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Window2 = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {sashPosition, integer()}</v></type>
+<desc><marker id="splitVertically-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html#wxsplitterwindowsplitvertically">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>unsplit(This) -&gt; boolean()</name>
+<fsummary>Equivalent to unsplit(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v></type>
+<desc><marker id="unsplit-1"/>
+<p>Equivalent to <seealso marker="#unsplit-2">unsplit(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>unsplit(This, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v><v>Option = {toRemove, <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso>}</v></type>
+<desc><marker id="unsplit-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html#wxsplitterwindowunsplit">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>updateSize(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso></v></type>
+<desc><marker id="updateSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsplitterwindow.html#wxsplitterwindowupdatesize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxSplitterWindow">wxSplitterWindow()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

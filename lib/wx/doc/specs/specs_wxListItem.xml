@@ -1,0 +1,355 @@
+<module name="wxListItem">
+<type>
+  <name>wxListItem</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxListItem">wxListItem()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>clear</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>clear(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxListItem">wxListItem()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getAlign</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getAlign(This) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getBackgroundColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getBackgroundColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getColumn</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getColumn(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getFont</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getFont(This) -&gt; <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getId</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getId(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getImage</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getImage(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getMask</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getMask(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getState</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getState(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getText</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getText(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getTextColour</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getTextColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getWidth</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getWidth(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>new() -&gt; <seealso marker="#type-wxListItem">wxListItem()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(Item) -&gt; <seealso marker="#type-wxListItem">wxListItem()</seealso></head>
+      <guard>
+        <subtype><typename>Item</typename><string>Item = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Item</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setAlign</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setAlign(This, Align) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+        <subtype><typename>Align</typename><string>Align = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Align</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setBackgroundColour</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setBackgroundColour(This, ColBack) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+        <subtype><typename>ColBack</typename><string>ColBack = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ColBack</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setColumn</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setColumn(This, Col) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+        <subtype><typename>Col</typename><string>Col = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Col</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setFont</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setFont(This, Font) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+        <subtype><typename>Font</typename><string>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Font</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setId</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setId(This, Id) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+        <subtype><typename>Id</typename><string>Id = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Id</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setImage</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setImage(This, Image) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+        <subtype><typename>Image</typename><string>Image = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Image</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setMask</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setMask(This, Mask) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+        <subtype><typename>Mask</typename><string>Mask = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Mask</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setState</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setState(This, State) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+        <subtype><typename>State</typename><string>State = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>State</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setStateMask</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setStateMask(This, StateMask) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+        <subtype><typename>StateMask</typename><string>StateMask = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>StateMask</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setText</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setText(This, Text) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+        <subtype><typename>Text</typename><string>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Text</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setTextColour</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setTextColour(This, ColText) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+        <subtype><typename>ColText</typename><string>ColText = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ColText</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setWidth</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setWidth(This, Width) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></string></subtype>
+        <subtype><typename>Width</typename><string>Width = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>Width</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:23.</timestamp>
+</module>

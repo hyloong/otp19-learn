@@ -1,7 +1,7 @@
 %%
 %% %CopyrightBegin%
 %% 
-%% Copyright Ericsson AB 2002-2016. All Rights Reserved.
+%% Copyright Ericsson AB 2002-2017. All Rights Reserved.
 %% 
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -1175,17 +1175,20 @@ handle_empty_queue(Session, ProfileName, TimeOut, State) ->
     %% If a pipline | keep_alive session has been idle for some time is not
     %% closed by the server, the client may want to close it.
     NewState = activate_queue_timeout(TimeOut, State),
-    update_session(ProfileName, Session, #session.queue_length, 0),
-    %% Note mfa will be initialized when a new request
-    %% arrives.
-    {noreply,
-     NewState#state{request     = undefined,
-		    mfa         = undefined,
-		    status_line = undefined,
-		    headers     = undefined,
-		    body        = undefined
-			   }
-    }.
+    case update_session(ProfileName, Session, #session.queue_length, 0) of
+        {stop, Reason} ->
+            {stop, {shutdown, Reason}, State};  
+        _ ->
+            %% Note mfa will be initialized when a new request
+            %% arrives.
+            {noreply,
+             NewState#state{request     = undefined,
+                            mfa         = undefined,
+                            status_line = undefined,
+                            headers     = undefined,
+                            body        = undefined
+			   }}
+    end.
 
 receive_response(Request, Session, Data, State) ->
     NewState = init_wait_for_response_state(Request, State),
@@ -1224,7 +1227,7 @@ close_socket(#session{socket = Socket, socket_type = SocketType}) ->
     http_transport:close(SocketType, Socket).
 
 activate_request_timeout(
-  #state{request = #request{timer = undefined} = Request} = State) ->
+  #state{request = #request{timer = OldRef} = Request} = State) ->
     Timeout = (Request#request.settings)#http_options.timeout,
     case Timeout of
 	infinity ->
@@ -1232,17 +1235,21 @@ activate_request_timeout(
 	_ ->
 	    ReqId = Request#request.id, 
 	    Msg       = {timeout, ReqId}, 
+	    case OldRef of
+		undefined ->
+		    ok;
+		_ ->
+		    %% Timer is already running! This is the case for a redirect or retry
+		    %% We need to restart the timer because the handler pid has changed
+		    cancel_timer(OldRef, Msg)
+	    end,
 	    Ref       = erlang:send_after(Timeout, self(), Msg), 
 	    Request2  = Request#request{timer = Ref}, 
 	    ReqTimers = [{Request#request.id, Ref} |
 			 (State#state.timers)#timers.request_timers],
 	    Timers    = #timers{request_timers = ReqTimers}, 
 	    State#state{request = Request2, timers = Timers}
-    end;
-
-%% Timer is already running! This is the case for a redirect or retry
-activate_request_timeout(State) ->
-    State.
+    end.
 
 activate_queue_timeout(infinity, State) ->
     State;
@@ -1673,7 +1680,7 @@ update_session(ProfileName, #session{id = SessionId} = Session, Pos, Value) ->
 	    Session2 = erlang:setelement(Pos, Session, Value),
 	    insert_session(Session2, ProfileName);
 	error:badarg ->
-	    exit(normal); %% Manager has been shutdown
+	    {stop, normal};
 	T:E -> 
 	    %% Unexpected this must be an error!  
             Stacktrace = erlang:get_stacktrace(),
@@ -1693,14 +1700,14 @@ update_session(ProfileName, #session{id = SessionId} = Session, Pos, Value) ->
                                     Session, 
                                     (catch httpc_manager:lookup_session(SessionId, ProfileName)),
                                     T, E]),
-            exit({failed_updating_session, 
-                  [{profile,    ProfileName}, 
-                   {session_id, SessionId}, 
-                   {pos,        Pos}, 
-                   {value,      Value}, 
-                   {etype,      T}, 
-                   {error,      E}, 
-                   {stacktrace, Stacktrace}]})
+            {stop, {failed_updating_session, 
+                    [{profile,    ProfileName}, 
+                     {session_id, SessionId}, 
+                     {pos,        Pos}, 
+                     {value,      Value}, 
+                     {etype,      T}, 
+                     {error,      E}, 
+                     {stacktrace, Stacktrace}]}}
     end.
 
 

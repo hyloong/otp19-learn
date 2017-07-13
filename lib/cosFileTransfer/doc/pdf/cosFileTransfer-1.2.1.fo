@@ -1,0 +1,926 @@
+<?xml version="1.0"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="cover" margin="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin="0mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="left-page" margin-top="25mm" margin-bottom="15mm" margin-left="20mm" margin-right="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="left-header" extent="10mm"/>
+      <fo:region-after region-name="left-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="right-page" margin-top="25mm" margin-bottom="15mm" margin-left="25mm" margin-right="20mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="right-header" extent="10mm"/>
+      <fo:region-after region-name="right-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:page-sequence-master master-name="document">
+      <fo:repeatable-page-master-alternatives>
+        <fo:conditional-page-master-reference master-reference="left-page" odd-or-even="even"/>
+        <fo:conditional-page-master-reference master-reference="right-page" odd-or-even="odd"/>
+      </fo:repeatable-page-master-alternatives>
+    </fo:page-sequence-master>
+  </fo:layout-master-set>
+  <fo:bookmark-tree>
+    <fo:bookmark internal-destination="cover-page" starting-state="show">
+      <fo:bookmark-title>cosFileTransfer</fo:bookmark-title>
+      <fo:bookmark internal-destination="idp460336" starting-state="hide">
+        <fo:bookmark-title>cosFileTransfer User's Guide</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp517280" starting-state="hide">
+          <fo:bookmark-title>The cosFileTransfer Application</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp485664" starting-state="hide">
+            <fo:bookmark-title>Content Overview</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp484528" starting-state="hide">
+            <fo:bookmark-title>Brief description of the User's Guide</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp13648" starting-state="hide">
+          <fo:bookmark-title>Introduction to cosFileTransfer</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp304384" starting-state="hide">
+            <fo:bookmark-title>Overview</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp530128" starting-state="hide">
+              <fo:bookmark-title>Purpose and Dependencies</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp499456" starting-state="hide">
+              <fo:bookmark-title>Prerequisites</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp482240" starting-state="hide">
+          <fo:bookmark-title>Installing cosFileTransfer</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp96864" starting-state="hide">
+            <fo:bookmark-title>Installation Process </fo:bookmark-title>
+            <fo:bookmark internal-destination="idp26816" starting-state="hide">
+              <fo:bookmark-title>Preparation</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp536624" starting-state="hide">
+              <fo:bookmark-title>Configuration</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp282432" starting-state="hide">
+          <fo:bookmark-title>Using the File Transfer Service</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp494624" starting-state="hide">
+            <fo:bookmark-title>Overview</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp15056" starting-state="hide">
+              <fo:bookmark-title>Components</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp449328" starting-state="hide">
+              <fo:bookmark-title>How To Use SSL</fo:bookmark-title>
+              <fo:bookmark internal-destination="idp451968" starting-state="hide">
+                <fo:bookmark-title>Configurations when cosFileTransfer is Used as Target</fo:bookmark-title>
+              </fo:bookmark>
+              <fo:bookmark internal-destination="idp510464" starting-state="hide">
+                <fo:bookmark-title>Configurations when cosFileTransfer is used as Source</fo:bookmark-title>
+              </fo:bookmark>
+            </fo:bookmark>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp298384" starting-state="hide">
+          <fo:bookmark-title>cosFileTransfer Examples</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp301216" starting-state="hide">
+            <fo:bookmark-title>A tutorial on how to create a simple service</fo:bookmark-title>
+            <fo:bookmark internal-destination="idp301984" starting-state="hide">
+              <fo:bookmark-title>Initiate the application</fo:bookmark-title>
+            </fo:bookmark>
+            <fo:bookmark internal-destination="idp250000" starting-state="hide">
+              <fo:bookmark-title>How to run everything</fo:bookmark-title>
+            </fo:bookmark>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+      <fo:bookmark internal-destination="idp84560" starting-state="hide">
+        <fo:bookmark-title>Reference Manual</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp719056" starting-state="hide">
+          <fo:bookmark-title>cosFileTransferApp</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp715536" starting-state="hide">
+            <fo:bookmark-title>install/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp712560" starting-state="hide">
+            <fo:bookmark-title>uninstall/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp708960" starting-state="hide">
+            <fo:bookmark-title>start/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp706000" starting-state="hide">
+            <fo:bookmark-title>stop/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp702944" starting-state="hide">
+            <fo:bookmark-title>create_VFS/4</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp754976" starting-state="hide">
+            <fo:bookmark-title>ssl_server_certfile/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp751536" starting-state="hide">
+            <fo:bookmark-title>ssl_client_certfile/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp749968" starting-state="hide">
+            <fo:bookmark-title>ssl_server_verify/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp637904" starting-state="hide">
+            <fo:bookmark-title>ssl_client_verify/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp635392" starting-state="hide">
+            <fo:bookmark-title>ssl_server_depth/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp632976" starting-state="hide">
+            <fo:bookmark-title>ssl_client_depth/0</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp645216" starting-state="hide">
+          <fo:bookmark-title>CosFileTransfer_File</fo:bookmark-title>
+          <fo:bookmark internal-destination="idm24224" starting-state="hide">
+            <fo:bookmark-title>'_get_name'/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idm21200" starting-state="hide">
+            <fo:bookmark-title>'_get_complete_file_name'/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp328368" starting-state="hide">
+            <fo:bookmark-title>'_get_parent'/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp721392" starting-state="hide">
+            <fo:bookmark-title>'_get_associated_session'/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp659648" starting-state="hide">
+          <fo:bookmark-title>CosFileTransfer_Directory</fo:bookmark-title>
+          <fo:bookmark internal-destination="idm11728" starting-state="hide">
+            <fo:bookmark-title>list/2</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp741008" starting-state="hide">
+          <fo:bookmark-title>CosFileTransfer_FileIterator</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp741712" starting-state="hide">
+            <fo:bookmark-title>next_one/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp724800" starting-state="hide">
+            <fo:bookmark-title>next_n/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp640672" starting-state="hide">
+            <fo:bookmark-title>destroy/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idm27472" starting-state="hide">
+          <fo:bookmark-title>CosFileTransfer_VirtualFileSystem</fo:bookmark-title>
+          <fo:bookmark internal-destination="idm36032" starting-state="hide">
+            <fo:bookmark-title>'_get_file_system_type'/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp611328" starting-state="hide">
+            <fo:bookmark-title>'_get_supported_content_types'/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp330560" starting-state="hide">
+            <fo:bookmark-title>login/4</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp759424" starting-state="hide">
+          <fo:bookmark-title>CosFileTransfer_FileTransferSession</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp762464" starting-state="hide">
+            <fo:bookmark-title>'_get_protocols_supported'/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp766720" starting-state="hide">
+            <fo:bookmark-title>set_directory/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp770592" starting-state="hide">
+            <fo:bookmark-title>create_file/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp776688" starting-state="hide">
+            <fo:bookmark-title>create_directory/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp781952" starting-state="hide">
+            <fo:bookmark-title>get_file/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp789040" starting-state="hide">
+            <fo:bookmark-title>delete/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp793808" starting-state="hide">
+            <fo:bookmark-title>transfer/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp801856" starting-state="hide">
+            <fo:bookmark-title>append/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp808880" starting-state="hide">
+            <fo:bookmark-title>insert/4</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp816768" starting-state="hide">
+            <fo:bookmark-title>logout/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+    </fo:bookmark>
+  </fo:bookmark-tree>
+  <fo:page-sequence font-family="sans-serif" force-page-count="even" master-reference="cover" font-size="10pt">
+    <fo:flow flow-name="xsl-region-body">
+      <fo:block space-before="130mm" space-before.conditionality="retain" text-align="end">
+        <fo:external-graphic src="/root/download/otp_src_20.0/bootstrap/lib/erl_docgen/priv/images/erlang-logo.gif"/>
+      </fo:block>
+      <fo:block id="cover-page" border-before-style="solid" border-before-width="10pt" border-color="#960003" font-size="2.3em" padding-before="0.5em" text-align="end">cosFileTransfer</fo:block>
+      <fo:block font-size="0.9em" text-align="end">Copyright © 2000-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em" text-align="end">cosFileTransfer 1.2.1</fo:block>
+      <fo:block font-size="0.9em" text-align="end">July 12, 2017</fo:block>
+      <fo:block padding-before="2.5em" font-size="1.33em" font-weight="bold" color="#C00" text-align="end"/>
+      <fo:block break-before="page" border-before-style="solid" border-before-width="1pt" border-color="#960003" font-weight="bold" padding-before="0.5em" space-before="200mm" space-before.conditionality="retain">Copyright © 2000-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em">
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+ 
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+    
+    Ericsson AB. All Rights Reserved..
+        </fo:block>
+      <fo:block font-size="0.9em" font-weight="bold" space-before="2em">July 12, 2017</fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+  <fo:page-sequence font-family="serif" master-reference="document" initial-page-number="1" font-size="10pt">
+    <fo:static-content flow-name="left-header">
+      <fo:block text-align="start" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-header">
+      <fo:block text-align="end" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="left-footer">
+      <fo:block text-align="start" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold"><fo:page-number/> | Ericsson AB. All Rights Reserved.:
+            cosFileTransfer</fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-footer">
+      <fo:block text-align="end" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">Ericsson AB. All Rights Reserved.:
+            cosFileTransfer | <fo:page-number/></fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body"><fo:block/><fo:block id="idp460336" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">1   
+      cosFileTransfer User's Guide</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The cosFileTransfer Application is an Erlang implementation of the OMG
+      CORBA FileTransfer Service.</fo:block>
+  <fo:block id="idp517280" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.1  The cosFileTransfer Application</fo:marker>1.1  The cosFileTransfer Application</fo:block><fo:block id="idp485664" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.1 
+      Content Overview</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The cosFileTransfer documentation is divided into three sections:
+      </fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">PART ONE - The User's Guide  
+                    <fo:block/>
+Description of the cosFileTransfer Application including 
+          services and a small tutorial demonstrating 
+          the development of a simple service.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">PART TWO - Release Notes
+                    <fo:block/>
+A concise history of cosFileTransfer.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">PART THREE - The Reference Manual
+                    <fo:block/>
+ A quick reference guide, including a
+          brief description, to all the functions available in cosFileTransfer.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+  <fo:block id="idp484528" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.1.2 
+      Brief description of the User's Guide</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The User's Guide  contains the following parts:</fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">cosFileTransfer overview</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">cosFileTransfer installation</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A tutorial example</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+  <fo:block id="idp13648" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.2  Introduction to cosFileTransfer</fo:marker>1.2  Introduction to cosFileTransfer</fo:block><fo:block id="idp304384" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.2.1 
+      Overview</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The cosFileTransfer application is a FileTransfer Service compliant with the 
+      <fo:inline font-weight="bold"><fo:basic-link external-destination="href">OMG</fo:basic-link></fo:inline> Service CosFileTransfer.
+      </fo:block>
+
+    <fo:block id="idp530128" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Purpose and Dependencies</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a Virtual File System is started as 'FTP', the inets-2.5.4 application, 
+        or later, must be installed.</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">cosFileTransfer</fo:inline> is dependent on  <fo:inline font-weight="bold">Orber</fo:inline>, which provides CORBA functionality in an Erlang environment,
+        and <fo:inline font-weight="bold">cosProperty</fo:inline>.</fo:block>
+    
+
+    <fo:block id="idp499456" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Prerequisites</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To fully understand the concepts presented in the
+        documentation, it is recommended that the user is familiar
+        with distributed programming, CORBA, the Orber and cosProperty applications.
+        </fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Recommended reading includes <fo:inline font-weight="bold">CORBA, Fundamentals and Programming - Jon Siegel</fo:inline> and <fo:inline font-weight="bold">Open Telecom Platform Documentation Set</fo:inline>. It is also helpful to  have read <fo:inline font-weight="bold">Concurrent Programming in Erlang</fo:inline>.</fo:block>
+    
+  <fo:block id="idp482240" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.3  Installing cosFileTransfer</fo:marker>1.3  Installing cosFileTransfer</fo:block><fo:block id="idp96864" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.3.1 
+      Installation Process </fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This chapter describes how to install 
+      <fo:inline font-style="italic">cosFileTransferApp</fo:inline> in an Erlang Environment.
+      </fo:block>
+
+    <fo:block id="idp26816" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Preparation</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Before starting the installation process for cosFileTransfer,
+        the application <fo:inline font-family="monospace">Orber</fo:inline> must be running and <fo:inline font-family="monospace">cosProperty</fo:inline> installed by
+        using <fo:inline font-family="monospace">cosProperty:install()</fo:inline>. Please note that it is <fo:inline font-weight="bold">NOT</fo:inline> necessary
+        to use <fo:inline font-family="monospace">cosProperty:install_db()</fo:inline> for running the cosFileTransfer application.</fo:block>
+    
+
+    <fo:block id="idp536624" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Configuration</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When starting the cosFileTransfer application the following configuration parameters
+        can be used:</fo:block>
+      <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-weight="bold">buffert_size</fo:inline> - default is 64000. This option determine
+         how many bytes will be read at a time when transferring files.</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+    
+  <fo:block id="idp282432" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.4  Using the File Transfer Service</fo:marker>1.4  Using the File Transfer Service</fo:block><fo:block id="idp494624" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.4.1 
+      Overview</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This chapter describes how two File Transfer Service applications interact.</fo:block>
+
+    <fo:block id="idp15056" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Components</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">There are several ways the OMG File Transfer Service can be used. 
+        Below one scenario is visualized: </fo:block>
+      
+      <fo:block space-after="0.5em" space-before="0.5em"><fo:external-graphic content-width="scale-down-to-fit" inline-progression-dimension.maximum="100%" src="CosFileTransfer.gif"/>
+        <fo:block font-family="DejaVuSans, sans-serif" font-size="0.8em" font-weight="bold" keep-with-previous.within-page="always" space-after="2.5em" space-before="0em">
+        Figure
+        4.1:
+         
+        Figure 1: The File Transfer Service Components.</fo:block>
+      </fo:block>
+      <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-weight="bold">Source ORB:</fo:inline> this is the ORB we want to transfer a file from/via and it holds 
+         an object reference to a 
+        <fo:inline font-style="italic">Virtual File System (VFS)</fo:inline> which, 
+         in this example, represents an FTP server.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-weight="bold">Target ORB:</fo:inline> the goal may be, for example, to transfer a new file or append to an 
+         existing file placed at the location that this ORB's <fo:inline font-family="monospace">VFS</fo:inline> represents.
+         In this scenario it is the local disk or the NFS.</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-weight="bold">Transport Protocol:</fo:inline> initially the ORB's, i.e., target and source, communicate via
+         normal <fo:inline font-family="monospace">CORBA</fo:inline> requests to determine whether or not they can communicate. If the 
+         File Transfer Service's have one, or more, <fo:inline font-family="monospace">Transport Protocol</fo:inline> in common the data
+         will be streamed using this protocol. The cosFileTransfer application currently supports 
+        <fo:inline font-family="monospace">TCP/IP</fo:inline> and <fo:inline font-family="monospace">SSL</fo:inline>.</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Which type of file system the <fo:inline font-family="monospace">VFS</fo:inline> is supposed to represent is determined
+        by the options given when creating it, which is also how one determine which 
+        <fo:inline font-family="monospace">Transport Protocol</fo:inline> to use. Hence, the source and target <fo:inline font-family="monospace">VFS</fo:inline> described above
+        can be started by invoking, respectively, the following operations:</fo:block>
+      <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+1&gt; SVFS = cosFileTransferApp:create_VFS('FTP', [], Host, 21, [{protocol, tcp}]),
+2&gt; TVFS = cosFileTransferApp:create_VFS({'NATIVE', 'cosFileTransferNATIVE_file'}, 
+                                        [], OtherHost, 0, [{protocol, tcp}]),
+      </fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Naturally can any combination of <fo:inline font-family="monospace">VFS</fo:inline>-types be used and it is also possible
+        to use own drivers, i.e., <fo:inline font-family="monospace">{'NATIVE', 'MyDriver'}</fo:inline>.</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">After creating necessary <fo:inline font-family="monospace">VFS's</fo:inline> we can login in and perform operations
+        on files and directories residing on each file system.</fo:block>
+    
+
+    <fo:block id="idp449328" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">How To Use SSL</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To be able to use <fo:inline font-family="monospace">SSL</fo:inline> as transport protocol a few configuration
+        parameters must be set. The required parameters depend on if Orber is
+        the target or/and the source ORB. However, the SSL_CERT_FILE variable
+        must be defined in both cases.</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Setting of a CA certificate file with an option does not work due to 
+        weaknesses in the SSLeay package. A work-around in the ssl application is 
+        to set the OS environment variable SSL_CERT_FILE before SSL is started. 
+        However, then the CA certificate file will be global for all connections 
+        (both incoming and outgoing calls).</fo:block>
+
+      <fo:block id="idp451968" font-family="DejaVuSans, sans-serif" font-size="1em" font-weight="bold" keep-with-next.within-page="always" space-after="0.2em" space-before="0.4em">Configurations when cosFileTransfer is Used as Target</fo:block>
+        
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The following three configuration variables can be used to configure
+          cosFileTransfer's SSL target behavior.</fo:block>
+        <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-weight="bold">ssl_server_certfile</fo:inline> which is a path to a file containing a
+           chain of PEM encoded certificates for cosFileTransfer as target.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-weight="bold">ssl_server_verify</fo:inline> which specifies type of verification: 
+           0 = do not verify peer; 1 = verify peer, verify client once, 2 = 
+           verify peer, verify client once, fail if no peer certificate. 
+           The default value is 0.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-weight="bold">ssl_server_depth</fo:inline> which specifies verification depth, i.e.
+           how far in a chain of certificates the verification process shall 
+           proceed before the verification is considered successful. The
+           default value is 1. </fo:block></fo:list-item-body></fo:list-item>
+        </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">There also exist a number of API functions for accessing the values of 
+          these variables:</fo:block>
+        <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>cosFileTransferApp:ssl_server_certfile/0</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>cosFileTransferApp:ssl_server_verify/0</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>cosFileTransferApp:ssl_server_depth/0</fo:block></fo:list-item-body></fo:list-item>
+        </fo:list-block>
+      
+
+      <fo:block id="idp510464" font-family="DejaVuSans, sans-serif" font-size="1em" font-weight="bold" keep-with-next.within-page="always" space-after="0.2em" space-before="0.4em">Configurations when cosFileTransfer is used as Source</fo:block>
+        
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Below is the list of configuration variables used when cosFileTransfer
+          act as the source application.</fo:block>
+        <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-weight="bold">ssl_client_certfile</fo:inline> which is a path to a file containing a
+           chain of PEM encoded certificates used in outgoing calls.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-weight="bold">ssl_client_verify</fo:inline> which specifies type of verification: 
+           0 = do not verify peer; 1 = verify peer, verify client once, 2 = 
+           verify peer, verify client once, fail if no peer certificate. 
+           The default value is 0.</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-weight="bold">ssl_client_depth</fo:inline> which specifies verification depth, i.e. 
+           how far in a chain of certificates the verification process shall
+           proceed before the verification is considered successful. The
+           default value is 1. </fo:block></fo:list-item-body></fo:list-item>
+        </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">There also exist a number of API functions for accessing the values of
+          these variables in the client processes:</fo:block>
+        <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>cosFileTransferApp:ssl_client_certfile/0</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>cosFileTransferApp:ssl_client_verify/0</fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>cosFileTransferApp:ssl_client_depth/0</fo:block></fo:list-item-body></fo:list-item>
+        </fo:list-block>
+      
+    
+  <fo:block id="idp298384" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">1.5  cosFileTransfer Examples</fo:marker>1.5  cosFileTransfer Examples</fo:block><fo:block id="idp301216" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">1.5.1 
+      A tutorial on how to create a simple service</fo:block>
+    
+
+    <fo:block id="idp301984" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">Initiate the application</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To use the complete cosFileTransfer application cosProperty
+        must be installed.</fo:block>
+    
+
+    <fo:block id="idp250000" font-family="DejaVuSans, sans-serif" font-size="1.17em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.6em">How to run everything</fo:block>
+      
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Below is a short transcript on how to run cosFileTransfer. </fo:block>
+      <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ 
+%% Start Mnesia and Orber
+mnesia:delete_schema([node()]),
+mnesia:create_schema([node()]),
+orber:install([node()]),
+mnesia:start(),
+orber:start(),
+ 
+%% The File Transfer Service depends on the cosProperty
+%% application. Hence, we must install cosProperty first.
+%% It's NOT necessary to invoke cosProperty:install_db().
+cosProperty:install(),     
+
+%% Install File Transfer Service in the IFR.
+cosFileTransfer:install(),     
+
+%% Now start the application and necessary services.
+cosFileTransfer:start(),
+
+%% Create two Virtual File Systems respectively representing an FTP-
+%% and the local NFS file system.
+VFSFTP = cosFileTransferApp:create_VFS('FTP', [], FTPHost, 21),
+VFSNATIVE = cosFileTransferApp:
+            create_VFS({'NATIVE', 'cosFileTransferNATIVE_file'}, 
+                       [], MyLocalHost, 0),
+
+%% Login to each system.
+{FSFTP, DirFTP} = 'CosFileTransfer_VirtualFileSystem':
+                  login(VFSFTP, "myId", "myPwd", "myAccount"),
+{FSNATIVE, DirNATIVE} = 'CosFileTransfer_VirtualFileSystem':
+                        login(VFSNATIVE, "myId", "myPwd", "myAccount"),
+
+%% If we want to copy a file from the NFS to the FTP we must first
+%% create a File object which contains its attributes.
+Target = 'CosFileTransfer_FileTransferSession':create_file(FSFTP, 
+                          ["/", "ftp", "incoming", "targetFile"])),
+
+ #'CosFileTransfer_FileWrapper'{the_file = Dir} = 
+%% Lookup the file we want to copy.
+FileWrapper = 'CosFileTransfer_FileTransferSession':get_file(FSNATIVE, 
+                          ["/", "home", "myId", "sourceFile"]),
+Source = FileWrapper#'CosFileTransfer_FileWrapper'.the_file,
+
+%% Now we are ready to transfer the file. Please note that we most
+%% call the source Session object.
+'CosFileTransfer_FileTransferSession':transfer(FSNATIVE, Source, Target),
+      </fo:block>
+    
+  <fo:block id="idp84560" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">2   
+      Reference Manual</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The cosFileTransfer Application is an Erlang implementation of the OMG
+      CORBA File Transfer Service.</fo:block>
+  <fo:block page-break-before="always" id="idp719056" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">cosFileTransferApp</fo:marker>cosFileTransferApp</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  cosFileTransferApp
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosFileTransfer/include/*.hrl").</fo:inline></fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This module contains the functions for starting and stopping the application.</fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp715536">install() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {'EXIT', Reason}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation installs the cosFileTransfer application. Note, the
+          <fo:inline font-family="monospace">cosProperty</fo:inline> application must be installed prior to invoking this
+          operation.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp712560">uninstall() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {'EXIT', Reason}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation uninstalls the cosFileTransfer application.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp708960">start() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {error, Reason}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation starts the cosFileTransfer application.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp706000">stop() -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {error, Reason}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation stops the cosFileTransfer application.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp702944">create_VFS(Type, Content, Host, Port [,Options]) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = 'FTP' | {'NATIVE', 'cosFileTransferNATIVE_file'} |  {'NATIVE', MyModule}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Content = []</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Host = string(), e.g. "myHost@myServer" or "012.345.678.910"</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Port = integer()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Options = [Option]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Option = {protocol, Protocol} | {connect_timeout, Seconds}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Protocol = tcp | ssl</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = VFS | {'EXCEPTION, E}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">VFS = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation creates a new instance of a Virtual File System. The 
+          <fo:inline font-family="monospace">Type</fo:inline> parameter determines which type we want the VFS to represent.
+          'FTP' maps to the <fo:inline font-family="monospace">INETS</fo:inline> ftp implementation, while
+          {'NATIVE', 'cosFileTransferNATIVE_file'} uses the <fo:inline font-family="monospace">file</fo:inline> module.
+          It is also possible to implement own mappings which are activated by
+          supplying {'NATIVE', MyModule}. The MyModule module must export the same
+          functions and behave in the same way as the INETS ftp module, and
+          an operation named <fo:inline font-family="monospace">open(Host, Port)</fo:inline>, which shall return 
+          <fo:inline font-family="monospace">{ok, Pid}</fo:inline> or <fo:inline font-family="monospace">{error, Reason}</fo:inline>.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If no <fo:inline font-family="monospace">Options</fo:inline> are supplied the default setting will be
+          used, i.e., tcp and 60 seconds.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-family="monospace">Content</fo:inline> parameter is currently ignored by must be supplied
+          as an empty list.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp754976">ssl_server_certfile() -&gt; string()</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This function returns a path to a file containing a chain of PEM encoded 
+          certificates for the cosFileTransfer as target. 
+          This is configured by setting the application variable 
+          <fo:inline font-weight="bold">ssl_server_certfile</fo:inline>.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp751536">ssl_client_certfile() -&gt; string()</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This function returns a path to a file containing a chain of PEM encoded 
+          certificates used in outgoing calls.
+          The default value is configured by setting the application variable 
+          <fo:inline font-weight="bold">ssl_client_certfile</fo:inline>.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp749968">ssl_server_verify() -&gt; 0 | 1 | 2</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This function returns the type of verification used by SSL during authentication of the other 
+          peer for incoming calls. 
+          It is configured by setting the application variable 
+          <fo:inline font-weight="bold">ssl_server_verify</fo:inline>.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp637904">ssl_client_verify() -&gt; 0 | 1 | 2</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This function returns  the type of verification used by SSL during authentication of the other 
+          peer for outgoing calls. 
+          The default value is configured by setting the application variable 
+          <fo:inline font-weight="bold">ssl_client_verify</fo:inline>.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp635392">ssl_server_depth() -&gt; int()</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This function returns the SSL verification depth for incoming calls. 
+          It is configured by setting the application variable 
+          <fo:inline font-weight="bold">ssl_server_depth</fo:inline>.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp632976">ssl_client_depth() -&gt;  int()</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This function returns the SSL verification depth for outgoing calls. 
+          The default value is configured by setting the application variable 
+          <fo:inline font-weight="bold">ssl_client_depth</fo:inline>.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp645216" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosFileTransfer_File</fo:marker>CosFileTransfer_File</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosFileTransfer_File
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosFileTransfer/include/*.hrl").</fo:inline></fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This module also exports the functions described in:</fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">CosPropertyService_PropertySetDef in the cosProperty application.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idm24224">'_get_name'(File) -&gt; string()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">File = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This read only attribute represents the target object's associated name.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idm21200">'_get_complete_file_name'(File) -&gt; string()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">File = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This read only attribute represents the target object's associated 
+          absolute name.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp328368">'_get_parent'(File) -&gt; Directory</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">File = Directory = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This read only attribute represents the target object's container.
+          In some cases a <fo:inline font-family="monospace">NIL</fo:inline> object will be returned.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp721392">'_get_associated_session'(File) -&gt; FileTransferSession</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">File = FileTransferSession = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This read only attribute represents the target object's associated
+          <fo:inline font-family="monospace">FileTransferSession</fo:inline>.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp659648" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosFileTransfer_Directory</fo:marker>CosFileTransfer_Directory</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosFileTransfer_Directory
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosFileTransfer/include/*.hrl").</fo:inline></fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This module also exports the functions described in:</fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-style="italic">CosFileTransfer_File</fo:inline></fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">CosPropertyService_PropertySetDef in the cosProperty application.</fo:block>
+      </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idm11728">list(Directory, Max) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Directory = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = {ok, FileList, FileIterator}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">FileList = [File]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">File = FileIterator = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns a list, of length <fo:inline font-family="monospace">Max</fo:inline> or less, containing
+          Object References representing files or directories contained within
+          the target Directory. If the amount of objects found is less than <fo:inline font-family="monospace">Max</fo:inline>
+          the returned Iterator will be a <fo:inline font-family="monospace">NIL</fo:inline> object.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp741008" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosFileTransfer_FileIterator</fo:marker>CosFileTransfer_FileIterator</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosFileTransfer_FileIterator
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosFileTransfer/include/*.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp741712">next_one(Iterator) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Iterator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = {boolean(), #'CosFileTransfer_FileWrapper'{the_file = File file_type = Type}}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">File = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = nfile | ndirectory</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns true if a <fo:inline font-family="monospace">FileWrapper</fo:inline> exists at the
+          current position and the out parameter contains a valid <fo:inline font-family="monospace">File</fo:inline>
+          reference. If false is returned the out parameter is a non-valid 
+          <fo:inline font-family="monospace">FileWrapper</fo:inline>.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp724800">next_n(Iterator, Max) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Iterator = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Max = unsigned long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = {boolean(), FileList}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">FileList = [#'CosFileTransfer_FileWrapper'{the_file = File file_type = Type}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">File = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = nfile | ndirectory</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation returns true if the requested number of <fo:inline font-family="monospace">FileWrappers</fo:inline> 
+          can be delivered and there are additional <fo:inline font-family="monospace">FileWrappers</fo:inline>. If false is 
+          returned a list, of length <fo:inline font-family="monospace">Max</fo:inline> or less, containing the last valid
+          <fo:inline font-family="monospace">FileWrappers</fo:inline> associated with the target object.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp640672">destroy(Iterator) -&gt; ok</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Iterator = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation terminates the target object.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idm27472" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosFileTransfer_VirtualFileSystem</fo:marker>CosFileTransfer_VirtualFileSystem</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosFileTransfer_VirtualFileSystem
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosFileTransfer/include/*.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idm36032">'_get_file_system_type'(VFS) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">VFS = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = 'FTP' | 'NATIVE'</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This read only attribute represents the target object's associated
+          file system.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp611328">'_get_supported_content_types'(VFS) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">VFS = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = </fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This read only attribute represents the target object's supported 
+          content types.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp330560">login(VFS, User, Password, Account) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">VFS = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">User = Password = Account = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = {FileTransferSession, Directory} | {'EXCEPTION', E}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">FileTransferSession = Directory = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation creates a new instance of a <fo:inline font-family="monospace">FileTransferSession</fo:inline>
+          and a <fo:inline font-family="monospace">Directory</fo:inline>. The later represents the current working
+          directory of the returned <fo:inline font-family="monospace">FileTransferSession</fo:inline>.</fo:block>
+      </fo:block>
+  
+  
+<fo:block page-break-before="always" id="idp759424" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">CosFileTransfer_FileTransferSession</fo:marker>CosFileTransfer_FileTransferSession</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  CosFileTransfer_FileTransferSession
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To get access to the record definitions for the structures use:      <fo:block/>
+<fo:inline font-family="monospace">-include_lib("cosFileTransfer/include/*.hrl").</fo:inline></fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp762464">'_get_protocols_supported'(FTS) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">FTS = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = [#'CosFileTransfer_ProtocolSupport'{protocol_name=Type, addresses=[Address]}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = Address = string()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This read only attribute returns the protocols supported by the
+          target object.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp766720">set_directory(FTS, Directory) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">FTS = Directory = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {'EXCEPTION, E}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Invoking this operation will change the current working directory of
+          the target object's associated file system. If fail to do so the
+          appropriate exception is raised. </fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp770592">create_file(FTS, FileNameList) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">FTS = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">FileNameList = [string()]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = File | {'EXCEPTION, E}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">File = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation creates a <fo:inline font-family="monospace">File</fo:inline> Object representing a file which 
+          may or may not exist. 
+          For this operation to be independent of the working directory the
+          supplied <fo:inline font-family="monospace">FileNameList</fo:inline> must represent the absolute name.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp776688">create_directory(FTS, FileNameList) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">FTS = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">FileNameList = [string()]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = Directory | {'EXCEPTION, E}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Directory = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation creates a new directory in the target objects associated
+          file systems domain. If fail to do so an exception is raised but,
+          if successful, a <fo:inline font-family="monospace">Directory</fo:inline> object representing the new
+          directory is returned.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp781952">get_file(FTS, FileNameList) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">FTS = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">FileNameList = [string()]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = FileWrapper | {'EXCEPTION, E}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">FileWrapper = #'CosFileTransfer_FileWrapper'{the_file = File file_type = Type}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">File = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = nfile | ndirectory</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation, creates a <fo:inline font-family="monospace">FileWrapper</fo:inline> which represents a file or directory, and 
+          should be independent of the working Directory,
+          i.e., a full path name must be supplied. Furthermore, the file or
+          directory represented by the <fo:inline font-family="monospace">FileNameList</fo:inline> must exist.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp789040">delete(FTS, File) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">FTS = File = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {'EXCEPTION', E}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation removes the file or directory, represented by the <fo:inline font-family="monospace">File</fo:inline>
+          object, from the target objects associated file system. If it is a non-empty
+          directory or non-existing file or directory an exception is raised.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp793808">transfer(FTS, SourceFile, DestinationFile) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">FTS = SourceFile = DestinationFile = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return = ok | {'EXCEPTION', E}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If the target object's and the <fo:inline font-family="monospace">DestinationFile's</fo:inline> associated
+          <fo:inline font-family="monospace">FileTransferSession's</fo:inline> support the same protocol(s) this operation
+          will copy the file represented by the <fo:inline font-family="monospace">SourceFile</fo:inline> from the target 
+          object's file system to a file in the destination 
+          <fo:inline font-family="monospace">FileTransferSession's</fo:inline> file system. The file is represented by the
+          <fo:inline font-family="monospace">DestinationFile</fo:inline> object and may not exist.
+          This operation must be invoked on the <fo:inline font-family="monospace">FileTransferSession</fo:inline>
+          associated with the <fo:inline font-family="monospace">SourceFile</fo:inline> object.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp801856">append(FTS, SourceFile, DestinationFile) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">FTS = SourceFile = DestinationFile = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return =  ok | {'EXCEPTION', E}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation behaves almost like the <fo:inline font-family="monospace">transfer/3</fo:inline> operation. The
+          difference is that the <fo:inline font-family="monospace">DestinationFile</fo:inline> must exist since the
+          <fo:inline font-family="monospace">SourceFile</fo:inline> will be appended to the <fo:inline font-family="monospace">DestinationFile</fo:inline>.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Currently, it is not possible to use this operation when the target 
+          object represents FTP.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp808880">insert(FTS, SourceFile, DestinationFile, Offset) -&gt; Return</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">FTS = SourceFile = DestinationFile = #objref</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Offset = long()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Return =  ok | {'EXCEPTION', E}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation behaves almost like the <fo:inline font-family="monospace">append/3</fo:inline> operation. The 
+          difference is that the <fo:inline font-family="monospace">SourceFile</fo:inline> will be inserted into the
+          <fo:inline font-family="monospace">DestinationFile</fo:inline> <fo:inline font-family="monospace">Offset</fo:inline> bytes from the start of the file.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Currently, it is not possible to use this operation when the target 
+          object represents FTP.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp816768">logout(FTS) -&gt; ok</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">FTS = #objref</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This operation terminates the target object and closes the connection
+          to the file system it represents.</fo:block>
+      </fo:block>
+  
+  
+</fo:flow>
+  </fo:page-sequence>
+</fo:root>

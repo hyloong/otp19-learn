@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxCalendarDateAttr</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxCalendarDateAttr.xml</file></header>
+<module>wxCalendarDateAttr</module>
+<modulesummary>See external documentation: wxCalendarDateAttr.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcalendardateattr.html">wxCalendarDateAttr</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxCalendarDateAttr"/>wxCalendarDateAttr()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcalendardateattr.html#wxcalendardateattrwxcalendardateattr">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Border) -&gt; <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Border = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></v></type>
+<desc><marker id="new-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcalendardateattr.html#wxcalendardateattrwxcalendardateattr">external documentation</url>.
+  <br/> Also:<br/>
+  new(ColText) -&gt; wxCalendarDateAttr() when<br/>
+  	ColText::wx:wx_colour().<br/></p>
+ 
+ <p><br/> Border = ?wxCAL_BORDER_NONE | ?wxCAL_BORDER_SQUARE | ?wxCAL_BORDER_ROUND</p>
+</desc></func>
+<func>
+<name>new(Border, Options::[Option]) -&gt; <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Border = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></v><v>Option = {colBorder, <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso>}</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcalendardateattr.html#wxcalendardateattrwxcalendardateattr">external documentation</url>.
+  <br/> Also:<br/>
+  new(ColText, [Option]) -&gt; wxCalendarDateAttr() when<br/>
+  	ColText::wx:wx_colour(),<br/>
+  	Option :: {'colBack', wx:wx_colour()}<br/>
+  		 | {'colBorder', wx:wx_colour()}<br/>
+  		 | {'font', wxFont:wxFont()}<br/>
+  		 | {'border', wx:wx_enum()}.<br/></p>
+ 
+ <p><br/> Border = ?wxCAL_BORDER_NONE | ?wxCAL_BORDER_SQUARE | ?wxCAL_BORDER_ROUND</p>
+</desc></func>
+<func>
+<name>setTextColour(This, ColText) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></v><v>ColText = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setTextColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcalendardateattr.html#wxcalendardateattrsettextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setBackgroundColour(This, ColBack) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></v><v>ColBack = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setBackgroundColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcalendardateattr.html#wxcalendardateattrsetbackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setBorderColour(This, Col) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></v><v>Col = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setBorderColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcalendardateattr.html#wxcalendardateattrsetbordercolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFont(This, Font) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></v><v>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v></type>
+<desc><marker id="setFont-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcalendardateattr.html#wxcalendardateattrsetfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setBorder(This, Border) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></v><v>Border = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></v></type>
+<desc><marker id="setBorder-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcalendardateattr.html#wxcalendardateattrsetborder">external documentation</url>.
+ <br/> Border = ?wxCAL_BORDER_NONE | ?wxCAL_BORDER_SQUARE | ?wxCAL_BORDER_ROUND</p>
+</desc></func>
+<func>
+<name>setHoliday(This, Holiday) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></v><v>Holiday = boolean()</v></type>
+<desc><marker id="setHoliday-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcalendardateattr.html#wxcalendardateattrsetholiday">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasTextColour(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></v></type>
+<desc><marker id="hasTextColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcalendardateattr.html#wxcalendardateattrhastextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasBackgroundColour(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></v></type>
+<desc><marker id="hasBackgroundColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcalendardateattr.html#wxcalendardateattrhasbackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasBorderColour(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></v></type>
+<desc><marker id="hasBorderColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcalendardateattr.html#wxcalendardateattrhasbordercolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasFont(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></v></type>
+<desc><marker id="hasFont-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcalendardateattr.html#wxcalendardateattrhasfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasBorder(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></v></type>
+<desc><marker id="hasBorder-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcalendardateattr.html#wxcalendardateattrhasborder">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isHoliday(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></v></type>
+<desc><marker id="isHoliday-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcalendardateattr.html#wxcalendardateattrisholiday">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getTextColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></v></type>
+<desc><marker id="getTextColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcalendardateattr.html#wxcalendardateattrgettextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getBackgroundColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></v></type>
+<desc><marker id="getBackgroundColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcalendardateattr.html#wxcalendardateattrgetbackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getBorderColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></v></type>
+<desc><marker id="getBorderColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcalendardateattr.html#wxcalendardateattrgetbordercolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFont(This) -&gt; <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></v></type>
+<desc><marker id="getFont-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcalendardateattr.html#wxcalendardateattrgetfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getBorder(This) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso></v></type>
+<desc><marker id="getBorder-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcalendardateattr.html#wxcalendardateattrgetborder">external documentation</url>.
+ <br/> Res = ?wxCAL_BORDER_NONE | ?wxCAL_BORDER_SQUARE | ?wxCAL_BORDER_ROUND</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxCalendarDateAttr">wxCalendarDateAttr()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

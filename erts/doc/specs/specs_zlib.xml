@@ -1,0 +1,573 @@
+<module name="zlib">
+<type>
+  <name>zlevel</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-zlevel">zlevel()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>none | default | best_compression | best_speed | 0..9</typehead></typedecl>
+</type>
+<type>
+  <name>zmemlevel</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-zmemlevel">zmemlevel()</marker> = 1..9</typehead></typedecl>
+</type>
+<type>
+  <name>zmethod</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-zmethod">zmethod()</marker> = deflated</typehead></typedecl>
+</type>
+<type>
+  <name>zstrategy</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-zstrategy">zstrategy()</marker> = default | filtered | huffman_only | rle</typehead></typedecl>
+</type>
+<type>
+  <name>zstream</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-zstream">zstream()</marker> = port()</typehead></typedecl>
+</type>
+<type>
+  <name>zwindowbits</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-zwindowbits">zwindowbits()</marker> = -15..-8 | 8..47</typehead></typedecl>
+</type>
+<spec>
+  <name>adler32</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>adler32(Z, Data) -&gt; CheckSum</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+        <subtype><typename>Data</typename><string>Data = iodata()</string></subtype>
+        <subtype><typename>CheckSum</typename><string>CheckSum = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>CheckSum</anno>
+  <anno>Data</anno>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>adler32</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>adler32(Z, PrevAdler, Data) -&gt; CheckSum</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+        <subtype><typename>PrevAdler</typename><string>PrevAdler = integer()</string></subtype>
+        <subtype><typename>Data</typename><string>Data = iodata()</string></subtype>
+        <subtype><typename>CheckSum</typename><string>CheckSum = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>CheckSum</anno>
+  <anno>Data</anno>
+  <anno>PrevAdler</anno>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>adler32_combine</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>adler32_combine(Z, Adler1, Adler2, Size2) -&gt; Adler</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+        <subtype><typename>Adler</typename><string>Adler = Adler1 = Adler2 = Size2 = integer()</string></subtype>
+        <subtype><typename>Adler1</typename><string></string></subtype>
+        <subtype><typename>Adler2</typename><string></string></subtype>
+        <subtype><typename>Size2</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Adler</anno>
+  <anno>Adler1</anno>
+  <anno>Adler2</anno>
+  <anno>Size2</anno>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>close</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>close(Z) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>compress</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>compress(Data) -&gt; Compressed</head>
+      <guard>
+        <subtype><typename>Data</typename><string>Data = iodata()</string></subtype>
+        <subtype><typename>Compressed</typename><string>Compressed = binary()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Compressed</anno>
+  <anno>Data</anno>
+</spec>
+<spec>
+  <name>crc32</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>crc32(Z) -&gt; CRC</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+        <subtype><typename>CRC</typename><string>CRC = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>CRC</anno>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>crc32</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>crc32(Z, Data) -&gt; CRC</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+        <subtype><typename>Data</typename><string>Data = iodata()</string></subtype>
+        <subtype><typename>CRC</typename><string>CRC = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>CRC</anno>
+  <anno>Data</anno>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>crc32</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>crc32(Z, PrevCRC, Data) -&gt; CRC</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+        <subtype><typename>PrevCRC</typename><string>PrevCRC = integer()</string></subtype>
+        <subtype><typename>Data</typename><string>Data = iodata()</string></subtype>
+        <subtype><typename>CRC</typename><string>CRC = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>CRC</anno>
+  <anno>Data</anno>
+  <anno>PrevCRC</anno>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>crc32_combine</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>crc32_combine(Z, CRC1, CRC2, Size2) -&gt; CRC</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+        <subtype><typename>CRC</typename><string>CRC = CRC1 = CRC2 = Size2 = integer()</string></subtype>
+        <subtype><typename>CRC1</typename><string></string></subtype>
+        <subtype><typename>CRC2</typename><string></string></subtype>
+        <subtype><typename>Size2</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>CRC</anno>
+  <anno>CRC1</anno>
+  <anno>CRC2</anno>
+  <anno>Size2</anno>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>deflate</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>deflate(Z, Data) -&gt; Compressed</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+        <subtype><typename>Data</typename><string>Data = iodata()</string></subtype>
+        <subtype><typename>Compressed</typename><string>Compressed = iolist()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Compressed</anno>
+  <anno>Data</anno>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>deflate</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>deflate(Z, Data, Flush) -&gt; Compressed</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+        <subtype><typename>Data</typename><string>Data = iodata()</string></subtype>
+        <subtype><typename>Flush</typename><string>Flush = none | sync | full | finish</string></subtype>
+        <subtype><typename>Compressed</typename><string>Compressed = iolist()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Compressed</anno>
+  <anno>Data</anno>
+  <anno>Flush</anno>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>deflateEnd</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>deflateEnd(Z) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>deflateInit</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>deflateInit(Z) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>deflateInit</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>deflateInit(Z, Level) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+        <subtype><typename>Level</typename><string>Level = <seealso marker="#type-zlevel">zlevel()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Level</anno>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>deflateInit</name>
+  <arity>6</arity>
+  <contract>
+    <clause>
+      <head>deflateInit(Z, Level, Method, WindowBits, MemLevel, Strategy) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ok</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+        <subtype><typename>Level</typename><string>Level = <seealso marker="#type-zlevel">zlevel()</seealso></string></subtype>
+        <subtype><typename>Method</typename><string>Method = <seealso marker="#type-zmethod">zmethod()</seealso></string></subtype>
+        <subtype><typename>WindowBits</typename><string>WindowBits = <seealso marker="#type-zwindowbits">zwindowbits()</seealso></string></subtype>
+        <subtype><typename>MemLevel</typename><string>MemLevel = <seealso marker="#type-zmemlevel">zmemlevel()</seealso></string></subtype>
+        <subtype><typename>Strategy</typename><string>Strategy = <seealso marker="#type-zstrategy">zstrategy()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Level</anno>
+  <anno>MemLevel</anno>
+  <anno>Method</anno>
+  <anno>Strategy</anno>
+  <anno>WindowBits</anno>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>deflateParams</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>deflateParams(Z, Level, Strategy) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+        <subtype><typename>Level</typename><string>Level = <seealso marker="#type-zlevel">zlevel()</seealso></string></subtype>
+        <subtype><typename>Strategy</typename><string>Strategy = <seealso marker="#type-zstrategy">zstrategy()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Level</anno>
+  <anno>Strategy</anno>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>deflateReset</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>deflateReset(Z) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>deflateSetDictionary</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>deflateSetDictionary(Z, Dictionary) -&gt; Adler32</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+        <subtype><typename>Dictionary</typename><string>Dictionary = iodata()</string></subtype>
+        <subtype><typename>Adler32</typename><string>Adler32 = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Adler32</anno>
+  <anno>Dictionary</anno>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>getBufSize</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getBufSize(Z) -&gt; Size</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+        <subtype><typename>Size</typename><string>Size = integer() &gt;= 0</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Size</anno>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>getQSize</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getQSize(Z :: <seealso marker="#type-zstream">zstream()</seealso>) -&gt; integer() &gt;= 0</head></clause>
+  </contract>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>gunzip</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>gunzip(Data) -&gt; Decompressed</head>
+      <guard>
+        <subtype><typename>Data</typename><string>Data = iodata()</string></subtype>
+        <subtype><typename>Decompressed</typename><string>Decompressed = binary()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Data</anno>
+  <anno>Decompressed</anno>
+</spec>
+<spec>
+  <name>gzip</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>gzip(Data) -&gt; Compressed</head>
+      <guard>
+        <subtype><typename>Data</typename><string>Data = iodata()</string></subtype>
+        <subtype><typename>Compressed</typename><string>Compressed = binary()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Compressed</anno>
+  <anno>Data</anno>
+</spec>
+<spec>
+  <name>inflate</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>inflate(Z, Data) -&gt; Decompressed</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+        <subtype><typename>Data</typename><string>Data = iodata()</string></subtype>
+        <subtype><typename>Decompressed</typename><string>Decompressed = iolist()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Data</anno>
+  <anno>Decompressed</anno>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>inflateChunk</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>inflateChunk(Z) -&gt; Decompressed | {more, Decompressed}</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+        <subtype><typename>Decompressed</typename><string>Decompressed = iolist()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Decompressed</anno>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>inflateChunk</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>inflateChunk(Z, Data) -&gt; Decompressed | {more, Decompressed}</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+        <subtype><typename>Data</typename><string>Data = iodata()</string></subtype>
+        <subtype><typename>Decompressed</typename><string>Decompressed = iolist()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Data</anno>
+  <anno>Decompressed</anno>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>inflateEnd</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>inflateEnd(Z) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>inflateGetDictionary</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>inflateGetDictionary(Z) -&gt; Dictionary</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+        <subtype><typename>Dictionary</typename><string>Dictionary = iolist()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Dictionary</anno>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>inflateInit</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>inflateInit(Z) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>inflateInit</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>inflateInit(Z, WindowBits) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+        <subtype><typename>WindowBits</typename><string>WindowBits = <seealso marker="#type-zwindowbits">zwindowbits()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>WindowBits</anno>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>inflateReset</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>inflateReset(Z) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>inflateSetDictionary</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>inflateSetDictionary(Z, Dictionary) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+        <subtype><typename>Dictionary</typename><string>Dictionary = iodata()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Dictionary</anno>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>inflateSync</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>inflateSync(Z :: <seealso marker="#type-zstream">zstream()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>open</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>open() -&gt; <seealso marker="#type-zstream">zstream()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>setBufSize</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setBufSize(Z, Size) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Z</typename><string>Z = <seealso marker="#type-zstream">zstream()</seealso></string></subtype>
+        <subtype><typename>Size</typename><string>Size = integer() &gt;= 0</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Size</anno>
+  <anno>Z</anno>
+</spec>
+<spec>
+  <name>uncompress</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>uncompress(Data) -&gt; Decompressed</head>
+      <guard>
+        <subtype><typename>Data</typename><string>Data = iodata()</string></subtype>
+        <subtype><typename>Decompressed</typename><string>Decompressed = binary()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Data</anno>
+  <anno>Decompressed</anno>
+</spec>
+<spec>
+  <name>unzip</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>unzip(Data) -&gt; Decompressed</head>
+      <guard>
+        <subtype><typename>Data</typename><string>Data = iodata()</string></subtype>
+        <subtype><typename>Decompressed</typename><string>Decompressed = binary()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Data</anno>
+  <anno>Decompressed</anno>
+</spec>
+<spec>
+  <name>zip</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>zip(Data) -&gt; Compressed</head>
+      <guard>
+        <subtype><typename>Data</typename><string>Data = iodata()</string></subtype>
+        <subtype><typename>Compressed</typename><string>Compressed = binary()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Compressed</anno>
+  <anno>Data</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:32:17.</timestamp>
+</module>

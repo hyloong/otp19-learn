@@ -1,0 +1,316 @@
+<module name="wxUpdateUIEvent">
+<type>
+  <name>wxUpdateUIEvent</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxUpdateUIEvent">wxUpdateUIEvent()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>canUpdate</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>canUpdate(Win) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>Win</typename><string>Win = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Win</anno>
+</spec>
+<spec>
+  <name>check</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>check(This, Check) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></string></subtype>
+        <subtype><typename>Check</typename><string>Check = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Check</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>enable</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>enable(This, Enable) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></string></subtype>
+        <subtype><typename>Enable</typename><string>Enable = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Enable</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getChecked</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getChecked(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getClientData</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getEnabled</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getEnabled(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getExtraLong</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getId</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getInt</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getMode</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>getMode() -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>getSelection</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getSetChecked</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getSetChecked(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getSetEnabled</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getSetEnabled(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getSetShown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getSetShown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getSetText</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getSetText(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getShown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getShown(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getSkipped</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getString</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getText</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getText(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getTimestamp</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>getUpdateInterval</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>getUpdateInterval() -&gt; integer()</head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>isChecked</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>isCommandEvent</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>isSelection</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>resetUpdateTime</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>resetUpdateTime() -&gt; ok</head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>resumePropagation</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setInt</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setMode</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>setMode(Mode) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Mode</typename><string>Mode = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Mode</anno>
+</spec>
+<spec>
+  <name>setString</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setText</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setText(This, Text) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></string></subtype>
+        <subtype><typename>Text</typename><string>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Text</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setUpdateInterval</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>setUpdateInterval(UpdateInterval) -&gt; ok</head>
+      <guard>
+        <subtype><typename>UpdateInterval</typename><string>UpdateInterval = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>UpdateInterval</anno>
+</spec>
+<spec>
+  <name>shouldPropagate</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>show</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>show(This, Show) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxUpdateUIEvent">wxUpdateUIEvent()</seealso></string></subtype>
+        <subtype><typename>Show</typename><string>Show = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Show</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>skip</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>skip</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>stopPropagation</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:59.</timestamp>
+</module>

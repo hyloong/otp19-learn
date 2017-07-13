@@ -1,6 +1,6 @@
 #!/bin/env escript
 %% -*- erlang -*-
-%%! -smp disable
+%%!
 
 %%
 %% %CopyrightBegin%
@@ -333,11 +333,11 @@ text(Line) ->
     text(Line, []).
 
 text("%ERTS-VSN%" ++ Cs, Acc) ->
-    text(Cs, ["8.3"|Acc]);
+    text(Cs, ["9.0"|Acc]);
 text("%OTP-VSN%" ++ Cs, Acc) ->
-    text(Cs, ["19.3"|Acc]);
+    text(Cs, ["20.0"|Acc]);
 text("%OTP-REL%" ++ Cs, Acc) ->
-    text(Cs, ["19"|Acc]);
+    text(Cs, ["20"|Acc]);
 
 text([$\\,C|Cs], Acc) ->
     text(Cs, [C|Acc]);
@@ -358,11 +358,11 @@ put_text(#state{c = CTag, emphasis = EmTag} = S, Line) ->
     put_text(S, Line, CTag, EmTag, []).
 
 put_text(S, "%ERTS-VSN%"++Cs, CTag, EmTag, Acc) ->
-    put_text(S, Cs, CTag, EmTag, ["8.3"|Acc]);
+    put_text(S, Cs, CTag, EmTag, ["9.0"|Acc]);
 put_text(S, "%OTP-VSN%"++Cs, CTag, EmTag, Acc) ->
-    put_text(S, Cs, CTag, EmTag, ["19.3"|Acc]);
+    put_text(S, Cs, CTag, EmTag, ["20.0"|Acc]);
 put_text(S, "%OTP-REL%"++Cs, CTag, EmTag, Acc) ->
-    put_text(S, Cs, CTag, EmTag, ["19"|Acc]);
+    put_text(S, Cs, CTag, EmTag, ["20"|Acc]);
 
 put_text(S, [$\\,C|Cs], no, EmTag, Acc) ->
     put_text(S, Cs, no, EmTag, [C|Acc]);
@@ -563,11 +563,11 @@ code(Line) ->
     code(Line, []).
 
 code("%ERTS-VSN%" ++ Cs, Acc) ->
-    code(Cs, ["8.3"|Acc]);
+    code(Cs, ["9.0"|Acc]);
 code("%OTP-VSN%" ++ Cs, Acc) ->
-    code(Cs, ["19.3"|Acc]);
+    code(Cs, ["20.0"|Acc]);
 code("%OTP-REL%" ++ Cs, Acc) ->
-    code(Cs, ["19"|Acc]);
+    code(Cs, ["20"|Acc]);
 
 code([$<|Cs], Acc) ->
     code(Cs, ["&lt;"|Acc]);

@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxSizerItem</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxSizerItem.xml</file></header>
+<module>wxSizerItem</module>
+<modulesummary>See external documentation: wxSizerItem.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html">wxSizerItem</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxSizerItem"/>wxSizerItem()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemwxsizeritem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Window, Flags) -&gt; <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso> | <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></v><v>Flags = <seealso marker="wxSizerFlags#type-wxSizerFlags">wxSizerFlags:wxSizerFlags()</seealso></v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemwxsizeritem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Width, Height, Flags) -&gt; <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Width = integer()</v><v>Height = integer()</v><v>Flags = <seealso marker="wxSizerFlags#type-wxSizerFlags">wxSizerFlags:wxSizerFlags()</seealso></v></type>
+<desc><marker id="new-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemwxsizeritem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Window, Proportion, Flag, Border, UserData) -&gt; <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso> | <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></v><v>Proportion = integer()</v><v>Flag = integer()</v><v>Border = integer()</v><v>UserData = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></v></type>
+<desc><marker id="new-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemwxsizeritem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Width, Height, Proportion, Flag, Border, UserData) -&gt; <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Width = integer()</v><v>Height = integer()</v><v>Proportion = integer()</v><v>Flag = integer()</v><v>Border = integer()</v><v>UserData = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></v></type>
+<desc><marker id="new-6"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemwxsizeritem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>calcMin(This) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v></type>
+<desc><marker id="calcMin-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemcalcmin">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>deleteWindows(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v></type>
+<desc><marker id="deleteWindows-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemdeletewindows">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>detachSizer(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v></type>
+<desc><marker id="detachSizer-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemdetachsizer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getBorder(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v></type>
+<desc><marker id="getBorder-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemgetborder">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFlag(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v></type>
+<desc><marker id="getFlag-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemgetflag">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMinSize(This) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v></type>
+<desc><marker id="getMinSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemgetminsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPosition(This) -&gt; {X::integer(), Y::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v></type>
+<desc><marker id="getPosition-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemgetposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getProportion(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v></type>
+<desc><marker id="getProportion-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemgetproportion">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getRatio(This) -&gt; number()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v></type>
+<desc><marker id="getRatio-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemgetratio">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getRect(This) -&gt; {X::integer(), Y::integer(), W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v></type>
+<desc><marker id="getRect-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemgetrect">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSize(This) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v></type>
+<desc><marker id="getSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemgetsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSizer(This) -&gt; <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v></type>
+<desc><marker id="getSizer-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemgetsizer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSpacer(This) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v></type>
+<desc><marker id="getSpacer-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemgetspacer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getUserData(This) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v></type>
+<desc><marker id="getUserData-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemgetuserdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getWindow(This) -&gt; <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v></type>
+<desc><marker id="getWindow-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemgetwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isSizer(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v></type>
+<desc><marker id="isSizer-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemissizer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isShown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v></type>
+<desc><marker id="isShown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemisshown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isSpacer(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v></type>
+<desc><marker id="isSpacer-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemisspacer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isWindow(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v></type>
+<desc><marker id="isWindow-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemiswindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setBorder(This, Border) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v><v>Border = integer()</v></type>
+<desc><marker id="setBorder-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemsetborder">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setDimension(This, Pos, Size) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v><v>Pos = {X::integer(), Y::integer()}</v><v>Size = {W::integer(), H::integer()}</v></type>
+<desc><marker id="setDimension-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemsetdimension">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFlag(This, Flag) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v><v>Flag = integer()</v></type>
+<desc><marker id="setFlag-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemsetflag">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setInitSize(This, X, Y) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="setInitSize-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemsetinitsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMinSize(This, Size) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v><v>Size = {W::integer(), H::integer()}</v></type>
+<desc><marker id="setMinSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemsetminsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMinSize(This, X, Y) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="setMinSize-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemsetminsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setProportion(This, Proportion) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v><v>Proportion = integer()</v></type>
+<desc><marker id="setProportion-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemsetproportion">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setRatio(This, Ratio) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v><v>Ratio = number()</v></type>
+<desc><marker id="setRatio-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemsetratio">external documentation</url>.
+  <br/> Also:<br/>
+  setRatio(This, Size) -&gt; 'ok' when<br/>
+  	This::wxSizerItem(), Size::{W::integer(), H::integer()}.<br/>
+ </p>
+</desc></func>
+<func>
+<name>setRatio(This, Width, Height) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v><v>Width = integer()</v><v>Height = integer()</v></type>
+<desc><marker id="setRatio-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemsetratio">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSizer(This, Sizer) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v><v>Sizer = <seealso marker="wxSizer#type-wxSizer">wxSizer:wxSizer()</seealso></v></type>
+<desc><marker id="setSizer-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemsetsizer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSpacer(This, Size) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v><v>Size = {W::integer(), H::integer()}</v></type>
+<desc><marker id="setSpacer-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemsetspacer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSpacer(This, Width, Height) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v><v>Width = integer()</v><v>Height = integer()</v></type>
+<desc><marker id="setSpacer-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemsetspacer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setWindow(This, Window) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v><v>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="setWindow-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemsetwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>show(This, Show) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxSizerItem">wxSizerItem()</seealso></v><v>Show = boolean()</v></type>
+<desc><marker id="show-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxsizeritem.html#wxsizeritemshow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxSizerItem">wxSizerItem()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

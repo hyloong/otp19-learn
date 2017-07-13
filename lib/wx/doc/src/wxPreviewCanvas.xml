@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxPreviewCanvas</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxPreviewCanvas.xml</file></header>
+<module>wxPreviewCanvas</module>
+<modulesummary>See external documentation: wxPreviewCanvas.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpreviewcanvas.html">wxPreviewCanvas</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxScrolledWindow">wxScrolledWindow</seealso>
+  <br/><seealso marker="wxPanel">wxPanel</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxPreviewCanvas"/>wxPreviewCanvas()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

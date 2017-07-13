@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxControlWithItems</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxControlWithItems.xml</file></header>
+<module>wxControlWithItems</module>
+<modulesummary>See external documentation: wxControlWithItems.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcontrolwithitems.html">wxControlWithItems</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxControl">wxControl</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxControlWithItems"/>wxControlWithItems()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>append(This, Item) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxControlWithItems">wxControlWithItems()</seealso></v><v>Item = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="append-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcontrolwithitems.html#wxcontrolwithitemsappend">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>append(This, Item, ClientData) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxControlWithItems">wxControlWithItems()</seealso></v><v>Item = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>ClientData = term()</v></type>
+<desc><marker id="append-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcontrolwithitems.html#wxcontrolwithitemsappend">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>appendStrings(This, Strings) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxControlWithItems">wxControlWithItems()</seealso></v><v>Strings = [<seealso marker="unicode#type-chardata">unicode:chardata()</seealso>]</v></type>
+<desc><marker id="appendStrings-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcontrolwithitems.html#wxcontrolwithitemsappend">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>clear(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxControlWithItems">wxControlWithItems()</seealso></v></type>
+<desc><marker id="clear-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcontrolwithitems.html#wxcontrolwithitemsclear">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>delete(This, N) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxControlWithItems">wxControlWithItems()</seealso></v><v>N = integer()</v></type>
+<desc><marker id="delete-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcontrolwithitems.html#wxcontrolwithitemsdelete">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>findString(This, S) -&gt; integer()</name>
+<fsummary>Equivalent to findString(This, S, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxControlWithItems">wxControlWithItems()</seealso></v><v>S = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="findString-2"/>
+<p>Equivalent to <seealso marker="#findString-3">findString(This, S, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>findString(This, S, Options::[Option]) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxControlWithItems">wxControlWithItems()</seealso></v><v>S = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {bCase, boolean()}</v></type>
+<desc><marker id="findString-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcontrolwithitems.html#wxcontrolwithitemsfindstring">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getClientData(This, N) -&gt; term()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxControlWithItems">wxControlWithItems()</seealso></v><v>N = integer()</v></type>
+<desc><marker id="getClientData-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcontrolwithitems.html#wxcontrolwithitemsgetclientobject">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setClientData(This, N, ClientData) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxControlWithItems">wxControlWithItems()</seealso></v><v>N = integer()</v><v>ClientData = term()</v></type>
+<desc><marker id="setClientData-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcontrolwithitems.html#wxcontrolwithitemssetclientobject">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCount(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxControlWithItems">wxControlWithItems()</seealso></v></type>
+<desc><marker id="getCount-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcontrolwithitems.html#wxcontrolwithitemsgetcount">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSelection(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxControlWithItems">wxControlWithItems()</seealso></v></type>
+<desc><marker id="getSelection-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcontrolwithitems.html#wxcontrolwithitemsgetselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getString(This, N) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxControlWithItems">wxControlWithItems()</seealso></v><v>N = integer()</v></type>
+<desc><marker id="getString-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcontrolwithitems.html#wxcontrolwithitemsgetstring">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getStringSelection(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxControlWithItems">wxControlWithItems()</seealso></v></type>
+<desc><marker id="getStringSelection-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcontrolwithitems.html#wxcontrolwithitemsgetstringselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>insert(This, Item, Pos) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxControlWithItems">wxControlWithItems()</seealso></v><v>Item = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Pos = integer()</v></type>
+<desc><marker id="insert-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcontrolwithitems.html#wxcontrolwithitemsinsert">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>insert(This, Item, Pos, ClientData) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxControlWithItems">wxControlWithItems()</seealso></v><v>Item = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Pos = integer()</v><v>ClientData = term()</v></type>
+<desc><marker id="insert-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcontrolwithitems.html#wxcontrolwithitemsinsert">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isEmpty(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxControlWithItems">wxControlWithItems()</seealso></v></type>
+<desc><marker id="isEmpty-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcontrolwithitems.html#wxcontrolwithitemsisempty">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>select(This, N) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxControlWithItems">wxControlWithItems()</seealso></v><v>N = integer()</v></type>
+<desc><marker id="select-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcontrolwithitems.html#wxcontrolwithitemsselect">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSelection(This, N) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxControlWithItems">wxControlWithItems()</seealso></v><v>N = integer()</v></type>
+<desc><marker id="setSelection-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcontrolwithitems.html#wxcontrolwithitemssetselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setString(This, N, S) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxControlWithItems">wxControlWithItems()</seealso></v><v>N = integer()</v><v>S = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setString-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcontrolwithitems.html#wxcontrolwithitemssetstring">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setStringSelection(This, S) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxControlWithItems">wxControlWithItems()</seealso></v><v>S = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setStringSelection-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxcontrolwithitems.html#wxcontrolwithitemssetstringselection">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

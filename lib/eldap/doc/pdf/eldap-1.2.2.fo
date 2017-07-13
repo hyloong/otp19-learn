@@ -1,0 +1,507 @@
+<?xml version="1.0"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="cover" margin="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin="0mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="left-page" margin-top="25mm" margin-bottom="15mm" margin-left="20mm" margin-right="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="left-header" extent="10mm"/>
+      <fo:region-after region-name="left-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="right-page" margin-top="25mm" margin-bottom="15mm" margin-left="25mm" margin-right="20mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="right-header" extent="10mm"/>
+      <fo:region-after region-name="right-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:page-sequence-master master-name="document">
+      <fo:repeatable-page-master-alternatives>
+        <fo:conditional-page-master-reference master-reference="left-page" odd-or-even="even"/>
+        <fo:conditional-page-master-reference master-reference="right-page" odd-or-even="odd"/>
+      </fo:repeatable-page-master-alternatives>
+    </fo:page-sequence-master>
+  </fo:layout-master-set>
+  <fo:bookmark-tree>
+    <fo:bookmark internal-destination="cover-page" starting-state="show">
+      <fo:bookmark-title>eldap</fo:bookmark-title>
+      <fo:bookmark internal-destination="idp343088" starting-state="hide">
+        <fo:bookmark-title>Eldap User's Guide</fo:bookmark-title>
+      </fo:bookmark>
+      <fo:bookmark internal-destination="idp105824" starting-state="hide">
+        <fo:bookmark-title>Reference Manual</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp661344" starting-state="hide">
+          <fo:bookmark-title>eldap</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp632496" starting-state="hide">
+            <fo:bookmark-title>open/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp629184" starting-state="hide">
+            <fo:bookmark-title>open/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp621424" starting-state="hide">
+            <fo:bookmark-title>close/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp617424" starting-state="hide">
+            <fo:bookmark-title>start_tls/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp615168" starting-state="hide">
+            <fo:bookmark-title>start_tls/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp447200" starting-state="hide">
+            <fo:bookmark-title>simple_bind/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp442736" starting-state="hide">
+            <fo:bookmark-title>add/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp438400" starting-state="hide">
+            <fo:bookmark-title>delete/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp434720" starting-state="hide">
+            <fo:bookmark-title>mod_add/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp431424" starting-state="hide">
+            <fo:bookmark-title>mod_delete/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp428112" starting-state="hide">
+            <fo:bookmark-title>mod_replace/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp424816" starting-state="hide">
+            <fo:bookmark-title>modify/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp309008" starting-state="hide">
+            <fo:bookmark-title>modify_password/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp304816" starting-state="hide">
+            <fo:bookmark-title>modify_password/4</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp295952" starting-state="hide">
+            <fo:bookmark-title>modify_dn/5</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp500736" starting-state="hide">
+            <fo:bookmark-title>search/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp493376" starting-state="hide">
+            <fo:bookmark-title>baseObject/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp491680" starting-state="hide">
+            <fo:bookmark-title>singleLevel/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp489648" starting-state="hide">
+            <fo:bookmark-title>wholeSubtree/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp15920" starting-state="hide">
+            <fo:bookmark-title>neverDerefAliases/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp13504" starting-state="hide">
+            <fo:bookmark-title>derefAlways/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp11888" starting-state="hide">
+            <fo:bookmark-title>derefInSearching/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp10064" starting-state="hide">
+            <fo:bookmark-title>derefFindingBaseObj/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp7792" starting-state="hide">
+            <fo:bookmark-title>present/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp4528" starting-state="hide">
+            <fo:bookmark-title>substrings/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp474112" starting-state="hide">
+            <fo:bookmark-title>equalityMatch/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp470176" starting-state="hide">
+            <fo:bookmark-title>greaterOrEqual/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp464288" starting-state="hide">
+            <fo:bookmark-title>lessOrEqual/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp462432" starting-state="hide">
+            <fo:bookmark-title>approxMatch/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp126256" starting-state="hide">
+            <fo:bookmark-title>extensibleMatch/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp459664" starting-state="hide">
+            <fo:bookmark-title>'and'/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp479568" starting-state="hide">
+            <fo:bookmark-title>'or'/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp461088" starting-state="hide">
+            <fo:bookmark-title>'not'/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+    </fo:bookmark>
+  </fo:bookmark-tree>
+  <fo:page-sequence font-family="sans-serif" force-page-count="even" master-reference="cover" font-size="10pt">
+    <fo:flow flow-name="xsl-region-body">
+      <fo:block space-before="130mm" space-before.conditionality="retain" text-align="end">
+        <fo:external-graphic src="/root/download/otp_src_20.0/bootstrap/lib/erl_docgen/priv/images/erlang-logo.gif"/>
+      </fo:block>
+      <fo:block id="cover-page" border-before-style="solid" border-before-width="10pt" border-color="#960003" font-size="2.3em" padding-before="0.5em" text-align="end">eldap</fo:block>
+      <fo:block font-size="0.9em" text-align="end">Copyright © 2012-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em" text-align="end">eldap 1.2.2</fo:block>
+      <fo:block font-size="0.9em" text-align="end">July 12, 2017</fo:block>
+      <fo:block padding-before="2.5em" font-size="1.33em" font-weight="bold" color="#C00" text-align="end"/>
+      <fo:block break-before="page" border-before-style="solid" border-before-width="1pt" border-color="#960003" font-weight="bold" padding-before="0.5em" space-before="200mm" space-before.conditionality="retain">Copyright © 2012-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em">
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+ 
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+    
+    Ericsson AB. All Rights Reserved..
+        </fo:block>
+      <fo:block font-size="0.9em" font-weight="bold" space-before="2em">July 12, 2017</fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+  <fo:page-sequence font-family="serif" master-reference="document" initial-page-number="1" font-size="10pt">
+    <fo:static-content flow-name="left-header">
+      <fo:block text-align="start" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-header">
+      <fo:block text-align="end" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="left-footer">
+      <fo:block text-align="start" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold"><fo:page-number/> | Ericsson AB. All Rights Reserved.:
+            eldap</fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-footer">
+      <fo:block text-align="end" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">Ericsson AB. All Rights Reserved.:
+            eldap | <fo:page-number/></fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body"><fo:block/><fo:block id="idp343088" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">1   
+      Eldap User's Guide</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-weight="bold">Eldap</fo:inline> application provides an api for accessing an LDAP server.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The original code was developed by Torbjörn Törnkvist.</fo:block>
+  <fo:block id="idp105824" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">2   
+      Reference Manual</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-weight="bold">Eldap</fo:inline> application provides an api for accessing an LDAP server.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The original code was developed by Torbjörn Törnkvist.</fo:block>
+  <fo:block page-break-before="always" id="idp661344" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">eldap</fo:marker>eldap</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  eldap
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This module provides a client api to the Lightweight Directory Access Protocol (LDAP).
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">References:</fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">RFC 4510 - RFC 4519</fo:block> </fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">RFC 2830</fo:block> </fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The above publications can be found at <fo:inline font-weight="bold"><fo:basic-link external-destination="href">IETF</fo:basic-link></fo:inline>.
+    </fo:block>
+  
+
+  <fo:block id="idp655440" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">DATA TYPES</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Type definitions that are used more than once in this module:
+    </fo:block>
+    <fo:block space-after="0.25em" space-before="0.25em">
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">handle()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Connection handle</fo:block></fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">attribute() =</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">{Type = string(), Values=[string()]}</fo:inline></fo:block></fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">modify_op()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">See 
+        <fo:inline font-style="italic">mod_add/2</fo:inline>, 
+        <fo:inline font-style="italic">mod_delete/2</fo:inline>,
+        <fo:inline font-style="italic">mod_replace/2</fo:inline>
+      </fo:block></fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">scope()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">See 
+        <fo:inline font-style="italic">baseObject/0</fo:inline>, 
+        <fo:inline font-style="italic">singleLevel/0</fo:inline>, 
+        <fo:inline font-style="italic">wholeSubtree/0</fo:inline>
+      </fo:block></fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">dereference()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">See 
+        <fo:inline font-style="italic">neverDerefAliases/0</fo:inline>, 
+        <fo:inline font-style="italic">derefInSearching/0</fo:inline>, 
+        <fo:inline font-style="italic">derefFindingBaseObj/0</fo:inline>, 
+        <fo:inline font-style="italic">derefAlways/0</fo:inline>
+      </fo:block></fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">filter()</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">See 
+        <fo:inline font-style="italic">present/1</fo:inline>, 
+        <fo:inline font-style="italic">substrings/2</fo:inline>, 
+        <fo:inline font-style="italic">equalityMatch/2</fo:inline>, 
+        <fo:inline font-style="italic">greaterOrEqual/2</fo:inline>, 
+        <fo:inline font-style="italic">lessOrEqual/2</fo:inline>, 
+        <fo:inline font-style="italic">approxMatch/2</fo:inline>, 
+        <fo:inline font-style="italic">extensibleMatch/2</fo:inline>, 
+        <fo:inline font-style="italic">'and'/1</fo:inline>, 
+        <fo:inline font-style="italic">'or'/1</fo:inline>, 
+        <fo:inline font-style="italic">'not'/1</fo:inline>
+      </fo:block></fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">return_value() = </fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">ok | {ok, {referral,referrals()}} | {error,Error}</fo:inline>
+      </fo:block></fo:block></fo:block-container>
+
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">referrals() =</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">[Address = string()]</fo:inline> The contents of <fo:inline font-family="monospace">Address</fo:inline> is server dependent.
+      </fo:block></fo:block></fo:block-container>
+
+    </fo:block>
+  
+
+
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp632496">open([Host]) -&gt; {ok, Handle} | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Handle = handle()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Setup a connection to an LDAP server, the <fo:inline font-family="monospace">HOST</fo:inline>'s are tried in order. </fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp629184">open([Host], [Option]) -&gt; {ok, Handle} | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Handle = handle()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Option = {port, integer()} | {log, function()} | {timeout, integer()} | {ssl, boolean()} | {sslopts, list()} | {tcpopts, list()}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Setup a connection to an LDAP server, the <fo:inline font-family="monospace">HOST</fo:inline>'s are tried in order.</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The log function takes three arguments, <fo:inline font-family="monospace">fun(Level, FormatString, [FormatArg]) end</fo:inline>.</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Timeout set the maximum time in milliseconds that each server request may take.</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">All TCP socket options are accepted except 
+	  <fo:inline font-family="monospace">active</fo:inline>, <fo:inline font-family="monospace">binary</fo:inline>, <fo:inline font-family="monospace">deliver</fo:inline>, <fo:inline font-family="monospace">list</fo:inline>, <fo:inline font-family="monospace">mode</fo:inline> and <fo:inline font-family="monospace">packet</fo:inline>
+	</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp621424">close(Handle) -&gt; ok</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Handle = handle()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Shutdown the connection after sending an unbindRequest to the server. If the connection is tls the connection
+	will be closed with <fo:inline font-family="monospace">ssl:close/1</fo:inline>, otherwise with <fo:inline font-family="monospace">gen_tcp:close/1</fo:inline>.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp617424">start_tls(Handle, Options) -&gt; return_value()</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Same as start_tls(Handle, Options, infinity)</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp615168">start_tls(Handle, Options, Timeout) -&gt; return_value()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Handle = handle()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Options = ssl:ssl_options()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Timeout = infinity | positive_integer()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Upgrade the connection associated with <fo:inline font-family="monospace">Handle</fo:inline> to a tls connection if possible.</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The upgrade is done in two phases: first the server is asked for permission to upgrade. Second, if the request is acknowledged, the upgrade to tls is performed.</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Error responses from phase one will not affect the current encryption state of the connection. Those responses are:</fo:block>
+	<fo:block space-after="0.25em" space-before="0.25em">
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">tls_already_started</fo:inline></fo:block>
+	  <fo:block-container><fo:block start-indent="2em">The connection is already encrypted.  The connection is not affected.</fo:block></fo:block-container>
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{response,ResponseFromServer}</fo:inline></fo:block>
+	  <fo:block-container><fo:block start-indent="2em">The upgrade was refused by the LDAP server.  The <fo:inline font-family="monospace">ResponseFromServer</fo:inline> is an atom delivered byt the LDAP server explained in section 2.3 of rfc 2830. The connection is not affected, so it is still un-encrypted.</fo:block></fo:block-container>
+	</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Errors in the second phase will however end the connection:</fo:block>
+	<fo:block space-after="0.25em" space-before="0.25em">
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">Error</fo:inline></fo:block>
+	  <fo:block-container><fo:block start-indent="2em">Any error responded from ssl:connect/3</fo:block></fo:block-container>
+	</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-family="monospace">Timeout</fo:inline> parameter is for the actual tls upgrade (phase 2) while the timeout in
+	<fo:inline font-style="italic">eldap:open/2</fo:inline> is used for the initial negotiation about
+	upgrade (phase 1).
+	</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp447200">simple_bind(Handle, Dn, Password) -&gt; return_value()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Handle = handle()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Dn = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Password = string()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Authenticate the connection using simple authentication.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp442736">add(Handle, Dn, [Attribute]) -&gt; return_value()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Handle = handle()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Dn = string()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Attribute = attribute()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"> Add an entry. The entry must not exist.</fo:block>
+	<fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+  add(Handle,
+      "cn=Bill Valentine, ou=people, o=Example Org, dc=example, dc=com",
+       [{"objectclass", ["person"]},
+        {"cn", ["Bill Valentine"]},
+        {"sn", ["Valentine"]},
+        {"telephoneNumber", ["545 555 00"]}]
+     )
+	</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp438400">delete(Handle, Dn) -&gt; return_value()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Dn = string()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"> Delete an entry.</fo:block>
+	<fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+  delete(Handle, "cn=Bill Valentine, ou=people, o=Example Org, dc=example, dc=com")
+	</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp434720">mod_add(Type, [Value]) -&gt; modify_op()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Value = string()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"> Create an add modification operation.</fo:block> </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp431424">mod_delete(Type, [Value]) -&gt; modify_op()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Value = string()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"> Create a delete modification operation.</fo:block> </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp428112">mod_replace(Type, [Value]) -&gt; modify_op()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Value = string()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"> Create a replace modification operation.</fo:block> </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp424816">modify(Handle, Dn, [ModifyOp]) -&gt; return_value()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Dn = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ModifyOp = modify_op()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"> Modify an entry.</fo:block>
+	<fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+  modify(Handle, "cn=Bill Valentine, ou=people, o=Example Org, dc=example, dc=com",
+         [eldap:mod_replace("telephoneNumber", ["555 555 00"]),
+	  eldap:mod_add("description", ["LDAP Hacker"]) ])
+	</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp309008">modify_password(Handle, Dn, NewPasswd) -&gt; return_value() | {ok, GenPasswd}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Dn = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">NewPasswd = string()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Modify the password of a user. See <fo:inline font-style="italic">modify_password/4</fo:inline>.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp304816">modify_password(Handle, Dn, NewPasswd, OldPasswd) -&gt; return_value() | {ok, GenPasswd}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Dn = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">NewPasswd = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">OldPasswd = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">GenPasswd = string()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Modify the password of a user.</fo:block>
+        <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">Dn</fo:inline>. The user to modify. Should be "" if the
+            modify request is for the user of the LDAP session.</fo:block>
+          </fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">NewPasswd</fo:inline>. The new password to set. Should be ""
+            if the server is to generate the password. In this case,
+            the result will be <fo:inline font-family="monospace">{ok, GenPasswd}</fo:inline>.</fo:block>
+          </fo:block></fo:list-item-body></fo:list-item>
+          <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">OldPasswd</fo:inline>. Sometimes required by server policy
+            for a user to change their password. If not required, use
+            <fo:inline font-style="italic">modify_password/3</fo:inline>.</fo:block>
+          </fo:block></fo:list-item-body></fo:list-item>
+        </fo:list-block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp295952">modify_dn(Handle, Dn, NewRDN, DeleteOldRDN, NewSupDN) -&gt; return_value()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Dn = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">NewRDN = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">DeleteOldRDN = boolean()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">NewSupDN = string()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"> Modify the DN of an entry. <fo:inline font-family="monospace">DeleteOldRDN</fo:inline> indicates
+	whether the current RDN should be removed from the attribute list after the after operation.
+	<fo:inline font-family="monospace">NewSupDN</fo:inline> is the new parent that the RDN shall be moved to.  If the old parent should
+	remain as parent, <fo:inline font-family="monospace">NewSupDN</fo:inline> shall be "".</fo:block>
+	<fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+  modify_dn(Handle, "cn=Bill Valentine, ou=people, o=Example Org, dc=example, dc=com ",
+            "cn=Bill Jr Valentine", true, "")
+	</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp500736">search(Handle, SearchOptions) -&gt; {ok, #eldap_search_result{}} | {ok, {referral,referrals()}} | {error, Reason}</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">SearchOptions = #eldap_search{} | [SearchOption]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">SearchOption = {base, string()} | {filter, filter()} | {scope, scope()}
+	| {attributes, [string()]} | {deref, dereference()} |
+	| {types_only, boolean()} | {timeout, integer()}
+	</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Search the directory with the supplied the SearchOptions.
+	The base and filter options must be supplied.
+	Default values: scope is <fo:inline font-family="monospace">wholeSubtree()</fo:inline>, deref is <fo:inline font-family="monospace">derefAlways()</fo:inline>,
+	types_only is <fo:inline font-family="monospace">false</fo:inline> and timeout is <fo:inline font-family="monospace">0</fo:inline> (meaning infinity).
+	</fo:block>
+	<fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+  Filter = eldap:substrings("cn", [{any,"V"}]),
+  search(Handle, [{base, "dc=example, dc=com"}, {filter, Filter}, {attributes, ["cn"]}]),
+	</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-family="monospace">timeout</fo:inline> option in the <fo:inline font-family="monospace">SearchOptions</fo:inline> is for the ldap server, while
+	the timeout in <fo:inline font-style="italic">eldap:open/2</fo:inline> is used for each
+	individual request in the search operation.
+	</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp493376">baseObject() -&gt; scope()</fo:block></fo:block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"> Search baseobject only.</fo:block> </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp491680">singleLevel() -&gt; scope()</fo:block></fo:block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"> Search the specified level only, i.e. do not recurse.</fo:block> </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp489648">wholeSubtree() -&gt; scope()</fo:block></fo:block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"> Search the entire subtree.</fo:block> </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp15920">neverDerefAliases() -&gt; dereference()</fo:block></fo:block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Never derefrence aliases, treat aliases as entries.</fo:block> </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp13504">derefAlways() -&gt; dereference()</fo:block></fo:block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Always derefrence aliases.</fo:block> </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp11888">derefInSearching() -&gt; dereference()</fo:block></fo:block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Derefrence aliases only when searching.</fo:block> </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp10064">derefFindingBaseObj() -&gt; dereference()</fo:block></fo:block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Derefrence aliases only in finding the base.</fo:block> </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp7792">present(Type) -&gt; filter()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = string()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Create a filter which filters on attribute type presence.</fo:block> </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp4528">substrings(Type, [SubString]) -&gt; filter()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = string()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">SubString = {StringPart, string()}</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">StringPart = initial | any | final</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Create a filter which filters on substrings.</fo:block> </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp474112">equalityMatch(Type, Value) -&gt; filter()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = string()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Value = string()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Create a equality filter.</fo:block> </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp470176">greaterOrEqual(Type, Value) -&gt; filter()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = string()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Value = string()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Create a greater or equal filter.</fo:block> </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp464288">lessOrEqual(Type, Value) -&gt; filter()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = string()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Value = string()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Create a less or equal filter.</fo:block> </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp462432">approxMatch(Type, Value) -&gt; filter()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Type = string()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Value = string()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Create a approximation match filter.</fo:block> </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp126256">extensibleMatch(MatchValue, OptionalAttrs) -&gt; filter()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">MatchValue = string()</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">OptionalAttrs = [Attr]</fo:block></fo:list-item-body></fo:list-item>
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Attr = {matchingRule,string()} | {type,string()} | {dnAttributes,boolean()}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Creates an extensible match filter. For example, </fo:block>
+      <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+  eldap:extensibleMatch("Bar", [{type,"sn"}, {matchingRule,"caseExactMatch"}]))
+      </fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">creates a filter which performs a <fo:inline font-family="monospace">caseExactMatch</fo:inline> on the attribute <fo:inline font-family="monospace">sn</fo:inline> and matches with the value <fo:inline font-family="monospace">"Bar"</fo:inline>. The default value of <fo:inline font-family="monospace">dnAttributes</fo:inline> is <fo:inline font-family="monospace">false</fo:inline>.</fo:block> </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp459664">'and'([Filter]) -&gt; filter()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Filter = filter()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Creates a filter where all <fo:inline font-family="monospace">Filter</fo:inline> must be true.</fo:block> </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp479568">'or'([Filter]) -&gt; filter()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Filter = filter()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Create a filter where at least one of the <fo:inline font-family="monospace">Filter</fo:inline> must be true.</fo:block> </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp461088">'not'(Filter) -&gt; filter()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Filter = filter()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block> <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Negate a filter.</fo:block> </fo:block>
+
+  
+
+</fo:flow>
+  </fo:page-sequence>
+</fo:root>

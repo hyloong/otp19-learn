@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxAuiNotebook</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxAuiNotebook.xml</file></header>
+<module>wxAuiNotebook</module>
+<modulesummary>See external documentation: wxAuiNotebook.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html">wxAuiNotebook</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxControl">wxControl</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxAuiNotebook"/>wxAuiNotebook()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html#wxauinotebookwxauinotebook">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent) -&gt; <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></name>
+<fsummary>Equivalent to new(Parent, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="new-1"/>
+<p>Equivalent to <seealso marker="#new-2">new(Parent, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Options::[Option]) -&gt; <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {id, integer()} | {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()}</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html#wxauinotebookwxauinotebook">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addPage(This, Page, Caption) -&gt; boolean()</name>
+<fsummary>Equivalent to addPage(This, Page, Caption, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v><v>Page = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Caption = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="addPage-3"/>
+<p>Equivalent to <seealso marker="#addPage-4">addPage(This, Page, Caption, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>addPage(This, Page, Caption, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v><v>Page = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Caption = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {select, boolean()} | {bitmap, <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso>}</v></type>
+<desc><marker id="addPage-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html#wxauinotebookaddpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent) -&gt; boolean()</name>
+<fsummary>Equivalent to create(This, Parent, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="create-2"/>
+<p>Equivalent to <seealso marker="#create-3">create(This, Parent, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {id, integer()} | {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()}</v></type>
+<desc><marker id="create-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html#wxauinotebookcreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>deletePage(This, Page) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v><v>Page = integer()</v></type>
+<desc><marker id="deletePage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html#wxauinotebookdeletepage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getArtProvider(This) -&gt; <seealso marker="wxAuiTabArt#type-wxAuiTabArt">wxAuiTabArt:wxAuiTabArt()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v></type>
+<desc><marker id="getArtProvider-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html#wxauinotebookgetartprovider">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPage(This, Page_idx) -&gt; <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v><v>Page_idx = integer()</v></type>
+<desc><marker id="getPage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html#wxauinotebookgetpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPageBitmap(This, Page_idx) -&gt; <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v><v>Page_idx = integer()</v></type>
+<desc><marker id="getPageBitmap-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html#wxauinotebookgetpagebitmap">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPageCount(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v></type>
+<desc><marker id="getPageCount-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html#wxauinotebookgetpagecount">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPageIndex(This, Page_wnd) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v><v>Page_wnd = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="getPageIndex-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html#wxauinotebookgetpageindex">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPageText(This, Page_idx) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v><v>Page_idx = integer()</v></type>
+<desc><marker id="getPageText-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html#wxauinotebookgetpagetext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSelection(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v></type>
+<desc><marker id="getSelection-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html#wxauinotebookgetselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>insertPage(This, Page_idx, Page, Caption) -&gt; boolean()</name>
+<fsummary>Equivalent to insertPage(This, Page_idx, Page, Caption, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v><v>Page_idx = integer()</v><v>Page = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Caption = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="insertPage-4"/>
+<p>Equivalent to <seealso marker="#insertPage-5">insertPage(This, Page_idx, Page, Caption, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>insertPage(This, Page_idx, Page, Caption, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v><v>Page_idx = integer()</v><v>Page = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Caption = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {select, boolean()} | {bitmap, <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso>}</v></type>
+<desc><marker id="insertPage-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html#wxauinotebookinsertpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>removePage(This, Page) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v><v>Page = integer()</v></type>
+<desc><marker id="removePage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html#wxauinotebookremovepage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setArtProvider(This, Art) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v><v>Art = <seealso marker="wxAuiTabArt#type-wxAuiTabArt">wxAuiTabArt:wxAuiTabArt()</seealso></v></type>
+<desc><marker id="setArtProvider-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html#wxauinotebooksetartprovider">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFont(This, Font) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v><v>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v></type>
+<desc><marker id="setFont-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html#wxauinotebooksetfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setPageBitmap(This, Page, Bitmap) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v><v>Page = integer()</v><v>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v></type>
+<desc><marker id="setPageBitmap-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html#wxauinotebooksetpagebitmap">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setPageText(This, Page, Text) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v><v>Page = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setPageText-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html#wxauinotebooksetpagetext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSelection(This, New_page) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v><v>New_page = integer()</v></type>
+<desc><marker id="setSelection-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html#wxauinotebooksetselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setTabCtrlHeight(This, Height) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v><v>Height = integer()</v></type>
+<desc><marker id="setTabCtrlHeight-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html#wxauinotebooksettabctrlheight">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setUniformBitmapSize(This, Size) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso></v><v>Size = {W::integer(), H::integer()}</v></type>
+<desc><marker id="setUniformBitmapSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauinotebook.html#wxauinotebooksetuniformbitmapsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

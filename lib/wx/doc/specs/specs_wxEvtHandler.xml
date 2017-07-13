@@ -1,0 +1,742 @@
+<module name="wxEvtHandler">
+<type>
+  <name>event</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-event">event()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxActivate">wxActivate()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxAuiManager">wxAuiManager()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxAuiNotebook">wxAuiNotebook()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxCalendar">wxCalendar()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxChildFocus">wxChildFocus()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxClipboardText">wxClipboardText()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxClose">wxClose()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxColourPicker">wxColourPicker()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxCommand">wxCommand()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxContextMenu">wxContextMenu()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxDate">wxDate()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxDisplayChanged">wxDisplayChanged()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxDropFiles">wxDropFiles()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxErase">wxErase()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxFileDirPicker">wxFileDirPicker()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxFocus">wxFocus()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxFontPicker">wxFontPicker()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxGrid">wxGrid()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxHelp">wxHelp()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxHtmlLink">wxHtmlLink()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxIconize">wxIconize()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxIdle">wxIdle()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxInitDialog">wxInitDialog()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxJoystick">wxJoystick()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxKey">wxKey()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxList">wxList()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxMaximize">wxMaximize()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxMenu">wxMenu()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxMouse">wxMouse()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxMouseCaptureChanged">wxMouseCaptureChanged()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxMouseCaptureLost">wxMouseCaptureLost()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxMove">wxMove()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxNavigationKey">wxNavigationKey()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxNotebook">wxNotebook()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxPaint">wxPaint()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxPaletteChanged">wxPaletteChanged()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxQueryNewPalette">wxQueryNewPalette()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxSash">wxSash()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxScroll">wxScroll()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxScrollWin">wxScrollWin()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxSetCursor">wxSetCursor()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxShow">wxShow()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxSize">wxSize()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxSpin">wxSpin()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxSplitter">wxSplitter()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxStyledText">wxStyledText()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxSysColourChanged">wxSysColourChanged()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxTaskBarIcon">wxTaskBarIcon()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxTree">wxTree()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxUpdateUI">wxUpdateUI()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxWindowCreate">wxWindowCreate()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxWindowDestroy">wxWindowDestroy()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>wx</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wx">wx()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wx{id = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>obj = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>userData = term(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>event = <seealso marker="#type-event">event()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxActivate</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxActivate">wxActivate()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxActivate{type = <seealso marker="#type-wxActivateEventType">wxActivateEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>active = boolean()}</typehead></typedecl>
+</type>
+<type>
+  <name>wxActivateEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxActivateEventType">wxActivateEventType()</marker> = activate | activate_app | hibernate</typehead></typedecl>
+</type>
+<type>
+  <name>wxAuiManager</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxAuiManager">wxAuiManager()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxAuiManager{type = <seealso marker="#type-wxAuiManagerEventType">wxAuiManagerEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>manager = <seealso marker="wxAuiManager#type-wxAuiManager">wxAuiManager:wxAuiManager()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>pane = <seealso marker="wxAuiPaneInfo#type-wxAuiPaneInfo">wxAuiPaneInfo:wxAuiPaneInfo()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>button = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>veto_flag = boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>canveto_flag = boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>dc = <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxAuiManagerEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxAuiManagerEventType">wxAuiManagerEventType()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>aui_pane_button |<br/><nbsp/><nbsp/><nbsp/><nbsp/>aui_pane_close |<br/><nbsp/><nbsp/><nbsp/><nbsp/>aui_pane_maximize |<br/><nbsp/><nbsp/><nbsp/><nbsp/>aui_pane_restore |<br/><nbsp/><nbsp/><nbsp/><nbsp/>aui_pane_activated |<br/><nbsp/><nbsp/><nbsp/><nbsp/>aui_render |<br/><nbsp/><nbsp/><nbsp/><nbsp/>aui_find_manager</typehead></typedecl>
+</type>
+<type>
+  <name>wxAuiNotebook</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxAuiNotebook">wxAuiNotebook()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxAuiNotebook{type = <seealso marker="#type-wxAuiNotebookEventType">wxAuiNotebookEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>old_selection = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>selection = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>drag_source = <seealso marker="wxAuiNotebook#type-wxAuiNotebook">wxAuiNotebook:wxAuiNotebook()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxAuiNotebookEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxAuiNotebookEventType">wxAuiNotebookEventType()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>command_auinotebook_page_close |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_auinotebook_page_changed |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_auinotebook_page_changing |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_auinotebook_button |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_auinotebook_begin_drag |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_auinotebook_end_drag |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_auinotebook_drag_motion |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_auinotebook_allow_dnd |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_auinotebook_tab_middle_down |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_auinotebook_tab_middle_up |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_auinotebook_tab_right_down |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_auinotebook_tab_right_up |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_auinotebook_page_closed |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_auinotebook_drag_done |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_auinotebook_bg_dclick</typehead></typedecl>
+</type>
+<type>
+  <name>wxCalendar</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxCalendar">wxCalendar()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxCalendar{type = <seealso marker="#type-wxCalendarEventType">wxCalendarEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>wday = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>date = <seealso marker="wx#type-wx_datetime">wx:wx_datetime()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxCalendarEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxCalendarEventType">wxCalendarEventType()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>calendar_sel_changed |<br/><nbsp/><nbsp/><nbsp/><nbsp/>calendar_day_changed |<br/><nbsp/><nbsp/><nbsp/><nbsp/>calendar_month_changed |<br/><nbsp/><nbsp/><nbsp/><nbsp/>calendar_year_changed |<br/><nbsp/><nbsp/><nbsp/><nbsp/>calendar_doubleclicked |<br/><nbsp/><nbsp/><nbsp/><nbsp/>calendar_weekday_clicked</typehead></typedecl>
+</type>
+<type>
+  <name>wxChildFocus</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxChildFocus">wxChildFocus()</marker> = #wxChildFocus{type = <seealso marker="#type-wxChildFocusEventType">wxChildFocusEventType()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxChildFocusEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxChildFocusEventType">wxChildFocusEventType()</marker> = child_focus</typehead></typedecl>
+</type>
+<type>
+  <name>wxClipboardText</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxClipboardText">wxClipboardText()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxClipboardText{type = <seealso marker="#type-wxClipboardTextEventType">wxClipboardTextEventType()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxClipboardTextEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxClipboardTextEventType">wxClipboardTextEventType()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>command_text_copy | command_text_cut | command_text_paste</typehead></typedecl>
+</type>
+<type>
+  <name>wxClose</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxClose">wxClose()</marker> = #wxClose{type = <seealso marker="#type-wxCloseEventType">wxCloseEventType()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxCloseEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxCloseEventType">wxCloseEventType()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>close_window | end_session | query_end_session</typehead></typedecl>
+</type>
+<type>
+  <name>wxColourPicker</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxColourPicker">wxColourPicker()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxColourPicker{type = <seealso marker="#type-wxColourPickerEventType">wxColourPickerEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxColourPickerEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxColourPickerEventType">wxColourPickerEventType()</marker> = command_colourpicker_changed</typehead></typedecl>
+</type>
+<type>
+  <name>wxCommand</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxCommand">wxCommand()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxCommand{type = <seealso marker="#type-wxCommandEventType">wxCommandEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>cmdString = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>commandInt = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>extraLong = integer()}</typehead></typedecl>
+</type>
+<type>
+  <name>wxCommandEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxCommandEventType">wxCommandEventType()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>command_button_clicked |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_checkbox_clicked |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_choice_selected |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_listbox_selected |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_listbox_doubleclicked |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_text_updated |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_text_enter |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_menu_selected |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_slider_updated |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_radiobox_selected |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_radiobutton_selected |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_scrollbar_updated |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_vlbox_selected |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_combobox_selected |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tool_rclicked |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tool_enter |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_checklistbox_toggled |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_togglebutton_clicked |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_left_click |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_left_dclick |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_right_click |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_set_focus |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_kill_focus |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_enter</typehead></typedecl>
+</type>
+<type>
+  <name>wxContextMenu</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxContextMenu">wxContextMenu()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxContextMenu{type = <seealso marker="#type-wxContextMenuEventType">wxContextMenuEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>pos = {X :: integer(), Y :: integer()}}</typehead></typedecl>
+  <anno>X</anno>
+  <anno>Y</anno>
+</type>
+<type>
+  <name>wxContextMenuEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxContextMenuEventType">wxContextMenuEventType()</marker> = context_menu</typehead></typedecl>
+</type>
+<type>
+  <name>wxDate</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxDate">wxDate()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxDate{type = <seealso marker="#type-wxDateEventType">wxDateEventType()</seealso>, date = <seealso marker="wx#type-wx_datetime">wx:wx_datetime()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxDateEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxDateEventType">wxDateEventType()</marker> = date_changed</typehead></typedecl>
+</type>
+<type>
+  <name>wxDisplayChanged</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxDisplayChanged">wxDisplayChanged()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxDisplayChanged{type = <seealso marker="#type-wxDisplayChangedEventType">wxDisplayChangedEventType()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxDisplayChangedEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxDisplayChangedEventType">wxDisplayChangedEventType()</marker> = display_changed</typehead></typedecl>
+</type>
+<type>
+  <name>wxDropFiles</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxDropFiles">wxDropFiles()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxDropFiles{type = <seealso marker="#type-wxDropFilesEventType">wxDropFilesEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>noFiles = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>pos = {X :: integer(), Y :: integer()},<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>files = [<seealso marker="unicode#type-chardata">unicode:chardata()</seealso>]}</typehead></typedecl>
+  <anno>X</anno>
+  <anno>Y</anno>
+</type>
+<type>
+  <name>wxDropFilesEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxDropFilesEventType">wxDropFilesEventType()</marker> = drop_files</typehead></typedecl>
+</type>
+<type>
+  <name>wxErase</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxErase">wxErase()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxErase{type = <seealso marker="#type-wxEraseEventType">wxEraseEventType()</seealso>, dc = <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxEraseEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxEraseEventType">wxEraseEventType()</marker> = erase_background</typehead></typedecl>
+</type>
+<type>
+  <name>wxEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxEventType">wxEventType()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxActivateEventType">wxActivateEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxAuiManagerEventType">wxAuiManagerEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxAuiNotebookEventType">wxAuiNotebookEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxCalendarEventType">wxCalendarEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxChildFocusEventType">wxChildFocusEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxClipboardTextEventType">wxClipboardTextEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxCloseEventType">wxCloseEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxColourPickerEventType">wxColourPickerEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxCommandEventType">wxCommandEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxContextMenuEventType">wxContextMenuEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxDateEventType">wxDateEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxDisplayChangedEventType">wxDisplayChangedEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxDropFilesEventType">wxDropFilesEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxEraseEventType">wxEraseEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxFileDirPickerEventType">wxFileDirPickerEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxFocusEventType">wxFocusEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxFontPickerEventType">wxFontPickerEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxGridEventType">wxGridEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxHelpEventType">wxHelpEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxHtmlLinkEventType">wxHtmlLinkEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxIconizeEventType">wxIconizeEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxIdleEventType">wxIdleEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxInitDialogEventType">wxInitDialogEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxJoystickEventType">wxJoystickEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxKeyEventType">wxKeyEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxListEventType">wxListEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxMaximizeEventType">wxMaximizeEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxMenuEventType">wxMenuEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxMouseCaptureChangedEventType">wxMouseCaptureChangedEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxMouseCaptureLostEventType">wxMouseCaptureLostEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxMouseEventType">wxMouseEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxMoveEventType">wxMoveEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxNavigationKeyEventType">wxNavigationKeyEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxNotebookEventType">wxNotebookEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxPaintEventType">wxPaintEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxPaletteChangedEventType">wxPaletteChangedEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxQueryNewPaletteEventType">wxQueryNewPaletteEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxSashEventType">wxSashEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxScrollEventType">wxScrollEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxScrollWinEventType">wxScrollWinEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxSetCursorEventType">wxSetCursorEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxShowEventType">wxShowEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxSizeEventType">wxSizeEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxSpinEventType">wxSpinEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxSplitterEventType">wxSplitterEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxStyledTextEventType">wxStyledTextEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxSysColourChangedEventType">wxSysColourChangedEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxTaskBarIconEventType">wxTaskBarIconEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxTreeEventType">wxTreeEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxUpdateUIEventType">wxUpdateUIEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxWindowCreateEventType">wxWindowCreateEventType()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxWindowDestroyEventType">wxWindowDestroyEventType()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>wxEvtHandler</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxEvtHandler">wxEvtHandler()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>wxFileDirPicker</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxFileDirPicker">wxFileDirPicker()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxFileDirPicker{type = <seealso marker="#type-wxFileDirPickerEventType">wxFileDirPickerEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>path = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxFileDirPickerEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxFileDirPickerEventType">wxFileDirPickerEventType()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>command_filepicker_changed | command_dirpicker_changed</typehead></typedecl>
+</type>
+<type>
+  <name>wxFocus</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxFocus">wxFocus()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxFocus{type = <seealso marker="#type-wxFocusEventType">wxFocusEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>win = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxFocusEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxFocusEventType">wxFocusEventType()</marker> = set_focus | kill_focus</typehead></typedecl>
+</type>
+<type>
+  <name>wxFontPicker</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxFontPicker">wxFontPicker()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxFontPicker{type = <seealso marker="#type-wxFontPickerEventType">wxFontPickerEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxFontPickerEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxFontPickerEventType">wxFontPickerEventType()</marker> = command_fontpicker_changed</typehead></typedecl>
+</type>
+<type>
+  <name>wxGrid</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxGrid">wxGrid()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxGrid{type = <seealso marker="#type-wxGridEventType">wxGridEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>row = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>col = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>x = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>y = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>selecting = boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>control = boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>meta = boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>shift = boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>alt = boolean()}</typehead></typedecl>
+</type>
+<type>
+  <name>wxGridEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxGridEventType">wxGridEventType()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>grid_cell_left_click |<br/><nbsp/><nbsp/><nbsp/><nbsp/>grid_cell_right_click |<br/><nbsp/><nbsp/><nbsp/><nbsp/>grid_cell_left_dclick |<br/><nbsp/><nbsp/><nbsp/><nbsp/>grid_cell_right_dclick |<br/><nbsp/><nbsp/><nbsp/><nbsp/>grid_label_left_click |<br/><nbsp/><nbsp/><nbsp/><nbsp/>grid_label_right_click |<br/><nbsp/><nbsp/><nbsp/><nbsp/>grid_label_left_dclick |<br/><nbsp/><nbsp/><nbsp/><nbsp/>grid_label_right_dclick |<br/><nbsp/><nbsp/><nbsp/><nbsp/>grid_row_size |<br/><nbsp/><nbsp/><nbsp/><nbsp/>grid_col_size |<br/><nbsp/><nbsp/><nbsp/><nbsp/>grid_range_select |<br/><nbsp/><nbsp/><nbsp/><nbsp/>grid_cell_change |<br/><nbsp/><nbsp/><nbsp/><nbsp/>grid_select_cell |<br/><nbsp/><nbsp/><nbsp/><nbsp/>grid_editor_shown |<br/><nbsp/><nbsp/><nbsp/><nbsp/>grid_editor_hidden |<br/><nbsp/><nbsp/><nbsp/><nbsp/>grid_editor_created |<br/><nbsp/><nbsp/><nbsp/><nbsp/>grid_cell_begin_drag</typehead></typedecl>
+</type>
+<type>
+  <name>wxHelp</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxHelp">wxHelp()</marker> = #wxHelp{type = <seealso marker="#type-wxHelpEventType">wxHelpEventType()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxHelpEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxHelpEventType">wxHelpEventType()</marker> = help | detailed_help</typehead></typedecl>
+</type>
+<type>
+  <name>wxHtmlLink</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxHtmlLink">wxHtmlLink()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxHtmlLink{type = <seealso marker="#type-wxHtmlLinkEventType">wxHtmlLinkEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>linkInfo = <seealso marker="wx#type-wx_wxHtmlLinkInfo">wx:wx_wxHtmlLinkInfo()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxHtmlLinkEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxHtmlLinkEventType">wxHtmlLinkEventType()</marker> = command_html_link_clicked</typehead></typedecl>
+</type>
+<type>
+  <name>wxIconize</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxIconize">wxIconize()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxIconize{type = <seealso marker="#type-wxIconizeEventType">wxIconizeEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>iconized = boolean()}</typehead></typedecl>
+</type>
+<type>
+  <name>wxIconizeEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxIconizeEventType">wxIconizeEventType()</marker> = iconize</typehead></typedecl>
+</type>
+<type>
+  <name>wxIdle</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxIdle">wxIdle()</marker> = #wxIdle{type = <seealso marker="#type-wxIdleEventType">wxIdleEventType()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxIdleEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxIdleEventType">wxIdleEventType()</marker> = idle</typehead></typedecl>
+</type>
+<type>
+  <name>wxInitDialog</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxInitDialog">wxInitDialog()</marker> = #wxInitDialog{type = <seealso marker="#type-wxInitDialogEventType">wxInitDialogEventType()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxInitDialogEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxInitDialogEventType">wxInitDialogEventType()</marker> = init_dialog</typehead></typedecl>
+</type>
+<type>
+  <name>wxJoystick</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxJoystick">wxJoystick()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxJoystick{type = <seealso marker="#type-wxJoystickEventType">wxJoystickEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>pos = {X :: integer(), Y :: integer()},<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>zPosition = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>buttonChange = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>buttonState = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>joyStick = integer()}</typehead></typedecl>
+  <anno>X</anno>
+  <anno>Y</anno>
+</type>
+<type>
+  <name>wxJoystickEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxJoystickEventType">wxJoystickEventType()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>joy_button_down | joy_button_up | joy_move | joy_zmove</typehead></typedecl>
+</type>
+<type>
+  <name>wxKey</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxKey">wxKey()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxKey{type = <seealso marker="#type-wxKeyEventType">wxKeyEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>x = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>y = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>keyCode = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>controlDown = boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>shiftDown = boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>altDown = boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>metaDown = boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>scanCode = boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>uniChar = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>rawCode = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>rawFlags = integer()}</typehead></typedecl>
+</type>
+<type>
+  <name>wxKeyEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxKeyEventType">wxKeyEventType()</marker> = char | char_hook | key_down | key_up</typehead></typedecl>
+</type>
+<type>
+  <name>wxList</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxList">wxList()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxList{type = <seealso marker="#type-wxListEventType">wxListEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>code = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>oldItemIndex = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>itemIndex = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>col = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>pointDrag = {X :: integer(), Y :: integer()}}</typehead></typedecl>
+  <anno>X</anno>
+  <anno>Y</anno>
+</type>
+<type>
+  <name>wxListEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxListEventType">wxListEventType()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>command_list_begin_drag |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_list_begin_rdrag |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_list_begin_label_edit |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_list_end_label_edit |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_list_delete_item |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_list_delete_all_items |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_list_key_down |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_list_insert_item |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_list_col_click |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_list_col_right_click |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_list_col_begin_drag |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_list_col_dragging |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_list_col_end_drag |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_list_item_selected |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_list_item_deselected |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_list_item_right_click |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_list_item_middle_click |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_list_item_activated |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_list_item_focused |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_list_cache_hint</typehead></typedecl>
+</type>
+<type>
+  <name>wxMaximize</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxMaximize">wxMaximize()</marker> = #wxMaximize{type = <seealso marker="#type-wxMaximizeEventType">wxMaximizeEventType()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxMaximizeEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxMaximizeEventType">wxMaximizeEventType()</marker> = maximize</typehead></typedecl>
+</type>
+<type>
+  <name>wxMenu</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxMenu">wxMenu()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxMenu{type = <seealso marker="#type-wxMenuEventType">wxMenuEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>menuId = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>menu = <seealso marker="wxMenu#type-wxMenu">wxMenu:wxMenu()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxMenuEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxMenuEventType">wxMenuEventType()</marker> = menu_open | menu_close | menu_highlight</typehead></typedecl>
+</type>
+<type>
+  <name>wxMouse</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxMouse">wxMouse()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxMouse{type = <seealso marker="#type-wxMouseEventType">wxMouseEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>x = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>y = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>leftDown = boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>middleDown = boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>rightDown = boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>controlDown = boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>shiftDown = boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>altDown = boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>metaDown = boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>wheelRotation = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>wheelDelta = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>linesPerAction = integer()}</typehead></typedecl>
+</type>
+<type>
+  <name>wxMouseCaptureChanged</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxMouseCaptureChanged">wxMouseCaptureChanged()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxMouseCaptureChanged{type =<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-wxMouseCaptureChangedEventType">wxMouseCaptureChangedEventType()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxMouseCaptureChangedEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxMouseCaptureChangedEventType">wxMouseCaptureChangedEventType()</marker> = mouse_capture_changed</typehead></typedecl>
+</type>
+<type>
+  <name>wxMouseCaptureLost</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxMouseCaptureLost">wxMouseCaptureLost()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxMouseCaptureLost{type = <seealso marker="#type-wxMouseCaptureLostEventType">wxMouseCaptureLostEventType()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxMouseCaptureLostEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxMouseCaptureLostEventType">wxMouseCaptureLostEventType()</marker> = mouse_capture_lost</typehead></typedecl>
+</type>
+<type>
+  <name>wxMouseEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxMouseEventType">wxMouseEventType()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>left_down |<br/><nbsp/><nbsp/><nbsp/><nbsp/>left_up |<br/><nbsp/><nbsp/><nbsp/><nbsp/>middle_down |<br/><nbsp/><nbsp/><nbsp/><nbsp/>middle_up |<br/><nbsp/><nbsp/><nbsp/><nbsp/>right_down |<br/><nbsp/><nbsp/><nbsp/><nbsp/>right_up |<br/><nbsp/><nbsp/><nbsp/><nbsp/>motion |<br/><nbsp/><nbsp/><nbsp/><nbsp/>enter_window |<br/><nbsp/><nbsp/><nbsp/><nbsp/>leave_window |<br/><nbsp/><nbsp/><nbsp/><nbsp/>left_dclick |<br/><nbsp/><nbsp/><nbsp/><nbsp/>middle_dclick |<br/><nbsp/><nbsp/><nbsp/><nbsp/>right_dclick |<br/><nbsp/><nbsp/><nbsp/><nbsp/>mousewheel</typehead></typedecl>
+</type>
+<type>
+  <name>wxMove</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxMove">wxMove()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxMove{type = <seealso marker="#type-wxMoveEventType">wxMoveEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>pos = {X :: integer(), Y :: integer()},<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>rect =<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}}</typehead></typedecl>
+  <anno>H</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</type>
+<type>
+  <name>wxMoveEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxMoveEventType">wxMoveEventType()</marker> = move</typehead></typedecl>
+</type>
+<type>
+  <name>wxNavigationKey</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxNavigationKey">wxNavigationKey()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxNavigationKey{type = <seealso marker="#type-wxNavigationKeyEventType">wxNavigationKeyEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>flags = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>focus = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxNavigationKeyEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxNavigationKeyEventType">wxNavigationKeyEventType()</marker> = navigation_key</typehead></typedecl>
+</type>
+<type>
+  <name>wxNotebook</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxNotebook">wxNotebook()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxNotebook{type = <seealso marker="#type-wxNotebookEventType">wxNotebookEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>nSel = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>nOldSel = integer()}</typehead></typedecl>
+</type>
+<type>
+  <name>wxNotebookEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxNotebookEventType">wxNotebookEventType()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>command_notebook_page_changed | command_notebook_page_changing</typehead></typedecl>
+</type>
+<type>
+  <name>wxPaint</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxPaint">wxPaint()</marker> = #wxPaint{type = <seealso marker="#type-wxPaintEventType">wxPaintEventType()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxPaintEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxPaintEventType">wxPaintEventType()</marker> = paint</typehead></typedecl>
+</type>
+<type>
+  <name>wxPaletteChanged</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxPaletteChanged">wxPaletteChanged()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxPaletteChanged{type = <seealso marker="#type-wxPaletteChangedEventType">wxPaletteChangedEventType()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxPaletteChangedEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxPaletteChangedEventType">wxPaletteChangedEventType()</marker> = palette_changed</typehead></typedecl>
+</type>
+<type>
+  <name>wxQueryNewPalette</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxQueryNewPalette">wxQueryNewPalette()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxQueryNewPalette{type = <seealso marker="#type-wxQueryNewPaletteEventType">wxQueryNewPaletteEventType()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxQueryNewPaletteEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxQueryNewPaletteEventType">wxQueryNewPaletteEventType()</marker> = query_new_palette</typehead></typedecl>
+</type>
+<type>
+  <name>wxSash</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxSash">wxSash()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxSash{type = <seealso marker="#type-wxSashEventType">wxSashEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>edge = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>dragRect =<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()},<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>dragStatus = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</typehead></typedecl>
+  <anno>H</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</type>
+<type>
+  <name>wxSashEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxSashEventType">wxSashEventType()</marker> = sash_dragged</typehead></typedecl>
+</type>
+<type>
+  <name>wxScroll</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxScroll">wxScroll()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxScroll{type = <seealso marker="#type-wxScrollEventType">wxScrollEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>commandInt = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>extraLong = integer()}</typehead></typedecl>
+</type>
+<type>
+  <name>wxScrollEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxScrollEventType">wxScrollEventType()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>scroll_top |<br/><nbsp/><nbsp/><nbsp/><nbsp/>scroll_bottom |<br/><nbsp/><nbsp/><nbsp/><nbsp/>scroll_lineup |<br/><nbsp/><nbsp/><nbsp/><nbsp/>scroll_linedown |<br/><nbsp/><nbsp/><nbsp/><nbsp/>scroll_pageup |<br/><nbsp/><nbsp/><nbsp/><nbsp/>scroll_pagedown |<br/><nbsp/><nbsp/><nbsp/><nbsp/>scroll_thumbtrack |<br/><nbsp/><nbsp/><nbsp/><nbsp/>scroll_thumbrelease |<br/><nbsp/><nbsp/><nbsp/><nbsp/>scroll_changed</typehead></typedecl>
+</type>
+<type>
+  <name>wxScrollWin</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxScrollWin">wxScrollWin()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxScrollWin{type = <seealso marker="#type-wxScrollWinEventType">wxScrollWinEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>commandInt = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>extraLong = integer()}</typehead></typedecl>
+</type>
+<type>
+  <name>wxScrollWinEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxScrollWinEventType">wxScrollWinEventType()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>scrollwin_top |<br/><nbsp/><nbsp/><nbsp/><nbsp/>scrollwin_bottom |<br/><nbsp/><nbsp/><nbsp/><nbsp/>scrollwin_lineup |<br/><nbsp/><nbsp/><nbsp/><nbsp/>scrollwin_linedown |<br/><nbsp/><nbsp/><nbsp/><nbsp/>scrollwin_pageup |<br/><nbsp/><nbsp/><nbsp/><nbsp/>scrollwin_pagedown |<br/><nbsp/><nbsp/><nbsp/><nbsp/>scrollwin_thumbtrack |<br/><nbsp/><nbsp/><nbsp/><nbsp/>scrollwin_thumbrelease</typehead></typedecl>
+</type>
+<type>
+  <name>wxSetCursor</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxSetCursor">wxSetCursor()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxSetCursor{type = <seealso marker="#type-wxSetCursorEventType">wxSetCursorEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>x = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>y = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>cursor = <seealso marker="wxCursor#type-wxCursor">wxCursor:wxCursor()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxSetCursorEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxSetCursorEventType">wxSetCursorEventType()</marker> = set_cursor</typehead></typedecl>
+</type>
+<type>
+  <name>wxShow</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxShow">wxShow()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxShow{type = <seealso marker="#type-wxShowEventType">wxShowEventType()</seealso>, show = boolean()}</typehead></typedecl>
+</type>
+<type>
+  <name>wxShowEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxShowEventType">wxShowEventType()</marker> = show</typehead></typedecl>
+</type>
+<type>
+  <name>wxSize</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxSize">wxSize()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxSize{type = <seealso marker="#type-wxSizeEventType">wxSizeEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>size = {W :: integer(), H :: integer()},<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>rect =<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}}</typehead></typedecl>
+  <anno>H</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</type>
+<type>
+  <name>wxSizeEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxSizeEventType">wxSizeEventType()</marker> = size</typehead></typedecl>
+</type>
+<type>
+  <name>wxSpin</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxSpin">wxSpin()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxSpin{type = <seealso marker="#type-wxSpinEventType">wxSpinEventType()</seealso>, commandInt = integer()}</typehead></typedecl>
+</type>
+<type>
+  <name>wxSpinEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxSpinEventType">wxSpinEventType()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>command_spinctrl_updated | spin_up | spin_down | spin</typehead></typedecl>
+</type>
+<type>
+  <name>wxSplitter</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxSplitter">wxSplitter()</marker> = #wxSplitter{type = <seealso marker="#type-wxSplitterEventType">wxSplitterEventType()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxSplitterEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxSplitterEventType">wxSplitterEventType()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>command_splitter_sash_pos_changed |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_splitter_sash_pos_changing |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_splitter_doubleclicked |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_splitter_unsplit</typehead></typedecl>
+</type>
+<type>
+  <name>wxStyledText</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxStyledText">wxStyledText()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxStyledText{type = <seealso marker="#type-wxStyledTextEventType">wxStyledTextEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>position = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>key = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>modifiers = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>modificationType = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>length = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>linesAdded = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>line = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>foldLevelNow = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>foldLevelPrev = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>margin = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>message = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>wParam = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>lParam = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>listType = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>x = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>y = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>dragText = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>dragAllowMove = boolean(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>dragResult = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxStyledTextEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxStyledTextEventType">wxStyledTextEventType()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_change |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_styleneeded |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_charadded |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_savepointreached |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_savepointleft |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_romodifyattempt |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_key |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_doubleclick |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_updateui |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_modified |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_macrorecord |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_marginclick |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_needshown |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_painted |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_userlistselection |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_uridropped |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_dwellstart |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_dwellend |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_start_drag |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_drag_over |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_do_drop |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_zoom |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_hotspot_click |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_hotspot_dclick |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_calltip_click |<br/><nbsp/><nbsp/><nbsp/><nbsp/>stc_autocomp_selection</typehead></typedecl>
+</type>
+<type>
+  <name>wxSysColourChanged</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxSysColourChanged">wxSysColourChanged()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxSysColourChanged{type = <seealso marker="#type-wxSysColourChangedEventType">wxSysColourChangedEventType()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxSysColourChangedEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxSysColourChangedEventType">wxSysColourChangedEventType()</marker> = sys_colour_changed</typehead></typedecl>
+</type>
+<type>
+  <name>wxTaskBarIcon</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxTaskBarIcon">wxTaskBarIcon()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxTaskBarIcon{type = <seealso marker="#type-wxTaskBarIconEventType">wxTaskBarIconEventType()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxTaskBarIconEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxTaskBarIconEventType">wxTaskBarIconEventType()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>taskbar_move |<br/><nbsp/><nbsp/><nbsp/><nbsp/>taskbar_left_down |<br/><nbsp/><nbsp/><nbsp/><nbsp/>taskbar_left_up |<br/><nbsp/><nbsp/><nbsp/><nbsp/>taskbar_right_down |<br/><nbsp/><nbsp/><nbsp/><nbsp/>taskbar_right_up |<br/><nbsp/><nbsp/><nbsp/><nbsp/>taskbar_left_dclick |<br/><nbsp/><nbsp/><nbsp/><nbsp/>taskbar_right_dclick</typehead></typedecl>
+</type>
+<type>
+  <name>wxTree</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxTree">wxTree()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxTree{type = <seealso marker="#type-wxTreeEventType">wxTreeEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>item = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>itemOld = integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>pointDrag = {X :: integer(), Y :: integer()}}</typehead></typedecl>
+  <anno>X</anno>
+  <anno>Y</anno>
+</type>
+<type>
+  <name>wxTreeEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxTreeEventType">wxTreeEventType()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tree_begin_drag |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tree_begin_rdrag |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tree_begin_label_edit |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tree_end_label_edit |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tree_delete_item |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tree_get_info |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tree_set_info |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tree_item_expanded |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tree_item_expanding |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tree_item_collapsed |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tree_item_collapsing |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tree_sel_changed |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tree_sel_changing |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tree_key_down |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tree_item_activated |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tree_item_right_click |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tree_item_middle_click |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tree_end_drag |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tree_state_image_click |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tree_item_gettooltip |<br/><nbsp/><nbsp/><nbsp/><nbsp/>command_tree_item_menu</typehead></typedecl>
+</type>
+<type>
+  <name>wxUpdateUI</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxUpdateUI">wxUpdateUI()</marker> = #wxUpdateUI{type = <seealso marker="#type-wxUpdateUIEventType">wxUpdateUIEventType()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxUpdateUIEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxUpdateUIEventType">wxUpdateUIEventType()</marker> = update_ui</typehead></typedecl>
+</type>
+<type>
+  <name>wxWindowCreate</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxWindowCreate">wxWindowCreate()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxWindowCreate{type = <seealso marker="#type-wxWindowCreateEventType">wxWindowCreateEventType()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxWindowCreateEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxWindowCreateEventType">wxWindowCreateEventType()</marker> = create</typehead></typedecl>
+</type>
+<type>
+  <name>wxWindowDestroy</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxWindowDestroy">wxWindowDestroy()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#wxWindowDestroy{type = <seealso marker="#type-wxWindowDestroyEventType">wxWindowDestroyEventType()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>wxWindowDestroyEventType</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxWindowDestroyEventType">wxWindowDestroyEventType()</marker> = destroy</typehead></typedecl>
+</type>
+<spec>
+  <name>connect</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>connect(This :: <seealso marker="#type-wxEvtHandler">wxEvtHandler()</seealso>, EventType :: <seealso marker="#type-wxEventType">wxEventType()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>EventType</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>connect</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>connect(This :: <seealso marker="#type-wxEvtHandler">wxEvtHandler()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>EventType :: <seealso marker="#type-wxEventType">wxEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Options :: [Option]) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>ok</head>
+      <guard>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{id, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{lastId, integer()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{skip, boolean()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>callback |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{callback, function()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{userData, term()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>EventType</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>connect_impl</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>disconnect</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>disconnect(This :: <seealso marker="#type-wxEvtHandler">wxEvtHandler()</seealso>) -&gt; boolean()</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>disconnect</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>disconnect(This :: <seealso marker="#type-wxEvtHandler">wxEvtHandler()</seealso>, EventType :: <seealso marker="#type-wxEventType">wxEventType()</seealso>) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>boolean()</head></clause>
+  </contract>
+  <anno>EventType</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>disconnect</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>disconnect(This :: <seealso marker="#type-wxEvtHandler">wxEvtHandler()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>EventType :: <seealso marker="#type-wxEventType">wxEventType()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Opts :: [Option]) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>boolean()</head>
+      <guard>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{id, integer()} | {lastId, integer()} | {callback, function()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>EventType</anno>
+  <anno>Option</anno>
+  <anno>Opts</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>disconnect_impl</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:03.</timestamp>
+</module>

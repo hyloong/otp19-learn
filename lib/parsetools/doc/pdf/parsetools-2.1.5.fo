@@ -1,0 +1,1033 @@
+<?xml version="1.0"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="cover" margin="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin="0mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="left-page" margin-top="25mm" margin-bottom="15mm" margin-left="20mm" margin-right="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="left-header" extent="10mm"/>
+      <fo:region-after region-name="left-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="right-page" margin-top="25mm" margin-bottom="15mm" margin-left="25mm" margin-right="20mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="right-header" extent="10mm"/>
+      <fo:region-after region-name="right-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:page-sequence-master master-name="document">
+      <fo:repeatable-page-master-alternatives>
+        <fo:conditional-page-master-reference master-reference="left-page" odd-or-even="even"/>
+        <fo:conditional-page-master-reference master-reference="right-page" odd-or-even="odd"/>
+      </fo:repeatable-page-master-alternatives>
+    </fo:page-sequence-master>
+  </fo:layout-master-set>
+  <fo:bookmark-tree>
+    <fo:bookmark internal-destination="cover-page" starting-state="show">
+      <fo:bookmark-title>Parse Tools</fo:bookmark-title>
+      <fo:bookmark internal-destination="idp114496" starting-state="hide">
+        <fo:bookmark-title>Reference Manual</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp571248" starting-state="hide">
+          <fo:bookmark-title>yecc</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp568160" starting-state="hide">
+            <fo:bookmark-title>file/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp480720" starting-state="hide">
+            <fo:bookmark-title>format_error/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+        <fo:bookmark internal-destination="idp541552" starting-state="hide">
+          <fo:bookmark-title>leex</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp330752" starting-state="hide">
+            <fo:bookmark-title>file/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp340224" starting-state="hide">
+            <fo:bookmark-title>format_error/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp452576" starting-state="hide">
+            <fo:bookmark-title>string/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp453040" starting-state="hide">
+            <fo:bookmark-title>string/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp639216" starting-state="hide">
+            <fo:bookmark-title>token/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp639632" starting-state="hide">
+            <fo:bookmark-title>token/3</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp511312" starting-state="hide">
+            <fo:bookmark-title>tokens/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp498368" starting-state="hide">
+            <fo:bookmark-title>tokens/3</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+    </fo:bookmark>
+  </fo:bookmark-tree>
+  <fo:page-sequence font-family="sans-serif" force-page-count="even" master-reference="cover" font-size="10pt">
+    <fo:flow flow-name="xsl-region-body">
+      <fo:block space-before="130mm" space-before.conditionality="retain" text-align="end">
+        <fo:external-graphic src="/root/download/otp_src_20.0/bootstrap/lib/erl_docgen/priv/images/erlang-logo.gif"/>
+      </fo:block>
+      <fo:block id="cover-page" border-before-style="solid" border-before-width="10pt" border-color="#960003" font-size="2.3em" padding-before="0.5em" text-align="end">Parse Tools</fo:block>
+      <fo:block font-size="0.9em" text-align="end">Copyright © 1997-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em" text-align="end">Parse Tools 2.1.5</fo:block>
+      <fo:block font-size="0.9em" text-align="end">July 12, 2017</fo:block>
+      <fo:block padding-before="2.5em" font-size="1.33em" font-weight="bold" color="#C00" text-align="end"/>
+      <fo:block break-before="page" border-before-style="solid" border-before-width="1pt" border-color="#960003" font-weight="bold" padding-before="0.5em" space-before="200mm" space-before.conditionality="retain">Copyright © 1997-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em">
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+ 
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+    
+    Ericsson AB. All Rights Reserved..
+        </fo:block>
+      <fo:block font-size="0.9em" font-weight="bold" space-before="2em">July 12, 2017</fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+  <fo:page-sequence font-family="serif" master-reference="document" initial-page-number="1" font-size="10pt">
+    <fo:static-content flow-name="left-header">
+      <fo:block text-align="start" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-header">
+      <fo:block text-align="end" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="left-footer">
+      <fo:block text-align="start" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold"><fo:page-number/> | Ericsson AB. All Rights Reserved.:
+            Parse Tools</fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-footer">
+      <fo:block text-align="end" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">Ericsson AB. All Rights Reserved.:
+            Parse Tools | <fo:page-number/></fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body"><fo:block/><fo:block id="idp114496" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">1   
+      Reference Manual</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-weight="bold">Parsetools</fo:inline> application contains utilities for
+      parsing and scanning. Yecc is an parser
+      generator for Erlang, similar to yacc. Yecc takes a grammar definition as input, and produces Erlang
+      code for a parser as output. Leex is a regular expression based
+      lexical analyzer generator for Erlang, similar to lex or flex.</fo:block>
+  <fo:block page-break-before="always" id="idp571248" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">yecc</fo:marker>yecc</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  yecc
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">An LALR-1 parser generator for Erlang, similar to <fo:inline font-family="monospace">yacc</fo:inline>.
+      Takes a BNF grammar definition as input, and produces Erlang code
+      for a parser. </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To understand this text, you also have to
+      look at the <fo:inline font-family="monospace">yacc</fo:inline> documentation in the UNIX(TM) manual. This
+      is most probably necessary in order to understand the idea of a
+      parser generator, and the principle and problems of LALR parsing
+      with finite look-ahead.</fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp568160">file(Grammarfile [, Options]) -&gt; YeccRet</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Grammarfile = filename()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Options = Option | [Option]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Option = - see below -</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">YeccRet = {ok, Parserfile}  | {ok, Parserfile, Warnings}  | error  | {error, Errors, Warnings}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Parserfile = filename()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Warnings = Errors = [{filename(), [ErrorInfo]}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ErrorInfo  = {ErrorLine, module(), Reason}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ErrorLine = integer()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = - formatable by format_error/1 -</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">Grammarfile</fo:inline> is the file of declarations and grammar
+          rules. Returns <fo:inline font-family="monospace">ok</fo:inline> upon success, or <fo:inline font-family="monospace">error</fo:inline> if
+          there are errors. An Erlang file containing the parser is
+          created if there are no errors. The options are:
+          </fo:block>
+        <fo:block space-after="0.25em" space-before="0.25em">
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{parserfile, Parserfile}</fo:inline>.</fo:block>
+          <fo:block-container><fo:block start-indent="2em"><fo:inline font-family="monospace">Parserfile</fo:inline> is the name of the file that will
+           contain the Erlang parser code that is generated. The
+           default (<fo:inline font-family="monospace">""</fo:inline>) is to add the extension <fo:inline font-family="monospace">.erl</fo:inline>
+           to <fo:inline font-family="monospace">Grammarfile</fo:inline> stripped of the <fo:inline font-family="monospace">.yrl</fo:inline>
+           extension.
+          </fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{includefile, Includefile}</fo:inline>.</fo:block>
+          <fo:block-container><fo:block start-indent="2em">Indicates a customized prologue file which the user
+           may want to use instead of the default file
+          <fo:inline font-family="monospace">lib/parsetools/include/yeccpre.hrl</fo:inline> which is
+           otherwise included at the beginning of the resulting
+           parser file. <fo:inline font-weight="bold">N.B.</fo:inline> The <fo:inline font-family="monospace">Includefile</fo:inline> is
+           included 'as is' in the parser file, so it must not have a
+           module declaration of its own, and it should not be
+           compiled. It must, however, contain the necessary export
+           declarations. The default is indicated by <fo:inline font-family="monospace">""</fo:inline>.
+          </fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{report_errors, bool()}</fo:inline>.</fo:block>
+          <fo:block-container><fo:block start-indent="2em">Causes errors to be printed as they occur. Default is
+          <fo:inline font-family="monospace">true</fo:inline>.
+          </fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{report_warnings, bool()}</fo:inline>.</fo:block>
+          <fo:block-container><fo:block start-indent="2em">Causes warnings to be printed as they occur. Default is
+          <fo:inline font-family="monospace">true</fo:inline>.
+          </fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{report, bool()}</fo:inline>.</fo:block>
+          <fo:block-container><fo:block start-indent="2em">This is a short form for both <fo:inline font-family="monospace">report_errors</fo:inline> and
+          <fo:inline font-family="monospace">report_warnings</fo:inline>.
+          </fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">warnings_as_errors</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Causes warnings to be treated as errors.</fo:block>
+          </fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{return_errors, bool()}</fo:inline>.</fo:block>
+          <fo:block-container><fo:block start-indent="2em">If this flag is set, <fo:inline font-family="monospace">{error, Errors, Warnings}</fo:inline>
+           is returned when there are errors. Default is
+          <fo:inline font-family="monospace">false</fo:inline>.
+          </fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{return_warnings, bool()}</fo:inline>.</fo:block>
+          <fo:block-container><fo:block start-indent="2em">If this flag is set, an extra field containing
+          <fo:inline font-family="monospace">Warnings</fo:inline> is added to the tuple returned upon
+           success. Default is <fo:inline font-family="monospace">false</fo:inline>.
+          </fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{return, bool()}</fo:inline>.</fo:block>
+          <fo:block-container><fo:block start-indent="2em">This is a short form for both <fo:inline font-family="monospace">return_errors</fo:inline> and
+          <fo:inline font-family="monospace">return_warnings</fo:inline>.
+          </fo:block></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{verbose, bool()}</fo:inline>. </fo:block>
+          <fo:block-container><fo:block start-indent="2em">Determines whether the parser generator should give
+           full information about resolved and unresolved parse
+           action conflicts (<fo:inline font-family="monospace">true</fo:inline>), or only about those
+           conflicts that prevent a parser from being generated from
+           the input grammar (<fo:inline font-family="monospace">false</fo:inline>, the default).
+          </fo:block></fo:block-container>
+        </fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Any of the Boolean options can be set to <fo:inline font-family="monospace">true</fo:inline> by 
+          stating the name of the option. For example, <fo:inline font-family="monospace">verbose</fo:inline>
+          is equivalent to <fo:inline font-family="monospace">{verbose, true}</fo:inline>.
+          </fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The value of the <fo:inline font-family="monospace">Parserfile</fo:inline> option stripped of the
+          <fo:inline font-family="monospace">.erl</fo:inline> extension is used by Yecc as the module name of
+          the generated parser file.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Yecc will add the extension <fo:inline font-family="monospace">.yrl</fo:inline> to the
+          <fo:inline font-family="monospace">Grammarfile</fo:inline> name, the extension <fo:inline font-family="monospace">.hrl</fo:inline> to the
+          <fo:inline font-family="monospace">Includefile</fo:inline> name, and the extension <fo:inline font-family="monospace">.erl</fo:inline> to
+          the <fo:inline font-family="monospace">Parserfile</fo:inline> name, unless the extension is already
+          there.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp480720">format_error(Reason) -&gt; Chars</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = - as returned by yecc:file/1,2 -</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Chars = [char() | Chars]</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns a descriptive string in English of an error tuple
+          returned by <fo:inline font-family="monospace">yecc:file/1,2</fo:inline>. This function is mainly
+          used by the compiler invoking Yecc.</fo:block>
+      </fo:block>
+  
+
+  <fo:block id="idp477248" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Pre-Processing</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A <fo:inline font-family="monospace">scanner</fo:inline> to pre-process the text (program, etc.) to be
+      parsed is not provided in the <fo:inline font-family="monospace">yecc</fo:inline> module. The scanner
+      serves as a kind of lexicon look-up routine. It is possible to
+      write a grammar that uses only character tokens as terminal
+      symbols, thereby eliminating the need for a scanner, but this
+      would make the parser larger and slower.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The user should implement a scanner that segments the input
+      text, and turns it into one or more lists of tokens. Each token
+      should be a tuple containing information about syntactic
+      category, position in the text (e.g. line number), and the
+      actual terminal symbol found in the text: <fo:inline font-family="monospace">{Category, LineNumber, Symbol}</fo:inline>.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If a terminal symbol is the only member of a category, and the
+      symbol name is identical to the category name, the token format
+      may be <fo:inline font-family="monospace">{Symbol, LineNumber}</fo:inline>.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A list of tokens produced by the scanner should end with a
+      special <fo:inline font-family="monospace">end_of_input</fo:inline> tuple which the parser is looking
+      for. The format of this tuple should be <fo:inline font-family="monospace">{Endsymbol, LastLineNumber}</fo:inline>, where <fo:inline font-family="monospace">Endsymbol</fo:inline> is an identifier
+      that is distinguished from all the terminal and non-terminal
+      categories of the syntax rules. The <fo:inline font-family="monospace">Endsymbol</fo:inline> may be
+      declared in the grammar file (see below).</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The simplest case is to segment the input string into a list of
+      identifiers (atoms) and use those atoms both as categories and
+      values of the tokens. For example, the input string <fo:inline font-family="monospace">aaa bbb 777, X</fo:inline> may be scanned (tokenized) as:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+[{aaa, 1}, {bbb, 1}, {777, 1}, {',' , 1}, {'X', 1},
+ {'$end', 1}].    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This assumes that this is the first line of the input text, and
+      that <fo:inline font-family="monospace">'$end'</fo:inline> is the distinguished <fo:inline font-family="monospace">end_of_input</fo:inline>
+      symbol.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Erlang scanner in the <fo:inline font-family="monospace">io</fo:inline> module can be used as a
+      starting point when writing a new scanner. Study
+      <fo:inline font-family="monospace">yeccscan.erl</fo:inline> in order to see how a filter can be added on
+      top of <fo:inline font-family="monospace">io:scan_erl_form/3</fo:inline> to provide a scanner for
+      Yecc that tokenizes grammar files before parsing them
+      with the Yecc parser. A more general approach to scanner
+      implementation is to use a scanner generator. A scanner
+      generator in Erlang called <fo:inline font-family="monospace">leex</fo:inline> is under development.</fo:block>
+  
+
+  <fo:block id="idp451984" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Grammar Definition Format</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Erlang style <fo:inline font-family="monospace">comments</fo:inline>, starting with a <fo:inline font-family="monospace">'%'</fo:inline>, are
+      allowed in grammar files.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Each <fo:inline font-family="monospace">declaration</fo:inline> or <fo:inline font-family="monospace">rule</fo:inline> ends with a dot (the
+      character <fo:inline font-family="monospace">'.'</fo:inline>).</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The grammar starts with an optional <fo:inline font-family="monospace">header</fo:inline> section. The
+      header is put first in the generated file, before the module
+      declaration. The purpose of the header is to provide a means to
+      make the documentation generated by EDoc look nicer. Each
+      header line should be enclosed in double quotes, and newlines
+      will be inserted between the lines. For example:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+Header "%% Copyright (C)"
+"%% @private"
+"%% @Author John".</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Next comes a declaration of the <fo:inline font-family="monospace">nonterminal categories</fo:inline>
+      to be used in the rules. For example:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+Nonterminals sentence nounphrase verbphrase.    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A non-terminal category can be used at the left hand side (=
+      <fo:inline font-family="monospace">lhs</fo:inline>, or <fo:inline font-family="monospace">head</fo:inline>) of a grammar rule. It can also
+      appear at the right hand side of rules.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Next comes a declaration of the <fo:inline font-family="monospace">terminal categories</fo:inline>,
+      which are the categories of tokens produced by the scanner. For
+      example:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+Terminals article adjective noun verb.    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Terminal categories may only appear in the right hand sides (=
+      <fo:inline font-family="monospace">rhs</fo:inline>) of grammar rules.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Next comes a declaration of the <fo:inline font-family="monospace">rootsymbol</fo:inline>, or start
+      category of the grammar. For example:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+Rootsymbol sentence.    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This symbol should appear in the lhs of at least one grammar
+      rule. This is the most general syntactic category which the
+      parser ultimately will parse every input string into.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">After the rootsymbol declaration comes an optional declaration
+      of the <fo:inline font-family="monospace">end_of_input</fo:inline> symbol that your scanner is expected
+      to use. For example:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+Endsymbol '$end'.    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Next comes one or more declarations of <fo:inline font-family="monospace">operator precedences</fo:inline>, if needed. These are used to resolve
+      shift/reduce conflicts (see <fo:inline font-family="monospace">yacc</fo:inline> documentation).</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Examples of operator declarations:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+Right 100 '='.
+Nonassoc 200 '==' '=/='.
+Left 300 '+'.
+Left 400 '*'.
+Unary 500 '-'.    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">These declarations mean that <fo:inline font-family="monospace">'='</fo:inline> is defined as a
+      <fo:inline font-family="monospace">right associative binary</fo:inline> operator with precedence 100,
+      <fo:inline font-family="monospace">'=='</fo:inline> and <fo:inline font-family="monospace">'=/='</fo:inline> are operators with <fo:inline font-family="monospace">no associativity</fo:inline>, <fo:inline font-family="monospace">'+'</fo:inline> and <fo:inline font-family="monospace">'*'</fo:inline> are <fo:inline font-family="monospace">left associative binary</fo:inline> operators, where <fo:inline font-family="monospace">'*'</fo:inline> takes
+      precedence over <fo:inline font-family="monospace">'+'</fo:inline> (the normal case), and <fo:inline font-family="monospace">'-'</fo:inline> is
+      a <fo:inline font-family="monospace">unary</fo:inline> operator of higher precedence than <fo:inline font-family="monospace">'*'</fo:inline>.
+      The fact that '==' has no associativity means that an expression
+      like <fo:inline font-family="monospace">a == b == c</fo:inline> is considered a syntax error.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Certain rules are assigned precedence: each rule gets its
+      precedence from the last terminal symbol mentioned in the right
+      hand side of the rule. It is also possible to declare precedence
+      for non-terminals, "one level up". This is practical when an
+      operator is overloaded (see also example 3 below).</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Next come the <fo:inline font-family="monospace">grammar rules</fo:inline>. Each rule has the general
+      form</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+Left_hand_side -&gt; Right_hand_side : Associated_code.    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The left hand side is a non-terminal category. The right hand
+      side is a sequence of one or more non-terminal or terminal
+      symbols with spaces between. The associated code is a sequence
+      of zero or more Erlang expressions (with commas <fo:inline font-family="monospace">','</fo:inline> as
+      separators). If the associated code is empty, the separating
+      colon <fo:inline font-family="monospace">':'</fo:inline> is also omitted. A final dot marks the end of
+      the rule.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Symbols such as <fo:inline font-family="monospace">'{'</fo:inline>, <fo:inline font-family="monospace">'.'</fo:inline>, etc., have to be
+      enclosed in single quotes when used as terminal or non-terminal
+      symbols in grammar rules. The use of the symbols
+      <fo:inline font-family="monospace">'$empty'</fo:inline>, <fo:inline font-family="monospace">'$end'</fo:inline>, and <fo:inline font-family="monospace">'$undefined'</fo:inline> should
+      be avoided.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The last part of the grammar file is an optional section with
+      Erlang code (= function definitions) which is included 'as is'
+      in the resulting parser file. This section must start with the
+      pseudo declaration, or key words</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+Erlang code.    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">No syntax rule definitions or other declarations may follow
+      this section. To avoid conflicts with internal variables, do not
+      use variable names beginning with two underscore characters
+      ('__') in the Erlang code in this section, or in the code
+      associated with the individual syntax rules.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The optional <fo:inline font-family="monospace">expect</fo:inline> declaration can be placed anywhere
+      before the last optional section with Erlang code. It is used
+      for suppressing the warning about conflicts that is ordinarily
+      given if the grammar is ambiguous. An example:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+Expect 2.    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The warning is given if the number of shift/reduce conflicts
+      differs from 2, or if there are reduce/reduce conflicts.
+      </fo:block>
+  
+
+  <fo:block id="idp602464" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Examples</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A grammar to parse list expressions (with empty associated
+      code):</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+Nonterminals list elements element.
+Terminals atom '(' ')'.
+Rootsymbol list.
+list -&gt; '(' ')'.
+list -&gt; '(' elements ')'.
+elements -&gt; element.
+elements -&gt; element elements.
+element -&gt; atom.
+element -&gt; list.    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This grammar can be used to generate a parser which parses list
+      expressions, such as <fo:inline font-family="monospace">(), (a), (peter charles), (a (b c) d (())), ...</fo:inline> provided that your scanner tokenizes, for
+      example, the input <fo:inline font-family="monospace">(peter charles)</fo:inline> as follows:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+[{'(', 1} , {atom, 1, peter}, {atom, 1, charles}, {')', 1}, 
+ {'$end', 1}]    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When a grammar rule is used by the parser to parse (part of)
+      the input string as a grammatical phrase, the associated code is
+      evaluated, and the value of the last expression becomes the
+      value of the parsed phrase. This value may be used by the parser
+      later to build structures that are values of higher phrases of
+      which the current phrase is a part. The values initially
+      associated with terminal category phrases, i.e. input tokens,
+      are the token tuples themselves.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Below is an example of the grammar above with structure
+      building code added:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+list -&gt; '(' ')' : nil.
+list -&gt; '(' elements ')' : '$2'.
+elements -&gt; element : {cons, '$1', nil}.
+elements -&gt; element elements : {cons, '$1', '$2'}.
+element -&gt; atom : '$1'.
+element -&gt; list : '$1'.    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">With this code added to the grammar rules, the parser produces
+      the following value (structure) when parsing the input string
+      <fo:inline font-family="monospace">(a b c).</fo:inline>. This still assumes that this was the first
+      input line that the scanner tokenized:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+{cons, {atom, 1, a,} {cons, {atom, 1, b},
+                            {cons, {atom, 1, c}, nil}}}    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The associated code contains <fo:inline font-family="monospace">pseudo variables</fo:inline> <fo:inline font-family="monospace">'$1'</fo:inline>, <fo:inline font-family="monospace">'$2'</fo:inline>, <fo:inline font-family="monospace">'$3'</fo:inline>, etc. which refer to (are
+      bound to) the values associated previously by the parser with
+      the symbols of the right hand side of the rule. When these
+      symbols are terminal categories, the values are token tuples of
+      the input string (see above).</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The associated code may not only be used to build structures
+      associated with phrases, but may also be used for syntactic and
+      semantic tests, printout actions (for example for tracing), etc.
+      during the parsing process. Since tokens contain positional
+      (line number) information, it is possible to produce error
+      messages which contain line numbers. If there is no associated
+      code after the right hand side of the rule, the value
+      <fo:inline font-family="monospace">'$undefined'</fo:inline> is associated with the phrase.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The right hand side of a grammar rule may be empty. This is
+      indicated by using the special symbol <fo:inline font-family="monospace">'$empty'</fo:inline> as rhs.
+      Then the list grammar above may be simplified to:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+list -&gt; '(' elements ')' : '$2'.
+elements -&gt; element elements : {cons, '$1', '$2'}.
+elements -&gt; '$empty' : nil.
+element -&gt; atom : '$1'.
+element -&gt; list : '$1'.    </fo:block>
+  
+
+  <fo:block id="idp628816" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Generating a Parser</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To call the parser generator, use the following command:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+yecc:file(Grammarfile).    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">An error message from Yecc will be shown if the grammar
+      is not of the LALR type (for example too ambiguous).
+      Shift/reduce conflicts are resolved in favor of shifting if
+      there are no operator precedence declarations. Refer to the
+      <fo:inline font-family="monospace">yacc</fo:inline> documentation on the use of operator precedence.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The output file contains Erlang source code for a parser module
+      with module name equal to the <fo:inline font-family="monospace">Parserfile</fo:inline> parameter. After
+      compilation, the parser can be called as follows (the module
+      name is assumed to be <fo:inline font-family="monospace">myparser</fo:inline>):</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+myparser:parse(myscanner:scan(Inport))    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The call format may be different if a customized prologue file
+      has been included when generating the parser instead of the
+      default file <fo:inline font-family="monospace">lib/parsetools/include/yeccpre.hrl</fo:inline>.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">With the standard prologue, this call will return either
+      <fo:inline font-family="monospace">{ok, Result}</fo:inline>, where <fo:inline font-family="monospace">Result</fo:inline> is a structure that the
+      Erlang code of the grammar file has built, or <fo:inline font-family="monospace">{error, {Line_number, Module, Message}}</fo:inline> if there was a syntax error
+      in the input.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">Message</fo:inline> is something which may be converted into a
+      string by calling <fo:inline font-family="monospace">Module:format_error(Message)</fo:inline>
+      and printed with <fo:inline font-family="monospace">io:format/3</fo:inline>.</fo:block>
+    <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">By default, the parser that was generated will not print out
+        error messages to the screen. The user will have to do this
+        either by printing the returned error messages, or by
+        inserting tests and print instructions in the Erlang code
+        associated with the syntax rules of the grammar file.</fo:block>
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">It is also possible to make the parser ask for more input
+      tokens when needed if the following call format is used:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+myparser:parse_and_scan({Function, Args})
+myparser:parse_and_scan({Mod, Tokenizer, Args})    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The tokenizer <fo:inline font-family="monospace">Function</fo:inline> is either a fun or a tuple
+      <fo:inline font-family="monospace">{Mod, Tokenizer}</fo:inline>. The call <fo:inline font-family="monospace">apply(Function, Args)</fo:inline>
+      or <fo:inline font-family="monospace">apply({Mod, Tokenizer}, Args)</fo:inline> is executed whenever a
+      new token is needed. This, for example, makes it possible to
+      parse from a file, token by token.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The tokenizer used above has to be implemented so as to return
+      one of the following:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+{ok, Tokens, Endline}
+{eof, Endline}
+{error, Error_description, Endline}    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This conforms to the format used by the scanner in the Erlang
+      <fo:inline font-family="monospace">io</fo:inline> library module.</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If <fo:inline font-family="monospace">{eof, Endline}</fo:inline> is returned immediately, the call to
+      <fo:inline font-family="monospace">parse_and_scan/1</fo:inline> returns <fo:inline font-family="monospace">{ok, eof}</fo:inline>. If <fo:inline font-family="monospace">{eof, Endline}</fo:inline> is returned before the parser expects end of input,
+      <fo:inline font-family="monospace">parse_and_scan/1</fo:inline> will, of course, return an error message
+      (see above). Otherwise <fo:inline font-family="monospace">{ok, Result}</fo:inline> is returned.</fo:block>
+  
+
+  <fo:block id="idp339328" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">More Examples</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">1. A grammar for parsing infix arithmetic expressions into
+      prefix notation, without operator precedence:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+Nonterminals E T F.
+Terminals '+' '*' '(' ')' number.
+Rootsymbol E.
+E -&gt; E '+' T: {'$2', '$1', '$3'}.
+E -&gt; T : '$1'.
+T -&gt; T '*' F: {'$2', '$1', '$3'}.
+T -&gt; F : '$1'.
+F -&gt; '(' E ')' : '$2'.
+F -&gt; number : '$1'.    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">2. The same with operator precedence becomes simpler:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+Nonterminals E.
+Terminals '+' '*' '(' ')' number.
+Rootsymbol E.
+Left 100 '+'.
+Left 200 '*'.
+E -&gt; E '+' E : {'$2', '$1', '$3'}.
+E -&gt; E '*' E : {'$2', '$1', '$3'}.
+E -&gt; '(' E ')' : '$2'.
+E -&gt; number : '$1'.    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">3. An overloaded minus operator:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+Nonterminals E uminus.
+Terminals '*' '-' number.
+Rootsymbol E.
+
+Left 100 '-'.
+Left 200 '*'.
+Unary 300 uminus.
+
+E -&gt; E '-' E.
+E -&gt; E '*' E.
+E -&gt; uminus.
+E -&gt; number.
+
+uminus -&gt; '-' E.    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">4. The Yecc grammar that is used for parsing grammar
+      files, including itself:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+Nonterminals
+grammar declaration rule head symbol symbols attached_code
+token tokens.
+Terminals
+atom float integer reserved_symbol reserved_word string char var
+'-&gt;' ':' dot.
+Rootsymbol grammar.
+Endsymbol '$end'.
+grammar -&gt; declaration : '$1'.
+grammar -&gt; rule : '$1'.
+declaration -&gt; symbol symbols dot: {'$1', '$2'}.
+rule -&gt; head '-&gt;' symbols attached_code dot: {rule, ['$1' | '$3'], 
+        '$4'}.
+head -&gt; symbol : '$1'.
+symbols -&gt; symbol : ['$1'].
+symbols -&gt; symbol symbols : ['$1' | '$2'].
+attached_code -&gt; ':' tokens : {erlang_code, '$2'}.
+attached_code -&gt; '$empty' : {erlang_code, 
+                 [{atom, 0, '$undefined'}]}.
+tokens -&gt; token : ['$1'].
+tokens -&gt; token tokens : ['$1' | '$2'].
+symbol -&gt; var : value_of('$1').
+symbol -&gt; atom : value_of('$1').
+symbol -&gt; integer : value_of('$1').
+symbol -&gt; reserved_word : value_of('$1').
+token -&gt; var : '$1'.
+token -&gt; atom : '$1'.
+token -&gt; float : '$1'.
+token -&gt; integer : '$1'.
+token -&gt; string : '$1'.
+token -&gt; char : '$1'.
+token -&gt; reserved_symbol : {value_of('$1'), line_of('$1')}.
+token -&gt; reserved_word : {value_of('$1'), line_of('$1')}.
+token -&gt; '-&gt;' : {'-&gt;', line_of('$1')}.
+token -&gt; ':' : {':', line_of('$1')}.
+Erlang code.
+value_of(Token) -&gt;
+    element(3, Token).
+line_of(Token) -&gt;
+    element(2, Token).    </fo:block>
+    <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The symbols <fo:inline font-family="monospace">'-&gt;'</fo:inline>, and <fo:inline font-family="monospace">':'</fo:inline> have to be treated in
+        a special way, as they are meta symbols of the grammar
+        notation, as well as terminal symbols of the Yecc
+        grammar.</fo:block>
+    </fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">5. The file <fo:inline font-family="monospace">erl_parse.yrl</fo:inline> in the <fo:inline font-family="monospace">lib/stdlib/src</fo:inline>
+      directory contains the grammar for Erlang.</fo:block>
+    <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Syntactic tests are used in the code associated with some
+        rules, and an error is thrown (and caught by the generated
+        parser to produce an error message) when a test fails. The
+        same effect can be achieved with a call to
+        <fo:inline font-family="monospace">return_error(Error_line, Message_string)</fo:inline>, which is
+        defined in the <fo:inline font-family="monospace">yeccpre.hrl</fo:inline> default header file.</fo:block>
+    </fo:block>
+  
+
+  <fo:block id="idp348672" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Files</fo:block>
+    
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+lib/parsetools/include/yeccpre.hrl    </fo:block>
+  
+
+  <fo:block id="idp261200" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">See Also</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Aho &amp; Johnson: 'LR Parsing', ACM Computing Surveys, vol. 6:2, 1974.</fo:block>
+  
+<fo:block page-break-before="always" id="idp541552" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">leex</fo:marker>leex</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  leex
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A regular expression based lexical analyzer generator for
+      Erlang, similar to lex or flex.</fo:block>
+    <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Leex module should be considered experimental
+      as it will be subject to changes in future releases.</fo:block></fo:block>
+  
+  <fo:block id="idm34112" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">DATA TYPES</fo:block>
+    
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+ErrorInfo = {ErrorLine,module(),error_descriptor()}
+ErrorLine = integer()
+Token = tuple()</fo:block>
+  
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp330752">file(FileName, [, Options]) -&gt; LeexRet</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">FileName = filename()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Options = Option | [Option]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Option = - see below -</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">LeexRet = {ok, Scannerfile}
+                   | {ok, Scannerfile, Warnings}
+                   | error
+                   | {error, Errors, Warnings}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Scannerfile = filename()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Warnings = Errors = [{filename(), [ErrorInfo]}]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ErrorInfo  = {ErrorLine, module(), Reason}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ErrorLine = integer()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Reason = - formatable by format_error/1 -</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Generates a lexical analyzer from the definition in the input
+          file. The input file has the extension <fo:inline font-family="monospace">.xrl</fo:inline>. This is
+          added to the filename if it is not given. The resulting module
+          is the Xrl filename without the <fo:inline font-family="monospace">.xrl</fo:inline> extension.</fo:block>
+
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The current options are:</fo:block>
+          <fo:block space-after="0.25em" space-before="0.25em">
+            <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">dfa_graph</fo:inline></fo:block>
+            <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Generates a <fo:inline font-family="monospace">.dot</fo:inline> file which contains a
+              description of the DFA in a format which can be viewed with
+              Graphviz, <fo:inline font-family="monospace">www.graphviz.com</fo:inline>.</fo:block>
+            </fo:block></fo:block-container>
+            <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{includefile,Includefile}</fo:inline></fo:block>
+            <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Uses a specific or customised prologue file
+              instead of default
+              <fo:inline font-family="monospace">lib/parsetools/include/leexinc.hrl</fo:inline> which is
+              otherwise included.</fo:block>
+            </fo:block></fo:block-container>
+            <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{report_errors, bool()}</fo:inline></fo:block>
+            <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Causes errors to be printed as they occur. Default is
+              <fo:inline font-family="monospace">true</fo:inline>.</fo:block>
+            </fo:block></fo:block-container>
+            <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{report_warnings, bool()}</fo:inline></fo:block>
+            <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Causes warnings to be printed as they occur. Default is
+              <fo:inline font-family="monospace">true</fo:inline>.</fo:block>
+            </fo:block></fo:block-container>
+            <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">warnings_as_errors</fo:inline></fo:block>
+            <fo:block-container><fo:block start-indent="2em">
+              <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Causes warnings to be treated as errors.</fo:block>
+            </fo:block></fo:block-container>
+            <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{report, bool()}</fo:inline></fo:block>
+            <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This is a short form for both <fo:inline font-family="monospace">report_errors</fo:inline> and
+              <fo:inline font-family="monospace">report_warnings</fo:inline>.</fo:block>
+            </fo:block></fo:block-container>
+            <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{return_errors, bool()}</fo:inline></fo:block>
+            <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If this flag is set, <fo:inline font-family="monospace">{error, Errors, Warnings}</fo:inline>
+              is returned when there are errors. Default is <fo:inline font-family="monospace">false</fo:inline>.</fo:block>
+            </fo:block></fo:block-container>
+            <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{return_warnings, bool()}</fo:inline></fo:block>
+            <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If this flag is set, an extra field containing
+              <fo:inline font-family="monospace">Warnings</fo:inline> is added to the tuple returned upon
+               success. Default is <fo:inline font-family="monospace">false</fo:inline>.</fo:block>
+            </fo:block></fo:block-container>
+            <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{return, bool()}</fo:inline></fo:block>
+            <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This is a short form for both <fo:inline font-family="monospace">return_errors</fo:inline> and
+              <fo:inline font-family="monospace">return_warnings</fo:inline>.</fo:block>
+            </fo:block></fo:block-container>
+            <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{scannerfile, Scannerfile}</fo:inline></fo:block>
+            <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">Scannerfile</fo:inline> is the name of the file that
+             will contain the Erlang scanner code that is generated.
+             The default (<fo:inline font-family="monospace">""</fo:inline>) is to add the extension
+             <fo:inline font-family="monospace">.erl</fo:inline> to <fo:inline font-family="monospace">FileName</fo:inline> stripped of the
+             <fo:inline font-family="monospace">.xrl</fo:inline> extension.</fo:block>
+            </fo:block></fo:block-container>
+            <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{verbose, bool()}</fo:inline></fo:block>
+            <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Outputs information from parsing the input file and
+              generating the internal tables.</fo:block>
+            </fo:block></fo:block-container>
+          </fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Any of the Boolean options can be set to <fo:inline font-family="monospace">true</fo:inline> by 
+          stating the name of the option. For example, <fo:inline font-family="monospace">verbose</fo:inline>
+          is equivalent to <fo:inline font-family="monospace">{verbose, true}</fo:inline>.</fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Leex will add the extension <fo:inline font-family="monospace">.hrl</fo:inline> to the 
+          <fo:inline font-family="monospace">Includefile</fo:inline> name and the extension <fo:inline font-family="monospace">.erl</fo:inline> to the
+          <fo:inline font-family="monospace">Scannerfile</fo:inline> name, unless the extension is already
+          there.</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp340224">format_error(ErrorInfo) -&gt; Chars</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Chars = [char() | Chars]</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns a string which describes the error
+          <fo:inline font-family="monospace">ErrorInfo</fo:inline> returned when there is an error in a
+          regular expression.</fo:block>
+      </fo:block>
+  
+  
+
+  <fo:block id="idp342640" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">GENERATED SCANNER EXPORTS</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The following functions are exported by the generated scanner.</fo:block>
+  
+
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp452576">string(String) -&gt; StringRet</fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp453040">string(String, StartLine) -&gt; StringRet</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">String = string()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">StringRet = {ok,Tokens,EndLine} | ErrorInfo</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Tokens = [Token]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">EndLine = StartLine = integer()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Scans <fo:inline font-family="monospace">String</fo:inline> and returns all the tokens in it, or an
+          error.</fo:block>
+        <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">It is an error if not all of the characters in
+          <fo:inline font-family="monospace">String</fo:inline> are consumed.</fo:block></fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp639216">token(Cont, Chars) -&gt; {more,Cont1} | {done,TokenRet,RestChars}
+      </fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp639632">token(Cont, Chars, StartLine) -&gt; {more,Cont1} 
+             | {done,TokenRet,RestChars}
+      </fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Cont = [] | Cont1</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Cont1 = tuple()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Chars = RestChars = string() | eof</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TokenRet = {ok, Token, EndLine} 
+                    | {eof, EndLine}
+                    | ErrorInfo</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">StartLine = EndLine = integer()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This is a re-entrant call to try and scan one token from
+          <fo:inline font-family="monospace">Chars</fo:inline>. If there are enough characters in <fo:inline font-family="monospace">Chars</fo:inline>
+          to either scan a token or detect an error then this will be
+          returned with <fo:inline font-family="monospace">{done,...}</fo:inline>. Otherwise
+          <fo:inline font-family="monospace">{cont,Cont}</fo:inline> will be returned where <fo:inline font-family="monospace">Cont</fo:inline> is
+          used in the next call to <fo:inline font-family="monospace">token()</fo:inline> with more characters
+          to try an scan the token. This is continued until a token
+          has been scanned. <fo:inline font-family="monospace">Cont</fo:inline> is initially <fo:inline font-family="monospace">[]</fo:inline>.</fo:block>
+ 
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">It is not designed to be called directly by an application
+          but used through the i/o system where it can typically be
+          called in an application by:</fo:block>
+        <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+io:request(InFile, {get_until,Prompt,Module,token,[Line]})
+  -&gt; TokenRet</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp511312">tokens(Cont, Chars) -&gt; {more,Cont1} | {done,TokensRet,RestChars}
+      </fo:block></fo:block><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp498368">tokens(Cont, Chars, StartLine) -&gt; 
+               {more,Cont1} | {done,TokensRet,RestChars}
+      </fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Cont = [] | Cont1</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Cont1 = tuple()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Chars = RestChars = string() | eof</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">TokensRet = {ok, Tokens, EndLine} 
+                     | {eof, EndLine}
+                     | ErrorInfo</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Tokens = [Token]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">StartLine = EndLine = integer()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This is a re-entrant call to try and scan tokens from
+          <fo:inline font-family="monospace">Chars</fo:inline>. If there are enough characters in <fo:inline font-family="monospace">Chars</fo:inline>
+          to either scan tokens or detect an error then this will be
+          returned with <fo:inline font-family="monospace">{done,...}</fo:inline>. Otherwise
+          <fo:inline font-family="monospace">{cont,Cont}</fo:inline> will be returned where <fo:inline font-family="monospace">Cont</fo:inline> is
+          used in the next call to <fo:inline font-family="monospace">tokens()</fo:inline> with more
+          characters to try an scan the tokens. This is continued
+          until all tokens have been scanned. <fo:inline font-family="monospace">Cont</fo:inline> is initially
+          <fo:inline font-family="monospace">[]</fo:inline>.</fo:block>
+ 
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This functions differs from <fo:inline font-family="monospace">token</fo:inline> in that it will
+          continue to scan tokens upto and including an
+          <fo:inline font-family="monospace">{end_token,Token}</fo:inline> has been scanned (see next
+          section). It will then return all the tokens. This is
+          typically used for scanning grammars like Erlang where there
+          is an explicit end token, <fo:inline font-family="monospace">'.'</fo:inline>. If no end token is
+          found then the whole file will be scanned and returned. If
+          an error occurs then all tokens upto and including the next
+          end token will be skipped.</fo:block>
+ 
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">It is not designed to be called directly by an application
+          but used through the i/o system where it can typically be
+          called in an application by:</fo:block>
+        <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+io:request(InFile, {get_until,Prompt,Module,tokens,[Line]})
+  -&gt; TokensRet</fo:block>
+      </fo:block>
+  
+
+  <fo:block id="idp22944" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Input File Format</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Erlang style comments starting with a <fo:inline font-family="monospace">%</fo:inline> are allowed in
+      scanner files. A definition file has the following format:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+&lt;Header&gt;
+
+Definitions.
+
+&lt;Macro Definitions&gt;
+
+Rules.
+
+&lt;Token Rules&gt;
+
+Erlang code.
+
+&lt;Erlang code&gt;</fo:block>
+ 
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The "Definitions.", "Rules." and "Erlang code." headings are
+      mandatory and must occur at the beginning of a source line. The
+      &lt;Header&gt;, &lt;Macro Definitions&gt; and &lt;Erlang code&gt;
+      sections may be empty but there must be at least one rule.</fo:block>
+ 
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Macro definitions have the following format:</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+NAME = VALUE</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">and there must be spaces around <fo:inline font-family="monospace">=</fo:inline>. Macros can be used in
+      the regular expressions of rules by writing <fo:inline font-family="monospace">{NAME}</fo:inline>.</fo:block>
+
+    <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When macros are expanded in expressions the macro calls
+      are replaced by the macro value without any form of quoting or
+      enclosing in parentheses.</fo:block></fo:block>
+ 
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Rules have the following format:</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+&lt;Regexp&gt; : &lt;Erlang code&gt;.</fo:block>
+ 
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The &lt;Regexp&gt; must occur at the start of a line and not
+      include any blanks; use <fo:inline font-family="monospace">\t</fo:inline> and <fo:inline font-family="monospace">\s</fo:inline> to include TAB
+      and SPACE characters in the regular expression. If &lt;Regexp&gt;
+      matches then the corresponding &lt;Erlang code&gt; is evaluated to
+      generate a token. With the Erlang code the following predefined
+      variables are available:</fo:block>
+ 
+    <fo:block space-after="0.25em" space-before="0.25em">
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">TokenChars</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A list of the characters in the matched token.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">TokenLen</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The number of characters in the matched token.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">TokenLine</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The line number where the token occurred.</fo:block>
+      </fo:block></fo:block-container>
+    </fo:block>
+ 
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The code must return:</fo:block>
+ 
+    <fo:block space-after="0.25em" space-before="0.25em">
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{token,Token}</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Return <fo:inline font-family="monospace">Token</fo:inline> to the caller.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{end_token,Token}</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Return <fo:inline font-family="monospace">Token</fo:inline> and is last token in a tokens call.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">skip_token</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Skip this token completely.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{error,ErrString}</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">An error in the token, <fo:inline font-family="monospace">ErrString</fo:inline> is a string
+         describing the error.</fo:block>
+      </fo:block></fo:block-container>
+    </fo:block>
+ 
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">It is also possible to push back characters into the input
+      characters with the following returns:</fo:block>
+ 
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">{token,Token,PushBackList}</fo:inline></fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">{end_token,Token,PushBackList}</fo:inline></fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">{skip_token,PushBackList}</fo:inline></fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+ 
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">These have the same meanings as the normal returns but the
+      characters in <fo:inline font-family="monospace">PushBackList</fo:inline> will be prepended to the input
+      characters and scanned for the next token. Note that pushing
+      back a newline will mean the line numbering will no longer be
+      correct.</fo:block>
+
+    <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Pushing back characters gives you unexpected
+      possibilities to cause the scanner to loop!</fo:block></fo:block>
+ 
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The following example would match a simple Erlang integer or
+      float and return a token which could be sent to the Erlang
+      parser:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+D = [0-9]
+
+{D}+ :
+  {token,{integer,TokenLine,list_to_integer(TokenChars)}}.
+
+{D}+\.{D}+((E|e)(\+|\-)?{D}+)? :
+  {token,{float,TokenLine,list_to_float(TokenChars)}}.</fo:block>
+ 
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Erlang code in the "Erlang code." section is written into
+      the output file directly after the module declaration and
+      predefined exports declaration so it is possible to add extra
+      exports, define imports and other attributes which are then
+      visible in the whole file.</fo:block>
+  
+  
+  <fo:block id="idp773744" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Regular Expressions</fo:block>
+    
+ 
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The regular expressions allowed here is a subset of the set
+      found in <fo:inline font-family="monospace">egrep</fo:inline> and in the AWK programming language, as
+      defined in the book, The AWK Programming Language, by A. V. Aho,
+      B. W. Kernighan, P. J. Weinberger. They are composed of the
+      following characters:</fo:block>
+ 
+    <fo:block space-after="0.25em" space-before="0.25em">
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">c</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Matches the non-metacharacter c.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">\c</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Matches the escape sequence or literal character c.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">.</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Matches any character.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">^</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Matches the beginning of a string.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">$</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Matches the end of a string.</fo:block></fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">[abc...]</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Character class, which matches any of the characters
+        <fo:inline font-family="monospace">abc...</fo:inline>. Character ranges are specified by a pair of
+        characters separated by a <fo:inline font-family="monospace">-</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">[^abc...]</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Negated character class, which matches any character
+        except <fo:inline font-family="monospace">abc...</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">r1 | r2</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Alternation. It matches either <fo:inline font-family="monospace">r1</fo:inline> or <fo:inline font-family="monospace">r2</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">r1r2</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Concatenation. It matches <fo:inline font-family="monospace">r1</fo:inline> and then <fo:inline font-family="monospace">r2</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">r+</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Matches one or more <fo:inline font-family="monospace">rs</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">r*</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Matches zero or more <fo:inline font-family="monospace">rs</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">r?</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Matches zero or one <fo:inline font-family="monospace">rs</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">(r)</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Grouping. It matches <fo:inline font-family="monospace">r</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+    </fo:block>
+ 
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The escape sequences allowed are the same as for Erlang strings:</fo:block>
+
+    <fo:block space-after="0.25em" space-before="0.25em">
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">\b</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Backspace.</fo:block></fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">\f</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Form feed.</fo:block></fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">\n</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Newline (line feed).</fo:block></fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">\r</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Carriage return.</fo:block></fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">\t</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Tab.</fo:block></fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">\e</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Escape.</fo:block></fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">\v</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Vertical tab.</fo:block></fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">\s</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Space.</fo:block></fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">\d</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Delete.</fo:block></fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">\ddd</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The octal value <fo:inline font-family="monospace">ddd</fo:inline>.</fo:block></fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">\xhh</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The hexadecimal value <fo:inline font-family="monospace">hh</fo:inline>.</fo:block></fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">\x{h...}</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The hexadecimal value <fo:inline font-family="monospace">h...</fo:inline>.</fo:block></fo:block></fo:block-container>
+      <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">\c</fo:inline></fo:block>
+      <fo:block-container><fo:block start-indent="2em"><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Any other character literally, for example <fo:inline font-family="monospace">\\</fo:inline> for
+        backslash, <fo:inline font-family="monospace">\"</fo:inline> for <fo:inline font-family="monospace">"</fo:inline>.</fo:block>
+      </fo:block></fo:block-container>
+    </fo:block>
+ 
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The following examples define simplified versions of a few
+      Erlang data types:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap"> 
+Atoms [a-z][0-9a-zA-Z_]*
+
+Variables [A-Z_][0-9a-zA-Z_]*
+
+Floats (\+|-)?[0-9]+\.[0-9]+((E|e)(\+|-)?[0-9]+)?</fo:block>
+ 
+    <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block><fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Anchoring a regular expression with <fo:inline font-family="monospace">^</fo:inline> and <fo:inline font-family="monospace">$</fo:inline>
+      is not implemented in the current version of Leex and just
+      generates a parse error.</fo:block></fo:block>
+  
+</fo:flow>
+  </fo:page-sequence>
+</fo:root>

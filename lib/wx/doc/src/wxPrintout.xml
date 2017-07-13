@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxPrintout</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxPrintout.xml</file></header>
+<module>wxPrintout</module>
+<modulesummary>See external documentation: wxPrintout.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintout.html">wxPrintout</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxPrintout"/>wxPrintout()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new(Title::string(), OnPrintPage::function()) -&gt; <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></name>
+<fsummary>@equiv new(Title, OnPrintPage, []).</fsummary>
+
+<desc><marker id="new-2"/>
+
+<p>@equiv new(Title, OnPrintPage, [])</p>
+</desc></func>
+<func>
+<name>new(Title::string(), OnPrintPage::function(), Opts::[Option]) -&gt; <seealso marker="wxPrintout#type-wxPrintout">wxPrintout:wxPrintout()</seealso></name>
+<fsummary>Creates a wxPrintout object with a callback fun and optionally other callback funs.</fsummary>
+<type>
+<v>Option = {onPreparePrinting, OnPreparePrinting::function()} | {onBeginPrinting, OnBeginPrinting::function()} | {onEndPrinting, OnEndPrinting::function()} | {onBeginDocument, OnBeginDocument::function()} | {onEndDocument, OnEndDocument::function()} | {hasPage, HasPage::function()} | {getPageInfo, GetPageInfo::function()}</v></type>
+<desc><marker id="new-3"/>
+
+<p>Creates a wxPrintout object with a callback fun and optionally other callback funs.<br/>
+    </p><pre>OnPrintPage(This,Page) -&gt; boolean() </pre><pre>OnPreparePrinting(This) -&gt; term()   </pre><pre>OnBeginPrinting(This) -&gt; term()   </pre><pre>OnEndPrinting(This) -&gt; term()   </pre><pre>OnBeginDocument(This,StartPage,EndPage) -&gt; boolean()  </pre><pre>OnEndDocument(This) -&gt; term()  </pre><pre>HasPage(This,Page)} -&gt; boolean()   </pre><pre>GetPageInfo(This) -&gt; {MinPage::integer(), MaxPage::integer(),
+                               PageFrom::integer(), PageTo::integer()}  </pre><p>
+   The <em>This</em> argument is the wxPrintout object reference to this object
+   <br/> NOTE: The callbacks may not call other processes.</p>
+</desc></func>
+<func>
+<name>getDC(This) -&gt; <seealso marker="wxDC#type-wxDC">wxDC:wxDC()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintout">wxPrintout()</seealso></v></type>
+<desc><marker id="getDC-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintout.html#wxprintoutgetdc">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPageSizeMM(This) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintout">wxPrintout()</seealso></v></type>
+<desc><marker id="getPageSizeMM-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintout.html#wxprintoutgetpagesizemm">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPageSizePixels(This) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintout">wxPrintout()</seealso></v></type>
+<desc><marker id="getPageSizePixels-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintout.html#wxprintoutgetpagesizepixels">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPaperRectPixels(This) -&gt; {X::integer(), Y::integer(), W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintout">wxPrintout()</seealso></v></type>
+<desc><marker id="getPaperRectPixels-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintout.html#wxprintoutgetpaperrectpixels">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPPIPrinter(This) -&gt; {X::integer(), Y::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintout">wxPrintout()</seealso></v></type>
+<desc><marker id="getPPIPrinter-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintout.html#wxprintoutgetppiprinter">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPPIScreen(This) -&gt; {X::integer(), Y::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintout">wxPrintout()</seealso></v></type>
+<desc><marker id="getPPIScreen-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintout.html#wxprintoutgetppiscreen">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getTitle(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintout">wxPrintout()</seealso></v></type>
+<desc><marker id="getTitle-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintout.html#wxprintoutgettitle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isPreview(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintout">wxPrintout()</seealso></v></type>
+<desc><marker id="isPreview-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintout.html#wxprintoutispreview">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>fitThisSizeToPaper(This, ImageSize) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintout">wxPrintout()</seealso></v><v>ImageSize = {W::integer(), H::integer()}</v></type>
+<desc><marker id="fitThisSizeToPaper-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintout.html#wxprintoutfitthissizetopaper">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>fitThisSizeToPage(This, ImageSize) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintout">wxPrintout()</seealso></v><v>ImageSize = {W::integer(), H::integer()}</v></type>
+<desc><marker id="fitThisSizeToPage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintout.html#wxprintoutfitthissizetopage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>fitThisSizeToPageMargins(This, ImageSize, PageSetupData) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintout">wxPrintout()</seealso></v><v>ImageSize = {W::integer(), H::integer()}</v><v>PageSetupData = <seealso marker="wxPageSetupDialogData#type-wxPageSetupDialogData">wxPageSetupDialogData:wxPageSetupDialogData()</seealso></v></type>
+<desc><marker id="fitThisSizeToPageMargins-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintout.html#wxprintoutfitthissizetopagemargins">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>mapScreenSizeToPaper(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintout">wxPrintout()</seealso></v></type>
+<desc><marker id="mapScreenSizeToPaper-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintout.html#wxprintoutmapscreensizetopaper">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>mapScreenSizeToPage(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintout">wxPrintout()</seealso></v></type>
+<desc><marker id="mapScreenSizeToPage-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintout.html#wxprintoutmapscreensizetopage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>mapScreenSizeToPageMargins(This, PageSetupData) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintout">wxPrintout()</seealso></v><v>PageSetupData = <seealso marker="wxPageSetupDialogData#type-wxPageSetupDialogData">wxPageSetupDialogData:wxPageSetupDialogData()</seealso></v></type>
+<desc><marker id="mapScreenSizeToPageMargins-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintout.html#wxprintoutmapscreensizetopagemargins">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>mapScreenSizeToDevice(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintout">wxPrintout()</seealso></v></type>
+<desc><marker id="mapScreenSizeToDevice-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintout.html#wxprintoutmapscreensizetodevice">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getLogicalPaperRect(This) -&gt; {X::integer(), Y::integer(), W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintout">wxPrintout()</seealso></v></type>
+<desc><marker id="getLogicalPaperRect-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintout.html#wxprintoutgetlogicalpaperrect">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getLogicalPageRect(This) -&gt; {X::integer(), Y::integer(), W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintout">wxPrintout()</seealso></v></type>
+<desc><marker id="getLogicalPageRect-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintout.html#wxprintoutgetlogicalpagerect">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getLogicalPageMarginsRect(This, PageSetupData) -&gt; {X::integer(), Y::integer(), W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintout">wxPrintout()</seealso></v><v>PageSetupData = <seealso marker="wxPageSetupDialogData#type-wxPageSetupDialogData">wxPageSetupDialogData:wxPageSetupDialogData()</seealso></v></type>
+<desc><marker id="getLogicalPageMarginsRect-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintout.html#wxprintoutgetlogicalpagemarginsrect">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setLogicalOrigin(This, X, Y) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintout">wxPrintout()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="setLogicalOrigin-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintout.html#wxprintoutsetlogicalorigin">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>offsetLogicalOrigin(This, Xoff, Yoff) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPrintout">wxPrintout()</seealso></v><v>Xoff = integer()</v><v>Yoff = integer()</v></type>
+<desc><marker id="offsetLogicalOrigin-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxprintout.html#wxprintoutoffsetlogicalorigin">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxPrintout">wxPrintout()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

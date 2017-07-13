@@ -1,0 +1,1025 @@
+<?xml version="1.0"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="cover" margin="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin="0mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="left-page" margin-top="25mm" margin-bottom="15mm" margin-left="20mm" margin-right="25mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="left-header" extent="10mm"/>
+      <fo:region-after region-name="left-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:simple-page-master master-name="right-page" margin-top="25mm" margin-bottom="15mm" margin-left="25mm" margin-right="20mm" page-height="297mm" page-width="210mm">
+      <fo:region-body margin-top="15mm" margin-bottom="20mm"/>
+      <fo:region-before region-name="right-header" extent="10mm"/>
+      <fo:region-after region-name="right-footer" extent="10mm"/>
+    </fo:simple-page-master>
+    <fo:page-sequence-master master-name="document">
+      <fo:repeatable-page-master-alternatives>
+        <fo:conditional-page-master-reference master-reference="left-page" odd-or-even="even"/>
+        <fo:conditional-page-master-reference master-reference="right-page" odd-or-even="odd"/>
+      </fo:repeatable-page-master-alternatives>
+    </fo:page-sequence-master>
+  </fo:layout-master-set>
+  <fo:bookmark-tree>
+    <fo:bookmark internal-destination="cover-page" starting-state="show">
+      <fo:bookmark-title>Compiler</fo:bookmark-title>
+      <fo:bookmark internal-destination="idp107056" starting-state="hide">
+        <fo:bookmark-title>Reference Manual</fo:bookmark-title>
+        <fo:bookmark internal-destination="idp748752" starting-state="hide">
+          <fo:bookmark-title>compile</fo:bookmark-title>
+          <fo:bookmark internal-destination="idp745648" starting-state="hide">
+            <fo:bookmark-title>env_compiler_options/0</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp741696" starting-state="hide">
+            <fo:bookmark-title>file/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp739184" starting-state="hide">
+            <fo:bookmark-title>file/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp261152" starting-state="hide">
+            <fo:bookmark-title>forms/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp258528" starting-state="hide">
+            <fo:bookmark-title>forms/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp252880" starting-state="hide">
+            <fo:bookmark-title>format_error/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp493872" starting-state="hide">
+            <fo:bookmark-title>output_generated/1</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp488816" starting-state="hide">
+            <fo:bookmark-title>noenv_file/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp484336" starting-state="hide">
+            <fo:bookmark-title>noenv_forms/2</fo:bookmark-title>
+          </fo:bookmark>
+          <fo:bookmark internal-destination="idp480976" starting-state="hide">
+            <fo:bookmark-title>noenv_output_generated/1</fo:bookmark-title>
+          </fo:bookmark>
+        </fo:bookmark>
+      </fo:bookmark>
+    </fo:bookmark>
+  </fo:bookmark-tree>
+  <fo:page-sequence font-family="sans-serif" force-page-count="even" master-reference="cover" font-size="10pt">
+    <fo:flow flow-name="xsl-region-body">
+      <fo:block space-before="130mm" space-before.conditionality="retain" text-align="end">
+        <fo:external-graphic src="/root/download/otp_src_20.0/bootstrap/lib/erl_docgen/priv/images/erlang-logo.gif"/>
+      </fo:block>
+      <fo:block id="cover-page" border-before-style="solid" border-before-width="10pt" border-color="#960003" font-size="2.3em" padding-before="0.5em" text-align="end">Compiler</fo:block>
+      <fo:block font-size="0.9em" text-align="end">Copyright © 1997-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em" text-align="end">Compiler 7.1</fo:block>
+      <fo:block font-size="0.9em" text-align="end">July 12, 2017</fo:block>
+      <fo:block padding-before="2.5em" font-size="1.33em" font-weight="bold" color="#C00" text-align="end"/>
+      <fo:block break-before="page" border-before-style="solid" border-before-width="1pt" border-color="#960003" font-weight="bold" padding-before="0.5em" space-before="200mm" space-before.conditionality="retain">Copyright © 1997-2017 Ericsson AB. All Rights Reserved.</fo:block>
+      <fo:block font-size="0.9em">
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+ 
+          http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+    
+    Ericsson AB. All Rights Reserved..
+        </fo:block>
+      <fo:block font-size="0.9em" font-weight="bold" space-before="2em">July 12, 2017</fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+  <fo:page-sequence font-family="serif" master-reference="document" initial-page-number="1" font-size="10pt">
+    <fo:static-content flow-name="left-header">
+      <fo:block text-align="start" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-header">
+      <fo:block text-align="end" border-after-style="solid" border-after-width="2pt" border-color="#960003" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">
+        <fo:retrieve-marker retrieve-boundary="page-sequence" retrieve-class-name="chapter-title" retrieve-position="first-including-carryover"/>
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="left-footer">
+      <fo:block text-align="start" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold"><fo:page-number/> | Ericsson AB. All Rights Reserved.:
+            Compiler</fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="right-footer">
+      <fo:block text-align="end" font-family="DejaVuSans, sans-serif" font-size="0.9em" font-weight="bold">Ericsson AB. All Rights Reserved.:
+            Compiler | <fo:page-number/></fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body"><fo:block/><fo:block id="idp107056" border-after-style="solid" border-after-width="1pt" border-color="#960003" break-before="page" font-family="DejaVuSans, sans-serif" font-size="1.83em" font-weight="normal" space-after="1em" space-before="2em" space-before.conditionality="retain">1   
+      Reference Manual</fo:block>
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Compiler application compiles Erlang
+      code to byte-code. The highly compact byte-code is executed by
+      the Erlang emulator.</fo:block>
+  <fo:block page-break-before="always" id="idp748752" keep-with-next.within-page="always" space-after="2em" space-before="1em"><fo:block border-after-style="solid" border-after-width="1pt" font-family="DejaVuSans, sans-serif" font-size="1.5em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="1em"><fo:marker marker-class-name="chapter-title">compile</fo:marker>compile</fo:block>Erlang module</fo:block>
+  <fo:block/>
+  compile
+  <fo:block/>
+  
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This module provides an interface to the standard Erlang
+      compiler. It can generate either a new file, which contains
+      the object code, or return a binary, which can be loaded directly.
+    </fo:block>
+  
+
+  <fo:block font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Exports</fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp745648">env_compiler_options()</fo:block></fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Return compiler options given via the environment variable
+	  <fo:inline font-family="monospace">ERL_COMPILER_OPTIONS</fo:inline>. If the value is a list, it is
+	  returned as is. If it is not a list, it is put into a list.
+	</fo:block>
+      </fo:block>
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp741696">file(File)</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Is the same as
+	  <fo:inline font-family="monospace">file(File, [verbose,report_errors,report_warnings])</fo:inline>.
+	</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp739184">file(File, Options) -&gt; CompRet</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">CompRet = ModRet | BinRet | ErrRet</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ModRet = {ok,ModuleName} | {ok,ModuleName,Warnings}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">BinRet = {ok,ModuleName,Binary} | {ok,ModuleName,Binary,Warnings}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ErrRet = error | {error,Errors,Warnings}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Compiles the code in the file <fo:inline font-family="monospace">File</fo:inline>, which is an
+	  Erlang source code file without the <fo:inline font-family="monospace">.erl</fo:inline> extension.
+	  <fo:inline font-family="monospace">Options</fo:inline> determine the behavior of the compiler.</fo:block>
+
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Returns <fo:inline font-family="monospace">{ok,ModuleName}</fo:inline> if successful, or <fo:inline font-family="monospace">error</fo:inline>
+	  if there are errors. An object code file is created if
+	  the compilation succeeds without errors. It is considered
+	  to be an error if the module name in the source code is
+	  not the same as the basename of the output file.</fo:block>
+
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Available options:</fo:block>
+        <fo:block space-after="0.25em" space-before="0.25em">
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">basic_validation</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This option is a fast way to test whether a module will
+	      compile successfully. This is useful for code generators
+              that want to verify the code that they emit. No code is
+	      generated. If warnings are enabled, warnings generated by
+	      the <fo:inline font-family="monospace">erl_lint</fo:inline> module (such as warnings for unused
+	      variables and functions) are also returned.</fo:block>
+
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Use option <fo:inline font-family="monospace">strong_validation</fo:inline> to generate all
+	      warnings that the compiler would generate.</fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">strong_validation</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Similar to option <fo:inline font-family="monospace">basic_validation</fo:inline>. No code
+	      is generated, but more compiler passes are run
+	      to ensure that warnings generated by the optimization
+	      passes are generated (such as clauses that will not match,
+	      or expressions that are guaranteed to fail with an
+	      exception at runtime).</fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">binary</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The compiler returns the object code in a
+              binary instead of creating an object file. If successful,
+              the compiler returns <fo:inline font-family="monospace">{ok,ModuleName,Binary}</fo:inline>.</fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">bin_opt_info</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The compiler will emit informational warnings about binary
+	    matching optimizations (both successful and unsuccessful).
+	    For more information, see the section about
+	    <fo:inline font-style="italic">bin_opt_info</fo:inline>
+	    in the Efficiency Guide.</fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">compressed</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The compiler will compress the generated object code,
+	    which can be useful for embedded systems.</fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">debug_info</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Includes debug information in the form of <fo:inline font-style="italic">
+              Erlang Abstract Format</fo:inline> in the <fo:inline font-family="monospace">debug_info</fo:inline>
+              chunk of the compiled beam module. Tools such as Debugger,
+              Xref, and Cover require the debug information to be included.</fo:block>
+
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">Warning</fo:inline>: Source code can be reconstructed from
+              the debug information. Use encrypted debug information
+              (<fo:inline font-family="monospace">encrypt_debug_info</fo:inline>) to prevent this.</fo:block>
+
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">For details, see
+              <fo:inline font-style="italic">beam_lib(3)</fo:inline>.</fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{debug_info, {Backend, Data}}</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Includes custom debug information in the form of a
+              <fo:inline font-family="monospace">Backend</fo:inline> module with custom <fo:inline font-family="monospace">Data</fo:inline> in the compiled beam module.
+              The given module must implement a <fo:inline font-family="monospace">debug_info/4</fo:inline> function
+              and is responsible for generating different code representations,
+              as described in the <fo:inline font-family="monospace">debug_info</fo:inline> under
+              <fo:inline font-style="italic">beam_lib(3)</fo:inline>.</fo:block>
+
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-weight="bold">Warning</fo:inline>: Source code can be reconstructed from
+              the debug information. Use encrypted debug information
+              (<fo:inline font-family="monospace">encrypt_debug_info</fo:inline>) to prevent this.</fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{debug_info_key,KeyString}</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em"/></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{debug_info_key,{Mode,KeyString}}</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Includes debug information, but encrypts it so that it
+              cannot be accessed without supplying the key. (To give
+              option <fo:inline font-family="monospace">debug_info</fo:inline> as well is allowed, but
+              not necessary.) Using this option is a good way to always
+              have the debug information available during testing, yet
+              protecting the source code.</fo:block>
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">Mode</fo:inline> is the type of crypto algorithm to be used
+              for encrypting the debug information. The default
+              (and currently the only) type is <fo:inline font-family="monospace">des3_cbc</fo:inline>.</fo:block>
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">For details, see
+              <fo:inline font-style="italic">beam_lib(3)</fo:inline>.</fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">encrypt_debug_info</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Similar to the <fo:inline font-family="monospace">debug_info_key</fo:inline> option, but
+	      the key is read from an <fo:inline font-family="monospace">.erlang.crypt</fo:inline> file.
+	    </fo:block>
+
+	    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">For details, see
+              <fo:inline font-style="italic">beam_lib(3)</fo:inline>.</fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">deterministic</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Omit the <fo:inline font-family="monospace">options</fo:inline> and <fo:inline font-family="monospace">source</fo:inline> tuples in
+	    the list returned by <fo:inline font-family="monospace">Module:module_info(compile)</fo:inline>.
+	    This option will make it easier to achieve reproducible builds.
+	    </fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">makedep</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Produces a Makefile rule to track headers dependencies.
+              No object file is produced.
+            </fo:block>
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">By default, this rule is written to
+              <fo:inline font-family="monospace">&lt;File&gt;.Pbeam</fo:inline>. However, if option
+                <fo:inline font-family="monospace">binary</fo:inline> is set, nothing is written and the rule is
+                returned in <fo:inline font-family="monospace">Binary</fo:inline>.
+            </fo:block>
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">For example, if you have the following module:
+            </fo:block>
+            <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+-module(module).
+
+-include_lib("eunit/include/eunit.hrl").
+-include("header.hrl").</fo:block>
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The Makefile rule generated by this option looks as follows:
+            </fo:block>
+            <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+module.beam: module.erl \
+  /usr/local/lib/erlang/lib/eunit/include/eunit.hrl \
+  header.hrl</fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{makedep_output, Output}</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Writes generated rules to <fo:inline font-family="monospace">Output</fo:inline> instead of the
+              default <fo:inline font-family="monospace">&lt;File&gt;.Pbeam</fo:inline>. <fo:inline font-family="monospace">Output</fo:inline>
+              can be a filename or an <fo:inline font-family="monospace">io_device()</fo:inline>. To write to
+              stdout, use <fo:inline font-family="monospace">standard_io</fo:inline>. However, if <fo:inline font-family="monospace">binary</fo:inline>
+              is set, nothing is written to <fo:inline font-family="monospace">Output</fo:inline> and the
+              result is returned to the caller with
+              <fo:inline font-family="monospace">{ok, ModuleName, Binary}</fo:inline>.
+            </fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{makedep_target, Target}</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Changes the name of the rule emitted to <fo:inline font-family="monospace">Target</fo:inline>.
+            </fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">makedep_quote_target</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Characters in <fo:inline font-family="monospace">Target</fo:inline> special to make(1) are quoted.
+            </fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">makedep_add_missing</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Considers missing headers as generated files and adds them to the
+              dependencies.
+            </fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">makedep_phony</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Adds a phony target for each dependency.
+            </fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">'P'</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Produces a listing of the parsed code, after preprocessing
+	      and parse transforms, in the file
+	      <fo:inline font-family="monospace">&lt;File&gt;.P</fo:inline>. No object file is produced.
+	    </fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">'E'</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Produces a listing of the code, after all source code
+	      transformations have been performed, in the file
+	      <fo:inline font-family="monospace">&lt;File&gt;.E</fo:inline>. No object file is produced.
+	    </fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">'S'</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Produces a listing of the assembler code in the file
+              <fo:inline font-family="monospace">&lt;File&gt;.S</fo:inline>. No object file is produced.
+	    </fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">report_errors/report_warnings</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Causes errors/warnings to be printed as they occur.</fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">report</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A short form for both <fo:inline font-family="monospace">report_errors</fo:inline> and
+              <fo:inline font-family="monospace">report_warnings</fo:inline>.</fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">return_errors</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If this flag is set,
+	      <fo:inline font-family="monospace">{error,ErrorList,WarningList}</fo:inline> is returned when
+	      there are errors.</fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">return_warnings</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If this flag is set, an extra field, containing
+              <fo:inline font-family="monospace">WarningList</fo:inline>, is added to the tuples returned on
+              success.</fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">warnings_as_errors</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Causes warnings to be treated as errors. This option is supported
+            since R13B04.</fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">return</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A short form for both <fo:inline font-family="monospace">return_errors</fo:inline> and
+              <fo:inline font-family="monospace">return_warnings</fo:inline>.</fo:block>
+          </fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">verbose</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Causes more verbose information from the compiler,
+              describing what it is doing.</fo:block>
+          </fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{source,FileName}</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Sets the value of the source, as returned by
+              <fo:inline font-family="monospace">module_info(compile)</fo:inline>.</fo:block>
+          </fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{outdir,Dir}</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Sets a new directory for the object code. The current
+              directory is used for output, except when a directory
+              has been specified with this option.</fo:block>
+          </fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">export_all</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Causes all functions in the module to be exported.</fo:block>
+          </fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{i,Dir}</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Adds <fo:inline font-family="monospace">Dir</fo:inline> to the list of directories to be searched
+              when including a file. When encountering an
+	      <fo:inline font-family="monospace">-include</fo:inline> or <fo:inline font-family="monospace">-include_lib</fo:inline> directive,
+	      the compiler searches for header files in the following
+	      directories:</fo:block>
+            <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+              <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+                <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">"."</fo:inline>, the current working directory of
+		  the file server</fo:block>
+              </fo:block></fo:list-item-body></fo:list-item>
+              <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+                <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The base name of the compiled file</fo:block>
+              </fo:block></fo:list-item-body></fo:list-item>
+              <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>
+                <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The directories specified using option <fo:inline font-family="monospace">i</fo:inline>;
+                  the directory specified last is searched first</fo:block>
+              </fo:block></fo:list-item-body></fo:list-item>
+            </fo:list-block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{d,Macro}</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em"/></fo:block-container>
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{d,Macro,Value}</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Defines a macro <fo:inline font-family="monospace">Macro</fo:inline> to have the value
+            <fo:inline font-family="monospace">Value</fo:inline>. <fo:inline font-family="monospace">Macro</fo:inline> is of type atom, and <fo:inline font-family="monospace">Value</fo:inline> can be any term.
+            The default <fo:inline font-family="monospace">Value</fo:inline> is <fo:inline font-family="monospace">true</fo:inline>.</fo:block>
+          </fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{parse_transform,Module}</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Causes the parse transformation function
+              <fo:inline font-family="monospace">Module:parse_transform/2</fo:inline> to be applied to the
+              parsed code before the code is checked for errors.</fo:block>
+          </fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">from_asm</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The input file is expected to be assembler code (default
+	      file suffix ".S"). Notice that the format of assembler files
+              is not documented, and can change between releases.</fo:block>
+          </fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">from_core</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The input file is expected to be core code (default
+	      file suffix ".core"). Notice that the format of core files
+              is not documented, and can change between releases.</fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">no_strict_record_tests</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This option is not recommended.</fo:block>
+
+	    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">By default, the generated code for
+	      operation <fo:inline font-family="monospace">Record#record_tag.field</fo:inline> verifies that
+	      the tuple <fo:inline font-family="monospace">Record</fo:inline> has the correct size for
+	      the record, and that the first element is the tag
+	      <fo:inline font-family="monospace">record_tag</fo:inline>. Use this option to omit
+	      the verification code.</fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">no_error_module_mismatch</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Normally the compiler verifies that the module name
+	    given in the source code is the same as the base name
+	    of the output file and refuses to generate an output file
+	    if there is a mismatch. If you have a good reason (or
+	    other reason) for having a module name unrelated to the
+	    name of the output file, this option disables that verification
+	    (there will not even be a warning if there is a mismatch).</fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{no_auto_import,[{F,A}, ...]}</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+	  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Makes the function <fo:inline font-family="monospace">F/A</fo:inline> no longer being
+          auto-imported from the <fo:inline font-family="monospace">erlang</fo:inline> module, which resolves
+          BIF name clashes. This option must be used to resolve name
+          clashes with BIFs auto-imported before R14A, if it is needed to
+          call the local function with the same name as an
+          auto-imported BIF without module prefix.</fo:block>
+	  <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+	  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">As from R14A and forward, the compiler resolves calls
+	  without module prefix to local or imported functions before
+	  trying with auto-imported BIFs. If the BIF is to be
+	  called, use the <fo:inline font-family="monospace">erlang</fo:inline> module prefix in the call, not
+	  <fo:inline font-family="monospace">{no_auto_import,[{F,A}, ...]}</fo:inline>.</fo:block>
+	  </fo:block>
+	  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If this option is written in the source code, as a 
+	  <fo:inline font-family="monospace">-compile</fo:inline> directive, the syntax <fo:inline font-family="monospace">F/A</fo:inline> can be used instead 
+	  of <fo:inline font-family="monospace">{F,A}</fo:inline>, for example:</fo:block>
+	  <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">-compile({no_auto_import,[error/1]}).</fo:block>
+	  </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">no_auto_import</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Do not auto-import any functions from <fo:inline font-family="monospace">erlang</fo:inline> module.</fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">no_line_info</fo:inline></fo:block>
+
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Omits line number information to produce a slightly
+	      smaller output file.
+	    </fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{extra_chunks, [{binary(), binary()}]}</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Pass extra chunks to be stored in the <fo:inline font-family="monospace">.beam</fo:inline> file.
+              The extra chunks must be a list of tuples with a four byte
+              binary as chunk name followed by a binary with the chunk contents.
+              See <fo:inline font-style="italic">beam_lib</fo:inline> for
+              more information.
+	    </fo:block>
+          </fo:block></fo:block-container>
+        </fo:block>
+
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">If warnings are turned on (option <fo:inline font-family="monospace">report_warnings</fo:inline>
+          described earlier), the following options control what type of
+          warnings that are generated.
+	  
+          Except from <fo:inline font-family="monospace">{warn_format,Verbosity}</fo:inline>, the following options 
+	have two forms:</fo:block>
+	  <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+	    <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>A <fo:inline font-family="monospace">warn_xxx</fo:inline> form, to turn on the warning.</fo:block></fo:list-item-body></fo:list-item>
+	    <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block>A <fo:inline font-family="monospace">nowarn_xxx</fo:inline> form, to turn off the warning.</fo:block></fo:list-item-body></fo:list-item>
+	  </fo:list-block>
+	  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">In the descriptions that follow, the form that is used to change 
+	  the default value are listed.</fo:block>
+
+        <fo:block space-after="0.25em" space-before="0.25em">
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{warn_format, Verbosity}</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Causes warnings to be emitted for malformed format
+              strings as arguments to <fo:inline font-family="monospace">io:format</fo:inline> and similar
+              functions.</fo:block>
+	      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">Verbosity</fo:inline> selects the number of warnings:</fo:block>
+	      <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+		<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">0</fo:inline> = No warnings</fo:block></fo:list-item-body></fo:list-item>
+		<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">1</fo:inline> = Warnings for invalid format strings and incorrect 
+		number of arguments</fo:block></fo:list-item-body></fo:list-item>
+		<fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-family="monospace">2</fo:inline> = Warnings also when the validity cannot 
+		be checked, for example, when the format string argument is a
+		variable.</fo:block></fo:list-item-body></fo:list-item>
+	      </fo:list-block>
+	      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The default verbosity is <fo:inline font-family="monospace">1</fo:inline>. Verbosity <fo:inline font-family="monospace">0</fo:inline> can
+              also be selected by option <fo:inline font-family="monospace">nowarn_format</fo:inline>.</fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">nowarn_bif_clash</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This option is removed, it generates a fatal error if used.</fo:block>
+
+	    <fo:block background-color="#ffd6d6" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Warning:</fo:block>
+	    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">As from beginning with R14A, the compiler no longer calls the
+	    auto-imported BIF if the name clashes with a local or
+	    explicitly imported function, and a call without explicit
+	    module name is issued. Instead, the local or imported
+	    function is called. Still accepting <fo:inline font-family="monospace">nowarn_bif_clash</fo:inline> would 
+	    make a module calling functions clashing with auto-imported BIFs
+	    compile with both the old and new compilers, but with
+	    completely different semantics. This is why the option is removed.</fo:block>
+
+	    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The use of this option has always been discouraged.
+	    As from R14A, it is an error to use it.</fo:block>
+	    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To resolve BIF clashes, use explicit module names or the
+	    <fo:inline font-family="monospace">{no_auto_import,[F/A]}</fo:inline> compiler directive.</fo:block>
+	    </fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{nowarn_bif_clash, FAs}</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This option is removed, it generates a fatal error if used.</fo:block>
+
+	    <fo:block background-color="#ffd6d6" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Warning:</fo:block>
+	    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The use of this option has always been discouraged.
+	    As from R14A, it is an error to use it.</fo:block>
+	    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To resolve BIF clashes, use explicit module names or the
+	    <fo:inline font-family="monospace">{no_auto_import,[F/A]}</fo:inline> compiler directive.</fo:block>
+	    </fo:block>
+          </fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">nowarn_export_all</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+	      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Turns off warnings for uses of the <fo:inline font-family="monospace">export_all</fo:inline>
+	      option. Default is to emit a warning if option
+	      <fo:inline font-family="monospace">export_all</fo:inline> is also given.</fo:block>
+          </fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">warn_export_vars</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+	    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Emits warnings for all implicitly exported variables 
+	      referred to after the primitives where they were first defined. 
+	      By default, the compiler only emits warnings for exported 
+	      variables referred to in a pattern.</fo:block>
+          </fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">nowarn_shadow_vars</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+	      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Turns off warnings for "fresh" variables 
+	      in functional objects or list comprehensions with the same 
+	      name as some already defined variable. Default is to 
+	      emit warnings for such variables.</fo:block>   
+          </fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">nowarn_unused_function</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Turns off warnings for unused local functions. Default 
+	    is to emit warnings for all local functions that are not called
+	      directly or indirectly by an exported function.
+              The compiler does not include unused local functions in
+	      the generated beam file, but the warning is still useful
+	      to keep the source code cleaner.</fo:block>
+          </fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{nowarn_unused_function, FAs}</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Turns off warnings for unused local functions like
+              <fo:inline font-family="monospace">nowarn_unused_function</fo:inline> does, but only for the mentioned
+              local functions. <fo:inline font-family="monospace">FAs</fo:inline> is a tuple <fo:inline font-family="monospace">{Name,Arity}</fo:inline>
+              or a list of such tuples.</fo:block>
+          </fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">nowarn_deprecated_function</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Turns off warnings for calls to deprecated functions. Default 
+	    is to emit warnings for every call to a function known by the 
+	    compiler to be deprecated. Notice that the compiler does not know
+	      about attribute <fo:inline font-family="monospace">-deprecated()</fo:inline>, but uses an
+	      assembled list of deprecated functions in Erlang/OTP. To
+	      do a more general check, the Xref tool can be used.
+	      See also
+	      <fo:inline font-style="italic">xref(3)</fo:inline>
+              and the function
+	      <fo:inline font-style="italic">xref:m/1</fo:inline>, also
+              accessible through the function 
+	    <fo:inline font-style="italic">c:xm/1</fo:inline>.</fo:block>
+          </fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">{nowarn_deprecated_function, MFAs}</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Turns off warnings for calls to deprecated functions like
+	      <fo:inline font-family="monospace">nowarn_deprecated_function</fo:inline> does, but only for
+	      the mentioned functions. <fo:inline font-family="monospace">MFAs</fo:inline> is a tuple
+              <fo:inline font-family="monospace">{Module,Name,Arity}</fo:inline> or a list of such tuples.</fo:block>
+          </fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">nowarn_deprecated_type</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Turns off warnings for use of deprecated types. Default 
+	    is to emit warnings for every use of a type known by the compiler
+	    to be deprecated.</fo:block>
+          </fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">nowarn_obsolete_guard</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Turns off warnings for calls to old type testing BIFs, 
+	    such as <fo:inline font-family="monospace">pid/1</fo:inline> and <fo:inline font-family="monospace">list/1</fo:inline>. See the
+	    <fo:inline font-style="italic">Erlang Reference Manual</fo:inline>
+	      for a complete list of type testing BIFs and their old
+	      equivalents. Default is to emit warnings for calls to
+	      old type testing BIFs.</fo:block>
+          </fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">warn_unused_import</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Emits warnings for unused imported functions. 
+	    Default is to emit no warnings for unused imported functions.</fo:block>
+          </fo:block></fo:block-container>
+
+          <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">nowarn_unused_vars</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">By default, warnings are emitted for unused variables,
+	      except for variables beginning with an underscore 
+	      ("Prolog style warnings").
+              Use this option to turn off this kind of warnings.</fo:block>
+          </fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">nowarn_unused_record</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Turns off warnings for unused record types. Default is to 
+	    emit warnings for unused locally defined record types.</fo:block>
+          </fo:block></fo:block-container>
+
+	  <fo:block keep-with-next.within-page="always"><fo:inline font-family="monospace">nowarn_get_stacktrace</fo:inline></fo:block>
+          <fo:block-container><fo:block start-indent="2em">
+            <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Turns off warnings for using <fo:inline font-family="monospace">get_stacktrace/0</fo:inline> in a context
+	    where it will probably not work in a future release. For example,
+	    by default there will be a warning if <fo:inline font-family="monospace">get_stacktrace/0</fo:inline> is
+	    used following a <fo:inline font-family="monospace">catch</fo:inline> expression.</fo:block>
+          </fo:block></fo:block-container>
+        </fo:block>
+
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Another class of warnings is generated by the compiler
+	  during optimization and code generation. They warn about
+	  patterns that will never match (such as <fo:inline font-family="monospace">a=b</fo:inline>), guards
+	  that always evaluate to false, and expressions that
+	  always fail (such as <fo:inline font-family="monospace">atom+42</fo:inline>).</fo:block>
+	  <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Those warnings cannot be disabled (except by
+	  disabling all warnings).</fo:block>
+
+	  <fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+	    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The compiler does not warn for expressions that it
+          does not attempt to optimize. For example, the compiler tries
+          to evaluate <fo:inline font-family="monospace">1/0</fo:inline>, detects that it will cause an
+	  exception, and emits a warning. However,
+	  the compiler is silent about the similar expression,
+	  <fo:inline font-family="monospace">X/0</fo:inline>, because of the variable in it. Thus, the compiler does
+	  not even try to evaluate and therefore it emits no warnings.</fo:block>
+          </fo:block>
+
+	<fo:block background-color="#ffd6d6" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Warning:</fo:block>
+          <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The absence of warnings does not mean that
+	    there are no remaining errors in the code.</fo:block>
+        </fo:block>
+	
+	<fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">All options, except the include path
+	  (<fo:inline font-family="monospace">{i,Dir}</fo:inline>), can also be given in the file with attribute
+	  <fo:inline font-family="monospace">-compile([Option,...])</fo:inline>.
+	  Attribute <fo:inline font-family="monospace">-compile()</fo:inline> is allowed after the function
+	  definitions.</fo:block>
+	</fo:block>
+	
+	<fo:block background-color="#d0fed0" space-after="1em" space-before="2em" text-align="justify" padding-before="1em" padding-after="0.3em" padding-left="0.5em" padding-right="0.5em" margin-left="0.5em" margin-right="0.5em" keep-together.within-page="always"><fo:block font-size="1.33em">Note:</fo:block>
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The options <fo:inline font-family="monospace">{nowarn_unused_function, FAs}</fo:inline>,
+          <fo:inline font-family="monospace">{nowarn_bif_clash, FAs}</fo:inline>, and 
+          <fo:inline font-family="monospace">{nowarn_deprecated_function, MFAs}</fo:inline> are only
+          recognized when given in files. They are not affected by
+	  options <fo:inline font-family="monospace">warn_unused_function</fo:inline>, <fo:inline font-family="monospace">warn_bif_clash</fo:inline>, or 
+          <fo:inline font-family="monospace">warn_deprecated_function</fo:inline>.</fo:block>
+	</fo:block>
+
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">For debugging of the compiler, or for pure curiosity,
+          the intermediate code generated by each compiler pass can be
+	  inspected.
+          To print a complete list of the options to produce list files,
+	  type <fo:inline font-family="monospace">compile:options()</fo:inline> at the Erlang shell prompt.
+          The options are printed in the order that the passes are
+	  executed. If more than one listing option is used, the one
+	  representing the earliest pass takes effect.</fo:block>
+
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Unrecognized options are ignored.</fo:block>
+
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Both <fo:inline font-family="monospace">WarningList</fo:inline> and <fo:inline font-family="monospace">ErrorList</fo:inline> have
+	  the following format:</fo:block>
+        <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+[{FileName,[ErrorInfo]}].</fo:block>
+
+	<fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">ErrorInfo</fo:inline> is described later in this section. 
+	The filename is included here, as the compiler uses the 
+	Erlang pre-processor <fo:inline font-family="monospace">epp</fo:inline>, which allows the code to be 
+	included in other files. It is therefore important to know to
+	  <fo:inline font-weight="bold">which</fo:inline> file the line number of an error or a warning refers.
+	</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp261152">forms(Forms)</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Is the same as
+	  <fo:inline font-family="monospace">forms(Forms, [verbose,report_errors,report_warnings])</fo:inline>.
+	</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp258528">forms(Forms, Options) -&gt; CompRet</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Forms = [Form]</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">CompRet = BinRet | ErrRet</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">BinRet = {ok,ModuleName,BinaryOrCode} | {ok,ModuleName,BinaryOrCode,Warnings}</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">BinaryOrCode = binary() | term()</fo:block></fo:list-item-body></fo:list-item>
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ErrRet = error | {error,Errors,Warnings}</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Analogous to <fo:inline font-family="monospace">file/1</fo:inline>, but takes a list of forms (in
+	  the Erlang abstract format representation) as first argument.
+          Option <fo:inline font-family="monospace">binary</fo:inline> is implicit, that is, no object code
+	  file is produced. For options that normally produce a listing 
+	  file, such as 'E', the internal format for that compiler pass 
+	  (an Erlang term, usually not a binary) is returned instead of 
+	a binary.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp252880">format_error(ErrorDescriptor) -&gt; chars()</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">ErrorDescriptor = errordesc()</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Uses an <fo:inline font-family="monospace">ErrorDescriptor</fo:inline> and returns a deep list of
+	  characters that describes the error. This function is
+	  usually called implicitly when an <fo:inline font-family="monospace">ErrorInfo</fo:inline> structure 
+	(described in section 
+	<fo:inline font-style="italic">Error Information</fo:inline>) is processed.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp493872">output_generated(Options) -&gt; true | false</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Options = [term()]</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Determines whether the compiler generates a <fo:inline font-family="monospace">beam</fo:inline>
+	file with the given options. <fo:inline font-family="monospace">true</fo:inline> means that a <fo:inline font-family="monospace">beam</fo:inline>
+	file is generated. <fo:inline font-family="monospace">false</fo:inline> means that the compiler
+	generates some listing file, returns a binary, or merely
+	checks the syntax of the source code.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp488816">noenv_file(File, Options) -&gt; CompRet</fo:block></fo:block>
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Works like <fo:inline font-style="italic">file/2</fo:inline>,
+	 except that the environment variable <fo:inline font-family="monospace">ERL_COMPILER_OPTIONS</fo:inline>
+	 is not consulted.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp484336">noenv_forms(Forms, Options) -&gt; CompRet</fo:block></fo:block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Works like <fo:inline font-style="italic">forms/2</fo:inline>,
+	 except that the environment variable <fo:inline font-family="monospace">ERL_COMPILER_OPTIONS</fo:inline>
+	 is not consulted.</fo:block>
+      </fo:block>
+
+    <fo:block space-before="1.5em"><fo:block font-weight="bold" font-family="DejaVuSansMono, monospace" keep-with-next.within-page="always" space-after="0.25em"><fo:block id="idp480976">noenv_output_generated(Options) -&gt; true | false</fo:block></fo:block><fo:block>Types:</fo:block><fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+        <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block/></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block font-weight="bold" font-family="monospace">Options = [term()]</fo:block></fo:list-item-body></fo:list-item>
+      </fo:list-block>
+        <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Works like
+	<fo:inline font-style="italic">output_generated/1</fo:inline>,
+	except that the environment variable <fo:inline font-family="monospace">ERL_COMPILER_OPTIONS</fo:inline>
+	is not consulted.</fo:block>
+      </fo:block>
+
+  
+
+  <fo:block id="idm21840" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Default Compiler Options</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The (host operating system) environment variable
+      <fo:inline font-family="monospace">ERL_COMPILER_OPTIONS</fo:inline> can be used to give default compiler
+      options. Its value must be a valid Erlang term. If the value is a
+      list, it is used as is. If it is not a list, it is put
+      into a list.</fo:block>
+
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The list is appended to any options given to
+      <fo:inline font-style="italic">file/2</fo:inline>,
+      <fo:inline font-style="italic">forms/2</fo:inline>, and
+      <fo:inline font-style="italic">output_generated/2</fo:inline>.
+      Use the alternative functions
+      <fo:inline font-style="italic">noenv_file/2</fo:inline>,
+      <fo:inline font-style="italic">noenv_forms/2</fo:inline>, or
+      <fo:inline font-style="italic">noenv_output_generated/2</fo:inline>
+      if you do not want the environment variable to be consulted,
+      for example, if you are calling the compiler recursively from
+      inside a parse transform.</fo:block>
+
+      <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The list can be retrieved with
+      <fo:inline font-style="italic">env_compiler_options/0</fo:inline>.</fo:block>
+  
+
+  <fo:block id="idm28688" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Inlining</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The compiler can do function inlining within an Erlang
+      module. Inlining means that a call to a function is replaced with
+      the function body with the arguments replaced with the actual
+      values. The semantics are preserved, except if exceptions are
+      generated in the inlined code. Exceptions are reported as
+      occurring in the function the body was inlined into. Also,
+      <fo:inline font-family="monospace">function_clause</fo:inline> exceptions are converted to similar
+      <fo:inline font-family="monospace">case_clause</fo:inline> exceptions.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">When a function is inlined, the original function is
+      kept if it is exported (either by an explicit export or if the
+      option <fo:inline font-family="monospace">export_all</fo:inline> was given) or if not all calls to the
+      function are inlined.</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Inlining does not necessarily improve running time.
+      For example, inlining can increase Beam stack use, which
+      probably is detrimental to performance for recursive functions.
+    </fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Inlining is never default. It must be explicitly enabled with a
+      compiler option or a <fo:inline font-family="monospace">-compile()</fo:inline> attribute in the source
+      module.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To enable inlining, either use the option <fo:inline font-family="monospace">inline</fo:inline> to
+    let the compiler decide which functions to inline, or
+    <fo:inline font-family="monospace">{inline,[{Name,Arity},...]}</fo:inline> to have the compiler inline
+    all calls to the given functions. If the option is given inside
+    a <fo:inline font-family="monospace">compile</fo:inline> directive in an Erlang module, <fo:inline font-family="monospace">{Name,Arity}</fo:inline>
+    can be written as <fo:inline font-family="monospace">Name/Arity</fo:inline>.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Example of explicit inlining:</fo:block>
+
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+-compile({inline,[pi/0]}).
+
+pi() -&gt; 3.1416.
+    </fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Example of implicit inlining:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+-compile(inline).</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The option <fo:inline font-family="monospace">{inline_size,Size}</fo:inline> controls how large functions
+      that are allowed to be inlined. Default is <fo:inline font-family="monospace">24</fo:inline>, which
+      keeps the size of the inlined code roughly the same as
+      the un-inlined version (only relatively small functions are
+      inlined).</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Example:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+%% Aggressive inlining - will increase code size.
+-compile(inline).
+-compile({inline_size,100}).</fo:block>
+  
+
+  <fo:block id="idp19408" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Inlining of List Functions</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The compiler can also inline various list manipulation functions
+      from the module <fo:inline font-family="monospace">list</fo:inline> in STDLIB.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">This feature must be explicitly enabled with a compiler option or a
+      <fo:inline font-family="monospace">-compile()</fo:inline> attribute in the source module.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">To enable inlining of list functions, use option <fo:inline font-family="monospace">inline_list_funcs</fo:inline>.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The following functions are inlined:</fo:block>
+    <fo:list-block provisional-distance-between-starts="1.8em" provisional-label-separation="1em" space-after="0.25em" space-before="0.25em">
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-style="italic">lists:all/2</fo:inline></fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-style="italic">lists:any/2</fo:inline></fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-style="italic">lists:foreach/2</fo:inline></fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-style="italic">lists:map/2</fo:inline></fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-style="italic">lists:flatmap/2</fo:inline></fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-style="italic">lists:filter/2</fo:inline></fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-style="italic">lists:foldl/3</fo:inline></fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-style="italic">lists:foldr/3</fo:inline></fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-style="italic">lists:mapfoldl/3</fo:inline></fo:block></fo:list-item-body></fo:list-item>
+      <fo:list-item space-after="0.25em"><fo:list-item-label end-indent="label-end()"><fo:block>
+          •
+        </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()" format="justify"><fo:block><fo:inline font-style="italic">lists:mapfoldr/3</fo:inline></fo:block></fo:list-item-body></fo:list-item>
+    </fo:list-block>
+  
+
+  <fo:block id="idp341280" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Parse Transformations</fo:block>
+    
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">Parse transformations are used when a programmer wants to use
+      Erlang syntax but with different semantics. The original Erlang
+      code is then transformed into other Erlang code.</fo:block>
+  
+
+  <fo:block id="idp339200" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">Error Information</fo:block>
+    
+    
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">The <fo:inline font-family="monospace">ErrorInfo</fo:inline> mentioned earlier is the standard
+      <fo:inline font-family="monospace">ErrorInfo</fo:inline> structure, which is returned from all I/O modules.
+      It has the following format:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+{ErrorLine, Module, ErrorDescriptor}</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify"><fo:inline font-family="monospace">ErrorLine</fo:inline> is the atom <fo:inline font-family="monospace">none</fo:inline> if the error does
+    not correspond to a specific line, for example, if the source file does
+    not exist.</fo:block>
+
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">A string describing the error is obtained with the following
+      call:</fo:block>
+    <fo:block background-color="#e0e0ff" font-family="DejaVuSansMono, monospace" font-size="0.8em" keep-together.within-page="auto" linefeed-treatment="preserve" padding-before="0em" padding-after="1em" space-after="1em" space-before="2em" margin-left="0.5em" margin-right="0.5em" white-space-collapse="false" white-space-treatment="preserve" wrap-option="no-wrap">
+Module:format_error(ErrorDescriptor)</fo:block>
+  
+
+  <fo:block id="idp495584" font-family="DejaVuSans, sans-serif" font-size="1.33em" font-weight="normal" keep-with-next.within-page="always" space-after="0.3em" space-before="0.8em">See Also</fo:block>
+    
+    <fo:block font-size="1em" space-after="0.5em" space-before="0.5em" text-align="justify">
+      <fo:inline font-style="italic">epp(3)</fo:inline>,
+      <fo:inline font-style="italic">erl_id_trans(3)</fo:inline>,
+      <fo:inline font-style="italic">erl_lint(3)</fo:inline>,
+      <fo:inline font-style="italic">beam_lib(3)</fo:inline>
+    </fo:block>
+  
+</fo:flow>
+  </fo:page-sequence>
+</fo:root>

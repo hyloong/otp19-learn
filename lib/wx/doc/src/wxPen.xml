@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxPen</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxPen.xml</file></header>
+<module>wxPen</module>
+<modulesummary>See external documentation: wxPen.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpen.html">wxPen</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxPen"/>wxPen()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxPen">wxPen()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpen.html#wxpenwxpen">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Colour) -&gt; <seealso marker="#type-wxPen">wxPen()</seealso></name>
+<fsummary>Equivalent to new(Colour, []).
+</fsummary>
+<type>
+<v>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="new-1"/>
+<p>Equivalent to <seealso marker="#new-2">new(Colour, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Colour, Options::[Option]) -&gt; <seealso marker="#type-wxPen">wxPen()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v><v>Option = {width, integer()} | {style, integer()}</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpen.html#wxpenwxpen">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCap(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPen">wxPen()</seealso></v></type>
+<desc><marker id="getCap-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpen.html#wxpengetcap">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPen">wxPen()</seealso></v></type>
+<desc><marker id="getColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpen.html#wxpengetcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getJoin(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPen">wxPen()</seealso></v></type>
+<desc><marker id="getJoin-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpen.html#wxpengetjoin">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getStyle(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPen">wxPen()</seealso></v></type>
+<desc><marker id="getStyle-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpen.html#wxpengetstyle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getWidth(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPen">wxPen()</seealso></v></type>
+<desc><marker id="getWidth-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpen.html#wxpengetwidth">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isOk(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPen">wxPen()</seealso></v></type>
+<desc><marker id="isOk-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpen.html#wxpenisok">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setCap(This, CapStyle) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPen">wxPen()</seealso></v><v>CapStyle = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></v></type>
+<desc><marker id="setCap-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpen.html#wxpensetcap">external documentation</url>.
+ <br/> CapStyle = integer</p>
+</desc></func>
+<func>
+<name>setColour(This, Colour) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPen">wxPen()</seealso></v><v>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpen.html#wxpensetcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setColour(This, Red, Green, Blue) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPen">wxPen()</seealso></v><v>Red = integer()</v><v>Green = integer()</v><v>Blue = integer()</v></type>
+<desc><marker id="setColour-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpen.html#wxpensetcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setJoin(This, JoinStyle) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPen">wxPen()</seealso></v><v>JoinStyle = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></v></type>
+<desc><marker id="setJoin-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpen.html#wxpensetjoin">external documentation</url>.
+ <br/> JoinStyle = integer</p>
+</desc></func>
+<func>
+<name>setStyle(This, Style) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPen">wxPen()</seealso></v><v>Style = integer()</v></type>
+<desc><marker id="setStyle-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpen.html#wxpensetstyle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setWidth(This, Width) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxPen">wxPen()</seealso></v><v>Width = integer()</v></type>
+<desc><marker id="setWidth-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxpen.html#wxpensetwidth">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxPen">wxPen()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

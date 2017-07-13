@@ -31,6 +31,6 @@ include $(ERL_TOP)/make/$(TARGET)/otp.mk
 RELSYSDIR = $(RELEASE_PATH)/lib/wx-$(VSN)
 
 else
-INSTALLDIR=/root/download/otp_src_19.3/lib
+INSTALLDIR=/root/download/otp_src_20.0/lib
 endif
 

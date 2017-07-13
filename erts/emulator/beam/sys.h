@@ -99,6 +99,12 @@
 #define ErtsContainerStruct(ptr, type, member) \
     ((type *)((char *)(1 ? (ptr) : &((type *)0)->member) - offsetof(type, member)))
 
+/* Use this variant when the member is an array */
+#define ErtsContainerStruct_(ptr, type, memberv) \
+    ((type *)((char *)(1 ? (ptr) : ((type *)0)->memberv) - offsetof(type, memberv)))
+
+#define ErtsSizeofMember(type, member) sizeof(((type *)0)->member)
+
 #if defined (__WIN32__)
 #  include "erl_win_sys.h"
 #else
@@ -481,18 +487,10 @@ extern volatile int erts_break_requested;
 void erts_do_break_handling(void);
 #endif
 
-#ifdef ERTS_WANT_GOT_SIGUSR1
-#  ifndef UNIX
-#    define ERTS_GOT_SIGUSR1 0
-#  else
-#    ifdef ERTS_SMP
-extern erts_smp_atomic32_t erts_got_sigusr1;
-#      define ERTS_GOT_SIGUSR1 ((int) erts_smp_atomic32_read_mb(&erts_got_sigusr1))
-#    else
-extern volatile int erts_got_sigusr1;
-#      define ERTS_GOT_SIGUSR1 erts_got_sigusr1
-#    endif
-#  endif
+#if !defined(ERTS_SMP) && !defined(__WIN32__)
+extern volatile Uint erts_signal_state;
+#define ERTS_SIGNAL_STATE erts_signal_state
+void erts_handle_signal_state(void);
 #endif
 
 #ifdef ERTS_SMP
@@ -603,6 +601,8 @@ __decl_noreturn void __noreturn erts_exit(int n, char*, ...);
 	     __FILE__, __LINE__, __func__, What)
 
 Eterm erts_check_io_info(void *p);
+
+UWord erts_sys_get_page_size(void);
 
 /* Size of misc memory allocated from system dependent code */
 Uint erts_sys_misc_mem_sz(void);
@@ -901,6 +901,9 @@ typedef erts_atomic_t erts_refc_t;
 
 ERTS_GLB_INLINE void erts_refc_init(erts_refc_t *refcp, erts_aint_t val);
 ERTS_GLB_INLINE void erts_refc_inc(erts_refc_t *refcp, erts_aint_t min_val);
+ERTS_GLB_INLINE erts_aint_t erts_refc_inc_unless(erts_refc_t *refcp,
+                                                 erts_aint_t unless_val,
+                                                 erts_aint_t min_val);
 ERTS_GLB_INLINE erts_aint_t erts_refc_inctest(erts_refc_t *refcp,
 					      erts_aint_t min_val);
 ERTS_GLB_INLINE void erts_refc_dec(erts_refc_t *refcp, erts_aint_t min_val);
@@ -931,6 +934,30 @@ erts_refc_inc(erts_refc_t *refcp, erts_aint_t min_val)
 #else
     erts_atomic_inc_nob((erts_atomic_t *) refcp);
 #endif
+}
+
+ERTS_GLB_INLINE erts_aint_t
+erts_refc_inc_unless(erts_refc_t *refcp,
+                     erts_aint_t unless_val,
+                     erts_aint_t min_val)
+{
+    erts_aint_t val = erts_atomic_read_nob((erts_atomic_t *) refcp);
+    while (1) {
+        erts_aint_t exp, new;
+#ifdef ERTS_REFC_DEBUG
+        if (val < 0)
+            erts_exit(ERTS_ABORT_EXIT,
+                      "erts_refc_inc_unless(): Bad refc found (refc=%ld < %ld)!\n",
+                      val, min_val);
+#endif
+        if (val == unless_val)
+            return val;
+        new = val + 1;
+        exp = val;
+        val = erts_atomic_cmpxchg_nob((erts_atomic_t *) refcp, new, exp);
+        if (val == exp)
+            return new;
+    }
 }
 
 ERTS_GLB_INLINE erts_aint_t
@@ -1006,6 +1033,9 @@ typedef erts_smp_atomic_t erts_smp_refc_t;
 
 ERTS_GLB_INLINE void erts_smp_refc_init(erts_smp_refc_t *refcp, erts_aint_t val);
 ERTS_GLB_INLINE void erts_smp_refc_inc(erts_smp_refc_t *refcp, erts_aint_t min_val);
+ERTS_GLB_INLINE erts_aint_t erts_smp_refc_inc_unless(erts_smp_refc_t *refcp,
+                                                     erts_aint_t unless_val,
+                                                     erts_aint_t min_val);
 ERTS_GLB_INLINE erts_aint_t erts_smp_refc_inctest(erts_smp_refc_t *refcp,
                                                   erts_aint_t min_val);
 ERTS_GLB_INLINE void erts_smp_refc_dec(erts_smp_refc_t *refcp, erts_aint_t min_val);
@@ -1037,6 +1067,31 @@ erts_smp_refc_inc(erts_smp_refc_t *refcp, erts_aint_t min_val)
     erts_smp_atomic_inc_nob((erts_smp_atomic_t *) refcp);
 #endif
 }
+
+ERTS_GLB_INLINE erts_aint_t
+erts_smp_refc_inc_unless(erts_smp_refc_t *refcp,
+                         erts_aint_t unless_val,
+                         erts_aint_t min_val)
+{
+    erts_aint_t val = erts_smp_atomic_read_nob((erts_smp_atomic_t *) refcp);
+    while (1) {
+        erts_aint_t exp, new;
+#ifdef ERTS_REFC_DEBUG
+        if (val < 0)
+            erts_exit(ERTS_ABORT_EXIT,
+                      "erts_smp_refc_inc_unless(): Bad refc found (refc=%ld < %ld)!\n",
+                      val, min_val);
+#endif
+        if (val == unless_val)
+            return val;
+        new = val + 1;
+        exp = val;
+        val = erts_smp_atomic_cmpxchg_nob((erts_smp_atomic_t *) refcp, new, exp);
+        if (val == exp)
+            return new;
+    }
+}
+
 
 ERTS_GLB_INLINE erts_aint_t
 erts_smp_refc_inctest(erts_smp_refc_t *refcp, erts_aint_t min_val)

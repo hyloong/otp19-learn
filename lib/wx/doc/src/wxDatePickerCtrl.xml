@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxDatePickerCtrl</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxDatePickerCtrl.xml</file></header>
+<module>wxDatePickerCtrl</module>
+<modulesummary>See external documentation: wxDatePickerCtrl.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdatepickerctrl.html">wxDatePickerCtrl</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxPickerBase">wxPickerBase</seealso>
+  <br/><seealso marker="wxControl">wxControl</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxDatePickerCtrl"/>wxDatePickerCtrl()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxDatePickerCtrl">wxDatePickerCtrl()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdatepickerctrl.html#wxdatepickerctrlwxdatepickerctrl">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id) -&gt; <seealso marker="#type-wxDatePickerCtrl">wxDatePickerCtrl()</seealso></name>
+<fsummary>Equivalent to new(Parent, Id, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v></type>
+<desc><marker id="new-2"/>
+<p>Equivalent to <seealso marker="#new-3">new(Parent, Id, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id, Options::[Option]) -&gt; <seealso marker="#type-wxDatePickerCtrl">wxDatePickerCtrl()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Option = {date, <seealso marker="wx#type-wx_datetime">wx:wx_datetime()</seealso>} | {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()} | {validator, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</v></type>
+<desc><marker id="new-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdatepickerctrl.html#wxdatepickerctrlwxdatepickerctrl">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getRange(This, Dt1, Dt2) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxDatePickerCtrl">wxDatePickerCtrl()</seealso></v><v>Dt1 = <seealso marker="wx#type-wx_datetime">wx:wx_datetime()</seealso></v><v>Dt2 = <seealso marker="wx#type-wx_datetime">wx:wx_datetime()</seealso></v></type>
+<desc><marker id="getRange-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdatepickerctrl.html#wxdatepickerctrlgetrange">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getValue(This) -&gt; <seealso marker="wx#type-wx_datetime">wx:wx_datetime()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxDatePickerCtrl">wxDatePickerCtrl()</seealso></v></type>
+<desc><marker id="getValue-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdatepickerctrl.html#wxdatepickerctrlgetvalue">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setRange(This, Dt1, Dt2) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxDatePickerCtrl">wxDatePickerCtrl()</seealso></v><v>Dt1 = <seealso marker="wx#type-wx_datetime">wx:wx_datetime()</seealso></v><v>Dt2 = <seealso marker="wx#type-wx_datetime">wx:wx_datetime()</seealso></v></type>
+<desc><marker id="setRange-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdatepickerctrl.html#wxdatepickerctrlsetrange">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setValue(This, Date) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxDatePickerCtrl">wxDatePickerCtrl()</seealso></v><v>Date = <seealso marker="wx#type-wx_datetime">wx:wx_datetime()</seealso></v></type>
+<desc><marker id="setValue-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdatepickerctrl.html#wxdatepickerctrlsetvalue">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxDatePickerCtrl">wxDatePickerCtrl()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

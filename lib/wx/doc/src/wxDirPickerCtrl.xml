@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxDirPickerCtrl</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxDirPickerCtrl.xml</file></header>
+<module>wxDirPickerCtrl</module>
+<modulesummary>See external documentation: wxDirPickerCtrl.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdirpickerctrl.html">wxDirPickerCtrl</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxPickerBase">wxPickerBase</seealso>
+  <br/><seealso marker="wxControl">wxControl</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxDirPickerCtrl"/>wxDirPickerCtrl()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxDirPickerCtrl">wxDirPickerCtrl()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdirpickerctrl.html#wxdirpickerctrlwxdirpickerctrl">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id) -&gt; <seealso marker="#type-wxDirPickerCtrl">wxDirPickerCtrl()</seealso></name>
+<fsummary>Equivalent to new(Parent, Id, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v></type>
+<desc><marker id="new-2"/>
+<p>Equivalent to <seealso marker="#new-3">new(Parent, Id, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Id, Options::[Option]) -&gt; <seealso marker="#type-wxDirPickerCtrl">wxDirPickerCtrl()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Option = {path, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {message, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()} | {validator, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</v></type>
+<desc><marker id="new-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdirpickerctrl.html#wxdirpickerctrlwxdirpickerctrl">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id) -&gt; boolean()</name>
+<fsummary>Equivalent to create(This, Parent, Id, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxDirPickerCtrl">wxDirPickerCtrl()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v></type>
+<desc><marker id="create-3"/>
+<p>Equivalent to <seealso marker="#create-4">create(This, Parent, Id, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Id, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxDirPickerCtrl">wxDirPickerCtrl()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Id = integer()</v><v>Option = {path, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {message, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>} | {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()} | {validator, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</v></type>
+<desc><marker id="create-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdirpickerctrl.html#wxdirpickerctrlcreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPath(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxDirPickerCtrl">wxDirPickerCtrl()</seealso></v></type>
+<desc><marker id="getPath-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdirpickerctrl.html#wxdirpickerctrlgetpath">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setPath(This, Str) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxDirPickerCtrl">wxDirPickerCtrl()</seealso></v><v>Str = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setPath-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxdirpickerctrl.html#wxdirpickerctrlsetpath">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxDirPickerCtrl">wxDirPickerCtrl()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

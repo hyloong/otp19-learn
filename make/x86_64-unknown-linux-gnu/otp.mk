@@ -34,8 +34,8 @@ include $(ERL_TOP)/make/output.mk
 #       Version
 # ----------------------------------------------------
 
-OTP_VERSION = 19.3
-SYSTEM_VSN = 19
+OTP_VERSION = 20.0
+SYSTEM_VSN = 20
 
 # ----------------------------------------------------
 #	Cross Compiling
@@ -46,6 +46,10 @@ CROSS_COMPILING = no
 #	Common macros
 # ----------------------------------------------------
 DEFAULT_TARGETS =  opt debug release release_docs clean docs
+
+DEFAULT_FLAVOR=smp
+FLAVORS= smp
+TYPES=opt lcnt
 
 # Slash separated list of return values from $(origin VAR)
 # that are untrusted - set default in this file instead.
@@ -74,8 +78,8 @@ CC = gcc
 GCC = yes
 HCC = $(CC)
 CC32 = gcc
-CFLAGS32 = -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -m32
-BASIC_CFLAGS = -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE
+CFLAGS32 = -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -m32
+BASIC_CFLAGS = -Werror=undef -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE
 DEBUG_FLAGS =  -g
 LD = $(CC)
 RANLIB = ranlib
@@ -258,7 +262,7 @@ DEFAULT_GIF_FILES = $(HTMLDIR)/min_head.gif
 # Flags & Commands
 #
 XSLTPROC = xsltproc
-FOP = /root/download/otp_src_19.3/make/fakefop
+FOP = /root/download/otp_src_20.0/make/fakefop
 XMLLINT = xmllint
 CP = /bin/cp
 

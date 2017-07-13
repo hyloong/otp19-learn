@@ -274,7 +274,6 @@ PACKAGE_BUGREPORT=
 ac_subdirs_all="$ac_subdirs_all snmp/."
 ac_subdirs_all="$ac_subdirs_all common_test/."
 ac_subdirs_all="$ac_subdirs_all erl_interface/."
-ac_subdirs_all="$ac_subdirs_all gs/."
 ac_subdirs_all="$ac_subdirs_all megaco/."
 ac_subdirs_all="$ac_subdirs_all odbc/."
 ac_subdirs_all="$ac_subdirs_all wx/."
@@ -1276,9 +1275,6 @@ subdirs="$subdirs common_test/."
     test ! -f erl_interface/configure ||
 
 subdirs="$subdirs erl_interface/."
-    test ! -f gs/configure ||
-
-subdirs="$subdirs gs/."
     test ! -f megaco/configure ||
 
 subdirs="$subdirs megaco/."

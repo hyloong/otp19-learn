@@ -1,0 +1,357 @@
+<module name="wxPrintDialogData">
+<type>
+  <name>wxPrintDialogData</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxPrintDialogData">wxPrintDialogData()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>enableHelp</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>enableHelp(This, Flag) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+        <subtype><typename>Flag</typename><string>Flag = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Flag</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>enablePageNumbers</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>enablePageNumbers(This, Flag) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+        <subtype><typename>Flag</typename><string>Flag = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Flag</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>enablePrintToFile</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>enablePrintToFile(This, Flag) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+        <subtype><typename>Flag</typename><string>Flag = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Flag</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>enableSelection</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>enableSelection(This, Flag) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+        <subtype><typename>Flag</typename><string>Flag = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Flag</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getAllPages</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getAllPages(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getCollate</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getCollate(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getFromPage</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getFromPage(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getMaxPage</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getMaxPage(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getMinPage</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getMinPage(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getNoCopies</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getNoCopies(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getPrintData</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getPrintData(This) -&gt; <seealso marker="wxPrintData#type-wxPrintData">wxPrintData:wxPrintData()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getPrintToFile</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getPrintToFile(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getSelection</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getSelection(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getToPage</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getToPage(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isOk</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isOk(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>new() -&gt; <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(DialogData) -&gt; <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></head>
+      <guard>
+        <subtype><typename>DialogData</typename><string>DialogData = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso> | <seealso marker="wxPrintData#type-wxPrintData">wxPrintData:wxPrintData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>DialogData</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>setCollate</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setCollate(This, Flag) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+        <subtype><typename>Flag</typename><string>Flag = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Flag</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setFromPage</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setFromPage(This, V) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+        <subtype><typename>V</typename><string>V = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>V</anno>
+</spec>
+<spec>
+  <name>setMaxPage</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setMaxPage(This, V) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+        <subtype><typename>V</typename><string>V = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>V</anno>
+</spec>
+<spec>
+  <name>setMinPage</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setMinPage(This, V) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+        <subtype><typename>V</typename><string>V = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>V</anno>
+</spec>
+<spec>
+  <name>setNoCopies</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setNoCopies(This, V) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+        <subtype><typename>V</typename><string>V = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>V</anno>
+</spec>
+<spec>
+  <name>setPrintData</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setPrintData(This, PrintData) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+        <subtype><typename>PrintData</typename><string>PrintData = <seealso marker="wxPrintData#type-wxPrintData">wxPrintData:wxPrintData()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>PrintData</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setPrintToFile</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setPrintToFile(This, Flag) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+        <subtype><typename>Flag</typename><string>Flag = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Flag</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setSelection</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setSelection(This, Flag) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+        <subtype><typename>Flag</typename><string>Flag = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Flag</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setToPage</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setToPage(This, V) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxPrintDialogData">wxPrintDialogData()</seealso></string></subtype>
+        <subtype><typename>V</typename><string>V = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+  <anno>V</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:38.</timestamp>
+</module>

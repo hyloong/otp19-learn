@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxKeyEvent</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxKeyEvent.xml</file></header>
+<module>wxKeyEvent</module>
+<modulesummary>See external documentation: wxKeyEvent.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxkeyevent.html">wxKeyEvent</url>.
+  </p><taglist><tag>Use <seealso marker="wxEvtHandler#connect-3">wxEvtHandler:connect/3</seealso> with EventType:</tag>
+  <item><p><em>char</em>, <em>char_hook</em>, <em>key_down</em>, <em>key_up</em></p></item></taglist><p>
+  See also the message variant <seealso marker="wxEvtHandler#type-wxKey">#wxKey{</seealso>} event record type.</p>
+ 
+  <p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxEvent">wxEvent</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxKeyEvent"/>wxKeyEvent()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>altDown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></v></type>
+<desc><marker id="altDown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxkeyevent.html#wxkeyeventaltdown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>cmdDown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></v></type>
+<desc><marker id="cmdDown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxkeyevent.html#wxkeyeventcmddown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>controlDown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></v></type>
+<desc><marker id="controlDown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxkeyevent.html#wxkeyeventcontroldown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getKeyCode(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></v></type>
+<desc><marker id="getKeyCode-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxkeyevent.html#wxkeyeventgetkeycode">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getModifiers(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></v></type>
+<desc><marker id="getModifiers-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxkeyevent.html#wxkeyeventgetmodifiers">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPosition(This) -&gt; {X::integer(), Y::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></v></type>
+<desc><marker id="getPosition-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxkeyevent.html#wxkeyeventgetposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getRawKeyCode(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></v></type>
+<desc><marker id="getRawKeyCode-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxkeyevent.html#wxkeyeventgetrawkeycode">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getRawKeyFlags(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></v></type>
+<desc><marker id="getRawKeyFlags-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxkeyevent.html#wxkeyeventgetrawkeyflags">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getUnicodeKey(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></v></type>
+<desc><marker id="getUnicodeKey-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxkeyevent.html#wxkeyeventgetunicodekey">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getX(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></v></type>
+<desc><marker id="getX-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxkeyevent.html#wxkeyeventgetx">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getY(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></v></type>
+<desc><marker id="getY-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxkeyevent.html#wxkeyeventgety">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasModifiers(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></v></type>
+<desc><marker id="hasModifiers-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxkeyevent.html#wxkeyeventhasmodifiers">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>metaDown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></v></type>
+<desc><marker id="metaDown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxkeyevent.html#wxkeyeventmetadown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>shiftDown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxKeyEvent">wxKeyEvent()</seealso></v></type>
+<desc><marker id="shiftDown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxkeyevent.html#wxkeyeventshiftdown">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

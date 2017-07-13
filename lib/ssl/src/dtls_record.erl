@@ -1,7 +1,7 @@
 %%
 %% %CopyrightBegin%
 %%
-%% Copyright Ericsson AB 2013-2016. All Rights Reserved.
+%% Copyright Ericsson AB 2013-2017. All Rights Reserved.
 %%
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -44,9 +44,9 @@
 -export([protocol_version/1, lowest_protocol_version/1, lowest_protocol_version/2,
 	 highest_protocol_version/1, highest_protocol_version/2,
 	 is_higher/2, supported_protocol_versions/0,
-	 is_acceptable_version/2]).
+	 is_acceptable_version/2, hello_version/2]).
 
--export([save_current_connection_state/2, next_epoch/2]).
+-export([save_current_connection_state/2, next_epoch/2, get_connection_state_by_epoch/3, replay_detect/2]).
 
 -export([init_connection_state_seq/2, current_connection_state_epoch/2]).
 
@@ -54,6 +54,8 @@
 
 -type dtls_version()       :: ssl_record:ssl_version().
 -type dtls_atom_version()  :: dtlsv1 | 'dtlsv1.2'.
+
+-define(REPLAY_WINDOW_SIZE, 64).
 
 -compile(inline).
 
@@ -73,7 +75,7 @@ init_connection_states(Role, BeastMitigation) ->
     Initial = initial_connection_state(ConnectionEnd, BeastMitigation),
     Current = Initial#{epoch := 0},
     InitialPending = ssl_record:empty_connection_state(ConnectionEnd, BeastMitigation),
-    Pending = InitialPending#{epoch => undefined},
+    Pending = InitialPending#{epoch => undefined, replay_window => init_replay_window(?REPLAY_WINDOW_SIZE)},
     #{saved_read  => Current,
       current_read  => Current,
       pending_read  => Pending,
@@ -96,11 +98,13 @@ save_current_connection_state(#{current_write := Current} = States, write) ->
 
 next_epoch(#{pending_read := Pending,
 	     current_read := #{epoch := Epoch}} = States, read) ->
-    States#{pending_read := Pending#{epoch := Epoch + 1}};
+    States#{pending_read := Pending#{epoch := Epoch + 1,
+                                     replay_window := init_replay_window(?REPLAY_WINDOW_SIZE)}};
 
 next_epoch(#{pending_write := Pending,
 	     current_write := #{epoch := Epoch}} = States, write) ->
-    States#{pending_write := Pending#{epoch := Epoch + 1}}.
+    States#{pending_write := Pending#{epoch := Epoch + 1,
+                                      replay_window := init_replay_window(?REPLAY_WINDOW_SIZE)}}.
 
 get_connection_state_by_epoch(Epoch, #{current_write := #{epoch := Epoch} = Current},
 			      write) ->
@@ -393,7 +397,7 @@ init_connection_state_seq(_, ConnnectionStates) ->
 					    integer().
 %%
 %% Description: Returns the epoch the connection_state record
-%% that is currently defined as the current conection state.
+%% that is currently defined as the current connection state.
 %%--------------------------------------------------------------------
 current_connection_state_epoch(#{current_read := #{epoch := Epoch}},
 			       read) ->
@@ -401,6 +405,16 @@ current_connection_state_epoch(#{current_read := #{epoch := Epoch}},
 current_connection_state_epoch(#{current_write := #{epoch := Epoch}},
 			       write) ->
     Epoch.
+
+-spec hello_version(dtls_version(), [dtls_version()]) -> dtls_version().
+hello_version(Version, Versions) ->
+    case dtls_v1:corresponding_tls_version(Version) of
+        TLSVersion when TLSVersion >= {3, 3} ->
+            Version;
+        _ ->
+            lowest_protocol_version(Versions)
+    end.
+
 
 %%--------------------------------------------------------------------
 %%% Internal functions
@@ -410,6 +424,7 @@ initial_connection_state(ConnectionEnd, BeastMitigation) ->
 	  ssl_record:initial_security_params(ConnectionEnd),
       epoch => undefined,
       sequence_number => 0,
+      replay_window => init_replay_window(?REPLAY_WINDOW_SIZE),
       beast_mitigation => BeastMitigation,
       compression_state  => undefined,
       cipher_state  => undefined,
@@ -439,43 +454,60 @@ encode_dtls_cipher_text(Type, {MajVer, MinVer}, Fragment,
 encode_plain_text(Type, Version, Data, #{compression_state := CompS0,
 					 epoch := Epoch,
 					 sequence_number := Seq,
+                                         cipher_state := CipherS0,
 					 security_parameters :=
 					     #security_parameters{
 						cipher_type = ?AEAD,
+                                                  bulk_cipher_algorithm =
+                                                    BulkCipherAlgo,
 						compression_algorithm = CompAlg}
 					} = WriteState0) ->
     {Comp, CompS1} = ssl_record:compress(CompAlg, Data, CompS0),
-    WriteState1 = WriteState0#{compression_state => CompS1},
     AAD = calc_aad(Type, Version, Epoch, Seq),
-    ssl_record:cipher_aead(dtls_v1:corresponding_tls_version(Version), Comp, WriteState1, AAD);
-encode_plain_text(Type, Version, Data, #{compression_state := CompS0,
+    TLSVersion = dtls_v1:corresponding_tls_version(Version),
+    {CipherFragment, CipherS1} =
+	ssl_cipher:cipher_aead(BulkCipherAlgo, CipherS0, Seq, AAD, Comp, TLSVersion),
+    {CipherFragment,  WriteState0#{compression_state => CompS1,
+                                   cipher_state => CipherS1}};
+encode_plain_text(Type, Version, Fragment, #{compression_state := CompS0,
 					 epoch := Epoch,
 					 sequence_number := Seq,
+                                         cipher_state := CipherS0,
 					 security_parameters :=
-					     #security_parameters{compression_algorithm = CompAlg}
+					     #security_parameters{compression_algorithm = CompAlg,
+                                                                  bulk_cipher_algorithm =
+                                                                      BulkCipherAlgo}
 					}= WriteState0) ->
-    {Comp, CompS1} = ssl_record:compress(CompAlg, Data, CompS0),
+    {Comp, CompS1} = ssl_record:compress(CompAlg, Fragment, CompS0),
     WriteState1 = WriteState0#{compression_state => CompS1},
-    MacHash = calc_mac_hash(Type, Version, WriteState1, Epoch, Seq, Comp),
-    ssl_record:cipher(dtls_v1:corresponding_tls_version(Version), Comp, WriteState1, MacHash).
+    MAC = calc_mac_hash(Type, Version, WriteState1, Epoch, Seq, Comp),
+    TLSVersion = dtls_v1:corresponding_tls_version(Version),
+    {CipherFragment, CipherS1} =
+	ssl_cipher:cipher(BulkCipherAlgo, CipherS0, MAC, Fragment, TLSVersion),
+    {CipherFragment,  WriteState0#{cipher_state => CipherS1}}.
 
 decode_cipher_text(#ssl_tls{type = Type, version = Version,
 			    epoch = Epoch,
 			    sequence_number = Seq,
 			    fragment = CipherFragment} = CipherText,
 		   #{compression_state := CompressionS0,
+                     cipher_state := CipherS0,
 		     security_parameters :=
 			 #security_parameters{
 			    cipher_type = ?AEAD,
+                            bulk_cipher_algorithm =
+                                BulkCipherAlgo,
 			    compression_algorithm = CompAlg}} = ReadState0, 
 		   ConnnectionStates0) ->
     AAD = calc_aad(Type, Version, Epoch, Seq),
-    case ssl_record:decipher_aead(dtls_v1:corresponding_tls_version(Version),
-				  CipherFragment, ReadState0, AAD) of
-	{PlainFragment, ReadState1} ->
+    TLSVersion = dtls_v1:corresponding_tls_version(Version),
+    case  ssl_cipher:decipher_aead(BulkCipherAlgo, CipherS0, Seq, AAD, CipherFragment, TLSVersion) of
+	{PlainFragment, CipherState} ->
 	    {Plain, CompressionS1} = ssl_record:uncompress(CompAlg,
 							   PlainFragment, CompressionS0),
-	    ReadState = ReadState1#{compression_state => CompressionS1},
+	    ReadState0 = ReadState0#{compression_state => CompressionS1,
+                                    cipher_state => CipherState},
+            ReadState = update_replay_window(Seq, ReadState0),
 	    ConnnectionStates = set_connection_state_by_epoch(ReadState, Epoch, ConnnectionStates0, read),
 	    {CipherText#ssl_tls{fragment = Plain}, ConnnectionStates};
 	  #alert{} = Alert ->
@@ -498,7 +530,8 @@ decode_cipher_text(#ssl_tls{type = Type, version = Version,
 	    {Plain, CompressionS1} = ssl_record:uncompress(CompAlg,
 							   PlainFragment, CompressionS0),
 	    
-	    ReadState = ReadState1#{compression_state => CompressionS1},
+	    ReadState2 = ReadState1#{compression_state => CompressionS1},
+            ReadState = update_replay_window(Seq, ReadState2),
 	    ConnnectionStates = set_connection_state_by_epoch(ReadState, Epoch, ConnnectionStates0, read),
 	    {CipherText#ssl_tls{fragment = Plain}, ConnnectionStates};
 	false ->
@@ -509,8 +542,7 @@ calc_mac_hash(Type, Version, #{mac_secret := MacSecret,
 			       security_parameters := #security_parameters{mac_algorithm = MacAlg}},
 	      Epoch, SeqNo, Fragment) ->
     Length = erlang:iolist_size(Fragment),
-    NewSeq = (Epoch bsl 48) + SeqNo,
-    mac_hash(Version, MacAlg, MacSecret, NewSeq, Type,
+    mac_hash(Version, MacAlg, MacSecret, Epoch, SeqNo, Type,
 	     Length, Fragment).
 
 highest_protocol_version() ->
@@ -523,10 +555,46 @@ sufficient_dtlsv1_2_crypto_support() ->
     CryptoSupport = crypto:supports(),
     proplists:get_bool(sha256, proplists:get_value(hashs, CryptoSupport)).
 
-mac_hash(Version, MacAlg, MacSecret, SeqNo, Type, Length, Fragment) ->
-    dtls_v1:mac_hash(Version, MacAlg, MacSecret, SeqNo, Type,
-		     Length, Fragment).
-
+mac_hash({Major, Minor}, MacAlg, MacSecret, Epoch, SeqNo, Type, Length, Fragment) ->
+    Value = [<<?UINT16(Epoch), ?UINT48(SeqNo), ?BYTE(Type),
+       ?BYTE(Major), ?BYTE(Minor), ?UINT16(Length)>>,
+     Fragment],
+    dtls_v1:hmac_hash(MacAlg, MacSecret, Value).
+    
 calc_aad(Type, {MajVer, MinVer}, Epoch, SeqNo) ->
-    NewSeq = (Epoch bsl 48) + SeqNo,
-    <<NewSeq:64/integer, ?BYTE(Type), ?BYTE(MajVer), ?BYTE(MinVer)>>.
+    <<?UINT16(Epoch), ?UINT48(SeqNo), ?BYTE(Type), ?BYTE(MajVer), ?BYTE(MinVer)>>.
+
+init_replay_window(Size) ->
+    #{size => Size,
+      top => Size,
+      bottom => 0,
+      mask => 0 bsl 64
+     }.
+
+replay_detect(#ssl_tls{sequence_number = SequenceNumber}, #{replay_window := Window}) ->
+    is_replay(SequenceNumber, Window).
+
+
+is_replay(SequenceNumber, #{bottom := Bottom}) when SequenceNumber < Bottom ->
+    true;
+is_replay(SequenceNumber, #{size := Size,
+                            top := Top,
+                            bottom := Bottom,
+                            mask :=  Mask})  when (SequenceNumber >= Bottom) andalso (SequenceNumber =< Top) ->
+    Index = (SequenceNumber rem Size),
+    (Index band Mask) == 1;
+
+is_replay(_, _) ->
+    false.
+
+update_replay_window(SequenceNumber,  #{replay_window := #{size := Size,
+                                                           top := Top,
+                                                           bottom := Bottom,
+                                                           mask :=  Mask0} = Window0} = ConnectionStates) ->
+    NoNewBits = SequenceNumber - Top,
+    Index = SequenceNumber rem Size,
+    Mask = (Mask0 bsl NoNewBits) bor Index,
+    Window =  Window0#{top => SequenceNumber,
+                       bottom => Bottom + NoNewBits,
+                       mask => Mask},
+    ConnectionStates#{replay_window := Window}.

@@ -1,7 +1,7 @@
 %%
 %% %CopyrightBegin%
 %%
-%% Copyright Ericsson AB 2001-2016. All Rights Reserved.
+%% Copyright Ericsson AB 2001-2017. All Rights Reserved.
 %%
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -227,7 +227,7 @@ effect(Config) when is_list(Config) ->
 	lc_SUITE ->
 	    _ = [{'EXIT',{badarg,_}} =
 		     (catch binary_to_atom(<<C/utf8>>, utf8)) ||
-		    C <- lists:seq(16#10000, 16#FFFFF)];
+		    C <- lists:seq(16#FF10000, 16#FFFFFFF)];
 	_ ->
 	    ok
     end,

@@ -45,20 +45,23 @@
    extra states */
 #undef ERTS_ENABLE_MSACC
 
+/* Define > 0 if big-endian < 0 if little-endian, or 0 if unknown */
+#undef ERTS_ENDIANNESS
+
 /* Define if OS monotonic clock is corrected */
 #undef ERTS_HAVE_CORRECTED_OS_MONOTONIC_TIME
 
 /* Define if you have a low resolution OS monotonic clock */
 #undef ERTS_HAVE_LOW_RESOLUTION_OS_MONOTONIC_LOW
 
+/* Define if the non-smp emulator is built */
+#undef ERTS_HAVE_PLAIN_EMU
+
 /* Define if the smp emulator is built */
 #undef ERTS_HAVE_SMP_EMU
 
 /* Define if dlopen() needs to be called before first call to dlerror() */
 #undef ERTS_NEED_DLOPEN_BEFORE_DLERROR
-
-/* Define if you want to use the new code purge strategy */
-#undef ERTS_NEW_PURGE_STRATEGY
 
 /* Save compile time? */
 #undef ERTS_SAVED_COMPILE_TIME
@@ -735,6 +738,9 @@
 /* Define if you have a monotonic erts_os_hrtime() implementation */
 #undef HAVE_MONOTONIC_ERTS_SYS_HRTIME
 
+/* Define to 1 if you have the `mprotect' function. */
+#undef HAVE_MPROTECT
+
 /* Define to 1 if you have the `mremap' function. */
 #undef HAVE_MREMAP
 
@@ -1034,6 +1040,9 @@
 /* Define to 1 if you have the <ws2tcpip.h> header file. */
 #undef HAVE_WS2TCPIP_H
 
+/* Define if your zlib version defines inflateGetDictionary. */
+#undef HAVE_ZLIB_INFLATEGETDICTIONARY
+
 /* Define to 1 if you have the `_brk' function. */
 #undef HAVE__BRK
 
@@ -1226,8 +1235,7 @@
 /* Define if windows.h includes winsock2.h */
 #undef WINDOWS_H_INCLUDES_WINSOCK2_H
 
-/* Define to 1 if your processor stores words with the most significant byte
-   first (like Motorola and SPARC, unlike Intel and VAX). */
+/* Define if big-endian */
 #undef WORDS_BIGENDIAN
 
 /* Define to empty if `const' does not conform to ANSI C. */

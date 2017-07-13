@@ -97,31 +97,44 @@ print(Term, Col, Ll, D, RecDefFun) ->
 print(Term, Col, Ll, D, M, RecDefFun) ->
     print(Term, Col, Ll, D, M, RecDefFun, latin1, true).
 
+%% D = Depth, default -1 (infinite), or LINEMAX=30 when printing from shell
+%% Col = current column, default 1
+%% Ll = line length/~p field width, default 80
+%% M = CHAR_MAX (-1 if no max, 60 when printing from shell)
 print(_, _, _, 0, _M, _RF, _Enc, _Str) -> "...";
 print(Term, Col, Ll, D, M, RecDefFun, Enc, Str) when Col =< 0 ->
+    %% ensure Col is at least 1
     print(Term, 1, Ll, D, M, RecDefFun, Enc, Str);
+print(Atom, _Col, _Ll, _D, _M, _RF, Enc, _Str) when is_atom(Atom) ->
+    write_atom(Atom, Enc);
 print(Term, Col, Ll, D, M0, RecDefFun, Enc, Str) when is_tuple(Term);
                                                       is_list(Term);
                                                       is_map(Term);
                                                       is_bitstring(Term) ->
+    %% preprocess and compute total number of chars
     If = {_S, Len} = print_length(Term, D, RecDefFun, Enc, Str),
+    %% use Len as CHAR_MAX if M0 = -1
     M = max_cs(M0, Len),
     if
         Len < Ll - Col, Len =< M ->
+            %% write the whole thing on a single line when there is room
             write(If);
         true ->
+            %% compute the indentation TInd for tagged tuples and records
             TInd = while_fail([-1, 4], 
                               fun(I) -> cind(If, Col, Ll, M, I, 0, 0) end, 
                               1),
             pp(If, Col, Ll, M, TInd, indent(Col), 0, 0)
     end;
 print(Term, _Col, _Ll, _D, _M, _RF, _Enc, _Str) ->
+    %% atomic data types (bignums, atoms, ...) are never truncated
     io_lib:write(Term).
 
 %%%
 %%% Local functions
 %%%
 
+%% use M only if nonnegative, otherwise use Len as default value
 max_cs(M, Len) when M < 0 ->
     Len;
 max_cs(M, _Len) ->
@@ -156,6 +169,7 @@ pp({S, _Len}, _Col, _Ll, _M, _TInd, _Ind, _LD, _W) ->
 %%  Print a tagged tuple by indenting the rest of the elements
 %%  differently to the tag. Tuple has size >= 2.
 pp_tag_tuple([{Tag,Tlen} | L], Col, Ll, M, TInd, Ind, LD, W) ->
+    %% this uses TInd
     TagInd = Tlen + 2,
     Tcol = Col + TagInd,
     S = $,,
@@ -254,6 +268,7 @@ pp_field({{field, Name, NameL, F}, _Len}, Col0, Ll, M, TInd, Ind0, LD, W0) ->
     {[Name, Sep, S | pp(F, Col, Ll, M, TInd, Ind, LD, W)], Ll}. % force nl
 
 rec_indent(RInd, TInd, Col0, Ind0, W0) ->
+    %% this uses TInd
     Nl = (TInd > 0) and (RInd > TInd),
     DCol = case Nl of
                true -> TInd;
@@ -332,6 +347,7 @@ pp_binary(S, N, _N0, Ind) ->
             S
     end.
 
+%% write the whole thing on a single line
 write({{tuple, _IsTagged, L}, _}) ->
     [${, write_list(L, $,), $}];
 write({{list, L}, _}) ->
@@ -393,9 +409,14 @@ print_length({}, _D, _RF, _Enc, _Str) ->
     {"{}", 2};
 print_length(#{}=M, _D, _RF, _Enc, _Str) when map_size(M) =:= 0 ->
     {"#{}", 3};
+print_length(Atom, _D, _RF, Enc, _Str) when is_atom(Atom) ->
+    S = write_atom(Atom, Enc),
+    {S, lists:flatlength(S)};
 print_length(List, D, RF, Enc, Str) when is_list(List) ->
+    %% only flat lists are "printable"
     case Str andalso printable_list(List, D, Enc) of
         true ->
+            %% print as string, escaping double-quotes in the list
             S = write_string(List, Enc),
             {S, length(S)};
         %% Truncated lists could break some existing code.
@@ -451,23 +472,14 @@ print_length(<<_/bitstring>>=Bin, D, _RF, Enc, Str) ->
     end;    
 print_length(Term, _D, _RF, _Enc, _Str) ->
     S = io_lib:write(Term),
-    {S, lists:flatlength(S)}.
+    %% S can contain unicode, so iolist_size(S) cannot be used here
+    {S, string:length(S)}.
 
 print_length_map(_Map, 1, _RF, _Enc, _Str) ->
     {"#{...}", 6};
 print_length_map(Map, D, RF, Enc, Str) when is_map(Map) ->
-    Pairs = print_length_map_pairs(maps_to_list(Map, D), D, RF, Enc, Str),
+    Pairs = print_length_map_pairs(erts_internal:maps_to_list(Map, D), D, RF, Enc, Str),
     {{map, Pairs}, list_length(Pairs, 3)}.
-
-maps_to_list(Map, D) when D < 0; map_size(Map) =< D ->
-    maps:to_list(Map);
-maps_to_list(Map, D) ->
-    F = fun(_K, _V, {N, L}) when N =:= D ->
-                throw(L);
-           (K, V, {N, L}) ->
-                {N+1, [{K, V} | L]}
-        end,
-    lists:reverse(catch maps:fold(F, {0, []}, Map)).
 
 print_length_map_pairs([], _D, _RF, _Enc, _Str) ->
     [];
@@ -493,7 +505,7 @@ print_length_tuple(Tuple, D, RF, Enc, Str) ->
 print_length_record(_Tuple, 1, _RF, _RDefs, _Enc, _Str) ->
     {"{...}", 5};
 print_length_record(Tuple, D, RF, RDefs, Enc, Str) ->
-    Name = [$# | io_lib:write_atom(element(1, Tuple))],
+    Name = [$# | write_atom(element(1, Tuple), Enc)],
     NameL = length(Name),
     Elements = tl(tuple_to_list(Tuple)),
     L = print_length_fields(RDefs, D - 1, Elements, RF, Enc, Str),
@@ -508,7 +520,7 @@ print_length_fields([Def | Defs], D, [E | Es], RF, Enc, Str) ->
      print_length_fields(Defs, D - 1, Es, RF, Enc, Str)].
 
 print_length_field(Def, D, E, RF, Enc, Str) ->
-    Name = io_lib:write_atom(Def),
+    Name = write_atom(Def, Enc),
     {S, L} = print_length(E, D, RF, Enc, Str),
     NameL = length(Name) + 3,
     {{field, Name, NameL, {S, L}}, NameL + L}.
@@ -544,6 +556,7 @@ list_length_tail({_, Len}, Acc) ->
 %% ?CHARS printable characters has depth 1.
 -define(CHARS, 4).
 
+%% only flat lists are "printable"
 printable_list(_L, 1, _Enc) ->
     false;
 printable_list(L, _D, latin1) ->
@@ -655,6 +668,11 @@ printable_char(C,unicode) ->
     C >= 16#A0 andalso C < 16#D800 orelse
     C > 16#DFFF andalso C < 16#FFFE orelse
     C > 16#FFFF andalso C =< 16#10FFFF.
+
+write_atom(A, latin1) ->
+    io_lib:write_atom_as_latin1(A);
+write_atom(A, _Uni) ->
+    io_lib:write_atom(A).
 
 write_string(S, latin1) ->
     io_lib:write_latin1_string(S, $"); %"
@@ -841,9 +859,11 @@ while_fail([], _F, V) ->
 while_fail([A | As], F, V) ->
     try F(A) catch _ -> while_fail(As, F, V) end.
 
+%% make a string of N spaces
 indent(N) when is_integer(N), N > 0 ->
     chars($\s, N-1).
 
+%% prepend N spaces onto Ind
 indent(1, Ind) -> % Optimization of common case
     [$\s | Ind];
 indent(4, Ind) -> % Optimization of common case

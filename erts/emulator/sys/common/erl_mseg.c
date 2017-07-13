@@ -1,7 +1,7 @@
 /*
  * %CopyrightBegin%
  *
- * Copyright Ericsson AB 2002-2016. All Rights Reserved.
+ * Copyright Ericsson AB 2002-2017. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,11 +83,13 @@ static const int debruijn[32] = {
     31, 27, 13, 23, 21, 19, 16,  7, 26, 12, 18,  6, 11,  5, 10,  9
 };
 
-#define LOG2(X) (debruijn[((Uint32)(((X) & -(X)) * 0x077CB531U)) >> 27])
+#define LSB(X) (debruijn[((Uint32)(((X) & -(X)) * 0x077CB531U)) >> 27])
 
 #define CACHE_AREAS      (32 - MSEG_ALIGN_BITS)
 
-#define SIZE_TO_CACHE_AREA_IDX(S)   (LOG2((S)) - MSEG_ALIGN_BITS)
+/* FIXME: segment sizes > 2 GB result in bogus negative indices */
+/* NOTE: using LSB instead of proper log2 only works if S is a power of 2 */
+#define SIZE_TO_CACHE_AREA_IDX(S)   (LSB((S)) - MSEG_ALIGN_BITS)
 #define MAX_CACHE_SIZE   (30)
 
 #define MSEG_FLG_IS_2POW(X)    ((X) & ERTS_MSEG_FLG_2POW)
@@ -378,7 +380,7 @@ static ERTS_INLINE int cache_bless_segment(ErtsMsegAllctr_t *ma, void *seg, UWor
 
     ASSERT(!MSEG_FLG_IS_2POW(flags) || (MSEG_FLG_IS_2POW(flags) && MAP_IS_ALIGNED(seg) && IS_2POW(size)));
 
-    /* The idea is that sbc caching is prefered over mbc caching.
+    /* The idea is that sbc caching is preferred over mbc caching.
      * Blocks are normally allocated in mb carriers and thus cached there.
      * Large blocks has no such cache and it is up to mseg to cache them to speed things up.
      */
@@ -395,6 +397,9 @@ static ERTS_INLINE int cache_bless_segment(ErtsMsegAllctr_t *ma, void *seg, UWor
 
 	if (MSEG_FLG_IS_2POW(flags)) {
 	    int ix = SIZE_TO_CACHE_AREA_IDX(size);
+
+            if (ix < 0)
+                return 0;
 
 	    ASSERT(ix < CACHE_AREAS);
 	    ASSERT((1 << (ix + MSEG_ALIGN_BITS)) == size);
@@ -470,6 +475,9 @@ static ERTS_INLINE void *cache_get_segment(ErtsMsegAllctr_t *ma, UWord *size_p, 
 	UWord csize;
 
 	ASSERT(IS_2POW(size));
+
+        if (ix < 0)
+            return NULL;
 
 	for( i = ix; i < CACHE_AREAS; i++) {
 
@@ -1414,7 +1422,7 @@ erts_mseg_init(ErtsMsegInit_t *init)
 
     erts_mtx_init(&init_atoms_mutex, "mseg_init_atoms");
 
-#ifdef ERTS_ALC_A_EXEC
+#ifdef ERTS_HAVE_EXEC_MMAPPER
     /* Initialize erts_exec_mapper *FIRST*, to increase probability
      * of getting low memory for HiPE AMD64's small code model.
      */

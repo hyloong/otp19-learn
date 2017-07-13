@@ -39,10 +39,10 @@ INSTALL_PROGRAM=${INSTALL}
 ERLANG_OSTYPE=unix
 
 OMIT_FP=false
-CFLAGS=$(subst O2,O3, -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE)
+CFLAGS=$(subst O2,O3, -Werror=undef -Werror=implicit -Werror=return-type  -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE)
 
 ifeq ($(TYPE),debug)
-CFLAGS=-g  -D_GNU_SOURCE -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu    -DDEBUG
+CFLAGS=-g  -D_GNU_SOURCE -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu    -DDEBUG
 TYPE_SUFFIX=.debug
 ifeq ($(USING_VC),yes)
 LD_FLAGS += -g
@@ -52,7 +52,7 @@ PRE_LD=
 else
 
 ifeq ($(TYPE),purify)
-CFLAGS=-g  -D_GNU_SOURCE -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu    -DPURIFY
+CFLAGS=-g  -D_GNU_SOURCE -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu    -DPURIFY
 TYPE_SUFFIX=.purify
 PRE_LD=purify $(PURIFY_BUILD_OPTIONS)
 else
@@ -62,17 +62,17 @@ TYPE_SUFFIX=.quantify
 PRE_LD=quantify $(QUANTIFY_BUILD_OPTIONS)
 else
 ifeq ($(TYPE),purecov)
-CFLAGS=-g  -D_GNU_SOURCE -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu    -DPURECOV
+CFLAGS=-g  -D_GNU_SOURCE -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu    -DPURECOV
 TYPE_SUFFIX=.purecov
 PRE_LD=purecov $(PURECOV_BUILD_OPTIONS)
 else
 ifeq ($(TYPE),gcov)
-CFLAGS=-g  -D_GNU_SOURCE -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu    -DGCOV -fprofile-arcs -ftest-coverage -O0
+CFLAGS=-g  -D_GNU_SOURCE -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu    -DGCOV -fprofile-arcs -ftest-coverage -O0
 TYPE_SUFFIX=.gcov
 PRE_LD=
 else
 ifeq ($(TYPE),valgrind)
-CFLAGS=-g  -D_GNU_SOURCE -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu    -DVALGRIND
+CFLAGS=-g  -D_GNU_SOURCE -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu    -DVALGRIND
 TYPE_SUFFIX=.valgrind
 PRE_LD=
 else

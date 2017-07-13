@@ -134,6 +134,11 @@ init_per_testcase(Func, Config) when is_atom(Func), is_list(Config) ->
     [{testcase, Func}|Config].
 
 end_per_testcase(Func, Config) when is_atom(Func), is_list(Config) ->
+    %% Restore max_heap_size to default value.
+    erlang:system_flag(max_heap_size,
+                       #{size => 0,
+                         kill => true,
+                         error_logger => true}),
     ok.
 
 fun_spawn(Fun) ->
@@ -672,7 +677,7 @@ chk_pi_order([{Arg, _}| Values], [Arg|Args]) ->
     chk_pi_order(Values, Args).
 
 process_info_2_list(Config) when is_list(Config) ->
-    Proc = spawn(fun () -> receive after infinity -> ok end end),
+    Proc = spawn_link(fun () -> receive after infinity -> ok end end),
     register(process_SUITE_process_info_2_list1, self()),
     register(process_SUITE_process_info_2_list2, Proc),
     erts_debug:set_internal_state(available_internal_state,true),
@@ -1024,36 +1029,48 @@ bump_big(Prev, Limit) ->
 %% Priority 'low' should be mixed with 'normal' using a factor of
 %% about 8. (OTP-2644)
 low_prio(Config) when is_list(Config) ->
-    case erlang:system_info(schedulers_online) of
-	1 ->
-	    ok = low_prio_test(Config);
-	_ -> 
-	    erlang:system_flag(multi_scheduling, block),
-	    ok = low_prio_test(Config),
-	    erlang:system_flag(multi_scheduling, unblock),
-	    {comment,
-		   "Test not written for SMP runtime system. "
-		   "Multi scheduling blocked during test."}
-    end.
+    erlang:system_flag(multi_scheduling, block_normal),
+    Prop = low_prio_test(Config),
+    erlang:system_flag(multi_scheduling, unblock_normal),
+    Str = lists:flatten(io_lib:format("Low/high proportion is ~.3f",
+                                      [Prop])),
+    {comment,Str}.
 
 low_prio_test(Config) when is_list(Config) ->
     process_flag(trap_exit, true),
-    S = spawn_link(?MODULE, prio_server, [0, 0]),
+
+    %% Spawn the server running with high priority. The server must
+    %% not run at normal priority as that would skew the results for
+    %% two reasons:
+    %%
+    %% 1. There would be one more normal-priority processes than
+    %% low-priority processes.
+    %%
+    %% 2. The receive queue would grow faster than the server process
+    %% could process it. That would in turn trigger the reduction
+    %% punishment for the clients.
+    S = spawn_opt(?MODULE, prio_server, [0, 0], [link,{priority,high}]),
+
+    %% Spawn the clients and let them run for a while.
     PCs = spawn_prio_clients(S, erlang:system_info(schedulers_online)),
-    ct:sleep({seconds,3}),
+    ct:sleep({seconds,2}),
     lists:foreach(fun (P) -> exit(P, kill) end, PCs),
+
+    %% Stop the server and retrieve the result.
     S ! exit,
-    receive {'EXIT', S, {A, B}} -> check_prio(A, B) end,
-    ok.
+    receive
+        {'EXIT', S, {A, B}} ->
+            check_prio(A, B)
+    end.
 
 check_prio(A, B) ->
     Prop = A/B,
     ok = io:format("Low=~p, High=~p, Prop=~p\n", [A, B, Prop]),
 
-    %% It isn't 1/8, it's more like 0.3, but let's check that
-    %% the low-prio processes get some little chance to run at all.
-    true = (Prop < 1.0),
-    true = (Prop > 1/32).
+    %% Prop is expected to be appr. 1/8. Allow a reasonable margin.
+    true = Prop < 1/4,
+    true = Prop > 1/16,
+    Prop.
 
 prio_server(A, B) ->
     receive
@@ -1097,9 +1114,9 @@ yield(Config) when is_list(Config) ->
 	     ++ ") is enabled. Testcase gets messed up by modfied "
 	     "timing."};
 	_ ->
-	    MS = erlang:system_flag(multi_scheduling, block),
+	    MS = erlang:system_flag(multi_scheduling, block_normal),
 	    yield_test(),
-	    erlang:system_flag(multi_scheduling, unblock),
+	    erlang:system_flag(multi_scheduling, unblock_normal),
 	    case MS of
 		blocked ->
 		    {comment,
@@ -1679,7 +1696,7 @@ processes_bif_test() ->
 	true ->
 	    %% Do it again with a process suspended while
 	    %% in the processes/0 bif.
-	    erlang:system_flag(multi_scheduling, block),
+	    erlang:system_flag(multi_scheduling, block_normal),
 	    Suspendee = spawn_link(fun () ->
 						 Tester ! {suspend_me, self()},
 						 Tester ! {self(),
@@ -1692,7 +1709,7 @@ processes_bif_test() ->
 					 end),
 	    receive {suspend_me, Suspendee} -> ok end,
 	    erlang:suspend_process(Suspendee),
-	    erlang:system_flag(multi_scheduling, unblock),
+	    erlang:system_flag(multi_scheduling, unblock_normal),
 	    
 	    [{status,suspended},{current_function,{erlang,ptab_list_continue,2}}] =
 		process_info(Suspendee, [status, current_function]),
@@ -1732,10 +1749,10 @@ do_processes_bif_test(WantReds, DieTest, Processes) ->
 		    Splt = NoTestProcs div 10,
 		    {TP1, TP23} = lists:split(Splt, TestProcs),
 		    {TP2, TP3} = lists:split(Splt, TP23),
-		    erlang:system_flag(multi_scheduling, block),
+		    erlang:system_flag(multi_scheduling, block_normal),
 		    Tester ! DoIt,
 		    receive GetGoing -> ok end,
-		    erlang:system_flag(multi_scheduling, unblock),
+		    erlang:system_flag(multi_scheduling, unblock_normal),
 		    SpawnProcesses(high),
 		    lists:foreach( fun (P) ->
 				SpawnHangAround(),
@@ -1944,7 +1961,7 @@ processes_gc_trap(Config) when is_list(Config) ->
 	    processes()
     end,
 
-    erlang:system_flag(multi_scheduling, block),
+    erlang:system_flag(multi_scheduling, block_normal),
     Suspendee = spawn_link(fun () ->
 					 Tester ! {suspend_me, self()},
 					 Tester ! {self(),
@@ -1954,7 +1971,7 @@ processes_gc_trap(Config) when is_list(Config) ->
 				 end),
     receive {suspend_me, Suspendee} -> ok end,
     erlang:suspend_process(Suspendee),
-    erlang:system_flag(multi_scheduling, unblock),
+    erlang:system_flag(multi_scheduling, unblock_normal),
 	    
     [{status,suspended}, {current_function,{erlang,ptab_list_continue,2}}]
 	= process_info(Suspendee, [status, current_function]),
@@ -2057,6 +2074,7 @@ max_heap_size_test(Option, Size, Kill, ErrorLogger) ->
     end,
     if ErrorLogger ->
             receive
+                %% There must be at least one error message.
                 {error, _, {emulator, _, [Pid|_]}} ->
                     ok
             end;
@@ -2069,22 +2087,33 @@ max_heap_size_test(Option, Size, Kill, ErrorLogger) ->
                 {'DOWN', Ref, process, Pid, die} ->
                     ok
             end,
-            flush();
+            %% If the process was not killed, the limit may have
+            %% been reached more than once and there may be
+            %% more {error, ...} messages left.
+            receive_error_messages(Pid);
        true ->
             ok
     end,
+
+    %% Make sure that there are no unexpected messages.
+    receive_unexpected().
+
+receive_error_messages(Pid) ->
     receive
-        M ->
-            ct:fail({unexpected_message, M})
-    after 10 ->
+        {error, _, {emulator, _, [Pid|_]}} ->
+            receive_error_messages(Pid)
+    after 1000 ->
             ok
     end.
 
-flush() ->
+receive_unexpected() ->
     receive
-        _M ->
-            flush()
-    after 1000 ->
+        {info_report, _, _} ->
+            %% May be an alarm message from os_mon. Ignore.
+            receive_unexpected();
+        M ->
+            ct:fail({unexpected_message, M})
+    after 10 ->
             ok
     end.
 
@@ -2161,7 +2190,7 @@ processes_term_proc_list_test(MustChk) ->
 		end)
     end,
     SpawnSuspendProcessesProc = fun () ->
-		  erlang:system_flag(multi_scheduling, block),
+		  erlang:system_flag(multi_scheduling, block_normal),
 		  P = spawn_link(fun () ->
 					 Tester ! {suspend_me, self()},
 					 Tester ! {self(),
@@ -2171,7 +2200,7 @@ processes_term_proc_list_test(MustChk) ->
 				 end),
 		  receive {suspend_me, P} -> ok end,
 		  erlang:suspend_process(P),
-		  erlang:system_flag(multi_scheduling, unblock),
+		  erlang:system_flag(multi_scheduling, unblock_normal),
 		  [{status,suspended},
 		   {current_function,{erlang,ptab_list_continue,2}}]
 		      = process_info(P, [status, current_function]),
@@ -2232,7 +2261,7 @@ processes_term_proc_list_test(MustChk) ->
     S8 = SpawnSuspendProcessesProc(),
     ?CHK_TERM_PROC_LIST(MustChk, 7),
 
-    erlang:system_flag(multi_scheduling, block),
+    erlang:system_flag(multi_scheduling, block_normal),
     Exit(S8),
     ?CHK_TERM_PROC_LIST(MustChk, 7),
     Exit(S5),
@@ -2241,7 +2270,7 @@ processes_term_proc_list_test(MustChk) ->
     ?CHK_TERM_PROC_LIST(MustChk, 6),
     Exit(S6),
     ?CHK_TERM_PROC_LIST(MustChk, 0),
-    erlang:system_flag(multi_scheduling, unblock),
+    erlang:system_flag(multi_scheduling, unblock_normal),
     as_expected.
 
 
@@ -2449,7 +2478,7 @@ no_priority_inversion2(Config) when is_list(Config) ->
 
 request_gc(Pid, Prio) ->
     Ref = make_ref(),
-    erts_internal:request_system_task(Pid, Prio, {garbage_collect, Ref}),
+    erts_internal:request_system_task(Pid, Prio, {garbage_collect, Ref, major}),
     Ref.
 
 system_task_blast(Config) when is_list(Config) ->

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxListView</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxListView.xml</file></header>
+<module>wxListView</module>
+<modulesummary>See external documentation: wxListView.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistview.html">wxListView</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxControl">wxControl</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxListView"/>wxListView()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>clearColumnImage(This, Col) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListView">wxListView()</seealso></v><v>Col = integer()</v></type>
+<desc><marker id="clearColumnImage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistview.html#wxlistviewclearcolumnimage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>focus(This, Index) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListView">wxListView()</seealso></v><v>Index = integer()</v></type>
+<desc><marker id="focus-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistview.html#wxlistviewfocus">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFirstSelected(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListView">wxListView()</seealso></v></type>
+<desc><marker id="getFirstSelected-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistview.html#wxlistviewgetfirstselected">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFocusedItem(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListView">wxListView()</seealso></v></type>
+<desc><marker id="getFocusedItem-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistview.html#wxlistviewgetfocuseditem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getNextSelected(This, Item) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListView">wxListView()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getNextSelected-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistview.html#wxlistviewgetnextselected">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isSelected(This, Index) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListView">wxListView()</seealso></v><v>Index = integer()</v></type>
+<desc><marker id="isSelected-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistview.html#wxlistviewisselected">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>select(This, N) -&gt; ok</name>
+<fsummary>Equivalent to select(This, N, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListView">wxListView()</seealso></v><v>N = integer()</v></type>
+<desc><marker id="select-2"/>
+<p>Equivalent to <seealso marker="#select-3">select(This, N, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>select(This, N, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListView">wxListView()</seealso></v><v>N = integer()</v><v>Option = {on, boolean()}</v></type>
+<desc><marker id="select-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistview.html#wxlistviewselect">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setColumnImage(This, Col, Image) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListView">wxListView()</seealso></v><v>Col = integer()</v><v>Image = integer()</v></type>
+<desc><marker id="setColumnImage-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistview.html#wxlistviewsetcolumnimage">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

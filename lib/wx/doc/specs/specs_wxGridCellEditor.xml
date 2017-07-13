@@ -1,0 +1,201 @@
+<module name="wxGridCellEditor">
+<type>
+  <name>wxGridCellEditor</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxGridCellEditor">wxGridCellEditor()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>beginEdit</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>beginEdit(This, Row, Col, Grid) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></string></subtype>
+        <subtype><typename>Row</typename><string>Row = Col = integer()</string></subtype>
+        <subtype><typename>Col</typename><string/></subtype>
+        <subtype><typename>Grid</typename><string>Grid = <seealso marker="wxGrid#type-wxGrid">wxGrid:wxGrid()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Col</anno>
+  <anno>Grid</anno>
+  <anno>Row</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>create</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>create(This, Parent, Id, EvtHandler) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></string></subtype>
+        <subtype><typename>Parent</typename><string>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+        <subtype><typename>Id</typename><string>Id = integer()</string></subtype>
+        <subtype><typename>EvtHandler</typename><string>EvtHandler = <seealso marker="wxEvtHandler#type-wxEvtHandler">wxEvtHandler:wxEvtHandler()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>EvtHandler</anno>
+  <anno>Id</anno>
+  <anno>Parent</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>endEdit</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>endEdit(This, Row, Col, Grid) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></string></subtype>
+        <subtype><typename>Row</typename><string>Row = Col = integer()</string></subtype>
+        <subtype><typename>Col</typename><string/></subtype>
+        <subtype><typename>Grid</typename><string>Grid = <seealso marker="wxGrid#type-wxGrid">wxGrid:wxGrid()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Col</anno>
+  <anno>Grid</anno>
+  <anno>Row</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>handleReturn</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>handleReturn(This, Event) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></string></subtype>
+        <subtype><typename>Event</typename><string>Event = <seealso marker="wxKeyEvent#type-wxKeyEvent">wxKeyEvent:wxKeyEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Event</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>isCreated</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>isCreated(This) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>paintBackground</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>paintBackground(This, RectCell, Attr) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></string></subtype>
+        <subtype><typename>RectCell</typename><string>RectCell = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}</string></subtype>
+        <subtype><typename>Attr</typename><string>Attr = <seealso marker="wxGridCellAttr#type-wxGridCellAttr">wxGridCellAttr:wxGridCellAttr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Attr</anno>
+  <anno>H</anno>
+  <anno>RectCell</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>reset</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>reset(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>setSize</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setSize(This, Rect) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></string></subtype>
+        <subtype><typename>Rect</typename><string>Rect = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{X :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>Y :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>W :: integer(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>H :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>H</anno>
+  <anno>Rect</anno>
+  <anno>This</anno>
+  <anno>W</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>show</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>show(This, Show) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></string></subtype>
+        <subtype><typename>Show</typename><string>Show = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Show</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>show</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>show(This, Show, Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></string></subtype>
+        <subtype><typename>Show</typename><string>Show = boolean()</string></subtype>
+        <subtype><typename>Option</typename><string>Option = {attr, <seealso marker="wxGridCellAttr#type-wxGridCellAttr">wxGridCellAttr:wxGridCellAttr()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Show</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>startingClick</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>startingClick(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>startingKey</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>startingKey(This, Event) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxGridCellEditor">wxGridCellEditor()</seealso></string></subtype>
+        <subtype><typename>Event</typename><string>Event = <seealso marker="wxKeyEvent#type-wxKeyEvent">wxKeyEvent:wxKeyEvent()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Event</anno>
+  <anno>This</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:30:14.</timestamp>
+</module>

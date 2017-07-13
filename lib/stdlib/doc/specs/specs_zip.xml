@@ -1,0 +1,539 @@
+<module name="zip">
+<type>
+  <name>create_option</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-create_option">create_option()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>memory |<br/><nbsp/><nbsp/><nbsp/><nbsp/>cooked |<br/><nbsp/><nbsp/><nbsp/><nbsp/>verbose |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{comment, string()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{cwd, <seealso marker="file#type-filename">file:filename()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{compress, <seealso marker="#type-extension_spec">extension_spec()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{uncompress, <seealso marker="#type-extension_spec">extension_spec()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>extension</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-extension">extension()</marker> = string()</typehead></typedecl>
+</type>
+<type>
+  <name>extension_spec</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-extension_spec">extension_spec()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>all |<br/><nbsp/><nbsp/><nbsp/><nbsp/>[<seealso marker="#type-extension">extension()</seealso>] |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{add, [<seealso marker="#type-extension">extension()</seealso>]} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{del, [<seealso marker="#type-extension">extension()</seealso>]}</typehead></typedecl>
+</type>
+<type>
+  <name>filename</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-filename">filename()</marker> = <seealso marker="file#type-filename">file:filename()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>handle</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-handle">handle()</marker></typehead></typedecl>
+</type>
+<type>
+  <name>zip_comment</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-zip_comment">zip_comment()</marker> = #zip_comment{comment = string()}</typehead></typedecl>
+</type>
+<type>
+  <name>zip_file</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-zip_file">zip_file()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>#zip_file{name = string(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>info = <seealso marker="file#type-file_info">file:file_info()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>comment = string(),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>offset = integer() &gt;= 0,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>comp_size = integer() &gt;= 0}</typehead></typedecl>
+</type>
+<spec>
+  <name>create</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>create(Name, FileList) -&gt; RetValue</head>
+      <guard>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="file#type-name">file:name()</seealso></string></subtype>
+        <subtype><typename>FileList</typename><string>FileList = [FileSpec]</string></subtype>
+        <subtype><typename>FileSpec</typename><string>FileSpec = <br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="file#type-name">file:name()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{<seealso marker="file#type-name">file:name()</seealso>, binary()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{<seealso marker="file#type-name">file:name()</seealso>, binary(), <seealso marker="file#type-file_info">file:file_info()</seealso>}</string></subtype>
+        <subtype><typename>RetValue</typename><string>RetValue = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, FileName :: <seealso marker="#type-filename">filename()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, {FileName :: <seealso marker="#type-filename">filename()</seealso>, binary()}} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{error, Reason :: term()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>FileList</anno>
+  <anno>FileName</anno>
+  <anno>FileSpec</anno>
+  <anno>Name</anno>
+  <anno>Reason</anno>
+  <anno>RetValue</anno>
+</spec>
+<spec>
+  <name>create</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>create(Name, FileList, Options) -&gt; RetValue</head>
+      <guard>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="file#type-name">file:name()</seealso></string></subtype>
+        <subtype><typename>FileList</typename><string>FileList = [FileSpec]</string></subtype>
+        <subtype><typename>FileSpec</typename><string>FileSpec = <br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="file#type-name">file:name()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{<seealso marker="file#type-name">file:name()</seealso>, binary()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{<seealso marker="file#type-name">file:name()</seealso>, binary(), <seealso marker="file#type-file_info">file:file_info()</seealso>}</string></subtype>
+        <subtype><typename>Options</typename><string>Options = [Option]</string></subtype>
+        <subtype><typename>Option</typename><string>Option = <seealso marker="#type-create_option">create_option()</seealso></string></subtype>
+        <subtype><typename>RetValue</typename><string>RetValue = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, FileName :: <seealso marker="#type-filename">filename()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, {FileName :: <seealso marker="#type-filename">filename()</seealso>, binary()}} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{error, Reason :: term()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>FileList</anno>
+  <anno>FileName</anno>
+  <anno>FileSpec</anno>
+  <anno>Name</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Reason</anno>
+  <anno>RetValue</anno>
+</spec>
+<spec>
+  <name>extract</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>extract(Archive) -&gt; RetValue</head>
+      <guard>
+        <subtype><typename>Archive</typename><string>Archive = <seealso marker="file#type-name">file:name()</seealso> | binary()</string></subtype>
+        <subtype><typename>RetValue</typename><string>RetValue = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, FileList} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, FileBinList} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{error, Reason :: term()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{error, {Name :: <seealso marker="file#type-name">file:name()</seealso>, Reason :: term()}}</string></subtype>
+        <subtype><typename>FileList</typename><string>FileList = [<seealso marker="file#type-name">file:name()</seealso>]</string></subtype>
+        <subtype><typename>FileBinList</typename><string>FileBinList = [{<seealso marker="file#type-name">file:name()</seealso>, binary()}]</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Archive</anno>
+  <anno>FileBinList</anno>
+  <anno>FileList</anno>
+  <anno>Name</anno>
+  <anno>Reason</anno>
+  <anno>RetValue</anno>
+</spec>
+<spec>
+  <name>extract</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>extract(Archive, Options) -&gt; RetValue</head>
+      <guard>
+        <subtype><typename>Archive</typename><string>Archive = <seealso marker="file#type-name">file:name()</seealso> | binary()</string></subtype>
+        <subtype><typename>Options</typename><string>Options = [Option]</string></subtype>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{file_list, FileList} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>keep_old_files |<br/><nbsp/><nbsp/><nbsp/><nbsp/>verbose |<br/><nbsp/><nbsp/><nbsp/><nbsp/>memory |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{file_filter, FileFilter} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{cwd, CWD}</string></subtype>
+        <subtype><typename>FileList</typename><string>FileList = [<seealso marker="file#type-name">file:name()</seealso>]</string></subtype>
+        <subtype><typename>FileBinList</typename><string>FileBinList = [{<seealso marker="file#type-name">file:name()</seealso>, binary()}]</string></subtype>
+        <subtype><typename>FileFilter</typename><string>FileFilter = fun((ZipFile) -&gt; boolean())</string></subtype>
+        <subtype><typename>CWD</typename><string>CWD = <seealso marker="file#type-filename">file:filename()</seealso></string></subtype>
+        <subtype><typename>ZipFile</typename><string>ZipFile = <seealso marker="#type-zip_file">zip_file()</seealso></string></subtype>
+        <subtype><typename>RetValue</typename><string>RetValue = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, FileList} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, FileBinList} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{error, Reason :: term()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{error, {Name :: <seealso marker="file#type-name">file:name()</seealso>, Reason :: term()}}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Archive</anno>
+  <anno>CWD</anno>
+  <anno>FileBinList</anno>
+  <anno>FileFilter</anno>
+  <anno>FileList</anno>
+  <anno>Name</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Reason</anno>
+  <anno>RetValue</anno>
+  <anno>ZipFile</anno>
+</spec>
+<spec>
+  <name>foldl</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>foldl(Fun, Acc0, Archive) -&gt; {ok, Acc1} | {error, Reason}</head>
+      <guard>
+        <subtype><typename>Fun</typename><string>Fun = fun((FileInArchive, GetInfo, GetBin, AccIn) -&gt; AccOut)</string></subtype>
+        <subtype><typename>FileInArchive</typename><string>FileInArchive = <seealso marker="file#type-name">file:name()</seealso></string></subtype>
+        <subtype><typename>GetInfo</typename><string>GetInfo = fun(() -&gt; <seealso marker="file#type-file_info">file:file_info()</seealso>)</string></subtype>
+        <subtype><typename>GetBin</typename><string>GetBin = fun(() -&gt; binary())</string></subtype>
+        <subtype><typename>Acc0</typename><string>Acc0 = Acc1 = AccIn = AccOut = term()</string></subtype>
+        <subtype><typename>Acc1</typename><string/></subtype>
+        <subtype><typename>AccIn</typename><string/></subtype>
+        <subtype><typename>AccOut</typename><string/></subtype>
+        <subtype><typename>Archive</typename><string>Archive = <seealso marker="file#type-name">file:name()</seealso> | {<seealso marker="file#type-name">file:name()</seealso>, binary()}</string></subtype>
+        <subtype><typename>Reason</typename><string>Reason = term()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Acc0</anno>
+  <anno>Acc1</anno>
+  <anno>AccIn</anno>
+  <anno>AccOut</anno>
+  <anno>Archive</anno>
+  <anno>FileInArchive</anno>
+  <anno>Fun</anno>
+  <anno>GetBin</anno>
+  <anno>GetInfo</anno>
+  <anno>Reason</anno>
+</spec>
+<spec>
+  <name>list_dir</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>list_dir(Archive) -&gt; RetValue</head>
+      <guard>
+        <subtype><typename>Archive</typename><string>Archive = <seealso marker="file#type-name">file:name()</seealso> | binary()</string></subtype>
+        <subtype><typename>RetValue</typename><string>RetValue = {ok, CommentAndFiles} | {error, Reason :: term()}</string></subtype>
+        <subtype><typename>CommentAndFiles</typename><string>CommentAndFiles = [<seealso marker="#type-zip_comment">zip_comment()</seealso> | <seealso marker="#type-zip_file">zip_file()</seealso>]</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Archive</anno>
+  <anno>CommentAndFiles</anno>
+  <anno>Reason</anno>
+  <anno>RetValue</anno>
+</spec>
+<spec>
+  <name>list_dir</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>list_dir(Archive, Options) -&gt; RetValue</head>
+      <guard>
+        <subtype><typename>Archive</typename><string>Archive = <seealso marker="file#type-name">file:name()</seealso> | binary()</string></subtype>
+        <subtype><typename>RetValue</typename><string>RetValue = {ok, CommentAndFiles} | {error, Reason :: term()}</string></subtype>
+        <subtype><typename>CommentAndFiles</typename><string>CommentAndFiles = [<seealso marker="#type-zip_comment">zip_comment()</seealso> | <seealso marker="#type-zip_file">zip_file()</seealso>]</string></subtype>
+        <subtype><typename>Options</typename><string>Options = [Option]</string></subtype>
+        <subtype><typename>Option</typename><string>Option = cooked</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Archive</anno>
+  <anno>CommentAndFiles</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Reason</anno>
+  <anno>RetValue</anno>
+</spec>
+<spec>
+  <name>openzip_close</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>openzip_get</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>openzip_get</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>openzip_list_dir</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>openzip_list_dir</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>openzip_open</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>openzip_open</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>openzip_t</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>openzip_tt</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>t</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>t(Archive) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Archive</typename><string>Archive = <seealso marker="file#type-name">file:name()</seealso> | binary() | ZipHandle</string></subtype>
+        <subtype><typename>ZipHandle</typename><string>ZipHandle = <seealso marker="#type-handle">handle()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Archive</anno>
+  <anno>ZipHandle</anno>
+</spec>
+<spec>
+  <name>table</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>table(Archive) -&gt; RetValue</head>
+      <guard>
+        <subtype><typename>Archive</typename><string>Archive = <seealso marker="file#type-name">file:name()</seealso> | binary()</string></subtype>
+        <subtype><typename>RetValue</typename><string>RetValue = {ok, CommentAndFiles} | {error, Reason :: term()}</string></subtype>
+        <subtype><typename>CommentAndFiles</typename><string>CommentAndFiles = [<seealso marker="#type-zip_comment">zip_comment()</seealso> | <seealso marker="#type-zip_file">zip_file()</seealso>]</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Archive</anno>
+  <anno>CommentAndFiles</anno>
+  <anno>Reason</anno>
+  <anno>RetValue</anno>
+</spec>
+<spec>
+  <name>table</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>table(Archive, Options) -&gt; RetValue</head>
+      <guard>
+        <subtype><typename>Archive</typename><string>Archive = <seealso marker="file#type-name">file:name()</seealso> | binary()</string></subtype>
+        <subtype><typename>RetValue</typename><string>RetValue = {ok, CommentAndFiles} | {error, Reason :: term()}</string></subtype>
+        <subtype><typename>CommentAndFiles</typename><string>CommentAndFiles = [<seealso marker="#type-zip_comment">zip_comment()</seealso> | <seealso marker="#type-zip_file">zip_file()</seealso>]</string></subtype>
+        <subtype><typename>Options</typename><string>Options = [Option]</string></subtype>
+        <subtype><typename>Option</typename><string>Option = cooked</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Archive</anno>
+  <anno>CommentAndFiles</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Reason</anno>
+  <anno>RetValue</anno>
+</spec>
+<spec>
+  <name>tt</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>tt(Archive) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Archive</typename><string>Archive = <seealso marker="file#type-name">file:name()</seealso> | binary() | ZipHandle</string></subtype>
+        <subtype><typename>ZipHandle</typename><string>ZipHandle = <seealso marker="#type-handle">handle()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Archive</anno>
+  <anno>ZipHandle</anno>
+</spec>
+<spec>
+  <name>unzip</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>unzip(Archive) -&gt; RetValue</head>
+      <guard>
+        <subtype><typename>Archive</typename><string>Archive = <seealso marker="file#type-name">file:name()</seealso> | binary()</string></subtype>
+        <subtype><typename>RetValue</typename><string>RetValue = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, FileList} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, FileBinList} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{error, Reason :: term()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{error, {Name :: <seealso marker="file#type-name">file:name()</seealso>, Reason :: term()}}</string></subtype>
+        <subtype><typename>FileList</typename><string>FileList = [<seealso marker="file#type-name">file:name()</seealso>]</string></subtype>
+        <subtype><typename>FileBinList</typename><string>FileBinList = [{<seealso marker="file#type-name">file:name()</seealso>, binary()}]</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Archive</anno>
+  <anno>FileBinList</anno>
+  <anno>FileList</anno>
+  <anno>Name</anno>
+  <anno>Reason</anno>
+  <anno>RetValue</anno>
+</spec>
+<spec>
+  <name>unzip</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>unzip(Archive, Options) -&gt; RetValue</head>
+      <guard>
+        <subtype><typename>Archive</typename><string>Archive = <seealso marker="file#type-name">file:name()</seealso> | binary()</string></subtype>
+        <subtype><typename>Options</typename><string>Options = [Option]</string></subtype>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{file_list, FileList} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>cooked |<br/><nbsp/><nbsp/><nbsp/><nbsp/>keep_old_files |<br/><nbsp/><nbsp/><nbsp/><nbsp/>verbose |<br/><nbsp/><nbsp/><nbsp/><nbsp/>memory |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{file_filter, FileFilter} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{cwd, CWD}</string></subtype>
+        <subtype><typename>FileList</typename><string>FileList = [<seealso marker="file#type-name">file:name()</seealso>]</string></subtype>
+        <subtype><typename>FileBinList</typename><string>FileBinList = [{<seealso marker="file#type-name">file:name()</seealso>, binary()}]</string></subtype>
+        <subtype><typename>FileFilter</typename><string>FileFilter = fun((ZipFile) -&gt; boolean())</string></subtype>
+        <subtype><typename>CWD</typename><string>CWD = <seealso marker="file#type-filename">file:filename()</seealso></string></subtype>
+        <subtype><typename>ZipFile</typename><string>ZipFile = <seealso marker="#type-zip_file">zip_file()</seealso></string></subtype>
+        <subtype><typename>RetValue</typename><string>RetValue = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, FileList} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, FileBinList} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{error, Reason :: term()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{error, {Name :: <seealso marker="file#type-name">file:name()</seealso>, Reason :: term()}}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Archive</anno>
+  <anno>CWD</anno>
+  <anno>FileBinList</anno>
+  <anno>FileFilter</anno>
+  <anno>FileList</anno>
+  <anno>Name</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Reason</anno>
+  <anno>RetValue</anno>
+  <anno>ZipFile</anno>
+</spec>
+<spec>
+  <name>zip</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>zip(Name, FileList) -&gt; RetValue</head>
+      <guard>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="file#type-name">file:name()</seealso></string></subtype>
+        <subtype><typename>FileList</typename><string>FileList = [FileSpec]</string></subtype>
+        <subtype><typename>FileSpec</typename><string>FileSpec = <br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="file#type-name">file:name()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{<seealso marker="file#type-name">file:name()</seealso>, binary()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{<seealso marker="file#type-name">file:name()</seealso>, binary(), <seealso marker="file#type-file_info">file:file_info()</seealso>}</string></subtype>
+        <subtype><typename>RetValue</typename><string>RetValue = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, FileName :: <seealso marker="file#type-name">file:name()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, {FileName :: <seealso marker="file#type-name">file:name()</seealso>, binary()}} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{error, Reason :: term()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>FileList</anno>
+  <anno>FileName</anno>
+  <anno>FileSpec</anno>
+  <anno>Name</anno>
+  <anno>Reason</anno>
+  <anno>RetValue</anno>
+</spec>
+<spec>
+  <name>zip</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>zip(Name, FileList, Options) -&gt; RetValue</head>
+      <guard>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="file#type-name">file:name()</seealso></string></subtype>
+        <subtype><typename>FileList</typename><string>FileList = [FileSpec]</string></subtype>
+        <subtype><typename>FileSpec</typename><string>FileSpec = <br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="file#type-name">file:name()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{<seealso marker="file#type-name">file:name()</seealso>, binary()} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{<seealso marker="file#type-name">file:name()</seealso>, binary(), <seealso marker="file#type-file_info">file:file_info()</seealso>}</string></subtype>
+        <subtype><typename>Options</typename><string>Options = [Option]</string></subtype>
+        <subtype><typename>Option</typename><string>Option = <br/><nbsp/><nbsp/><nbsp/><nbsp/>memory |<br/><nbsp/><nbsp/><nbsp/><nbsp/>cooked |<br/><nbsp/><nbsp/><nbsp/><nbsp/>verbose |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{comment, Comment} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{cwd, CWD} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{compress, What} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{uncompress, What}</string></subtype>
+        <subtype><typename>What</typename><string>What = <br/><nbsp/><nbsp/><nbsp/><nbsp/>all | [Extension] | {add, [Extension]} | {del, [Extension]}</string></subtype>
+        <subtype><typename>Extension</typename><string>Extension = Comment = string()</string></subtype>
+        <subtype><typename>Comment</typename><string/></subtype>
+        <subtype><typename>CWD</typename><string>CWD = <seealso marker="file#type-filename">file:filename()</seealso></string></subtype>
+        <subtype><typename>RetValue</typename><string>RetValue = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, FileName :: <seealso marker="file#type-name">file:name()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{ok, {FileName :: <seealso marker="file#type-name">file:name()</seealso>, binary()}} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{error, Reason :: term()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>CWD</anno>
+  <anno>Comment</anno>
+  <anno>Extension</anno>
+  <anno>FileList</anno>
+  <anno>FileName</anno>
+  <anno>FileSpec</anno>
+  <anno>Name</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Reason</anno>
+  <anno>RetValue</anno>
+  <anno>What</anno>
+</spec>
+<spec>
+  <name>zip_close</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>zip_close(ZipHandle) -&gt; ok | {error, einval}</head>
+      <guard>
+        <subtype><typename>ZipHandle</typename><string>ZipHandle = <seealso marker="#type-handle">handle()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ZipHandle</anno>
+</spec>
+<spec>
+  <name>zip_get</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>zip_get(ZipHandle) -&gt; {ok, [Result]} | {error, Reason}</head>
+      <guard>
+        <subtype><typename>ZipHandle</typename><string>ZipHandle = <seealso marker="#type-handle">handle()</seealso></string></subtype>
+        <subtype><typename>Result</typename><string>Result = <seealso marker="file#type-name">file:name()</seealso> | {<seealso marker="file#type-name">file:name()</seealso>, binary()}</string></subtype>
+        <subtype><typename>Reason</typename><string>Reason = term()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Reason</anno>
+  <anno>Result</anno>
+  <anno>ZipHandle</anno>
+</spec>
+<spec>
+  <name>zip_get</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>zip_get(FileName, ZipHandle) -&gt; {ok, Result} | {error, Reason}</head>
+      <guard>
+        <subtype><typename>FileName</typename><string>FileName = <seealso marker="file#type-name">file:name()</seealso></string></subtype>
+        <subtype><typename>ZipHandle</typename><string>ZipHandle = <seealso marker="#type-handle">handle()</seealso></string></subtype>
+        <subtype><typename>Result</typename><string>Result = <seealso marker="file#type-name">file:name()</seealso> | {<seealso marker="file#type-name">file:name()</seealso>, binary()}</string></subtype>
+        <subtype><typename>Reason</typename><string>Reason = term()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>FileName</anno>
+  <anno>Reason</anno>
+  <anno>Result</anno>
+  <anno>ZipHandle</anno>
+</spec>
+<spec>
+  <name>zip_get_state</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>zip_list_dir</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>zip_list_dir(ZipHandle) -&gt; {ok, Result} | {error, Reason}</head>
+      <guard>
+        <subtype><typename>Result</typename><string>Result = [<seealso marker="#type-zip_comment">zip_comment()</seealso> | <seealso marker="#type-zip_file">zip_file()</seealso>]</string></subtype>
+        <subtype><typename>ZipHandle</typename><string>ZipHandle = <seealso marker="#type-handle">handle()</seealso></string></subtype>
+        <subtype><typename>Reason</typename><string>Reason = term()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Reason</anno>
+  <anno>Result</anno>
+  <anno>ZipHandle</anno>
+</spec>
+<spec>
+  <name>zip_list_dir</name>
+  <arity>2</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>zip_open</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>zip_open(Archive) -&gt; {ok, ZipHandle} | {error, Reason}</head>
+      <guard>
+        <subtype><typename>Archive</typename><string>Archive = <seealso marker="file#type-name">file:name()</seealso> | binary()</string></subtype>
+        <subtype><typename>ZipHandle</typename><string>ZipHandle = <seealso marker="#type-handle">handle()</seealso></string></subtype>
+        <subtype><typename>Reason</typename><string>Reason = term()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Archive</anno>
+  <anno>Reason</anno>
+  <anno>ZipHandle</anno>
+</spec>
+<spec>
+  <name>zip_open</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>zip_open(Archive, Options) -&gt; {ok, ZipHandle} | {error, Reason}</head>
+      <guard>
+        <subtype><typename>Archive</typename><string>Archive = <seealso marker="file#type-name">file:name()</seealso> | binary()</string></subtype>
+        <subtype><typename>ZipHandle</typename><string>ZipHandle = <seealso marker="#type-handle">handle()</seealso></string></subtype>
+        <subtype><typename>Options</typename><string>Options = [Option]</string></subtype>
+        <subtype><typename>Option</typename><string>Option = cooked | memory | {cwd, CWD :: <seealso marker="file#type-filename">file:filename()</seealso>}</string></subtype>
+        <subtype><typename>Reason</typename><string>Reason = term()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Archive</anno>
+  <anno>CWD</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Reason</anno>
+  <anno>ZipHandle</anno>
+</spec>
+<spec>
+  <name>zip_t</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>zip_tt</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:27:29.</timestamp>
+</module>

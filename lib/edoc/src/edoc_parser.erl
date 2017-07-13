@@ -1,28 +1,33 @@
--module(edoc_parser).
--export([parse/1, parse_and_scan/1, format_error/1]).
--file("edoc_parser.yrl", 269).
-
-%% ========================== -*-Erlang-*- =============================
 %% EDoc function specification parser, generated from the file
 %% "edoc_parser.yrl" by the Yecc parser generator.
 %%
-%% Copyright (C) 2002-2005 Richard Carlsson
+%% Licensed under the Apache License, Version 2.0 (the "License"); you may
+%% not use this file except in compliance with the License. You may obtain
+%% a copy of the License at <http://www.apache.org/licenses/LICENSE-2.0>
 %%
-%% This library is free software; you can redistribute it and/or modify
-%% it under the terms of the GNU Lesser General Public License as
-%% published by the Free Software Foundation; either version 2 of the
-%% License, or (at your option) any later version.
+%% Unless required by applicable law or agreed to in writing, software
+%% distributed under the License is distributed on an "AS IS" BASIS,
+%% WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+%% See the License for the specific language governing permissions and
+%% limitations under the License.
 %%
-%% This library is distributed in the hope that it will be useful, but
-%% WITHOUT ANY WARRANTY; without even the implied warranty of
-%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
-%% Lesser General Public License for more details.
+%% Alternatively, you may use this file under the terms of the GNU Lesser
+%% General Public License (the "LGPL") as published by the Free Software
+%% Foundation; either version 2.1, or (at your option) any later version.
+%% If you wish to allow use of your version of this file only under the
+%% terms of the LGPL, you should delete the provisions above and replace
+%% them with the notice and other provisions required by the LGPL; see
+%% <http://www.gnu.org/licenses/>. If you do not delete the provisions
+%% above, a recipient may use your version of this file under the terms of
+%% either the Apache License or the LGPL.
 %%
-%% You should have received a copy of the GNU Lesser General Public
-%% License along with this library; if not, write to the Free Software
-%% Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
-%% USA
-%% ====================================================================
+%% @private
+%% @copyright 2002-2005 Richard Carlsson
+%% @author Richard Carlsson <carlsson.richard@gmail.com>
+
+-module(edoc_parser).
+-export([parse/1, parse_and_scan/1, format_error/1]).
+-file("edoc_parser.yrl", 275).
 
 -export([parse_spec/2, parse_typedef/2, parse_throws/2, parse_ref/2,
 	 parse_see/2, parse_param/2]).
@@ -208,11 +213,11 @@ throw_error({Where, E}, L) when is_list(Where) ->
 
 %% vim: ft=erlang
 
--file("/net/isildur/ldisk/daily_build/19_prebuild_opu_o.2017-03-14_21/otp_src_19/bootstrap/lib/parsetools/include/yeccpre.hrl", 0).
+-file("/net/isildur/ldisk/daily_build/20_prebuild_master-opu_o.2017-06-20_20/otp_src_20/bootstrap/lib/parsetools/include/yeccpre.hrl", 0).
 %%
 %% %CopyrightBegin%
 %%
-%% Copyright Ericsson AB 1996-2015. All Rights Reserved.
+%% Copyright Ericsson AB 1996-2017. All Rights Reserved.
 %%
 %% Licensed under the Apache License, Version 2.0 (the "License");
 %% you may not use this file except in compliance with the License.
@@ -362,27 +367,26 @@ yecctoken_location(Token) ->
     end.
 
 -compile({nowarn_unused_function, yecctoken2string/1}).
-yecctoken2string({atom, _, A}) -> io_lib:write(A);
+yecctoken2string({atom, _, A}) -> io_lib:write_atom(A);
 yecctoken2string({integer,_,N}) -> io_lib:write(N);
 yecctoken2string({float,_,F}) -> io_lib:write(F);
 yecctoken2string({char,_,C}) -> io_lib:write_char(C);
 yecctoken2string({var,_,V}) -> io_lib:format("~s", [V]);
 yecctoken2string({string,_,S}) -> io_lib:write_string(S);
 yecctoken2string({reserved_symbol, _, A}) -> io_lib:write(A);
-yecctoken2string({_Cat, _, Val}) -> io_lib:format("~p",[Val]);
+yecctoken2string({_Cat, _, Val}) -> io_lib:format("~tp", [Val]);
 yecctoken2string({dot, _}) -> "'.'";
-yecctoken2string({'$end', _}) ->
-    [];
+yecctoken2string({'$end', _}) -> [];
 yecctoken2string({Other, _}) when is_atom(Other) ->
-    io_lib:write(Other);
+    io_lib:write_atom(Other);
 yecctoken2string(Other) ->
-    io_lib:write(Other).
+    io_lib:format("~tp", [Other]).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
--file("edoc_parser.erl", 385).
+-file("edoc_parser.erl", 389).
 
 -dialyzer({nowarn_function, yeccpars2/7}).
 yeccpars2(0=S, Cat, Ss, Stack, T, Ts, Tzr) ->
@@ -905,25 +909,25 @@ yeccpars2_26(_S, Cat, Ss, Stack, T, Ts, Tzr) ->
  yeccgoto_ptype(hd(Ss), Cat, Ss, NewStack, T, Ts, Tzr).
 
 yeccpars2_27(_S, '$end', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_27_$end'(Stack),
+ NewStack = 'yeccpars2_27_\'$end\''(Stack),
  yeccgoto_ptype(hd(Ss), '$end', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_27(_S, ')', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_27_)'(Stack),
+ NewStack = 'yeccpars2_27_\')\''(Stack),
  yeccgoto_ptype(hd(Ss), ')', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_27(_S, '+', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_27_+'(Stack),
+ NewStack = 'yeccpars2_27_\'+\''(Stack),
  yeccgoto_ptype(hd(Ss), '+', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_27(_S, ',', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_27_,'(Stack),
+ NewStack = 'yeccpars2_27_\',\''(Stack),
  yeccgoto_ptype(hd(Ss), ',', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_27(_S, ':=', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_27_:='(Stack),
+ NewStack = 'yeccpars2_27_\':=\''(Stack),
  yeccgoto_ptype(hd(Ss), ':=', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_27(_S, '=>', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_27_=>'(Stack),
+ NewStack = 'yeccpars2_27_\'=>\''(Stack),
  yeccgoto_ptype(hd(Ss), '=>', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_27(_S, ']', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_27_]'(Stack),
+ NewStack = 'yeccpars2_27_\']\''(Stack),
  yeccgoto_ptype(hd(Ss), ']', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_27(_S, atom, Ss, Stack, T, Ts, Tzr) ->
  NewStack = yeccpars2_27_atom(Stack),
@@ -938,10 +942,10 @@ yeccpars2_27(_S, where, Ss, Stack, T, Ts, Tzr) ->
  NewStack = yeccpars2_27_where(Stack),
  yeccgoto_ptype(hd(Ss), where, Ss, NewStack, T, Ts, Tzr);
 yeccpars2_27(_S, '|', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_27_|'(Stack),
+ NewStack = 'yeccpars2_27_\'|\''(Stack),
  yeccgoto_ptype(hd(Ss), '|', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_27(_S, '}', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_27_}'(Stack),
+ NewStack = 'yeccpars2_27_\'}\''(Stack),
  yeccgoto_ptype(hd(Ss), '}', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_27(_S, Cat, Ss, Stack, T, Ts, Tzr) ->
  yeccgoto_futype_list(hd(Ss), Cat, Ss, Stack, T, Ts, Tzr).
@@ -1040,25 +1044,25 @@ yeccpars2_38(S, Cat, Ss, Stack, T, Ts, Tzr) ->
 yeccpars2_39(S, '(', Ss, Stack, T, Ts, Tzr) ->
  yeccpars1(S, 59, Ss, Stack, T, Ts, Tzr);
 yeccpars2_39(_S, '$end', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_39_$end'(Stack),
+ NewStack = 'yeccpars2_39_\'$end\''(Stack),
  yeccgoto_ptype(hd(Ss), '$end', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_39(_S, ')', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_39_)'(Stack),
+ NewStack = 'yeccpars2_39_\')\''(Stack),
  yeccgoto_ptype(hd(Ss), ')', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_39(_S, '+', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_39_+'(Stack),
+ NewStack = 'yeccpars2_39_\'+\''(Stack),
  yeccgoto_ptype(hd(Ss), '+', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_39(_S, ',', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_39_,'(Stack),
+ NewStack = 'yeccpars2_39_\',\''(Stack),
  yeccgoto_ptype(hd(Ss), ',', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_39(_S, ':=', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_39_:='(Stack),
+ NewStack = 'yeccpars2_39_\':=\''(Stack),
  yeccgoto_ptype(hd(Ss), ':=', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_39(_S, '=>', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_39_=>'(Stack),
+ NewStack = 'yeccpars2_39_\'=>\''(Stack),
  yeccgoto_ptype(hd(Ss), '=>', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_39(_S, ']', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_39_]'(Stack),
+ NewStack = 'yeccpars2_39_\']\''(Stack),
  yeccgoto_ptype(hd(Ss), ']', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_39(_S, atom, Ss, Stack, T, Ts, Tzr) ->
  NewStack = yeccpars2_39_atom(Stack),
@@ -1073,10 +1077,10 @@ yeccpars2_39(_S, where, Ss, Stack, T, Ts, Tzr) ->
  NewStack = yeccpars2_39_where(Stack),
  yeccgoto_ptype(hd(Ss), where, Ss, NewStack, T, Ts, Tzr);
 yeccpars2_39(_S, '|', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_39_|'(Stack),
+ NewStack = 'yeccpars2_39_\'|\''(Stack),
  yeccgoto_ptype(hd(Ss), '|', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_39(_S, '}', Ss, Stack, T, Ts, Tzr) ->
- NewStack = 'yeccpars2_39_}'(Stack),
+ NewStack = 'yeccpars2_39_\'}\''(Stack),
  yeccgoto_ptype(hd(Ss), '}', Ss, NewStack, T, Ts, Tzr);
 yeccpars2_39(_S, Cat, Ss, Stack, T, Ts, Tzr) ->
  NewStack = yeccpars2_39_(Stack),
@@ -2369,7 +2373,7 @@ yeccgoto_where_defs(144=_S, Cat, Ss, Stack, T, Ts, Tzr) ->
  yeccpars2_145(_S, Cat, Ss, Stack, T, Ts, Tzr).
 
 -compile({inline,yeccpars2_6_/1}).
--file("edoc_parser.yrl", 42).
+-file("edoc_parser.yrl", 47).
 yeccpars2_6_(__Stack0) ->
  [__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2377,14 +2381,14 @@ yeccpars2_6_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_8_/1}).
--file("edoc_parser.yrl", 175).
+-file("edoc_parser.yrl", 180).
 yeccpars2_8_(__Stack0) ->
  [begin
    [ ]
   end | __Stack0].
 
 -compile({inline,yeccpars2_11_/1}).
--file("edoc_parser.yrl", 189).
+-file("edoc_parser.yrl", 194).
 yeccpars2_11_(__Stack0) ->
  [__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2392,7 +2396,7 @@ yeccpars2_11_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_12_/1}).
--file("edoc_parser.yrl", 193).
+-file("edoc_parser.yrl", 198).
 yeccpars2_12_(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -2400,7 +2404,7 @@ yeccpars2_12_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_13_/1}).
--file("edoc_parser.yrl", 190).
+-file("edoc_parser.yrl", 195).
 yeccpars2_13_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2408,7 +2412,7 @@ yeccpars2_13_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_15_/1}).
--file("edoc_parser.yrl", 194).
+-file("edoc_parser.yrl", 199).
 yeccpars2_15_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2416,7 +2420,7 @@ yeccpars2_15_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_16_/1}).
--file("edoc_parser.yrl", 197).
+-file("edoc_parser.yrl", 202).
 yeccpars2_16_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2426,21 +2430,21 @@ yeccpars2_16_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_18_/1}).
--file("edoc_parser.yrl", 179).
+-file("edoc_parser.yrl", 184).
 yeccpars2_18_(__Stack0) ->
  [begin
    [ ]
   end | __Stack0].
 
 -compile({inline,yeccpars2_22_/1}).
--file("edoc_parser.yrl", 175).
+-file("edoc_parser.yrl", 180).
 yeccpars2_22_(__Stack0) ->
  [begin
    [ ]
   end | __Stack0].
 
 -compile({inline,yeccpars2_23_/1}).
--file("edoc_parser.yrl", 54).
+-file("edoc_parser.yrl", 59).
 yeccpars2_23_(__Stack0) ->
  [__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2448,7 +2452,7 @@ yeccpars2_23_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_25_/1}).
--file("edoc_parser.yrl", 106).
+-file("edoc_parser.yrl", 111).
 yeccpars2_25_(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -2456,16 +2460,16 @@ yeccpars2_25_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_26_/1}).
--file("edoc_parser.yrl", 107).
+-file("edoc_parser.yrl", 112).
 yeccpars2_26_(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    # t_map { types = __1 }
   end | __Stack].
 
--compile({inline,'yeccpars2_27_$end'/1}).
--file("edoc_parser.yrl", 112).
-'yeccpars2_27_$end'(__Stack0) ->
+-compile({inline,'yeccpars2_27_\'$end\''/1}).
+-file("edoc_parser.yrl", 117).
+'yeccpars2_27_\'$end\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    if length ( element ( 1 , __1 ) ) == 1 ->
@@ -2478,9 +2482,9 @@ yeccpars2_26_(__Stack0) ->
     end
   end | __Stack].
 
--compile({inline,'yeccpars2_27_)'/1}).
--file("edoc_parser.yrl", 112).
-'yeccpars2_27_)'(__Stack0) ->
+-compile({inline,'yeccpars2_27_\')\''/1}).
+-file("edoc_parser.yrl", 117).
+'yeccpars2_27_\')\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    if length ( element ( 1 , __1 ) ) == 1 ->
@@ -2493,9 +2497,9 @@ yeccpars2_26_(__Stack0) ->
     end
   end | __Stack].
 
--compile({inline,'yeccpars2_27_+'/1}).
--file("edoc_parser.yrl", 112).
-'yeccpars2_27_+'(__Stack0) ->
+-compile({inline,'yeccpars2_27_\'+\''/1}).
+-file("edoc_parser.yrl", 117).
+'yeccpars2_27_\'+\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    if length ( element ( 1 , __1 ) ) == 1 ->
@@ -2508,9 +2512,9 @@ yeccpars2_26_(__Stack0) ->
     end
   end | __Stack].
 
--compile({inline,'yeccpars2_27_,'/1}).
--file("edoc_parser.yrl", 112).
-'yeccpars2_27_,'(__Stack0) ->
+-compile({inline,'yeccpars2_27_\',\''/1}).
+-file("edoc_parser.yrl", 117).
+'yeccpars2_27_\',\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    if length ( element ( 1 , __1 ) ) == 1 ->
@@ -2523,9 +2527,9 @@ yeccpars2_26_(__Stack0) ->
     end
   end | __Stack].
 
--compile({inline,'yeccpars2_27_:='/1}).
--file("edoc_parser.yrl", 112).
-'yeccpars2_27_:='(__Stack0) ->
+-compile({inline,'yeccpars2_27_\':=\''/1}).
+-file("edoc_parser.yrl", 117).
+'yeccpars2_27_\':=\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    if length ( element ( 1 , __1 ) ) == 1 ->
@@ -2538,9 +2542,9 @@ yeccpars2_26_(__Stack0) ->
     end
   end | __Stack].
 
--compile({inline,'yeccpars2_27_=>'/1}).
--file("edoc_parser.yrl", 112).
-'yeccpars2_27_=>'(__Stack0) ->
+-compile({inline,'yeccpars2_27_\'=>\''/1}).
+-file("edoc_parser.yrl", 117).
+'yeccpars2_27_\'=>\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    if length ( element ( 1 , __1 ) ) == 1 ->
@@ -2553,9 +2557,9 @@ yeccpars2_26_(__Stack0) ->
     end
   end | __Stack].
 
--compile({inline,'yeccpars2_27_]'/1}).
--file("edoc_parser.yrl", 112).
-'yeccpars2_27_]'(__Stack0) ->
+-compile({inline,'yeccpars2_27_\']\''/1}).
+-file("edoc_parser.yrl", 117).
+'yeccpars2_27_\']\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    if length ( element ( 1 , __1 ) ) == 1 ->
@@ -2569,7 +2573,7 @@ yeccpars2_26_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_27_atom/1}).
--file("edoc_parser.yrl", 112).
+-file("edoc_parser.yrl", 117).
 yeccpars2_27_atom(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -2584,7 +2588,7 @@ yeccpars2_27_atom(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_27_string/1}).
--file("edoc_parser.yrl", 112).
+-file("edoc_parser.yrl", 117).
 yeccpars2_27_string(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -2599,7 +2603,7 @@ yeccpars2_27_string(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_27_var/1}).
--file("edoc_parser.yrl", 112).
+-file("edoc_parser.yrl", 117).
 yeccpars2_27_var(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -2614,7 +2618,7 @@ yeccpars2_27_var(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_27_where/1}).
--file("edoc_parser.yrl", 112).
+-file("edoc_parser.yrl", 117).
 yeccpars2_27_where(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -2628,9 +2632,9 @@ yeccpars2_27_where(__Stack0) ->
     end
   end | __Stack].
 
--compile({inline,'yeccpars2_27_|'/1}).
--file("edoc_parser.yrl", 112).
-'yeccpars2_27_|'(__Stack0) ->
+-compile({inline,'yeccpars2_27_\'|\''/1}).
+-file("edoc_parser.yrl", 117).
+'yeccpars2_27_\'|\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    if length ( element ( 1 , __1 ) ) == 1 ->
@@ -2643,9 +2647,9 @@ yeccpars2_27_where(__Stack0) ->
     end
   end | __Stack].
 
--compile({inline,'yeccpars2_27_}'/1}).
--file("edoc_parser.yrl", 112).
-'yeccpars2_27_}'(__Stack0) ->
+-compile({inline,'yeccpars2_27_\'}\''/1}).
+-file("edoc_parser.yrl", 117).
+'yeccpars2_27_\'}\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    if length ( element ( 1 , __1 ) ) == 1 ->
@@ -2659,7 +2663,7 @@ yeccpars2_27_where(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_28_/1}).
--file("edoc_parser.yrl", 184).
+-file("edoc_parser.yrl", 189).
 yeccpars2_28_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2668,7 +2672,7 @@ yeccpars2_28_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_30_/1}).
--file("edoc_parser.yrl", 93).
+-file("edoc_parser.yrl", 98).
 yeccpars2_30_(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -2676,7 +2680,7 @@ yeccpars2_30_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_31_/1}).
--file("edoc_parser.yrl", 96).
+-file("edoc_parser.yrl", 101).
 yeccpars2_31_(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -2684,70 +2688,70 @@ yeccpars2_31_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_35_/1}).
--file("edoc_parser.yrl", 85).
+-file("edoc_parser.yrl", 90).
 yeccpars2_35_(__Stack0) ->
  [begin
    [ ]
   end | __Stack0].
 
--compile({inline,'yeccpars2_39_$end'/1}).
--file("edoc_parser.yrl", 101).
-'yeccpars2_39_$end'(__Stack0) ->
+-compile({inline,'yeccpars2_39_\'$end\''/1}).
+-file("edoc_parser.yrl", 106).
+'yeccpars2_39_\'$end\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    # t_atom { val = tok_val ( __1 ) }
   end | __Stack].
 
--compile({inline,'yeccpars2_39_)'/1}).
--file("edoc_parser.yrl", 101).
-'yeccpars2_39_)'(__Stack0) ->
+-compile({inline,'yeccpars2_39_\')\''/1}).
+-file("edoc_parser.yrl", 106).
+'yeccpars2_39_\')\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    # t_atom { val = tok_val ( __1 ) }
   end | __Stack].
 
--compile({inline,'yeccpars2_39_+'/1}).
--file("edoc_parser.yrl", 101).
-'yeccpars2_39_+'(__Stack0) ->
+-compile({inline,'yeccpars2_39_\'+\''/1}).
+-file("edoc_parser.yrl", 106).
+'yeccpars2_39_\'+\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    # t_atom { val = tok_val ( __1 ) }
   end | __Stack].
 
--compile({inline,'yeccpars2_39_,'/1}).
--file("edoc_parser.yrl", 101).
-'yeccpars2_39_,'(__Stack0) ->
+-compile({inline,'yeccpars2_39_\',\''/1}).
+-file("edoc_parser.yrl", 106).
+'yeccpars2_39_\',\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    # t_atom { val = tok_val ( __1 ) }
   end | __Stack].
 
--compile({inline,'yeccpars2_39_:='/1}).
--file("edoc_parser.yrl", 101).
-'yeccpars2_39_:='(__Stack0) ->
+-compile({inline,'yeccpars2_39_\':=\''/1}).
+-file("edoc_parser.yrl", 106).
+'yeccpars2_39_\':=\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    # t_atom { val = tok_val ( __1 ) }
   end | __Stack].
 
--compile({inline,'yeccpars2_39_=>'/1}).
--file("edoc_parser.yrl", 101).
-'yeccpars2_39_=>'(__Stack0) ->
+-compile({inline,'yeccpars2_39_\'=>\''/1}).
+-file("edoc_parser.yrl", 106).
+'yeccpars2_39_\'=>\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    # t_atom { val = tok_val ( __1 ) }
   end | __Stack].
 
--compile({inline,'yeccpars2_39_]'/1}).
--file("edoc_parser.yrl", 101).
-'yeccpars2_39_]'(__Stack0) ->
+-compile({inline,'yeccpars2_39_\']\''/1}).
+-file("edoc_parser.yrl", 106).
+'yeccpars2_39_\']\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    # t_atom { val = tok_val ( __1 ) }
   end | __Stack].
 
 -compile({inline,yeccpars2_39_atom/1}).
--file("edoc_parser.yrl", 101).
+-file("edoc_parser.yrl", 106).
 yeccpars2_39_atom(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -2755,7 +2759,7 @@ yeccpars2_39_atom(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_39_string/1}).
--file("edoc_parser.yrl", 101).
+-file("edoc_parser.yrl", 106).
 yeccpars2_39_string(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -2763,7 +2767,7 @@ yeccpars2_39_string(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_39_var/1}).
--file("edoc_parser.yrl", 101).
+-file("edoc_parser.yrl", 106).
 yeccpars2_39_var(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -2771,31 +2775,31 @@ yeccpars2_39_var(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_39_where/1}).
--file("edoc_parser.yrl", 101).
+-file("edoc_parser.yrl", 106).
 yeccpars2_39_where(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    # t_atom { val = tok_val ( __1 ) }
   end | __Stack].
 
--compile({inline,'yeccpars2_39_|'/1}).
--file("edoc_parser.yrl", 101).
-'yeccpars2_39_|'(__Stack0) ->
+-compile({inline,'yeccpars2_39_\'|\''/1}).
+-file("edoc_parser.yrl", 106).
+'yeccpars2_39_\'|\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    # t_atom { val = tok_val ( __1 ) }
   end | __Stack].
 
--compile({inline,'yeccpars2_39_}'/1}).
--file("edoc_parser.yrl", 101).
-'yeccpars2_39_}'(__Stack0) ->
+-compile({inline,'yeccpars2_39_\'}\''/1}).
+-file("edoc_parser.yrl", 106).
+'yeccpars2_39_\'}\''(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
    # t_atom { val = tok_val ( __1 ) }
   end | __Stack].
 
 -compile({inline,yeccpars2_39_/1}).
--file("edoc_parser.yrl", 46).
+-file("edoc_parser.yrl", 51).
 yeccpars2_39_(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -2803,7 +2807,7 @@ yeccpars2_39_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_40_/1}).
--file("edoc_parser.yrl", 105).
+-file("edoc_parser.yrl", 110).
 yeccpars2_40_(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -2811,7 +2815,7 @@ yeccpars2_40_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_41_/1}).
--file("edoc_parser.yrl", 102).
+-file("edoc_parser.yrl", 107).
 yeccpars2_41_(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -2819,7 +2823,7 @@ yeccpars2_41_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_42_/1}).
--file("edoc_parser.yrl", 100).
+-file("edoc_parser.yrl", 105).
 yeccpars2_42_(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -2827,14 +2831,14 @@ yeccpars2_42_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_43_/1}).
--file("edoc_parser.yrl", 85).
+-file("edoc_parser.yrl", 90).
 yeccpars2_43_(__Stack0) ->
  [begin
    [ ]
   end | __Stack0].
 
 -compile({inline,yeccpars2_45_/1}).
--file("edoc_parser.yrl", 86).
+-file("edoc_parser.yrl", 91).
 yeccpars2_45_(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -2842,7 +2846,7 @@ yeccpars2_45_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_47_/1}).
--file("edoc_parser.yrl", 82).
+-file("edoc_parser.yrl", 87).
 yeccpars2_47_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2850,7 +2854,7 @@ yeccpars2_47_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_48_/1}).
--file("edoc_parser.yrl", 87).
+-file("edoc_parser.yrl", 92).
 yeccpars2_48_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2858,7 +2862,7 @@ yeccpars2_48_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_50_/1}).
--file("edoc_parser.yrl", 92).
+-file("edoc_parser.yrl", 97).
 yeccpars2_50_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2866,7 +2870,7 @@ yeccpars2_50_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_51_/1}).
--file("edoc_parser.yrl", 100).
+-file("edoc_parser.yrl", 105).
 yeccpars2_51_(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -2874,7 +2878,7 @@ yeccpars2_51_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_54_/1}).
--file("edoc_parser.yrl", 98).
+-file("edoc_parser.yrl", 103).
 yeccpars2_54_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2882,7 +2886,7 @@ yeccpars2_54_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_55_/1}).
--file("edoc_parser.yrl", 97).
+-file("edoc_parser.yrl", 102).
 yeccpars2_55_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2890,7 +2894,7 @@ yeccpars2_55_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_57_/1}).
--file("edoc_parser.yrl", 103).
+-file("edoc_parser.yrl", 108).
 yeccpars2_57_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2899,7 +2903,7 @@ yeccpars2_57_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_58_/1}).
--file("edoc_parser.yrl", 128).
+-file("edoc_parser.yrl", 133).
 yeccpars2_58_(__Stack0) ->
  [__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2927,14 +2931,14 @@ yeccpars2_58_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_59_/1}).
--file("edoc_parser.yrl", 85).
+-file("edoc_parser.yrl", 90).
 yeccpars2_59_(__Stack0) ->
  [begin
    [ ]
   end | __Stack0].
 
 -compile({inline,yeccpars2_61_/1}).
--file("edoc_parser.yrl", 64).
+-file("edoc_parser.yrl", 69).
 yeccpars2_61_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2942,7 +2946,7 @@ yeccpars2_61_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_63_/1}).
--file("edoc_parser.yrl", 108).
+-file("edoc_parser.yrl", 113).
 yeccpars2_63_(__Stack0) ->
  [__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2950,7 +2954,7 @@ yeccpars2_63_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_65_/1}).
--file("edoc_parser.yrl", 109).
+-file("edoc_parser.yrl", 114).
 yeccpars2_65_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2958,7 +2962,7 @@ yeccpars2_65_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_67_/1}).
--file("edoc_parser.yrl", 110).
+-file("edoc_parser.yrl", 115).
 yeccpars2_67_(__Stack0) ->
  [__5,__4,__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2966,7 +2970,7 @@ yeccpars2_67_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_70_/1}).
--file("edoc_parser.yrl", 158).
+-file("edoc_parser.yrl", 163).
 yeccpars2_70_(__Stack0) ->
  [__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2974,7 +2978,7 @@ yeccpars2_70_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_74_/1}).
--file("edoc_parser.yrl", 164).
+-file("edoc_parser.yrl", 169).
 yeccpars2_74_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2982,7 +2986,7 @@ yeccpars2_74_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_76_/1}).
--file("edoc_parser.yrl", 166).
+-file("edoc_parser.yrl", 171).
 yeccpars2_76_(__Stack0) ->
  [__5,__4,__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2990,7 +2994,7 @@ yeccpars2_76_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_78_/1}).
--file("edoc_parser.yrl", 159).
+-file("edoc_parser.yrl", 164).
 yeccpars2_78_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -2998,7 +3002,7 @@ yeccpars2_78_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_82_/1}).
--file("edoc_parser.yrl", 162).
+-file("edoc_parser.yrl", 167).
 yeccpars2_82_(__Stack0) ->
  [__5,__4,__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3006,7 +3010,7 @@ yeccpars2_82_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_83_/1}).
--file("edoc_parser.yrl", 160).
+-file("edoc_parser.yrl", 165).
 yeccpars2_83_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3014,7 +3018,7 @@ yeccpars2_83_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_87_/1}).
--file("edoc_parser.yrl", 46).
+-file("edoc_parser.yrl", 51).
 yeccpars2_87_(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -3022,7 +3026,7 @@ yeccpars2_87_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_91_/1}).
--file("edoc_parser.yrl", 154).
+-file("edoc_parser.yrl", 159).
 yeccpars2_91_(__Stack0) ->
  [__7,__6,__5,__4,__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3033,7 +3037,7 @@ yeccpars2_91_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_92_/1}).
--file("edoc_parser.yrl", 47).
+-file("edoc_parser.yrl", 52).
 yeccpars2_92_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3041,7 +3045,7 @@ yeccpars2_92_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_94_/1}).
--file("edoc_parser.yrl", 67).
+-file("edoc_parser.yrl", 72).
 yeccpars2_94_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3049,14 +3053,14 @@ yeccpars2_94_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_96_/1}).
--file("edoc_parser.yrl", 71).
+-file("edoc_parser.yrl", 76).
 yeccpars2_96_(__Stack0) ->
  [begin
    [ ]
   end | __Stack0].
 
 -compile({inline,yeccpars2_98_/1}).
--file("edoc_parser.yrl", 72).
+-file("edoc_parser.yrl", 77).
 yeccpars2_98_(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -3064,7 +3068,7 @@ yeccpars2_98_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_102_/1}).
--file("edoc_parser.yrl", 75).
+-file("edoc_parser.yrl", 80).
 yeccpars2_102_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3074,7 +3078,7 @@ yeccpars2_102_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_103_/1}).
--file("edoc_parser.yrl", 78).
+-file("edoc_parser.yrl", 83).
 yeccpars2_103_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3084,7 +3088,7 @@ yeccpars2_103_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_105_/1}).
--file("edoc_parser.yrl", 69).
+-file("edoc_parser.yrl", 74).
 yeccpars2_105_(__Stack0) ->
  [__4,__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3092,7 +3096,7 @@ yeccpars2_105_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_106_/1}).
--file("edoc_parser.yrl", 73).
+-file("edoc_parser.yrl", 78).
 yeccpars2_106_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3100,7 +3104,7 @@ yeccpars2_106_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_109_/1}).
--file("edoc_parser.yrl", 169).
+-file("edoc_parser.yrl", 174).
 yeccpars2_109_(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -3108,7 +3112,7 @@ yeccpars2_109_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_111_/1}).
--file("edoc_parser.yrl", 123).
+-file("edoc_parser.yrl", 128).
 yeccpars2_111_(__Stack0) ->
  [__4,__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3116,7 +3120,7 @@ yeccpars2_111_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_113_/1}).
--file("edoc_parser.yrl", 173).
+-file("edoc_parser.yrl", 178).
 yeccpars2_113_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3124,7 +3128,7 @@ yeccpars2_113_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_115_/1}).
--file("edoc_parser.yrl", 125).
+-file("edoc_parser.yrl", 130).
 yeccpars2_115_(__Stack0) ->
  [__5,__4,__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3133,7 +3137,7 @@ yeccpars2_115_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_116_/1}).
--file("edoc_parser.yrl", 170).
+-file("edoc_parser.yrl", 175).
 yeccpars2_116_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3141,7 +3145,7 @@ yeccpars2_116_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_118_/1}).
--file("edoc_parser.yrl", 121).
+-file("edoc_parser.yrl", 126).
 yeccpars2_118_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3149,7 +3153,7 @@ yeccpars2_118_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_119_/1}).
--file("edoc_parser.yrl", 89).
+-file("edoc_parser.yrl", 94).
 yeccpars2_119_(__Stack0) ->
  [__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3157,7 +3161,7 @@ yeccpars2_119_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_122_/1}).
--file("edoc_parser.yrl", 150).
+-file("edoc_parser.yrl", 155).
 yeccpars2_122_(__Stack0) ->
  [__4,__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3167,14 +3171,14 @@ yeccpars2_122_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_123_/1}).
--file("edoc_parser.yrl", 85).
+-file("edoc_parser.yrl", 90).
 yeccpars2_123_(__Stack0) ->
  [begin
    [ ]
   end | __Stack0].
 
 -compile({inline,yeccpars2_127_/1}).
--file("edoc_parser.yrl", 187).
+-file("edoc_parser.yrl", 192).
 yeccpars2_127_(__Stack0) ->
  [__6,__5,__4,__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3182,14 +3186,14 @@ yeccpars2_127_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_128_/1}).
--file("edoc_parser.yrl", 175).
+-file("edoc_parser.yrl", 180).
 yeccpars2_128_(__Stack0) ->
  [begin
    [ ]
   end | __Stack0].
 
 -compile({inline,yeccpars2_129_/1}).
--file("edoc_parser.yrl", 201).
+-file("edoc_parser.yrl", 206).
 yeccpars2_129_(__Stack0) ->
  [__5,__4,__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3200,7 +3204,7 @@ yeccpars2_129_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_130_/1}).
--file("edoc_parser.yrl", 176).
+-file("edoc_parser.yrl", 181).
 yeccpars2_130_(__Stack0) ->
  [__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3208,7 +3212,7 @@ yeccpars2_130_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_131_/1}).
--file("edoc_parser.yrl", 180).
+-file("edoc_parser.yrl", 185).
 yeccpars2_131_(__Stack0) ->
  [__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3216,7 +3220,7 @@ yeccpars2_131_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_133_/1}).
--file("edoc_parser.yrl", 181).
+-file("edoc_parser.yrl", 186).
 yeccpars2_133_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3224,7 +3228,7 @@ yeccpars2_133_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_135_/1}).
--file("edoc_parser.yrl", 41).
+-file("edoc_parser.yrl", 46).
 yeccpars2_135_(__Stack0) ->
  [__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3232,14 +3236,14 @@ yeccpars2_135_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_136_/1}).
--file("edoc_parser.yrl", 175).
+-file("edoc_parser.yrl", 180).
 yeccpars2_136_(__Stack0) ->
  [begin
    [ ]
   end | __Stack0].
 
 -compile({inline,yeccpars2_137_/1}).
--file("edoc_parser.yrl", 234).
+-file("edoc_parser.yrl", 239).
 yeccpars2_137_(__Stack0) ->
  [__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3248,7 +3252,7 @@ yeccpars2_137_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_139_/1}).
--file("edoc_parser.yrl", 40).
+-file("edoc_parser.yrl", 45).
 yeccpars2_139_(__Stack0) ->
  [__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3256,14 +3260,14 @@ yeccpars2_139_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_141_/1}).
--file("edoc_parser.yrl", 175).
+-file("edoc_parser.yrl", 180).
 yeccpars2_141_(__Stack0) ->
  [begin
    [ ]
   end | __Stack0].
 
 -compile({inline,yeccpars2_142_/1}).
--file("edoc_parser.yrl", 57).
+-file("edoc_parser.yrl", 62).
 yeccpars2_142_(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -3271,7 +3275,7 @@ yeccpars2_142_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_143_/1}).
--file("edoc_parser.yrl", 50).
+-file("edoc_parser.yrl", 55).
 yeccpars2_143_(__Stack0) ->
  [__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3279,14 +3283,14 @@ yeccpars2_143_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_144_/1}).
--file("edoc_parser.yrl", 175).
+-file("edoc_parser.yrl", 180).
 yeccpars2_144_(__Stack0) ->
  [begin
    [ ]
   end | __Stack0].
 
 -compile({inline,yeccpars2_145_/1}).
--file("edoc_parser.yrl", 52).
+-file("edoc_parser.yrl", 57).
 yeccpars2_145_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3294,7 +3298,7 @@ yeccpars2_145_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_147_/1}).
--file("edoc_parser.yrl", 60).
+-file("edoc_parser.yrl", 65).
 yeccpars2_147_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3302,7 +3306,7 @@ yeccpars2_147_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_148_/1}).
--file("edoc_parser.yrl", 43).
+-file("edoc_parser.yrl", 48).
 yeccpars2_148_(__Stack0) ->
  [__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3310,7 +3314,7 @@ yeccpars2_148_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_149_/1}).
--file("edoc_parser.yrl", 222).
+-file("edoc_parser.yrl", 227).
 yeccpars2_149_(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -3318,7 +3322,7 @@ yeccpars2_149_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_154_/1}).
--file("edoc_parser.yrl", 46).
+-file("edoc_parser.yrl", 51).
 yeccpars2_154_(__Stack0) ->
  [__1 | __Stack] = __Stack0,
  [begin
@@ -3326,7 +3330,7 @@ yeccpars2_154_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_157_/1}).
--file("edoc_parser.yrl", 225).
+-file("edoc_parser.yrl", 230).
 yeccpars2_157_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3334,7 +3338,7 @@ yeccpars2_157_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_158_/1}).
--file("edoc_parser.yrl", 227).
+-file("edoc_parser.yrl", 232).
 yeccpars2_158_(__Stack0) ->
  [__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3342,7 +3346,7 @@ yeccpars2_158_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_159_/1}).
--file("edoc_parser.yrl", 213).
+-file("edoc_parser.yrl", 218).
 yeccpars2_159_(__Stack0) ->
  [__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3350,7 +3354,7 @@ yeccpars2_159_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_161_/1}).
--file("edoc_parser.yrl", 215).
+-file("edoc_parser.yrl", 220).
 yeccpars2_161_(__Stack0) ->
  [__4,__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3358,7 +3362,7 @@ yeccpars2_161_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_166_/1}).
--file("edoc_parser.yrl", 218).
+-file("edoc_parser.yrl", 223).
 yeccpars2_166_(__Stack0) ->
  [__5,__4,__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3366,7 +3370,7 @@ yeccpars2_166_(__Stack0) ->
   end | __Stack].
 
 -compile({inline,yeccpars2_167_/1}).
--file("edoc_parser.yrl", 220).
+-file("edoc_parser.yrl", 225).
 yeccpars2_167_(__Stack0) ->
  [__5,__4,__3,__2,__1 | __Stack] = __Stack0,
  [begin
@@ -3374,4 +3378,4 @@ yeccpars2_167_(__Stack0) ->
   end | __Stack].
 
 
--file("edoc_parser.yrl", 476).
+-file("edoc_parser.yrl", 460).

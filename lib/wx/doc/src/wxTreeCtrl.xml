@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxTreeCtrl</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxTreeCtrl.xml</file></header>
+<module>wxTreeCtrl</module>
+<modulesummary>See external documentation: wxTreeCtrl.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html">wxTreeCtrl</url>.</p>
+ 
+  <p>Note: The representation of treeItemId() have changed from the original class implementation to be an semi-opaque type,Equality between TreeItemId's can be tested and zero means that the TreeItem is invalid.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxTreeCtrl"/>wxTreeCtrl()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlwxtreectrl">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent) -&gt; <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></name>
+<fsummary>Equivalent to new(Parent, []).
+</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="new-1"/>
+<p>Equivalent to <seealso marker="#new-2">new(Parent, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Parent, Options::[Option]) -&gt; <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {id, integer()} | {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()} | {validator, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</v></type>
+<desc><marker id="new-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlwxtreectrl">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addRoot(This, Text) -&gt; integer()</name>
+<fsummary>Equivalent to addRoot(This, Text, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="addRoot-2"/>
+<p>Equivalent to <seealso marker="#addRoot-3">addRoot(This, Text, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>addRoot(This, Text, Options::[Option]) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {image, integer()} | {selectedImage, integer()} | {data, term()}</v></type>
+<desc><marker id="addRoot-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrladdroot">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>appendItem(This, Parent, Text) -&gt; integer()</name>
+<fsummary>Equivalent to appendItem(This, Parent, Text, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Parent = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="appendItem-3"/>
+<p>Equivalent to <seealso marker="#appendItem-4">appendItem(This, Parent, Text, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>appendItem(This, Parent, Text, Options::[Option]) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Parent = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {image, integer()} | {selectedImage, integer()} | {data, term()}</v></type>
+<desc><marker id="appendItem-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlappenditem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>assignImageList(This, ImageList) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>ImageList = <seealso marker="wxImageList#type-wxImageList">wxImageList:wxImageList()</seealso></v></type>
+<desc><marker id="assignImageList-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlassignimagelist">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>assignStateImageList(This, ImageList) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>ImageList = <seealso marker="wxImageList#type-wxImageList">wxImageList:wxImageList()</seealso></v></type>
+<desc><marker id="assignStateImageList-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlassignstateimagelist">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>collapse(This, Item) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="collapse-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlcollapse">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>collapseAndReset(This, Item) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="collapseAndReset-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlcollapseandreset">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent) -&gt; boolean()</name>
+<fsummary>Equivalent to create(This, Parent, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="create-2"/>
+<p>Equivalent to <seealso marker="#create-3">create(This, Parent, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {id, integer()} | {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()} | {validator, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>}</v></type>
+<desc><marker id="create-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlcreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>delete(This, Item) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="delete-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrldelete">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>deleteAllItems(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v></type>
+<desc><marker id="deleteAllItems-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrldeleteallitems">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>deleteChildren(This, Item) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="deleteChildren-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrldeletechildren">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>editLabel(This, Item) -&gt; <seealso marker="wxTextCtrl#type-wxTextCtrl">wxTextCtrl:wxTextCtrl()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="editLabel-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrleditlabel">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>ensureVisible(This, Item) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="ensureVisible-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlensurevisible">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>expand(This, Item) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="expand-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlexpand">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getBoundingRect(This, Item) -&gt; Result</name>
+<fsummary>Equivalent to getBoundingRect(This, Item, []).
+</fsummary>
+<type>
+<v>Result = {Res::boolean(), Rect::{X::integer(), Y::integer(), W::integer(), H::integer()}}</v><v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getBoundingRect-2"/>
+<p>Equivalent to <seealso marker="#getBoundingRect-3">getBoundingRect(This, Item, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>getBoundingRect(This, Item, Options::[Option]) -&gt; Result</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Result = {Res::boolean(), Rect::{X::integer(), Y::integer(), W::integer(), H::integer()}}</v><v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v><v>Option = {textOnly, boolean()}</v></type>
+<desc><marker id="getBoundingRect-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetboundingrect">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getChildrenCount(This, Item) -&gt; integer()</name>
+<fsummary>Equivalent to getChildrenCount(This, Item, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getChildrenCount-2"/>
+<p>Equivalent to <seealso marker="#getChildrenCount-3">getChildrenCount(This, Item, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>getChildrenCount(This, Item, Options::[Option]) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v><v>Option = {recursively, boolean()}</v></type>
+<desc><marker id="getChildrenCount-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetchildrencount">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCount(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v></type>
+<desc><marker id="getCount-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetcount">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getEditControl(This) -&gt; <seealso marker="wxTextCtrl#type-wxTextCtrl">wxTextCtrl:wxTextCtrl()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v></type>
+<desc><marker id="getEditControl-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgeteditcontrol">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFirstChild(This, Item) -&gt; Result</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Result = {Res::integer(), Cookie::integer()}</v><v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getFirstChild-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetfirstchild">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getNextChild(This, Item, Cookie) -&gt; Result</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Result = {Res::integer(), Cookie::integer()}</v><v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v><v>Cookie = integer()</v></type>
+<desc><marker id="getNextChild-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetnextchild">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFirstVisibleItem(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v></type>
+<desc><marker id="getFirstVisibleItem-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetfirstvisibleitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getImageList(This) -&gt; <seealso marker="wxImageList#type-wxImageList">wxImageList:wxImageList()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v></type>
+<desc><marker id="getImageList-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetimagelist">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getIndent(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v></type>
+<desc><marker id="getIndent-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetindent">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItemBackgroundColour(This, Item) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getItemBackgroundColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetitembackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItemData(This, Item) -&gt; term()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getItemData-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetitemdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItemFont(This, Item) -&gt; <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getItemFont-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetitemfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItemImage(This, Item) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getItemImage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetitemimage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItemImage(This, Item, Options::[Option]) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v><v>Option = {which, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</v></type>
+<desc><marker id="getItemImage-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetitemimage">external documentation</url>.
+ <br/> Which = ?wxTreeItemIcon_Normal | ?wxTreeItemIcon_Selected | ?wxTreeItemIcon_Expanded | ?wxTreeItemIcon_SelectedExpanded | ?wxTreeItemIcon_Max</p>
+</desc></func>
+<func>
+<name>getItemText(This, Item) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getItemText-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetitemtext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItemTextColour(This, Item) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getItemTextColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetitemtextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getLastChild(This, Item) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getLastChild-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetlastchild">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getNextSibling(This, Item) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getNextSibling-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetnextsibling">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getNextVisible(This, Item) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getNextVisible-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetnextvisible">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItemParent(This, Item) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getItemParent-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetitemparent">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPrevSibling(This, Item) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getPrevSibling-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetprevsibling">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPrevVisible(This, Item) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getPrevVisible-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetprevvisible">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getRootItem(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v></type>
+<desc><marker id="getRootItem-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetrootitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSelection(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v></type>
+<desc><marker id="getSelection-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSelections(This) -&gt; Result</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Result = {Res::integer(), Val::[integer()]}</v><v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v></type>
+<desc><marker id="getSelections-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetselections">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getStateImageList(This) -&gt; <seealso marker="wxImageList#type-wxImageList">wxImageList:wxImageList()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v></type>
+<desc><marker id="getStateImageList-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlgetstateimagelist">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hitTest(This, Point) -&gt; Result</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Result = {Res::integer(), Flags::integer()}</v><v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Point = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="hitTest-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlhittest">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>insertItem(This, Parent, Pos, Text) -&gt; integer()</name>
+<fsummary>Equivalent to insertItem(This, Parent, Pos, Text, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Parent = integer()</v><v>Pos = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="insertItem-4"/>
+<p>Equivalent to <seealso marker="#insertItem-5">insertItem(This, Parent, Pos, Text, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>insertItem(This, Parent, Pos, Text, Options::[Option]) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Parent = integer()</v><v>Pos = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {image, integer()} | {selImage, integer()} | {data, term()}</v></type>
+<desc><marker id="insertItem-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlinsertitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isBold(This, Item) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="isBold-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlisbold">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isExpanded(This, Item) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="isExpanded-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlisexpanded">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isSelected(This, Item) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="isSelected-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlisselected">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isVisible(This, Item) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="isVisible-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlisvisible">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>itemHasChildren(This, Item) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="itemHasChildren-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlitemhaschildren">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isTreeItemIdOk(Id) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Id = integer()</v></type>
+<desc><marker id="isTreeItemIdOk-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlistreeitemidok">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>prependItem(This, Parent, Text) -&gt; integer()</name>
+<fsummary>Equivalent to prependItem(This, Parent, Text, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Parent = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="prependItem-3"/>
+<p>Equivalent to <seealso marker="#prependItem-4">prependItem(This, Parent, Text, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>prependItem(This, Parent, Text, Options::[Option]) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Parent = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {image, integer()} | {selectedImage, integer()} | {data, term()}</v></type>
+<desc><marker id="prependItem-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlprependitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>scrollTo(This, Item) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="scrollTo-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlscrollto">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>selectItem(This, Item) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="selectItem-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlselectitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>selectItem(This, Item, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v><v>Option = {select, boolean()}</v></type>
+<desc><marker id="selectItem-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlselectitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setIndent(This, Indent) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Indent = integer()</v></type>
+<desc><marker id="setIndent-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlsetindent">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setImageList(This, ImageList) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>ImageList = <seealso marker="wxImageList#type-wxImageList">wxImageList:wxImageList()</seealso></v></type>
+<desc><marker id="setImageList-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlsetimagelist">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemBackgroundColour(This, Item, Col) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v><v>Col = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setItemBackgroundColour-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlsetitembackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemBold(This, Item) -&gt; ok</name>
+<fsummary>Equivalent to setItemBold(This, Item, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="setItemBold-2"/>
+<p>Equivalent to <seealso marker="#setItemBold-3">setItemBold(This, Item, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setItemBold(This, Item, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v><v>Option = {bold, boolean()}</v></type>
+<desc><marker id="setItemBold-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlsetitembold">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemData(This, Item, Data) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v><v>Data = term()</v></type>
+<desc><marker id="setItemData-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlsetitemdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemDropHighlight(This, Item) -&gt; ok</name>
+<fsummary>Equivalent to setItemDropHighlight(This, Item, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="setItemDropHighlight-2"/>
+<p>Equivalent to <seealso marker="#setItemDropHighlight-3">setItemDropHighlight(This, Item, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setItemDropHighlight(This, Item, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v><v>Option = {highlight, boolean()}</v></type>
+<desc><marker id="setItemDropHighlight-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlsetitemdrophighlight">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemFont(This, Item, Font) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v><v>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v></type>
+<desc><marker id="setItemFont-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlsetitemfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemHasChildren(This, Item) -&gt; ok</name>
+<fsummary>Equivalent to setItemHasChildren(This, Item, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="setItemHasChildren-2"/>
+<p>Equivalent to <seealso marker="#setItemHasChildren-3">setItemHasChildren(This, Item, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setItemHasChildren(This, Item, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v><v>Option = {has, boolean()}</v></type>
+<desc><marker id="setItemHasChildren-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlsetitemhaschildren">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemImage(This, Item, Image) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v><v>Image = integer()</v></type>
+<desc><marker id="setItemImage-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlsetitemimage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemImage(This, Item, Image, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v><v>Image = integer()</v><v>Option = {which, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</v></type>
+<desc><marker id="setItemImage-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlsetitemimage">external documentation</url>.
+ <br/> Which = ?wxTreeItemIcon_Normal | ?wxTreeItemIcon_Selected | ?wxTreeItemIcon_Expanded | ?wxTreeItemIcon_SelectedExpanded | ?wxTreeItemIcon_Max</p>
+</desc></func>
+<func>
+<name>setItemText(This, Item, Text) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setItemText-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlsetitemtext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemTextColour(This, Item, Col) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v><v>Col = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setItemTextColour-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlsetitemtextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setStateImageList(This, ImageList) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>ImageList = <seealso marker="wxImageList#type-wxImageList">wxImageList:wxImageList()</seealso></v></type>
+<desc><marker id="setStateImageList-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlsetstateimagelist">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setWindowStyle(This, Styles) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Styles = integer()</v></type>
+<desc><marker id="setWindowStyle-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlsetwindowstyle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>sortChildren(This, Item) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="sortChildren-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlsortchildren">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>toggle(This, Item) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="toggle-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrltoggle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>toggleItemSelection(This, Item) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="toggleItemSelection-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrltoggleitemselection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>unselect(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v></type>
+<desc><marker id="unselect-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlunselect">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>unselectAll(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v></type>
+<desc><marker id="unselectAll-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlunselectall">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>unselectItem(This, Item) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="unselectItem-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxtreectrl.html#wxtreectrlunselectitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxTreeCtrl">wxTreeCtrl()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

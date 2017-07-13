@@ -119,7 +119,6 @@ options_tests() ->
     [der_input,
      ssl_options_not_proplist,
      raw_ssl_option,
-     socket_options,
      invalid_inet_get_option,
      invalid_inet_get_option_not_list,
      invalid_inet_get_option_improper_list,
@@ -148,6 +147,7 @@ options_tests_tls() ->
 
 api_tests() ->
     [connection_info,
+     secret_connection_info,
      connection_information,
      peercert,
      peercert_with_client_cert,
@@ -162,7 +162,8 @@ api_tests() ->
      ssl_recv_timeout,
      server_name_indication_option,
      accept_pool,
-     prf
+     prf,
+     socket_options
     ].
 
 api_tests_tls() ->
@@ -177,6 +178,7 @@ api_tests_tls() ->
      tls_shutdown_error,
      peername,
      sockname,
+     tls_socket_options,
      new_options_in_accept
     ].
 
@@ -239,6 +241,7 @@ error_handling_tests()->
 error_handling_tests_tls()->
     [controller_dies,
      tls_client_closes_socket,
+     tls_closed_in_active_once,
      tls_tcp_error_propagation_in_active_mode,
      tls_tcp_connect,
      tls_tcp_connect_big,
@@ -429,6 +432,7 @@ init_per_testcase(prf, Config) ->
 
 init_per_testcase(TestCase, Config) when TestCase == tls_ssl_accept_timeout;
 					 TestCase == tls_client_closes_socket;
+					 TestCase == tls_closed_in_active_once;
 					 TestCase == tls_downgrade ->
     ssl_test_lib:ct_log_supported_protocol_versions(Config),
     ct:timetrap({seconds, 15}),
@@ -611,7 +615,7 @@ prf(Config) when is_list(Config) ->
 %%--------------------------------------------------------------------
 
 connection_info() ->
-    [{doc,"Test the API function ssl:connection_information/1"}].
+    [{doc,"Test the API function ssl:connection_information/2"}].
 connection_info(Config) when is_list(Config) -> 
     ClientOpts = ssl_test_lib:ssl_options(client_verification_opts, Config),
     ServerOpts = ssl_test_lib:ssl_options(server_verification_opts, Config),
@@ -642,6 +646,38 @@ connection_info(Config) when is_list(Config) ->
     
     ssl_test_lib:close(Server),
     ssl_test_lib:close(Client).
+
+%%--------------------------------------------------------------------
+
+secret_connection_info() ->
+    [{doc,"Test the API function ssl:connection_information/2"}].
+secret_connection_info(Config) when is_list(Config) -> 
+    ClientOpts = ssl_test_lib:ssl_options(client_verification_opts, Config),
+    ServerOpts = ssl_test_lib:ssl_options(server_verification_opts, Config),
+    {ClientNode, ServerNode, Hostname} = ssl_test_lib:run_where(Config),
+
+    Server = ssl_test_lib:start_server([{node, ServerNode}, {port, 0}, 
+					{from, self()}, 
+					{mfa, {?MODULE, secret_connection_info_result, []}},
+					{options, ServerOpts}]),
+    
+    Port = ssl_test_lib:inet_port(Server),
+    Client = ssl_test_lib:start_client([{node, ClientNode}, {port, Port},
+					{host, Hostname},
+                                        {from, self()}, 
+                                        {mfa, {?MODULE, secret_connection_info_result, []}},
+                                        {options, ClientOpts}]),
+    
+    ct:log("Testcase ~p, Client ~p  Server ~p ~n",
+		       [self(), Client, Server]),
+
+    Version = ssl_test_lib:protocol_version(Config),    
+			   
+    ssl_test_lib:check_result(Server, true, Client, true),
+    
+    ssl_test_lib:close(Server),
+    ssl_test_lib:close(Client).
+
 
 %%--------------------------------------------------------------------
 
@@ -928,6 +964,48 @@ tls_client_closes_socket(Config) when is_list(Config) ->
     ssl_test_lib:check_result(Server, {error,closed}).
 
 %%--------------------------------------------------------------------
+tls_closed_in_active_once() ->
+    [{doc, "Test that ssl_closed is delivered in active once with non-empty buffer, check ERL-420."}].
+
+tls_closed_in_active_once(Config) when is_list(Config) ->
+    ClientOpts = ssl_test_lib:ssl_options(client_opts, Config),
+    ServerOpts = ssl_test_lib:ssl_options(server_opts, Config),
+    {_ClientNode, _ServerNode, Hostname} = ssl_test_lib:run_where(Config),
+    TcpOpts = [binary, {reuseaddr, true}],
+    Port = ssl_test_lib:inet_port(node()),
+    Server = fun() ->
+		     {ok, Listen} = gen_tcp:listen(Port, TcpOpts),
+		     {ok, TcpServerSocket} = gen_tcp:accept(Listen),
+		     {ok, ServerSocket} = ssl:ssl_accept(TcpServerSocket, ServerOpts),
+		     lists:foreach(
+		       fun(_) ->
+			       ssl:send(ServerSocket, "some random message\r\n")
+		       end, lists:seq(1, 20)),
+		     %% Close TCP instead of SSL socket to trigger the bug:
+		     gen_tcp:close(TcpServerSocket),
+		     gen_tcp:close(Listen)
+	     end,
+    spawn_link(Server),
+    {ok, Socket} = ssl:connect(Hostname, Port, [{active, false} | ClientOpts]),
+    Result = tls_closed_in_active_once_loop(Socket),
+    ssl:close(Socket),
+    case Result of
+	ok -> ok;
+	_ -> ct:fail(Result)
+    end.
+
+tls_closed_in_active_once_loop(Socket) ->
+    ssl:setopts(Socket, [{active, once}]),
+    receive
+	{ssl, Socket, _} ->
+	    tls_closed_in_active_once_loop(Socket);
+	{ssl_closed, Socket} ->
+	    ok
+    after 5000 ->
+	      no_ssl_closed_received
+    end.
+
+%%--------------------------------------------------------------------
 connect_dist() ->
     [{doc,"Test a simple connect as is used by distribution"}].
 
@@ -1209,10 +1287,10 @@ cipher_suites_mix(Config) when is_list(Config) ->
     ssl_test_lib:close(Server),
     ssl_test_lib:close(Client).
 %%--------------------------------------------------------------------
-socket_options() ->
+tls_socket_options() ->
     [{doc,"Test API function getopts/2 and setopts/2"}].
 
-socket_options(Config) when is_list(Config) -> 
+tls_socket_options(Config) when is_list(Config) -> 
     ClientOpts = ssl_test_lib:ssl_options(client_opts, Config),
     ServerOpts = ssl_test_lib:ssl_options(server_opts, Config),
     {ClientNode, ServerNode, Hostname} = ssl_test_lib:run_where(Config),
@@ -1220,6 +1298,60 @@ socket_options(Config) when is_list(Config) ->
 		      {active, true}],    
     %% Shall be the reverse order of Values! 
     Options = [active, header, packet, mode],
+    
+    NewValues = [{mode, binary}, {active, once}],
+    %% Shall be the reverse order of NewValues! 
+    NewOptions = [active, mode],
+    
+    Server = ssl_test_lib:start_server([{node, ServerNode}, {port, 0}, 
+					{from, self()}, 
+			   {mfa, {?MODULE, tls_socket_options_result, 
+				  [Options, Values, NewOptions, NewValues]}},
+			   {options, ServerOpts}]),
+    Port = ssl_test_lib:inet_port(Server),
+    Client = ssl_test_lib:start_client([{node, ClientNode}, {port, Port}, 
+					{host, Hostname},
+			   {from, self()}, 
+			   {mfa, {?MODULE, tls_socket_options_result, 
+				  [Options, Values, NewOptions, NewValues]}},
+			   {options, ClientOpts}]),
+    
+    ssl_test_lib:check_result(Server, ok, Client, ok),
+
+    ssl_test_lib:close(Server),
+    
+    {ok, Listen} = ssl:listen(0, ServerOpts),
+    {ok,[{mode,list}]} = ssl:getopts(Listen, [mode]),
+    ok = ssl:setopts(Listen, [{mode, binary}]),
+    {ok,[{mode, binary}]} = ssl:getopts(Listen, [mode]),
+    {ok,[{recbuf, _}]} = ssl:getopts(Listen, [recbuf]),
+    ssl:close(Listen).
+
+tls_socket_options_result(Socket, Options, DefaultValues, NewOptions, NewValues) ->
+    %% Test get/set emulated opts
+    {ok, DefaultValues} = ssl:getopts(Socket, Options), 
+    ssl:setopts(Socket, NewValues),
+    {ok, NewValues} = ssl:getopts(Socket, NewOptions),
+    %% Test get/set inet opts
+    {ok,[{nodelay,false}]} = ssl:getopts(Socket, [nodelay]),  
+    ssl:setopts(Socket, [{nodelay, true}]),
+    {ok,[{nodelay, true}]} = ssl:getopts(Socket, [nodelay]),
+    {ok, All} = ssl:getopts(Socket, []),
+    ct:log("All opts ~p~n", [All]),
+    ok.
+
+
+%%--------------------------------------------------------------------
+socket_options() ->
+    [{doc,"Test API function getopts/2 and setopts/2"}].
+
+socket_options(Config) when is_list(Config) -> 
+    ClientOpts = ssl_test_lib:ssl_options(client_opts, Config),
+    ServerOpts = ssl_test_lib:ssl_options(server_opts, Config),
+    {ClientNode, ServerNode, Hostname} = ssl_test_lib:run_where(Config),
+    Values = [{mode, list}, {active, true}],    
+    %% Shall be the reverse order of Values! 
+    Options = [active, mode],
     
     NewValues = [{mode, binary}, {active, once}],
     %% Shall be the reverse order of NewValues! 
@@ -1249,15 +1381,14 @@ socket_options(Config) when is_list(Config) ->
     {ok,[{recbuf, _}]} = ssl:getopts(Listen, [recbuf]),
     ssl:close(Listen).
 
+
 socket_options_result(Socket, Options, DefaultValues, NewOptions, NewValues) ->
     %% Test get/set emulated opts
     {ok, DefaultValues} = ssl:getopts(Socket, Options), 
     ssl:setopts(Socket, NewValues),
     {ok, NewValues} = ssl:getopts(Socket, NewOptions),
     %% Test get/set inet opts
-    {ok,[{nodelay,false}]} = ssl:getopts(Socket, [nodelay]),  
-    ssl:setopts(Socket, [{nodelay, true}]),
-    {ok,[{nodelay, true}]} = ssl:getopts(Socket, [nodelay]),
+    {ok,[{reuseaddr, _}]} = ssl:getopts(Socket, [reuseaddr]),  
     {ok, All} = ssl:getopts(Socket, []),
     ct:log("All opts ~p~n", [All]),
     ok.
@@ -2847,10 +2978,10 @@ der_input(Config) when is_list(Config) ->
 
     Size = ets:info(CADb, size),
 
-    SeverVerifyOpts = ssl_test_lib:ssl_options(server_verification_opts, Config),
+    SeverVerifyOpts = ssl_test_lib:ssl_options(server_opts, Config),
     {ServerCert, ServerKey, ServerCaCerts, DHParams} = der_input_opts([{dhfile, DHParamFile} |
 								       SeverVerifyOpts]),
-    ClientVerifyOpts = ssl_test_lib:ssl_options(client_verification_opts, Config),
+    ClientVerifyOpts = ssl_test_lib:ssl_options(client_opts, Config),
     {ClientCert, ClientKey, ClientCaCerts, DHParams} = der_input_opts([{dhfile, DHParamFile} |
 								       ClientVerifyOpts]),
     ServerOpts = [{verify, verify_peer}, {fail_if_no_peer_cert, true},
@@ -3414,7 +3545,6 @@ listen_socket(Config) ->
     {error, enotconn} = ssl:connection_information(ListenSocket),
     {error, enotconn} = ssl:peername(ListenSocket),
     {error, enotconn} = ssl:peercert(ListenSocket),
-    {error, enotconn} = ssl:session_info(ListenSocket),
     {error, enotconn} = ssl:renegotiate(ListenSocket),
     {error, enotconn} = ssl:prf(ListenSocket, 'master_secret', <<"Label">>, client_random, 256),
     {error, enotconn} = ssl:shutdown(ListenSocket, read_write),
@@ -4040,11 +4170,11 @@ prf_create_plan(TlsVersions, PRFs, Results) ->
 prf_ciphers_and_expected(TlsVer, PRFs, Results) ->
     case TlsVer of
         TlsVer when TlsVer == sslv3 orelse TlsVer == tlsv1
-                    orelse TlsVer == 'tlsv1.1' ->
+                    orelse TlsVer == 'tlsv1.1' orelse TlsVer == 'dtlsv1' ->
             Ciphers = ssl:cipher_suites(),
             {_, Expected} = lists:keyfind(md5sha, 1, Results),
             [[{tls_ver, TlsVer}, {ciphers, Ciphers}, {expected, Expected}, {prf, md5sha}]];
-        'tlsv1.2' ->
+        TlsVer when  TlsVer == 'tlsv1.2' orelse  TlsVer == 'dtlsv1.2'->
             lists:foldl(
               fun(PRF, Acc) ->
                       Ciphers = prf_get_ciphers(TlsVer, PRF),
@@ -4059,21 +4189,20 @@ prf_ciphers_and_expected(TlsVer, PRFs, Results) ->
                       end
               end, [], PRFs)
     end.
-prf_get_ciphers(TlsVer, PRF) ->
-    case TlsVer of
-        'tlsv1.2' ->
-            lists:filter(
-              fun(C) when tuple_size(C) == 4 andalso
-                          element(4, C) == PRF -> 
-			  true;
-                 (_) -> false
-              end, ssl:cipher_suites())
-    end.
+prf_get_ciphers(_, PRF) ->
+    lists:filter(
+      fun(C) when tuple_size(C) == 4 andalso
+                  element(4, C) == PRF -> 
+              true;
+         (_) -> 
+              false
+      end, 
+      ssl:cipher_suites()).
 prf_run_test(_, TlsVer, [], _, Prf) ->
     ct:fail({error, cipher_list_empty, TlsVer, Prf});
 prf_run_test(Config, TlsVer, Ciphers, Expected, Prf) ->
     {ClientNode, ServerNode, Hostname} = ssl_test_lib:run_where(Config),
-    BaseOpts = [{active, true}, {versions, [TlsVer]}, {ciphers, Ciphers}],
+    BaseOpts = [{active, true}, {versions, [TlsVer]}, {ciphers, Ciphers}, {protocol, tls_or_dtls(TlsVer)}],
     ServerOpts = BaseOpts ++ proplists:get_value(server_opts, Config),
     ClientOpts = BaseOpts ++ proplists:get_value(client_opts, Config),
     Server = ssl_test_lib:start_server(
@@ -4639,6 +4768,11 @@ version_info_result(Socket) ->
     {ok, [{version, Version}]} = ssl:connection_information(Socket, [version]),
     {ok, Version}.
 
+secret_connection_info_result(Socket) ->
+    {ok, [{client_random, ClientRand}, {server_random, ServerRand}, {master_secret, MasterSecret}]} 
+        = ssl:connection_information(Socket, [client_random, server_random, master_secret]),
+    is_binary(ClientRand) andalso is_binary(ServerRand) andalso is_binary(MasterSecret). 
+    
 connect_dist_s(S) ->
     Msg = term_to_binary({erlang,term}),
     ok = ssl:send(S, Msg).
@@ -4771,3 +4905,9 @@ wait_for_send(Socket) ->
     %% Make sure TLS process processed send message event
     _ = ssl:connection_information(Socket).
 
+tls_or_dtls('dtlsv1') ->
+    dtls;
+tls_or_dtls('dtlsv1.2') ->
+    dtls;
+tls_or_dtls(_) ->
+    tls.

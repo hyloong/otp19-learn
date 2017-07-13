@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxListCtrl</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxListCtrl.xml</file></header>
+<module>wxListCtrl</module>
+<modulesummary>See external documentation: wxListCtrl.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html">wxListCtrl</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxControl">wxControl</seealso>
+  <br/><seealso marker="wxWindow">wxWindow</seealso>
+  <br/><seealso marker="wxEvtHandler">wxEvtHandler</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxListCtrl"/>wxListCtrl()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/stable/wx_wxlistctrl.html#wxlistctrlwxlistctrl">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Parent) -&gt; <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></name>
+<fsummary> </fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="new-1"/>
+ </desc></func>
+<func>
+<name>new(Parent, Options::[Option]) -&gt; <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></name>
+<fsummary>Creates a listctrl with optional callback functions:.</fsummary>
+<type>
+<v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {winid, integer()} | {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()} | {validator, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>} | {onGetItemText, function()} | {onGetItemAttr, function()} | {onGetItemColumnImage, function()}</v></type>
+<desc><marker id="new-2"/>
+
+<p>Creates a listctrl with optional callback functions:</p>
+ 
+  <p>OnGetItemText = (This, Item, Column) -&gt; unicode:charlist()  
+OnGetItemAttr = (This, Item) -&gt; wxListItemAttr:wxListItemAttr()  
+OnGetItemColumnImage = (This, Item, Column) -&gt; integer()</p>
+ 
+  <p>See <url href="http://www.wxwidgets.org/manuals/stable/wx_wxlistctrl.html#wxlistctrlwxlistctrl">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>arrange(This) -&gt; boolean()</name>
+<fsummary>Equivalent to arrange(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v></type>
+<desc><marker id="arrange-1"/>
+<p>Equivalent to <seealso marker="#arrange-2">arrange(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>arrange(This, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Option = {flag, integer()}</v></type>
+<desc><marker id="arrange-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlarrange">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>assignImageList(This, ImageList, Which) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>ImageList = <seealso marker="wxImageList#type-wxImageList">wxImageList:wxImageList()</seealso></v><v>Which = integer()</v></type>
+<desc><marker id="assignImageList-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlassignimagelist">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>clearAll(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v></type>
+<desc><marker id="clearAll-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlclearall">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent) -&gt; <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></name>
+<fsummary>Equivalent to create(This, Parent, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="create-2"/>
+<p>Equivalent to <seealso marker="#create-3">create(This, Parent, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>create(This, Parent, Options::[Option]) -&gt; <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v><v>Option = {winid, integer()} | {pos, {X::integer(), Y::integer()}} | {size, {W::integer(), H::integer()}} | {style, integer()} | {validator, <seealso marker="wx#type-wx_object">wx:wx_object()</seealso>} | {onGetItemText, function()} | {onGetItemAttr, function()} | {onGetItemColumnImage, function()}</v></type>
+<desc><marker id="create-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/stable/wx_wxlistctrl.html#wxlistctrlcreate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>deleteAllItems(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v></type>
+<desc><marker id="deleteAllItems-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrldeleteallitems">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>deleteColumn(This, Col) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Col = integer()</v></type>
+<desc><marker id="deleteColumn-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrldeletecolumn">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>deleteItem(This, Item) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="deleteItem-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrldeleteitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>editLabel(This, Item) -&gt; <seealso marker="wxTextCtrl#type-wxTextCtrl">wxTextCtrl:wxTextCtrl()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="editLabel-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrleditlabel">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>ensureVisible(This, Item) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="ensureVisible-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlensurevisible">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>findItem(This, Start, Str) -&gt; integer()</name>
+<fsummary>Equivalent to findItem(This, Start, Str, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Start = integer()</v><v>Str = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="findItem-3"/>
+<p>Equivalent to <seealso marker="#findItem-4">findItem(This, Start, Str, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>findItem(This, Start, Str, Options::[Option]) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Start = integer()</v><v>Str = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {partial, boolean()}</v></type>
+<desc><marker id="findItem-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlfinditem">external documentation</url>.
+  <br/> Also:<br/>
+  findItem(This, Start, Pt, Direction) -&gt; integer() when<br/>
+  	This::wxListCtrl(), Start::integer(), Pt::{X::integer(), Y::integer()}, Direction::integer().<br/>
+ </p>
+</desc></func>
+<func>
+<name>getColumn(This, Col, Item) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Col = integer()</v><v>Item = <seealso marker="wxListItem#type-wxListItem">wxListItem:wxListItem()</seealso></v></type>
+<desc><marker id="getColumn-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgetcolumn">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getColumnCount(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v></type>
+<desc><marker id="getColumnCount-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgetcolumncount">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getColumnWidth(This, Col) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Col = integer()</v></type>
+<desc><marker id="getColumnWidth-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgetcolumnwidth">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCountPerPage(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v></type>
+<desc><marker id="getCountPerPage-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgetcountperpage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getEditControl(This) -&gt; <seealso marker="wxTextCtrl#type-wxTextCtrl">wxTextCtrl:wxTextCtrl()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v></type>
+<desc><marker id="getEditControl-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgeteditcontrol">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getImageList(This, Which) -&gt; <seealso marker="wxImageList#type-wxImageList">wxImageList:wxImageList()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Which = integer()</v></type>
+<desc><marker id="getImageList-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgetimagelist">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItem(This, Info) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Info = <seealso marker="wxListItem#type-wxListItem">wxListItem:wxListItem()</seealso></v></type>
+<desc><marker id="getItem-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgetitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItemBackgroundColour(This, Item) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getItemBackgroundColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgetitembackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItemCount(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v></type>
+<desc><marker id="getItemCount-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgetitemcount">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItemData(This, Item) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getItemData-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgetitemdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItemFont(This, Item) -&gt; <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getItemFont-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgetitemfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItemPosition(This, Item) -&gt; Result</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Result = {Res::boolean(), Pos::{X::integer(), Y::integer()}}</v><v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getItemPosition-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgetitemposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItemRect(This, Item) -&gt; Result</name>
+<fsummary>Equivalent to getItemRect(This, Item, []).
+</fsummary>
+<type>
+<v>Result = {Res::boolean(), Rect::{X::integer(), Y::integer(), W::integer(), H::integer()}}</v><v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getItemRect-2"/>
+<p>Equivalent to <seealso marker="#getItemRect-3">getItemRect(This, Item, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>getItemRect(This, Item, Options::[Option]) -&gt; Result</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Result = {Res::boolean(), Rect::{X::integer(), Y::integer(), W::integer(), H::integer()}}</v><v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v><v>Option = {code, integer()}</v></type>
+<desc><marker id="getItemRect-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgetitemrect">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItemSpacing(This) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v></type>
+<desc><marker id="getItemSpacing-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgetitemspacing">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItemState(This, Item, StateMask) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v><v>StateMask = integer()</v></type>
+<desc><marker id="getItemState-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgetitemstate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItemText(This, Item) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getItemText-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgetitemtext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getItemTextColour(This, Item) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getItemTextColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgetitemtextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getNextItem(This, Item) -&gt; integer()</name>
+<fsummary>Equivalent to getNextItem(This, Item, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="getNextItem-2"/>
+<p>Equivalent to <seealso marker="#getNextItem-3">getNextItem(This, Item, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>getNextItem(This, Item, Options::[Option]) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v><v>Option = {geometry, integer()} | {state, integer()}</v></type>
+<desc><marker id="getNextItem-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgetnextitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getSelectedItemCount(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v></type>
+<desc><marker id="getSelectedItemCount-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgetselecteditemcount">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getTextColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v></type>
+<desc><marker id="getTextColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgettextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getTopItem(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v></type>
+<desc><marker id="getTopItem-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgettopitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getViewRect(This) -&gt; {X::integer(), Y::integer(), W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v></type>
+<desc><marker id="getViewRect-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlgetviewrect">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hitTest(This, Point) -&gt; Result</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Result = {Res::integer(), Flags::integer(), PSubItem::integer()}</v><v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Point = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="hitTest-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlhittest">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>insertColumn(This, Col, Heading) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Col = integer()</v><v>Heading = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="insertColumn-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlinsertcolumn">external documentation</url>.
+  <br/> Also:<br/>
+  insertColumn(This, Col, Info) -&gt; integer() when<br/>
+  	This::wxListCtrl(), Col::integer(), Info::wxListItem:wxListItem().<br/>
+ </p>
+</desc></func>
+<func>
+<name>insertColumn(This, Col, Heading, Options::[Option]) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Col = integer()</v><v>Heading = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {format, integer()} | {width, integer()}</v></type>
+<desc><marker id="insertColumn-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlinsertcolumn">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>insertItem(This, Info) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Info = <seealso marker="wxListItem#type-wxListItem">wxListItem:wxListItem()</seealso></v></type>
+<desc><marker id="insertItem-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlinsertitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>insertItem(This, Index, ImageIndex) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Index = integer()</v><v>ImageIndex = integer()</v></type>
+<desc><marker id="insertItem-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlinsertitem">external documentation</url>.
+  <br/> Also:<br/>
+  insertItem(This, Index, Label) -&gt; integer() when<br/>
+  	This::wxListCtrl(), Index::integer(), Label::unicode:chardata().<br/>
+ </p>
+</desc></func>
+<func>
+<name>insertItem(This, Index, Label, ImageIndex) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Index = integer()</v><v>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>ImageIndex = integer()</v></type>
+<desc><marker id="insertItem-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlinsertitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>refreshItem(This, Item) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v></type>
+<desc><marker id="refreshItem-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlrefreshitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>refreshItems(This, ItemFrom, ItemTo) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>ItemFrom = integer()</v><v>ItemTo = integer()</v></type>
+<desc><marker id="refreshItems-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlrefreshitems">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>scrollList(This, Dx, Dy) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Dx = integer()</v><v>Dy = integer()</v></type>
+<desc><marker id="scrollList-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlscrolllist">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setBackgroundColour(This, Colour) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Colour = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setBackgroundColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlsetbackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setColumn(This, Col, Item) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Col = integer()</v><v>Item = <seealso marker="wxListItem#type-wxListItem">wxListItem:wxListItem()</seealso></v></type>
+<desc><marker id="setColumn-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlsetcolumn">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setColumnWidth(This, Col, Width) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Col = integer()</v><v>Width = integer()</v></type>
+<desc><marker id="setColumnWidth-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlsetcolumnwidth">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setImageList(This, ImageList, Which) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>ImageList = <seealso marker="wxImageList#type-wxImageList">wxImageList:wxImageList()</seealso></v><v>Which = integer()</v></type>
+<desc><marker id="setImageList-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlsetimagelist">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItem(This, Info) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Info = <seealso marker="wxListItem#type-wxListItem">wxListItem:wxListItem()</seealso></v></type>
+<desc><marker id="setItem-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlsetitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItem(This, Index, Col, Label) -&gt; integer()</name>
+<fsummary>Equivalent to setItem(This, Index, Col, Label, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Index = integer()</v><v>Col = integer()</v><v>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setItem-4"/>
+<p>Equivalent to <seealso marker="#setItem-5">setItem(This, Index, Col, Label, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setItem(This, Index, Col, Label, Options::[Option]) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Index = integer()</v><v>Col = integer()</v><v>Label = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v><v>Option = {imageId, integer()}</v></type>
+<desc><marker id="setItem-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlsetitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemBackgroundColour(This, Item, Col) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v><v>Col = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setItemBackgroundColour-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlsetitembackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemCount(This, Count) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Count = integer()</v></type>
+<desc><marker id="setItemCount-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlsetitemcount">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemData(This, Item, Data) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v><v>Data = integer()</v></type>
+<desc><marker id="setItemData-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlsetitemdata">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemFont(This, Item, F) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v><v>F = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v></type>
+<desc><marker id="setItemFont-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlsetitemfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemImage(This, Item, Image) -&gt; boolean()</name>
+<fsummary>Equivalent to setItemImage(This, Item, Image, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v><v>Image = integer()</v></type>
+<desc><marker id="setItemImage-3"/>
+<p>Equivalent to <seealso marker="#setItemImage-4">setItemImage(This, Item, Image, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setItemImage(This, Item, Image, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v><v>Image = integer()</v><v>Option = {selImage, integer()}</v></type>
+<desc><marker id="setItemImage-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlsetitemimage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemColumnImage(This, Item, Column, Image) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v><v>Column = integer()</v><v>Image = integer()</v></type>
+<desc><marker id="setItemColumnImage-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlsetitemcolumnimage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemPosition(This, Item, Pos) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v><v>Pos = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="setItemPosition-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlsetitemposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemState(This, Item, State, StateMask) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v><v>State = integer()</v><v>StateMask = integer()</v></type>
+<desc><marker id="setItemState-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlsetitemstate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemText(This, Item, Str) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v><v>Str = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setItemText-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlsetitemtext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setItemTextColour(This, Item, Col) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Item = integer()</v><v>Col = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setItemTextColour-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlsetitemtextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setSingleStyle(This, Style) -&gt; ok</name>
+<fsummary>Equivalent to setSingleStyle(This, Style, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Style = integer()</v></type>
+<desc><marker id="setSingleStyle-2"/>
+<p>Equivalent to <seealso marker="#setSingleStyle-3">setSingleStyle(This, Style, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>setSingleStyle(This, Style, Options::[Option]) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Style = integer()</v><v>Option = {add, boolean()}</v></type>
+<desc><marker id="setSingleStyle-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlsetsinglestyle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setTextColour(This, Col) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Col = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setTextColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlsettextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setWindowStyleFlag(This, Style) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListCtrl">wxListCtrl()</seealso></v><v>Style = integer()</v></type>
+<desc><marker id="setWindowStyleFlag-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistctrl.html#wxlistctrlsetwindowstyleflag">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>sortItems(This::<seealso marker="#type-wxListCtrl">wxListCtrl()</seealso>, SortCallBack::function()) -&gt; boolean()</name>
+<fsummary>Sort the items in the list control.</fsummary>
+
+<desc><marker id="sortItems-2"/>
+
+<p>Sort the items in the list control<br/>
+    </p><pre>SortCallBack(Item1,Item2) -&gt; integer()</pre><p>
+   <br/> SortCallBack receives the client data associated with two items
+          to compare, and should return 0 if the items are equal, a negative
+          value if the first item is less than the second one and a positive
+          value if the first item is greater than the second one.
+   <br/> NOTE: The callback may not call other (wx) processes.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxListCtrl">wxListCtrl()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

@@ -1,0 +1,1116 @@
+<module name="erl_parse">
+<type>
+  <name>abstract_clause</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-abstract_clause">abstract_clause()</marker> = <seealso marker="#type-af_clause">af_clause()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>abstract_expr</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-abstract_expr">abstract_expr()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_literal">af_literal()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_match">af_match</seealso>(<seealso marker="#type-abstract_expr">abstract_expr()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_variable">af_variable()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_tuple">af_tuple</seealso>(<seealso marker="#type-abstract_expr">abstract_expr()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_nil">af_nil()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_cons">af_cons</seealso>(<seealso marker="#type-abstract_expr">abstract_expr()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_bin">af_bin</seealso>(<seealso marker="#type-abstract_expr">abstract_expr()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_binary_op">af_binary_op</seealso>(<seealso marker="#type-abstract_expr">abstract_expr()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_unary_op">af_unary_op</seealso>(<seealso marker="#type-abstract_expr">abstract_expr()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_record_creation">af_record_creation</seealso>(<seealso marker="#type-abstract_expr">abstract_expr()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_record_update">af_record_update</seealso>(<seealso marker="#type-abstract_expr">abstract_expr()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_record_index">af_record_index()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_record_field_access">af_record_field_access</seealso>(<seealso marker="#type-abstract_expr">abstract_expr()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_map_creation">af_map_creation</seealso>(<seealso marker="#type-abstract_expr">abstract_expr()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_map_update">af_map_update</seealso>(<seealso marker="#type-abstract_expr">abstract_expr()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_catch">af_catch()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_local_call">af_local_call()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_remote_call">af_remote_call()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_list_comprehension">af_list_comprehension()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_binary_comprehension">af_binary_comprehension()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_block">af_block()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_if">af_if()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_case">af_case()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_try">af_try()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_receive">af_receive()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_local_fun">af_local_fun()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_remote_fun">af_remote_fun()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_fun">af_fun()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_named_fun">af_named_fun()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>abstract_form</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-abstract_form">abstract_form()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_module">af_module()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_behavior">af_behavior()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_behaviour">af_behaviour()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_export">af_export()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_import">af_import()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_export_type">af_export_type()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_compile">af_compile()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_file">af_file()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_record_decl">af_record_decl()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_type_decl">af_type_decl()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_function_spec">af_function_spec()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_wild_attribute">af_wild_attribute()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_function_decl">af_function_decl()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>abstract_type</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-abstract_type">abstract_type()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_annotated_type">af_annotated_type()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_atom">af_atom()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_bitstring_type">af_bitstring_type()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_empty_list_type">af_empty_list_type()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_fun_type">af_fun_type()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_integer_range_type">af_integer_range_type()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_map_type">af_map_type()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_predefined_type">af_predefined_type()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_record_type">af_record_type()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_remote_type">af_remote_type()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_singleton_integer_type">af_singleton_integer_type()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_tuple_type">af_tuple_type()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_type_union">af_type_union()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_type_variable">af_type_variable()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_user_defined_type">af_user_defined_type()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>af_anno</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_anno">af_anno()</marker> = <seealso marker="#type-af_variable">af_variable()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>af_annotated_type</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_annotated_type">af_annotated_type()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{ann_type, <seealso marker="#type-anno">anno()</seealso>, [<seealso marker="#type-af_anno">af_anno()</seealso> | <seealso marker="#type-abstract_type">abstract_type()</seealso>]}</typehead></typedecl>
+</type>
+<type>
+  <name>af_args</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_args">af_args()</marker> = [<seealso marker="#type-abstract_expr">abstract_expr()</seealso>]</typehead></typedecl>
+</type>
+<type>
+  <name>af_assoc</name>
+  <n_vars>1</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_assoc">af_assoc(T)</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{map_field_assoc, <seealso marker="#type-anno">anno()</seealso>, T, T} | <seealso marker="#type-af_assoc_exact">af_assoc_exact</seealso>(T)</typehead></typedecl>
+  <anno>T</anno>
+</type>
+<type>
+  <name>af_assoc_exact</name>
+  <n_vars>1</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_assoc_exact">af_assoc_exact(T)</marker> = {map_field_exact, <seealso marker="#type-anno">anno()</seealso>, T, T}</typehead></typedecl>
+  <anno>T</anno>
+</type>
+<type>
+  <name>af_assoc_type</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_assoc_type">af_assoc_type()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{type, <seealso marker="#type-anno">anno()</seealso>, map_field_assoc, [<seealso marker="#type-abstract_type">abstract_type()</seealso>]} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{type, <seealso marker="#type-anno">anno()</seealso>, map_field_exact, [<seealso marker="#type-abstract_type">abstract_type()</seealso>]}</typehead></typedecl>
+</type>
+<type>
+  <name>af_atom</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_atom">af_atom()</marker> = <seealso marker="#type-af_lit_atom">af_lit_atom</seealso>(atom())</typehead></typedecl>
+</type>
+<type>
+  <name>af_behavior</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_behavior">af_behavior()</marker> = {attribute, <seealso marker="#type-anno">anno()</seealso>, behavior, <seealso marker="#type-behaviour">behaviour()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_behaviour</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_behaviour">af_behaviour()</marker> = {attribute, <seealso marker="#type-anno">anno()</seealso>, behaviour, <seealso marker="#type-behaviour">behaviour()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_bin</name>
+  <n_vars>1</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_bin">af_bin(T)</marker> = {bin, <seealso marker="#type-anno">anno()</seealso>, [<seealso marker="#type-af_binelement">af_binelement</seealso>(T)]}</typehead></typedecl>
+  <anno>T</anno>
+</type>
+<type>
+  <name>af_binary_comprehension</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_binary_comprehension">af_binary_comprehension()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{bc, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-af_template">af_template()</seealso>, <seealso marker="#type-af_qualifier_seq">af_qualifier_seq()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_binary_op</name>
+  <n_vars>1</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_binary_op">af_binary_op(T)</marker> = {op, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-binary_op">binary_op()</seealso>, T, T}</typehead></typedecl>
+  <anno>T</anno>
+</type>
+<type>
+  <name>af_binelement</name>
+  <n_vars>1</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_binelement">af_binelement(T)</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{bin_element,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-anno">anno()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>T,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_binelement_size">af_binelement_size()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-type_specifier_list">type_specifier_list()</seealso>}</typehead></typedecl>
+  <anno>T</anno>
+</type>
+<type>
+  <name>af_binelement_size</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_binelement_size">af_binelement_size()</marker> = default | <seealso marker="#type-abstract_expr">abstract_expr()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>af_bitstring_type</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_bitstring_type">af_bitstring_type()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{type, <seealso marker="#type-anno">anno()</seealso>, binary, [<seealso marker="#type-af_singleton_integer_type">af_singleton_integer_type()</seealso>]}</typehead></typedecl>
+</type>
+<type>
+  <name>af_block</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_block">af_block()</marker> = {block, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-af_body">af_body()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_body</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_body">af_body()</marker> = [<seealso marker="#type-abstract_expr">abstract_expr()</seealso>, ...]</typehead></typedecl>
+</type>
+<type>
+  <name>af_case</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_case">af_case()</marker> = {'case', <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-abstract_expr">abstract_expr()</seealso>, <seealso marker="#type-af_clause_seq">af_clause_seq()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_catch</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_catch">af_catch()</marker> = {'catch', <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-abstract_expr">abstract_expr()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_character</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_character">af_character()</marker> = {char, <seealso marker="#type-anno">anno()</seealso>, char()}</typehead></typedecl>
+</type>
+<type>
+  <name>af_clause</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_clause">af_clause()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{clause, <seealso marker="#type-anno">anno()</seealso>, [<seealso marker="#type-af_pattern">af_pattern()</seealso>], <seealso marker="#type-af_guard_seq">af_guard_seq()</seealso>, <seealso marker="#type-af_body">af_body()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_clause_seq</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_clause_seq">af_clause_seq()</marker> = [<seealso marker="#type-af_clause">af_clause()</seealso>, ...]</typehead></typedecl>
+</type>
+<type>
+  <name>af_compile</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_compile">af_compile()</marker> = {attribute, <seealso marker="#type-anno">anno()</seealso>, compile, any()}</typehead></typedecl>
+</type>
+<type>
+  <name>af_cons</name>
+  <n_vars>1</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_cons">af_cons(T)</marker> = {cons, <seealso marker="#type-anno">anno()</seealso>, T, T}</typehead></typedecl>
+  <anno>T</anno>
+</type>
+<type>
+  <name>af_constrained_function_type</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_constrained_function_type">af_constrained_function_type()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{type,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-anno">anno()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>bounded_fun,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>[<seealso marker="#type-af_function_type">af_function_type()</seealso> | <seealso marker="#type-af_function_constraint">af_function_constraint()</seealso>]}</typehead></typedecl>
+</type>
+<type>
+  <name>af_constraint</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_constraint">af_constraint()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{type,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-anno">anno()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>constraint,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_lit_atom">af_lit_atom</seealso>(is_subtype),<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>[<seealso marker="#type-af_type_variable">af_type_variable()</seealso> | <seealso marker="#type-abstract_type">abstract_type()</seealso>]}</typehead></typedecl>
+</type>
+<type>
+  <name>af_empty_list_type</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_empty_list_type">af_empty_list_type()</marker> = {type, <seealso marker="#type-anno">anno()</seealso>, nil, []}</typehead></typedecl>
+</type>
+<type>
+  <name>af_export</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_export">af_export()</marker> = {attribute, <seealso marker="#type-anno">anno()</seealso>, export, <seealso marker="#type-af_fa_list">af_fa_list()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_export_type</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_export_type">af_export_type()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{attribute, <seealso marker="#type-anno">anno()</seealso>, export_type, <seealso marker="#type-af_ta_list">af_ta_list()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_fa_list</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_fa_list">af_fa_list()</marker> = [{<seealso marker="#type-function_name">function_name()</seealso>, arity()}]</typehead></typedecl>
+</type>
+<type>
+  <name>af_field</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_field">af_field()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{record_field, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-af_field_name">af_field_name()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{record_field, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-af_field_name">af_field_name()</seealso>, <seealso marker="#type-abstract_expr">abstract_expr()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_field_decl</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_field_decl">af_field_decl()</marker> = <seealso marker="#type-af_typed_field">af_typed_field()</seealso> | <seealso marker="#type-af_field">af_field()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>af_field_name</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_field_name">af_field_name()</marker> = <seealso marker="#type-af_atom">af_atom()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>af_file</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_file">af_file()</marker> = {attribute, <seealso marker="#type-anno">anno()</seealso>, file, {string(), <seealso marker="#type-anno">anno()</seealso>}}</typehead></typedecl>
+</type>
+<type>
+  <name>af_filter</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_filter">af_filter()</marker> = <seealso marker="#type-abstract_expr">abstract_expr()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>af_float</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_float">af_float()</marker> = {float, <seealso marker="#type-anno">anno()</seealso>, float()}</typehead></typedecl>
+</type>
+<type>
+  <name>af_fun</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_fun">af_fun()</marker> = {'fun', <seealso marker="#type-anno">anno()</seealso>, {clauses, <seealso marker="#type-af_clause_seq">af_clause_seq()</seealso>}}</typehead></typedecl>
+</type>
+<type>
+  <name>af_fun_type</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_fun_type">af_fun_type()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{type, <seealso marker="#type-anno">anno()</seealso>, 'fun', []} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{type, <seealso marker="#type-anno">anno()</seealso>, 'fun', [{type, <seealso marker="#type-anno">anno()</seealso>, any} | <seealso marker="#type-abstract_type">abstract_type()</seealso>]} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{type, <seealso marker="#type-anno">anno()</seealso>, 'fun', <seealso marker="#type-af_function_type">af_function_type()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_function_constraint</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_function_constraint">af_function_constraint()</marker> = [<seealso marker="#type-af_constraint">af_constraint()</seealso>]</typehead></typedecl>
+</type>
+<type>
+  <name>af_function_decl</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_function_decl">af_function_decl()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{function, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-function_name">function_name()</seealso>, arity(), <seealso marker="#type-af_clause_seq">af_clause_seq()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_function_spec</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_function_spec">af_function_spec()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{attribute,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-anno">anno()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-spec_attr">spec_attr()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{{<seealso marker="#type-function_name">function_name()</seealso>, arity()}, <seealso marker="#type-af_function_type_list">af_function_type_list()</seealso>}} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{attribute,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-anno">anno()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>spec,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{{module(), <seealso marker="#type-function_name">function_name()</seealso>, arity()},<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_function_type_list">af_function_type_list()</seealso>}}</typehead></typedecl>
+</type>
+<type>
+  <name>af_function_type</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_function_type">af_function_type()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{type,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-anno">anno()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>'fun',<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>[{type, <seealso marker="#type-anno">anno()</seealso>, product, [<seealso marker="#type-abstract_type">abstract_type()</seealso>]} | <seealso marker="#type-abstract_type">abstract_type()</seealso>]}</typehead></typedecl>
+</type>
+<type>
+  <name>af_function_type_list</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_function_type_list">af_function_type_list()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>[<seealso marker="#type-af_constrained_function_type">af_constrained_function_type()</seealso> | <seealso marker="#type-af_function_type">af_function_type()</seealso>]</typehead></typedecl>
+</type>
+<type>
+  <name>af_generator</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_generator">af_generator()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{generate, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-af_pattern">af_pattern()</seealso>, <seealso marker="#type-abstract_expr">abstract_expr()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{b_generate, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-af_pattern">af_pattern()</seealso>, <seealso marker="#type-abstract_expr">abstract_expr()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_guard</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_guard">af_guard()</marker> = [<seealso marker="#type-af_guard_test">af_guard_test()</seealso>, ...]</typehead></typedecl>
+</type>
+<type>
+  <name>af_guard_call</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_guard_call">af_guard_call()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{call, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-function_name">function_name()</seealso>, [<seealso marker="#type-af_guard_test">af_guard_test()</seealso>]}</typehead></typedecl>
+</type>
+<type>
+  <name>af_guard_seq</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_guard_seq">af_guard_seq()</marker> = [<seealso marker="#type-af_guard">af_guard()</seealso>]</typehead></typedecl>
+</type>
+<type>
+  <name>af_guard_test</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_guard_test">af_guard_test()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_literal">af_literal()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_variable">af_variable()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_tuple">af_tuple</seealso>(<seealso marker="#type-af_guard_test">af_guard_test()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_nil">af_nil()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_cons">af_cons</seealso>(<seealso marker="#type-af_guard_test">af_guard_test()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_bin">af_bin</seealso>(<seealso marker="#type-af_guard_test">af_guard_test()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_binary_op">af_binary_op</seealso>(<seealso marker="#type-af_guard_test">af_guard_test()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_unary_op">af_unary_op</seealso>(<seealso marker="#type-af_guard_test">af_guard_test()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_record_creation">af_record_creation</seealso>(<seealso marker="#type-af_guard_test">af_guard_test()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_record_index">af_record_index()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_record_field_access">af_record_field_access</seealso>(<seealso marker="#type-af_guard_test">af_guard_test()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_map_creation">af_map_creation</seealso>(<seealso marker="#type-abstract_expr">abstract_expr()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_map_update">af_map_update</seealso>(<seealso marker="#type-abstract_expr">abstract_expr()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_guard_call">af_guard_call()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_remote_guard_call">af_remote_guard_call()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>af_if</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_if">af_if()</marker> = {'if', <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-af_clause_seq">af_clause_seq()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_import</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_import">af_import()</marker> = {attribute, <seealso marker="#type-anno">anno()</seealso>, import, <seealso marker="#type-af_fa_list">af_fa_list()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_integer</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_integer">af_integer()</marker> = {integer, <seealso marker="#type-anno">anno()</seealso>, integer() &gt;= 0}</typehead></typedecl>
+</type>
+<type>
+  <name>af_integer_range_type</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_integer_range_type">af_integer_range_type()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{type, <seealso marker="#type-anno">anno()</seealso>, range, [<seealso marker="#type-af_singleton_integer_type">af_singleton_integer_type()</seealso>]}</typehead></typedecl>
+</type>
+<type>
+  <name>af_list_comprehension</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_list_comprehension">af_list_comprehension()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{lc, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-af_template">af_template()</seealso>, <seealso marker="#type-af_qualifier_seq">af_qualifier_seq()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_lit_atom</name>
+  <n_vars>1</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_lit_atom">af_lit_atom(A)</marker> = {atom, <seealso marker="#type-anno">anno()</seealso>, A}</typehead></typedecl>
+  <anno>A</anno>
+</type>
+<type>
+  <name>af_literal</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_literal">af_literal()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_atom">af_atom()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_character">af_character()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_float">af_float()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_integer">af_integer()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_string">af_string()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>af_local_call</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_local_call">af_local_call()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{call, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-af_local_function">af_local_function()</seealso>, <seealso marker="#type-af_args">af_args()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_local_fun</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_local_fun">af_local_fun()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{'fun', <seealso marker="#type-anno">anno()</seealso>, {function, <seealso marker="#type-function_name">function_name()</seealso>, arity()}}</typehead></typedecl>
+</type>
+<type>
+  <name>af_local_function</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_local_function">af_local_function()</marker> = <seealso marker="#type-abstract_expr">abstract_expr()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>af_map_creation</name>
+  <n_vars>1</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_map_creation">af_map_creation(T)</marker> = {map, <seealso marker="#type-anno">anno()</seealso>, [<seealso marker="#type-af_assoc">af_assoc</seealso>(T)]}</typehead></typedecl>
+  <anno>T</anno>
+</type>
+<type>
+  <name>af_map_pattern</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_map_pattern">af_map_pattern()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{map, <seealso marker="#type-anno">anno()</seealso>, [<seealso marker="#type-af_assoc_exact">af_assoc_exact</seealso>(abstract_expr)]}</typehead></typedecl>
+</type>
+<type>
+  <name>af_map_type</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_map_type">af_map_type()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{type, <seealso marker="#type-anno">anno()</seealso>, map, any} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{type, <seealso marker="#type-anno">anno()</seealso>, map, [<seealso marker="#type-af_assoc_type">af_assoc_type()</seealso>]}</typehead></typedecl>
+</type>
+<type>
+  <name>af_map_update</name>
+  <n_vars>1</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_map_update">af_map_update(T)</marker> = {map, <seealso marker="#type-anno">anno()</seealso>, T, [<seealso marker="#type-af_assoc">af_assoc</seealso>(T)]}</typehead></typedecl>
+  <anno>T</anno>
+</type>
+<type>
+  <name>af_match</name>
+  <n_vars>1</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_match">af_match(T)</marker> = {match, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-af_pattern">af_pattern()</seealso>, T}</typehead></typedecl>
+  <anno>T</anno>
+</type>
+<type>
+  <name>af_module</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_module">af_module()</marker> = {attribute, <seealso marker="#type-anno">anno()</seealso>, module, module()}</typehead></typedecl>
+</type>
+<type>
+  <name>af_named_fun</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_named_fun">af_named_fun()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{named_fun, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-fun_name">fun_name()</seealso>, <seealso marker="#type-af_clause_seq">af_clause_seq()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_nil</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_nil">af_nil()</marker> = {nil, <seealso marker="#type-anno">anno()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_pattern</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_pattern">af_pattern()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_literal">af_literal()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_match">af_match</seealso>(<seealso marker="#type-af_pattern">af_pattern()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_variable">af_variable()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_tuple">af_tuple</seealso>(<seealso marker="#type-af_pattern">af_pattern()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_nil">af_nil()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_cons">af_cons</seealso>(<seealso marker="#type-af_pattern">af_pattern()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_bin">af_bin</seealso>(<seealso marker="#type-af_pattern">af_pattern()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_binary_op">af_binary_op</seealso>(<seealso marker="#type-af_pattern">af_pattern()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_unary_op">af_unary_op</seealso>(<seealso marker="#type-af_pattern">af_pattern()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_record_creation">af_record_creation</seealso>(<seealso marker="#type-af_pattern">af_pattern()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_record_index">af_record_index()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_map_pattern">af_map_pattern()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>af_predefined_type</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_predefined_type">af_predefined_type()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{type, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-type_name">type_name()</seealso>, [<seealso marker="#type-abstract_type">abstract_type()</seealso>]}</typehead></typedecl>
+</type>
+<type>
+  <name>af_qualifier</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_qualifier">af_qualifier()</marker> = <seealso marker="#type-af_generator">af_generator()</seealso> | <seealso marker="#type-af_filter">af_filter()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>af_qualifier_seq</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_qualifier_seq">af_qualifier_seq()</marker> = [<seealso marker="#type-af_qualifier">af_qualifier()</seealso>]</typehead></typedecl>
+</type>
+<type>
+  <name>af_receive</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_receive">af_receive()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{'receive', <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-af_clause_seq">af_clause_seq()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{'receive',<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-anno">anno()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_clause_seq">af_clause_seq()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-abstract_expr">abstract_expr()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_body">af_body()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_record_creation</name>
+  <n_vars>1</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_record_creation">af_record_creation(T)</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{record, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-record_name">record_name()</seealso>, [<seealso marker="#type-af_record_field">af_record_field</seealso>(T)]}</typehead></typedecl>
+  <anno>T</anno>
+</type>
+<type>
+  <name>af_record_decl</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_record_decl">af_record_decl()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{attribute,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-anno">anno()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>record,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{<seealso marker="#type-record_name">record_name()</seealso>, [<seealso marker="#type-af_field_decl">af_field_decl()</seealso>]}}</typehead></typedecl>
+</type>
+<type>
+  <name>af_record_field</name>
+  <n_vars>1</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_record_field">af_record_field(T)</marker> = {record_field, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-af_field_name">af_field_name()</seealso>, T}</typehead></typedecl>
+  <anno>T</anno>
+</type>
+<type>
+  <name>af_record_field_access</name>
+  <n_vars>1</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_record_field_access">af_record_field_access(T)</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{record_field, <seealso marker="#type-anno">anno()</seealso>, T, <seealso marker="#type-record_name">record_name()</seealso>, <seealso marker="#type-af_field_name">af_field_name()</seealso>}</typehead></typedecl>
+  <anno>T</anno>
+</type>
+<type>
+  <name>af_record_field_type</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_record_field_type">af_record_field_type()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{type,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-anno">anno()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>field_type,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>[(Name :: <seealso marker="#type-af_atom">af_atom()</seealso>) | <seealso marker="#type-abstract_type">abstract_type()</seealso>]}</typehead></typedecl>
+  <anno>Name</anno>
+</type>
+<type>
+  <name>af_record_index</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_record_index">af_record_index()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{record_index, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-record_name">record_name()</seealso>, <seealso marker="#type-af_field_name">af_field_name()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_record_type</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_record_type">af_record_type()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{type,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-anno">anno()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>record,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>[(Name :: <seealso marker="#type-af_atom">af_atom()</seealso>) | <seealso marker="#type-af_record_field_type">af_record_field_type()</seealso>]}</typehead></typedecl>
+  <anno>Name</anno>
+</type>
+<type>
+  <name>af_record_update</name>
+  <n_vars>1</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_record_update">af_record_update(T)</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{record,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-anno">anno()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-abstract_expr">abstract_expr()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-record_name">record_name()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>[<seealso marker="#type-af_record_field">af_record_field</seealso>(T)]}</typehead></typedecl>
+  <anno>T</anno>
+</type>
+<type>
+  <name>af_remote_call</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_remote_call">af_remote_call()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{call, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-af_remote_function">af_remote_function()</seealso>, <seealso marker="#type-af_args">af_args()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_remote_fun</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_remote_fun">af_remote_fun()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{'fun',<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-anno">anno()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{function, module(), <seealso marker="#type-function_name">function_name()</seealso>, arity()}} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{'fun',<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-anno">anno()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{function, <seealso marker="#type-af_atom">af_atom()</seealso>, <seealso marker="#type-af_atom">af_atom()</seealso>, <seealso marker="#type-af_integer">af_integer()</seealso>}}</typehead></typedecl>
+</type>
+<type>
+  <name>af_remote_function</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_remote_function">af_remote_function()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{remote, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-abstract_expr">abstract_expr()</seealso>, <seealso marker="#type-abstract_expr">abstract_expr()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_remote_guard_call</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_remote_guard_call">af_remote_guard_call()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{call,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-anno">anno()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{remote, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-af_lit_atom">af_lit_atom</seealso>(erlang), <seealso marker="#type-af_atom">af_atom()</seealso>},<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>[<seealso marker="#type-af_guard_test">af_guard_test()</seealso>]}</typehead></typedecl>
+</type>
+<type>
+  <name>af_remote_type</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_remote_type">af_remote_type()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{remote_type,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-anno">anno()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>[(Module :: <seealso marker="#type-af_atom">af_atom()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>(TypeName :: <seealso marker="#type-af_atom">af_atom()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>[<seealso marker="#type-abstract_type">abstract_type()</seealso>]]}</typehead></typedecl>
+  <anno>Module</anno>
+  <anno>TypeName</anno>
+</type>
+<type>
+  <name>af_singleton_integer_type</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_singleton_integer_type">af_singleton_integer_type()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_integer">af_integer()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_unary_op">af_unary_op</seealso>(<seealso marker="#type-af_singleton_integer_type">af_singleton_integer_type()</seealso>) |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_binary_op">af_binary_op</seealso>(<seealso marker="#type-af_singleton_integer_type">af_singleton_integer_type()</seealso>)</typehead></typedecl>
+</type>
+<type>
+  <name>af_string</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_string">af_string()</marker> = {string, <seealso marker="#type-anno">anno()</seealso>, string()}</typehead></typedecl>
+</type>
+<type>
+  <name>af_ta_list</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_ta_list">af_ta_list()</marker> = [{<seealso marker="#type-type_name">type_name()</seealso>, arity()}]</typehead></typedecl>
+</type>
+<type>
+  <name>af_template</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_template">af_template()</marker> = <seealso marker="#type-abstract_expr">abstract_expr()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>af_try</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_try">af_try()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{'try',<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-anno">anno()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_body">af_body()</seealso> | [],<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_clause_seq">af_clause_seq()</seealso> | [],<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_clause_seq">af_clause_seq()</seealso> | [],<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-af_body">af_body()</seealso> | []}</typehead></typedecl>
+</type>
+<type>
+  <name>af_tuple</name>
+  <n_vars>1</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_tuple">af_tuple(T)</marker> = {tuple, <seealso marker="#type-anno">anno()</seealso>, [T]}</typehead></typedecl>
+  <anno>T</anno>
+</type>
+<type>
+  <name>af_tuple_type</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_tuple_type">af_tuple_type()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{type, <seealso marker="#type-anno">anno()</seealso>, tuple, any} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{type, <seealso marker="#type-anno">anno()</seealso>, tuple, [<seealso marker="#type-abstract_type">abstract_type()</seealso>]}</typehead></typedecl>
+</type>
+<type>
+  <name>af_type_decl</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_type_decl">af_type_decl()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{attribute,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-anno">anno()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-type_attr">type_attr()</seealso>,<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{<seealso marker="#type-type_name">type_name()</seealso>, <seealso marker="#type-abstract_type">abstract_type()</seealso>, [<seealso marker="#type-af_variable">af_variable()</seealso>]}}</typehead></typedecl>
+</type>
+<type>
+  <name>af_type_union</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_type_union">af_type_union()</marker> = {type, <seealso marker="#type-anno">anno()</seealso>, union, [<seealso marker="#type-abstract_type">abstract_type()</seealso>]}</typehead></typedecl>
+</type>
+<type>
+  <name>af_type_variable</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_type_variable">af_type_variable()</marker> = {var, <seealso marker="#type-anno">anno()</seealso>, atom()}</typehead></typedecl>
+</type>
+<type>
+  <name>af_typed_field</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_typed_field">af_typed_field()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{typed_record_field, <seealso marker="#type-af_field">af_field()</seealso>, <seealso marker="#type-abstract_type">abstract_type()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>af_unary_op</name>
+  <n_vars>1</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_unary_op">af_unary_op(T)</marker> = {op, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-unary_op">unary_op()</seealso>, T}</typehead></typedecl>
+  <anno>T</anno>
+</type>
+<type>
+  <name>af_user_defined_type</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_user_defined_type">af_user_defined_type()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{user_type, <seealso marker="#type-anno">anno()</seealso>, <seealso marker="#type-type_name">type_name()</seealso>, [<seealso marker="#type-abstract_type">abstract_type()</seealso>]}</typehead></typedecl>
+</type>
+<type>
+  <name>af_variable</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_variable">af_variable()</marker> = {var, <seealso marker="#type-anno">anno()</seealso>, atom()}</typehead></typedecl>
+</type>
+<type>
+  <name>af_wild_attribute</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-af_wild_attribute">af_wild_attribute()</marker> = {attribute, <seealso marker="#type-anno">anno()</seealso>, atom(), any()}</typehead></typedecl>
+</type>
+<type>
+  <name>anno</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-anno">anno()</marker> = <seealso marker="erl_anno#type-anno">erl_anno:anno()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>behaviour</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-behaviour">behaviour()</marker> = atom()</typehead></typedecl>
+</type>
+<type>
+  <name>binary_op</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-binary_op">binary_op()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>'/' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'*' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'div' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'rem' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'band' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'and' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'+' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'-' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'bor' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'bxor' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'bsl' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'bsr' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'or' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'xor' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'++' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'--' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'==' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'/=' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'=&lt;' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'&lt;' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'&gt;=' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'&gt;' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'=:=' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'=/='</typehead></typedecl>
+</type>
+<type>
+  <name>encoding_func</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-encoding_func">encoding_func()</marker> = fun((integer() &gt;= 0) -&gt; boolean())</typehead></typedecl>
+</type>
+<type>
+  <name>endianness</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-endianness">endianness()</marker> = big | little | native</typehead></typedecl>
+</type>
+<type>
+  <name>erl_parse_tree</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-erl_parse_tree">erl_parse_tree()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-abstract_clause">abstract_clause()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-abstract_expr">abstract_expr()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-abstract_form">abstract_form()</seealso> |<br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-abstract_type">abstract_type()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>error_description</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-error_description">error_description()</marker> = term()</typehead></typedecl>
+</type>
+<type>
+  <name>error_info</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-error_info">error_info()</marker> = {<seealso marker="erl_anno#type-line">erl_anno:line()</seealso>, module(), <seealso marker="#type-error_description">error_description()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>form_info</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-form_info">form_info()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>{eof, <seealso marker="erl_anno#type-line">erl_anno:line()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{error, <seealso marker="erl_scan#type-error_info">erl_scan:error_info()</seealso> | <seealso marker="#type-error_info">error_info()</seealso>} |<br/><nbsp/><nbsp/><nbsp/><nbsp/>{warning, <seealso marker="erl_scan#type-error_info">erl_scan:error_info()</seealso> | <seealso marker="#type-error_info">error_info()</seealso>}</typehead></typedecl>
+</type>
+<type>
+  <name>fun_name</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-fun_name">fun_name()</marker> = atom()</typehead></typedecl>
+</type>
+<type>
+  <name>function_name</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-function_name">function_name()</marker> = atom()</typehead></typedecl>
+</type>
+<type>
+  <name>pre_op</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-pre_op">pre_op()</marker> = 'catch' | '+' | '-' | 'bnot' | 'not' | '#'</typehead></typedecl>
+</type>
+<type>
+  <name>prec</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-prec">prec()</marker> = integer() &gt;= 0</typehead></typedecl>
+</type>
+<type>
+  <name>record_name</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-record_name">record_name()</marker> = atom()</typehead></typedecl>
+</type>
+<type>
+  <name>signedness</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-signedness">signedness()</marker> = signed | unsigned</typehead></typedecl>
+</type>
+<type>
+  <name>spec_attr</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-spec_attr">spec_attr()</marker> = callback | spec</typehead></typedecl>
+</type>
+<type>
+  <name>token</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-token">token()</marker> = <seealso marker="erl_scan#type-token">erl_scan:token()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>type</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-type">type()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>integer |<br/><nbsp/><nbsp/><nbsp/><nbsp/>float |<br/><nbsp/><nbsp/><nbsp/><nbsp/>binary |<br/><nbsp/><nbsp/><nbsp/><nbsp/>bytes |<br/><nbsp/><nbsp/><nbsp/><nbsp/>bitstring |<br/><nbsp/><nbsp/><nbsp/><nbsp/>bits |<br/><nbsp/><nbsp/><nbsp/><nbsp/>utf8 |<br/><nbsp/><nbsp/><nbsp/><nbsp/>utf16 |<br/><nbsp/><nbsp/><nbsp/><nbsp/>utf32</typehead></typedecl>
+</type>
+<type>
+  <name>type_attr</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-type_attr">type_attr()</marker> = opaque | type</typehead></typedecl>
+</type>
+<type>
+  <name>type_inop</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-type_inop">type_inop()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/>'::' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'|' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'..' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'+' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'-' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'bor' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'bxor' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'bsl' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'bsr' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'*' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'/' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'div' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'rem' |<br/><nbsp/><nbsp/><nbsp/><nbsp/>'band'</typehead></typedecl>
+</type>
+<type>
+  <name>type_name</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-type_name">type_name()</marker> = atom()</typehead></typedecl>
+</type>
+<type>
+  <name>type_preop</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-type_preop">type_preop()</marker> = '+' | '-' | 'bnot' | '#'</typehead></typedecl>
+</type>
+<type>
+  <name>type_specifier</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-type_specifier">type_specifier()</marker> = <br/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-type">type()</seealso> | <seealso marker="#type-signedness">signedness()</seealso> | <seealso marker="#type-endianness">endianness()</seealso> | <seealso marker="#type-unit">unit()</seealso></typehead></typedecl>
+</type>
+<type>
+  <name>type_specifier_list</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-type_specifier_list">type_specifier_list()</marker> = default | [<seealso marker="#type-type_specifier">type_specifier()</seealso>, ...]</typehead></typedecl>
+</type>
+<type>
+  <name>unary_op</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-unary_op">unary_op()</marker> = '+' | '*' | 'bnot' | 'not'</typehead></typedecl>
+</type>
+<type>
+  <name>unit</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-unit">unit()</marker> = {unit, 1..256}</typehead></typedecl>
+</type>
+<type>
+  <name>yecc_ret</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-yecc_ret">yecc_ret()</marker> = {error, term()} | {ok, term()}</typehead></typedecl>
+</type>
+<spec>
+  <name>abstract</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>abstract(Data) -&gt; AbsTerm</head>
+      <guard>
+        <subtype><typename>Data</typename><string>Data = term()</string></subtype>
+        <subtype><typename>AbsTerm</typename><string>AbsTerm = <seealso marker="#type-abstract_expr">abstract_expr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>AbsTerm</anno>
+  <anno>Data</anno>
+</spec>
+<spec>
+  <name>abstract</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>abstract(Data, Options) -&gt; AbsTerm</head>
+      <guard>
+        <subtype><typename>Data</typename><string>Data = term()</string></subtype>
+        <subtype><typename>Options</typename><string>Options = Line | [Option]</string></subtype>
+        <subtype><typename>Option</typename><string>Option = {line, Line} | {encoding, Encoding}</string></subtype>
+        <subtype><typename>Encoding</typename><string>Encoding = latin1 | unicode | utf8 | none | <seealso marker="#type-encoding_func">encoding_func()</seealso></string></subtype>
+        <subtype><typename>Line</typename><string>Line = <seealso marker="erl_anno#type-line">erl_anno:line()</seealso></string></subtype>
+        <subtype><typename>AbsTerm</typename><string>AbsTerm = <seealso marker="#type-abstract_expr">abstract_expr()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>AbsTerm</anno>
+  <anno>Data</anno>
+  <anno>Encoding</anno>
+  <anno>Line</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>anno_from_term</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>anno_from_term(Term) -&gt; <seealso marker="#type-erl_parse_tree">erl_parse_tree()</seealso> | <seealso marker="#type-form_info">form_info()</seealso></head>
+      <guard>
+        <subtype><typename>Term</typename><string>Term = term()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Term</anno>
+</spec>
+<spec>
+  <name>anno_to_term</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>anno_to_term(Abstr) -&gt; term()</head>
+      <guard>
+        <subtype><typename>Abstr</typename><string>Abstr = <seealso marker="#type-erl_parse_tree">erl_parse_tree()</seealso> | <seealso marker="#type-form_info">form_info()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Abstr</anno>
+</spec>
+<spec>
+  <name>fold_anno</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>fold_anno(Fun, Acc0, Abstr) -&gt; Acc1</head>
+      <guard>
+        <subtype><typename>Fun</typename><string>Fun = fun((Anno, AccIn) -&gt; AccOut)</string></subtype>
+        <subtype><typename>Anno</typename><string>Anno = <seealso marker="erl_anno#type-anno">erl_anno:anno()</seealso></string></subtype>
+        <subtype><typename>Acc0</typename><string>Acc0 = Acc1 = AccIn = AccOut = term()</string></subtype>
+        <subtype><typename>Acc1</typename><string/></subtype>
+        <subtype><typename>AccIn</typename><string/></subtype>
+        <subtype><typename>AccOut</typename><string/></subtype>
+        <subtype><typename>Abstr</typename><string>Abstr = <seealso marker="#type-erl_parse_tree">erl_parse_tree()</seealso> | <seealso marker="#type-form_info">form_info()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Abstr</anno>
+  <anno>Acc0</anno>
+  <anno>Acc1</anno>
+  <anno>AccIn</anno>
+  <anno>AccOut</anno>
+  <anno>Anno</anno>
+  <anno>Fun</anno>
+</spec>
+<spec>
+  <name>format_error</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>format_error(Message :: any()) -&gt; [char() | list()]</head></clause>
+  </contract>
+  <anno>Message</anno>
+</spec>
+<spec>
+  <name>func_prec</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>func_prec() -&gt; {800, 700}</head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>inop_prec</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>map_anno</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>map_anno(Fun, Abstr) -&gt; NewAbstr</head>
+      <guard>
+        <subtype><typename>Fun</typename><string>Fun = fun((Anno) -&gt; NewAnno)</string></subtype>
+        <subtype><typename>Anno</typename><string>Anno = NewAnno = <seealso marker="erl_anno#type-anno">erl_anno:anno()</seealso></string></subtype>
+        <subtype><typename>NewAnno</typename><string/></subtype>
+        <subtype><typename>Abstr</typename><string>Abstr = NewAbstr = <seealso marker="#type-erl_parse_tree">erl_parse_tree()</seealso> | <seealso marker="#type-form_info">form_info()</seealso></string></subtype>
+        <subtype><typename>NewAbstr</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Abstr</anno>
+  <anno>Anno</anno>
+  <anno>Fun</anno>
+  <anno>NewAbstr</anno>
+  <anno>NewAnno</anno>
+</spec>
+<spec>
+  <name>mapfold_anno</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>mapfold_anno(Fun, Acc0, Abstr) -&gt; {NewAbstr, Acc1}</head>
+      <guard>
+        <subtype><typename>Fun</typename><string>Fun = fun((Anno, AccIn) -&gt; {NewAnno, AccOut})</string></subtype>
+        <subtype><typename>Anno</typename><string>Anno = NewAnno = <seealso marker="erl_anno#type-anno">erl_anno:anno()</seealso></string></subtype>
+        <subtype><typename>NewAnno</typename><string/></subtype>
+        <subtype><typename>Acc0</typename><string>Acc0 = Acc1 = AccIn = AccOut = term()</string></subtype>
+        <subtype><typename>Acc1</typename><string/></subtype>
+        <subtype><typename>AccIn</typename><string/></subtype>
+        <subtype><typename>AccOut</typename><string/></subtype>
+        <subtype><typename>Abstr</typename><string>Abstr = NewAbstr = <seealso marker="#type-erl_parse_tree">erl_parse_tree()</seealso> | <seealso marker="#type-form_info">form_info()</seealso></string></subtype>
+        <subtype><typename>NewAbstr</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Abstr</anno>
+  <anno>Acc0</anno>
+  <anno>Acc1</anno>
+  <anno>AccIn</anno>
+  <anno>AccOut</anno>
+  <anno>Anno</anno>
+  <anno>Fun</anno>
+  <anno>NewAbstr</anno>
+  <anno>NewAnno</anno>
+</spec>
+<spec>
+  <name>max_prec</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>max_prec() -&gt; 900</head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>new_anno</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new_anno(Term) -&gt; Abstr</head>
+      <guard>
+        <subtype><typename>Term</typename><string>Term = term()</string></subtype>
+        <subtype><typename>Abstr</typename><string>Abstr = <seealso marker="#type-erl_parse_tree">erl_parse_tree()</seealso> | <seealso marker="#type-form_info">form_info()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Abstr</anno>
+  <anno>Term</anno>
+</spec>
+<spec>
+  <name>normalise</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>normalise(AbsTerm) -&gt; Data</head>
+      <guard>
+        <subtype><typename>AbsTerm</typename><string>AbsTerm = <seealso marker="#type-abstract_expr">abstract_expr()</seealso></string></subtype>
+        <subtype><typename>Data</typename><string>Data = term()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>AbsTerm</anno>
+  <anno>Data</anno>
+</spec>
+<spec>
+  <name>parse</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>parse(Tokens :: list()) -&gt; <seealso marker="#type-yecc_ret">yecc_ret()</seealso></head></clause>
+  </contract>
+  <anno>Tokens</anno>
+</spec>
+<spec>
+  <name>parse_and_scan</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>parse_and_scan(X1 ::<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{function() | {atom(), atom()}, [term()]} |<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>{atom(), atom(), [term()]}) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><seealso marker="#type-yecc_ret">yecc_ret()</seealso></head></clause>
+  </contract>
+  <anno>X1</anno>
+</spec>
+<spec>
+  <name>parse_exprs</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>parse_exprs(Tokens) -&gt; {ok, ExprList} | {error, ErrorInfo}</head>
+      <guard>
+        <subtype><typename>Tokens</typename><string>Tokens = [<seealso marker="#type-token">token()</seealso>]</string></subtype>
+        <subtype><typename>ExprList</typename><string>ExprList = [<seealso marker="#type-abstract_expr">abstract_expr()</seealso>]</string></subtype>
+        <subtype><typename>ErrorInfo</typename><string>ErrorInfo = <seealso marker="#type-error_info">error_info()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ErrorInfo</anno>
+  <anno>ExprList</anno>
+  <anno>Tokens</anno>
+</spec>
+<spec>
+  <name>parse_form</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>parse_form(Tokens) -&gt; {ok, AbsForm} | {error, ErrorInfo}</head>
+      <guard>
+        <subtype><typename>Tokens</typename><string>Tokens = [<seealso marker="#type-token">token()</seealso>]</string></subtype>
+        <subtype><typename>AbsForm</typename><string>AbsForm = <seealso marker="#type-abstract_form">abstract_form()</seealso></string></subtype>
+        <subtype><typename>ErrorInfo</typename><string>ErrorInfo = <seealso marker="#type-error_info">error_info()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>AbsForm</anno>
+  <anno>ErrorInfo</anno>
+  <anno>Tokens</anno>
+</spec>
+<spec>
+  <name>parse_term</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>parse_term(Tokens) -&gt; {ok, Term} | {error, ErrorInfo}</head>
+      <guard>
+        <subtype><typename>Tokens</typename><string>Tokens = [<seealso marker="#type-token">token()</seealso>]</string></subtype>
+        <subtype><typename>Term</typename><string>Term = term()</string></subtype>
+        <subtype><typename>ErrorInfo</typename><string>ErrorInfo = <seealso marker="#type-error_info">error_info()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>ErrorInfo</anno>
+  <anno>Term</anno>
+  <anno>Tokens</anno>
+</spec>
+<spec>
+  <name>preop_prec</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>preop_prec(X1 :: <seealso marker="#type-pre_op">pre_op()</seealso>) -&gt; {0 | 600 | 700, 100 | 700 | 800}</head></clause>
+  </contract>
+  <anno>X1</anno>
+</spec>
+<spec>
+  <name>tokens</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>tokens(AbsTerm) -&gt; Tokens</head>
+      <guard>
+        <subtype><typename>AbsTerm</typename><string>AbsTerm = <seealso marker="#type-abstract_expr">abstract_expr()</seealso></string></subtype>
+        <subtype><typename>Tokens</typename><string>Tokens = [<seealso marker="#type-token">token()</seealso>]</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>AbsTerm</anno>
+  <anno>Tokens</anno>
+</spec>
+<spec>
+  <name>tokens</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>tokens(AbsTerm, MoreTokens) -&gt; Tokens</head>
+      <guard>
+        <subtype><typename>AbsTerm</typename><string>AbsTerm = <seealso marker="#type-abstract_expr">abstract_expr()</seealso></string></subtype>
+        <subtype><typename>MoreTokens</typename><string>MoreTokens = Tokens = [<seealso marker="#type-token">token()</seealso>]</string></subtype>
+        <subtype><typename>Tokens</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>AbsTerm</anno>
+  <anno>MoreTokens</anno>
+  <anno>Tokens</anno>
+</spec>
+<spec>
+  <name>type_inop_prec</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>type_inop_prec(X1 :: <seealso marker="#type-type_inop">type_inop()</seealso>) -&gt; {<seealso marker="#type-prec">prec()</seealso>, <seealso marker="#type-prec">prec()</seealso>, <seealso marker="#type-prec">prec()</seealso>}</head></clause>
+  </contract>
+  <anno>X1</anno>
+</spec>
+<spec>
+  <name>type_preop_prec</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>type_preop_prec(X1 :: <seealso marker="#type-type_preop">type_preop()</seealso>) -&gt; {<seealso marker="#type-prec">prec()</seealso>, <seealso marker="#type-prec">prec()</seealso>}</head></clause>
+  </contract>
+  <anno>X1</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:27:16.</timestamp>
+</module>

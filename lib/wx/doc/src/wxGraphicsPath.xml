@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxGraphicsPath</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxGraphicsPath.xml</file></header>
+<module>wxGraphicsPath</module>
+<modulesummary>See external documentation: wxGraphicsPath.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html">wxGraphicsPath</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxGraphicsObject">wxGraphicsObject</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxGraphicsPath"/>wxGraphicsPath()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>moveToPoint(This, P) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v><v>P = {X::float(), Y::float()}</v></type>
+<desc><marker id="moveToPoint-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html#wxgraphicspathmovetopoint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>moveToPoint(This, X, Y) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v><v>X = number()</v><v>Y = number()</v></type>
+<desc><marker id="moveToPoint-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html#wxgraphicspathmovetopoint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addArc(This, C, R, StartAngle, EndAngle, Clockwise) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v><v>C = {X::float(), Y::float()}</v><v>R = number()</v><v>StartAngle = number()</v><v>EndAngle = number()</v><v>Clockwise = boolean()</v></type>
+<desc><marker id="addArc-6"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html#wxgraphicspathaddarc">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addArc(This, X, Y, R, StartAngle, EndAngle, Clockwise) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v><v>X = number()</v><v>Y = number()</v><v>R = number()</v><v>StartAngle = number()</v><v>EndAngle = number()</v><v>Clockwise = boolean()</v></type>
+<desc><marker id="addArc-7"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html#wxgraphicspathaddarc">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addArcToPoint(This, X1, Y1, X2, Y2, R) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v><v>X1 = number()</v><v>Y1 = number()</v><v>X2 = number()</v><v>Y2 = number()</v><v>R = number()</v></type>
+<desc><marker id="addArcToPoint-6"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html#wxgraphicspathaddarctopoint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addCircle(This, X, Y, R) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v><v>X = number()</v><v>Y = number()</v><v>R = number()</v></type>
+<desc><marker id="addCircle-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html#wxgraphicspathaddcircle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addCurveToPoint(This, C1, C2, E) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v><v>C1 = {X::float(), Y::float()}</v><v>C2 = {X::float(), Y::float()}</v><v>E = {X::float(), Y::float()}</v></type>
+<desc><marker id="addCurveToPoint-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html#wxgraphicspathaddcurvetopoint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addCurveToPoint(This, Cx1, Cy1, Cx2, Cy2, X, Y) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v><v>Cx1 = number()</v><v>Cy1 = number()</v><v>Cx2 = number()</v><v>Cy2 = number()</v><v>X = number()</v><v>Y = number()</v></type>
+<desc><marker id="addCurveToPoint-7"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html#wxgraphicspathaddcurvetopoint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addEllipse(This, X, Y, W, H) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v><v>X = number()</v><v>Y = number()</v><v>W = number()</v><v>H = number()</v></type>
+<desc><marker id="addEllipse-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html#wxgraphicspathaddellipse">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addLineToPoint(This, P) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v><v>P = {X::float(), Y::float()}</v></type>
+<desc><marker id="addLineToPoint-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html#wxgraphicspathaddlinetopoint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addLineToPoint(This, X, Y) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v><v>X = number()</v><v>Y = number()</v></type>
+<desc><marker id="addLineToPoint-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html#wxgraphicspathaddlinetopoint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addPath(This, Path) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v><v>Path = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v></type>
+<desc><marker id="addPath-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html#wxgraphicspathaddpath">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addQuadCurveToPoint(This, Cx, Cy, X, Y) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v><v>Cx = number()</v><v>Cy = number()</v><v>X = number()</v><v>Y = number()</v></type>
+<desc><marker id="addQuadCurveToPoint-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html#wxgraphicspathaddquadcurvetopoint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addRectangle(This, X, Y, W, H) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v><v>X = number()</v><v>Y = number()</v><v>W = number()</v><v>H = number()</v></type>
+<desc><marker id="addRectangle-5"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html#wxgraphicspathaddrectangle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>addRoundedRectangle(This, X, Y, W, H, Radius) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v><v>X = number()</v><v>Y = number()</v><v>W = number()</v><v>H = number()</v><v>Radius = number()</v></type>
+<desc><marker id="addRoundedRectangle-6"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html#wxgraphicspathaddroundedrectangle">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>closeSubpath(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v></type>
+<desc><marker id="closeSubpath-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html#wxgraphicspathclosesubpath">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>contains(This, C) -&gt; boolean()</name>
+<fsummary>Equivalent to contains(This, C, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v><v>C = {X::float(), Y::float()}</v></type>
+<desc><marker id="contains-2"/>
+<p>Equivalent to <seealso marker="#contains-3">contains(This, C, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>contains(This, X, Y) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v><v>X = number()</v><v>Y = number()</v></type>
+<desc><marker id="contains-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html#wxgraphicspathcontains">external documentation</url>.
+  <br/> Also:<br/>
+  contains(This, C, [Option]) -&gt; boolean() when<br/>
+  	This::wxGraphicsPath(), C::{X::float(), Y::float()},<br/>
+  	Option :: {'fillStyle', wx:wx_enum()}.<br/></p>
+ 
+ <p><br/> FillStyle = integer</p>
+</desc></func>
+<func>
+<name>contains(This, X, Y, Options::[Option]) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v><v>X = number()</v><v>Y = number()</v><v>Option = {fillStyle, <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso>}</v></type>
+<desc><marker id="contains-4"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html#wxgraphicspathcontains">external documentation</url>.
+ <br/> FillStyle = integer</p>
+</desc></func>
+<func>
+<name>getBox(This) -&gt; {X::float(), Y::float(), W::float(), H::float()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v></type>
+<desc><marker id="getBox-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html#wxgraphicspathgetbox">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getCurrentPoint(This) -&gt; {X::float(), Y::float()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v></type>
+<desc><marker id="getCurrentPoint-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html#wxgraphicspathgetcurrentpoint">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>transform(This, Matrix) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGraphicsPath">wxGraphicsPath()</seealso></v><v>Matrix = <seealso marker="wxGraphicsMatrix#type-wxGraphicsMatrix">wxGraphicsMatrix:wxGraphicsMatrix()</seealso></v></type>
+<desc><marker id="transform-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgraphicspath.html#wxgraphicspathtransform">external documentation</url>.</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

@@ -37,7 +37,7 @@
 
 /* The only reason ERTS_EMU_CMDLINE_FLAGS exists is to force modification of
    config.h when the emulator command line flags are modified by configure */
-#define ERTS_EMU_CMDLINE_FLAGS " -g -O2 -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -g  -D_GNU_SOURCE -I/root/download/otp_src_19.3/erts/x86_64-unknown-linux-gnu     -DUSE_THREADS -D_THREAD_SAFE -D_REENTRANT -DPOSIX_THREADS -D_POSIX_THREAD_SAFE_FUNCTIONS -DERTS_ENABLE_LOCK_COUNT  -Werror=implicit -Werror=return-type  -Wall -Wstrict-prototypes -Wmissing-prototypes -Wdeclaration-after-statement"
+#define ERTS_EMU_CMDLINE_FLAGS " -g -O2 -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu   -fno-tree-copyrename  -D_GNU_SOURCE -g  -D_GNU_SOURCE -I/root/download/otp_src_20.0/erts/x86_64-unknown-linux-gnu     -DUSE_THREADS -D_THREAD_SAFE -D_REENTRANT -DPOSIX_THREADS -D_POSIX_THREAD_SAFE_FUNCTIONS  -Werror=undef -Werror=implicit -Werror=return-type  -Wall -Wstrict-prototypes -Wmissing-prototypes -Wdeclaration-after-statement"
 
 /* Define if you have kernel poll and want to use it */
 #define ERTS_ENABLE_KERNEL_POLL 1
@@ -46,20 +46,23 @@
    extra states */
 #define ERTS_ENABLE_MSACC 1
 
+/* Define > 0 if big-endian < 0 if little-endian, or 0 if unknown */
+#define ERTS_ENDIANNESS -1
+
 /* Define if OS monotonic clock is corrected */
 #define ERTS_HAVE_CORRECTED_OS_MONOTONIC_TIME 1
 
 /* Define if you have a low resolution OS monotonic clock */
 /* #undef ERTS_HAVE_LOW_RESOLUTION_OS_MONOTONIC_LOW */
 
+/* Define if the non-smp emulator is built */
+/* #undef ERTS_HAVE_PLAIN_EMU */
+
 /* Define if the smp emulator is built */
 #define ERTS_HAVE_SMP_EMU 1
 
 /* Define if dlopen() needs to be called before first call to dlerror() */
 /* #undef ERTS_NEED_DLOPEN_BEFORE_DLERROR */
-
-/* Define if you want to use the new code purge strategy */
-/* #undef ERTS_NEW_PURGE_STRATEGY */
 
 /* Save compile time? */
 #define ERTS_SAVED_COMPILE_TIME 1
@@ -736,6 +739,9 @@
 /* Define if you have a monotonic erts_os_hrtime() implementation */
 /* #undef HAVE_MONOTONIC_ERTS_SYS_HRTIME */
 
+/* Define to 1 if you have the `mprotect' function. */
+#define HAVE_MPROTECT 1
+
 /* Define to 1 if you have the `mremap' function. */
 #define HAVE_MREMAP 1
 
@@ -1035,6 +1041,9 @@
 /* Define to 1 if you have the <ws2tcpip.h> header file. */
 /* #undef HAVE_WS2TCPIP_H */
 
+/* Define if your zlib version defines inflateGetDictionary. */
+/* #undef HAVE_ZLIB_INFLATEGETDICTIONARY */
+
 /* Define to 1 if you have the `_brk' function. */
 /* #undef HAVE__BRK */
 
@@ -1227,8 +1236,7 @@
 /* Define if windows.h includes winsock2.h */
 /* #undef WINDOWS_H_INCLUDES_WINSOCK2_H */
 
-/* Define to 1 if your processor stores words with the most significant byte
-   first (like Motorola and SPARC, unlike Intel and VAX). */
+/* Define if big-endian */
 /* #undef WORDS_BIGENDIAN */
 
 /* Define to empty if `const' does not conform to ANSI C. */

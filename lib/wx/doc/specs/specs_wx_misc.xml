@@ -1,0 +1,292 @@
+<module name="wx_misc">
+<spec>
+  <name>beginBusyCursor</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>beginBusyCursor() -&gt; ok</head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>beginBusyCursor</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>beginBusyCursor(Options :: [Option]) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Option</typename><string>Option = {cursor, <seealso marker="wxCursor#type-wxCursor">wxCursor:wxCursor()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>bell</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>bell() -&gt; ok</head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>displaySize</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>displaySize() -&gt; {Width :: integer(), Height :: integer()}</head></clause>
+  </contract>
+  <anno>Height</anno>
+  <anno>Width</anno>
+</spec>
+<spec>
+  <name>endBusyCursor</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>endBusyCursor() -&gt; ok</head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>findMenuItemId</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>findMenuItemId(Frame, MenuString, ItemString) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>Frame</typename><string>Frame = <seealso marker="wxFrame#type-wxFrame">wxFrame:wxFrame()</seealso></string></subtype>
+        <subtype><typename>MenuString</typename><string>MenuString = ItemString = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>ItemString</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Frame</anno>
+  <anno>ItemString</anno>
+  <anno>MenuString</anno>
+</spec>
+<spec>
+  <name>findWindowAtPoint</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>findWindowAtPoint(Pt) -&gt; <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></head>
+      <guard>
+        <subtype><typename>Pt</typename><string>Pt = {X :: integer(), Y :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Pt</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>genericFindWindowAtPoint</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>genericFindWindowAtPoint(Pt) -&gt; <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></head>
+      <guard>
+        <subtype><typename>Pt</typename><string>Pt = {X :: integer(), Y :: integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Pt</anno>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getCurrentId</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>getCurrentId() -&gt; integer()</head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>getEmailAddress</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>getEmailAddress() -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>getHomeDir</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>getHomeDir() -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>getKeyState</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getKeyState(Key) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>Key</typename><string>Key = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Key</anno>
+</spec>
+<spec>
+  <name>getMousePosition</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>getMousePosition() -&gt; {X :: integer(), Y :: integer()}</head></clause>
+  </contract>
+  <anno>X</anno>
+  <anno>Y</anno>
+</spec>
+<spec>
+  <name>getMouseState</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>getMouseState() -&gt; <seealso marker="wx#type-wx_wxMouseState">wx:wx_wxMouseState()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>getOsDescription</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>getOsDescription() -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>getUserId</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>getUserId() -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>isBusy</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>isBusy() -&gt; boolean()</head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>isPlatform64Bit</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>isPlatform64Bit() -&gt; boolean()</head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>isPlatformLittleEndian</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>isPlatformLittleEndian() -&gt; boolean()</head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>launchDefaultBrowser</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>launchDefaultBrowser(Url) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>Url</typename><string>Url = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Url</anno>
+</spec>
+<spec>
+  <name>launchDefaultBrowser</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>launchDefaultBrowser(Url, Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>Url</typename><string>Url = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {flags, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Url</anno>
+</spec>
+<spec>
+  <name>newId</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>newId() -&gt; integer()</head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>registerId</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>registerId(Id) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Id</typename><string>Id = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Id</anno>
+</spec>
+<spec>
+  <name>setCursor</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>setCursor(Cursor) -&gt; ok</head>
+      <guard>
+        <subtype><typename>Cursor</typename><string>Cursor = <seealso marker="wxCursor#type-wxCursor">wxCursor:wxCursor()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Cursor</anno>
+</spec>
+<spec>
+  <name>setDetectableAutoRepeat</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>setDetectableAutoRepeat(Flag) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>Flag</typename><string>Flag = boolean()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Flag</anno>
+</spec>
+<spec>
+  <name>shell</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>shell() -&gt; boolean()</head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>shell</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>shell(Options :: [Option]) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>Option</typename><string>Option = {command, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>shutdown</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>shutdown(WFlags) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>WFlags</typename><string>WFlags = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>WFlags</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:31:01.</timestamp>
+</module>

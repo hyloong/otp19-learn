@@ -1,7 +1,7 @@
 /*
  * %CopyrightBegin%
  *
- * Copyright Ericsson AB 1996-2016. All Rights Reserved.
+ * Copyright Ericsson AB 1996-2017. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -186,6 +186,12 @@ void sys_primitive_init(HMODULE beam)
     beam_module = (HMODULE) beam;
 }
 
+UWord
+erts_sys_get_page_size(void)
+{
+    return (UWord) 4*1024; /* Guess 4 KB */
+}
+
 Uint
 erts_sys_misc_mem_sz(void)
 {
@@ -291,6 +297,10 @@ int erts_sys_prepare_crash_dump(int secs)
     /* Windows - free file descriptors are hopefully available */
     /* Alarm not used on windows */
 
+    return 0;
+}
+
+int erts_set_signal(Eterm signal, Eterm type) {
     return 0;
 }
 
@@ -492,7 +502,7 @@ struct driver_data {
     int outBufSize;		/* Size of output buffer. */
     byte *outbuf;		/* Buffer to use for overlapped write. */
     ErlDrvPort port_num;	/* The port handle. */
-    int packet_bytes;		/* 0: continous stream, 1, 2, or 4: the number
+    int packet_bytes;		/* 0: continuous stream, 1, 2, or 4: the number
 				 * of bytes in the packet header.
 				 */
     HANDLE port_pid;		/* PID of the port process. */
@@ -1423,7 +1433,7 @@ int parse_command(wchar_t* cmd){
  *
  * If new == NULL we just calculate the length.
  *
- * The reason for having to quote all of the is becasue CreateProcessW removes
+ * The reason for having to quote all of the is because CreateProcessW removes
  * one level of escaping since it takes a single long command line rather
  * than the argument chunks that unix uses.
  */
@@ -2482,7 +2492,7 @@ output(ErlDrvData drv_data, char* buf, ErlDrvSizeT len)
  *	event object has been signaled, indicating that there is
  *	something to read on the corresponding file handle.
  *
- *	If the port is working in the continous stream mode (packet_bytes == 0),
+ *	If the port is working in the continuous stream mode (packet_bytes == 0),
  *	whatever data read will be sent straight to Erlang.
  *
  * Results:
@@ -2523,7 +2533,7 @@ ready_input(ErlDrvData drv_data, ErlDrvEvent ready_event)
 #endif
 
     if (error == NO_ERROR) {
-	if (pb == 0) { /* Continous stream. */
+	if (pb == 0) { /* Continuous stream. */
 #ifdef DEBUG
 	    DEBUGF(("ready_input: %d: ", bytesRead));
 	    erl_bin_write(dp->inbuf, 16, bytesRead);

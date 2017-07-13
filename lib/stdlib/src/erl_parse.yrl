@@ -33,7 +33,6 @@ list tail
 list_comprehension lc_expr lc_exprs
 binary_comprehension
 tuple
-%struct
 record_expr record_tuple record_field record_fields
 map_expr map_tuple map_field map_field_assoc map_field_exact map_fields map_key
 if_expr if_clause if_clauses case_expr cr_clause cr_clauses receive_expr
@@ -108,9 +107,8 @@ type_sig -> fun_type 'when' type_guards   : {type, ?anno('$1'), bounded_fun,
 type_guards -> type_guard                 : ['$1'].
 type_guards -> type_guard ',' type_guards : ['$1'|'$3'].
 
-type_guard -> atom '(' top_types ')'      : {type, ?anno('$1'), constraint,
-                                             ['$1', '$3']}.
-type_guard -> var '::' top_type           : build_def('$1', '$3').
+type_guard -> atom '(' top_types ')'   : build_compat_constraint('$1', '$3').
+type_guard -> var '::' top_type        : build_constraint('$1', '$3').
 
 top_types -> top_type                     : ['$1'].
 top_types -> top_type ',' top_types       : ['$1'|'$3'].
@@ -269,7 +267,6 @@ expr_max -> binary : '$1'.
 expr_max -> list_comprehension : '$1'.
 expr_max -> binary_comprehension : '$1'.
 expr_max -> tuple : '$1'.
-%%expr_max -> struct : '$1'.
 expr_max -> '(' expr ')' : '$2'.
 expr_max -> 'begin' exprs 'end' : {block,?anno('$1'),'$2'}.
 expr_max -> if_expr : '$1'.
@@ -327,10 +324,6 @@ lc_expr -> binary '<=' expr : {b_generate,?anno('$2'),'$1','$3'}.
 
 tuple -> '{' '}' : {tuple,?anno('$1'),[]}.
 tuple -> '{' exprs '}' : {tuple,?anno('$1'),'$2'}.
-
-
-%%struct -> atom tuple :
-%%	{struct,?anno('$1'),element(3, '$1'),element(3, '$2')}.
 
 map_expr -> '#' map_tuple :
 	{map, ?anno('$1'),'$2'}.
@@ -516,6 +509,22 @@ comp_op -> '>=' : '$1'.
 comp_op -> '>' : '$1'.
 comp_op -> '=:=' : '$1'.
 comp_op -> '=/=' : '$1'.
+
+Header
+"%% This file was automatically generated from the file \"erl_parse.yrl\"."
+"%%"
+"%% Copyright Ericsson AB 1996-2015. All Rights Reserved."
+"%%"
+"%% Licensed under the Apache License, Version 2.0 (the \"License\"); you may"
+"%% not use this file except in compliance with the License. You may obtain"
+"%% a copy of the License at <http://www.apache.org/licenses/LICENSE-2.0>"
+"%%"
+"%% Unless required by applicable law or agreed to in writing, software"
+"%% distributed under the License is distributed on an \"AS IS\" BASIS,"
+"%% WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied."
+"%% See the License for the specific language governing permissions and"
+"%% limitations under the License."
+"".
 
 Erlang code.
 
@@ -972,6 +981,16 @@ Erlang code.
 %% keep track of annotation info in tokens
 -define(anno(Tup), element(2, Tup)).
 
+%-define(DEBUG, true).
+
+-ifdef(DEBUG).
+%% Assumes that erl_anno has been compiled with DEBUG=true.
+-define(ANNO_CHECK(Tokens),
+        [] = [T || T <- Tokens, not is_list(element(2, T))]).
+-else.
+-define(ANNO_CHECK(Tokens), ok).
+-endif.
+
 %% Entry points compatible to old erl_parse.
 %% These really suck and are only here until Calle gets multiple
 %% entry points working.
@@ -981,10 +1000,15 @@ Erlang code.
       AbsForm :: abstract_form(),
       ErrorInfo :: error_info().
 parse_form([{'-',A1},{atom,A2,spec}|Tokens]) ->
-    parse([{'-',A1},{'spec',A2}|Tokens]);
+    NewTokens = [{'-',A1},{'spec',A2}|Tokens],
+    ?ANNO_CHECK(NewTokens),
+    parse(NewTokens);
 parse_form([{'-',A1},{atom,A2,callback}|Tokens]) ->
-    parse([{'-',A1},{'callback',A2}|Tokens]);
+    NewTokens = [{'-',A1},{'callback',A2}|Tokens],
+    ?ANNO_CHECK(NewTokens),
+    parse(NewTokens);
 parse_form(Tokens) ->
+    ?ANNO_CHECK(Tokens),
     parse(Tokens).
 
 -spec parse_exprs(Tokens) -> {ok, ExprList} | {error, ErrorInfo} when
@@ -992,6 +1016,7 @@ parse_form(Tokens) ->
       ExprList :: [abstract_expr()],
       ErrorInfo :: error_info().
 parse_exprs(Tokens) ->
+    ?ANNO_CHECK(Tokens),
     A = erl_anno:new(0),
     case parse([{atom,A,f},{'(',A},{')',A},{'->',A}|Tokens]) of
 	{ok,{function,_Lf,f,0,[{clause,_Lc,[],[],Exprs}]}} ->
@@ -1004,6 +1029,7 @@ parse_exprs(Tokens) ->
       Term :: term(),
       ErrorInfo :: error_info().
 parse_term(Tokens) ->
+    ?ANNO_CHECK(Tokens),
     A = erl_anno:new(0),
     case parse([{atom,A,f},{'(',A},{')',A},{'->',A}|Tokens]) of
 	{ok,{function,_Af,f,0,[{clause,_Ac,[],[],[Expr]}]}} ->
@@ -1026,6 +1052,9 @@ build_typed_attribute({atom,Aa,record},
 build_typed_attribute({atom,Aa,Attr},
                       {type_def, {call,_,{atom,_,TypeName},Args}, Type})
   when Attr =:= 'type' ; Attr =:= 'opaque' ->
+    lists:foreach(fun({var, A, '_'}) -> ret_err(A, "bad type variable");
+                     (_)             -> ok
+                  end, Args),
     case lists:all(fun({var, _, _}) -> true;
                       (_)           -> false
                    end, Args) of
@@ -1041,13 +1070,13 @@ build_typed_attribute({atom,Aa,Attr},_) ->
     end.
 
 build_type_spec({Kind,Aa}, {SpecFun, TypeSpecs})
-  when (Kind =:= spec) or (Kind =:= callback) ->
+  when Kind =:= spec ; Kind =:= callback ->
     NewSpecFun =
 	case SpecFun of
 	    {atom, _, Fun} ->
 		{Fun, find_arity_from_specs(TypeSpecs)};
-	    {{atom,_, Mod}, {atom,_, Fun}} ->
-		{Mod,Fun,find_arity_from_specs(TypeSpecs)}
+	    {{atom, _, Mod}, {atom, _, Fun}} ->
+		{Mod, Fun, find_arity_from_specs(TypeSpecs)}
         end,
     {attribute,Aa,Kind,{NewSpecFun, TypeSpecs}}.
 
@@ -1061,11 +1090,24 @@ find_arity_from_specs([Spec|_]) ->
     {type, _, 'fun', [{type, _, product, Args},_]} = Fun,
     length(Args).
 
-build_def({var, A, '_'}, _Types) ->
+%% The 'is_subtype(V, T)' syntax is not supported as of Erlang/OTP
+%% 19.0, but is kept for backward compatibility.
+build_compat_constraint({atom, _, is_subtype}, [{var, _, _}=LHS, Type]) ->
+    build_constraint(LHS, Type);
+build_compat_constraint({atom, _, is_subtype}, [LHS, _Type]) ->
+    ret_err(?anno(LHS), "bad type variable");
+build_compat_constraint({atom, A, Atom}, _Types) ->
+    ret_err(A, io_lib:format("unsupported constraint ~tw", [Atom])).
+
+build_constraint({atom, _, is_subtype}, [{var, _, _}=LHS, Type]) ->
+    build_constraint(LHS, Type);
+build_constraint({atom, A, Atom}, _Foo) ->
+    ret_err(A, io_lib:format("unsupported constraint ~tw", [Atom]));
+build_constraint({var, A, '_'}, _Types) ->
     ret_err(A, "bad type variable");
-build_def(LHS, Types) ->
+build_constraint(LHS, Type) ->
     IsSubType = {atom, ?anno(LHS), is_subtype},
-    {type, ?anno(LHS), constraint, [IsSubType, [LHS, Types]]}.
+    {type, ?anno(LHS), constraint, [IsSubType, [LHS, Type]]}.
 
 lift_unions(T1, {type, _Aa, union, List}) ->
     {type, ?anno(T1), union, [T1|List]};
@@ -1178,7 +1220,7 @@ attribute_farity_map(Args) ->
 -spec error_bad_decl(erl_anno:anno(), attributes()) -> no_return().
 
 error_bad_decl(Anno, S) ->
-    ret_err(Anno, io_lib:format("bad ~w declaration", [S])).
+    ret_err(Anno, io_lib:format("bad ~tw declaration", [S])).
 
 farity_list({cons,_Ac,{op,_Ao,'/',{atom,_Aa,A},{integer,_Ai,I}},Tail}) ->
     [{A,I}|farity_list(Tail)];
@@ -1509,8 +1551,8 @@ type_preop_prec('#') -> {700,800}.
       Fun :: fun((Anno) -> NewAnno),
       Anno :: erl_anno:anno(),
       NewAnno :: erl_anno:anno(),
-      Abstr :: erl_parse_tree(),
-      NewAbstr :: erl_parse_tree().
+      Abstr :: erl_parse_tree() | form_info(),
+      NewAbstr :: erl_parse_tree() | form_info().
 
 map_anno(F0, Abstr) ->
     F = fun(A, Acc) -> {F0(A), Acc} end,
@@ -1524,7 +1566,7 @@ map_anno(F0, Abstr) ->
       Acc1 :: term(),
       AccIn :: term(),
       AccOut :: term(),
-      Abstr :: erl_parse_tree().
+      Abstr :: erl_parse_tree() | form_info().
 
 fold_anno(F0, Acc0, Abstr) ->
     F = fun(A, Acc) -> {A, F0(A, Acc)} end,
@@ -1539,15 +1581,15 @@ fold_anno(F0, Acc0, Abstr) ->
       Acc1 :: term(),
       AccIn :: term(),
       AccOut :: term(),
-      Abstr :: erl_parse_tree(),
-      NewAbstr :: erl_parse_tree().
+      Abstr :: erl_parse_tree() | form_info(),
+      NewAbstr :: erl_parse_tree() | form_info().
 
 mapfold_anno(F, Acc0, Abstr) ->
     modify_anno1(Abstr, Acc0, F).
 
 -spec new_anno(Term) -> Abstr when
       Term :: term(),
-      Abstr :: erl_parse_tree().
+      Abstr :: erl_parse_tree() | form_info().
 
 new_anno(Term) ->
     F = fun(L, Acc) -> {erl_anno:new(L), Acc} end,
@@ -1555,14 +1597,14 @@ new_anno(Term) ->
     NewAbstr.
 
 -spec anno_to_term(Abstr) -> term() when
-      Abstr :: erl_parse_tree().
+      Abstr :: erl_parse_tree() | form_info().
 
 anno_to_term(Abstract) ->
     F = fun(Anno, Acc) -> {erl_anno:to_term(Anno), Acc} end,
     {NewAbstract, []} = modify_anno1(Abstract, [], F),
     NewAbstract.
 
--spec anno_from_term(Term) -> erl_parse_tree() when
+-spec anno_from_term(Term) -> erl_parse_tree() | form_info() when
       Term :: term().
 
 anno_from_term(Term) ->
@@ -1571,19 +1613,6 @@ anno_from_term(Term) ->
     NewTerm.
 
 %% Forms.
-%% Recognize what sys_pre_expand does:
-modify_anno1({'fun',A,F,{_,_,_}=Id}, Ac, Mf) ->
-    {A1,Ac1} = Mf(A, Ac),
-    {F1,Ac2} = modify_anno1(F, Ac1, Mf),
-    {{'fun',A1,F1,Id},Ac2};
-modify_anno1({named_fun,A,N,F,{_,_,_}=Id}, Ac, Mf) ->
-    {A1,Ac1} = Mf(A, Ac),
-    {F1,Ac2} = modify_anno1(F, Ac1, Mf),
-    {{named_fun,A1,N,F1,Id},Ac2};
-modify_anno1({attribute,A,N,[V]}, Ac, Mf) ->
-    {{attribute,A1,N1,V1},Ac1} = modify_anno1({attribute,A,N,V}, Ac, Mf),
-    {{attribute,A1,N1,[V1]},Ac1};
-%% End of sys_pre_expand special forms.
 modify_anno1({function,F,A}, Ac, _Mf) ->
     {{function,F,A},Ac};
 modify_anno1({function,M,F,A}, Ac, Mf) ->
@@ -1620,6 +1649,8 @@ modify_anno1({warning,W}, Ac, _Mf) ->
     {{warning,W},Ac};
 modify_anno1({error,W}, Ac, _Mf) ->
     {{error,W},Ac};
+modify_anno1({eof,L}, Ac, _Mf) ->
+    {{eof,L},Ac};
 %% Expressions.
 modify_anno1({clauses,Cs}, Ac, Mf) ->
     {Cs1,Ac1} = modify_anno1(Cs, Ac, Mf),

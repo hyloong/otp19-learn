@@ -1,0 +1,457 @@
+<module name="wxXmlResource">
+<type>
+  <name>wxXmlResource</name>
+  <n_vars>0</n_vars>
+  <typedecl>
+      <typehead><marker id="type-wxXmlResource">wxXmlResource()</marker> = <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></typehead></typedecl>
+</type>
+<spec>
+  <name>attachUnknownControl</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>attachUnknownControl(This, Name, Control) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Control</typename><string>Control = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Control</anno>
+  <anno>Name</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>attachUnknownControl</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>attachUnknownControl(This, Name, Control, Options :: [Option]) -&gt;<br/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/><nbsp/>boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Control</typename><string>Control = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {parent, <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Control</anno>
+  <anno>Name</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>clearHandlers</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>clearHandlers(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>compareVersion</name>
+  <arity>5</arity>
+  <contract>
+    <clause>
+      <head>compareVersion(This, Major, Minor, Release, Revision) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+        <subtype><typename>Major</typename><string>Major = Minor = Release = Revision = integer()</string></subtype>
+        <subtype><typename>Minor</typename><string></string></subtype>
+        <subtype><typename>Release</typename><string></string></subtype>
+        <subtype><typename>Revision</typename><string></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Major</anno>
+  <anno>Minor</anno>
+  <anno>Release</anno>
+  <anno>Revision</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>destroy</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>destroy(This :: <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso>) -&gt; ok</head></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>get</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>get() -&gt; <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>getFlags</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getFlags(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getVersion</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getVersion(This) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>getXRCID</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>getXRCID(Str_id) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>Str_id</typename><string>Str_id = [<seealso marker="unicode#type-chardata">unicode:chardata()</seealso>]</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Str_id</anno>
+</spec>
+<spec>
+  <name>getXRCID</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>getXRCID(Str_id, Options :: [Option]) -&gt; integer()</head>
+      <guard>
+        <subtype><typename>Str_id</typename><string>Str_id = [<seealso marker="unicode#type-chardata">unicode:chardata()</seealso>]</string></subtype>
+        <subtype><typename>Option</typename><string>Option = {value_if_not_found, integer()}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+  <anno>Str_id</anno>
+</spec>
+<spec>
+  <name>initAllHandlers</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>initAllHandlers(This) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>load</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>load(This, Filemask) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+        <subtype><typename>Filemask</typename><string>Filemask = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Filemask</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>loadBitmap</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>loadBitmap(This, Name) -&gt; <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>loadDialog</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>loadDialog(This, Parent, Name) -&gt; <seealso marker="wxDialog#type-wxDialog">wxDialog:wxDialog()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+        <subtype><typename>Parent</typename><string>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>Parent</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>loadDialog</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>loadDialog(This, Dlg, Parent, Name) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+        <subtype><typename>Dlg</typename><string>Dlg = <seealso marker="wxDialog#type-wxDialog">wxDialog:wxDialog()</seealso></string></subtype>
+        <subtype><typename>Parent</typename><string>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Dlg</anno>
+  <anno>Name</anno>
+  <anno>Parent</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>loadFrame</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>loadFrame(This, Parent, Name) -&gt; <seealso marker="wxFrame#type-wxFrame">wxFrame:wxFrame()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+        <subtype><typename>Parent</typename><string>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>Parent</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>loadFrame</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>loadFrame(This, Frame, Parent, Name) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+        <subtype><typename>Frame</typename><string>Frame = <seealso marker="wxFrame#type-wxFrame">wxFrame:wxFrame()</seealso></string></subtype>
+        <subtype><typename>Parent</typename><string>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Frame</anno>
+  <anno>Name</anno>
+  <anno>Parent</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>loadIcon</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>loadIcon(This, Name) -&gt; <seealso marker="wxIcon#type-wxIcon">wxIcon:wxIcon()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>loadMenu</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>loadMenu(This, Name) -&gt; <seealso marker="wxMenu#type-wxMenu">wxMenu:wxMenu()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>loadMenuBar</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>loadMenuBar(This, Name) -&gt; <seealso marker="wxMenuBar#type-wxMenuBar">wxMenuBar:wxMenuBar()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>loadMenuBar</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>loadMenuBar(This, Parent, Name) -&gt; <seealso marker="wxMenuBar#type-wxMenuBar">wxMenuBar:wxMenuBar()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+        <subtype><typename>Parent</typename><string>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>Parent</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>loadPanel</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>loadPanel(This, Parent, Name) -&gt; <seealso marker="wxPanel#type-wxPanel">wxPanel:wxPanel()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+        <subtype><typename>Parent</typename><string>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>Parent</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>loadPanel</name>
+  <arity>4</arity>
+  <contract>
+    <clause>
+      <head>loadPanel(This, Panel, Parent, Name) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+        <subtype><typename>Panel</typename><string>Panel = <seealso marker="wxPanel#type-wxPanel">wxPanel:wxPanel()</seealso></string></subtype>
+        <subtype><typename>Parent</typename><string>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>Panel</anno>
+  <anno>Parent</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>loadToolBar</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>loadToolBar(This, Parent, Name) -&gt; <seealso marker="wxToolBar#type-wxToolBar">wxToolBar:wxToolBar()</seealso></head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+        <subtype><typename>Parent</typename><string>Parent = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>Parent</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>0</arity>
+  <contract>
+    <clause>
+      <head>new() -&gt; <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></head></clause>
+  </contract>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>new(Options :: [Option]) -&gt; <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></head>
+      <guard>
+        <subtype><typename>Option</typename><string>Option = {flags, integer()} | {domain, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Option</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>new</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>new(Filemask, Options :: [Option]) -&gt; <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></head>
+      <guard>
+        <subtype><typename>Filemask</typename><string>Filemask = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+        <subtype><typename>Option</typename><string>Option = {flags, integer()} | {domain, <seealso marker="unicode#type-chardata">unicode:chardata()</seealso>}</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Filemask</anno>
+  <anno>Option</anno>
+  <anno>Options</anno>
+</spec>
+<spec>
+  <name>parent_class</name>
+  <arity>1</arity>
+  <contract/>
+</spec>
+<spec>
+  <name>set</name>
+  <arity>1</arity>
+  <contract>
+    <clause>
+      <head>set(Res) -&gt; <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></head>
+      <guard>
+        <subtype><typename>Res</typename><string>Res = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Res</anno>
+</spec>
+<spec>
+  <name>setFlags</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>setFlags(This, Flags) -&gt; ok</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+        <subtype><typename>Flags</typename><string>Flags = integer()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Flags</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>unload</name>
+  <arity>2</arity>
+  <contract>
+    <clause>
+      <head>unload(This, Filename) -&gt; boolean()</head>
+      <guard>
+        <subtype><typename>This</typename><string>This = <seealso marker="#type-wxXmlResource">wxXmlResource()</seealso></string></subtype>
+        <subtype><typename>Filename</typename><string>Filename = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Filename</anno>
+  <anno>This</anno>
+</spec>
+<spec>
+  <name>xrcctrl</name>
+  <arity>3</arity>
+  <contract>
+    <clause>
+      <head>xrcctrl(Window, Name, Type) -&gt; <seealso marker="wx#type-wx_object">wx:wx_object()</seealso></head>
+      <guard>
+        <subtype><typename>Window</typename><string>Window = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></string></subtype>
+        <subtype><typename>Name</typename><string>Name = string()</string></subtype>
+        <subtype><typename>Type</typename><string>Type = atom()</string></subtype>
+      </guard></clause>
+  </contract>
+  <anno>Name</anno>
+  <anno>Type</anno>
+  <anno>Window</anno>
+</spec>
+<timestamp>Generated by EDoc, Jul 12 2017, 20:31:01.</timestamp>
+</module>

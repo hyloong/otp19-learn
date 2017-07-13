@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxBitmapDataObject</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxBitmapDataObject.xml</file></header>
+<module>wxBitmapDataObject</module>
+<modulesummary>See external documentation: wxBitmapDataObject.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmapdataobject.html">wxBitmapDataObject</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxDataObject">wxDataObject</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxBitmapDataObject"/>wxBitmapDataObject()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxBitmapDataObject">wxBitmapDataObject()</seealso></name>
+<fsummary>Equivalent to new([]).
+</fsummary>
+
+<desc><marker id="new-0"/>
+<p>Equivalent to <seealso marker="#new-1">new([])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Options::[Option]) -&gt; <seealso marker="#type-wxBitmapDataObject">wxBitmapDataObject()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Option = {bitmap, <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso>}</v></type>
+<desc><marker id="new-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmapdataobject.html#wxbitmapdataobjectwxbitmapdataobject">external documentation</url>.
+  <br/> Also:<br/>
+  new(Bitmap) -&gt; wxBitmapDataObject() when<br/>
+  	Bitmap::wxBitmap:wxBitmap().<br/>
+ </p>
+</desc></func>
+<func>
+<name>getBitmap(This) -&gt; <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmapDataObject">wxBitmapDataObject()</seealso></v></type>
+<desc><marker id="getBitmap-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmapdataobject.html#wxbitmapdataobjectgetbitmap">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setBitmap(This, Bitmap) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxBitmapDataObject">wxBitmapDataObject()</seealso></v><v>Bitmap = <seealso marker="wxBitmap#type-wxBitmap">wxBitmap:wxBitmap()</seealso></v></type>
+<desc><marker id="setBitmap-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxbitmapdataobject.html#wxbitmapdataobjectsetbitmap">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxBitmapDataObject">wxBitmapDataObject()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxGridCellFloatRenderer</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxGridCellFloatRenderer.xml</file></header>
+<module>wxGridCellFloatRenderer</module>
+<modulesummary>See external documentation: wxGridCellFloatRenderer.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellfloatrenderer.html">wxGridCellFloatRenderer</url>.
+  </p><p>This class is derived (and can use functions) from:
+  <br/><seealso marker="wxGridCellStringRenderer">wxGridCellStringRenderer</seealso>
+  <br/><seealso marker="wxGridCellRenderer">wxGridCellRenderer</seealso>
+  </p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxGridCellFloatRenderer"/>wxGridCellFloatRenderer()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxGridCellFloatRenderer">wxGridCellFloatRenderer()</seealso></name>
+<fsummary>Equivalent to new([]).
+</fsummary>
+
+<desc><marker id="new-0"/>
+<p>Equivalent to <seealso marker="#new-1">new([])</seealso>.</p>
+</desc></func>
+<func>
+<name>new(Options::[Option]) -&gt; <seealso marker="#type-wxGridCellFloatRenderer">wxGridCellFloatRenderer()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Option = {width, integer()} | {precision, integer()}</v></type>
+<desc><marker id="new-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellfloatrenderer.html#wxgridcellfloatrendererwxgridcellfloatrenderer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPrecision(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellFloatRenderer">wxGridCellFloatRenderer()</seealso></v></type>
+<desc><marker id="getPrecision-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellfloatrenderer.html#wxgridcellfloatrenderergetprecision">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getWidth(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellFloatRenderer">wxGridCellFloatRenderer()</seealso></v></type>
+<desc><marker id="getWidth-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellfloatrenderer.html#wxgridcellfloatrenderergetwidth">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setParameters(This, Params) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellFloatRenderer">wxGridCellFloatRenderer()</seealso></v><v>Params = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setParameters-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellfloatrenderer.html#wxgridcellfloatrenderersetparameters">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setPrecision(This, Precision) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellFloatRenderer">wxGridCellFloatRenderer()</seealso></v><v>Precision = integer()</v></type>
+<desc><marker id="setPrecision-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellfloatrenderer.html#wxgridcellfloatrenderersetprecision">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setWidth(This, Width) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxGridCellFloatRenderer">wxGridCellFloatRenderer()</seealso></v><v>Width = integer()</v></type>
+<desc><marker id="setWidth-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxgridcellfloatrenderer.html#wxgridcellfloatrenderersetwidth">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxGridCellFloatRenderer">wxGridCellFloatRenderer()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

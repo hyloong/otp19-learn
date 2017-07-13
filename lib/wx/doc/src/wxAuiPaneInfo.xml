@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxAuiPaneInfo</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxAuiPaneInfo.xml</file></header>
+<module>wxAuiPaneInfo</module>
+<modulesummary>See external documentation: wxAuiPaneInfo.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html">wxAuiPaneInfo</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxAuiPaneInfo"/>wxAuiPaneInfo()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfowxauipaneinfo">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(C) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>C = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="new-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfowxauipaneinfo">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>bestSize(This, Size) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Size = {W::integer(), H::integer()}</v></type>
+<desc><marker id="bestSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfobestsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>bestSize(This, X, Y) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="bestSize-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfobestsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>bottom(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="bottom-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfobottom">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>bottomDockable(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>Equivalent to bottomDockable(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="bottomDockable-1"/>
+<p>Equivalent to <seealso marker="#bottomDockable-2">bottomDockable(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>bottomDockable(This, Options::[Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Option = {b, boolean()}</v></type>
+<desc><marker id="bottomDockable-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfobottomdockable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>caption(This, C) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>C = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="caption-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfocaption">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>captionVisible(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>Equivalent to captionVisible(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="captionVisible-1"/>
+<p>Equivalent to <seealso marker="#captionVisible-2">captionVisible(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>captionVisible(This, Options::[Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Option = {visible, boolean()}</v></type>
+<desc><marker id="captionVisible-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfocaptionvisible">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>centre(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="centre-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfocentre">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>centrePane(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="centrePane-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfocentrepane">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>closeButton(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>Equivalent to closeButton(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="closeButton-1"/>
+<p>Equivalent to <seealso marker="#closeButton-2">closeButton(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>closeButton(This, Options::[Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Option = {visible, boolean()}</v></type>
+<desc><marker id="closeButton-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfoclosebutton">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>defaultPane(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="defaultPane-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfodefaultpane">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroyOnClose(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>Equivalent to destroyOnClose(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="destroyOnClose-1"/>
+<p>Equivalent to <seealso marker="#destroyOnClose-2">destroyOnClose(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>destroyOnClose(This, Options::[Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Option = {b, boolean()}</v></type>
+<desc><marker id="destroyOnClose-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfodestroyonclose">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>direction(This, Direction) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Direction = integer()</v></type>
+<desc><marker id="direction-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfodirection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>dock(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="dock-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfodock">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>dockable(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>Equivalent to dockable(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="dockable-1"/>
+<p>Equivalent to <seealso marker="#dockable-2">dockable(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>dockable(This, Options::[Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Option = {b, boolean()}</v></type>
+<desc><marker id="dockable-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfodockable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>fixed(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="fixed-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfofixed">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>float(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="float-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfofloat">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>floatable(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>Equivalent to floatable(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="floatable-1"/>
+<p>Equivalent to <seealso marker="#floatable-2">floatable(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>floatable(This, Options::[Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Option = {b, boolean()}</v></type>
+<desc><marker id="floatable-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfofloatable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>floatingPosition(This, Pos) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Pos = {X::integer(), Y::integer()}</v></type>
+<desc><marker id="floatingPosition-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfofloatingposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>floatingPosition(This, X, Y) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="floatingPosition-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfofloatingposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>floatingSize(This, Size) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Size = {W::integer(), H::integer()}</v></type>
+<desc><marker id="floatingSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfofloatingsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>floatingSize(This, X, Y) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="floatingSize-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfofloatingsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>gripper(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>Equivalent to gripper(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="gripper-1"/>
+<p>Equivalent to <seealso marker="#gripper-2">gripper(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>gripper(This, Options::[Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Option = {visible, boolean()}</v></type>
+<desc><marker id="gripper-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfogripper">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>gripperTop(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>Equivalent to gripperTop(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="gripperTop-1"/>
+<p>Equivalent to <seealso marker="#gripperTop-2">gripperTop(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>gripperTop(This, Options::[Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Option = {attop, boolean()}</v></type>
+<desc><marker id="gripperTop-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfogrippertop">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasBorder(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="hasBorder-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfohasborder">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasCaption(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="hasCaption-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfohascaption">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasCloseButton(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="hasCloseButton-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfohasclosebutton">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasFlag(This, Flag) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Flag = integer()</v></type>
+<desc><marker id="hasFlag-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfohasflag">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasGripper(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="hasGripper-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfohasgripper">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasGripperTop(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="hasGripperTop-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfohasgrippertop">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasMaximizeButton(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="hasMaximizeButton-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfohasmaximizebutton">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasMinimizeButton(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="hasMinimizeButton-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfohasminimizebutton">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hasPinButton(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="hasPinButton-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfohaspinbutton">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>hide(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="hide-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfohide">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isBottomDockable(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="isBottomDockable-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfoisbottomdockable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isDocked(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="isDocked-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfoisdocked">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isFixed(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="isFixed-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfoisfixed">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isFloatable(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="isFloatable-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfoisfloatable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isFloating(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="isFloating-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfoisfloating">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isLeftDockable(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="isLeftDockable-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfoisleftdockable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isMovable(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="isMovable-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfoismovable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isOk(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="isOk-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfoisok">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isResizable(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="isResizable-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfoisresizable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isRightDockable(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="isRightDockable-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfoisrightdockable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isShown(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="isShown-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfoisshown">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isToolbar(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="isToolbar-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfoistoolbar">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>isTopDockable(This) -&gt; boolean()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="isTopDockable-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfoistopdockable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>layer(This, Layer) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Layer = integer()</v></type>
+<desc><marker id="layer-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfolayer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>left(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="left-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfoleft">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>leftDockable(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>Equivalent to leftDockable(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="leftDockable-1"/>
+<p>Equivalent to <seealso marker="#leftDockable-2">leftDockable(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>leftDockable(This, Options::[Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Option = {b, boolean()}</v></type>
+<desc><marker id="leftDockable-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfoleftdockable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>maxSize(This, Size) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Size = {W::integer(), H::integer()}</v></type>
+<desc><marker id="maxSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfomaxsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>maxSize(This, X, Y) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="maxSize-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfomaxsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>maximizeButton(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>Equivalent to maximizeButton(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="maximizeButton-1"/>
+<p>Equivalent to <seealso marker="#maximizeButton-2">maximizeButton(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>maximizeButton(This, Options::[Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Option = {visible, boolean()}</v></type>
+<desc><marker id="maximizeButton-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfomaximizebutton">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>minSize(This, Size) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Size = {W::integer(), H::integer()}</v></type>
+<desc><marker id="minSize-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfominsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>minSize(This, X, Y) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>X = integer()</v><v>Y = integer()</v></type>
+<desc><marker id="minSize-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfominsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>minimizeButton(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>Equivalent to minimizeButton(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="minimizeButton-1"/>
+<p>Equivalent to <seealso marker="#minimizeButton-2">minimizeButton(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>minimizeButton(This, Options::[Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Option = {visible, boolean()}</v></type>
+<desc><marker id="minimizeButton-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfominimizebutton">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>movable(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>Equivalent to movable(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="movable-1"/>
+<p>Equivalent to <seealso marker="#movable-2">movable(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>movable(This, Options::[Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Option = {b, boolean()}</v></type>
+<desc><marker id="movable-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfomovable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>name(This, N) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>N = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="name-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfoname">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>paneBorder(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>Equivalent to paneBorder(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="paneBorder-1"/>
+<p>Equivalent to <seealso marker="#paneBorder-2">paneBorder(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>paneBorder(This, Options::[Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Option = {visible, boolean()}</v></type>
+<desc><marker id="paneBorder-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfopaneborder">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>pinButton(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>Equivalent to pinButton(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="pinButton-1"/>
+<p>Equivalent to <seealso marker="#pinButton-2">pinButton(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>pinButton(This, Options::[Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Option = {visible, boolean()}</v></type>
+<desc><marker id="pinButton-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfopinbutton">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>position(This, Pos) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Pos = integer()</v></type>
+<desc><marker id="position-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfoposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>resizable(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>Equivalent to resizable(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="resizable-1"/>
+<p>Equivalent to <seealso marker="#resizable-2">resizable(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>resizable(This, Options::[Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Option = {resizable, boolean()}</v></type>
+<desc><marker id="resizable-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinforesizable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>right(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="right-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinforight">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>rightDockable(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>Equivalent to rightDockable(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="rightDockable-1"/>
+<p>Equivalent to <seealso marker="#rightDockable-2">rightDockable(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>rightDockable(This, Options::[Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Option = {b, boolean()}</v></type>
+<desc><marker id="rightDockable-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinforightdockable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>row(This, Row) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Row = integer()</v></type>
+<desc><marker id="row-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinforow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>safeSet(This, Source) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Source = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="safeSet-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfosafeset">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFlag(This, Flag, Option_state) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Flag = integer()</v><v>Option_state = boolean()</v></type>
+<desc><marker id="setFlag-3"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfosetflag">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>show(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>Equivalent to show(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="show-1"/>
+<p>Equivalent to <seealso marker="#show-2">show(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>show(This, Options::[Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Option = {show, boolean()}</v></type>
+<desc><marker id="show-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfoshow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>toolbarPane(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="toolbarPane-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfotoolbarpane">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>top(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="top-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfotop">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>topDockable(This) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>Equivalent to topDockable(This, []).
+</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="topDockable-1"/>
+<p>Equivalent to <seealso marker="#topDockable-2">topDockable(This, [])</seealso>.</p>
+</desc></func>
+<func>
+<name>topDockable(This, Options::[Option]) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>Option = {b, boolean()}</v></type>
+<desc><marker id="topDockable-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfotopdockable">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>window(This, W) -&gt; <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v><v>W = <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></v></type>
+<desc><marker id="window-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfowindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getWindow(This) -&gt; <seealso marker="wxWindow#type-wxWindow">wxWindow:wxWindow()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="getWindow-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfogetwindow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFrame(This) -&gt; <seealso marker="wxFrame#type-wxFrame">wxFrame:wxFrame()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="getFrame-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfogetframe">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getDirection(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="getDirection-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfogetdirection">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getLayer(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="getLayer-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfogetlayer">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getRow(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="getRow-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfogetrow">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getPosition(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="getPosition-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfogetposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFloatingPosition(This) -&gt; {X::integer(), Y::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="getFloatingPosition-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfogetfloatingposition">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFloatingSize(This) -&gt; {W::integer(), H::integer()}</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso></v></type>
+<desc><marker id="getFloatingSize-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxauipaneinfo.html#wxauipaneinfogetfloatingsize">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxAuiPaneInfo">wxAuiPaneInfo()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

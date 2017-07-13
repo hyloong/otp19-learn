@@ -781,7 +781,8 @@ trace_sched_aux(Process *p, ErtsProcLocks locks, Eterm what)
 	tmp = make_small(0);
     } else {
         hp = HAlloc(p, 4);
-	tmp = TUPLE3(hp,p->current[0],p->current[1],make_small(p->current[2]));
+	tmp = TUPLE3(hp,p->current->module,p->current->function,
+                     make_small(p->current->arity));
 	hp += 4;
     }
 
@@ -1027,14 +1028,14 @@ erts_trace_return_to(Process *p, BeamInstr *pc)
 {
     Eterm mfa;
 
-    BeamInstr *code_ptr = find_function_from_pc(pc);
+    ErtsCodeMFA *cmfa = find_function_from_pc(pc);
 
-
-    if (!code_ptr) {
+    if (!cmfa) {
 	mfa = am_undefined;
     } else {
         Eterm *hp = HAlloc(p, 4);
-	mfa = TUPLE3(hp, code_ptr[0], code_ptr[1], make_small(code_ptr[2]));
+	mfa = TUPLE3(hp, cmfa->module, cmfa->function,
+                     make_small(cmfa->arity));
     }
 
     send_to_tracer_nif(p, &p->common, p->common.id, NULL, TRACE_FUN_T_CALL,
@@ -1046,11 +1047,11 @@ erts_trace_return_to(Process *p, BeamInstr *pc)
  * or   {trace, Pid, return_from, {Mod, Name, Arity}, Retval}
  */
 void
-erts_trace_return(Process* p, BeamInstr* fi, Eterm retval, ErtsTracer *tracer)
+erts_trace_return(Process* p, ErtsCodeMFA *mfa,
+                  Eterm retval, ErtsTracer *tracer)
 {
     Eterm* hp;
-    Eterm mfa, mod, name;
-    int arity;
+    Eterm mfa_tuple;
     Uint meta_flags, *tracee_flags;
 
     ASSERT(tracer);
@@ -1084,15 +1085,13 @@ erts_trace_return(Process* p, BeamInstr* fi, Eterm retval, ErtsTracer *tracer)
 	tracee_flags = &meta_flags;
     }
 
-    mod = fi[0];
-    name = fi[1];
-    arity = fi[2];
-
     hp = HAlloc(p, 4);
-    mfa = TUPLE3(hp, mod, name, make_small(arity));
+    mfa_tuple = TUPLE3(hp, mfa->module, mfa->function,
+                       make_small(mfa->arity));
     hp += 4;
     send_to_tracer_nif_raw(p, NULL, *tracer, *tracee_flags, p->common.id,
-                           NULL, TRACE_FUN_T_CALL, am_return_from, mfa, retval, am_true);
+                           NULL, TRACE_FUN_T_CALL, am_return_from, mfa_tuple,
+                           retval, am_true);
 }
 
 /* Send {trace_ts, Pid, exception_from, {Mod, Name, Arity}, {Class,Value}, 
@@ -1103,7 +1102,7 @@ erts_trace_return(Process* p, BeamInstr* fi, Eterm retval, ErtsTracer *tracer)
  * Where Class is atomic but Value is any term.
  */
 void
-erts_trace_exception(Process* p, BeamInstr mfa[3], Eterm class, Eterm value,
+erts_trace_exception(Process* p, ErtsCodeMFA *mfa, Eterm class, Eterm value,
 		     ErtsTracer *tracer)
 {
     Eterm* hp;
@@ -1142,7 +1141,7 @@ erts_trace_exception(Process* p, BeamInstr mfa[3], Eterm class, Eterm value,
     }
 
     hp = HAlloc(p, 7);;
-    mfa_tuple = TUPLE3(hp, (Eterm) mfa[0], (Eterm) mfa[1], make_small((Eterm)mfa[2]));
+    mfa_tuple = TUPLE3(hp, mfa->module, mfa->function, make_small(mfa->arity));
     hp += 4;
     cv = TUPLE2(hp, class, value);
     hp += 3;
@@ -1165,7 +1164,7 @@ erts_trace_exception(Process* p, BeamInstr mfa[3], Eterm class, Eterm value,
  * if it is a pid or port we do a meta trace.
  */
 Uint32
-erts_call_trace(Process* p, BeamInstr mfa[3], Binary *match_spec,
+erts_call_trace(Process* p, ErtsCodeInfo *info, Binary *match_spec,
 		Eterm* args, int local, ErtsTracer *tracer)
 {
     Eterm* hp;
@@ -1244,7 +1243,7 @@ erts_call_trace(Process* p, BeamInstr mfa[3], Binary *match_spec,
      * such as size_object() and copy_struct(), we must make sure that we
      * temporarily convert any match contexts to sub binaries.
      */
-    arity = (Eterm) mfa[2];
+    arity = info->mfa.arity;
     for (i = 0; i < arity; i++) {
 	Eterm arg = args[i];
 	if (is_boxed(arg) && header_is_bin_matchstate(*boxed_val(arg))) {
@@ -1339,7 +1338,7 @@ erts_call_trace(Process* p, BeamInstr mfa[3], Binary *match_spec,
             hp += 2;
         }
     }
-    mfa_tuple = TUPLE3(hp, (Eterm) mfa[0], (Eterm) mfa[1], mfa_tuple);
+    mfa_tuple = TUPLE3(hp, info->mfa.module, info->mfa.function, mfa_tuple);
     hp += 4;
 
     /*
@@ -1462,7 +1461,8 @@ trace_gc(Process *p, Eterm what, Uint size, Eterm msg)
 }
 
 void 
-monitor_long_schedule_proc(Process *p, BeamInstr *in_fp, BeamInstr *out_fp, Uint time)
+monitor_long_schedule_proc(Process *p, ErtsCodeMFA *in_fp,
+                           ErtsCodeMFA *out_fp, Uint time)
 {
     ErlHeapFragment *bp;
     ErlOffHeap *off_heap;
@@ -1493,11 +1493,13 @@ monitor_long_schedule_proc(Process *p, BeamInstr *in_fp, BeamInstr *out_fp, Uint
     hp = ERTS_ALLOC_SYSMSG_HEAP(hsz, &bp, &off_heap, monitor_p);
     tmo = erts_bld_uint(&hp, NULL, time);
     if (in_fp != NULL) {
-	in_mfa = TUPLE3(hp,(Eterm) in_fp[0], (Eterm) in_fp[1], make_small(in_fp[2]));
+	in_mfa = TUPLE3(hp, in_fp->module, in_fp->function,
+                        make_small(in_fp->arity));
 	hp +=4;
     } 
     if (out_fp != NULL) {
-	out_mfa = TUPLE3(hp,(Eterm) out_fp[0], (Eterm) out_fp[1], make_small(out_fp[2]));
+	out_mfa = TUPLE3(hp, out_fp->module, out_fp->function,
+                         make_small(out_fp->arity));
 	hp +=4;
     } 
     tmo_tpl = TUPLE2(hp,am_timeout, tmo);
@@ -1873,7 +1875,6 @@ trace_port_tmp_binary(char *bin, Sint sz, Binary **bptrp, Eterm **hp)
     } else {
         ProcBin* pb = (ProcBin *)*hp;
         Binary *bptr = erts_bin_nrml_alloc(sz);
-        erts_refc_init(&bptr->refc, 1);
         sys_memcpy(bptr->orig_bytes, bin, sz);
         pb->thing_word = HEADER_PROC_BIN;
         pb->size = sz;
@@ -1998,8 +1999,8 @@ trace_port_receive(Port *t_p, Eterm caller, Eterm what, ...)
                            TRACE_FUN_T_RECEIVE,
                            am_receive, data, THE_NON_VALUE, am_true);
 
-        if (bptr && erts_refc_dectest(&bptr->refc, 1) == 0)
-            erts_bin_free(bptr);
+        if (bptr)
+            erts_bin_release(bptr);
 
         if (orig_hp)
             erts_free(ERTS_ALC_T_TMP, orig_hp);
@@ -2049,8 +2050,8 @@ void trace_port_send_binary(Port *t_p, Eterm to, Eterm what, char *bin, Sint sz)
 
         send_to_tracer_nif(NULL, &t_p->common, t_p->common.id, tnif, TRACE_FUN_T_SEND,
                            am_send, msg, to, am_true);
-        if (bptr && erts_refc_dectest(&bptr->refc, 1) == 0)
-            erts_bin_free(bptr);
+        if (bptr)
+            erts_bin_release(bptr);
 
         UnUseTmpHeapNoproc(LOCAL_HEAP_SIZE);
 #undef LOCAL_HEAP_SIZE
@@ -2132,7 +2133,7 @@ profile_runnable_proc(Process *p, Eterm status){
     Eterm *hp, msg;
     Eterm where = am_undefined;
     ErlHeapFragment *bp = NULL;
-    BeamInstr *current = NULL;
+    ErtsCodeMFA *cmfa = NULL;
 
 #ifndef ERTS_SMP
 #define LOCAL_HEAP_SIZE (4 + 6 + ERTS_TRACE_PATCH_TS_MAX_SIZE)
@@ -2154,14 +2155,14 @@ profile_runnable_proc(Process *p, Eterm status){
 
     if (!ERTS_PROC_IS_EXITING(p)) {
         if (p->current) {
-            current = p->current;
+            cmfa = p->current;
         } else {
-            current = find_function_from_pc(p->i);
+            cmfa = find_function_from_pc(p->i);
         }
     }
 
 #ifdef ERTS_SMP
-    if (!current) {
+    if (!cmfa) {
 	hsz -= 4;
     }
 
@@ -2169,8 +2170,10 @@ profile_runnable_proc(Process *p, Eterm status){
     hp = bp->mem;
 #endif
 
-    if (current) {
-	where = TUPLE3(hp, current[0], current[1], make_small(current[2])); hp += 4;
+    if (cmfa) {
+	where = TUPLE3(hp, cmfa->module, cmfa->function,
+                       make_small(cmfa->arity));
+        hp += 4;
     } else {
 	where = make_small(0);
     }
@@ -3226,7 +3229,7 @@ static int tracer_cmp_fun(void* a, void* b)
 
 static HashValue tracer_hash_fun(void* obj)
 {
-    return make_internal_hash(((ErtsTracerNif*)obj)->module);
+    return make_internal_hash(((ErtsTracerNif*)obj)->module, 0);
 }
 
 static void *tracer_alloc_fun(void* tmpl)

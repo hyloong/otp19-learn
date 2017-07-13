@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE erlref SYSTEM "erlref.dtd">
+<erlref>
+<header>
+<title>wxListItem</title>
+<prepared></prepared>
+<responsible></responsible>
+<docno>1</docno>
+<approved></approved>
+<checked></checked>
+<date></date>
+<rev>A</rev>
+<file>wxListItem.xml</file></header>
+<module>wxListItem</module>
+<modulesummary>See external documentation: wxListItem.</modulesummary>
+<description>
+<p>See external documentation: <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html">wxListItem</url>.</p></description>
+<section><title>DATA TYPES</title><marker id="types"/>
+
+<taglist>
+<tag><marker id="type-wxListItem"/>wxListItem()</tag>
+<item><p/>
+<p>An object reference, The representation is internal
+  and can be changed without notice. It can't be used for comparsion
+  stored on disc or distributed for use on other nodes.</p>
+</item>
+</taglist></section>
+<funcs>
+<func>
+<name>new() -&gt; <seealso marker="#type-wxListItem">wxListItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+
+<desc><marker id="new-0"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemwxlistitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>new(Item) -&gt; <seealso marker="#type-wxListItem">wxListItem()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>Item = <seealso marker="#type-wxListItem">wxListItem()</seealso></v></type>
+<desc><marker id="new-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemwxlistitem">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>clear(This) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v></type>
+<desc><marker id="clear-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemclear">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getAlign(This) -&gt; <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v></type>
+<desc><marker id="getAlign-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemgetalign">external documentation</url>.
+ <br/> Res = ?wxLIST_FORMAT_LEFT | ?wxLIST_FORMAT_RIGHT | ?wxLIST_FORMAT_CENTRE | ?wxLIST_FORMAT_CENTER</p>
+</desc></func>
+<func>
+<name>getBackgroundColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v></type>
+<desc><marker id="getBackgroundColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemgetbackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getColumn(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v></type>
+<desc><marker id="getColumn-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemgetcolumn">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getFont(This) -&gt; <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v></type>
+<desc><marker id="getFont-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemgetfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getId(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v></type>
+<desc><marker id="getId-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemgetid">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getImage(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v></type>
+<desc><marker id="getImage-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemgetimage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getMask(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v></type>
+<desc><marker id="getMask-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemgetmask">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getState(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v></type>
+<desc><marker id="getState-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemgetstate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getText(This) -&gt; <seealso marker="unicode#type-charlist">unicode:charlist()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v></type>
+<desc><marker id="getText-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemgettext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getTextColour(This) -&gt; <seealso marker="wx#type-wx_colour4">wx:wx_colour4()</seealso></name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v></type>
+<desc><marker id="getTextColour-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemgettextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>getWidth(This) -&gt; integer()</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v></type>
+<desc><marker id="getWidth-1"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemgetwidth">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setAlign(This, Align) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v><v>Align = <seealso marker="wx#type-wx_enum">wx:wx_enum()</seealso></v></type>
+<desc><marker id="setAlign-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemsetalign">external documentation</url>.
+ <br/> Align = ?wxLIST_FORMAT_LEFT | ?wxLIST_FORMAT_RIGHT | ?wxLIST_FORMAT_CENTRE | ?wxLIST_FORMAT_CENTER</p>
+</desc></func>
+<func>
+<name>setBackgroundColour(This, ColBack) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v><v>ColBack = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setBackgroundColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemsetbackgroundcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setColumn(This, Col) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v><v>Col = integer()</v></type>
+<desc><marker id="setColumn-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemsetcolumn">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setFont(This, Font) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v><v>Font = <seealso marker="wxFont#type-wxFont">wxFont:wxFont()</seealso></v></type>
+<desc><marker id="setFont-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemsetfont">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setId(This, Id) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v><v>Id = integer()</v></type>
+<desc><marker id="setId-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemsetid">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setImage(This, Image) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v><v>Image = integer()</v></type>
+<desc><marker id="setImage-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemsetimage">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setMask(This, Mask) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v><v>Mask = integer()</v></type>
+<desc><marker id="setMask-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemsetmask">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setState(This, State) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v><v>State = integer()</v></type>
+<desc><marker id="setState-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemsetstate">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setStateMask(This, StateMask) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v><v>StateMask = integer()</v></type>
+<desc><marker id="setStateMask-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemsetstatemask">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setText(This, Text) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v><v>Text = <seealso marker="unicode#type-chardata">unicode:chardata()</seealso></v></type>
+<desc><marker id="setText-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemsettext">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setTextColour(This, ColText) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v><v>ColText = <seealso marker="wx#type-wx_colour">wx:wx_colour()</seealso></v></type>
+<desc><marker id="setTextColour-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemsettextcolour">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>setWidth(This, Width) -&gt; ok</name>
+<fsummary>See external documentation.</fsummary>
+<type>
+<v>This = <seealso marker="#type-wxListItem">wxListItem()</seealso></v><v>Width = integer()</v></type>
+<desc><marker id="setWidth-2"/>
+
+<p>See <url href="http://www.wxwidgets.org/manuals/2.8.12/wx_wxlistitem.html#wxlistitemsetwidth">external documentation</url>.</p>
+</desc></func>
+<func>
+<name>destroy(This::<seealso marker="#type-wxListItem">wxListItem()</seealso>) -&gt; ok</name>
+<fsummary>Destroys this object, do not use object again.</fsummary>
+
+<desc><marker id="destroy-1"/>
+
+<p>Destroys this object, do not use object again</p>
+</desc></func></funcs>
+
+<authors>
+<aname> </aname>
+<email> </email></authors></erlref>

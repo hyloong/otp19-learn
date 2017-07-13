@@ -56,7 +56,7 @@ client_hello(Host, Port, ConnectionStates,
     Version = tls_record:highest_protocol_version(Versions),
     #{security_parameters := SecParams} = ssl_record:pending_connection_state(ConnectionStates, read),
     AvailableCipherSuites = ssl_handshake:available_suites(UserSuites, Version),     
-    Extensions = ssl_handshake:client_hello_extensions(Host, Version, 
+    Extensions = ssl_handshake:client_hello_extensions(Version, 
 						       AvailableCipherSuites,
 						       SslOpts, ConnectionStates, Renegotiation),
     CipherSuites = 
@@ -88,7 +88,7 @@ client_hello(Host, Port, ConnectionStates,
 		    #hello_extensions{}, {ssl_cipher:hash(), ssl_cipher:sign_algo()} | undefined} |
 		   #alert{}.
 %%
-%% Description: Handles a recieved hello message
+%% Description: Handles a received hello message
 %%--------------------------------------------------------------------
 hello(#server_hello{server_version = Version, random = Random,
 		    cipher_suite = CipherSuite,
